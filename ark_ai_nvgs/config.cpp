@@ -11,7 +11,7 @@ class CfgPatches {
 
 class Extended_PostInit_EventHandlers {
     class ark_ai_nvgs {
-        init = "[] call compile preProcessFileLineNumbers 'x\ark\addons\nvg_postinit.sqf';";
+        init = "[] call compile preProcessFileLineNumbers 'x\ark\addons\ark_ai_nvgs\nvg_postinit.sqf';";
     };
 };
 
@@ -22,16 +22,16 @@ class cfgWeapons {
         author = "ARK";
         descriptionShort = "Night Vision Goggles - AI Only";
         displayName = "NV Goggles (AI Only)";
-        model = "x\ark\addons\empty.p3d";
+        model = "\A3\Weapons_F\empty.p3d";
         modelOptics = "\A3\weapons_f\reticle\optics_night";
         picture = "\A3\Weapons_F\Data\UI\gear_nvg_CA.paa";
         scope = 1;
             class ItemInfo {
                 hmdType = 0;
                 mass = 20;
-                modelOff = "x\ark\addons\empty.p3d";
+                modelOff = "\A3\Weapons_F\empty.p3d";
                 type = 616;
-                uniformModel = "x\ark\addons\empty.p3d";
+                uniformModel = "\A3\Weapons_F\empty.p3d";
             };
     };
 };
