@@ -3,7 +3,7 @@
 
 #define ARK_SCRIPTS_VERSION             "0.4.4"
 
-#define CONCAT_ADDON_PATH(FILE)         x\ark\addons\ark_inhouse\FILE
+#define CONCAT_ADDON_PATH(FILE)         x\ark\addons\ark_scripts\FILE
 #define ADDON_PATH(FILE)                #CONCAT_ADDON_PATH(FILE)
 
 #define CONCAT_HULL_PATH(FILE)          x\ark\addons\hull3\FILE
