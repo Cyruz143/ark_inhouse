@@ -13,7 +13,7 @@ class CfgPatches {
 
 class Extended_PreInit_EventHandlers {
     class ARK {
-        init = "[] call compile preProcessFileLineNumbers 'x\ark\addons\ark_inhouse\ark_preinit.sqf';";
+        init = "[] call compile preProcessFileLineNumbers 'x\ark\addons\ark_scripts\ark_preinit.sqf';";
     };
 };
 
