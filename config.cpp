@@ -6,8 +6,8 @@ class CfgPatches {
         weapons[] = {};
         requiredVersion = 1.0;
         requiredAddons[] = {"CBA_MAIN", "Hull3"};
-        author[] = {"Winter", "ARK"};
-        authorUrl = "https://github.com/Winter259";
+        author = "ARK";
+        authorUrl = "https://github.com/Cyruz143/ark_scripts";
     };
 };
 
