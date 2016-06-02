@@ -1,5 +1,5 @@
 class CfgPatches {
-    class disablemissions {
+    class ark_disablemissions {
         units[] = {};
         weapons[] = {};
         requiredVersion = 1.60;
