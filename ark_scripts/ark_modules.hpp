@@ -37,7 +37,7 @@ class ARK_Make_Sentry: ARK_Module {
     displayName = "Make Sentry";
     function = "ark_module_make_sentry";
     class ModuleDescription {
-        description = "Clears vehicles of their default cargo";
+        description = "Set options to make an EI sentry";
     };
     class Arguments {
         class Stance {
@@ -69,6 +69,12 @@ class ARK_Make_Sentry: ARK_Module {
             description = "The modes that the sentry will have disabled. Pass an array of strings. (['SUPPRESSION'], ['SUPPRESSION', 'AUTOCOMBAT'] etc)";
             typeName = "STRING";
             defaultValue = "[""COVER""]";
+        };
+        class Enable_Nightvision {
+            displayName = "Enable Nightvision";
+            description = "Enables or Disables nightvision for the sentry";
+            typeName = "BOOL";
+            defaultValue = true;
         };
     };
 };

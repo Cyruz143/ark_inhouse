@@ -1,13 +1,13 @@
 #ifndef ARK_MACROS_H
 #define ARK_MACROS_H
 
-#define ARK_SCRIPTS_VERSION             "0.4.4"
+#define ARK_SCRIPTS_VERSION            "0.4.4"
 
-#define CONCAT_ADDON_PATH(FILE)         x\ark\addons\ark_scripts\FILE
-#define ADDON_PATH(FILE)                #CONCAT_ADDON_PATH(FILE)
+#define CONCAT_ADDON_PATH(FILE)        x\ark\addons\ark_scripts\FILE
+#define ADDON_PATH(FILE)               #CONCAT_ADDON_PATH(FILE)
 
-#define CONCAT_HULL_PATH(FILE)          x\ark\addons\hull3\FILE
-#define HULL_PATH(FILE)                 #CONCAT_HULL_PATH(FILE)
+#define CONCAT_HULL_PATH(FILE)         x\ark\addons\hull3\FILE
+#define HULL_PATH(FILE)                #CONCAT_HULL_PATH(FILE)
 
 #define CONCAT_ADM_PATH(FILE)          x\ark\addons\admiral\FILE
 #define ADM_PATH(FILE)                 #CONCAT_ADM_PATH(FILE)
@@ -32,11 +32,12 @@
 #define DEBUG_WARN                      "WARN"
 #define DEBUG_ERROR                     "ERROR"
 
-#define SCRIPT_DEFAULT_SENTRY_STANCE    "MIDDLE"
-#define SCRIPT_DEFAULT_SENTRY_SKILL     0.2
-#define SCRIPT_DEFAULT_SENTRY_MODE      "YELLOW"
-#define SCRIPT_DEFAULT_SENTRY_BEHAVIOUR "AWARE"
-#define SCRIPT_DEFAULT_SENTRY_DISABLED  ["MOVE", "AIMINGERROR"]
+#define SCRIPT_DEFAULT_SENTRY_STANCE        "MIDDLE"
+#define SCRIPT_DEFAULT_SENTRY_SKILL         0.2
+#define SCRIPT_DEFAULT_SENTRY_MODE          "YELLOW"
+#define SCRIPT_DEFAULT_SENTRY_BEHAVIOUR     "AWARE"
+#define SCRIPT_DEFAULT_SENTRY_DISABLED      ["MOVE", "AIMINGERROR"]
+#define SCRIPT_DEFAULT_ENABLE_NIGHTVISION   true
 
 #define DEPLOY_LEADER_ARRAY             ["CO", "SL", "FTL", "MATG", "MMGG", "HATG", "ENG", "SP", "VC"]
 
