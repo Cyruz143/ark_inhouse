@@ -13,12 +13,7 @@ ark_fnc_initVariables = {
 };
 
 ark_fnc_isHost = {
-    DECLARE(_return) = if (serverCommandAvailable "#logout") then {
-        true;
-    } else {
-        false;
-    };
-    _return;
+    !isMultiplayer || {serverCommandAvailable "#logout"};
 };
 
 ark_fnc_isAdmiralEnabled = {
