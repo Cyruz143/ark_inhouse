@@ -130,8 +130,8 @@ ark_module_make_sentry = {
     DECLARE(_combatMode) = _logic getVariable "Combat_Mode";
     DECLARE(_behaviour) = _logic getVariable "Behaviour";
     DECLARE(_skill) = _logic getVariable "Skill";
-    DECLARE(_disabledFunctions) = _logic getVariable "Disabled_Functionality";
-    DECLARE(_enableNightvision) = _logic getVariable "Enable_Nightvision";
+    DECLARE(_disabledFunctions) = _logic getVariable ["Disabled_Functionality", SCRIPT_DEFAULT_SENTRY_DISABLED];
+    DECLARE(_enableNightvision) = _logic getVariable ["Enable_Nightvision", SCRIPT_DEFAULT_ENABLE_NIGHTVISION];
     _disabledFunctions = call compile _disabledFunctions; // change from string to array
     {
         if (alive _x) then {
