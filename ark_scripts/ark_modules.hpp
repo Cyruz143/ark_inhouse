@@ -68,7 +68,7 @@ class ARK_Make_Sentry: ARK_Module {
             displayName = "Disabled Functionality";
             description = "The modes that the sentry will have disabled. Pass an array of strings. (['SUPPRESSION'], ['SUPPRESSION', 'AUTOCOMBAT'] etc)";
             typeName = "STRING";
-            defaultValue = "[""COVER""]";
+            defaultValue = "[""PATH""]";
         };
         class Enable_Nightvision {
             displayName = "Enable Nightvision";
