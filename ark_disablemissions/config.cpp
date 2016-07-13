@@ -52,25 +52,39 @@ class CfgMissions {
         delete MP_End_Game_05;
             class Apex {
                 class EXP_m01 {
+                    directory = "";
                     hidden = 1;
+                    debriefing = 0;
                 };
                 class EXP_m02 {
+                    directory = "";
                     hidden = 1;
+                    debriefing = 0;
                 };
                 class EXP_m03 {
+                    directory = "";
                     hidden = 1;
+                    debriefing = 0;
                 };
                 class EXP_m04 {
+                    directory = "";
                     hidden = 1;
+                    debriefing = 0;
                 };
                 class EXP_m05 {
+                    directory = "";
                     hidden = 1;
+                    debriefing = 0;
                 };
                 class EXP_m06 {
+                    directory = "";
                     hidden = 1;
+                    debriefing = 0;
                 };
                 class EXP_m07 {
+                    directory = "";
                     hidden = 1;
+                    debriefing = 0;
                 };
             };
     };
