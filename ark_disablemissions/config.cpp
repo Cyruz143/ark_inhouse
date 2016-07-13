@@ -2,8 +2,8 @@ class CfgPatches {
     class ark_disablemissions {
         units[] = {};
         weapons[] = {};
-        requiredVersion = 1.60;
-        requiredAddons[] = {"A3_Missions_F_Beta", "A3_Missions_F_Gamma", "A3_Missions_F_Curator", "A3_Missions_F", "A3_Missions_F_Bootcamp", "A3_Missions_F_EPA", "A3_Missions_F_EPB", "A3_Missions_F_EPC", "A3_Missions_F_EXP_A"};
+        requiredVersion = 1.62;
+        requiredAddons[] = {"A3_Missions_F_Beta", "A3_Missions_F_Gamma", "A3_Missions_F_Curator", "A3_Missions_F", "A3_Missions_F_Bootcamp", "A3_Missions_F_EPA", "A3_Missions_F_EPB", "A3_Missions_F_EPC", "A3_Missions_F_EXP_A", "A3_Missions_F_EXP"};
         author = "ARK";
     };
 };
@@ -42,7 +42,22 @@ class CfgMissions {
         delete MP_ZGM_m13_EAST;
         delete MP_ZGM_m13_WEST;
         delete MP_ZGM_m13_GUER;
+        delete MP_ZGM_m14;
+        delete MP_ZGM_m14_EAST;
+        delete MP_ZGM_m14_WEST;
+        delete MP_ZGM_m14_GUER;
         delete MP_End_Game_02;
         delete MP_End_Game_03;
+        delete MP_End_Game_04;
+        delete MP_End_Game_05;
+            class Apex {
+                delete EXP_m01;
+                delete EXP_m02;
+                delete EXP_m03;
+                delete EXP_m04;
+                delete EXP_m05;
+                delete EXP_m06;
+                delete EXP_m07;
+            };
     };
 };
