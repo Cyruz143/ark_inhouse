@@ -51,13 +51,27 @@ class CfgMissions {
         delete MP_End_Game_04;
         delete MP_End_Game_05;
             class Apex {
-                delete EXP_m01;
-                delete EXP_m02;
-                delete EXP_m03;
-                delete EXP_m04;
-                delete EXP_m05;
-                delete EXP_m06;
-                delete EXP_m07;
+                class EXP_m01 {
+                    hidden = 1;
+                };
+                class EXP_m02 {
+                    hidden = 1;
+                };
+                class EXP_m03 {
+                    hidden = 1;
+                };
+                class EXP_m04 {
+                    hidden = 1;
+                };
+                class EXP_m05 {
+                    hidden = 1;
+                };
+                class EXP_m06 {
+                    hidden = 1;
+                };
+                class EXP_m07 {
+                    hidden = 1;
+                };
             };
     };
 };
