@@ -39,7 +39,7 @@
 #define SCRIPT_DEFAULT_SENTRY_DISABLED      ["COVER"]
 #define SCRIPT_DEFAULT_ENABLE_NIGHTVISION   true
 
-#define DEPLOY_LEADER_ARRAY             ["CO", "SL", "FTL", "MATG", "MMGG", "HATG", "ENG", "SP", "VC"]
+#define DEPLOY_LEADER_ARRAY             ["CO", "SL", "FTL", "MMGAG", "MATAG", "HATAG", "DHATAG", "HMGAG", "GMGAG", "SAMAG", "MTRAG", "SP", "ENG", "VC"]
 
 #define AI_DEBUG_UPDATE_DELAY           2
 #define AI_DEBUG_MARKER_SIZE            [0.6, 0.6]
