@@ -124,8 +124,8 @@ re_fnc_addBaseFortsToPlank = {
     private _forts = [
         ["Bunker (Large)",                      "Land_BagBunker_Large_F",               8.5,            180,                60,             ""],
         ["Bunker (Small)",                      "Land_BagBunker_Small_F",               6,              180,                360,            ""],
-        ["Wide Sandbag fence",                  "Land_fort_bagfence_long",              4,              0,                  360,            ""],
-        ["Wide Sandbag fence (Round)",          "Land_fort_bagfence_round",             7,              0,                  360,            ""]
+        ["Wide Sandbag fence (Long)",           "Land_BagFence_Long_F",                 4,              0,                  360,            ""],
+        ["Wide Sandbag fence (Short)",          "Land_BagFence_Short_F",                7,              0,                  360,            ""]
     ];
     private _fortIndices = _forts apply { [player, _x] call plank_api_fnc_addNewFortification };
     player setVariable ["re_plank_fortIndices", _fortIndices];

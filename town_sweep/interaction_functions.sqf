@@ -51,9 +51,9 @@ ts_interaction_fnc_addInteractions = {
         ] call ace_interact_menu_fnc_createAction;
     [player, 1, ["ACE_SelfActions", "Town Sweep"], _action] call ace_interact_menu_fnc_addActionToObject;
     private _difficulties =
-        [ ["Easy", 1.5]
-        , ["Normal", 2]
-        , ["Hard", 3]
+        [ ["Easy", 2]
+        , ["Normal", 3]
+        , ["Hard", 4]
         ];
     {
         _action =
