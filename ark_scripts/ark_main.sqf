@@ -142,7 +142,7 @@ ark_module_make_sentry = {
                 } forEach _disabledFunctions;
             };
             DEBUG {
-                [["Unit: %1 successfully made a sentry. Stance:  %2 Combat Mode: %3 Behaviour: %4 Skill: %5 Disabled functionality: %6 Enabled Nightvision: %7", _x, _combatMode, _behaviour, _skill, _disabledFunctions, _enableNightvision], DEBUG_INFO] call ark_debug_fnc_logToServer;
+                [["Unit: %1 successfully made a sentry. Combat Mode: %2 Behaviour: %3 Skill: %4 Disabled functionality: %5 Enabled Nightvision: %6", _x, _combatMode, _behaviour, _skill, _disabledFunctions, _enableNightvision], DEBUG_INFO] call ark_debug_fnc_logToServer;
             };
         };
     } forEach _units;
