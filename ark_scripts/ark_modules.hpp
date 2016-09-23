@@ -40,12 +40,6 @@ class ARK_Make_Sentry: ARK_Module {
         description = "Set options to make an EI sentry";
     };
     class Arguments {
-        class Stance {
-            displayName = "Stance";
-            description = "The stance the sentry will take. ('UP', 'MIDDLE', 'DOWN')";
-            typeName = "STRING";
-            defaultValue = "MIDDLE";
-        };
         class Combat_Mode {
             displayName = "Combat Mode";
             description = "The combat the sentry will use. ('RED', 'YELLOW', etc)";

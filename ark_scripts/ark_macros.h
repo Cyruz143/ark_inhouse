@@ -32,7 +32,6 @@
 #define DEBUG_WARN                      "WARN"
 #define DEBUG_ERROR                     "ERROR"
 
-#define SCRIPT_DEFAULT_SENTRY_STANCE        "MIDDLE"
 #define SCRIPT_DEFAULT_SENTRY_SKILL         0.2
 #define SCRIPT_DEFAULT_SENTRY_MODE          "YELLOW"
 #define SCRIPT_DEFAULT_SENTRY_BEHAVIOUR     "AWARE"

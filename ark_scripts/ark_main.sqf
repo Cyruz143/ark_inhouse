@@ -65,21 +65,19 @@ ark_fnc_make_sentry = {
             [["You attempted to make a unit a sentry but you didn't specify a unit!"], DEBUG_ERROR] call ark_debug_fnc_logToServer;
         };
     };
-    PVT_6(_stance,_combatMode,_behaviour,_skill,_disabledFunctions,_enableNightvision);
+    PVT_5(_combatMode,_behaviour,_skill,_disabledFunctions,_enableNightvision);
     
-    _stance = SCRIPT_DEFAULT_SENTRY_STANCE;
     _combatMode = SCRIPT_DEFAULT_SENTRY_MODE;
     _behaviour = SCRIPT_DEFAULT_SENTRY_BEHAVIOUR;
     _skill = SCRIPT_DEFAULT_SENTRY_SKILL;
     _disabledFunctions = SCRIPT_DEFAULT_SENTRY_DISABLED;
     _enableNightvision = SCRIPT_DEFAULT_ENABLE_NIGHTVISION;
 
-    if (count _this > 1) then {_stance = _this select 1;};
-    if (count _this > 2) then {_combatMode = _this select 2;};
-    if (count _this > 3) then {_behaviour = _this select 3;};
-    if (count _this > 4) then {_skill = _this select 4;};
-    if (count _this > 5) then {_disabledFunctions = _this select 5;};
-    if (count _this > 6) then {_enableNightvision = _this select 6;};
+    if (count _this > 1) then {_combatMode = _this select 1;};
+    if (count _this > 2) then {_behaviour = _this select 2;};
+    if (count _this > 3) then {_skill = _this select 3;};
+    if (count _this > 4) then {_disabledFunctions = _this select 4;};
+    if (count _this > 5) then {_enableNightvision = _this select 5;};
 
     (group _unit) enableAttack false;
     DECLARE(_guardWaypoint) = (group _unit) addWaypoint [(getposATL _unit), 0];
@@ -88,7 +86,6 @@ ark_fnc_make_sentry = {
     _guardWaypoint setWaypointBehaviour _behaviour;
     (group _unit) setCurrentWaypoint _guardWaypoint;
     _unit allowFleeing 0;
-    _unit setUnitPos _stance;
     _unit setCombatMode _combatMode;
     _unit setBehaviour _behaviour;
     _unit setSkill _skill;
@@ -104,7 +101,7 @@ ark_fnc_make_sentry = {
     _unit disableAI "FSM";
     _unit disableAI "PATH";
     DEBUG {
-        [["Unit: %1 successfully made a sentry. Stance:  %2 Combat Mode: %3 Behaviour: %4 Skill: %5 Disabled functionality: %6 Enabled Nightvision: %7", _unit, _stance, _combatMode, _behaviour, _skill, _disabledFunctions, _enableNightvision], DEBUG_INFO] call ark_debug_fnc_logToServer;
+        [["Unit: %1 successfully made a sentry. Combat Mode: %2 Behaviour: %3 Skill: %4 Disabled functionality: %5 Enabled Nightvision: %6", _unit, _combatMode, _behaviour, _skill, _disabledFunctions, _enableNightvision], DEBUG_INFO] call ark_debug_fnc_logToServer;
     };
 };
 
@@ -122,7 +119,6 @@ ark_module_make_sentry = {
             [["Logic: %1 had no synced units!", _logic], DEBUG_ERROR] call ark_debug_fnc_logToServer;
         };
     };
-    DECLARE(_stance) = _logic getVariable "Stance";
     DECLARE(_combatMode) = _logic getVariable "Combat_Mode";
     DECLARE(_behaviour) = _logic getVariable "Behaviour";
     DECLARE(_skill) = _logic getVariable "Skill";
@@ -132,7 +128,6 @@ ark_module_make_sentry = {
     {
         if (alive _x) then {
             _x allowFleeing 0;
-            _x setUnitPos _stance;
             _x setCombatMode _combatMode;
             _x setBehaviour _behaviour;
             _x setSkill _skill;
@@ -147,7 +142,7 @@ ark_module_make_sentry = {
                 } forEach _disabledFunctions;
             };
             DEBUG {
-                [["Unit: %1 successfully made a sentry. Stance:  %2 Combat Mode: %3 Behaviour: %4 Skill: %5 Disabled functionality: %6 Enabled Nightvision: %7", _x, _stance, _combatMode, _behaviour, _skill, _disabledFunctions, _enableNightvision], DEBUG_INFO] call ark_debug_fnc_logToServer;
+                [["Unit: %1 successfully made a sentry. Stance:  %2 Combat Mode: %3 Behaviour: %4 Skill: %5 Disabled functionality: %6 Enabled Nightvision: %7", _x, _combatMode, _behaviour, _skill, _disabledFunctions, _enableNightvision], DEBUG_INFO] call ark_debug_fnc_logToServer;
             };
         };
     } forEach _units;

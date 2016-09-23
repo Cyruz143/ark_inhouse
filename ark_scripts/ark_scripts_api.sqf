@@ -10,7 +10,7 @@ ark_api_clear_vehicle = {
 };
 
 ark_api_make_sentry = {
-    //FUN_ARGS_6(_unit,_stance,_combatMode,_behaviour,_skill,_disabledFunctions);
+    //FUN_ARGS_5(_unit,_combatMode,_behaviour,_skill,_disabledFunctions);
     
     _this call ark_fnc_make_sentry;
 };
