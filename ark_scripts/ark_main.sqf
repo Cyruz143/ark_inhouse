@@ -193,47 +193,6 @@ ark_eh_mapClickTeleport = {
 
 // AI Debug
 
-ark_fnc_createLocalMarker = {
-    FUN_ARGS_6(_name,_shape,_type,_colour,_text,_size);
-
-    DECLARE(_marker) = createMarkerLocal [_name, [0, 0, 0]];
-    _marker setMarkerShapeLocal _shape;
-    _marker setMarkerTypeLocal _type;
-    _marker setMarkerColorLocal _colour;
-    _marker setMarkerTextLocal _text;
-    _marker setMarkerSize _size;
-
-    _marker;
-};
-
-ark_fnc_returnSideColour = {
-    FUN_ARGS_1(_side);
-
-    if (_side == WEST) exitWith {"ColorBlue";};
-    if (_side == EAST) exitWith {"ColorRed";};
-    if (_side == RESISTANCE) exitWith {"ColorGreen";};
-    if (_side == CIVILIAN) exitWith {"ColorPink";};
-};
-
-ark_fnc_createUnitLocalMarker = {
-    FUN_ARGS_1(_unit);
-
-    DECLARE(_colour) = [side _unit] call ark_fnc_returnSideColour;
-    DECLARE(_marker) = [
-        name _unit,
-        "ICON",
-        AI_DEBUG_MARKER_TYPE,
-        _colour,
-        "",
-        AI_DEBUG_MARKER_SIZE
-    ] call ark_fnc_createLocalMarker;
-
-    if (isPlayer _unit) then {
-        _marker setMarkerTextLocal (name _unit);
-    };
-    _unit setVariable ["ark_aidebug_marker", (name _unit)];
-};
-
 ark_fnc_AiDebug = {
     private ["_deleteMarkers"];
     _deleteMarkers = if (count _this > 0) then {_this select 0} else {false};
