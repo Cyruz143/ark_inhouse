@@ -39,10 +39,6 @@
 #define SCRIPT_DEFAULT_SENTRY_DISABLED      ["COVER"]
 #define SCRIPT_DEFAULT_ENABLE_NIGHTVISION   true
 
-#define AI_DEBUG_UPDATE_DELAY           2
-#define AI_DEBUG_MARKER_SIZE            [0.6, 0.6]
-#define AI_DEBUG_MARKER_TYPE            "mil_triangle_noShadow"
-
 // WARNING
 // Macros are sensitive for "," (comma), "(", ")" (parenthese) and " " (space).
 // Provide only the asked numbers of arguments, without additional commas and without spaces beetween commas.
