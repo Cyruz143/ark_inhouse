@@ -168,7 +168,6 @@ ark_fnc_assignMapTeleport = {
 
 ark_fnc_enableMapTeleport = {
     FUN_ARGS_1(_player);
-    titleText [DEPLOY_WARNING_MSG, "PLAIN", 0.5];
     hintSilent "Map Click Teleport has been enabled.";
     _player onMapSingleClick {
         _this setposATL _pos;

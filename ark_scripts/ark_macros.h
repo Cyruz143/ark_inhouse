@@ -39,8 +39,6 @@
 #define SCRIPT_DEFAULT_SENTRY_DISABLED      ["COVER"]
 #define SCRIPT_DEFAULT_ENABLE_NIGHTVISION   true
 
-#define DEPLOY_WARNING_MSG              "UNREST/UNDEPLOY YOUR WEAPON NOW"
-
 #define AI_DEBUG_UPDATE_DELAY           2
 #define AI_DEBUG_MARKER_SIZE            [0.6, 0.6]
 #define AI_DEBUG_MARKER_TYPE            "mil_triangle_noShadow"
