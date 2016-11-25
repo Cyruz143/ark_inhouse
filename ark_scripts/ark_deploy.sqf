@@ -58,6 +58,7 @@ ark_deploy_fnc_assignDeployClick = {
     FUN_ARGS_1(_player);
     
     hint "Click anywhere on the map to deploy";
+    openMap true;
     _player onMapSingleClick {
         [_this, _pos] call ark_deploy_fnc_deployGroup;
     };
