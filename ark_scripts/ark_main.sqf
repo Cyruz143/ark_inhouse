@@ -92,6 +92,8 @@ ark_fnc_make_sentry = {
     _unit setCombatMode _combatMode;
     _unit setBehaviour _behaviour;
     _unit setSkill _skill;
+    _unit disableAI "FSM";
+    _unit disableAI "PATH";
     if (count _disabledFunctions > 0) then {
         {
             _unit disableAI _x;
@@ -101,8 +103,6 @@ ark_fnc_make_sentry = {
     if (_enableNightvision) then {
         _unit linkItem "NVGoggles_AI";
     };
-    _unit disableAI "FSM";
-    _unit disableAI "PATH";
     DEBUG {
         [["Unit: %1 successfully made a sentry. Stance:  %2 Combat Mode: %3 Behaviour: %4 Skill: %5 Disabled functionality: %6 Enabled Nightvision: %7", _unit, _stance, _combatMode, _behaviour, _skill, _disabledFunctions, _enableNightvision], DEBUG_INFO] call ark_debug_fnc_logToServer;
     };

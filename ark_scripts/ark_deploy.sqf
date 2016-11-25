@@ -107,21 +107,18 @@ ark_deploy_fnc_playerIsLeader = {
     if !([_unit] call ark_deploy_fnc_playerIsValid) exitWith {
         false;
     };
-    DECLARE(_gearClass) = _unit getVariable ["hull3_gear_class", nil];
-    if (isNil "_gearClass") exitWith {
+
+    private "_groupLeader";
+    _groupLeader = leader group _unit;
+
+    if (_unit == _groupLeader) then {
         DEBUG {
-            [["Gear class for unit: %1 returned as nil", _unit], DEBUG_ERROR] call ark_debug_fnc_logToServer;
-        };
-        false;
-    };
-    if (_gearClass in DEPLOY_LEADER_ARRAY) then {
-        DEBUG {
-            [["Unit: %1 with gear class %2 is a leader", _unit, _gearClass], DEBUG_INFO] call ark_debug_fnc_logToServer;
+            [["Unit: %1 is a leader", _unit], DEBUG_INFO] call ark_debug_fnc_logToServer;
         };
         true;
     } else {
         DEBUG {
-            [["Unit: %1 with gear class %2 is NOT a leader", _unit, _gearClass], DEBUG_INFO] call ark_debug_fnc_logToServer;
+            [["Unit: %1 is NOT a leader", _unit], DEBUG_INFO] call ark_debug_fnc_logToServer;
         };
         false;
     };
