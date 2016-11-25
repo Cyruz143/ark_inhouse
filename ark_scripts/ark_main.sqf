@@ -251,7 +251,7 @@ ark_fnc_AiDebug = {
                         _markerName setMarkerTypeLocal "mil_triangle";
                         _markerName setMarkerColorLocal _sideColor;
                         _markerName setMarkerTextLocal "";
-                        _markerName setMarkerSizeLocal [0.5,0.5];
+                        _markerName setMarkerSizeLocal [0.5,0.75];
                         _markerName setMarkerDirLocal getDir _unit;
                         if (!isNil {(group _unit) getVariable "ark_adm_spawnedBy"}) then {
                             _markerName setMarkerTextLocal "*";
