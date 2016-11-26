@@ -109,8 +109,7 @@ ark_deploy_fnc_playerIsLeader = {
         false;
     };
 
-    private "_groupLeader";
-    _groupLeader = leader group _unit;
+    private _groupLeader = leader group _unit;
 
     if (_unit == _groupLeader) then {
         DEBUG {

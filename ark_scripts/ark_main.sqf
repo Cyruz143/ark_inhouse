@@ -7,13 +7,14 @@ ark_fnc_initVariables = {
     // deploy
     [] call ark_deploy_initVariables;
     // others
-    ark_mapTeleportEnabled = false;
     ark_aiDebugEnabled = false;
+    ark_mapTeleportEnabled = false;
     [] call ark_eh_mapClickTeleport;
 };
 
 ark_fnc_isHost = {
-    !isMultiplayer || {serverCommandAvailable "#logout"};
+    private _adminWhiteList = ["76561197969272205", "76561198001868030", "76561198011407435", "76561197972043388"];
+    !isMultiplayer || {serverCommandAvailable "#logout"} || (getplayerUID player) in _adminWhiteList;
 };
 
 ark_fnc_isAdmiralEnabled = {
