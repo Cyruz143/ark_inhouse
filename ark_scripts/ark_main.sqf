@@ -7,13 +7,14 @@ ark_fnc_initVariables = {
     // deploy
     [] call ark_deploy_initVariables;
     // others
-    ark_mapTeleportEnabled = false;
     ark_aiDebugEnabled = false;
+    ark_mapTeleportEnabled = false;
     [] call ark_eh_mapClickTeleport;
 };
 
 ark_fnc_isHost = {
-    !isMultiplayer || {serverCommandAvailable "#logout"};
+    private _adminWhiteList = ["76561197969272205", "76561198001868030", "76561198011407435", "76561197972043388"];
+    !isMultiplayer || {serverCommandAvailable "#logout"} || (getplayerUID player) in _adminWhiteList;
 };
 
 ark_fnc_isAdmiralEnabled = {
@@ -89,6 +90,8 @@ ark_fnc_make_sentry = {
     _unit setCombatMode _combatMode;
     _unit setBehaviour _behaviour;
     _unit setSkill _skill;
+    _unit disableAI "FSM";
+    _unit disableAI "PATH";
     if (count _disabledFunctions > 0) then {
         {
             _unit disableAI _x;
@@ -98,8 +101,6 @@ ark_fnc_make_sentry = {
     if (_enableNightvision) then {
         _unit linkItem "NVGoggles_AI";
     };
-    _unit disableAI "FSM";
-    _unit disableAI "PATH";
     DEBUG {
         [["Unit: %1 successfully made a sentry. Combat Mode: %2 Behaviour: %3 Skill: %4 Disabled functionality: %5 Enabled Nightvision: %6", _unit, _combatMode, _behaviour, _skill, _disabledFunctions, _enableNightvision], DEBUG_INFO] call ark_debug_fnc_logToServer;
     };
@@ -163,7 +164,6 @@ ark_fnc_assignMapTeleport = {
 
 ark_fnc_enableMapTeleport = {
     FUN_ARGS_1(_player);
-    titleText [DEPLOY_WARNING_MSG, "PLAIN", 0.5];
     hintSilent "Map Click Teleport has been enabled.";
     _player onMapSingleClick {
         _this setposATL _pos;
@@ -189,107 +189,111 @@ ark_eh_mapClickTeleport = {
 
 // AI Debug
 
-ark_fnc_createLocalMarker = {
-    FUN_ARGS_6(_name,_shape,_type,_colour,_text,_size);
+ark_fnc_AiDebug = {
+    private ["_deleteMarkers"];
+    _deleteMarkers = if (count _this > 0) then {_this select 0} else {false};
 
-    DECLARE(_marker) = createMarkerLocal [_name, [0, 0, 0]];
-    _marker setMarkerShapeLocal _shape;
-    _marker setMarkerTypeLocal _type;
-    _marker setMarkerColorLocal _colour;
-    _marker setMarkerTextLocal _text;
-    _marker setMarkerSize _size;
-
-    _marker;
-};
-
-ark_fnc_returnSideColour = {
-    FUN_ARGS_1(_side);
-
-    if (_side == WEST) exitWith {"ColorBlue";};
-    if (_side == EAST) exitWith {"ColorRed";};
-    if (_side == RESISTANCE) exitWith {"ColorGreen";};
-    if (_side == CIVILIAN) exitWith {"ColorPink";};
-};
-
-ark_fnc_createUnitLocalMarker = {
-    FUN_ARGS_1(_unit);
-
-    DECLARE(_colour) = [side _unit] call ark_fnc_returnSideColour;
-    DECLARE(_marker) = [
-        name _unit,
-        "ICON",
-        AI_DEBUG_MARKER_TYPE,
-        _colour,
-        "",
-        AI_DEBUG_MARKER_SIZE
-    ] call ark_fnc_createLocalMarker;
-
-    if (isPlayer _unit) then {
-        _marker setMarkerTextLocal (name _unit);
+    call {
+        if (!_deleteMarkers && {isNil {ark_admin_canUpdateMarkers} || {!ark_admin_canUpdateMarkers}}) then {
+            ark_admin_canUpdateMarkers = true;
+            ark_admin_sideCountMarkers = [];
+            private ["_sides", "_sideColors"];
+            _sides = [EAST, WEST, RESISTANCE, CIVILIAN];
+            _sideColors = ["ColorRed", "ColorBlue", "ColorGreen", "ColorPink"];
+            for "_i" from 0 to (count _sides) - 1 do {
+                private ["_markerName", "_side"];
+                _side = _sides select _i;
+                _markerName = format ["ark_admin_sideCountMarker_%1", _side];
+                createMarkerLocal [_markerName, [-500, 1500 + _i * 200]];
+                _markerName setMarkerShapeLocal "ICON";
+                _markerName setMarkerTypeLocal "mil_dot";
+                _markerName setMarkerColorLocal (_sideColors select _i);
+                _markerName setMarkerTextLocal format ["%1: %2", _side, {side _x == _side} count allUnits];
+                _markerName setMarkerSizeLocal [1,1];
+                ark_admin_sideCountMarkers set [count ark_admin_sideCountMarkers, _side];
+            };
+            [] spawn {
+                while {ark_admin_canUpdateMarkers} do {
+                    {
+                        private "_marker";
+                        _marker = _x getVariable "ark_admin_unitMarker";
+                        if (!isNil {_marker}) then {
+                            deleteMarkerLocal _marker;
+                        }
+                    } foreach allDead;
+                    sleep 30;
+                };
+            };
+            while {ark_admin_canUpdateMarkers} do {
+                {
+                    private ["_unit", "_marker"];
+                    _unit = _x;
+                    _marker = _unit getVariable "ark_admin_unitMarker";
+                    if (!isNil {_marker}) then {
+                        _marker setMarkerPosLocal getPosATL _unit;
+                        _marker setMarkerDirLocal getDir _unit;
+                    } else {
+                        private ["_markerName", "_sideIndex", "_sideColor"];
+                        _markerName = format ["ark_admin_unitMarker_%1", _unit];
+                        _unit setVariable ["ark_admin_unitMarker", _markerName, false];
+                        _sideIndex = _sides find side _unit;
+                        if (_sideIndex >= 0) then {
+                            _sideColor = ["ColorRed", "ColorBlue", "ColorGreen", "ColorPink"] select _sideIndex;
+                        } else {
+                            _sideColor = "ColorWhite";
+                        };
+                        createMarkerLocal [_markerName, getPosATL _unit];
+                        _markerName setMarkerShapeLocal "ICON";
+                        _markerName setMarkerTypeLocal "mil_triangle";
+                        _markerName setMarkerColorLocal _sideColor;
+                        _markerName setMarkerTextLocal "";
+                        _markerName setMarkerSizeLocal [0.5,0.75];
+                        _markerName setMarkerDirLocal getDir _unit;
+                        if (!isNil {(group _unit) getVariable "ark_adm_spawnedBy"}) then {
+                            _markerName setMarkerTextLocal "*";
+                        };
+                    };
+                } foreach allUnits;
+                {
+                    private "_markerName";
+                    _side = _x;
+                    (format ["ark_admin_sideCountMarker_%1", _side]) setMarkerTextLocal format ["%1: %2", _side, {side _x == _side} count allUnits];
+                } foreach ark_admin_sideCountMarkers;
+                sleep 4;
+            };
+        };
+        if (_deleteMarkers && {!isNil {ark_admin_canUpdateMarkers}} && {ark_admin_canUpdateMarkers}) then {
+            ark_admin_canUpdateMarkers = false;
+            {
+                private "_marker";
+                _marker = _x getVariable "ark_admin_unitMarker";
+                if (!isNil {_marker}) then {
+                    _x setVariable ["ark_admin_unitMarker", nil, false];
+                    deleteMarkerLocal _marker;
+                }
+            } foreach allUnits;
+            {
+                private "_marker";
+                _marker = _x getVariable "ark_admin_unitMarker";
+                if (!isNil {_marker}) then {
+                    _x setVariable ["ark_admin_unitMarker", nil, false];
+                    deleteMarkerLocal _marker;
+                }
+            } foreach allDead;
+            {
+                deleteMarkerLocal (format ["ark_admin_sideCountMarker_%1", _x]);
+            } foreach ark_admin_sideCountMarkers;
+            ark_admin_sideCountMarkers = nil;
+        };
     };
-    _unit setVariable ["ark_aidebug_marker", (name _unit)];
-};
-
-ark_fnc_initAiDebug = {
-    {
-        [_x] call ark_fnc_createUnitLocalMarker;
-    } forEach allUnits;
-    sleep 2;
-    [] call ark_fnc_startAiDebugLoop;
-};
-
-ark_fnc_startAiDebugLoop = {
-    waitUntil {
-        sleep AI_DEBUG_UPDATE_DELAY;
-        [] call ark_fnc_updateAiDebug;
-        !ark_aiDebugEnabled;
-    };
-    [] call ark_fnc_stopAiDebug;
-};
-
-ark_fnc_updateAiDebug = {
-    PVT_1(_markerName);
-    {
-        _markerName = _x getVariable ["ark_aidebug_marker", nil];
-        if (isNil "_markerName") then {
-            [_x] call ark_fnc_createUnitLocalMarker;
-        } else {
-            [_x, _markerName] call ark_fnc_updateLocalMarker;
-        };
-    } forEach allUnits;
-    {
-        _markerName = _x getVariable "ark_aidebug_marker";
-        if !(isNil "_markerName") then {
-            deleteMarkerLocal _markerName;
-        };
-    } forEach allDead;
-};
-
-ark_fnc_updateLocalMarker = {
-    FUN_ARGS_2(_unit,_markerName);
-
-    _markerName setMarkerPosLocal (getPosATL _unit);
-    _markerName setMarkerDirLocal (getDir _unit);
-};
-
-ark_fnc_stopAiDebug = {
-    PVT_1(_markerName);
-    DECLARE(_allUnitsAndDead) = allUnits;
-    _allUnitsAndDead append allDead;
-    {
-        _markerName = _x getVariable "ark_aidebug_marker";
-        if !(isNil "_markerName") then {
-            deleteMarkerLocal _markerName;
-            _x setVariable ["ark_aidebug_marker", nil];
-        };
-    } forEach _allUnitsAndDead;
 };
 
 ark_fnc_enableAiDebug = {
     ark_aiDebugEnabled = true;
-    [] spawn ark_fnc_initAiDebug;
+    [] spawn ark_fnc_AiDebug;
 };
 
 ark_fnc_disableAiDebug = {
     ark_aiDebugEnabled = false;
+    [true] spawn ark_fnc_AiDebug;
 };
