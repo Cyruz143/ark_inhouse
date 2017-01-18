@@ -1,7 +1,7 @@
 [{
   {
     if (!(_x isKindOf "LandVehicle") || _x isKindOf "StaticWeapon") exitWith {};
-    if (!canMove _x && !isnull (driver _x) && !((driver _x) in PlayableUnits)) then {[_x] call ark_fnc_vehicleRepair};
+    if (!canMove _x && !((driver _x) in PlayableUnits)) then {[_x] call ark_fnc_vehicleRepair;};
     
     private _isEHAlreadyApplied = _x getVariable ["ark_ai_vehicles_repair_eh_applied", false];
     if (_isEHAlreadyApplied) exitWith {};
@@ -9,19 +9,19 @@
     _x addEventHandler ["Hit", {[_this select 0] call ark_fnc_vehicleHit}];
     _x setVariable ["ark_ai_vehicles_repair_eh_applied", true, true];
   } forEach vehicles;
-  
+
 }, 15] call CBA_fnc_addPerFrameHandler;
 
 ark_fnc_vehicleHit = {
-  private _vehicle = _this select 0;
-  
-  _vehicle setVariable ["ark_ai_vehicles_last_hit", time, true];
+    private _vehicle = _this select 0;
+
+    _vehicle setVariable ["ark_ai_vehicles_last_hit", time, true];
 };
 
 ark_fnc_vehicleRepair = {
     private _vehicle = _this select 0;
     private _driver = driver _vehicle;
-      
+
     private _waitingToRepair = _vehicle getVariable ["ark_ai_vehicles_awaiting_repair", false];
 
     if (_waitingToRepair) exitWith {};
@@ -56,12 +56,12 @@ ark_fnc_vehicleRepair = {
             };
 
             _vehicle setDamage 0;
+            _vehicle setPosATL [getPosATL _vehicle select 0, getPosATL _vehicle select 1, (getPosATL _vehicle select 2) + 0.5];
 
             _driver playMove "";
             _driver moveInDriver _vehicle;
             {_driver enableAI _x;} forEach ["TARGET", "AUTOTARGET", "PATH", "FSM", "AUTOCOMBAT"];
 
-            _vehicle setVelocity [0,0,2];
             _vehicle forceSpeed -1;
             _vehicle setVariable ["ark_ai_vehicles_awaiting_repair", false, true];
         };

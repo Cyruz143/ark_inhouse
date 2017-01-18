@@ -11,6 +11,6 @@ class CfgPatches {
 
 class Extended_PreInit_EventHandlers {
     class ark_ace_spectator {
-        init = "[] call compile preProcessFileLineNumbers 'x\ark\addons\ark_ace_spectator\preinit.sqf';";
+        clientInit = "[] call compile preProcessFileLineNumbers 'x\ark\addons\ark_ace_spectator\preinit.sqf';";
     };
 };
