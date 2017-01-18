@@ -34,10 +34,11 @@ ark_fnc_vehicleRepair = {
             params ["_vehicle","_driver"];
 
             waitUntil {
+              sleep 5;
               private _lastHit = _vehicle getVariable ["ark_ai_vehicles_last_hit", 0];
               private _outOfCombatDelayTime = _lastHit + 10;
 
-              (_driver findNearestEnemy _driver) distance _driver > 250 && time >= _outOfCombatDelayTime || time - _lastHit > 60;
+              (time >= _outOfCombatDelayTime || time - _lastHit > 30);
             };
 
             _vehicle forceSpeed 0;
