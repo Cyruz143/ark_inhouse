@@ -26,16 +26,19 @@ ark_fnc_initSpec = {
     private _killMessage = format ["You were %1 by %2 with an %3 at %4 m",_sideCheck,_attacker,_weapon,_distance];
     [
         [
-            ["_killMessage","<t align = 'center' shadow = '1' size = '1' font='PuristaBold'>%1</t>"]
+            [_killMessage,"<t align = 'center' shadow = '1' size = '1' font='PuristaBold'>%1</t>"]
         ]
     ] spawn BIS_fnc_typeText;
 
-    sleep 5;
-    cutText ["", "PLAIN", 0];
-    2 fadeSound 1;
+    [_attacker,_attackerPos] spawn {
+        params ["_attacker","_attackerPos"];
+            sleep 5;
+            cutText ["", "PLAIN", 0];
+            2 fadeSound 1;
 
-    ["west", "east", "resistance", "civ"] call acre_api_fnc_babelSetSpokenLanguages;
+            ["west", "east", "resistance", "civ"] call acre_api_fnc_babelSetSpokenLanguages;
 
-    [2, _attacker, -2, _attackerPos] call ace_spectator_fnc_setCameraAttributes;
-    [true] call ace_spectator_fnc_setSpectator;
+            [2, _attacker, -2, _attackerPos] call ace_spectator_fnc_setCameraAttributes;
+            [true] call ace_spectator_fnc_setSpectator;
+    };
 };
