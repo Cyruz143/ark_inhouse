@@ -21,14 +21,16 @@ ark_fnc_initSpec = {
         _sideCheck = "<t color='#0066CC'>friendly fired</t>";
     };
 
-    5 fadeSound 0;
-    cutText ["", "BLACK OUT", 5];
-
     private _killMessage = format ["You were %1 by %2 with an %3 at %4 m",_sideCheck,_attackerName,_attackerWeapon,_attackerDistance];
-    [_killMessage,,,5,2] spawn BIS_fnc_dynamicText;
 
-    [_attacker,_attackerPos] spawn {
-        params ["_attacker","_attackerPos"];
+    [_attacker,_attackerPos,_killMessage] spawn {
+        params ["_attacker","_attackerPos","_killMessage"];
+            5 fadeSound 0;
+            cutText ["", "BLACK OUT", 5];
+            sleep 5;
+            
+            [_killMessage,-1,-1,5,1] spawn BIS_fnc_dynamicText;
+
             sleep 5;
             cutText ["", "PLAIN", 0];
             2 fadeSound 1;
