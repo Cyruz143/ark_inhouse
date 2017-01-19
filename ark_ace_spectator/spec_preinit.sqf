@@ -14,10 +14,10 @@ ark_fnc_initSpec = {
         _attacker = effectiveCommander _attacker;
     };
 
-    private _sideCheck = if((side group _victim) == (side group _attacker)) then {
-        _sideCheck = "<t color='#0066CC'>friendly fired</t>"
-    } else {
-        _sideCheck = "<t color='#CC0000'>killed</t>"
+    private _sideCheck = "<t color='#CC0000'>killed</t>";
+    
+    if((side group _victim) == (side group _attacker)) then {
+        _sideCheck = "<t color='#0066CC'>friendly fired</t>";
     };
 
     5 fadeSound 0;
