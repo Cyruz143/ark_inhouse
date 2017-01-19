@@ -6,8 +6,9 @@ ark_fnc_initSpec = {
     private _victim = _this select 0;
     private _attacker = _this select 1;
 
-    private _distance = _victim distance _attacker;
-    private _weapon = currentWeapon _attacker;
+    private _attackerName = name _attacker;
+    private _attackerDistance = round (getPos _victim distance getPos _attacker);
+    private _attackerWeapon = getText (configFile >> "CfgWeapons" >> (currentWeapon vehicle _attacker) >> "DisplayName");
     private _attackerPos = getPosATL _attacker;
 
     if ((!isNull _attacker) && {!(_attacker isKindof "CAManBase")}) then {
@@ -23,12 +24,8 @@ ark_fnc_initSpec = {
     5 fadeSound 0;
     cutText ["", "BLACK OUT", 5];
 
-    private _killMessage = format ["You were %1 by %2 with an %3 at %4 m",_sideCheck,_attacker,_weapon,_distance];
-    [
-        [
-            [_killMessage,"<t align = 'center' shadow = '1' size = '1' font='PuristaBold'>%1</t>"]
-        ]
-    ] spawn BIS_fnc_typeText;
+    private _killMessage = format ["You were %1 by %2 with an %3 at %4 m",_sideCheck,_attackerName,_attackerWeapon,_attackerDistance];
+    [_killMessage,,,5,2] spawn BIS_fnc_dynamicText;
 
     [_attacker,_attackerPos] spawn {
         params ["_attacker","_attackerPos"];
