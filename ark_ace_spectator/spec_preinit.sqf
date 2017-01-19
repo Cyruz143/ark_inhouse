@@ -3,8 +3,8 @@
 }] call hull3_event_fnc_addEventHandler;
 
 ark_fnc_initSpec = {
-    private _victim = this select 0;
-    private _attacker = this select 1;
+    private _victim = _this select 0;
+    private _attacker = _this select 1;
 
     private _distance = _victim distance _attacker;
     private _weapon = currentWeapon _attacker;
