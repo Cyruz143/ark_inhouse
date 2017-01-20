@@ -6,6 +6,8 @@ ark_fnc_initSpec = {
     private _victim = _this select 0;
     private _attacker = _this select 1;
 
+    if (playerRespawnTime >= 1) exitWith {};
+
     private _attackerName = name _attacker;
     private _attackerDistance = round (getPos _victim distance getPos _attacker);
     private _attackerWeapon = getText (configFile >> "CfgWeapons" >> (currentWeapon vehicle _attacker) >> "DisplayName");
