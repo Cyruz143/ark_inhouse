@@ -6,8 +6,8 @@ ark_fnc_initSpec = {
     private _victim = _this select 0;
     private _attacker = _this select 1;
 
-    private _respawn = getMissionConfigValue ["respawn",0];
-    if (_respawn != 0) exitWith {};
+    private _respawn = getMissionConfigValue ["respawn",1];
+    if (_respawn != 1) exitWith {};
 
     private _attackerName = name _attacker;
     private _attackerDistance = round (getPos _victim distance getPos _attacker);
