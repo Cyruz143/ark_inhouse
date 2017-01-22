@@ -6,7 +6,7 @@
     private _isEHAlreadyApplied = _x getVariable ["ark_ai_vehicles_repair_eh_applied", false];
     if (_isEHAlreadyApplied) exitWith {};
     
-    _x addEventHandler ["Hit", {ark_fnc_vehicleHit}];
+    _x addEventHandler ["Hit", ark_fnc_vehicleHit];
     _x setVariable ["ark_ai_vehicles_repair_eh_applied", true, true];
   } forEach vehicles;
 
