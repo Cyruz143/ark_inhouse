@@ -1,16 +1,16 @@
-[{
-  {
-    if (!(_x isKindOf "LandVehicle") || _x isKindOf "StaticWeapon" || !alive _x || !simulationEnabled _x) exitWith {};
-    if (!canMove _x && !isNull (driver _x) && !((driver _x) in PlayableUnits)) then {[_x] call ark_fnc_vehicleRepair};
-    
-    private _isEHAlreadyApplied = _x getVariable ["ark_ai_vehicles_repair_eh_applied", false];
-    if (_isEHAlreadyApplied) exitWith {};
-    
-    _x addEventHandler ["Hit", ark_fnc_vehicleHit];
-    _x setVariable ["ark_ai_vehicles_repair_eh_applied", true, true];
-  } forEach vehicles;
-
-}, 15] call CBA_fnc_addPerFrameHandler;
+[] spawn {
+    while {true} do {
+        sleep 15;
+        if (!(_x isKindOf "LandVehicle") || _x isKindOf "StaticWeapon" || !alive _x || !simulationEnabled _x) exitWith {};
+        if (!canMove _x && !isNull (driver _x) && !((driver _x) in PlayableUnits)) then {[_x] call ark_fnc_vehicleRepair};
+        
+        private _isEHAlreadyApplied = _x getVariable ["ark_ai_vehicles_repair_eh_applied", false];
+        if (_isEHAlreadyApplied) exitWith {};
+        
+        _x addEventHandler ["Hit", ark_fnc_vehicleHit];
+        _x setVariable ["ark_ai_vehicles_repair_eh_applied", true, true];
+    } forEach vehicles;
+};
 
 ark_fnc_vehicleHit = {
     private _vehicle = _this select 0;
