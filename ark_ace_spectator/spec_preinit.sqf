@@ -5,9 +5,21 @@
 ark_fnc_initSpec = {
     private _victim = _this select 0;
     private _attacker = _this select 1;
+    private _instigator = _this select 2;
 
     private _respawn = getMissionConfigValue ["respawn",1];
     if (_respawn != 1) exitWith {};
+
+    if (isNull _attacker) then {
+        _attacker = _instigator;
+    };
+
+    if ((isNull _attacker) || (_attacker == _victim)) then {
+        private _aceSource = _victim getVariable ["ace_medical_lastDamageSource", objNull];
+        if ((!isNull _aceSource) && {_aceSource != _victim}) then {
+            _attacker = _aceSource;
+        };
+    };
 
     private _attackerName = name _attacker;
     private _attackerDistance = round (getPos _victim distance getPos _attacker);
