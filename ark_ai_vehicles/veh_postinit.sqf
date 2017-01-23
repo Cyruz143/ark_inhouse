@@ -1,13 +1,3 @@
-[] spawn {
-    while {true} do {
-        {
-            if (!(_x isKindOf "LandVehicle") || _x isKindOf "StaticWeapon" || !alive _x || !simulationEnabled _x) exitWith {};
-            if (!canMove _x && !isNull (driver _x) && !((driver _x) in PlayableUnits)) then {[_x] call ark_fnc_vehicleRepair};
-        } forEach vehicles;
-        sleep 15;
-    };
-};
-
 ark_fnc_vehicleRepair = {
     private _vehicle = _this select 0;
     private _driver = driver _vehicle;
@@ -48,5 +38,15 @@ ark_fnc_vehicleRepair = {
             _vehicle forceSpeed -1;
             _vehicle setVariable ["ark_ai_vehicles_awaiting_repair", false, true];
         };
+    };
+};
+
+[] spawn {
+    while {true} do {
+        {
+            if (!(_x isKindOf "LandVehicle") || _x isKindOf "StaticWeapon" || !alive _x || !simulationEnabled _x) exitWith {};
+            if (!canMove _x && !isNull (driver _x) && !((driver _x) in PlayableUnits)) then {[_x] call ark_fnc_vehicleRepair};
+        } forEach vehicles;
+        sleep 15;
     };
 };
