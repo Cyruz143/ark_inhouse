@@ -30,17 +30,17 @@ ark_fnc_initSpec = {
         _attacker = effectiveCommander _attacker;
     };
 
-    private _sideCheck = "<t color='#CC0000'>killed</t>";
+    private _sideCheck = "were <t color='#CC0000'>killed</t>";
     
     if((side group _victim) == (side group _attacker)) then {
-        _sideCheck = "<t color='#0066CC'>friendly fired</t>";
+        _sideCheck = "were <t color='#0066CC'>friendly fired</t>";
     };
 
     if(_attacker == _victim) then {
         _sideCheck = "<t color='#009933'>played yourself</t>";
     };
 
-    private _killMessage = format ["You were %1 by %2 with an %3 at %4 m",_sideCheck,_attackerName,_attackerWeapon,_attackerDistance];
+    private _killMessage = format ["You %1 by %2 with an %3 at %4 m",_sideCheck,_attackerName,_attackerWeapon,_attackerDistance];
 
     [_attacker,_attackerPos,_killMessage] spawn {
         params ["_attacker","_attackerPos","_killMessage"];
