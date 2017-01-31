@@ -2,11 +2,11 @@
 /*%FSM<HEAD>*/
 /*
 item0[] = {"DEFINE_ENUM_BEG",-1,250,-1030.000000,-280.000000,-690.000000,-110.000000,0.000000,"DEFINE_ENUM_BEG(DangerCause)" \n "  DCEnemyDetected, // the first enemy detected" \n "  DCFire, // fire visible" \n "  DCHit, // vehicle hit" \n "  DCEnemyNear, // enemy very close to me" \n "  DCExplosion, // explosion detected" \n "  DCDeadBodyGroup, // dead soldier from my group found" \n "  DCDeadBody, // other dead soldier found" \n "  DCScream // hit soldier screaming" \n "DEFINE_ENUM_END(DangerCause)" \n ""};
-item1[] = {"Destroyed",4,218,-1080.000000,429.145386,-990.000000,479.145386,0.000000,"Destroyed"};
+item1[] = {"Destroyed",4,218,-1074.034180,390.363831,-984.033569,440.363831,0.000000,"Destroyed"};
 item2[] = {"End",1,250,-140.000000,599.145386,-50.000000,649.145386,0.000000,"End"};
 item3[] = {"Causes__3_ENEMY",4,218,-830.000000,-50.000000,-720.000000,20.000000,2.000000,"Causes:" \n "3" \n "ENEMY NEAR"};
 item4[] = {"Rest",8,218,-480.891846,532.010254,-390.891846,582.010254,0.000000,"Rest"};
-item5[] = {"Timeout",4,218,-1000.000000,369.145386,-910.000000,419.145386,0.000000,"Timeout"};
+item5[] = {"Timeout",4,218,-958.587280,271.017731,-868.587280,321.017731,0.000000,"Timeout"};
 item6[] = {"Reacting_on_danger",0,250,-500.000000,-150.000000,-360.000000,-100.000000,0.000000,"Reacting on danger!"};
 item7[] = {"_",2,250,-820.000000,100.000000,-730.000000,150.000000,0.000000,""};
 item8[] = {"Causes__5__6",4,218,-960.000000,-50.000000,-850.000000,20.000000,1.000000,"Causes:" \n "5, 6"};
@@ -20,12 +20,13 @@ item15[] = {"__4",2,250,-390.000000,100.000000,-300.000000,150.000000,0.000000,"
 item16[] = {"Cause_0_ENEMY_DE",4,218,-270.000000,-50.000000,-150.000000,20.000000,3.000000,"Cause 0" \n "ENEMY DETECTED"};
 item17[] = {"Signal_enemy",2,250,-270.000000,100.000000,-150.000000,150.000000,0.000000,"Signal enemy"};
 item18[] = {"Cause__8_CAN_FIR",4,218,-1090.000000,-50.000000,-980.000000,20.000000,1.000000,"Cause:" \n "8" \n "CAN FIRE"};
-item19[] = {"Stop_to_fire",2,4346,-1080.000000,110.000000,-990.000000,160.000000,0.000000,"Stop to fire"};
+item19[] = {"Stop_to_fire",2,250,-1080.000000,110.000000,-990.000000,160.000000,0.000000,"Stop to fire"};
 item20[] = {"Check_queue",2,250,-140.000000,349.145386,-50.000000,399.145386,0.000000,"Check queue"};
 item21[] = {"Next__cause",4,218,-140.000000,-100.000000,-50.000000,-50.000000,1.000000,"Next  cause"};
 item22[] = {"Always",8,218,-140.000000,479.145386,-50.000000,529.145386,0.000000,"Always"};
 item23[] = {"Destroyed__Conti",2,250,-870.000000,489.145386,-780.000000,539.145386,0.000000,"Destroyed:" \n "Continue"};
-item24[] = {"Timeout__Continu",2,250,-860.000000,419.145386,-770.000000,469.145386,0.000000,"Timeout:" \n "Continue"};
+item24[] = {"Timeout__Continu",2,250,-863.295532,364.434906,-773.295532,414.434906,0.000000,"Timeout:" \n "Continue"};
+item25[] = {"___Bad_Shit_Bro",4,218,-1281.505005,-71.543579,-1191.504883,-21.543579,0.000000,"9" \n "Bad Shit Bro"};
 version=1;
 class LayoutItems
 {
@@ -51,28 +52,30 @@ link8[] = {6,12};
 link9[] = {6,14};
 link10[] = {6,16};
 link11[] = {6,18};
-link12[] = {7,4};
-link13[] = {8,9};
-link14[] = {9,4};
-link15[] = {10,11};
-link16[] = {11,4};
-link17[] = {12,13};
-link18[] = {13,4};
-link19[] = {14,15};
-link20[] = {15,4};
-link21[] = {16,17};
-link22[] = {17,4};
-link23[] = {18,19};
-link24[] = {19,1};
-link25[] = {19,5};
-link26[] = {20,21};
-link27[] = {20,22};
-link28[] = {21,6};
-link29[] = {22,2};
-link30[] = {23,4};
-link31[] = {24,4};
-globals[] = {0.000000,0,0,0,0,640,480,1,211,6316128,1,-1475.249756,454.531738,584.752930,-405.351105,1405,1021,1};
-window[] = {0,-1,-1,-1,-1,1496,1176,3096,304,1,1423};
+link12[] = {6,25};
+link13[] = {7,4};
+link14[] = {8,9};
+link15[] = {9,4};
+link16[] = {10,11};
+link17[] = {11,4};
+link18[] = {12,13};
+link19[] = {13,4};
+link20[] = {14,15};
+link21[] = {15,4};
+link22[] = {16,17};
+link23[] = {17,4};
+link24[] = {18,19};
+link25[] = {19,1};
+link26[] = {19,5};
+link27[] = {20,21};
+link28[] = {20,22};
+link29[] = {21,6};
+link30[] = {22,2};
+link31[] = {23,4};
+link32[] = {24,4};
+link33[] = {25,19};
+globals[] = {0.000000,0,0,0,0,640,480,1,212,6316128,1,-1342.122437,35.297974,818.697998,-376.649506,1740,1510,1};
+window[] = {0,-1,-1,-1,-1,1981,300,2664,300,1,1758};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -96,9 +99,7 @@ class FSM
                 {
                         name = "Reacting_on_danger";
                         itemno = 6;
-                        init = /*%FSM<STATEINIT""">*/"//_this globalChat format[""side: (@T %1 %2)"",time,side _this];" \n
-                         "" \n
-                         "/*" \n
+                        init = /*%FSM<STATEINIT""">*/"/*" \n
                          "comment ""0  DCEnemyDetected"";" \n
                          "comment ""1  DCFire"";" \n
                          "comment ""2  DCHit"";" \n
@@ -115,6 +116,8 @@ class FSM
                          "private [""_priors"",""_priorCur""];" \n
                          "" \n
                          "_priors = [3, 4, 5, 1, 4, 1, 1, 2, 4, 1];" \n
+                         "" \n
+                         "_this globalchat format[""Danger: %1"", _dangerCause];" \n
                          "" \n
                          "if (_dangerCause>0) then {_priorCur = _priors select _dangerCause}" \n
                          "else {_priorCur=-1};" \n
@@ -209,6 +212,17 @@ class FSM
                                         to="Stop_to_fire";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
                                         condition=/*%FSM<CONDITION""">*/"_dangerCause in [8]"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "___Bad_Shit_Bro">*/
+                                class ___Bad_Shit_Bro
+                                {
+                                        itemno = 25;
+                                        priority = 0.000000;
+                                        to="Stop_to_fire";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"_dangerCause in [9]"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
@@ -402,12 +416,11 @@ class FSM
                 {
                         name = "Stop_to_fire";
                         itemno = 19;
-                        init = /*%FSM<STATEINIT""">*/"//_this globalChat ""Stopping to fire"";" \n
-                         "_stopUntil = time + 1;" \n
+                        init = /*%FSM<STATEINIT""">*/"_this globalChat ""Suppressing..."";" \n
+                         "_stopUntil = time + 10;" \n
                          "_this forceSpeed 0;" \n
-                         "if (_this ammo (currentWeapon _this) > 40) then {" \n
-                         "  _this suppressFor 2;" \n
-                         "};"/*%FSM</STATEINIT""">*/;
+                         "_this suppressFor 10;" \n
+                         ""/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
@@ -500,8 +513,7 @@ class FSM
                 {
                         name = "Timeout__Continu";
                         itemno = 24;
-                        init = /*%FSM<STATEINIT""">*/"//_this globalChat ""Timeout"";" \n
-                         "// continue moving" \n
+                        init = /*%FSM<STATEINIT""">*/"_this globalchat ""Finished suppressing"";" \n
                          "if (vehicle _this==_this) then {_this forceSpeed -1;}"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
