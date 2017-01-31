@@ -3,7 +3,7 @@
 /*
 item0[] = {"DEFINE_ENUM_BEG",-1,250,-1117.740479,-307.676636,-777.740540,-137.676575,0.000000,"DEFINE_ENUM_BEG(DangerCause)" \n "  DCEnemyDetected, // the first enemy detected" \n "  DCFire, // fire visible" \n "  DCHit, // vehicle hit" \n "  DCEnemyNear, // enemy very close to me" \n "  DCExplosion, // explosion detected" \n "  DCDeadBodyGroup, // dead soldier from my group found" \n "  DCDeadBody, // other dead soldier found" \n "  DCScream // hit soldier screaming" \n "DEFINE_ENUM_END(DangerCause)" \n ""};
 item1[] = {"Destroyed",4,218,-1150.304565,341.600830,-1060.303223,391.600830,10.000000,"Destroyed"};
-item2[] = {"End",1,4346,-140.000000,599.145386,-50.000000,649.145386,0.000000,"End"};
+item2[] = {"End",1,250,-140.000000,599.145386,-50.000000,649.145386,0.000000,"End"};
 item3[] = {"Causes__3_ENEMY",4,218,-830.000000,-50.000000,-720.000000,20.000000,2.000000,"Causes:" \n "3" \n "ENEMY NEAR"};
 item4[] = {"Rest",8,218,-480.891846,532.010254,-390.891846,582.010254,0.000000,"Rest"};
 item5[] = {"Timeout",4,218,-1014.571228,261.610382,-924.570923,311.610382,0.000000,"Timeout"};
@@ -71,8 +71,8 @@ link28[] = {21,6};
 link29[] = {22,2};
 link30[] = {23,4};
 link31[] = {24,4};
-globals[] = {0.000000,0,0,0,0,640,480,1,213,6316128,1,-1664.962280,358.121948,891.625061,-494.483765,2868,1965,1};
-window[] = {2,-1,-1,-32000,-32000,1681,794,3158,0,3,2886};
+globals[] = {0.000000,0,0,0,0,640,480,1,213,6316128,1,-1664.962280,358.121948,891.625061,-494.483765,349,1965,1};
+window[] = {2,-1,-1,-32000,-32000,1681,794,3158,0,3,367};
 *//*%FSM</HEAD>*/
 class FSM
 {
