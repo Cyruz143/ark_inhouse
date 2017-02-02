@@ -1,0 +1,605 @@
+/*%FSM<COMPILE "C:\Steam\steamapps\common\Arma 3 Tools\FSMEditor\scriptedFSM.cfg, ark_danger">*/
+/*%FSM<HEAD>*/
+/*
+item0[] = {"start",0,250,-787.995850,160.215912,-697.995850,210.215912,0.000000,"start"};
+item1[] = {"is_local",4,218,-661.252319,158.943604,-571.252319,208.943604,1.000000,"is local"};
+item2[] = {"initial_state",2,250,-519.882263,153.644012,-429.882263,203.644012,0.000000,"initial state"};
+item3[] = {"exit",8,218,-772.395386,-344.587830,-682.395386,-294.587830,0.000000,"exit"};
+item4[] = {"stop",1,250,420.493713,-347.618805,510.493896,-297.618744,0.000000,"stop"};
+item5[] = {"D0__Enemy_Detect",4,218,-315.266724,-213.074692,-145.477386,-166.552628,4.000000,"D0: Enemy Detected"};
+item6[] = {"D1__Fire",4,218,-320.432648,-146.277161,-150.296722,-97.464371,2.000000,"D1: Fire"};
+item7[] = {"D2__Hit",4,218,-323.108856,-82.132782,-151.192169,-36.881577,2.000000,"D2: Hit"};
+item8[] = {"D3__Enemy_Near",4,218,-322.861908,-24.135651,-149.758057,22.302750,4.000000,"D3: Enemy Near"};
+item9[] = {"D4__Explosion",4,218,-324.884033,30.781380,-148.812225,77.219620,2.000000,"D4: Explosion"};
+item10[] = {"D5__Dead_Body_Gr",4,218,-324.348145,90.144577,-150.062851,135.335098,2.000000,"D5: Dead Body Group"};
+item11[] = {"D6__Dead_Body",4,218,-326.013062,148.430771,-150.685944,189.970963,2.000000,"D6; Dead Body"};
+item12[] = {"D7__Scream",4,218,-327.482361,210.712601,-152.480225,253.123108,2.000000,"D7: Scream"};
+item13[] = {"D8__Can_Fire",4,218,-320.203308,431.355072,-143.115845,474.793518,6.000000,"D8: Can Fire"};
+item14[] = {"__",8,218,-79.308044,375.727539,10.691956,425.727539,0.000000,"?"};
+item15[] = {"D0__State",2,250,-102.199257,-214.411026,-12.199249,-164.411026,0.000000,"D0: State"};
+item16[] = {"D1__State",2,250,-102.989532,-147.852615,-12.989502,-97.852631,0.000000,"D1: State"};
+item17[] = {"D2__State",2,250,-103.523773,-82.654640,-13.523743,-32.654648,0.000000,"D2: State"};
+item18[] = {"D3__State",2,250,-103.950409,-26.283890,-13.950409,23.716110,0.000000,"D3: State"};
+item19[] = {"D4__State",2,250,-103.830521,30.378296,-13.830505,80.378296,0.000000,"D4: State"};
+item20[] = {"D5__State",2,250,-80.276840,87.683640,9.723175,137.683640,0.000000,"D5: State"};
+item21[] = {"D6__State",2,250,-49.947403,145.379898,40.052612,195.379837,0.000000,"D6: State"};
+item22[] = {"D7__State",2,250,-4.799316,206.675156,85.200684,256.675171,0.000000,"D7: State"};
+item23[] = {"D8__State",2,250,154.844971,428.161438,244.845001,478.161438,0.000000,"D8: State"};
+item24[] = {"D0__Exit",8,218,59.525970,-179.537689,157.346588,-137.457489,0.000000,"D0: Exit"};
+item25[] = {"D8__Continue",4,218,340.691650,423.628845,463.840759,475.470459,2.000000,"D8: Continue"};
+item26[] = {"D8__Exit",8,218,691.729919,115.127502,781.729919,165.127502,0.000000,"D8: Exit"};
+item27[] = {"D1__Exit",8,218,120.433517,-148.665665,210.433517,-98.665665,0.000000,"D1: Exit"};
+item28[] = {"D2__Exit",8,218,176.203018,-109.087357,266.203003,-59.087357,0.000000,"D2: Exit"};
+item29[] = {"D3__Exit",8,218,232.871948,-72.207489,322.871948,-22.207489,0.000000,"D3: Exit"};
+item30[] = {"D4__Exit",8,218,366.270325,25.311707,456.270325,75.311707,0.000000,"D4: Exit"};
+item31[] = {"D5__Exit",8,218,440.030029,59.492981,530.030029,109.492981,0.000000,"D5: Exit"};
+item32[] = {"D6__Exit",8,218,518.287109,81.081360,608.287109,131.081360,0.000000,"D6: Exit"};
+item33[] = {"D7__Exit",8,218,603.979797,99.970947,693.979797,149.970947,0.000000,"D7: Exit"};
+item34[] = {"D8__Timeout",4,218,277.033203,507.786743,398.144897,562.153259,3.000000,"D8: Timeout"};
+item35[] = {"Check_Queue",2,250,432.669067,-123.983521,522.669067,-73.983536,0.000000,"Check Queue"};
+item36[] = {"next",4,218,-287.449097,-315.169586,-197.449097,-265.169586,1.000000,"next"};
+item37[] = {"None",8,218,426.811523,-239.539276,516.811523,-189.539246,0.000000,"None"};
+link0[] = {0,1};
+link1[] = {0,3};
+link2[] = {1,2};
+link3[] = {2,5};
+link4[] = {2,6};
+link5[] = {2,7};
+link6[] = {2,8};
+link7[] = {2,9};
+link8[] = {2,10};
+link9[] = {2,11};
+link10[] = {2,12};
+link11[] = {2,13};
+link12[] = {2,14};
+link13[] = {3,4};
+link14[] = {5,15};
+link15[] = {6,16};
+link16[] = {7,17};
+link17[] = {8,18};
+link18[] = {9,19};
+link19[] = {10,20};
+link20[] = {11,21};
+link21[] = {12,22};
+link22[] = {13,23};
+link23[] = {14,35};
+link24[] = {15,24};
+link25[] = {16,27};
+link26[] = {17,28};
+link27[] = {18,29};
+link28[] = {19,30};
+link29[] = {20,31};
+link30[] = {21,32};
+link31[] = {22,33};
+link32[] = {23,25};
+link33[] = {23,26};
+link34[] = {23,34};
+link35[] = {24,35};
+link36[] = {25,23};
+link37[] = {26,35};
+link38[] = {27,35};
+link39[] = {28,35};
+link40[] = {29,35};
+link41[] = {30,35};
+link42[] = {31,35};
+link43[] = {32,35};
+link44[] = {33,35};
+link45[] = {34,23};
+link46[] = {35,36};
+link47[] = {35,37};
+link48[] = {36,0};
+link49[] = {37,4};
+globals[] = {0.000000,0,0,0,0,640,480,1,95,6316128,1,-904.646240,1035.259521,729.710144,-718.190552,1932,1442,1};
+window[] = {0,-1,-1,-1,-1,1866,913,4110,253,1,1950};
+*//*%FSM</HEAD>*/
+class FSM
+{
+        fsmName = "ark_danger";
+        class States
+        {
+                /*%FSM<STATE "start">*/
+                class start
+                {
+                        name = "start";
+                        itemno = 0;
+                        init = /*%FSM<STATEINIT""">*/"private _priors = [3, 1, 5, 2, 1, 2, 0, 0, 4, 1];" \n
+                         "private _priorCur = if (_dangerCause>0) then {_priors select _dangerCause} else {-1};" \n
+                         "" \n
+                         "{" \n
+                         "    if (_priors select (_x select 0)>_priorCur) then {_x params [""_dangerCause"",""_dangerPos"",""_dangerUntil"",""_dangerCausedBy""]  };" \n
+                         "} forEach _queue;" \n
+                         "_queue = [];"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "is_local">*/
+                                class is_local
+                                {
+                                        itemno = 1;
+                                        priority = 1.000000;
+                                        to="initial_state";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"local _this && !isPlayer _this"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "exit">*/
+                                class exit
+                                {
+                                        itemno = 3;
+                                        priority = 0.000000;
+                                        to="stop";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "initial_state">*/
+                class initial_state
+                {
+                        name = "initial_state";
+                        itemno = 2;
+                        init = /*%FSM<STATEINIT""">*/"// _dangerCause" \n
+                         "" \n
+                         "_debug = missionnamespace getvariable [""ARK_FSM_DEBUG"", false];" \n
+                         "_grp = group _this;" \n
+                         "_isleader = leader _grp == _this;" \n
+                         "_inf = isNull objectParent _this;" \n
+                         "_dangerDist = _this distance _dangerCausedby;" \n
+                         "if(_debug) then {" \n
+                         "  diag_log format[""[Unit: %1], Danger.fsm Started, Danger: %2"", _this, _dangerCause];" \n
+                         "};" \n
+                         ""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "D8__Can_Fire">*/
+                                class D8__Can_Fire
+                                {
+                                        itemno = 13;
+                                        priority = 6.000000;
+                                        to="D8__State";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"_dangerCause in [8]"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/"_db_end_time = time + 5;"/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "D3__Enemy_Near">*/
+                                class D3__Enemy_Near
+                                {
+                                        itemno = 8;
+                                        priority = 4.000000;
+                                        to="D3__State";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"_dangerCause in [3]"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "D0__Enemy_Detect">*/
+                                class D0__Enemy_Detect
+                                {
+                                        itemno = 5;
+                                        priority = 4.000000;
+                                        to="D0__State";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"_dangerCause in [0]"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "D4__Explosion">*/
+                                class D4__Explosion
+                                {
+                                        itemno = 9;
+                                        priority = 2.000000;
+                                        to="D4__State";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"_dangerCause in [4]"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "D2__Hit">*/
+                                class D2__Hit
+                                {
+                                        itemno = 7;
+                                        priority = 2.000000;
+                                        to="D2__State";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"_dangerCause in [2]"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "D6__Dead_Body">*/
+                                class D6__Dead_Body
+                                {
+                                        itemno = 11;
+                                        priority = 2.000000;
+                                        to="D6__State";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"_dangerCause in [6]"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "D7__Scream">*/
+                                class D7__Scream
+                                {
+                                        itemno = 12;
+                                        priority = 2.000000;
+                                        to="D7__State";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"_dangerCause in [7]"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "D1__Fire">*/
+                                class D1__Fire
+                                {
+                                        itemno = 6;
+                                        priority = 2.000000;
+                                        to="D1__State";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"_dangerCause in [1]"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "D5__Dead_Body_Gr">*/
+                                class D5__Dead_Body_Gr
+                                {
+                                        itemno = 10;
+                                        priority = 2.000000;
+                                        to="D5__State";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"_dangerCause in [5]"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "__">*/
+                                class __
+                                {
+                                        itemno = 14;
+                                        priority = 0.000000;
+                                        to="Check_Queue";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "stop">*/
+                class stop
+                {
+                        name = "stop";
+                        itemno = 4;
+                        init = /*%FSM<STATEINIT""">*/"if(_debug) then {" \n
+                         "  diag_log format[""Unit: %1, FSM Finished"", _this];" \n
+                         "};" \n
+                         ""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "D0__State">*/
+                class D0__State
+                {
+                        name = "D0__State";
+                        itemno = 15;
+                        init = /*%FSM<STATEINIT""">*/"if(_debug) then {" \n
+                         "  diag_log format[""[Unit: %1], D0: Enemy detected"", _this];" \n
+                         "};" \n
+                         ""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "D0__Exit">*/
+                                class D0__Exit
+                                {
+                                        itemno = 24;
+                                        priority = 0.000000;
+                                        to="Check_Queue";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/"if(_debug) then {" \n
+                                         "  diag_log format[""[Unit: %1], D0 Exit"", _this];" \n
+                                         "};"/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "D1__State">*/
+                class D1__State
+                {
+                        name = "D1__State";
+                        itemno = 16;
+                        init = /*%FSM<STATEINIT""">*/"if(_debug) then {" \n
+                         "  diag_log format[""[Unit: %1], D1: Fire"", _this];" \n
+                         "};" \n
+                         ""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "D1__Exit">*/
+                                class D1__Exit
+                                {
+                                        itemno = 27;
+                                        priority = 0.000000;
+                                        to="Check_Queue";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/"if(_debug) then {" \n
+                                         "  diag_log format[""[Unit: %1], D1 Exit"", _this];" \n
+                                         "};"/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "D2__State">*/
+                class D2__State
+                {
+                        name = "D2__State";
+                        itemno = 17;
+                        init = /*%FSM<STATEINIT""">*/"if(_debug) then {" \n
+                         "  diag_log format[""[Unit: %1], D2: Hit"", _this];" \n
+                         "};" \n
+                         ""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "D2__Exit">*/
+                                class D2__Exit
+                                {
+                                        itemno = 28;
+                                        priority = 0.000000;
+                                        to="Check_Queue";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/"if(_debug) then {" \n
+                                         "  diag_log format[""[Unit: %1], D2 Exit"", _this];" \n
+                                         "};"/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "D3__State">*/
+                class D3__State
+                {
+                        name = "D3__State";
+                        itemno = 18;
+                        init = /*%FSM<STATEINIT""">*/"if(_debug) then {" \n
+                         "  diag_log format[""[Unit: %1], D3: Enemy Near"", _this];" \n
+                         "};" \n
+                         ""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "D3__Exit">*/
+                                class D3__Exit
+                                {
+                                        itemno = 29;
+                                        priority = 0.000000;
+                                        to="Check_Queue";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/"if(_debug) then {" \n
+                                         "  diag_log format[""[Unit: %1], D3 Exit"", _this];" \n
+                                         "};"/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "D4__State">*/
+                class D4__State
+                {
+                        name = "D4__State";
+                        itemno = 19;
+                        init = /*%FSM<STATEINIT""">*/"if(_debug) then {" \n
+                         "  diag_log format[""[Unit: %1], D4: Explosion"", _this];" \n
+                         "};" \n
+                         ""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "D4__Exit">*/
+                                class D4__Exit
+                                {
+                                        itemno = 30;
+                                        priority = 0.000000;
+                                        to="Check_Queue";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/"if(_debug) then {" \n
+                                         "  diag_log format[""[Unit: %1], D4 Exit"", _this];" \n
+                                         "};"/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "D5__State">*/
+                class D5__State
+                {
+                        name = "D5__State";
+                        itemno = 20;
+                        init = /*%FSM<STATEINIT""">*/"if(_debug) then {" \n
+                         "  diag_log format[""[Unit: %1], D5: Dead Body Group"", _this];" \n
+                         "};" \n
+                         ""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "D5__Exit">*/
+                                class D5__Exit
+                                {
+                                        itemno = 31;
+                                        priority = 0.000000;
+                                        to="Check_Queue";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/"if(_debug) then {" \n
+                                         "  diag_log format[""[Unit: %1], D5 Exit"", _this];" \n
+                                         "};"/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "D6__State">*/
+                class D6__State
+                {
+                        name = "D6__State";
+                        itemno = 21;
+                        init = /*%FSM<STATEINIT""">*/"if(_debug) then {" \n
+                         "  diag_log format[""[Unit: %1], D6: Dead Body"", _this];" \n
+                         "};" \n
+                         ""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "D6__Exit">*/
+                                class D6__Exit
+                                {
+                                        itemno = 32;
+                                        priority = 0.000000;
+                                        to="Check_Queue";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/"if(_debug) then {" \n
+                                         "  diag_log format[""[Unit: %1], D6 Exit"", _this];" \n
+                                         "};"/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "D7__State">*/
+                class D7__State
+                {
+                        name = "D7__State";
+                        itemno = 22;
+                        init = /*%FSM<STATEINIT""">*/"if(_debug) then {" \n
+                         "  diag_log format[""[Unit: %1], D7: Scream"", _this];" \n
+                         "};" \n
+                         ""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "D7__Exit">*/
+                                class D7__Exit
+                                {
+                                        itemno = 33;
+                                        priority = 0.000000;
+                                        to="Check_Queue";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/"if(_debug) then {" \n
+                                         "  diag_log format[""[Unit: %1], D7 Exit"", _this];" \n
+                                         "};"/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "D8__State">*/
+                class D8__State
+                {
+                        name = "D8__State";
+                        itemno = 23;
+                        init = /*%FSM<STATEINIT""">*/"_this disableai ""move"";" \n
+                         "_this setunitPosWeak ""UP""; " \n
+                         "_this fireAtTarget [_dangerCausedBy];"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "D8__Timeout">*/
+                                class D8__Timeout
+                                {
+                                        itemno = 34;
+                                        priority = 3.000000;
+                                        to="D8__State";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"time < _db_end_time"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "D8__Continue">*/
+                                class D8__Continue
+                                {
+                                        itemno = 25;
+                                        priority = 2.000000;
+                                        to="D8__State";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"alive _dangerCausedBy && {_this knowsAbout _dangerCausedBy > 1}"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/"if(_debug) then {" \n
+                                         "  diag_log format[""[Unit: %1], D8: Target Alive, Continue Can Fire"", _this];" \n
+                                         "};" \n
+                                         "_db_end_time = time + 5;"/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "D8__Exit">*/
+                                class D8__Exit
+                                {
+                                        itemno = 26;
+                                        priority = 0.000000;
+                                        to="Check_Queue";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/"if(_debug) then {" \n
+                                         "  diag_log format[""[Unit: %1], D8 Exit"", _this];" \n
+                                         "};" \n
+                                         "_this setunitPosWeak ""AUTO""; "/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Check_Queue">*/
+                class Check_Queue
+                {
+                        name = "Check_Queue";
+                        itemno = 35;
+                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "next">*/
+                                class next
+                                {
+                                        itemno = 36;
+                                        priority = 1.000000;
+                                        to="start";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"count _queue>0"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "None">*/
+                                class None
+                                {
+                                        itemno = 37;
+                                        priority = 0.000000;
+                                        to="stop";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+        };
+        initState="start";
+        finalStates[] =
+        {
+                "stop",
+        };
+};
+/*%FSM</COMPILE>*/
