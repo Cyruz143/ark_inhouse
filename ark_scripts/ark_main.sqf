@@ -13,7 +13,7 @@ ark_fnc_initVariables = {
 };
 
 ark_fnc_isHost = {
-    private _adminWhiteList = ["76561197969272205", "76561198001868030", "76561198011407435", "76561197972043388"];
+    private _adminWhiteList = ["76561197969272205", "76561198001868030", "76561197980517821", "76561197972043388"];
     !isMultiplayer || {serverCommandAvailable "#logout"} || (getplayerUID player) in _adminWhiteList;
 };
 
