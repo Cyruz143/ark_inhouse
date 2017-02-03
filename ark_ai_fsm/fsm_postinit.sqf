@@ -11,7 +11,6 @@
 		:2 Scope
 	_weapon_range:
 		[ MIN, MID, MAX ]
-*/
 ark_ai_fsm_normalize_weapon = {
 	params["_unit"];	
 
@@ -62,7 +61,7 @@ ark_ai_fsm_normalize_weapon = {
 		}
 		else {
 			if ( _optic_type == 2 ) then {
-				_weapon_range = [100, 650, 1100];
+				_weapon_range = [100, 350, 1100];
 			}
 			else {
 				_weapon_range = [50, 200, 500];
@@ -80,7 +79,7 @@ ark_ai_fsm_normalize_weapon = {
 		_weapon_range
 	]
 };
-
+*/
 
 
 
