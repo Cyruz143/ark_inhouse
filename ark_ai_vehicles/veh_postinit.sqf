@@ -27,8 +27,12 @@ ark_fnc_vehicleRepair = {
     private _vehicle = _this select 0;
     private _driver = driver _vehicle;
 
+    private _cookingOff = _vehicle getVariable ["ACE_cookoff_isCookingOff", false];
+    private _driverUnconscious = _driver getVariable ["ACE_isUnconscious", false];
     private _waitingToRepair = _vehicle getVariable ["ark_ai_vehicles_awaiting_repair", false];
 
+    if (_cookingOff) exitWith {};    
+    if (_driverUnconscious) exitWith {};
     if (_waitingToRepair) exitWith {};
 
     if (_driver != _vehicle && alive _driver) then {
