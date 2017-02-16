@@ -3,7 +3,7 @@ class CfgPatches {
         units[] = {};
         weapons[] = {};
         requiredVersion = 1.60;
-        requiredAddons[] = {"ace_spectator", "Hull3"};
+        requiredAddons[] = {"ace_spectator", "Hull3", "CBA_MAIN"};
         author = "ARK";
         authorUrl = "http://www.ark-group.org";
     };
