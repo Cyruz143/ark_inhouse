@@ -4,7 +4,7 @@
             if (_x isKindOf "LandVehicle" && (count crew _x > 0) && !(_x isKindOf "StaticWeapon") && alive _x  && simulationEnabled _x) then {
                 private _isEHAlreadyApplied = _x getVariable ["ark_ai_vehicles_repair_eh_applied", false];
                     if !(_isEHAlreadyApplied) then {
-                        _x addEventHandler ["Hit", ark_fnc_vehicleHit];
+                        _x addEventHandler ["Hit", {call ark_fnc_vehicleHit}];
                         _x setVariable ["ark_ai_vehicles_repair_eh_applied", true, true];
                     };
 

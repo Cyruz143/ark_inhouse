@@ -1,5 +1,5 @@
 ["player.initialized", {
-    player addEventHandler ["Killed", ark_fnc_initSpec];
+    player addEventHandler ["Killed", {call ark_fnc_initSpec}];
 }] call hull3_event_fnc_addEventHandler;
 
 ark_fnc_initSpec = {
