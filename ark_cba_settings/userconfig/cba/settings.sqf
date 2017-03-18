@@ -1,11 +1,8 @@
 force acre_sys_core_interference = true;
 force acre_sys_core_fullDuplex = false;
-force acre_sys_core_ignoreantennaDirection = true;
+force acre_sys_core_ignoreAntennaDirection = true;
 force acre_sys_core_terrainLoss = 0;
 force acre_sys_core_revealToAI = true;
 force STHud_Settings_Occlusion = false;
 force STHud_Settings_RemoveDeadViaProximity = true;
-STHud_Settings_Font = RobotoCondensedBold;
-STHud_Settings_HUDMode = 3;
-STHud_Settings_SquadBar = false;
-STHud_Settings_TextShadow = 1;
+STHud_Settings_SquadBar = true;
