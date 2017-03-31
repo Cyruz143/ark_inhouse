@@ -61,11 +61,9 @@ ark_fnc_initSpec = {
 };
 
 ark_fnc_checkIfNotPlayableUnit = {
-    if (!isMultiplayer) exitWith {};
+    if (!isMultiplayer || !didJIP) exitWith {};
 
-    if (isNil {ark_ace_spectator_initialPlayableUnits}) then {
-        ark_ace_spectator_initialPlayableUnits = playableUnits;
-    };
+    sleep 1;
     if !(player in ark_ace_spectator_initialPlayableUnits) then {
         private _action =
             [ "ARK_ACE_Spectator"
