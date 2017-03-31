@@ -1,6 +1,17 @@
+[] call ark_fnc_initServer;
 ["player.initialized", {
     player addEventHandler ["Killed", {call ark_fnc_initSpec}];
+    [] spawn ark_fnc_checkIfNotPlayableUnit;
 }] call hull3_event_fnc_addEventHandler;
+
+ark_fnc_initServer = {
+    if (isServer) then {
+        ark_ace_spectator_initialPlayableUnits = playableUnits;
+        [ark_ace_spectator_initialPlayableUnits, {
+            ark_ace_spectator_initialPlayableUnits = _this;
+        }] remoteExec ["bis_fnc_call", -2, "ark_ace_spectator_initialPlayableUnits_JIP_ID"];
+    };
+};
 
 ark_fnc_initSpec = {
     private _victim = _this select 0;
@@ -56,5 +67,16 @@ ark_fnc_initSpec = {
 
             [2, _attacker, -2, _attackerPos] call ace_spectator_fnc_setCameraAttributes;
             [true] call ace_spectator_fnc_setSpectator;
+    };
+};
+
+ark_fnc_checkIfNotPlayableUnit = {
+    if (!isMultiplayer) exitWith {};
+
+    if !(player in ark_ace_spectator_initialPlayableUnits) then {
+        for "_i" from 1 to 20 do {
+            player globalChat format ["You have JIP'd without AI on! If you were not given permission by staff, enable spectator from ACE self-interact! (%1)", _i];
+            sleep 1;
+        };
     };
 };
