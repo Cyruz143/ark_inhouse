@@ -63,10 +63,24 @@ ark_fnc_initSpec = {
 ark_fnc_checkIfNotPlayableUnit = {
     if (!isMultiplayer) exitWith {};
 
+    if (isNil {ark_ace_spectator_initialPlayableUnits}) then {
+        ark_ace_spectator_initialPlayableUnits = playableUnits;
+    };
     if !(player in ark_ace_spectator_initialPlayableUnits) then {
+        private _action =
+            [ "ARK_ACE_Spectator"
+            , "ACE Spectator"
+            , "\z\ace\addons\spectator\UI\Icon_Module_Spectator_ca.paa"
+            , { player setDamage 1; player setPosASL [0, 0, 0]; }
+            , { true }
+            ] call ace_interact_menu_fnc_createAction;
+        [player, 1, ["ACE_SelfActions", "ARK_Interaction"], _action] call ace_interact_menu_fnc_addActionToObject;
         for "_i" from 1 to 20 do {
             player globalChat format ["You have JIP'd without AI on! If you were not given permission by staff, enable spectator from ACE self-interact! (%1)", _i];
             sleep 1;
         };
+        sleep 60;
+        player globalChat format ["Removing respawn action from ACE self-interact."];
+        [player, 1, ["ACE_SelfActions", "ARK_Interaction", "ARK_ACE_Spectator"]] call ace_interact_menu_fnc_removeActionFromObject;
     };
 };
