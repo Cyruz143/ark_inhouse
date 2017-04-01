@@ -1,6 +1,6 @@
 ["player.initialized", {
     player addEventHandler ["Killed", {call ark_fnc_initSpec}];
-    [] spawn ark_fnc_checkIfNotPlayableUnit;
+    [] call ark_fnc_getInitialPlayableUnitsFromServer;
 }] call hull3_event_fnc_addEventHandler;
 
 ark_fnc_initSpec = {
@@ -60,10 +60,22 @@ ark_fnc_initSpec = {
     };
 };
 
-ark_fnc_checkIfNotPlayableUnit = {
+ark_fnc_getInitialPlayableUnitsFromServer = {
     if (!isMultiplayer || !didJIP) exitWith {};
 
-    sleep 1;
+    [[clientOwner], {
+        params ["_clientId"];
+
+        [[ark_ace_spectator_initialPlayableUnits], {
+            params ["_initialPlayableUnits"];
+
+            ark_ace_spectator_initialPlayableUnits = _initialPlayableUnits;
+            [] call ark_fnc_checkIfNotInitialPlayableUnit;
+        }] remoteExecCall ["BIS_fnc_call", _clientId, false];
+    }] remoteExecCall ["BIS_fnc_call", 2, false];
+};
+
+ark_fnc_checkIfNotInitialPlayableUnit = {
     if !(player in ark_ace_spectator_initialPlayableUnits) then {
         private _action =
             [ "ARK_ACE_Spectator"
