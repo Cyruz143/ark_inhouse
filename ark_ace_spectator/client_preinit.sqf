@@ -1,5 +1,3 @@
-diag_log str ["------------", "preinit"];
-
 ark_fnc_initSpec = {
     private _victim = _this select 0;
     private _attacker = _this select 1;
@@ -58,17 +56,14 @@ ark_fnc_initSpec = {
 };
 
 ark_fnc_getInitialPlayableUnitsFromServer = {
-    diag_log str ["------------", "ark_fnc_getInitialPlayableUnitsFromServer"];
     if (!isMultiplayer || !didJIP) exitWith {};
 
     [[clientOwner], {
         params ["_clientId"];
 
-        diag_log str ["------------", "ark_fnc_getInitialPlayableUnitsFromServer client to server", ark_ace_spectator_initialPlayableUnits];
         [[ark_ace_spectator_initialPlayableUnits], {
             params ["_initialPlayableUnits"];
 
-diag_log str ["------------", "ark_fnc_getInitialPlayableUnitsFromServer server to client", _initialPlayableUnits];
             ark_ace_spectator_initialPlayableUnits = _initialPlayableUnits;
             [] spawn ark_fnc_checkIfNotInitialPlayableUnit;
         }] remoteExecCall ["BIS_fnc_call", _clientId, false];
@@ -76,9 +71,7 @@ diag_log str ["------------", "ark_fnc_getInitialPlayableUnitsFromServer server 
 };
 
 ark_fnc_checkIfNotInitialPlayableUnit = {
-diag_log str ["------------", "ark_fnc_checkIfNotInitialPlayableUnit", ark_ace_spectator_initialPlayableUnits];
     if !(player in ark_ace_spectator_initialPlayableUnits) then {
-diag_log str ["------------", "creating action"];
         private _action =
             [ "ARK_ACE_Spectator"
             , "ACE Spectator"
@@ -98,7 +91,6 @@ diag_log str ["------------", "creating action"];
 };
 
 ["player.initialized", {
-    diag_log str ["------------", "hull player init"];
     player addEventHandler ["Killed", {call ark_fnc_initSpec}];
     [] call ark_fnc_getInitialPlayableUnitsFromServer;
 }] call hull3_event_fnc_addEventHandler;
