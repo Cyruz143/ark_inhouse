@@ -1,11 +1,5 @@
 diag_log str ["------------", "preinit"];
 
-["player.initialized", {
-    diag_log str ["------------", "hull player init"];
-    player addEventHandler ["Killed", {call ark_fnc_initSpec}];
-    [] call ark_fnc_getInitialPlayableUnitsFromServer;
-}] call hull3_event_fnc_addEventHandler;
-
 ark_fnc_initSpec = {
     private _victim = _this select 0;
     private _attacker = _this select 1;
@@ -102,3 +96,9 @@ diag_log str ["------------", "creating action"];
         [player, 1, ["ACE_SelfActions", "ARK_Interaction", "ARK_ACE_Spectator"]] call ace_interact_menu_fnc_removeActionFromObject;
     };
 };
+
+["player.initialized", {
+    diag_log str ["------------", "hull player init"];
+    player addEventHandler ["Killed", {call ark_fnc_initSpec}];
+    [] call ark_fnc_getInitialPlayableUnitsFromServer;
+}] call hull3_event_fnc_addEventHandler;

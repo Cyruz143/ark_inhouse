@@ -1,7 +1,5 @@
 diag_log str ["------------", "postinit"];
 
-[] call ark_fnc_postInitServer;
-
 ark_fnc_postInitServer = {
     diag_log str ["------------", "ark_fnc_postInitServer"];
     if (isServer) then {
@@ -14,3 +12,5 @@ ark_fnc_postInitServer = {
         diag_log str ["------------", "remoteExec done"];
     };
 };
+
+[] call ark_fnc_postInitServer;
