@@ -1,7 +1,3 @@
-["player.initialized", {
-    player addEventHandler ["Killed", {call ark_fnc_initSpec}];
-}] call hull3_event_fnc_addEventHandler;
-
 ark_fnc_initSpec = {
     private _victim = _this select 0;
     private _attacker = _this select 1;
@@ -58,3 +54,43 @@ ark_fnc_initSpec = {
             [true] call ace_spectator_fnc_setSpectator;
     };
 };
+
+ark_fnc_getInitialPlayableUnitsFromServer = {
+    if (!isMultiplayer || !didJIP) exitWith {};
+
+    [[clientOwner], {
+        params ["_clientId"];
+
+        [[ark_ace_spectator_initialPlayableUnits], {
+            params ["_initialPlayableUnits"];
+
+            ark_ace_spectator_initialPlayableUnits = _initialPlayableUnits;
+            [] spawn ark_fnc_checkIfNotInitialPlayableUnit;
+        }] remoteExecCall ["BIS_fnc_call", _clientId, false];
+    }] remoteExecCall ["BIS_fnc_call", 2, false];
+};
+
+ark_fnc_checkIfNotInitialPlayableUnit = {
+    if !(player in ark_ace_spectator_initialPlayableUnits) then {
+        private _action =
+            [ "ARK_ACE_Spectator"
+            , "ACE Spectator"
+            , "\z\ace\addons\spectator\UI\Icon_Module_Spectator_ca.paa"
+            , { player setDamage 1; player setPosASL [0, 0, 0]; }
+            , { true }
+            ] call ace_interact_menu_fnc_createAction;
+        [player, 1, ["ACE_SelfActions", "ARK_Interaction"], _action] call ace_interact_menu_fnc_addActionToObject;
+        for "_i" from 1 to 20 do {
+            player globalChat format ["You have JIP'd without AI on! If you were not given permission by staff, enable spectator from ACE self-interact! (%1)", _i];
+            sleep 1;
+        };
+        sleep 60;
+        player globalChat format ["Removing respawn action from ACE self-interact."];
+        [player, 1, ["ACE_SelfActions", "ARK_Interaction", "ARK_ACE_Spectator"]] call ace_interact_menu_fnc_removeActionFromObject;
+    };
+};
+
+["player.initialized", {
+    player addEventHandler ["Killed", {call ark_fnc_initSpec}];
+    [] call ark_fnc_getInitialPlayableUnitsFromServer;
+}] call hull3_event_fnc_addEventHandler;
