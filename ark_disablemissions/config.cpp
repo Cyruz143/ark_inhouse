@@ -2,7 +2,7 @@ class CfgPatches {
     class ark_disablemissions {
         units[] = {};
         weapons[] = {};
-        requiredVersion = 1.62;
+        requiredVersion = 1.70;
         requiredAddons[] = {"A3_Missions_F_Beta", "A3_Missions_F_Gamma", "A3_Missions_F_Curator", "A3_Missions_F", "A3_Missions_F_Bootcamp", "A3_Missions_F_EPA", "A3_Missions_F_EPB", "A3_Missions_F_EPC", "A3_Missions_F_EXP_A", "A3_Missions_F_EXP"};
         author = "ARK";
     };
@@ -50,6 +50,7 @@ class CfgMissions {
         delete MP_End_Game_03;
         delete MP_End_Game_04;
         delete MP_End_Game_05;
+        delete test_uav;
             class Apex {
                 class EXP_m01 {
                     directory = "";
