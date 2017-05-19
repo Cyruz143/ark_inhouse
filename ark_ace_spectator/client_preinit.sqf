@@ -29,7 +29,7 @@ ark_fnc_initSpec = {
     private _killMessage = format ["You were <t color='#CC0000'>killed</t> by %1 with an %2 at %3 m",_attackerName,_attackerWeapon,_attackerDistance];
 
     if (isNull _attacker) then {
-        private _killMessage = "You were <t color='#CC0000'>killed</t> by an explosion or grenade";
+        _killMessage = "You were <t color='#CC0000'>killed</t> by an explosion or grenade";
     };
     
     if((side group _victim) == (side group _attacker)) then {
@@ -37,7 +37,7 @@ ark_fnc_initSpec = {
     };
 
     if(_attacker == _victim) then {
-        _killMessage = format ["You <t color='#009933'>played yourself</t> with an %1",_attackerWeapon];
+        _killMessage = "You <t color='#009933'>killed yourself</t>";
     };
 
     [_attacker,_attackerPos,_killMessage] spawn {
