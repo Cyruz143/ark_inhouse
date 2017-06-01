@@ -26,19 +26,20 @@ ark_fnc_vehicleHit = {
 ark_fnc_vehicleRepair = {
     private _vehicle = _this select 0;
     private _driver = driver _vehicle;
+    private _vehicleClassName = typeOf _vehicle;
 
     private _cookingOff = _vehicle getVariable ["ACE_cookoff_isCookingOff", false];
     private _driverUnconscious = _driver getVariable ["ACE_isUnconscious", false];
     private _waitingToRepair = _vehicle getVariable ["ark_ai_vehicles_awaiting_repair", false];
 
-    if (_cookingOff || _driverUnconscious || _waitingToRepair) exitWith {};    
+    if (_cookingOff || _driverUnconscious || _waitingToRepair) exitWith {};
 
     if (_driver != _vehicle && alive _driver) then {
 
         _vehicle setVariable ["ark_ai_vehicles_awaiting_repair", true, true];
 
-        [_vehicle,_driver] spawn {
-            params ["_vehicle","_driver"];
+        [_vehicle,_driver,_vehicleClassName] spawn {
+            params ["_vehicle","_driver","_vehicleClassName"];
           
             waitUntil {
               sleep 5;
@@ -63,7 +64,16 @@ ark_fnc_vehicleRepair = {
                 _vehicle setVariable ["ark_ai_vehicles_awaiting_repair", false, true];
             };
 
-            _vehicle setDamage 0;
+            if (_vehicle isKindOf "Car") then {
+                {_vehicle setHit [getText(configFile >> "cfgVehicles" >> _vehicleClassName >> "HitPoints" >> _x >> "name"), 0, false];} forEach ["HitLBWheel","HitLMWheel","HitRBWheel","HitRMWheel"];
+            };
+
+            if (_vehicle isKindOf "Tank") then {
+                {_vehicle setHit [getText(configFile >> "cfgVehicles" >> _vehicleClassName >> "HitPoints" >> _x >> "name"), 0, false];} forEach ["HitLTrack","HitRTrack"];
+            } else {
+                _vehicle setDamage 0;
+            };
+
             _vehicle setPosATL [getPosATL _vehicle select 0, getPosATL _vehicle select 1, (getPosATL _vehicle select 2) + 0.5];
 
             _driver playMove "";
