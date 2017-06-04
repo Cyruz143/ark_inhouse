@@ -64,11 +64,11 @@ ark_fnc_vehicleRepair = {
                 _vehicle setVariable ["ark_ai_vehicles_awaiting_repair", false, true];
             };
 
-            if (_vehicle isKindOf "Car") then {
+            if (_vehicleClassName isKindOf "Car") then {
                 {_vehicle setHit [getText(configFile >> "cfgVehicles" >> _vehicleClassName >> "HitPoints" >> _x >> "name"), 0, true];} forEach ["HitLFWheel", "HitLBWheel", "HitLMWheel", "HitLF2Wheel", "HitRFWheel", "HitRBWheel", "HitRMWheel", "HitRF2Wheel"];
             };
 
-            if (_vehicle isKindOf "Tank") then {
+            if (_vehicleClassName isKindOf "Tank") then {
                 {_vehicle setHit [getText(configFile >> "cfgVehicles" >> _vehicleClassName >> "HitPoints" >> _x >> "name"), 0, true];} forEach ["HitLTrack","HitRTrack"];
             } else {
                 _vehicle setDamage 0;
