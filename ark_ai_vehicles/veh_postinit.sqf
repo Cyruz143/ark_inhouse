@@ -80,6 +80,19 @@ ark_fnc_vehicleRepair = {
             _driver moveInDriver _vehicle;
             {_driver enableAI _x;} forEach ["TARGET", "AUTOTARGET", "PATH", "FSM", "AUTOCOMBAT"];
 
+            // Horrible fix for engine bug (appeared in 1.70)
+            private _vehGrp = group _vehicle;
+            private _newWpIndex = count (waypoints _vehGrp);
+            private _currentWp = currentWaypoint _vehGrp;
+            private _tempWp = _vehGrp addWaypoint [[0,0,0], 0, _newWpIndex];
+
+            _vehGrp setCurrentWaypoint [_vehGrp, _newWpIndex];
+            
+            sleep 3;
+            
+            _vehGrp setCurrentWaypoint [_vehGrp, _currentWp];
+            deleteWaypoint [_vehGrp, _newWpIndex];
+
             _vehicle forceSpeed -1;
             _vehicle setVariable ["ark_ai_vehicles_awaiting_repair", false, true];
         };
