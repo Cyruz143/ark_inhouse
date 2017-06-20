@@ -88,7 +88,7 @@ ark_fnc_vehicleRepair = {
 
             _vehGrp setCurrentWaypoint [_vehGrp, _newWpIndex];
             
-            sleep 3;
+            sleep 6;
             
             _vehGrp setCurrentWaypoint [_vehGrp, _currentWp];
             deleteWaypoint [_vehGrp, _newWpIndex];
