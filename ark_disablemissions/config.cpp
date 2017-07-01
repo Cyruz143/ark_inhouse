@@ -3,7 +3,7 @@ class CfgPatches {
         units[] = {};
         weapons[] = {};
         requiredVersion = 1.70;
-        requiredAddons[] = {"A3_Missions_F_Beta", "A3_Missions_F_Gamma", "A3_Missions_F_Curator", "A3_Missions_F", "A3_Missions_F_Bootcamp", "A3_Missions_F_EPA", "A3_Missions_F_EPB", "A3_Missions_F_EPC", "A3_Missions_F_EXP_A", "A3_Missions_F_EXP"};
+        requiredAddons[] = {"A3_Missions_F_Beta", "A3_Missions_F_Gamma", "A3_Missions_F_Curator", "A3_Missions_F", "A3_Missions_F_Bootcamp", "A3_Missions_F_EPA", "A3_Missions_F_EPB", "A3_Missions_F_EPC", "A3_Missions_F_EXP_A", "A3_Missions_F_EXP", "A3_Missions_F_Patrol"};
         author = "ARK";
     };
 };
@@ -51,6 +51,11 @@ class CfgMissions {
         delete MP_End_Game_04;
         delete MP_End_Game_05;
         delete test_uav;
+        delete MP_CombatPatrol_01;
+        delete MP_CombatPatrol_02;
+        delete MP_CombatPatrol_03;
+        delete MP_CombatPatrol_04;
+        delete EscapeFromMalden;
             class Apex {
                 class EXP_m01 {
                     directory = "";
