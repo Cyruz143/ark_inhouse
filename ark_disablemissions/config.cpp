@@ -46,6 +46,10 @@ class CfgMissions {
         delete MP_ZGM_m14_EAST;
         delete MP_ZGM_m14_WEST;
         delete MP_ZGM_m14_GUER;
+        delete MP_ZGM_m15;
+        delete MP_ZGM_m15_EAST;
+        delete MP_ZGM_m15_WEST;
+        delete MP_ZGM_m15_GUER;
         delete MP_End_Game_02;
         delete MP_End_Game_03;
         delete MP_End_Game_04;
@@ -56,6 +60,8 @@ class CfgMissions {
         delete MP_CombatPatrol_03;
         delete MP_CombatPatrol_04;
         delete EscapeFromMalden;
+        delete EscapeFromTanoa;
+
             class Apex {
                 class EXP_m01 {
                     directory = "";
