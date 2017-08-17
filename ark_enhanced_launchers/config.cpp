@@ -20,7 +20,8 @@ class CfgAmmo {
     class ShellCore;    // External Class Reference
 
     class ShellBase : ShellCore {
-        soundFly[] = {"a3\sounds_f\vehicles\soft\tires\int-tires-sand2.wss",170,2,1000};
+        soundFly[] = {"a3\data_f_curator\sound\cfgsounds\incoming2.wss",2,1,1000};
+        //a3\sounds_f\vehicles\soft\tires\int-tires-sand2.wss,170,2,1000
         //A3\Sounds_F\weapons\Rockets\rocket_fly_1, 8, 1.2
         //a3\sounds_f_epc\Device\device_disassembled_loop.wss, 30, 1.6
         //A3\Sounds_F\weapons\smokeshell\smoke_loop2, 6, 1.3
