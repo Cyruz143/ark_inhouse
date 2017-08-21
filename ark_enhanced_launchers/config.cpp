@@ -17,21 +17,16 @@ class CfgPatches {
 
 class CfgAmmo {
     class RocketBase;   // External Class Reference
-    class ShellCore;    // External Class Reference
+    class ShellBase;    // External Class Reference
 
-    class ShellBase : ShellCore {
+    class  Sh_155mm_AMOS : ShellBase {
         soundFly[] = {"x\ark\addons\ark_enhanced_launchers\shorter.wss",2,1,1000};
-        //a3\sounds_f\vehicles\soft\tires\int-tires-sand2.wss,170,2,1000
-        //A3\Sounds_F\weapons\Rockets\rocket_fly_1, 8, 1.2
-        //a3\sounds_f_epc\Device\device_disassembled_loop.wss, 30, 1.6
-        //A3\Sounds_F\weapons\smokeshell\smoke_loop2, 6, 1.3
-        
     };
-    class ace_explosion_reflection_base: ShellBase {
-        soundFly[] = {"",0.0316228,4};
+    class  CUP_Sh_120_HE : ShellBase {
+        soundFly[] = {"x\ark\addons\ark_enhanced_launchers\shorter.wss",2,1,1000};
     };
-    class ace_ammoExplosion: ShellBase {
-        soundFly[] = {"",0.0316228,4};
+    class  CUP_Sh_120_SABOT : ShellBase {
+        soundFly[] = {"x\ark\addons\ark_enhanced_launchers\shorter.wss",2,1,1000};
     };
 
     class R_PG32V_F: RocketBase {
