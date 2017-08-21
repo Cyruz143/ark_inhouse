@@ -26,6 +26,7 @@ ark_fnc_vehicleHit = {
 ark_fnc_vehicleRepair = {
     private _vehicle = _this select 0;
     private _driver = driver _vehicle;
+    private _gunner = gunner _vehicle;
     private _vehicleClassName = typeOf _vehicle;
 
     private _cookingOff = _vehicle getVariable ["ACE_cookoff_isCookingOff", false];
@@ -33,6 +34,7 @@ ark_fnc_vehicleRepair = {
     private _waitingToRepair = _vehicle getVariable ["ark_ai_vehicles_awaiting_repair", false];
 
     if (_cookingOff || _driverUnconscious || _waitingToRepair) exitWith {};
+    if ((!alive _gunner) && alive _driver) exitWith {_driver moveInGunner _vehicle;};
 
     if (_driver != _vehicle && alive _driver) then {
 
