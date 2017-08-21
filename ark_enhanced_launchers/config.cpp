@@ -19,13 +19,13 @@ class CfgAmmo {
     class RocketBase;   // External Class Reference
     class ShellBase;    // External Class Reference
 
-    class  Sh_155mm_AMOS : ShellBase {
+    class Sh_155mm_AMOS : ShellBase {
         soundFly[] = {"x\ark\addons\ark_enhanced_launchers\shorter.wss",2,1,1000};
     };
-    class  CUP_Sh_120_HE : ShellBase {
+    class CUP_Sh_120_HE : ShellBase {
         soundFly[] = {"x\ark\addons\ark_enhanced_launchers\shorter.wss",2,1,1000};
     };
-    class  CUP_Sh_120_SABOT : ShellBase {
+    class CUP_Sh_120_SABOT : ShellBase {
         soundFly[] = {"x\ark\addons\ark_enhanced_launchers\shorter.wss",2,1,1000};
     };
 
