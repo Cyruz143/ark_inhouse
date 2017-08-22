@@ -9,7 +9,7 @@
                     };
 
                 if ((!alive (gunner _x)) && alive (driver _x)) then {
-                    [_x] spawn ark_fnc_vehicleGunnerDead;
+                    [_x] call ark_fnc_vehicleGunnerDead;
                 };
 
                 if (!canMove _x && !isNull (driver _x) && !((driver _x) in PlayableUnits)) then {
@@ -34,11 +34,15 @@ ark_fnc_vehicleGunnerDead = {
 
     _vehicle setVariable ["ark_ai_vehicles_gunner_dead", true, true];
 
-    _vehicle forceSpeed 0;
-    sleep 2;
-    doGetOut _driver;
-    sleep 2;
-    _driver moveInGunner _vehicle;
+    [_vehicle,_driver] spawn {
+        params ["_vehicle","_driver"];
+        
+        _vehicle forceSpeed 0;
+        sleep 2;
+        doGetOut _driver;
+        sleep 2;
+        _driver moveInGunner _vehicle;
+    };
 };
 
 ark_fnc_vehicleRepair = {
