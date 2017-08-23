@@ -30,7 +30,6 @@ ark_fnc_vehicleHit = {
 ark_fnc_vehicleGunnerDead = {
     private _vehicle = _this select 0;
     private _driver = driver _vehicle;
-    private _gunner = gunner _vehicle;
 
     _vehicle setVariable ["ark_ai_vehicles_gunner_dead", true, true];
 
