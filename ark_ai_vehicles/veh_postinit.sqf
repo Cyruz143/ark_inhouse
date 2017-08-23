@@ -8,6 +8,10 @@
                         _x setVariable ["ark_ai_vehicles_repair_eh_applied", true, true];
                     };
 
+                if ((!alive (gunner _x)) && alive (driver _x)) then {
+                    [_x] call ark_fnc_vehicleGunnerDead;
+                };
+
                 if (!canMove _x && !isNull (driver _x) && !((driver _x) in PlayableUnits)) then {
                     [_x] call ark_fnc_vehicleRepair;
                 };
@@ -23,6 +27,23 @@ ark_fnc_vehicleHit = {
     _vehicle setVariable ["ark_ai_vehicles_last_hit", time, true];
 };
 
+ark_fnc_vehicleGunnerDead = {
+    private _vehicle = _this select 0;
+    private _driver = driver _vehicle;
+
+    _vehicle setVariable ["ark_ai_vehicles_gunner_dead", true, true];
+
+    [_vehicle,_driver] spawn {
+        params ["_vehicle","_driver"];
+        
+        _vehicle forceSpeed 0;
+        sleep 2;
+        doGetOut _driver;
+        sleep 2;
+        _driver moveInGunner _vehicle;
+    };
+};
+
 ark_fnc_vehicleRepair = {
     private _vehicle = _this select 0;
     private _driver = driver _vehicle;
@@ -32,15 +53,9 @@ ark_fnc_vehicleRepair = {
     private _cookingOff = _vehicle getVariable ["ACE_cookoff_isCookingOff", false];
     private _driverUnconscious = _driver getVariable ["ACE_isUnconscious", false];
     private _waitingToRepair = _vehicle getVariable ["ark_ai_vehicles_awaiting_repair", false];
+    private _gunnerDead = _vehicle getVariable ["ark_ai_vehicles_gunner_dead", false];
 
-    if (_cookingOff || _driverUnconscious || _waitingToRepair) exitWith {};
-    if ((!alive _gunner) && alive _driver) exitWith {
-        _vehicle forceSpeed 0;
-        sleep 2;
-        doGetOut _driver;
-        sleep 2;
-        _driver moveInGunner _vehicle;
-    };
+    if (_cookingOff || _driverUnconscious || _waitingToRepair || _gunnerDead) exitWith {};
 
     if (_driver != _vehicle && alive _driver) then {
 
