@@ -8,7 +8,7 @@
                         _x setVariable ["ark_ai_vehicles_repair_eh_applied", true, true];
                     };
 
-                if ((!alive (gunner _x)) && alive (driver _x)) then {
+                if ((!alive (gunner _x)) && alive (driver _x) && !((driver _x) in PlayableUnits)) then {
                     [_x] call ark_fnc_vehicleGunnerDead;
                 };
 
