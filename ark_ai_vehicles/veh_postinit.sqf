@@ -37,7 +37,7 @@ ark_fnc_vehicleGunnerDead = {
         params ["_vehicle","_driver"];
         
         _vehicle forceSpeed 0;
-        sleep 2;
+        sleep 4;
         doGetOut _driver;
         sleep 2;
         _driver moveInGunner _vehicle;
