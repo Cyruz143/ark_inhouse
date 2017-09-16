@@ -2,7 +2,7 @@ class CfgPatches {
     class ark_difficulty {
         units[] = {};
         weapons[] = {};
-        requiredVersion = 1.70;
+        requiredVersion = 1.76;
         requiredAddons[] = {"A3_Data_F"};
         author = "ARK";
         authorUrl = "http://www.ark-group.org";
@@ -25,7 +25,7 @@ class CfgAISkill {
 class CfgAILevelPresets {
     class AILevelLow {
         displayName = "ARK";
-        precisionAI = 0.3;
+        precisionAI = 0.2;
         skillAI = 1;  
     };
 };
