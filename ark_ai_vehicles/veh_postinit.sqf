@@ -9,11 +9,11 @@
                     };
 
                 if ((!alive (gunner _x)) && alive (driver _x) && !((driver _x) in PlayableUnits)) then {
-                    [_x] remoteExecCall [ark_fnc_vehicleGunnerDead, _x, false];
+                    [_x] remoteExecCall ["ark_fnc_vehicleGunnerDead", _x, false];
                 };
 
                 if (!canMove _x && !isNull (driver _x) && !((driver _x) in PlayableUnits)) then {
-                    [_x] remoteExecCall [ark_fnc_vehicleRepair, _x, false];
+                    [_x] remoteExecCall ["ark_fnc_vehicleRepair", _x, false];
                 };
             };
         } forEach vehicles;
