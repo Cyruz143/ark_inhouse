@@ -25,8 +25,8 @@ class CfgAILevelPresets {
 
 class CfgAISkill {
     aimingAccuracy[] = {0,0, 1,0.6};
-    aimingShake[]    = {0,0, 1,0.6};
-    aimingSpeed[]    = {0,0, 1,0.6};
+    aimingShake[]    = {0,0, 1,0.7};
+    aimingSpeed[]    = {0,0, 1,0.7};
     commanding[]     = {0,0, 1,1};
     courage[]        = {0,0, 1,1};
     endurance[]      = {0,0, 1,1};
