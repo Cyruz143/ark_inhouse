@@ -25,12 +25,12 @@ class CfgAILevelPresets {
 
 class CfgAISkill {
     aimingAccuracy[] = {0,0, 1,0.6};
-    aimingShake[]    = {0,0, 1,0.7};
-    aimingSpeed[]    = {0,0, 1,0.7};
+    aimingShake[]    = {0,0, 1,0.6};
+    aimingSpeed[]    = {0,0, 1,0.65};
     commanding[]     = {0,0, 1,1};
     courage[]        = {0,0, 1,1};
     endurance[]      = {0,0, 1,1};
-    general[]        = {0,0, 1,0.6};
+    general[]        = {0,0, 1,0.65};
     // apparently breaks rapid firing in single fire mode for players
     //reloadSpeed[]    = {0,0, 1,0.8};
     spotDistance[]   = {0,0, 1,1};
