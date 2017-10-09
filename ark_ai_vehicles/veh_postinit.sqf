@@ -9,13 +9,13 @@
                     };
 
                 if ((!alive (gunner _x)) && alive (driver _x) && !((driver _x) in PlayableUnits)) then {
-                    [_x] call ark_fnc_vehicleGunnerDead;
+                    [_x] remoteExecCall ["ark_fnc_vehicleGunnerDead", _x, false];
                 };
 
                 if (!canMove _x && !isNull (driver _x) && !((driver _x) in PlayableUnits)) then {
-                    [_x] call ark_fnc_vehicleRepair;
+                    [_x] remoteExecCall ["ark_fnc_vehicleRepair", _x, false];
                 };
-            };            
+            };
         } forEach vehicles;
         sleep 15;
     };
@@ -35,7 +35,7 @@ ark_fnc_vehicleGunnerDead = {
 
     [_vehicle,_driver] spawn {
         params ["_vehicle","_driver"];
-        
+
         _vehicle forceSpeed 0;
         sleep 4;
         doGetOut _driver;
@@ -63,7 +63,7 @@ ark_fnc_vehicleRepair = {
 
         [_vehicle,_driver,_vehicleClassName] spawn {
             params ["_vehicle","_driver","_vehicleClassName"];
-          
+
             waitUntil {
               sleep 5;
               private _lastHit = _vehicle getVariable ["ark_ai_vehicles_last_hit", 0];
@@ -110,9 +110,9 @@ ark_fnc_vehicleRepair = {
             private _tempWp = _vehGrp addWaypoint [[0,0,0], 0, _newWpIndex];
 
             _vehGrp setCurrentWaypoint [_vehGrp, _newWpIndex];
-            
+
             sleep 6;
-            
+
             _vehGrp setCurrentWaypoint [_vehGrp, _currentWp];
             deleteWaypoint [_vehGrp, _newWpIndex];
 
