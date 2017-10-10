@@ -49,6 +49,14 @@ class CAManBase: Man {
                 statement = "[player] call ark_fnc_enableMapTeleport;";
             };
 
+            class Ammo_Drop : ARK_Action {
+                displayName = "Request Ammo Drop";
+                exceptions[] = {};
+                icon = ADDON_PATH(resources\parachute.paa);
+                condition = "([player] call ark_deploy_fnc_playerIsLeader) && (getNumber(missionConfigFile >> 'TownSweep' >> 'isEnabled') == 1)";
+                statement = "[player] call ark_fnc_ammoDrop;";
+            };
+
             // Host Menu
             class Host_Actions : ARK_Category {
                 displayName = "Host Menu";
