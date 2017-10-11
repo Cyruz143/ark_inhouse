@@ -301,6 +301,7 @@ ark_fnc_disableAiDebug = {
 // Ammo drop
 ark_fnc_ammoDrop = {
     FUN_ARGS_1(_player);
+    _player setVariable ["ark_ts_paradropInProgress", true, true];
     private _hull3Faction = _player getVariable "hull3_faction";
     private _dropHeight = 150;
     [[_player, _hull3Faction, _dropHeight], {
@@ -321,5 +322,6 @@ ark_fnc_ammoDrop = {
 
         waitUntil { getPosATL _ammoBox select 2 < 1 || isNull _parachute };
         detach _ammoBox;
+        _player setVariable ["ark_ts_paradropInProgress", false, true];
     }] remoteExec ["bis_fnc_spawn", 2];
 };
