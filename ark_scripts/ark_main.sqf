@@ -326,17 +326,17 @@ ark_fnc_ammoDrop = {
     }] remoteExec ["bis_fnc_spawn", 2];
 };
 
-// TS attack helo
+// Only call below from server, clients will fail
 ark_fnc_callAttackHelo = {
     private _victim = selectRandom playableUnits;
     private _unitTemplate = adm_camp_defaultUnitTemplate;
     private _side = [_unitTemplate] call adm_common_fnc_getUnitTemplateSide;
     private _pilotArray = getArray (configfile >> "Admiral" >> "UnitTemplates" >> _unitTemplate >> "pilots");
-    private _vicArray = getArray (configfile >> "Admiral" >> "UnitTemplates" >> _unitTemplate >> "AHs");
+    private _heloArray = getArray (configfile >> "Admiral" >> "UnitTemplates" >> _unitTemplate >> "AHs");
     private _unit = selectRandom _pilotArray;
-    private _vic = selectRandom _vicArray;
+    private _helo = selectRandom _heloArray;
 
-    private _vehicle = createVehicle [_vic, position _victim, [], 2000, "FLY"]; 
+    private _vehicle = createVehicle [_helo, position _victim, [], 2000, "FLY"]; 
     private _grp = createGroup _side; 
     private _driver = _grp createUnit [_unit, [0,0,0], [], 0, "NONE"]; 
     private _gunner = _grp createUnit [_unit, [0,0,0], [], 0, "NONE"]; 
@@ -352,7 +352,6 @@ ark_fnc_callAttackHelo = {
     [_grp, 2] waypointAttachVehicle _victim;
 };
 
-// TS amour
 ark_fnc_callArmour = {
     private _victim = selectRandom playableUnits;
     private _unitTemplate = adm_camp_defaultUnitTemplate;
@@ -361,7 +360,7 @@ ark_fnc_callArmour = {
     private _crewmanArray = getArray (configfile >> "Admiral" >> "UnitTemplates" >> _unitTemplate >> "crewmen");
     private _armourArray = getArray (configfile >> "Admiral" >> "UnitTemplates" >> _unitTemplate >> "armour");
     private _unit = selectRandom _crewmanArray;
-    private _vic = selectRandom _vicArray;
+    private _vic = selectRandom _armourArray;
 
     private _vehicle = createVehicle [_vic, _pos, [], 0, "NONE"]; 
     private _grp = createGroup _side; 
