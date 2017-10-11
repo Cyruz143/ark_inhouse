@@ -52,7 +52,7 @@ class CAManBase: Man {
             class Ammo_Drop : ARK_Action {
                 displayName = "Request Ammo Drop";
                 exceptions[] = {};
-                icon = ADDON_PATH(resources\parachute.paa);
+                icon = "\A3\ui_f\data\map\vehicleicons\iconParachute_ca.paa";
                 condition = "([player] call ark_deploy_fnc_playerIsLeader) && !(player getVariable ['ark_ts_paradropInProgress', false]) && (getNumber(missionConfigFile >> 'TownSweep' >> 'isEnabled') == 1)";
                 statement = "[player] call ark_fnc_ammoDrop;";
             };
@@ -103,6 +103,20 @@ class CAManBase: Man {
                     condition = "ark_mapTeleportEnabled"; 
                     statement = "[false] call ark_fnc_assignMapTeleport;";
                     icon = ADDON_PATH(resources\click_disable.paa);
+                };
+
+                class Call_Attack_Helo : ARK_Action {
+                    displayName = "Call Attack Helo";
+                    condition = "getNumber(missionConfigFile >> 'TownSweep' >> 'isEnabled') == 1"; 
+                    statement = "[] call ark_fnc_callAttackHelo;";
+                    icon = "\a3\Ui_f\data\GUI\Cfg\CommunicationMenu\casheli_ca.paa";
+                };
+
+                class Call_Armour : ARK_Action {
+                    displayName = "Call Attack Helo";
+                    condition = "getNumber(missionConfigFile >> 'TownSweep' >> 'isEnabled') == 1"; 
+                    statement = "[] call ark_fnc_callArmour;";
+                    icon = "\A3\ui_f\data\map\vehicleicons\iconTank_ca.paa";
                 };
             };
         };
