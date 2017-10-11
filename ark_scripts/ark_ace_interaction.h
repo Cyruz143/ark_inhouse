@@ -107,14 +107,14 @@ class CAManBase: Man {
 
                 /*class Call_Attack_Helo : ARK_Action {
                     displayName = "Call Attack Helo";
-                    condition = "ark_fnc_isAdmiralEnabled"; 
+                    condition = "[] call ark_fnc_isAdmiralEnabled"; 
                     statement = "[player] remoteExecCall ['ark_fnc_callAttackHelo',2]";
                     icon = "\a3\Ui_f\data\GUI\Cfg\CommunicationMenu\casheli_ca.paa";
                 };*/
 
                 class Call_Armour : ARK_Action {
                     displayName = "Call Attack Armour";
-                    condition = "ark_fnc_isAdmiralEnabled"; 
+                    condition = "[] call ark_fnc_isAdmiralEnabled"; 
                     statement = "[player] remoteExecCall ['ark_fnc_callArmour',2]";
                     icon = "\A3\ui_f\data\map\vehicleicons\iconTank_ca.paa";
                 };
