@@ -105,17 +105,17 @@ class CAManBase: Man {
                     icon = ADDON_PATH(resources\click_disable.paa);
                 };
 
-                class Call_Attack_Helo : ARK_Action {
+                /*class Call_Attack_Helo : ARK_Action {
                     displayName = "Call Attack Helo";
                     condition = "getNumber(missionConfigFile >> 'TownSweep' >> 'isEnabled') == 0"; 
-                    statement = "remoteExec ['ark_fnc_callAttackHelo',2]";
+                    statement = "[player] remoteExecCall ['ark_fnc_callAttackHelo',2]";
                     icon = "\a3\Ui_f\data\GUI\Cfg\CommunicationMenu\casheli_ca.paa";
-                };
+                };*/
 
                 class Call_Armour : ARK_Action {
                     displayName = "Call Attack Armour";
                     condition = "getNumber(missionConfigFile >> 'TownSweep' >> 'isEnabled') == 0"; 
-                    statement = "remoteExec ['ark_fnc_callArmour',2]";
+                    statement = "[player] remoteExecCall ['ark_fnc_callArmour',2]";
                     icon = "\A3\ui_f\data\map\vehicleicons\iconTank_ca.paa";
                 };
             };

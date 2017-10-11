@@ -328,7 +328,7 @@ ark_fnc_ammoDrop = {
 
 // Only call below from server, clients will fail
 ark_fnc_callAttackHelo = {
-    private _victim = selectRandom playableUnits;
+    private _player = _this select 0;
     private _unitTemplate = adm_camp_defaultUnitTemplate;
     private _side = [_unitTemplate] call adm_common_fnc_getUnitTemplateSide;
     private _pilotArray = getArray (configfile >> "Admiral" >> "UnitTemplates" >> _unitTemplate >> "pilots");
@@ -336,7 +336,7 @@ ark_fnc_callAttackHelo = {
     private _unit = selectRandom _pilotArray;
     private _helo = selectRandom _heloArray;
 
-    private _vehicle = createVehicle [_helo, position _victim, [], 2000, "FLY"]; 
+    private _vehicle = createVehicle [_helo, position _player, [], 2000, "FLY"]; 
     private _grp = createGroup _side; 
     private _driver = _grp createUnit [_unit, [0,0,0], [], 0, "NONE"]; 
     private _gunner = _grp createUnit [_unit, [0,0,0], [], 0, "NONE"]; 
@@ -344,19 +344,19 @@ ark_fnc_callAttackHelo = {
     _driver moveInDriver _vehicle; 
     _gunner moveInGunner _vehicle; 
 
-    private _waypoint = _grp addWaypoint [position _victim, 0, 1]; 
+    private _waypoint = _grp addWaypoint [position _player, 0, 1]; 
     _waypoint setWaypointType "SAD"; 
     _waypoint setWaypointBehaviour "COMBAT"; 
     _waypoint setWaypointCombatMode "RED"; 
     _waypoint setWaypointSpeed "FULL";
-    [_grp, 2] waypointAttachVehicle _victim;
+    [_grp, 2] waypointAttachVehicle _player;
 };
 
 ark_fnc_callArmour = {
-    private _victim = selectRandom playableUnits;
+    private _player = _this select 0;
     private _unitTemplate = adm_camp_defaultUnitTemplate;
     private _side = [_unitTemplate] call adm_common_fnc_getUnitTemplateSide;
-    private _pos = [_victim, 1000, 1100, 3, 0, 20, 0] call BIS_fnc_findSafePos;
+    private _pos = [_player, 1000, 1100, 3, 0, 20, 0] call BIS_fnc_findSafePos;
     private _crewmanArray = getArray (configfile >> "Admiral" >> "UnitTemplates" >> _unitTemplate >> "crewmen");
     private _armourArray = getArray (configfile >> "Admiral" >> "UnitTemplates" >> _unitTemplate >> "armour");
     private _unit = selectRandom _crewmanArray;
@@ -372,10 +372,10 @@ ark_fnc_callArmour = {
     _gunner moveInGunner _vehicle; 
     _commander moveInCommander _vehicle; 
 
-    private _waypoint = _grp addWaypoint [position _victim, 0, 1]; 
+    private _waypoint = _grp addWaypoint [position _player, 0, 1]; 
     _waypoint setWaypointType "SAD"; 
     _waypoint setWaypointBehaviour "COMBAT"; 
     _waypoint setWaypointCombatMode "RED"; 
     _waypoint setWaypointSpeed "FULL";
-    [_grp, 2] waypointAttachVehicle _victim;
+    [_grp, 2] waypointAttachVehicle _player;
 };
