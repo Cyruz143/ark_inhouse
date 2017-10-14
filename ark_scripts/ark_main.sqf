@@ -21,6 +21,10 @@ ark_fnc_isAdmiralEnabled = {
     getNumber (missionConfigFile >> "Admiral" >> "isEnabled") == 1;
 };
 
+ark_fnc_isTownSweep = {
+    getNumber(missionConfigFile >> 'TownSweep' >> 'isEnabled') == 1
+};
+
 // Clear Vehicle
 
 ark_fnc_clear_vehicle = {
