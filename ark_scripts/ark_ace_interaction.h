@@ -105,12 +105,12 @@ class CAManBase: Man {
                     icon = ADDON_PATH(resources\click_disable.paa);
                 };
 
-                /*class Call_Attack_Helo : ARK_Action {
+                class Call_Attack_Helo : ARK_Action {
                     displayName = "Call Attack Helo";
                     condition = "[] call ark_fnc_isAdmiralEnabled && !([] call ark_fnc_isTownSweep)"; 
                     statement = "[player] remoteExecCall ['ark_fnc_callAttackHelo',2]";
                     icon = "\a3\Ui_f\data\GUI\Cfg\CommunicationMenu\casheli_ca.paa";
-                };*/
+                };
 
                 class Call_Armour : ARK_Action {
                     displayName = "Call Attack Armour";
