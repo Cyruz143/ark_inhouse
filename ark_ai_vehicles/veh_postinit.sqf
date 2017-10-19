@@ -32,7 +32,7 @@ ark_fnc_vehicleGunnerDead = {
     private _driver = driver _vehicle;
     private _allTurrets = allTurrets _vehicle;
 
-    if (isNil "_allTurrets" || { count _allTurrets == 0 }) exitWith {}
+    if (isNil "_allTurrets" || { count _allTurrets == 0 }) exitWith {};
     _vehicle setVariable ["ark_ai_vehicles_gunner_dead", true, true];
 
     [_vehicle,_driver] spawn {
