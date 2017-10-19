@@ -337,6 +337,7 @@ ark_fnc_callAttackHelo = {
     private _side = [_unitTemplate] call adm_common_fnc_getUnitTemplateSide;
     private _pilotArray = getArray (configfile >> "Admiral" >> "UnitTemplates" >> _unitTemplate >> "pilots");
     private _heloArray = getArray (configfile >> "Admiral" >> "UnitTemplates" >> _unitTemplate >> "ah");
+    if (isNil "_heloArray" || { count _heloArray == 0 }) exitWith {};
     private _unit = selectRandom _pilotArray;
     private _helo = selectRandom _heloArray;
 
