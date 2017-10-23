@@ -343,11 +343,11 @@ ark_fnc_callAttackHelo = {
 
     private _vehicle = createVehicle [_helo, position _player, [], 2000, "FLY"]; 
     private _grp = createGroup _side; 
-    private _driver = _grp createUnit [_unit, [0,0,0], [], 0, "NONE"]; 
-    private _gunner = _grp createUnit [_unit, [0,0,0], [], 0, "NONE"]; 
 
-    _driver moveInDriver _vehicle; 
-    _gunner moveInGunner _vehicle; 
+    {
+    private _units = _grp createUnit [_unit, [0,0,0], [], 0, "NONE"];
+    _units moveInTurret _helo;
+    } forEach (allTurrets _helo);
 
     private _waypoint = _grp addWaypoint [position _player, 0, 1]; 
     _waypoint setWaypointType "SAD"; 
@@ -367,15 +367,13 @@ ark_fnc_callArmour = {
     private _unit = selectRandom _crewmanArray;
     private _vic = selectRandom _armourArray;
 
-    private _vehicle = createVehicle [_vic, _pos, [], 0, "NONE"]; 
-    private _grp = createGroup _side; 
-    private _driver = _grp createUnit [_unit, [0,0,0], [], 0, "NONE"]; 
-    private _gunner = _grp createUnit [_unit, [0,0,0], [], 0, "NONE"]; 
-    private _commander = _grp createUnit [_unit, [0,0,0], [], 0, "NONE"]; 
+    private _vehicle = createVehicle [_vic, _pos, [], 0, "NONE"];
+    private _grp = createGroup _side;
 
-    _driver moveInDriver _vehicle; 
-    _gunner moveInGunner _vehicle; 
-    _commander moveInCommander _vehicle; 
+    {
+    private _units = _grp createUnit [_unit, [0,0,0], [], 0, "NONE"];
+    _units moveInTurret _vic;
+    } forEach (allTurrets _vic);
 
     private _waypoint = _grp addWaypoint [position _player, 0, 1]; 
     _waypoint setWaypointType "SAD"; 
