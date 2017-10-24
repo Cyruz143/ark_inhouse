@@ -30,7 +30,7 @@ ark_fnc_vehicleHit = {
 ark_fnc_vehicleGunnerDead = {
     private _vehicle = _this select 0;
     private _driver = driver _vehicle;
-    private _allTurrets = allTurrets _vehicle;
+    private _allTurrets = allTurrets [_vehicle, false];
 
     if (isNil "_allTurrets" || { count _allTurrets == 0 }) exitWith {};
     _vehicle setVariable ["ark_ai_vehicles_gunner_dead", true, true];
@@ -42,7 +42,8 @@ ark_fnc_vehicleGunnerDead = {
         sleep 4;
         doGetOut _driver;
         sleep 2;
-        _driver moveInGunner _vehicle;
+        _driver assignAsTurret [_vehicle,[0]];
+        _driver moveInTurret [_vehicle,[0]];
     };
 };
 
