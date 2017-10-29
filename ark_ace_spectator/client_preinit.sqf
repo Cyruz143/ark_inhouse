@@ -54,7 +54,7 @@ ark_fnc_initSpec = {
 
             ["west", "east", "resistance", "civ"] call acre_api_fnc_babelSetSpokenLanguages;
 
-            [2, _attacker, -2, _attackerPos] call ace_spectator_fnc_setCameraAttributes;
+            //[2, _attacker, -2, _attackerPos] call ace_spectator_fnc_setCameraAttributes;
             [true] call ace_spectator_fnc_setSpectator;
     };
 };
@@ -79,7 +79,7 @@ ark_fnc_checkIfNotInitialPlayableUnit = {
         private _action =
             [ "ARK_ACE_Spectator"
             , "ACE Spectator"
-            , "\z\ace\addons\spectator\UI\Icon_Module_Spectator_ca.paa"
+            , "\z\ace\addons\spectator\data\Icon_Module_Spectator_ca.paa"
             , { player setDamage 1; player setPosASL [0, 0, 0]; }
             , { true }
             ] call ace_interact_menu_fnc_createAction;
