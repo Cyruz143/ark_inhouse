@@ -54,7 +54,9 @@ ark_fnc_initSpec = {
 
             ["west", "east", "resistance", "civ"] call acre_api_fnc_babelSetSpokenLanguages;
 
-            //[2, _attacker, -2, _attackerPos] call ace_spectator_fnc_setCameraAttributes;
+            BIS_DeathBlur ppEffectAdjust [0.0];
+            BIS_DeathBlur ppEffectCommit 0.0;
+            [2, _attacker, -2, _attackerPos] call ace_spectator_fnc_setCameraAttributes;
             [true] call ace_spectator_fnc_setSpectator;
     };
 };
