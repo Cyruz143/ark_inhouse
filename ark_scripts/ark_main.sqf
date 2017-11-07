@@ -345,6 +345,10 @@ ark_fnc_callAttackHelo = {
     private _grp = createGroup _side; 
     private _allTurrets = allTurrets [_vehicle, true];
 
+    private _driver = _grp createUnit [_unit, [0,0,0], [], 0, "NONE"];
+    _driver assignAsDriver _vehicle;
+    _driver moveInDriver _vehicle;
+
     {
         private _units = _grp createUnit [_unit, [0,0,0], [], 0, "NONE"];
         _units assignAsTurret [_vehicle, _x];
@@ -372,6 +376,10 @@ ark_fnc_callArmour = {
     private _vehicle = createVehicle [_vic, _pos, [], 0, "NONE"];
     private _grp = createGroup _side;
     private _allTurrets = allTurrets [_vehicle, true];
+
+    private _driver = _grp createUnit [_unit, [0,0,0], [], 0, "NONE"];
+    _driver assignAsDriver _vehicle;
+    _driver moveInDriver _vehicle;
 
     {
         private _units = _grp createUnit [_unit, [0,0,0], [], 0, "NONE"];
