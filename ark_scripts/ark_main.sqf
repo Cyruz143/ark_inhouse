@@ -343,11 +343,13 @@ ark_fnc_callAttackHelo = {
 
     private _vehicle = createVehicle [_helo, position _player, [], 2000, "FLY"]; 
     private _grp = createGroup _side; 
+    private _allTurrets = allTurrets [_vehicle, true];
 
     {
-    private _units = _grp createUnit [_unit, [0,0,0], [], 0, "NONE"];
-    _units moveInTurret _helo;
-    } forEach (allTurrets _helo);
+        private _units = _grp createUnit [_unit, [0,0,0], [], 0, "NONE"];
+        _units assignAsTurret [_vehicle, _x];
+        _units moveInTurret [_vehicle, _x];
+    } forEach _allTurrets;
 
     private _waypoint = _grp addWaypoint [position _player, 0, 1]; 
     _waypoint setWaypointType "SAD"; 
@@ -369,11 +371,13 @@ ark_fnc_callArmour = {
 
     private _vehicle = createVehicle [_vic, _pos, [], 0, "NONE"];
     private _grp = createGroup _side;
+    private _allTurrets = allTurrets [_vehicle, true];
 
     {
-    private _units = _grp createUnit [_unit, [0,0,0], [], 0, "NONE"];
-    _units moveInTurret _vic;
-    } forEach (allTurrets _vic);
+        private _units = _grp createUnit [_unit, [0,0,0], [], 0, "NONE"];
+        _units assignAsTurret [_vehicle, _x];
+        _units moveInTurret [_vehicle, _x];
+    } forEach _allTurrets;
 
     private _waypoint = _grp addWaypoint [position _player, 0, 1]; 
     _waypoint setWaypointType "SAD"; 
