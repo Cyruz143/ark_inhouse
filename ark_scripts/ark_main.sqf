@@ -387,6 +387,9 @@ ark_fnc_callArmour = {
         _units moveInTurret [_vehicle, _x];
     } forEach _allTurrets;
 
+    _vehicle allowCrewInImmobile true;
+    _vehicle setUnloadInCombat [false, false];
+
     private _waypoint = _grp addWaypoint [position _player, 0, 1]; 
     _waypoint setWaypointType "SAD"; 
     _waypoint setWaypointBehaviour "COMBAT"; 
