@@ -1,4 +1,4 @@
-/*%FSM<COMPILE "C:\Steam\steamapps\common\Arma 3 Tools\FSMEditor\scriptedFSM.cfg, ark_danger">*/
+/*%FSM<COMPILE "scriptedFSM.cfg, ark_danger">*/
 /*%FSM<HEAD>*/
 /*
 item0[] = {"start",0,250,-567.665100,156.572296,-477.665131,206.572296,0.000000,"start"};
@@ -17,7 +17,7 @@ item12[] = {"firing",2,250,5.508003,431.097504,95.508026,481.097565,0.000000,"fi
 item13[] = {"D8__Can_Fire",4,218,-344.289642,221.883270,-167.202179,265.321716,2.000000,"D8: Can Fire"};
 item14[] = {"Else",8,218,-4.591614,-12.113190,85.408379,37.886810,0.000000,"Else"};
 item15[] = {"timeout__fire",4,218,118.895126,431.097565,208.895126,481.097565,0.000000,"timeout: fire"};
-item16[] = {"clean_up",2,250,118.067497,356.609650,208.067520,406.609650,0.000000,"clean up"};
+item16[] = {"clean_up",2,4346,118.067497,356.609650,208.067520,406.609650,0.000000,"clean up"};
 item17[] = {"Dead_or_Unknown",4,218,-188.815842,154.573883,-60.793701,204.115814,6.000000,"Dead or Unknown"};
 item18[] = {"_",2,250,-40.600075,153.137222,49.399948,203.137222,0.000000,""};
 item19[] = {"D8__State",2,250,-120.987671,223.450806,-30.987640,273.450806,0.000000,"D8: State"};
@@ -59,8 +59,8 @@ link28[] = {22,24};
 link29[] = {23,4};
 link30[] = {24,25};
 link31[] = {25,0};
-globals[] = {0.000000,0,0,0,0,640,480,1,218,6316128,1,-654.355835,494.259216,622.537476,-310.897736,1548,1258,1};
-window[] = {0,-1,-1,-1,-1,1904,475,2905,475,1,1566};
+globals[] = {0.000000,0,0,0,0,640,480,1,218,6316128,1,-586.639282,426.542358,566.808228,-255.910843,1548,1257,1};
+window[] = {0,-1,-1,-1,-1,1507,78,2508,78,1,1566};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -261,7 +261,9 @@ class FSM
                         init = /*%FSM<STATEINIT""">*/"if(_debug) then {" \n
                          "  diag_log format[""[Unit: %1], Attacking %2, Duration: %3, Aware: %4"", _this, _dangerCausedBy, _dur, _aware];" \n
                          "};" \n
-                         "_this fireAtTarget [_dangerCausedBy];"/*%FSM</STATEINIT""">*/;
+                         "_suppressArea = getPosATL _dangerCausedBy;" \n
+                         "_this doSuppressiveFire [(_suppressArea select 0) + random 50, (_suppressArea select 1) + random 50, (_suppressArea select 2) + random 20];" \n
+                         "//_this fireAtTarget [_dangerCausedBy];"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
