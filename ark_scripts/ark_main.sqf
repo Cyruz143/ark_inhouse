@@ -95,7 +95,7 @@ ark_fnc_make_sentry = {
     _unit setBehaviour _behaviour;
     _unit setSkill _skill;
     _unit disableAI "FSM";
-    _unit disableAI "PATH";
+    doStop _unit;
     if (count _disabledFunctions > 0) then {
         {
             _unit disableAI _x;
