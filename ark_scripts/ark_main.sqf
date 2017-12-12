@@ -361,6 +361,7 @@ ark_fnc_callAttackHelo = {
     _waypoint setWaypointCombatMode "RED"; 
     _waypoint setWaypointSpeed "FULL";
     [_grp, 2] waypointAttachVehicle _player;
+    _grp reveal [_player, 3.5];
 };
 
 ark_fnc_callArmour = {
