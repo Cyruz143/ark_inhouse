@@ -40,6 +40,7 @@ force force ace_map_defaultChannel = 1;
 force force ace_markers_movableMarkersEnabled = true;
 force force ace_markers_moveRestriction = 0;
 
+force force ace_medical_blood_enabledFor = 1;
 force force ace_medical_level = 1;
 force force ace_medical_medicSetting = 1;
 force force ace_medical_increaseTrainingInLocations = false;
