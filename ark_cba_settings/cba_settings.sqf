@@ -33,9 +33,14 @@ force force ace_map_BFT_Interval = 1;
 force force ace_map_BFT_Enabled = false;
 force force ace_map_BFT_HideAiGroups = false;
 force force ace_map_BFT_ShowPlayerNames = false;
+force force ace_map_mapIllumination = true;
+force force ace_map_mapGlow = true;
 force force ace_map_mapShake = false;
 force force ace_map_mapShowCursorCoordinates = true;
 force force ace_map_defaultChannel = 1;
+force force ace_map_gestures_enabled = true;
+force force ace_map_gestures_maxRange = 7;
+force force ace_map_gestures_interval = 0.03;
 
 force force ace_markers_movableMarkersEnabled = true;
 force force ace_markers_moveRestriction = 0;
@@ -121,6 +126,7 @@ force force ace_ui_allowSelectiveUI = true;
 force force ace_ui_ammoCount = false;
 force force ace_ui_staminaBar = false;
 
+force force ace_viewdistance_enabled = true;
 force force ace_viewdistance_limitViewDistance = 10000;
 
 force force ace_captives_allowHandcuffOwnSide = false;
