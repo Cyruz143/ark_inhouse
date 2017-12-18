@@ -36,8 +36,8 @@ ark_fnc_vehicleGunnerDead = {
     if (isNil "_allTurrets" || { count _allTurrets == 0 }) exitWith {};
     _vehicle setVariable ["ark_ai_vehicles_gunner_dead", true, true];
 
-    [_vehicle,_driver] spawn {
-        params ["_vehicle","_driver"];
+    [_vehicle,_driver,_gunnerTurret] spawn {
+        params ["_vehicle","_driver","_gunnerTurret"];
 
         _vehicle forceSpeed 0;
         sleep 4;
