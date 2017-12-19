@@ -1,1 +1,0 @@
-![Ark](layout.png)
