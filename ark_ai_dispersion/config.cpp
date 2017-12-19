@@ -12,17 +12,4 @@ class CfgPatches {
     };
 };
 
-class CfgWeapons {
-    class Default;
-    class Launcher;
-
-    class GrenadeLauncher: Default {
-        aiDispersionCoefX = 15;
-        aiDispersionCoefY = 16;
-    };
-
-    class Launcher_Base_F: Launcher {
-        aiDispersionCoefX = 15;
-        aiDispersionCoefY = 16;
-    };
-};
+#include "CfgWeapons.hpp"
