@@ -15,7 +15,7 @@ class CfgPatches {
 };
 
 class Extended_PostInit_EventHandlers {
-    class ark_player_nvgs {
+    class ADDON {
         clientInit = "[] call compile preProcessFileLineNumbers 'x\ark\addons\ark_player_nvgs\nvg_postinit.sqf';";
     };
 };

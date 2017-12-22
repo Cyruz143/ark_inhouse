@@ -29,7 +29,7 @@ ark_fnc_admin_assignMapTeleport = {
 };
 
 ark_fnc_admin_enableMapTeleport = {
-    params["_player"];
+    params ["_player"];
     hintSilent "Map Click Teleport has been enabled.";
     _player onMapSingleClick {
         _this setposATL _pos;

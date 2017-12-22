@@ -15,7 +15,7 @@ class CfgPatches {
 };
 
 class Extended_PostInit_EventHandlers {
-    class ark_ai_vehicles {
+    class ADDON {
         serverInit = "[] call compile preProcessFileLineNumbers 'x\ark\addons\ark_ai_vehicles\veh_postinit.sqf';";
     };
 };

@@ -15,7 +15,7 @@ class CfgPatches {
 };
 
 class Extended_PostInit_EventHandlers {
-    class ark_acre_tweaks {
+    class ADDON {
         init = "call compile preProcessFileLineNumbers 'x\ark\addons\ark_acre_tweaks\acre_postInit.sqf';";
     };
 };
