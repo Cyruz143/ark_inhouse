@@ -41,14 +41,6 @@ class CAManBase: Man {
                 statement = "[player] call ark_deploy_fnc_assignDeployClick;";
             };
 
-            class Map_Click_Teleport : ARK_Action {
-                displayName = "Click Map Teleport";
-                exceptions[] = {};
-                icon = ADDON_PATH(resources\click.paa);
-                condition = "ark_mapTeleportEnabled";
-                statement = "[player] call ark_fnc_enableMapTeleport;";
-            };
-
             class Ammo_Drop : ARK_Action {
                 displayName = "Request Ammo Drop";
                 exceptions[] = {};
@@ -62,14 +54,6 @@ class CAManBase: Man {
                 displayName = "Host Menu";
                 condition = "([] call ark_fnc_isHost) || (isServer && hasInterface)";
 
-                class Safety_Off : ARK_Action {
-                    displayName = "Turn Safety Off";
-                    condition = "!([] call hull3_mission_fnc_hasSafetyTimerEnded)";
-                    showDisabled = 1;
-                    statement = "[nil, nil, nil, ['confirm']] call compile preProcessFileLineNumbers 'x\ark\addons\hull3\mission_host_safetytimer_stop.sqf';";
-                    icon = ADDON_PATH(resources\hull_disable.paa);
-                };
-
                 class Activate_Pre_Deploy : ARK_Action {
                     displayName = "Activate (Pre Safety) Group Deploy";
                     icon = ADDON_PATH(resources\deploy_activate.paa);
@@ -77,47 +61,6 @@ class CAManBase: Man {
                     statement = "[] call ark_deploy_fnc_activatePreGroupDeploy;";
                 };
 
-                class Enable_AI_Debug : ARK_Action {
-                    displayName = "Enable AI Debug";
-                    condition = "!ark_aiDebugEnabled"; 
-                    statement = "[] call ark_fnc_enableAiDebug;";
-                    icon = ADDON_PATH(resources\ai_enable.paa);
-                };
-
-                class Disable_AI_Debug : ARK_Action {
-                    displayName = "Disable AI Debug";
-                    condition = "ark_aiDebugEnabled"; 
-                    statement = "[] call ark_fnc_disableAiDebug;";
-                    icon = ADDON_PATH(resources\ai_disable.paa);
-                };
-
-                class Enable_Click_Teleport : ARK_Action {
-                    displayName = "Enable Global Click Teleport";
-                    condition = "!ark_mapTeleportEnabled"; 
-                    statement = "[true] call ark_fnc_assignMapTeleport;";
-                    icon = ADDON_PATH(resources\click_enable.paa);
-                };
-
-                class Disable_Click_Teleport : ARK_Action {
-                    displayName = "Disable Global Click Teleport";
-                    condition = "ark_mapTeleportEnabled"; 
-                    statement = "[false] call ark_fnc_assignMapTeleport;";
-                    icon = ADDON_PATH(resources\click_disable.paa);
-                };
-
-                class Call_Attack_Helo : ARK_Action {
-                    displayName = "Call Attack Helo";
-                    condition = "[] call ark_fnc_isAdmiralEnabled && !([] call ark_fnc_isTownSweep)"; 
-                    statement = "[player] remoteExecCall ['ark_fnc_callAttackHelo',2]";
-                    icon = "\a3\Ui_f\data\GUI\Cfg\CommunicationMenu\casheli_ca.paa";
-                };
-
-                class Call_Armour : ARK_Action {
-                    displayName = "Call Attack Armour";
-                    condition = "[] call ark_fnc_isAdmiralEnabled && !([] call ark_fnc_isTownSweep)"; 
-                    statement = "[player] remoteExecCall ['ark_fnc_callArmour',2]";
-                    icon = "\A3\ui_f\data\map\vehicleicons\iconTank_ca.paa";
-                };
             };
         };
     };

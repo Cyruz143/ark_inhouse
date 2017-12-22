@@ -1,4 +1,4 @@
-class cfgWeapons {
+class CfgWeapons {
     class NVGoggles;
 
     class NVGoggles_AI : NVGoggles {
