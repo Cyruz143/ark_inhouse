@@ -1,4 +1,4 @@
-#define COMPONENT ark_scripts
+#define COMPONENT scripts
 #define COMPONENT_BEAUTIFIED Scripts
 
 #include "\x\ark\addons\ark_main\script_mod.hpp"

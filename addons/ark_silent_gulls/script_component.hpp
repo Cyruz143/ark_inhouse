@@ -1,4 +1,4 @@
-#define COMPONENT ark_silent_gulls
+#define COMPONENT silent_gulls
 #define COMPONENT_BEAUTIFIED Silent Gulls
 
 #include "\x\ark\addons\ark_main\script_mod.hpp"

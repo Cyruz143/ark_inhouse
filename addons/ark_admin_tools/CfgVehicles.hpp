@@ -27,6 +27,14 @@ class CfgVehicles {
                     statement = "";
                 };
 
+                class Map_Click_Teleport : ARK_Action {
+                    displayName = "Click Map Teleport";
+                    exceptions[] = {};
+                    icon = "\x\ark\addons\ark_admin_tools\resources\click.paa";
+                    condition = "ark_mapTeleportEnabled";
+                    statement = "[player] call ark_fnc_admin_enableMapTeleport;";
+                };
+
                 // Host Menu
                 class Host_Actions : ARK_Category {
                     displayName = "Host Menu";

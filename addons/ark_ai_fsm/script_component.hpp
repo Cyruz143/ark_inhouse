@@ -1,4 +1,4 @@
-#define COMPONENT ark_ai_fsm
+#define COMPONENT ai_fsm
 #define COMPONENT_BEAUTIFIED AI FSM
 
 #include "\x\ark\addons\ark_main\script_mod.hpp"
