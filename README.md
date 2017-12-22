@@ -4,6 +4,8 @@ ARK In-house mods
 
 A collection of mods that improve/tweak Arma 3 gameplay behavior. Visit http://www.ark-group.org for further details/applications.
 
+`Build.exe` and `SwiftPbo.dll` provided by our lovely friends at 1tac (https://github.com/Sniperhid/1tac_misc)
+
 Modules
 -------------
 > - `ark_ace_map_gestures` - Adding correct coloured gestures for Hull3 group colour scheme.
