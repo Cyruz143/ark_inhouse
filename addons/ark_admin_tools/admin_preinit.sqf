@@ -31,10 +31,11 @@ ark_fnc_admin_assignMapTeleport = {
 ark_fnc_admin_enableMapTeleport = {
     params ["_player"];
     hintSilent "Map Click Teleport has been enabled.";
+    openMap [true, true];
     _player onMapSingleClick {
         _this setposATL _pos;
         [] call ark_fnc_disableMapTeleport;
-        openMap false;  // close the player's map
+        openMap [false, false];
     };
 };
 
