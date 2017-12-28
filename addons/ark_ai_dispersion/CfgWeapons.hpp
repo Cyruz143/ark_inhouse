@@ -3,28 +3,21 @@ class CfgWeapons {
     class RifleCore;
     class Launcher;
 
-    class GrenadeLauncher: Default {
-        aiDispersionCoefX = 15;
-        aiDispersionCoefY = 16;
-    };
-
-    class Throw: GrenadeLauncher
-    {
-        class ThrowMuzzle: GrenadeLauncher
-        {
-            aiDispersionCoefX = 15;
-            aiDispersionCoefY = 16;
-        };
-    };
-
-    class Rifle: RifleCore
-    {
-        aiDispersionCoefX = 15;
-        aiDispersionCoefY = 16;
+    class Rifle: RifleCore {
+        AI_DISPERSION
     };
 
     class Launcher_Base_F: Launcher {
-        aiDispersionCoefX = 15;
-        aiDispersionCoefY = 16;
+        AI_DISPERSION
+    };
+
+    class GrenadeLauncher: Default {
+        AI_DISPERSION
+    };
+
+    class Throw: GrenadeLauncher {
+        class ThrowMuzzle: GrenadeLauncher {
+            AI_DISPERSION
+        };
     };
 };

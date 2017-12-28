@@ -165,7 +165,7 @@ ark_admin_tools_fnc_disableAiDebug = {
 
 // Only call below from server, clients will fail
 ark_admin_tools_fnc_callAttackHelo = {
-    private _player = _this select 0;
+    params ["_player"];
     private _unitTemplate = adm_camp_defaultUnitTemplate;
     private _side = [_unitTemplate] call adm_common_fnc_getUnitTemplateSide;
     private _pilotArray = getArray (configfile >> "Admiral" >> "UnitTemplates" >> _unitTemplate >> "pilots");
@@ -198,7 +198,7 @@ ark_admin_tools_fnc_callAttackHelo = {
 };
 
 ark_admin_tools_fnc_callArmour = {
-    private _player = _this select 0;
+    params ["_player"];
     private _unitTemplate = adm_camp_defaultUnitTemplate;
     private _side = [_unitTemplate] call adm_common_fnc_getUnitTemplateSide;
     private _pos = [_player, 1000, 1100, 3, 0, 20, 0] call BIS_fnc_findSafePos;
