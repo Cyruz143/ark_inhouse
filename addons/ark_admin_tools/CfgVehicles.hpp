@@ -9,11 +9,11 @@ class CfgVehicles {
                 exceptions[] = {"isNotInside"};
                 condition = "true";
                 statement = "";
-                icon = "\x\ark\addons\ark_admin_tools\resources\ark_star.paa";
+                icon = "\x\ark\addons\ark_main\resources\ark_star.paa";
 
                 class ARK_Category {
                     displayName = "ARK Client Action";
-                    icon = "\x\ark\addons\ark_admin_tools\resources\ark_star.paa";
+                    icon = "\x\ark\addons\ark_main\resources\ark_star.paa";
                     exceptions[] = {"isNotInside"};
                     condition = "true";
                     statement = "";
@@ -21,7 +21,7 @@ class CfgVehicles {
 
                 class ARK_Action {
                     displayName = "ARK Client Action";
-                    icon = "\x\ark\addons\ark_admin_tools\resources\ark_star.paa";
+                    icon = "\x\ark\addons\ark_main\resources\ark_star.paa";
                     exceptions[] = {"isNotInside"};
                     condition = "true";
                     statement = "";
@@ -30,7 +30,7 @@ class CfgVehicles {
                 class Map_Click_Teleport : ARK_Action {
                     displayName = "Click Map Teleport";
                     exceptions[] = {};
-                    icon = "\x\ark\addons\ark_admin_tools\resources\click.paa";
+                    icon = "\x\ark\addons\ark_main\resources\click.paa";
                     condition = "ark_mapTeleportEnabled";
                     statement = "[player] call ark_fnc_admin_enableMapTeleport;";
                 };
@@ -45,35 +45,35 @@ class CfgVehicles {
                         condition = "!([] call hull3_mission_fnc_hasSafetyTimerEnded)";
                         showDisabled = 1;
                         statement = "[nil, nil, nil, ['confirm']] call compile preProcessFileLineNumbers 'x\ark\addons\hull3\mission_host_safetytimer_stop.sqf';";
-                        icon = "\x\ark\addons\ark_admin_tools\resources\hull_disable.paa";
+                        icon = "\x\ark\addons\ark_main\resources\hull_disable.paa";
                     };
 
                     class Enable_AI_Debug : ARK_Action {
                         displayName = "Enable AI Debug";
                         condition = "!ark_aiDebugEnabled"; 
                         statement = "[] call ark_fnc_admin_enableAiDebug;";
-                        icon = "\x\ark\addons\ark_admin_tools\resources\ai_enable.paa";
+                        icon = "\x\ark\addons\ark_main\resources\ai_enable.paa";
                     };
 
                     class Disable_AI_Debug : ARK_Action {
                         displayName = "Disable AI Debug";
                         condition = "ark_aiDebugEnabled"; 
                         statement = "[] call ark_fnc_admin_disableAiDebug;";
-                        icon = "\x\ark\addons\ark_admin_tools\resources\ai_disable.paa";
+                        icon = "\x\ark\addons\ark_main\resources\ai_disable.paa";
                     };
 
                     class Enable_Click_Teleport : ARK_Action {
                         displayName = "Enable Global Click Teleport";
                         condition = "!ark_mapTeleportEnabled"; 
                         statement = "[true] call ark_fnc_admin_assignMapTeleport;";
-                        icon = "\x\ark\addons\ark_admin_tools\resources\click_enable.paa";
+                        icon = "\x\ark\addons\ark_main\resources\click_enable.paa";
                     };
 
                     class Disable_Click_Teleport : ARK_Action {
                         displayName = "Disable Global Click Teleport";
                         condition = "ark_mapTeleportEnabled"; 
                         statement = "[false] call ark_fnc_admin_assignMapTeleport;";
-                        icon = "\x\ark\addons\ark_admin_tools\resources\click_disable.paa";
+                        icon = "\x\ark\addons\ark_main\resources\click_disable.paa";
                     };
 
                     class Call_Attack_Helo : ARK_Action {

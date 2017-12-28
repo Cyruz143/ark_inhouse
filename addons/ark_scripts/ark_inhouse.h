@@ -3,14 +3,6 @@
 // ark_scripts
 // Contains config values to be used in the future.
 
-// For Modules
-class CfgFactionClasses {
-    class NO_CATEGORY;
-    class ARK: NO_CATEGORY {
-        displayName = "ARK";
-    };
-};
-
 class CfgVehicles {
     #include "ark_modules.hpp"
     #include "ark_ace_interaction.h"

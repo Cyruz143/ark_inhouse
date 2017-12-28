@@ -13,40 +13,6 @@ ark_fnc_isHost = {
     !isMultiplayer || {serverCommandAvailable "#logout"} || (getplayerUID player) in _adminWhiteList;
 };
 
-// Clear Vehicle
-
-ark_fnc_clear_vehicle = {
-    IF_IS_SERVER;
-    FUN_ARGS_1(_vehicle);
-
-    clearMagazineCargoGlobal _vehicle;
-    clearWeaponCargoGlobal _vehicle;
-    clearItemCargoGlobal _vehicle;
-    clearBackpackCargoGlobal _vehicle;
-    DEBUG {
-        [["Vehicle: %1 had its cargo cleared.", _vehicle], DEBUG_INFO] call ark_debug_fnc_logToServer;
-    };
-};
-
-ark_module_clear_vehicle = {
-    FUN_ARGS_3(_logic,_units,_activated);
-    
-    if !(_activated) exitWith {
-        DEBUG {
-            [["Logic: %1 was not activated!", _logic], DEBUG_ERROR] call ark_debug_fnc_logToServer;
-        };
-    };
-    
-    if (count _units == 0) exitWith {
-        DEBUG {
-            [["Logic: %1 had no synced units!", _logic], DEBUG_ERROR] call ark_debug_fnc_logToServer;
-        };
-    };
-    {
-        [_x] call ark_fnc_clear_vehicle;
-    } forEach _units;
-};
-
 // Make Sentry
 
 ark_fnc_make_sentry = {

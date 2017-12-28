@@ -890,3 +890,6 @@ class cfgPatches {
         VERSION_CONFIG;
     };
 };
+
+#include "CfgFactionClasses.hpp"
+#include "CfgVehicles.hpp"
