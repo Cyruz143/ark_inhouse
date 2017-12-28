@@ -4,16 +4,16 @@
             if (_x isKindOf "LandVehicle" && (count crew _x > 0) && !(_x isKindOf "StaticWeapon") && alive _x  && simulationEnabled _x) then {
                 private _isEHAlreadyApplied = _x getVariable ["ark_ai_vehicles_repair_eh_applied", false];
                     if !(_isEHAlreadyApplied) then {
-                        _x addEventHandler ["Hit", {call ark_fnc_vehicleHit}];
+                        _x addEventHandler ["Hit", {call ark_ai_vehicles_fnc_vehicleHit}];
                         _x setVariable ["ark_ai_vehicles_repair_eh_applied", true, true];
                     };
 
                 if ((!alive (gunner _x)) && alive (driver _x) && !((driver _x) in PlayableUnits)) then {
-                    [_x] remoteExecCall ["ark_fnc_vehicleGunnerDead", _x, false];
+                    [_x] remoteExecCall ["ark_ai_vehicles_fnc_vehicleGunnerDead", _x, false];
                 };
 
                 if (!canMove _x && !isNull (driver _x) && !((driver _x) in PlayableUnits)) then {
-                    [_x] remoteExecCall ["ark_fnc_vehicleRepair", _x, false];
+                    [_x] remoteExecCall ["ark_ai_vehicles_fnc_vehicleRepair", _x, false];
                 };
             };
         } forEach vehicles;
@@ -21,14 +21,14 @@
     };
 };
 
-ark_fnc_vehicleHit = {
-    private _vehicle = _this select 0;
+ark_ai_vehicles_fnc_vehicleHit = {
+    params ["_vehicle"];
 
     _vehicle setVariable ["ark_ai_vehicles_last_hit", time, true];
 };
 
-ark_fnc_vehicleGunnerDead = {
-    private _vehicle = _this select 0;
+ark_ai_vehicles_fnc_vehicleGunnerDead = {
+    params ["_vehicle"];
     private _driver = driver _vehicle;
     private _allTurrets = allTurrets [_vehicle, false];
     private _gunnerTurret = [_vehicle] call ace_common_fnc_getTurretGunner;
@@ -48,8 +48,8 @@ ark_fnc_vehicleGunnerDead = {
     };
 };
 
-ark_fnc_vehicleRepair = {
-    private _vehicle = _this select 0;
+ark_ai_vehicles_fnc_vehicleRepair = {
+    params ["_vehicle"];
     private _driver = driver _vehicle;
     private _gunner = gunner _vehicle;
     private _vehicleClassName = typeOf _vehicle;

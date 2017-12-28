@@ -1,4 +1,4 @@
-ark_fnc_postInitServer = {
+ark_ace_spectator_fnc_postInitServer = {
     if (isServer) then {
         ark_ace_spectator_initialPlayableUnits = playableUnits;
         [ark_ace_spectator_initialPlayableUnits, {
@@ -7,4 +7,4 @@ ark_fnc_postInitServer = {
     };
 };
 
-[] call ark_fnc_postInitServer;
+[] call ark_ace_spectator_fnc_postInitServer;

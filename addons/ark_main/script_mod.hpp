@@ -1,7 +1,7 @@
 #define MAINPREFIX x
 #define PREFIX ark
 
-#define MAJOR 1
+#define MAJOR 2
 #define MINOR 0
 #define PATCH 0
 

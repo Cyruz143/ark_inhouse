@@ -1,4 +1,4 @@
-ark_fnc_clearCargo_clearVehicle = {
+ark_clear_cargo_fnc_clearVehicle = {
     if (isServer) then {
         params ["_vehicle"];
 
@@ -9,7 +9,7 @@ ark_fnc_clearCargo_clearVehicle = {
     };
 };
 
-ark_module_clearCargo_clearVehicle = {
+ark_clear_cargo_module_clearVehicle = {
     params ["_logic","_units","_activated"];
     
     if !(_activated) exitWith {
@@ -21,6 +21,6 @@ ark_module_clearCargo_clearVehicle = {
     };
     
     {
-        [_x] call ark_fnc_clearCargo_clearVehicle;
+        [_x] call ark_clear_cargo_fnc_clearVehicle;
     } forEach _units;
 };

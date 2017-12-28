@@ -1,23 +1,23 @@
-ark_fnc_admin_initVariables = {
+ark_admin_tools_fnc_initVariables = {
     ark_aiDebugEnabled = false;
     ark_mapTeleportEnabled = false;
-    [] call ark_eh_admin_mapClickTeleport;
+    [] call ark_admin_tools_eh_mapClickTeleport;
 };
 
-ark_fnc_admin_isHost = {
+ark_admin_tools_fnc_isHost = {
     private _adminWhiteList = ["76561197969272205", "76561198001868030", "76561197980517821", "76561197972043388"];
     !isMultiplayer || {serverCommandAvailable "#logout"} || (getplayerUID player) in _adminWhiteList;
 };
 
-ark_fnc_admin_isAdmiralEnabled = {
+ark_admin_tools_fnc_isAdmiralEnabled = {
     getNumber (missionConfigFile >> "Admiral" >> "isEnabled") == 1;
 };
 
-ark_fnc_admin_isTownSweep = {
+ark_admin_tools_fnc_isTownSweep = {
     getNumber(missionConfigFile >> 'TownSweep' >> 'isEnabled') == 1
 };
 
-ark_fnc_admin_assignMapTeleport = {
+ark_admin_tools_fnc_assignMapTeleport = {
     params ["_teleportEnabled"];
 
     if (_teleportEnabled) then {
@@ -28,33 +28,33 @@ ark_fnc_admin_assignMapTeleport = {
     publicVariable "ark_mapTeleportEnabled";
 };
 
-ark_fnc_admin_enableMapTeleport = {
+ark_admin_tools_fnc_enableMapTeleport = {
     params ["_player"];
     hintSilent "Map Click Teleport has been enabled.";
     openMap [true, true];
     _player onMapSingleClick {
         _this setposATL _pos;
-        [] call ark_fnc_disableMapTeleport;
+        [] call ark_admin_tools_fnc_disableMapTeleport;
         openMap [false, false];
     };
 };
 
-ark_fnc_admin_disableMapTeleport = {
+ark_admin_tools_fnc_disableMapTeleport = {
     hintSilent "Map Click Teleport has been disabled";
     onMapSingleClick {};
 };
 
-ark_eh_admin_mapClickTeleport = {
+ark_admin_tools_eh_mapClickTeleport = {
     "ark_mapTeleportEnabled" addPublicVariableEventHandler {
         if (_this select 1) then {
-            [player] call ark_fnc_admin_enableMapTeleport;
+            [player] call ark_admin_tools_fnc_enableMapTeleport;
         } else {
-            [] call ark_fnc_admin_disableMapTeleport;
+            [] call ark_admin_tools_fnc_disableMapTeleport;
         };
     };
 };
 
-ark_fnc_admin_AiDebug = {
+ark_admin_tools_fnc_AiDebug = {
     private ["_deleteMarkers"];
     _deleteMarkers = if (count _this > 0) then {_this select 0} else {false};
 
@@ -153,18 +153,18 @@ ark_fnc_admin_AiDebug = {
     };
 };
 
-ark_fnc_admin_enableAiDebug = {
+ark_admin_tools_fnc_enableAiDebug = {
     ark_aiDebugEnabled = true;
-    [] spawn ark_fnc_admin_AiDebug;
+    [] spawn ark_admin_tools_fnc_AiDebug;
 };
 
-ark_fnc_admin_disableAiDebug = {
+ark_admin_tools_fnc_disableAiDebug = {
     ark_aiDebugEnabled = false;
-    [true] spawn ark_fnc_admin_AiDebug;
+    [true] spawn ark_admin_tools_fnc_AiDebug;
 };
 
 // Only call below from server, clients will fail
-ark_fnc_admin_callAttackHelo = {
+ark_admin_tools_fnc_callAttackHelo = {
     private _player = _this select 0;
     private _unitTemplate = adm_camp_defaultUnitTemplate;
     private _side = [_unitTemplate] call adm_common_fnc_getUnitTemplateSide;
@@ -197,7 +197,7 @@ ark_fnc_admin_callAttackHelo = {
     _grp reveal [_player, 3.5];
 };
 
-ark_fnc_admin_callArmour = {
+ark_admin_tools_fnc_callArmour = {
     private _player = _this select 0;
     private _unitTemplate = adm_camp_defaultUnitTemplate;
     private _side = [_unitTemplate] call adm_common_fnc_getUnitTemplateSide;
@@ -232,4 +232,4 @@ ark_fnc_admin_callArmour = {
     [_grp, 2] waypointAttachVehicle _player;
 };
 
-[] call ark_fnc_admin_initVariables;
+[] call ark_admin_tools_fnc_initVariables;

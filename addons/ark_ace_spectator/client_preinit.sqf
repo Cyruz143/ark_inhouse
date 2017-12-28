@@ -1,4 +1,4 @@
-ark_fnc_initSpec = {
+ark_ace_spectator_fnc_initSpec = {
     private _victim = _this select 0;
     private _attacker = _this select 1;
     private _instigator = _this select 2;
@@ -59,7 +59,7 @@ ark_fnc_initSpec = {
     };
 };
 
-ark_fnc_getInitialPlayableUnitsFromServer = {
+ark_ace_spectator_fnc_getInitialPlayableUnitsFromServer = {
     if (!isMultiplayer || !didJIP) exitWith {};
 
     [[clientOwner], {
@@ -69,12 +69,12 @@ ark_fnc_getInitialPlayableUnitsFromServer = {
             params ["_initialPlayableUnits"];
 
             ark_ace_spectator_initialPlayableUnits = _initialPlayableUnits;
-            [] spawn ark_fnc_checkIfNotInitialPlayableUnit;
+            [] spawn ark_ace_spectator_fnc_checkIfNotInitialPlayableUnit;
         }] remoteExecCall ["BIS_fnc_call", _clientId, false];
     }] remoteExecCall ["BIS_fnc_call", 2, false];
 };
 
-ark_fnc_checkIfNotInitialPlayableUnit = {
+ark_ace_spectator_fnc_checkIfNotInitialPlayableUnit = {
     if !(player in ark_ace_spectator_initialPlayableUnits) then {
         private _action =
             [ "ARK_ACE_Spectator"
@@ -95,6 +95,6 @@ ark_fnc_checkIfNotInitialPlayableUnit = {
 };
 
 ["player.initialized", {
-    player addEventHandler ["Killed", {call ark_fnc_initSpec}];
-    [] call ark_fnc_getInitialPlayableUnitsFromServer;
+    player addEventHandler ["Killed", {call ark_ace_spectator_fnc_initSpec}];
+    [] call ark_ace_spectator_fnc_getInitialPlayableUnitsFromServer;
 }] call hull3_event_fnc_addEventHandler;
