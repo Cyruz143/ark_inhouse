@@ -1,7 +1,5 @@
 ark_ace_spectator_fnc_initSpec = {
-    private _victim = _this select 0;
-    private _attacker = _this select 1;
-    private _instigator = _this select 2;
+    params ["_victim","_attacker","_instigator"];
 
     private _respawn = getMissionConfigValue ["respawn",1];
     if (_respawn != 1) exitWith {};
