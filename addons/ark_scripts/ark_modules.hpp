@@ -1,11 +1,6 @@
 // ark_modules
 // Contains modules config
 
-class Logic;
-class Module_F: Logic {
-    class ModuleDescription {};
-};
-
 class ARK_Module;
 class ARK_Make_Sentry: ARK_Module {
     scope = 2;
