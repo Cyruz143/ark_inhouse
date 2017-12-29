@@ -44,7 +44,7 @@ ark_deploy_fnc_deployGroup = {
         _pos_x = (_pos_x + 1);
         _pos_y = (_pos_y + 1);
     } forEach units _group;
-    openMap false;
+    openMap [false, false];
     hint "Deploy successful";
 };
 
@@ -52,7 +52,7 @@ ark_deploy_fnc_assignDeployClick = {
     params ["_player"];
     
     hint "Click anywhere on the map to deploy";
-    openMap true;
+    openMap [true, true];
     _player onMapSingleClick {
         [_this, _pos] call ark_deploy_fnc_deployGroup;
     };

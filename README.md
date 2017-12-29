@@ -18,13 +18,13 @@ Modules
 > - `ark_ai_sentry` - Adding a module to replicate Admiral's CQC behaviour on editor placed units
 > - `ark_ai_vehicles` - Allowing AI to repair their own vehicles and change vehicle positions based on crew status
 > - `ark_clear_cargo` - Adding a module to clear all cargo to any synchronised objects
+> - `ark_deploy` - Adding teleporting framework for mission use
 > - `ark_difficulty` - Configuration adjustments to server difficulty settings
 > - `ark_disable_missions` - Hiding vanilla missions
 > - `ark_enhanced_flares` - Brighter flares
 > - `ark_enhanced_launchers` - Allow AI to fire AT at infantry and some additional sounds
 > - `ark_main` - Core required addons and centralised resources
 > - `ark_player_nvgs` - Adds sound cue when turn on/off NVGs
-> - `ark_scripts` - Steaming pile of legacy code... urgh
 > - `ark_silent_gulls` - Silent/invisible seagulls
 > - `ark_stamina` - Stamina adjusted for aggressive gameplay to be less punishing
 > - `cba_settings` - CBA settings for ARK standard gameplay
