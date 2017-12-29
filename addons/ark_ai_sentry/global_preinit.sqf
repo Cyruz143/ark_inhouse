@@ -20,7 +20,7 @@ ark_ai_sentry_fnc_make_sentry = {
         doStop _unit;
  
         _unit unlinkItem hmd _unit;
-        if (_enableNightvision) then {
+        if (_enabledNightvision) then {
             _unit linkItem "NVGoggles_AI";
         };
     };
