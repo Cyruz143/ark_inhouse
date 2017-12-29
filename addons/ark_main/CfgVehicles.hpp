@@ -19,5 +19,4 @@ class CfgVehicles {
             description = "ARK Module";
         };
     };
-
 };

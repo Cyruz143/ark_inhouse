@@ -1,6 +1,5 @@
 #include "\x\ark\addons\hull3\hull3_macros.h"
 
-
 re_attacker_side = west;
 re_defender_side = east;
 

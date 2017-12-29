@@ -1,7 +1,3 @@
-#include "\x\ark\addons\ark_scripts\ark_macros.h"
-
-
-
 ts_interaction_fnc_preinit = {
     ["player.initialized", ts_interaction_fnc_addInteractions] call hull3_event_fnc_addEventHandler;
 };
@@ -17,19 +13,19 @@ ts_fnc_enableGroupDeploy = {
 };
 
 ts_interaction_fnc_addInteractions = {
-    private _condition = { [] call ark_fnc_isHost && {[_player, _target, []] call ace_common_fnc_canInteractWith} };
+    private _condition = { [] call ark_admin_tools_fnc_isHost && {[_player, _target, []] call ace_common_fnc_canInteractWith} };
     private _action =
         [ "Town Sweep"
         , "Town Sweep"
-        , ADDON_PATH(resources\ark_star.paa)
+        , "\x\ark\addons\ark_main\resources\ark_star.paa"
         , {}
         , _condition
         ] call ace_interact_menu_fnc_createAction;
     [player, 1, ["ACE_SelfActions"], _action] call ace_interact_menu_fnc_addActionToObject;
     private _actions =
-        [ ["Select Random Town", ADDON_PATH(resources\ark_star.paa), { [0, { [] call ts_spawn_fnc_selectRandomLocation }, []] call CBA_fnc_globalExecute; }]
-        , ["Activate Town", ADDON_PATH(resources\ai_enable.paa), { [0, { [] call ts_spawn_fnc_activateLocation }, []] call CBA_fnc_globalExecute; }]
-        , ["Enable Group Deploy", ADDON_PATH(resources\click_enable.paa), { [0, { [] call ts_fnc_enableGroupDeploy }, []] call CBA_fnc_globalExecute; }]
+        [ ["Select Random Town", "\x\ark\addons\ark_main\resources\ark_star.paa", { [0, { [] call ts_spawn_fnc_selectRandomLocation }, []] call CBA_fnc_globalExecute; }]
+        , ["Activate Town", "\x\ark\addons\ark_main\resources\ai_enable.paa", { [0, { [] call ts_spawn_fnc_activateLocation }, []] call CBA_fnc_globalExecute; }]
+        , ["Enable Group Deploy", "\x\ark\addons\ark_main\resources\click_enable.paa", { [0, { [] call ts_fnc_enableGroupDeploy }, []] call CBA_fnc_globalExecute; }]
         ];
     {
         _action =
@@ -45,7 +41,7 @@ ts_interaction_fnc_addInteractions = {
     _action =
         [ "Difficulty"
         , "Difficulty"
-        , ADDON_PATH(resources\ark_star.paa)
+        , "\x\ark\addons\ark_main\resources\ark_star.paa"
         , {}
         , _condition
         ] call ace_interact_menu_fnc_createAction;
@@ -59,7 +55,7 @@ ts_interaction_fnc_addInteractions = {
         _action =
             [ _x select 0
             , format ["%1 (%2x)", _x select 0, _x select 1]
-            , ADDON_PATH(resources\ark_star.paa)
+            , "\x\ark\addons\ark_main\resources\ark_star.paa"
             , { [0, { ts_spawn_ai_multiplier = _this select 0 }, [_this select 2 select 0]] call CBA_fnc_globalExecute; }
             , _condition
             , {}
@@ -71,7 +67,7 @@ ts_interaction_fnc_addInteractions = {
     _action =
         [ "Town Size"
         , "Town Size (Before activation)"
-        , ADDON_PATH(resources\ark_star.paa)
+        , "\x\ark\addons\ark_main\resources\ark_star.paa"
         , {}
         , _condition
         ] call ace_interact_menu_fnc_createAction;
@@ -86,7 +82,7 @@ ts_interaction_fnc_addInteractions = {
         _action =
             [ _x select 0
             , format ["%1 (%2m)", _x select 0, _x select 1]
-            , ADDON_PATH(resources\ark_star.paa)
+            , "\x\ark\addons\ark_main\resources\ark_star.paa"
             , { [0, { _this call ts_spawn_fnc_changeLocationSize; }, [_this select 2 select 0]] call CBA_fnc_globalExecute; }
             , _condition
             , {}

@@ -26,7 +26,6 @@ class CfgVehicles {
                     condition = "true";
                     statement = "";
                 };
-
                 class Map_Click_Teleport : ARK_Action {
                     displayName = "Click Map Teleport";
                     exceptions[] = {};

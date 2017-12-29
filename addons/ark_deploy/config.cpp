@@ -1,5 +1,4 @@
 #include "script_component.hpp"
-#include "ark_macros.h"
 
 class CfgPatches {
     class ADDON {
@@ -10,16 +9,16 @@ class CfgPatches {
         units[] = {};
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
-        requiredAddons[] = {"ark_main", "Hull3"};
+        requiredAddons[] = {"ark_main"};
         VERSION_CONFIG;
     };
 };
 
 class Extended_PreInit_EventHandlers {
     class ADDON {
-        init = "[] call compile preProcessFileLineNumbers 'x\ark\addons\ark_scripts\ark_preinit.sqf';";
+        init = "[] call compile preProcessFileLineNumbers 'x\ark\addons\ark_deploy\global_preinit.sqf';";
     };
 };
 
-#include "ark_inhouse.h"
-
+#include "CfgVehicles.hpp"
+#include "Hull3.hpp"

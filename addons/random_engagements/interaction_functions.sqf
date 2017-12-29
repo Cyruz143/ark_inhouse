@@ -1,7 +1,4 @@
 #include "\x\ark\addons\hull3\hull3_macros.h"
-#include "\x\ark\addons\ark_scripts\ark_macros.h"
-
-
 
 re_interaction_fnc_preinit = {
     re_interaction_locationSizeChange = 50;
@@ -33,20 +30,20 @@ re_fnc_enablePostGroupDeploy = {
 };
 
 re_interaction_fnc_addInteractions = {
-    private _condition = { [] call ark_fnc_isHost && {[_player, _target, []] call ace_common_fnc_canInteractWith} };
+    private _condition = { [] call ark_admin_tools_fnc_isHost && {[_player, _target, []] call ace_common_fnc_canInteractWith} };
     private _action =
         [ "Random Engagements"
         , "Random Engagements"
-        , ADDON_PATH(resources\ark_star.paa)
+        , "\x\ark\addons\ark_main\resources\ark_star.paa"
         , {}
         , _condition
         ] call ace_interact_menu_fnc_createAction;
     [player, 1, ["ACE_SelfActions"], _action] call ace_interact_menu_fnc_addActionToObject;
     private _actions =
-        [ ["Select Random Location", ADDON_PATH(resources\ark_star.paa), { [] call re_interaction_fnc_selectLocation; }]
-        , ["Enable Defender Group Deploy", ADDON_PATH(resources\click_enable.paa), { [0, { [] call re_fnc_enablePreGroupDeploy }, []] call CBA_fnc_globalExecute; }]
-        , ["Enable Attacker Group Deploy", ADDON_PATH(resources\click_enable.paa), { [0, { [] call re_fnc_enablePostGroupDeploy }, []] call CBA_fnc_globalExecute; }]
-        , ["Enable Plank", ADDON_PATH(resources\ark_star.paa), { [0, { [] call re_fnc_enablePlank }, []] call CBA_fnc_globalExecute; }]
+        [ ["Select Random Location", "\x\ark\addons\ark_main\resources\ark_star.paa", { [] call re_interaction_fnc_selectLocation; }]
+        , ["Enable Defender Group Deploy", "\x\ark\addons\ark_main\resources\click_enable.paa", { [0, { [] call re_fnc_enablePreGroupDeploy }, []] call CBA_fnc_globalExecute; }]
+        , ["Enable Attacker Group Deploy", "\x\ark\addons\ark_main\resources\click_enable.paa", { [0, { [] call re_fnc_enablePostGroupDeploy }, []] call CBA_fnc_globalExecute; }]
+        , ["Enable Plank", "\x\ark\addons\ark_main\resources\ark_star.paa", { [0, { [] call re_fnc_enablePlank }, []] call CBA_fnc_globalExecute; }]
         ];
     {
         _action =
@@ -62,7 +59,7 @@ re_interaction_fnc_addInteractions = {
     _action =
         [ "Location Size"
         , "Location Size"
-        , ADDON_PATH(resources\ark_star.paa)
+        , "\x\ark\addons\ark_main\resources\ark_star.paa"
         , {}
         , _condition
         ] call ace_interact_menu_fnc_createAction;
@@ -77,7 +74,7 @@ re_interaction_fnc_addInteractions = {
         _action =
             [ _x select 0
             , format ["%1 (%2m)", _x select 0, _x select 1]
-            , ADDON_PATH(resources\ark_star.paa)
+            , "\x\ark\addons\ark_main\resources\ark_star.paa"
             , { [0, { _this call re_fnc_changeLocationSize; }, [_this select 2 select 0]] call CBA_fnc_globalExecute; }
             , _condition
             , {}
