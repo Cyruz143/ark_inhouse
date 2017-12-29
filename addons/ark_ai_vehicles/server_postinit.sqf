@@ -33,7 +33,9 @@ ark_ai_vehicles_fnc_vehicleGunnerDead = {
     private _allTurrets = allTurrets [_vehicle, false];
     private _gunnerTurret = [_vehicle] call ace_common_fnc_getTurretGunner;
 
-    if (isNil "_allTurrets" || { count _allTurrets == 0 }) exitWith {};
+    if (isNil "_allTurrets" || { count _allTurrets == 0 }) exitWith {
+        diag_log "[ARK] (AI Vehicles) - Vehicle has no turrets";
+    };
     _vehicle setVariable ["ark_ai_vehicles_gunner_dead", true, true];
 
     [_vehicle,_driver,_gunnerTurret] spawn {
@@ -59,7 +61,9 @@ ark_ai_vehicles_fnc_vehicleRepair = {
     private _waitingToRepair = _vehicle getVariable ["ark_ai_vehicles_awaiting_repair", false];
     private _gunnerDead = _vehicle getVariable ["ark_ai_vehicles_gunner_dead", false];
 
-    if (_cookingOff || _driverUnconscious || _waitingToRepair || _gunnerDead) exitWith {};
+    if (_cookingOff || _driverUnconscious || _waitingToRepair || _gunnerDead) exitWith {
+        diag_log "[ARK] (AI Vehicles) - Vehicle is unable to repair due to current state";
+    };
 
     if (_driver != _vehicle && alive _driver) then {
 
