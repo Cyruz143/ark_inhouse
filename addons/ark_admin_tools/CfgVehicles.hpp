@@ -33,6 +33,13 @@ class CfgVehicles {
                     condition = "ark_mapTeleportEnabled";
                     statement = "[player] call ark_admin_tools_fnc_enableMapTeleport;";
                 };
+                class Ammo_Drop : ARK_Action {
+                    displayName = "Request Ammo Drop";
+                    exceptions[] = {};
+                    icon = "\A3\ui_f\data\map\vehicleicons\iconParachute_ca.paa";
+                    condition = "([player] call ark_deploy_fnc_playerIsLeader) && !(player getVariable ['ark_ts_paradropInProgress', false]) && (getNumber(missionConfigFile >> 'TownSweep' >> 'isEnabled') == 1)";
+                    statement = "[player] call ark_admin_tools_fnc_ammoDrop;";
+                };
 
                 // Host Menu
                 class Host_Actions : ARK_Category {

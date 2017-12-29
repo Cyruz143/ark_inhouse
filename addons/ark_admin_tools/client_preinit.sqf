@@ -234,4 +234,31 @@ ark_admin_tools_fnc_callArmour = {
     [_grp, 2] waypointAttachVehicle _player;
 };
 
+ark_admin_tools_fnc_ammoDrop = {
+    params ["_player"];
+    _player setVariable ["ark_ts_paradropInProgress", true, true];
+    private _hull3Faction = _player getVariable "hull3_faction";
+    private _dropHeight = 150;
+    [[_player, _hull3Faction, _dropHeight], {
+        params ["_player", "_hull3Faction", "_dropHeight"];
+
+        private _position = getPosATL _player;
+        _position set [2, _dropHeight];
+
+        private _parachute = createVehicle ["B_Parachute_02_F", _position, [], 0, "FLY"];
+
+        private _ammoBox = createVehicle ["B_CargoNet_01_ammo_F", position _parachute, [], 0, "NONE"];
+        _ammoBox allowDamage false;
+        [_ammoBox, ["faction", _hull3Faction], ["gear", "Truck"]] call hull3_unit_fnc_init;
+        _ammoBox attachTo [_parachute, [0, 0, -1.3]];
+
+        private _smoke = createVehicle ["SmokeShellOrange", position _parachute, [], 0, "NONE"];
+        _smoke attachTo [_parachute, [0, 0, 0]];
+
+        waitUntil { getPosATL _ammoBox select 2 < 1 || isNull _parachute };
+        detach _ammoBox;
+        _player setVariable ["ark_ts_paradropInProgress", false, true];
+    }] remoteExec ["bis_fnc_spawn", 2];
+}; 
+
 [] call ark_admin_tools_fnc_initVariables;
