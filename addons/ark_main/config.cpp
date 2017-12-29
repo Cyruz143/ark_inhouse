@@ -889,6 +889,14 @@ class cfgPatches {
         };
         VERSION_CONFIG;
     };
+    class ark_scripts {
+        author = "ARK";
+        authors[] = {"ARK"};
+        url = "http://www.ark-group.org";
+        units[] = {};
+        weapons[] = {};
+        requiredVersion = REQUIRED_VERSION;
+    };
 };
 
 #include "CfgFactionClasses.hpp"
