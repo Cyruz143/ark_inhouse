@@ -901,3 +901,4 @@ class cfgPatches {
 
 #include "CfgFactionClasses.hpp"
 #include "CfgVehicles.hpp"
+#include "ARK.hpp"
