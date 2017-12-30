@@ -168,8 +168,27 @@ ark_admin_tools_fnc_ammoDrop = {
     _player setVariable ["ark_ts_paradropInProgress", true, true];
     private _hull3Faction = _player getVariable "hull3_faction";
     private _dropHeight = 150;
-    [[_player, _hull3Faction, _dropHeight], {
-        params ["_player", "_hull3Faction", "_dropHeight"];
+    private _groupId = groupId (group _player);
+    private _squad = "misc";
+
+    if (_groupId in ["ASL","A1","A2","A3"]) then {
+        _squad = "Alpha";
+    };
+
+    if (_groupId in ["BSL","B1","B2","B3"]) then {
+        _squad = "Bravo";
+    };
+
+    if (_groupId in ["CSL","C1","C2","C3"]) then {
+        _squad = "Charlie";
+    };
+
+    if (_groupId in ["DSL","D1","D2","D3"]) then {
+        _squad = "Delta";
+    };
+
+    [_player,_hull3Faction,_dropHeight,_squad] spawn {
+        params ["_player", "_hull3Faction", "_dropHeight", "_squad"];
 
         private _position = getPosATL _player;
         _position set [2, _dropHeight];
@@ -181,14 +200,24 @@ ark_admin_tools_fnc_ammoDrop = {
         [_ammoBox, ["faction", _hull3Faction], ["gear", "Truck"]] call hull3_unit_fnc_init;
         _ammoBox attachTo [_parachute, [0, 0, -1.3]];
 
-        private _smoke = createVehicle ["SmokeShellOrange", position _parachute, [], 0, "NONE"];
+        private _smokeShell = "SmokeShellPurple";
+
+        switch (_squad) do {
+            case "Alpha": { _smokeShell = "SmokeShellRed"; };
+            case "Bravo": { _smokeShell = "SmokeShellBlue"; };
+            case "Charlie": { _smokeShell = "SmokeShellGreen"; };
+            case "Delta": { _smokeShell = "SmokeShellOrange"; };
+            default { diag_log "[ARK] (Admin Tools) - Couldn't get groupID for ammo drop, using default"; };
+        };
+
+        private _smoke = createVehicle [_smokeShell, position _parachute, [], 0, "NONE"];
         _smoke attachTo [_parachute, [0, 0, 0]];
 
         waitUntil { getPosATL _ammoBox select 2 < 1 || isNull _parachute };
         detach _ammoBox;
         deleteVehicle _smoke;
         _player setVariable ["ark_ts_paradropInProgress", false, true];
-    }] remoteExec ["bis_fnc_spawn", 2];
+    };
 }; 
 
 [] call ark_admin_tools_fnc_initVariables;
