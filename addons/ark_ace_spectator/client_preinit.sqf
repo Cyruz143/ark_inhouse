@@ -38,23 +38,23 @@ ark_ace_spectator_fnc_initSpec = {
         _killMessage = "You <t color='#009933'>killed yourself</t>";
     };
 
-    [_attacker,_attackerPos,_killMessage] spawn {
-        params ["_attacker","_attackerPos","_killMessage"];
+    ["west", "east", "resistance", "civ"] call acre_api_fnc_babelSetSpokenLanguages;
+    [2, _attacker, -2, _attackerPos] call ace_spectator_fnc_setCameraAttributes;
+
+    [_killMessage] spawn {
+        params ["_killMessage"];
             5 fadeSound 0;
             cutText ["", "BLACK OUT", 5];
-            sleep 5;
+            uiSleep 5;
             
             [_killMessage,-1,-1,5,1] spawn BIS_fnc_dynamicText;
 
-            sleep 5;
+            uiSleep 5;
             cutText ["", "PLAIN", 0];
             2 fadeSound 1;
-
-            ["west", "east", "resistance", "civ"] call acre_api_fnc_babelSetSpokenLanguages;
-
-            [2, _attacker, -2, _attackerPos] call ace_spectator_fnc_setCameraAttributes;
-            [true] call ace_spectator_fnc_setSpectator;
     };
+
+    [true] call ace_spectator_fnc_setSpectator;
 };
 
 ark_ace_spectator_fnc_getInitialPlayableUnitsFromServer = {
