@@ -54,7 +54,7 @@ ark_ace_spectator_fnc_initSpec = {
             2 fadeSound 1;
     };
 
-    [true] call ace_spectator_fnc_setSpectator;
+    [ace_spectator_fnc_setSpectator, [true], 10] call CBA_fnc_waitAndExecute;
 };
 
 ark_ace_spectator_fnc_getInitialPlayableUnitsFromServer = {
