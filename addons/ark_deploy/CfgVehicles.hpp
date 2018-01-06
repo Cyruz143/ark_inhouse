@@ -68,7 +68,7 @@ class CfgVehicles {
                 // Host Menu
                 class Host_Actions : ARK_Category {
                     displayName = "Host Menu";
-                    condition = "([] call ark_fnc_isHost) || (isServer && hasInterface)";
+                    condition = "([] call ark_admin_tools_fnc_isHost) || (isServer && hasInterface)";
 
                     class Activate_Pre_Deploy : ARK_Action {
                         displayName = "Activate (Pre Safety) Group Deploy";
