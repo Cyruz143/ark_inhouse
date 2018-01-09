@@ -12,13 +12,13 @@ class CfgPatches {
             "ARK_c79_2d",
             "ARK_anpvs4",
             "ARK_optic_ACOG",
-            "CUP_optic_RCO",
-            "CUP_optic_SUSAT",
-            "CUP_optic_ELCAN_SpecterDR",
-            "CUP_optic_ElcanM145"
+            "ARK_optic_RCO",
+            "ARK_optic_SUSAT",
+            "ARK_optic_ELCAN_SpecterDR",
+            "ARK_optic_ElcanM145"
         };
         requiredVersion = REQUIRED_VERSION;
-        requiredAddons[] = {"ark_main", "RH_acc", "CUP_Weapons_West_Attachments"};
+        requiredAddons[] = {"ark_main", "RH_acc", "CUP_Weapons_West_Attachments", "CUP_Weapons_East_Attachments"};
         VERSION_CONFIG;
     };
 };
