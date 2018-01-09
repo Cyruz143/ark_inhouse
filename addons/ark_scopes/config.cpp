@@ -7,16 +7,12 @@ class CfgPatches {
         authors[] = {"ARK"};
         url = "http://www.ark-group.org";
         units[] = {};
-        weapons[] = {
-            "ARK_optic_ElcanM145",
-            "ARK_launch_RPG22"
-        };
+        weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
-        requiredAddons[] = {"ark_main", "CUP_Weapons_Ammunition", "CUP_Weapons_RPG18"};
+        requiredAddons[] = {"ark_main", "CUP_Weapons_West_Attachments"};
         VERSION_CONFIG;
     };
 };
 
-#include "CfgAmmo.hpp"
-#include "CfgMagazines.hpp"
+#include "CBA_JR.hpp"
 #include "CfgWeapons.hpp"
