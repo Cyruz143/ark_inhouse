@@ -10,7 +10,7 @@
     opticsZoomInit = 0.4375; \
     distanceZoomMin = 300; \
     distanceZoomMax = 300; \
-    opticsPPEffects[] = {"OpticsCHAbera5", "OpticsBlur5"}; \
+    opticsPPEffects[] = {""}; \
     opticsFlare = 0; \
     opticsDisablePeripherialVision = 0;
 
