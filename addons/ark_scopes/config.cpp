@@ -7,9 +7,11 @@ class CfgPatches {
         authors[] = {"ARK"};
         url = "http://www.ark-group.org";
         units[] = {};
-        weapons[] = {};
+        weapons[] = {
+            "ARK_m145"
+        };
         requiredVersion = REQUIRED_VERSION;
-        requiredAddons[] = {"ark_main", "CUP_Weapons_West_Attachments"};
+        requiredAddons[] = {"ark_main", "RH_acc", "CUP_Weapons_West_Attachments"};
         VERSION_CONFIG;
     };
 };

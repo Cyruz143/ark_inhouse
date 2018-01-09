@@ -8,7 +8,6 @@ class CfgPatches {
         url = "http://www.ark-group.org";
         units[] = {};
         weapons[] = {
-            "ARK_optic_ElcanM145",
             "ARK_launch_RPG22"
         };
         requiredVersion = REQUIRED_VERSION;
