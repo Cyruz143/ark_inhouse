@@ -11,7 +11,7 @@ class CfgPatches {
             "ARK_launch_RPG22"
         };
         requiredVersion = REQUIRED_VERSION;
-        requiredAddons[] = {"ark_main", "CUP_Weapons_Ammunition", "CUP_Weapons_RPG18"};
+        requiredAddons[] = {"ark_main", "CUP_Weapons_Ammunition", "CUP_Weapons_RPG18", "hlcweapons_mp5"};
         VERSION_CONFIG;
     };
 };
