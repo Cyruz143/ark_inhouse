@@ -41,6 +41,7 @@ force force ace_map_defaultChannel = 1;
 force force ace_map_gestures_enabled = true;
 force force ace_map_gestures_maxRange = 7;
 force force ace_map_gestures_interval = 0.03;
+force force ace_map_mapLimitZoom = false;
 
 force force ace_markers_movableMarkersEnabled = true;
 force force ace_markers_moveRestriction = 0;
@@ -87,8 +88,9 @@ force force ace_mk6mortar_airResistanceEnabled = false;
 force force ace_mk6mortar_useAmmoHandling = true;
 
 force force ace_nightvision_disableNVGsWithSights = false;
-force force ace_nightvision_fogScaling = 1;
-force force ace_nightvision_effectScaling = 1;
+force force ace_nightvision_fogScaling = 0.75;
+force force ace_nightvision_effectScaling = 0.75;
+force force ace_nightvision_aimDownSightsBlur = 0;
 
 force force ace_overpressure_distanceCoefficient = 1;
 
