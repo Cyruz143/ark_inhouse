@@ -22,29 +22,4 @@ class CfgWeapons {
         magazines[] = {"ACE_FiredMissileDummy_RPG22_ARK"};
         weaponPoolAvailable = 0;
     };
-
-    class hlc_smg_MP5N;
-    class ARK_smg_MP5N: hlc_smg_MP5N {
-        author = "ARK";
-        displayName = "HK MP5/10"; //Change
-        descriptionShort = "SMG<br/>Caliber: 10mm AUTO"; //Change
-
-        class Single: Single {
-            class StandardSound: StandardSound {
-                soundSetShot[] = { "9mmar_Shot_SoundSet", "9mmar_tail_SoundSet" };
-            };
-        };
-
-        class Burst: Burst {
-            class StandardSound: StandardSound {
-                soundSetShot[] = { "9mmar_Shot_SoundSet", "9mmar_tail_SoundSet" };
-            };
-        };
-
-        class FullAuto: FullAuto {
-            class StandardSound: StandardSound {
-                soundSetShot[] = { "9mmar_Shot_SoundSet", "9mmar_tail_SoundSet" };
-            };
-        };
-    };
 };
