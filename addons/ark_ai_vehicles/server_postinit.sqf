@@ -9,11 +9,11 @@
                     };
 
                 if ((!alive (gunner _x)) && alive (driver _x) && !((driver _x) in PlayableUnits)) then {
-                    [_x] call ark_fnc_vehicleGunnerDead;
+                    [_x] call ark_ai_vehicles_fnc_vehicleGunnerDead;
                 };
 
                 if (!canMove _x && !isNull (driver _x) && !((driver _x) in PlayableUnits)) then {
-                    [_x] call ark_fnc_vehicleRepair;
+                    [_x] call ark_ai_vehicles_fnc_vehicleRepair;
                 };
             };
         } forEach vehicles;
