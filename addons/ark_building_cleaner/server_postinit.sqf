@@ -4,9 +4,7 @@ addMissionEventHandler ["BuildingChanged", {
          private _buildingPos = getPos _buildingOld;
          private _radius = sizeOf typeOf _buildingOld / 2;
          private _aiInBuilding = _buildingPos nearEntities ["Man", _radius];
-         private _strategicsInBuilding = _buildingPos nearObjects ["Strategic",_radius];
-         private _thingsInBuilding = _buildingPos nearObjects ["Thing",_radius];
-         _thingsInBuilding append _strategicsInBuilding;
+         private _objectsInBuilding = nearestObjects [_buildingPos, ["NonStrategic","Strategic","Thing"], _radius];
 
          {
             if (!isPlayer _x) then {
@@ -16,7 +14,7 @@ addMissionEventHandler ["BuildingChanged", {
 
          {
             deleteVehicle _x;
-         } forEach _thingsInBuilding;
+         } forEach _objectsInBuilding;
 
          diag_log "[ARK] (Building Cleaner) - Killed AI and removed objects from a ruin";
      };
