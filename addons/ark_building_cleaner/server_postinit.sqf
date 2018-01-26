@@ -4,7 +4,7 @@ addMissionEventHandler ["BuildingChanged", {
          private _buildingPos = getPos _buildingOld;
          private _radius = sizeOf typeOf _buildingOld / 2;
          private _aiInBuilding = _buildingPos nearEntities ["Man", _radius];
-         private _objectsInBuilding = nearestObjects [_buildingPos, ["NonStrategic","Strategic","Thing"], _radius];
+         private _objectsInBuilding = nearestObjects [_buildingPos, ["Strategic","Thing"], _radius];
 
          {
             if (!isPlayer _x) then {
