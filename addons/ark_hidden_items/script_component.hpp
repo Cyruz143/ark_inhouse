@@ -6,4 +6,5 @@
 
 #define HIDDEN \
     scope = 1; \
-    scopeArsenal = 0;
+    scopeArsenal = 0; \
+    scopeCurator = 0;
