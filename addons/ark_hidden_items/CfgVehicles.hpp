@@ -1,4 +1,5 @@
 class CfgVehicles {
+    // Syndikat units replaced in ark_replacer_a3 with NIarms weapons
     class I_C_Soldier_base_F;
     class I_C_Soldier_Para_1_F: I_C_Soldier_base_F { HIDDEN };
     class I_C_Soldier_Para_2_F: I_C_Soldier_base_F { HIDDEN };
