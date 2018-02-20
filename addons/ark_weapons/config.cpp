@@ -14,13 +14,7 @@ class CfgPatches {
         requiredAddons[] = {
             "ark_main",
             "CUP_Weapons_Ammunition",
-            "CUP_Weapons_M136",
-            "CUP_Weapons_PK",
-            "CUP_Weapons_RPG18",
-            "CUP_Weapons_RPG7",
-            "hlcweapons_core",
-            "hlcweapons_aks",
-            "skn_nbc_units"
+            "CUP_Weapons_RPG18"
         };
         VERSION_CONFIG;
     };

@@ -14,6 +14,7 @@ class CfgPatches {
             "cup_weapons_sa61",
             "cup_weapons_makarov",
             "cup_weapons_pk",
+            "cup_Weapons_rpg18",
             "cup_weapons_rpg7",
             "cup_weapons_ammunition",
             "CUP_Creatures_People_Civil_Chernarus",
@@ -31,7 +32,8 @@ class CfgPatches {
             "CUP_Creatures_Military_USArmy",
             "CUP_Creatures_Military_USMC",
             "hlcweapons_core",
-            "hlcweapons_aks"
+            "hlcweapons_aks",
+            "skn_nbc_units"
         };
         VERSION_CONFIG;
     };
