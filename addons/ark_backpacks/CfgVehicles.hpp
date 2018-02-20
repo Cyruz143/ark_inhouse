@@ -32,55 +32,11 @@ class CfgVehicles {
         MAXLOAD320
     };
 
-    class B_Kitbag_rgr_SMAW: B_Kitbag_rgr_ARK {
-        displayName = "ARK: SMAW Kitbag";
-        class TransportMagazines {
-            class _xx_CUP_SMAW_HEAA_M {
-                magazine = "CUP_SMAW_HEAA_M";
-                count = 2;
-            };
-        };
-        class TransportItems{};
-    };
-
-    class B_Kitbag_rgr_CG: B_Kitbag_rgr_ARK {
-        displayName = "ARK: Carl Gustav Kitbag";
-        class TransportMagazines {
-            class _xx_CUP_MAAWS_HEAT_M {
-                magazine = "CUP_MAAWS_HEAT_M";
-                count = 2;
-            };
-        };
-        class TransportItems{};
-    };
-
-    class B_Kitbag_rgr_M47: B_Kitbag_rgr_ARK {
-        displayName = "ARK: M47 Dragon Kitbag";
-        class TransportMagazines {
-            class _xx_CUP_Dragon_EP1_M {
-                magazine = "CUP_Dragon_EP1_M";
-                count = 2;
-            };
-        };
-        class TransportItems{};
-    };
-
-    class B_Kitbag_rgr_PCML: B_Kitbag_rgr_ARK {
-        displayName = "ARK: PCML Dragon Kitbag";
-        class TransportMagazines {
-            class _xx_NLAW_F {
-                magazine = "NLAW_F";
-                count = 2;
-            };
-        };
-        class TransportItems{};
-    };
-
     class B_Kitbag_rgr_RPG7: B_Kitbag_rgr_ARK {
         displayName = "ARK: RPG-7 Kitbag";
         class TransportMagazines {
             class _xx_CUP_PG7VL_M {
-                magazine = "CUP_PG7VL_M";
+                magazine = "CUP_PG7V_M";
                 count = 2;
             };
         };
