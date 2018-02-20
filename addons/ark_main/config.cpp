@@ -897,6 +897,10 @@ class cfgPatches {
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
     };
+    class ark_replacer_a3: ark_scripts {};
+    class ark_replacer_backpacks: ark_scripts {};
+    class ark_replacer_containers: ark_scripts {};
+    class ark_replacer_vests: ark_scripts {};
 };
 
 #include "CfgFactionClasses.hpp"
