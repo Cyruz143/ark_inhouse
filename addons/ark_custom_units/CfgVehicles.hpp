@@ -283,7 +283,7 @@ class CfgVehicles {
         uniformClass = "MNP_CombatUniform_NKR_Sh";
         icon = "iconManAT";
         role = "MissileSpecialist";
-        backpack = "B_Kitbag_rgr_RPG7_GL";
+        backpack = "B_Kitbag_rgr_RPG7";
         weapons[] = {"hlc_rifle_akm", "CUP_launch_RPG7V", "Throw", "Put"};
         respawnWeapons[] = {"hlc_rifle_akm", "CUP_launch_RPG7V", "Throw", "Put"};
         magazines[] = {"hlc_30Rnd_762x39_b_ak", "hlc_30Rnd_762x39_b_ak", "hlc_30Rnd_762x39_b_ak", "hlc_30Rnd_762x39_b_ak", "hlc_30Rnd_762x39_b_ak", "hlc_30Rnd_762x39_b_ak", "CUP_PG7V_M", "SmokeShell", "SmokeShellGreen"};
