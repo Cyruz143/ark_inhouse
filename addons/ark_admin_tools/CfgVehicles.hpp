@@ -42,7 +42,6 @@ class CfgVehicles {
                 };
                 class Unflip_Vehicle : ARK_Action {
                     displayName = "Unflip Vehicle";
-                    exceptions[] = {};
                     icon = "\A3\ui_f\data\Map\VehicleIcons\pictureRepair_ca.paa";
                     condition = "(player in (crew (vehicle player))) && ((speed (vehicle player)) isEqualTo 0) && ([vehicle player] call ark_admin_tools_fnc_canUnflip)";
                     statement = "[] call ark_admin_tools_fnc_unFlip;";
