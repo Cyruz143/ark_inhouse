@@ -17,7 +17,7 @@ item12[] = {"firing",2,250,5.508003,431.097504,95.508026,481.097565,0.000000,"fi
 item13[] = {"D8__Can_Fire",4,218,-344.289642,221.883270,-167.202179,265.321716,2.000000,"D8: Can Fire"};
 item14[] = {"Else",8,218,-4.591614,-12.113190,85.408379,37.886810,0.000000,"Else"};
 item15[] = {"timeout__fire",4,218,118.895126,431.097565,208.895126,481.097565,0.000000,"timeout: fire"};
-item16[] = {"clean_up",2,4346,118.067497,356.609650,208.067520,406.609650,0.000000,"clean up"};
+item16[] = {"clean_up",2,250,118.067497,356.609650,208.067520,406.609650,0.000000,"clean up"};
 item17[] = {"Dead_or_Unknown",4,218,-188.815842,154.573883,-60.793701,204.115814,6.000000,"Dead or Unknown"};
 item18[] = {"_",2,250,-40.600075,153.137222,49.399948,203.137222,0.000000,""};
 item19[] = {"D8__State",2,250,-120.987671,223.450806,-30.987640,273.450806,0.000000,"D8: State"};
@@ -59,8 +59,8 @@ link28[] = {22,24};
 link29[] = {23,4};
 link30[] = {24,25};
 link31[] = {25,0};
-globals[] = {0.000000,0,0,0,0,640,480,1,218,6316128,1,-586.639282,426.542358,566.808228,-255.910843,1548,1257,1};
-window[] = {0,-1,-1,-1,-1,1507,78,2508,78,1,1566};
+globals[] = {0.000000,0,0,0,0,640,480,1,218,6316128,1,-859.709961,699.611145,989.052856,-277.140045,1548,1257,1};
+window[] = {0,-1,-1,-1,-1,1637,208,2638,208,1,1566};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -113,14 +113,7 @@ class FSM
                         name = "initial_state";
                         itemno = 2;
                         init = /*%FSM<STATEINIT""">*/"// initial state" \n
-                         "_debug = missionnamespace getvariable [""ARK_FSM_DEBUG"", false];" \n
-                         "_grp = group _this;" \n
-                         "_isleader = leader _grp == _this;" \n
-                         "_inf = isNull objectParent _this;" \n
                          "_dangerDist = _this distance _dangerCausedby;" \n
-                         "if(_debug) then {" \n
-                         "  diag_log format[""[Unit: %1], Danger.fsm Started, Danger: %2"", _this, _dangerCause];" \n
-                         "};" \n
                          ""/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
@@ -155,10 +148,7 @@ class FSM
                 {
                         name = "stop";
                         itemno = 4;
-                        init = /*%FSM<STATEINIT""">*/"if(_debug) then {" \n
-                         "  diag_log format[""Unit: %1, FSM Finished"", _this];" \n
-                         "};" \n
-                         ""/*%FSM</STATEINIT""">*/;
+                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
@@ -170,10 +160,7 @@ class FSM
                 {
                         name = "Stop__Crouch___S";
                         itemno = 5;
-                        init = /*%FSM<STATEINIT""">*/"if(_debug) then {" \n
-                         "  diag_log format[""[Unit: %1], Dist < 500"", _this];" \n
-                         "};" \n
-                         "_this disableai ""path"";" \n
+                        init = /*%FSM<STATEINIT""">*/"_this disableai ""path"";" \n
                          "_this setunitpos ""middle"";"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
@@ -198,11 +185,7 @@ class FSM
                 {
                         name = "Run__Stand__Shoo";
                         itemno = 9;
-                        init = /*%FSM<STATEINIT""">*/"if(_debug) then {" \n
-                         "  diag_log format[""[Unit: %1], Dist < 250"", _this];" \n
-                         "};" \n
-                         "" \n
-                         "_this setunitpos ""up"";"/*%FSM</STATEINIT""">*/;
+                        init = /*%FSM<STATEINIT""">*/"_this setunitpos ""up"";"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
@@ -226,15 +209,8 @@ class FSM
                 {
                         name = "Walk__Stand__Sho";
                         itemno = 10;
-                        init = /*%FSM<STATEINIT""">*/"if(_debug) then {" \n
-                         "  diag_log format[""[Unit: %1], Dist < 100"", _this];" \n
-                         "};" \n
-                         "_this setunitpos ""up"";" \n
-                         "_this forcewalk true;" \n
-                         "/*" \n
-                         "_prev_speed_mode = speedmode (group _this);" \n
-                         "(group _this) setSpeedMode ""limited"";" \n
-                         "*/"/*%FSM</STATEINIT""">*/;
+                        init = /*%FSM<STATEINIT""">*/"_this setunitpos ""up"";" \n
+                         "_this forcewalk true;"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
@@ -258,12 +234,9 @@ class FSM
                 {
                         name = "firing";
                         itemno = 12;
-                        init = /*%FSM<STATEINIT""">*/"if(_debug) then {" \n
-                         "  diag_log format[""[Unit: %1], Attacking %2, Duration: %3, Aware: %4"", _this, _dangerCausedBy, _dur, _aware];" \n
-                         "};" \n
-                         "_suppressArea = getPosATL _dangerCausedBy;" \n
-                         "_this doSuppressiveFire [(_suppressArea select 0) + random 50, (_suppressArea select 1) + random 50, (_suppressArea select 2) + random 20];" \n
-                         "//_this fireAtTarget [_dangerCausedBy];"/*%FSM</STATEINIT""">*/;
+                        init = /*%FSM<STATEINIT""">*/"_suppressArea = getPosATL _dangerCausedBy;" \n
+                         "_this suppressFor (random [3,6,9]);" \n
+                         "_this doSuppressiveFire [(_suppressArea select 0) + random 20, (_suppressArea select 1) + random 20, (_suppressArea select 2) + random 10];"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
@@ -287,13 +260,8 @@ class FSM
                         name = "clean_up";
                         itemno = 16;
                         init = /*%FSM<STATEINIT""">*/"_this enableai ""path"";" \n
-                         "_this setunitpos ""auto"";" \n
-                         "_this forcewalk false;" \n
-                         "/*" \n
-                         "if(!(isnil ""_prev_speed_mode"")) then {" \n
-                         "	(group _this) setspeedmode _prev_speed_mode;" \n
-                         "}" \n
-                         "*/"/*%FSM</STATEINIT""">*/;
+                         "_this setunitpos ""up"";" \n
+                         "_this forcewalk false;"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
@@ -305,10 +273,7 @@ class FSM
                                         to="Check_Queue";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
                                         condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
-                                        action=/*%FSM<ACTION""">*/"if(_debug) then {" \n
-                                         "  diag_log format[""[Unit: %1], D8 Exit"", _this];" \n
-                                         "};" \n
-                                         "_this setunitPosWeak ""AUTO""; "/*%FSM</ACTION""">*/;
+                                        action=/*%FSM<ACTION""">*/"_this setunitPos ""Up""; "/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
                         };
@@ -331,10 +296,7 @@ class FSM
                                         to="Check_Queue";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
                                         condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
-                                        action=/*%FSM<ACTION""">*/"if(_debug) then {" \n
-                                         "  diag_log format[""[Unit: %1], D8 Exit"", _this];" \n
-                                         "};" \n
-                                         "_this setunitPosWeak ""AUTO""; "/*%FSM</ACTION""">*/;
+                                        action=/*%FSM<ACTION""">*/"_this setunitPos ""Up""; "/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
                         };
@@ -347,11 +309,7 @@ class FSM
                         itemno = 19;
                         init = /*%FSM<STATEINIT""">*/"_distance = _this distance _dangerCausedBy;" \n
                          "_aware = (_this knowsabout _dangerCausedBy);" \n
-                         "_visible = [objnull, ""view""] checkvisibility [eyepos _this, eyepos _dangerCausedBy];" \n
-                         "if(_debug) then {" \n
-                         "  diag_log format[""[Unit: %1], D8: Can Fire, Target visible: %2"", _this, _visible];" \n
-                         "};" \n
-                         ""/*%FSM</STATEINIT""">*/;
+                         "_visible = [objnull, ""view""] checkvisibility [eyepos _this, eyepos _dangerCausedBy];"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
@@ -362,7 +320,7 @@ class FSM
                                         priority = 6.000000;
                                         to="_";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"!alive _dangerCausedBy || _aware < 1.5 || _visible == 0"/*%FSM</CONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"_distance >= 1000 || !alive _dangerCausedBy || _aware < 1.5 || _visible == 0"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
@@ -407,10 +365,7 @@ class FSM
                                         to="Check_Queue";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
                                         condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
-                                        action=/*%FSM<ACTION""">*/"if(_debug) then {" \n
-                                         "  diag_log format[""[Unit: %1], D8 Exit"", _this];" \n
-                                         "};" \n
-                                         "_this setunitPosWeak ""AUTO""; "/*%FSM</ACTION""">*/;
+                                        action=/*%FSM<ACTION""">*/"_this setunitPos ""Up""; "/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
                         };
