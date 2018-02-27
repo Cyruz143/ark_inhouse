@@ -67,3 +67,25 @@ ark_admin_tools_fnc_callArmour = {
     _waypoint setWaypointSpeed "FULL";
     [_grp, 2] waypointAttachVehicle _player;
 };
+
+ark_admin_tools_fnc_canUnflip = {
+    params ["_vehicle"];
+    private _pB = _vehicle call BIS_fnc_getPitchBank;
+    private _roll = _pB select 1;
+    _canUnflip = _roll > 25;
+
+    _canUnflip;
+};
+
+ark_admin_tools_fnc_unFlip = {
+    [[vehicle player], {
+        params ["_vehicle"];
+
+        private _lastUnflipTime = _vehicle getVariable ["ark_admin_tools_lastUnflipTime", 0];
+        if (time - _lastUnflipTime <= 10) exitWith {};
+        private _position = getPosATL _vehicle;
+        _vehicle setVectorUp surfaceNormal _position;
+        _vehicle setPosATL _position;
+        _vehicle setVariable ["ark_admin_tools_lastUnflipTime", time, true];
+    }] remoteExec ["bis_fnc_call", vehicle player];
+};

@@ -40,6 +40,13 @@ class CfgVehicles {
                     condition = "([player] call ark_deploy_fnc_playerIsLeader) && !(player getVariable ['ark_ts_paradropInProgress', false]) && (getNumber(missionConfigFile >> 'TownSweep' >> 'isEnabled') == 1)";
                     statement = "[player] call ark_admin_tools_fnc_ammoDrop;";
                 };
+                class Unflip_Vehicle : ARK_Action {
+                    displayName = "Unflip Vehicle";
+                    exceptions[] = {};
+                    icon = "\A3\ui_f\data\Map\VehicleIcons\pictureRepair_ca.paa";
+                    condition = "(player in (crew (vehicle player))) && ((speed (vehicle player)) isEqualTo 0) && ([vehicle player] call ark_admin_tools_fnc_canUnflip)";
+                    statement = "[] call ark_admin_tools_fnc_unFlip;";
+                };
 
                 // Host Menu
                 class Host_Actions : ARK_Category {
