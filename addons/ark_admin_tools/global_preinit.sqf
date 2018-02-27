@@ -84,8 +84,9 @@ ark_admin_tools_fnc_unFlip = {
         if (time - _lastUnflipTime <= 10) exitWith {
             {"Please wait 10 seconds \nbefore trying to unflip again" remoteExec ["hint", _x];} forEach (crew _vehicle);
         };
+        
         private _position = getPosATL _vehicle;
-        private _emptyPos = findEmptyPosition [0, 8, (typeOf _vehicle)];
+        private _emptyPos = _position findEmptyPosition [0, 8, (typeOf _vehicle)];
 
         if (isNil "_emptyPos" || { count _emptyPos == 0 }) exitWith {
             {"No room to flip \nPlease contact Staff!" remoteExec ["hint", _x];} forEach (crew _vehicle);
