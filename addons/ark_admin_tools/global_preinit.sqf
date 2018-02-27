@@ -70,22 +70,29 @@ ark_admin_tools_fnc_callArmour = {
 
 ark_admin_tools_fnc_canUnflip = {
     params ["_vehicle"];
-    private _pB = _vehicle call BIS_fnc_getPitchBank;
-    private _roll = _pB select 1;
-    _canUnflip = _roll > 25;
-
+    private _vector = (vectorUp _vehicle) select 2; 
+    private _canUnflip = _vector < 0.5;
+    
     _canUnflip;
 };
 
 ark_admin_tools_fnc_unFlip = {
-    [[vehicle player], {
+    [[objectParent player], {
         params ["_vehicle"];
 
         private _lastUnflipTime = _vehicle getVariable ["ark_admin_tools_lastUnflipTime", 0];
-        if (time - _lastUnflipTime <= 10) exitWith {};
+        if (time - _lastUnflipTime <= 10) exitWith {
+            {"Please wait 10 seconds \nbefore trying to unflip again" remoteExec ["hint", _x];} forEach (crew _vehicle);
+        };
         private _position = getPosATL _vehicle;
-        _vehicle setVectorUp surfaceNormal _position;
-        _vehicle setPosATL _position;
+        private _emptyPos = findEmptyPosition [0, 8, (typeOf _vehicle)];
+
+        if (isNil "_emptyPos" || { count _emptyPos == 0 }) exitWith {
+            {"No room to flip \nPlease contact Staff!" remoteExec ["hint", _x];} forEach (crew _vehicle);
+        };
+
+        _vehicle setVectorUp surfaceNormal _emptyPos;
+        _vehicle setPosATL _emptyPos;
         _vehicle setVariable ["ark_admin_tools_lastUnflipTime", time, true];
-    }] remoteExec ["bis_fnc_call", vehicle player];
+    }] remoteExec ["bis_fnc_call", objectParent player];
 };
