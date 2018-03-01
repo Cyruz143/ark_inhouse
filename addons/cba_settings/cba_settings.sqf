@@ -109,7 +109,7 @@ force force ace_medical_useLocation_SurgicalKit = 2;
 
 // ACE Mk6 Mortar
 force force ace_mk6mortar_airResistanceEnabled = false;
-force force ace_mk6mortar_useAmmoHandling = true;
+force ace_mk6mortar_useAmmoHandling = true;
 
 // ACE Nightvision
 force force ace_nightvision_aimDownSightsBlur = 0;

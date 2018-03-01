@@ -12,6 +12,7 @@ ark_ai_sentry_fnc_make_sentry = {
         _guardWaypoint setWaypointCombatMode "YELLOW";
         _guardWaypoint setWaypointBehaviour "AWARE";
         (group _unit) setCurrentWaypoint _guardWaypoint;
+        _unit setVariable [ARK_SENTRY_UNIT, true];
         _unit allowFleeing 0;
         _unit setCombatMode "YELLOW";
         _unit setBehaviour "AWARE";
