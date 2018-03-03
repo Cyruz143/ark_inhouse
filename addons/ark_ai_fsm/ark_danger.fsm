@@ -60,7 +60,7 @@ link29[] = {23,4};
 link30[] = {24,25};
 link31[] = {25,0};
 globals[] = {0.000000,0,0,0,0,640,480,1,218,6316128,1,-711.574463,551.475586,791.341309,-164.979019,1643,1244,1};
-window[] = {2,-1,-1,-1,-1,1481,52,2482,52,3,1661};
+window[] = {2,-1,-1,-1,-1,1585,156,2586,156,3,1661};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -89,7 +89,7 @@ class FSM
                                         priority = 1.000000;
                                         to="initial_state";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"local _this && !isPlayer _this && !(_this getVariable [""ARK_SENTRY_UNIT"", false])"/*%FSM</CONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"local _this && !isPlayer _this && !(_this getVariable [""adm_unit_isCqc"", false]) && !(_this getVariable [""ark_ai_sentry_isSentry"", false])"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
