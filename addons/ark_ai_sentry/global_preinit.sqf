@@ -17,8 +17,7 @@ ark_ai_sentry_fnc_make_sentry = {
         _unit setCombatMode "YELLOW";
         _unit setBehaviour "AWARE";
         _unit setSkill 0.2;
-        _unit disableAI "FSM";
-        doStop _unit;
+        {_unit disableAI _x} forEach ["FSM","PATH"];
  
         _unit unlinkItem hmd _unit;
         if (_enabledNightvision) then {
