@@ -9,3 +9,6 @@
 
 #define MAXLOAD280 \
     maximumLoad = 280;
+
+#define MAXLOAD320 \
+    maximumLoad = 320;
