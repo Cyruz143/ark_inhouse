@@ -15,6 +15,7 @@ Modules
 > - `ark_ai_dispersion` - Custom dispersion values for AI to overhaul their accuracy
 > - `ark_ai_fsm` - Custom AI FSM for increased aggression, suppressive fire and removal of AI going prone
 > - `ark_ai_nvgs` - Adding invisible NVGs for AI for better night mission fighting
+> - `ark_ai_reloads` - Infinite AI ammo on primary weapons
 > - `ark_ai_sentry` - Adding a module to replicate Admiral's CQC behaviour on editor placed units
 > - `ark_ai_vehicles` - Allowing AI to repair their own vehicles and change vehicle positions based on crew status
 > - `ark_backpacks` - AI pre-filled backpacks
