@@ -1,7 +1,7 @@
 [] spawn {
     while {true} do {
         {
-            if (_x isKindOf "LandVehicle" && (count crew _x > 0) && !(_x isKindOf "StaticWeapon") && alive _x  && simulationEnabled _x) then {
+            if ((_x isKindOf "Car" || _x isKindOf "Tank") && (count crew _x > 0) && alive _x  && simulationEnabled _x) then {
                 private _isEHAlreadyApplied = _x getVariable ["ark_ai_vehicles_repair_eh_applied", false];
                     if !(_isEHAlreadyApplied) then {
                         _x addEventHandler ["Hit", {call ark_ai_vehicles_fnc_vehicleHit}];
