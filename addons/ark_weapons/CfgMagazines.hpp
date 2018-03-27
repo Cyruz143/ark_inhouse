@@ -20,6 +20,26 @@ class CfgMagazines {
         mass = 0;
     };
 
+    class CUP_M72A6_M;
+    class ARK_M72A7_M: CUP_M72A6_M {
+        author = "ARK";
+        displayName = "M72A7 Rocket";
+        ammo = "CUP_R_M72A7_AT";
+        initspeed = 150;
+        mass = 50;
+        descriptionshort = "Type: Anti-Tank Grenade<br />Rounds: 1<br />Used in: M72A7";
+    };
+
+    class ACE_PreloadedMissileDummy_M72A72_ARK: ARK_M72A7_M {
+        author = "ARK";
+        scope = 1;
+        scopeArsenal = 0;
+        displayName = "Preloaded Missle";
+        picture = "\CUP\Weapons\CUP_Weapons_WeaponsCore\ui\blank_icon.paa";
+        weaponPoolAvailable = 0;
+        mass = 0;
+    };
+
     class CA_Magazine;
     class 30Rnd_556x45_Stanag : CA_Magazine {
         displayname = "5.56mm 30Rnd Mag";

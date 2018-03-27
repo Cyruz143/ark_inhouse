@@ -4,4 +4,10 @@ class CfgAmmo {
         hit = 450;
         indirectHit = 25;
     };
+
+    class CUP_R_M72A6_AT;
+    class ARK_R_M72A7_AT: CUP_R_M72A6_AT {
+        hit = 450;
+        indirectHit = 25;
+    };
 };
