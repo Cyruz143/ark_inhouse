@@ -21,16 +21,16 @@ class CfgMagazines {
     };
 
     class CUP_M72A6_M;
-    class ARK_M72A7_M: CUP_M72A6_M {
+    class ARK_M72E9_M: CUP_M72A6_M {
         author = "ARK";
-        displayName = "M72A7 Rocket";
-        ammo = "ARK_R_M72A7_AT";
+        displayName = "M72E9 Rocket";
+        ammo = "ARK_R_M72E9_AT";
         initspeed = 150;
         mass = 50;
-        descriptionshort = "Type: Anti-Tank Grenade<br />Rounds: 1<br />Used in: M72A7";
+        descriptionshort = "Type: Anti-Tank Grenade<br />Rounds: 1<br />Used in: M72E9";
     };
 
-    class ACE_PreloadedMissileDummy_M72A72_ARK: ARK_M72A7_M {
+    class ACE_PreloadedMissileDummy_M72E9_ARK: ARK_M72E9_M {
         author = "ARK";
         scope = 1;
         scopeArsenal = 0;

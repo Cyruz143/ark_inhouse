@@ -6,7 +6,7 @@ class CfgAmmo {
     };
 
     class CUP_R_M72A6_AT;
-    class ARK_R_M72A7_AT: CUP_R_M72A6_AT {
+    class ARK_R_M72E9_AT: CUP_R_M72A6_AT {
         hit = 450;
         indirectHit = 25;
     };

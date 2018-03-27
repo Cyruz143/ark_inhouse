@@ -27,26 +27,26 @@ class CfgWeapons {
     };
 
     class CUP_launch_M72A6;
-    class ARK_launch_M72A7: CUP_launch_M72A6 {
+    class ARK_launch_M72E9: CUP_launch_M72A6 {
         author = "ARK";
-        displayName = "M72A7";
-        magazines[] = {"ACE_PreloadedMissileDummy_M72A7_ARK"};
+        displayName = "M72E9";
+        magazines[] = {"ACE_PreloadedMissileDummy_M72E9_ARK"};
         ace_overpressure_angle = 40;
         ace_overpressure_range = 15;
         ace_overpressure_damage = 0.5;
-        ACE_UsedTube = "ACE_launch_M72A7_Used_ARK";
+        ACE_UsedTube = "ACE_launch_M72E9_Used_ARK";
         class Library {
-            libTextDesc = "The M72 LAW is a portable one-shot 66-mm unguided anti-tank weapon.";
+            libTextDesc = "M72 variant; rocket with improved anti-armor capability; uses improved launcher assembly";
         };
     };
 
-    class ACE_launch_M72A7_Used_ARK: ARK_launch_M72A7 {
+    class ACE_launch_M72E9_Used_ARK: ARK_launch_M72E9 {
         scope = 1;
         ACE_isUsedLauncher = 1;
         author = "ARK";
-        displayName = "M72A7 (Used)";
-        descriptionShort = "Used M72A7 Tube";
-        magazines[] = {"ACE_FiredMissileDummy_M72A7_ARK"};
+        displayName = "M72E9 (Used)";
+        descriptionShort = "Used M72E9 Tube";
+        magazines[] = {"ACE_FiredMissileDummy_M72E9_ARK"};
         weaponPoolAvailable = 0;
     };
 
