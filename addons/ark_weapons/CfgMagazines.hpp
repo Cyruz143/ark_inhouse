@@ -24,7 +24,7 @@ class CfgMagazines {
     class ARK_M72A7_M: CUP_M72A6_M {
         author = "ARK";
         displayName = "M72A7 Rocket";
-        ammo = "CUP_R_M72A7_AT";
+        ammo = "ARK_R_M72A7_AT";
         initspeed = 150;
         mass = 50;
         descriptionshort = "Type: Anti-Tank Grenade<br />Rounds: 1<br />Used in: M72A7";
