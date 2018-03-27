@@ -1,5 +1,6 @@
 class CfgWeapons {
     class ItemCore;
+    class ToolKitItem;
     class ToolKit: ItemCore {
         author = "Bohemia Interactive";
         _generalMacro = "ToolKit";
