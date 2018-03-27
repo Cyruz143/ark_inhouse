@@ -22,7 +22,7 @@ class CfgWeapons {
         author = "ARK";
         displayName = "RPG22 (Used)";
         descriptionShort = "Used RPG22 Tube";
-        magazines[] = {"ACE_FiredMissileDummy_RPG22_ARK"};
+        magazines[] = {"ACE_FiredMissileDummy_RPG18_CUP"};
         weaponPoolAvailable = 0;
     };
 
@@ -46,7 +46,7 @@ class CfgWeapons {
         author = "ARK";
         displayName = "M72E9 (Used)";
         descriptionShort = "Used M72E9 Tube";
-        magazines[] = {"ACE_FiredMissileDummy_M72E9_ARK"};
+        magazines[] = {"ACE_FiredMissileDummy_M72A6_CUP"};
         weaponPoolAvailable = 0;
     };
 

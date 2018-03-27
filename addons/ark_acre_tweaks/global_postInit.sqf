@@ -1,4 +1,3 @@
-
 ACRE_CUSTOM_SIGNAL_FUNC = {
     params ["_f", "_mW", "_receiverClass", "_transmitterClass", ["_skip", false]];
 
