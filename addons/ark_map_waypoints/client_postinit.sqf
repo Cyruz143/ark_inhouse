@@ -2,14 +2,20 @@ addMissionEventHandler ["MapSingleClick", {call ark_mw_fnc_draw3dMarker}];
 
 ark_mw_fnc_draw3dMarker = {
     params ["_units","_pos","_alt","_shift"];
-    player setVariable ["ark_map_wp_POI", _pos, false];
 
     if ((objectParent player) isKindOf "Air" && _shift isEqualTo true) then {
-        _mwEhID = addMissionEventHandler ["Draw3D", {call ark_mw_fnc_addPOIMarker}];
+        player setVariable ["ark_map_wp_POI", _pos, false];
+
+        if !(isNil "mwEhID") then {
+            removeMissionEventHandler ["Draw3D", mwEhID];
+        };
+
+        mwEhID = addMissionEventHandler ["Draw3D", {call ark_mw_fnc_addPOIMarker}];
     };
 
-    if ((!isNil _mwEhID) && (_alt isEqualTo true)) then {
-        removeMissionEventHandler ["Draw3D", _mwEhID];
+    if ((_alt isEqualTo true) && !(isNil "mwEhID")) then {
+        removeMissionEventHandler ["Draw3D", mwEhID];
+        mwEhID = nil;
     };
 };
 
