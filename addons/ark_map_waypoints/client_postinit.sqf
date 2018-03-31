@@ -2,11 +2,11 @@ addMissionEventHandler ["MapSingleClick", {call ark_mw_fnc_draw3dMarker}];
 
 ark_mw_fnc_draw3dMarker = {
     params ["_units","_pos","_alt","_shift"];
-    player setVariable ["tempLZWP", _pos, false];
+    player setVariable ["ark_map_wp_POI", _pos, false];
 
     if ((objectParent player) isKindOf "Air" && _shift isEqualTo true) then {
         _mwEhID = addMissionEventHandler ["Draw3D",{
-            private _pos = player getVariable ["tempLZWP", [0,0,0]];
+            private _pos = player getVariable ["ark_map_wp_POI", [0,0,0]];
             private _meters = round (player distance _pos);
             private _km = floor (_meters / 1000);
             private _meters_left = _meters - (_km * 1000);
