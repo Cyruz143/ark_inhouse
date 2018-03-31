@@ -1,4 +1,6 @@
-addMissionEventHandler ["BuildingChanged", {
+addMissionEventHandler ["BuildingChanged", {call ark_building_cleaner_fnc_doClean}];
+
+ark_building_cleaner_fnc_doClean = {
     params ["_buildingOld", "_buildingNew", "_isRuin"];
     if (_isRuin) then {
         private _buildingPos = getPos _buildingOld;
@@ -18,4 +20,4 @@ addMissionEventHandler ["BuildingChanged", {
 
         diag_log "[ARK] (Building Cleaner) - Killed AI and removed objects from a ruin";
     };
-}];
+};
