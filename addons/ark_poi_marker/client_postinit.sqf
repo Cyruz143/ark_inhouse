@@ -7,7 +7,7 @@ ark_pm_fnc_canAddMarker = {
     if ((objectParent player) isKindOf "Air" && _shift isEqualTo true) then {
         player setVariable ["ark_map_wp_POI", _pos, false];
 
-        if !(isNil "mwEhID") then {
+        if !(isNil "ark_pm_eh_ID") then {
             removeMissionEventHandler ["Draw3D", ark_pm_eh_ID];
         };
 
@@ -30,7 +30,7 @@ ark_pm_fnc_addMarker = {
 };
 
 ark_pm_fnc_removeMarker = {
-    if (!(isnil "ark_pm_eh_ID")) then {
+    if !(isnil "ark_pm_eh_ID") then {
         removeMissionEventHandler ["Draw3D", ark_pm_eh_ID];
         ark_pm_eh_ID = nil;
     };
