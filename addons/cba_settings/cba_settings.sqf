@@ -70,8 +70,8 @@ force force ace_map_gestures_maxRange = 7;
 
 // ACE Medical
 force force ace_medical_AIDamageThreshold = 0.7;
-force force ace_medical_allowDeadBodyMovement = true;
-force force ace_medical_allowUnconsciousAnimationOnTreatment = true;
+force force ace_medical_allowDeadBodyMovement = false;
+force force ace_medical_allowUnconsciousAnimationOnTreatment = false;
 force force ace_medical_amountOfReviveLives = -1;
 force force ace_medical_bleedingCoefficient = 1.5;
 force force ace_medical_blood_enabledFor = 1;
@@ -98,8 +98,8 @@ force force ace_medical_medicSetting_SurgicalKit = 1;
 force force ace_medical_moveUnitsFromGroupOnUnconscious = false;
 force force ace_medical_painCoefficient = 1;
 force force ace_medical_painIsOnlySuppressed = false;
-force force ace_medical_playerDamageThreshold = 1.3;
-force force ace_medical_preventInstaDeath = false;
+force force ace_medical_playerDamageThreshold = 1;
+force force ace_medical_preventInstaDeath = true;
 force force ace_medical_remoteControlledAI = true;
 force force ace_medical_useCondition_PAK = 0;
 force force ace_medical_useCondition_SurgicalKit = 0;
