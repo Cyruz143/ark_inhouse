@@ -52,42 +52,57 @@ class CfgMissions {
         delete EscapeFromMalden;
         delete EscapeFromTanoa;
 
-            class Apex {
-                class EXP_m01 {
-                    directory = "";
-                    hidden = 1;
-                    debriefing = 0;
-                };
-                class EXP_m02 {
-                    directory = "";
-                    hidden = 1;
-                    debriefing = 0;
-                };
-                class EXP_m03 {
-                    directory = "";
-                    hidden = 1;
-                    debriefing = 0;
-                };
-                class EXP_m04 {
-                    directory = "";
-                    hidden = 1;
-                    debriefing = 0;
-                };
-                class EXP_m05 {
-                    directory = "";
-                    hidden = 1;
-                    debriefing = 0;
-                };
-                class EXP_m06 {
-                    directory = "";
-                    hidden = 1;
-                    debriefing = 0;
-                };
-                class EXP_m07 {
-                    directory = "";
-                    hidden = 1;
-                    debriefing = 0;
-                };
+        class Apex {
+            class EXP_m01 {
+                directory = "";
+                hidden = 1;
+                debriefing = 0;
             };
+            class EXP_m02 {
+                directory = "";
+                hidden = 1;
+                debriefing = 0;
+            };
+            class EXP_m03 {
+                directory = "";
+                hidden = 1;
+                debriefing = 0;
+            };
+            class EXP_m04 {
+                directory = "";
+                hidden = 1;
+                debriefing = 0;
+            };
+            class EXP_m05 {
+                directory = "";
+                hidden = 1;
+                debriefing = 0;
+            };
+            class EXP_m06 {
+                directory = "";
+                hidden = 1;
+                debriefing = 0;
+            };
+            class EXP_m07 {
+                directory = "";
+                hidden = 1;
+                debriefing = 0;
+            };
+            class MP_VANGUARD_TANK_Syrta {
+                directory = "";
+                hidden = 1;
+                debriefing = 0;
+            };
+            class MP_VANGUARD_LV_Chapoi {
+                directory = "";
+                hidden = 1;
+                debriefing = 0;
+            };
+            class MP_VANGUARD_APC_Airport {
+                directory = "";
+                hidden = 1;
+                debriefing = 0;
+            };
+        };
     };
 };
