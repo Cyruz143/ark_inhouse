@@ -51,6 +51,9 @@ class CfgMissions {
         delete MP_CombatPatrol_04;
         delete EscapeFromMalden;
         delete EscapeFromTanoa;
+        delete MP_VANGUARD_TANK_Syrta;
+        delete MP_VANGUARD_LV_Chapoi;
+        delete MP_VANGUARD_APC_Airport;
 
         class Apex {
             class EXP_m01 {
@@ -84,21 +87,6 @@ class CfgMissions {
                 debriefing = 0;
             };
             class EXP_m07 {
-                directory = "";
-                hidden = 1;
-                debriefing = 0;
-            };
-            class MP_VANGUARD_TANK_Syrta {
-                directory = "";
-                hidden = 1;
-                debriefing = 0;
-            };
-            class MP_VANGUARD_LV_Chapoi {
-                directory = "";
-                hidden = 1;
-                debriefing = 0;
-            };
-            class MP_VANGUARD_APC_Airport {
                 directory = "";
                 hidden = 1;
                 debriefing = 0;
