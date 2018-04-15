@@ -10,10 +10,10 @@ force force ace_noradio_enabled = true;
 force ace_parachute_hideAltimeter = false;
 
 // ACE Cook off
-force force ace_cookoff_ammoCookoffDuration = 0.4;
+force force ace_cookoff_ammoCookoffDuration = 0.3;
 force force ace_cookoff_enable = false;
-force force ace_cookoff_enableAmmobox = false;
-force force ace_cookoff_enableAmmoCookoff = false;
+force force ace_cookoff_enableAmmobox = true;
+force force ace_cookoff_enableAmmoCookoff = true;
 force force ace_cookoff_probabilityCoef = 0.2;
 
 // ACE Explosives
@@ -99,7 +99,7 @@ force force ace_medical_moveUnitsFromGroupOnUnconscious = false;
 force force ace_medical_painCoefficient = 1;
 force force ace_medical_painIsOnlySuppressed = false;
 force force ace_medical_playerDamageThreshold = 1;
-force force ace_medical_preventInstaDeath = true;
+force force ace_medical_preventInstaDeath = false;
 force force ace_medical_remoteControlledAI = true;
 force force ace_medical_useCondition_PAK = 0;
 force force ace_medical_useCondition_SurgicalKit = 0;
