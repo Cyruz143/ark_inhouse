@@ -55,7 +55,7 @@ force force ace_map_BFT_Enabled = false;
 force force ace_map_BFT_HideAiGroups = false;
 force force ace_map_BFT_Interval = 1;
 force force ace_map_BFT_ShowPlayerNames = false;
-force force ace_map_defaultChannel = 1;
+force force ace_map_DefaultChannel = 1;
 force force ace_map_mapGlow = true;
 force force ace_map_mapIllumination = true;
 force force ace_map_mapLimitZoom = false;
@@ -70,7 +70,6 @@ force force ace_map_gestures_maxRange = 7;
 
 // ACE Medical
 force force ace_medical_AIDamageThreshold = 0.7;
-force force ace_medical_allowDeadBodyMovement = false;
 force force ace_medical_allowUnconsciousAnimationOnTreatment = false;
 force force ace_medical_amountOfReviveLives = -1;
 force force ace_medical_bleedingCoefficient = 1.5;
@@ -116,6 +115,8 @@ force force ace_nightvision_aimDownSightsBlur = 0;
 force force ace_nightvision_disableNVGsWithSights = false;
 force force ace_nightvision_effectScaling = 0.75;
 force force ace_nightvision_fogScaling = 0.75;
+force force ace_nightvision_noiseScaling = 1;
+force force ace_nightvision_shutterEffects = true;
 
 // ACE Pointing
 force force ace_finger_enabled = true;
