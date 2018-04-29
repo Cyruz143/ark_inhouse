@@ -218,6 +218,6 @@ ark_admin_tools_fnc_ammoDrop = {
         deleteVehicle _smoke;
         _player setVariable ["ark_ts_paradropInProgress", false, true];
     };
-}; 
+};
 
 [] call ark_admin_tools_fnc_initVariables;
