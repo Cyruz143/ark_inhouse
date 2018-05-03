@@ -100,10 +100,9 @@ ts_spawn_fnc_activateLocationMarker = {
 ts_spawn_fnc_createLocationZones = {
     ts_spawn_selectedLocation params ["_name", "_position", "_size"];
 
-    private _cqcSize = _size min 450;
     [ ["type", "cqc"]
     , ["position", _position]
-    , ["area", [_cqcSize, _cqcSize, 0, false]]
+    , ["area", [_size, _size, 0, false]]
     , ["pool", ts_spawn_cqcCount]
     , ["unitTemplate", adm_cqc_defaultUnitTemplate]
     , ["zoneTemplate", adm_cqc_defaultZoneTemplate]
