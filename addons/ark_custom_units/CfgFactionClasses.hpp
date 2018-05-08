@@ -6,4 +6,11 @@ class CfgFactionClasses {
         side = 0;
         icon = "";
     };
+    class ARK_RU_CBRN {
+        displayName = "Russian CBRN Defense";
+        author = "ARK";
+        priority = 3;
+        side = 0;
+        icon = "";
+    };
 };

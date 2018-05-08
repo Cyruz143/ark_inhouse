@@ -258,6 +258,141 @@ class CfgVehicles {
         respawnmagazines[] = {"30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","SmokeShell","SmokeShell"};
     };
 
+    // Russian CBRN custom units
+    class O_Soldier_base_F;
+    class ARK_RU_CBRN_Soldier_base_F: O_Soldier_base_F {
+        author = "ARK";
+        priority = 3;
+        side = 0;
+        faction = "ARK_RU_CBRN";
+        genericNames = "RussianMen";
+        identityTypes[] = {"CUP_D_Language_RU", "Head_Euro", "NoGlasses"};
+        vehicleClass = "Men";
+        editorSubcategory = "EdSubcat_Personnel";
+        scope = 1;
+        scopeArsenal = 0;
+        scopeCurator = 0;
+    };
+
+    class ARK_RU_CBRN_Soldier_LAT_F: ARK_RU_CBRN_Soldier_base_F {
+        scope = 2;
+        scopeArsenal = 2;
+        scopeCurator = 2;
+        displayName = "Rifleman (AT)";
+        editorPreview = "";
+        uniformClass = "skn_u_nbc_opf_blue";
+        icon = "iconManAT";
+        role = "MissileSpecialist";
+        backpack = "B_Kitbag_rgr_RPG7";
+        weapons[] = {"hlc_rifle_ak12", "CUP_launch_RPG7V", "Throw", "Put"};
+        respawnWeapons[] = {"hlc_rifle_ak12", "CUP_launch_RPG7V", "Throw", "Put"};
+        magazines[] = {"hlc_30Rnd_762x39_b_ak", "hlc_30Rnd_762x39_b_ak", "hlc_30Rnd_762x39_b_ak", "CUP_PG7V_M", "SmokeShell", "SmokeShellGreen"};
+        respawnMagazines[] = {"hlc_30Rnd_762x39_b_ak", "hlc_30Rnd_762x39_b_ak", "hlc_30Rnd_762x39_b_ak", "CUP_PG7V_M", "SmokeShell", "SmokeShellGreen"};
+        linkedItems[] = {"H_PASGT_basic_blue_F", "skn_o_elbv_worn_no_bp_ARM", "skn_s10_balaclava_blue_dry", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio"};
+        respawnLinkedItems[] = {"H_PASGT_basic_blue_F", "skn_o_elbv_worn_no_bp_ARM", "skn_s10_balaclava_blue_dry", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio"};
+    };
+
+    class ARK_RU_CBRN_Soldier_TL_F: ARK_RU_CBRN_Soldier_base_F {
+        scope = 2;
+        scopeArsenal = 2;
+        scopeCurator = 2;
+        displayName = "Team Leader";
+        editorPreview = "";
+        uniformClass = "skn_u_nbc_opf_blue";
+        icon = "iconManLeader";
+        role = "Grenadier";
+        weapons[] = {"hlc_rifle_ak12GL", "Throw", "Put", "Binocular"};
+        respawnWeapons[] = {"hlc_rifle_ak12GL", "Throw", "Put", "Binocular"};
+        magazines[] = {"hlc_30Rnd_762x39_b_ak", "hlc_30Rnd_762x39_b_ak", "hlc_30Rnd_762x39_b_ak", "hlc_VOG25_AK", "SmokeShell", "SmokeShellGreen"};
+        respawnMagazines[] = {"hlc_30Rnd_762x39_b_ak", "hlc_30Rnd_762x39_b_ak", "hlc_30Rnd_762x39_b_ak", "hlc_VOG25_AK", "SmokeShell", "SmokeShellGreen"};
+        linkedItems[] = {"H_PASGT_basic_blue_F", "skn_o_elbv_worn_no_bp_ARM", "skn_s10_balaclava_blue_dry", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio"};
+        respawnLinkedItems[] = {"H_PASGT_basic_blue_F", "skn_o_elbv_worn_no_bp_ARM", "skn_s10_balaclava_blue_dry", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio"};
+    };
+
+    class ARK_RU_CBRN_Soldier_AR_F: ARK_RU_CBRN_Soldier_base_F {
+        scope = 2;
+        scopeArsenal = 2;
+        scopeCurator = 2;
+        displayName = "Autorifleman";
+        editorPreview = "";
+        uniformClass = "skn_u_nbc_opf_blue";
+        icon = "iconManMG";
+        role = "MachineGunner";
+        backpack = "B_Kitbag_rgr_RPG7"; 
+        weapons[] = {"hlc_rifle_RPK12", "Throw", "Put"};
+        respawnWeapons[] = {"hlc_rifle_RPK12", "Throw", "Put"};
+        magazines[] = {"hlc_45Rnd_545x39_m_rpk", "hlc_45Rnd_545x39_m_rpk", "hlc_45Rnd_545x39_m_rpk", "SmokeShell", "SmokeShellGreen"};
+        respawnMagazines[] = {"hlc_45Rnd_545x39_m_rpk", "hlc_45Rnd_545x39_m_rpk", "hlc_45Rnd_545x39_m_rpk", "SmokeShell", "SmokeShellGreen"};
+        linkedItems[] = {"H_PASGT_basic_blue_F", "skn_o_elbv_worn_no_bp_ARM", "skn_s10_balaclava_blue_dry", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio"};
+        respawnLinkedItems[] = {"H_PASGT_basic_blue_F", "skn_o_elbv_worn_no_bp_ARM", "skn_s10_balaclava_blue_dry", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio"};
+    };
+
+    class ARK_RU_CBRN_Soldier_MG_F: ARK_RU_CBRN_Soldier_base_F {
+        scope = 2;
+        scopeArsenal = 2;
+        scopeCurator = 2;
+        displayName = "Machinegunner";
+        editorPreview = "";
+        uniformClass = "skn_u_nbc_opf_blue";
+        icon = "iconManMG";
+        role = "MachineGunner";
+        backpack = "B_Kitbag_rgr_PKM";
+        weapons[] = {"CUP_lmg_Pecheneg", "Throw", "Put"};
+        respawnWeapons[] = {"CUP_lmg_Pecheneg", "Throw", "Put"};
+        magazines[] = {"CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Green_M", "CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Green_M", "SmokeShell", "SmokeShellGreen"};
+        respawnMagazines[] = {"CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Green_M", "CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Green_M", "SmokeShell", "SmokeShellGreen"};
+        linkedItems[] = {"H_PASGT_basic_blue_F", "skn_o_elbv_worn_no_bp_ARM", "skn_s10_balaclava_blue_dry", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio"};
+        respawnLinkedItems[] = {"H_PASGT_basic_blue_F", "skn_o_elbv_worn_no_bp_ARM", "skn_s10_balaclava_blue_dry", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio"};
+    };
+
+    class ARK_RU_CBRN_Soldier_F: ARK_RU_CBRN_Soldier_base_F {
+        scope = 2;
+        scopeArsenal = 2;
+        scopeCurator = 2;
+        displayName = "Rifleman";
+        editorPreview = "";
+        uniformClass = "skn_u_nbc_opf_blue";
+        role = "Rifleman";
+        weapons[] = {"hlc_rifle_ak12", "Throw", "Put"};
+        respawnWeapons[] = {"hlc_rifle_ak12", "Throw", "Put"};
+        magazines[] = {"hlc_30Rnd_762x39_b_ak", "hlc_30Rnd_762x39_b_ak", "hlc_30Rnd_762x39_b_ak", "SmokeShell", "SmokeShellGreen"};
+        respawnMagazines[] = {"hlc_30Rnd_762x39_b_ak", "hlc_30Rnd_762x39_b_ak", "hlc_30Rnd_762x39_b_ak", "SmokeShell", "SmokeShellGreen"};
+        linkedItems[] = {"H_PASGT_basic_blue_F", "skn_o_elbv_worn_no_bp_ARM", "skn_s10_balaclava_blue_dry", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio"};
+        respawnLinkedItems[] = {"H_PASGT_basic_blue_F", "skn_o_elbv_worn_no_bp_ARM", "skn_s10_balaclava_blue_dry", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio"};
+    };
+
+    class ARK_RU_CBRN_Crew_F: ARK_RU_CBRN_Soldier_base_F {
+        scope = 2;
+        scopeArsenal = 2;
+        scopeCurator = 2;
+        displayName = "Crewman";
+        editorPreview = "";
+        uniformClass = "skn_u_nbc_opf_blue";
+        role = "Crewman";
+        weapons[] = {"hlc_rifle_aku12", "Throw", "Put"};
+        respawnWeapons[] = {"hlc_rifle_aku12", "Throw", "Put"};
+        magazines[] = {"hlc_30Rnd_762x39_b_ak", "hlc_30Rnd_762x39_b_ak", "hlc_30Rnd_762x39_b_ak", "SmokeShell", "SmokeShellGreen"};
+        respawnMagazines[] = {"hlc_30Rnd_762x39_b_ak", "hlc_30Rnd_762x39_b_ak", "hlc_30Rnd_762x39_b_ak", "SmokeShell", "SmokeShellGreen"};
+        linkedItems[] = {"CUP_H_SLA_TankerHelmet", "skn_o_elbv_worn_no_bp_ARM", "skn_s10_balaclava_blue_dry", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio"};
+        respawnLinkedItems[] = {"CUP_H_SLA_TankerHelmet", "skn_o_elbv_worn_no_bp_ARM", "skn_s10_balaclava_blue_dry", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio"};
+    };
+
+    class ARK_RU_CBRN_Crew_F: ARK_RU_CBRN_Soldier_base_F {
+        scope = 2;
+        scopeArsenal = 2;
+        scopeCurator = 2;
+        displayName = "Pilot";
+        editorPreview = "";
+        uniformClass = "skn_u_nbc_opf_blue";
+        role = "Crewman";
+        weapons[] = {"hlc_rifle_aku12", "Throw", "Put"};
+        respawnWeapons[] = {"hlc_rifle_aku12", "Throw", "Put"};
+        magazines[] = {"hlc_30Rnd_762x39_b_ak", "hlc_30Rnd_762x39_b_ak", "hlc_30Rnd_762x39_b_ak", "SmokeShell", "SmokeShellGreen"};
+        respawnMagazines[] = {"hlc_30Rnd_762x39_b_ak", "hlc_30Rnd_762x39_b_ak", "hlc_30Rnd_762x39_b_ak", "SmokeShell", "SmokeShellGreen"};
+        linkedItems[] = {"CUP_H_RUS_ZSH_Shield_Up", "skn_o_elbv_worn_no_bp_ARM", "skn_s10_balaclava_blue_dry", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio"};
+        respawnLinkedItems[] = {"CUP_H_RUS_ZSH_Shield_Up", "skn_o_elbv_worn_no_bp_ARM", "skn_s10_balaclava_blue_dry", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio"};
+    };
+
     // NVA Custom units
     class O_Soldier_base_F;
     class ARK_NVA_Soldier_base_F: O_Soldier_base_F {
