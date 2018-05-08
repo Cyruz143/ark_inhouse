@@ -286,8 +286,8 @@ class CfgVehicles {
         backpack = "B_Kitbag_rgr_RPG7";
         weapons[] = {"hlc_rifle_ak12", "CUP_launch_RPG7V", "Throw", "Put"};
         respawnWeapons[] = {"hlc_rifle_ak12", "CUP_launch_RPG7V", "Throw", "Put"};
-        magazines[] = {"hlc_30Rnd_762x39_b_ak", "hlc_30Rnd_762x39_b_ak", "hlc_30Rnd_762x39_b_ak", "CUP_PG7V_M", "SmokeShell", "SmokeShellGreen"};
-        respawnMagazines[] = {"hlc_30Rnd_762x39_b_ak", "hlc_30Rnd_762x39_b_ak", "hlc_30Rnd_762x39_b_ak", "CUP_PG7V_M", "SmokeShell", "SmokeShellGreen"};
+        magazines[] = {"hlc_30Rnd_545x39_B_AK", "hlc_30Rnd_545x39_B_AK", "hlc_30Rnd_545x39_B_AK", "CUP_PG7V_M", "SmokeShell", "SmokeShellGreen"};
+        respawnMagazines[] = {"hlc_30Rnd_545x39_B_AK", "hlc_30Rnd_545x39_B_AK", "hlc_30Rnd_545x39_B_AK", "CUP_PG7V_M", "SmokeShell", "SmokeShellGreen"};
         linkedItems[] = {"H_PASGT_basic_blue_F", "skn_o_elbv_worn_no_bp_ARM", "skn_s10_balaclava_blue_dry", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio"};
         respawnLinkedItems[] = {"H_PASGT_basic_blue_F", "skn_o_elbv_worn_no_bp_ARM", "skn_s10_balaclava_blue_dry", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio"};
     };
@@ -303,8 +303,8 @@ class CfgVehicles {
         role = "Grenadier";
         weapons[] = {"hlc_rifle_ak12GL", "Throw", "Put", "Binocular"};
         respawnWeapons[] = {"hlc_rifle_ak12GL", "Throw", "Put", "Binocular"};
-        magazines[] = {"hlc_30Rnd_762x39_b_ak", "hlc_30Rnd_762x39_b_ak", "hlc_30Rnd_762x39_b_ak", "hlc_VOG25_AK", "SmokeShell", "SmokeShellGreen"};
-        respawnMagazines[] = {"hlc_30Rnd_762x39_b_ak", "hlc_30Rnd_762x39_b_ak", "hlc_30Rnd_762x39_b_ak", "hlc_VOG25_AK", "SmokeShell", "SmokeShellGreen"};
+        magazines[] = {"hlc_30Rnd_545x39_B_AK", "hlc_30Rnd_545x39_B_AK", "hlc_30Rnd_545x39_B_AK", "hlc_VOG25_AK", "SmokeShell", "SmokeShellGreen"};
+        respawnMagazines[] = {"hlc_30Rnd_545x39_B_AK", "hlc_30Rnd_545x39_B_AK", "hlc_30Rnd_545x39_B_AK", "hlc_VOG25_AK", "SmokeShell", "SmokeShellGreen"};
         linkedItems[] = {"H_PASGT_basic_blue_F", "skn_o_elbv_worn_no_bp_ARM", "skn_s10_balaclava_blue_dry", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio"};
         respawnLinkedItems[] = {"H_PASGT_basic_blue_F", "skn_o_elbv_worn_no_bp_ARM", "skn_s10_balaclava_blue_dry", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio"};
     };
@@ -355,8 +355,8 @@ class CfgVehicles {
         role = "Rifleman";
         weapons[] = {"hlc_rifle_ak12", "Throw", "Put"};
         respawnWeapons[] = {"hlc_rifle_ak12", "Throw", "Put"};
-        magazines[] = {"hlc_30Rnd_762x39_b_ak", "hlc_30Rnd_762x39_b_ak", "hlc_30Rnd_762x39_b_ak", "SmokeShell", "SmokeShellGreen"};
-        respawnMagazines[] = {"hlc_30Rnd_762x39_b_ak", "hlc_30Rnd_762x39_b_ak", "hlc_30Rnd_762x39_b_ak", "SmokeShell", "SmokeShellGreen"};
+        magazines[] = {"hlc_30Rnd_545x39_B_AK", "hlc_30Rnd_545x39_B_AK", "hlc_30Rnd_545x39_B_AK", "SmokeShell", "SmokeShellGreen"};
+        respawnMagazines[] = {"hlc_30Rnd_545x39_B_AK", "hlc_30Rnd_545x39_B_AK", "hlc_30Rnd_545x39_B_AK", "SmokeShell", "SmokeShellGreen"};
         linkedItems[] = {"H_PASGT_basic_blue_F", "skn_o_elbv_worn_no_bp_ARM", "skn_s10_balaclava_blue_dry", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio"};
         respawnLinkedItems[] = {"H_PASGT_basic_blue_F", "skn_o_elbv_worn_no_bp_ARM", "skn_s10_balaclava_blue_dry", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio"};
     };
@@ -371,8 +371,8 @@ class CfgVehicles {
         role = "Crewman";
         weapons[] = {"hlc_rifle_aku12", "Throw", "Put"};
         respawnWeapons[] = {"hlc_rifle_aku12", "Throw", "Put"};
-        magazines[] = {"hlc_30Rnd_762x39_b_ak", "hlc_30Rnd_762x39_b_ak", "hlc_30Rnd_762x39_b_ak", "SmokeShell", "SmokeShellGreen"};
-        respawnMagazines[] = {"hlc_30Rnd_762x39_b_ak", "hlc_30Rnd_762x39_b_ak", "hlc_30Rnd_762x39_b_ak", "SmokeShell", "SmokeShellGreen"};
+        magazines[] = {"hlc_30Rnd_545x39_B_AK", "hlc_30Rnd_545x39_B_AK", "hlc_30Rnd_545x39_B_AK", "SmokeShell", "SmokeShellGreen"};
+        respawnMagazines[] = {"hlc_30Rnd_545x39_B_AK", "hlc_30Rnd_545x39_B_AK", "hlc_30Rnd_545x39_B_AK", "SmokeShell", "SmokeShellGreen"};
         linkedItems[] = {"CUP_H_SLA_TankerHelmet", "skn_o_elbv_worn_no_bp_ARM", "skn_s10_balaclava_blue_dry", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio"};
         respawnLinkedItems[] = {"CUP_H_SLA_TankerHelmet", "skn_o_elbv_worn_no_bp_ARM", "skn_s10_balaclava_blue_dry", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio"};
     };
@@ -387,8 +387,8 @@ class CfgVehicles {
         role = "Crewman";
         weapons[] = {"hlc_rifle_aku12", "Throw", "Put"};
         respawnWeapons[] = {"hlc_rifle_aku12", "Throw", "Put"};
-        magazines[] = {"hlc_30Rnd_762x39_b_ak", "hlc_30Rnd_762x39_b_ak", "hlc_30Rnd_762x39_b_ak", "SmokeShell", "SmokeShellGreen"};
-        respawnMagazines[] = {"hlc_30Rnd_762x39_b_ak", "hlc_30Rnd_762x39_b_ak", "hlc_30Rnd_762x39_b_ak", "SmokeShell", "SmokeShellGreen"};
+        magazines[] = {"hlc_30Rnd_545x39_B_AK", "hlc_30Rnd_545x39_B_AK", "hlc_30Rnd_545x39_B_AK", "SmokeShell", "SmokeShellGreen"};
+        respawnMagazines[] = {"hlc_30Rnd_545x39_B_AK", "hlc_30Rnd_545x39_B_AK", "hlc_30Rnd_545x39_B_AK", "SmokeShell", "SmokeShellGreen"};
         linkedItems[] = {"CUP_H_RUS_ZSH_Shield_Up", "skn_o_elbv_worn_no_bp_ARM", "skn_s10_balaclava_blue_dry", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio"};
         respawnLinkedItems[] = {"CUP_H_RUS_ZSH_Shield_Up", "skn_o_elbv_worn_no_bp_ARM", "skn_s10_balaclava_blue_dry", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio"};
     };
