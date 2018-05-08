@@ -9,6 +9,7 @@ A collection of mods that improve/tweak Arma 3 gameplay behaviour. Visit http://
 Modules
 -------------
 > - `ark_ace_map_gestures` - Adding correct coloured gestures for Hull3 group colour scheme
+> - `ark_ace_medical_ragdoll` - Adding player ragdoll on unconcious - Credit: (https://github.com/diwako/a3AceRagdoll)
 > - `ark_ace_spectator` - Add death messages and proper fade to black before moving to ACE spectator
 > - `ark_acre_tweaks` - Using an SQF signal model for ACRE for more A2 style radio signal
 > - `ark_admin_tools` - Integration for disabling Hull3 safety and various custom functions in to ACE interaction menu
@@ -31,6 +32,7 @@ Modules
 > - `ark_hidden_items` - Hiding objects from VA/Editor
 > - `ark_main` - Core required addons and centralised resources
 > - `ark_player_nvgs` - Adds sound cue when turn on/off NVGs
+> - `ark_poi_marker` - Adds a 3D rendered POI marker for pilots/air crew
 > - `ark_silent_gulls` - Silent/invisible seagulls
 > - `ark_stamina` - Stamina adjusted for aggressive gameplay to be less punishing
 > - `ark_vests` - Full custom protection on all modset vests (Vanilla/CUP/USM/misc)
