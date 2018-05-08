@@ -377,7 +377,7 @@ class CfgVehicles {
         respawnLinkedItems[] = {"CUP_H_SLA_TankerHelmet", "skn_o_elbv_worn_no_bp_ARM", "skn_s10_balaclava_blue_dry", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio"};
     };
 
-    class ARK_RU_CBRN_Crew_F: ARK_RU_CBRN_Soldier_base_F {
+    class ARK_RU_CBRN_Pilot_F: ARK_RU_CBRN_Soldier_base_F {
         scope = 2;
         scopeArsenal = 2;
         scopeCurator = 2;
