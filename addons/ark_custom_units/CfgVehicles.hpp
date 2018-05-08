@@ -318,7 +318,7 @@ class CfgVehicles {
         uniformClass = "skn_u_nbc_opf_blue";
         icon = "iconManMG";
         role = "MachineGunner";
-        backpack = "B_Kitbag_rgr_RPG7"; 
+        backpack = "B_Kitbag_rgr_RPK74"; 
         weapons[] = {"hlc_rifle_RPK12", "Throw", "Put"};
         respawnWeapons[] = {"hlc_rifle_RPK12", "Throw", "Put"};
         magazines[] = {"hlc_45Rnd_545x39_m_rpk", "hlc_45Rnd_545x39_m_rpk", "hlc_45Rnd_545x39_m_rpk", "SmokeShell", "SmokeShellGreen"};
