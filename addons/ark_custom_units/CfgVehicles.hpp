@@ -394,7 +394,6 @@ class CfgVehicles {
     };
 
     // NVA Custom units
-    class O_Soldier_base_F;
     class ARK_NVA_Soldier_base_F: O_Soldier_base_F {
         author = "ARK";
         priority = 3;
