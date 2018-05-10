@@ -9,7 +9,7 @@
     };
 }] call CBA_fnc_addEventHandler;
 
-player addEventHandler ["AnimChanged", {
+ark_ace_medical_ragdoll_fnc_removeRagdoll = {
     params ["_unit","_anim"];
     if(_anim == "unconsciousrevivedefault" && {alive _unit && {_unit getVariable ["ACE_isUnconscious",false] && {vehicle _unit == _unit}}}) then {
         _unit setUnconscious false;
@@ -26,4 +26,6 @@ player addEventHandler ["AnimChanged", {
             };
         };
     };
-}];
+};
+
+player addEventHandler ["AnimChanged", {call ark_ace_medical_ragdoll_fnc_removeRagdoll}];
