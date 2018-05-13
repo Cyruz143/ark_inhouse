@@ -16,8 +16,8 @@ ark_ace_medical_ragdoll_fnc_removeRagdoll = {
         [_unit, _deathAnim, 1, true] call ace_common_fnc_doAnimation;
         if (isMultiplayer) then {
         [{
-            _this#1 setUnconscious false;
-            [_this#1, _this#2, 2, true] call ace_common_fnc_doAnimation;
+            _this#0 setUnconscious false;
+            [_this#0, _this#1, 2, true] call ace_common_fnc_doAnimation;
         }, [_unit, _deathAnim], 10] call CBA_fnc_waitAndExecute;
         };
     };
