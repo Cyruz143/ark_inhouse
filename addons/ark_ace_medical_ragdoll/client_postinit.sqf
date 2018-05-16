@@ -1,18 +1,11 @@
 ["ace_unconscious", {
     params [["_unit", objNull],["_isUnconscious", false]];
 
-    if (!local _unit) exitWith {
-        ERROR("Unit not local or null");
-    };
+    if (!local _unit) exitWith {};
 
     _unit setUnconscious _isUnconscious;
 
     if (_isUnconscious) then {
-        // eject from static weapon
-        if (vehicle _unit isKindOf "StaticWeapon") then {
-            [_unit] call ace_common_fnc_unloadPerson;
-        };
-
         // set animation inside vehicles
         if (vehicle _unit != _unit) then {
             private _unconAnim = [_unit] call ace_common_fnc_getDeathAnim;
