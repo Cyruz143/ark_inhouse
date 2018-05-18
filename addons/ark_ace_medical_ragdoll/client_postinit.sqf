@@ -1,4 +1,5 @@
 ["ace_unconscious", {
+<<<<<<< HEAD
     params [["_unit", objNull],["_isUnconscious", false]];
 
     if (!local _unit) exitWith {};
@@ -31,6 +32,26 @@
                     [_unit, "AmovPpneMstpSnonWnonDnon", 2] call ace_common_fnc_doAnimation;
                 };
             }, _unit, 0.5] call CBA_fnc_waitAndExecute;
+=======
+    params [["_unit", objNull],["_state", false]];
+    if (_unit != player || [_unit] call ace_medical_fnc_isBeingCarried || [_unit] call ace_medical_fnc_isBeingDragged) exitWith {};
+
+    _unit setUnconscious _state;
+}] call CBA_fnc_addEventHandler;
+
+ark_ace_medical_ragdoll_fnc_removeRagdoll = {
+    params ["_unit","_anim"];
+    if (_anim == "unconsciousrevivedefault" && {alive _unit && {_unit getVariable ["ACE_isUnconscious",false] && {vehicle _unit == _unit}}}) then {
+        _unit setUnconscious false;
+        private _deathAnim = [_unit] call ace_common_fnc_getDeathAnim;
+        [_unit, _deathAnim, 1, true] call ace_common_fnc_doAnimation;
+
+        if (isMultiplayer) then {
+            [{
+                _this#0 setUnconscious false;
+                [_this#0, _this#1, 2, true] call ace_common_fnc_doAnimation;
+            }, [_unit, _deathAnim], 5] call CBA_fnc_waitAndExecute;
+>>>>>>> be3db1ed429d472ecc3c0d6141ef3173777516dd
         };
     };
 }] call CBA_fnc_addEventHandler;
