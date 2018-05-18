@@ -1,11 +1,8 @@
 ["ace_unconscious", {
     params [["_unit", objNull],["_state", false]];
     if (_unit != player || [_unit] call ace_medical_fnc_isBeingCarried || [_unit] call ace_medical_fnc_isBeingDragged) exitWith {};
-    if (_state) then {
-        _unit setUnconscious true;
-    } else {
-        _unit setUnconscious false;
-    };
+
+    _unit setUnconscious _state;
 }] call CBA_fnc_addEventHandler;
 
 ark_ace_medical_ragdoll_fnc_removeRagdoll = {
@@ -14,11 +11,12 @@ ark_ace_medical_ragdoll_fnc_removeRagdoll = {
         _unit setUnconscious false;
         private _deathAnim = [_unit] call ace_common_fnc_getDeathAnim;
         [_unit, _deathAnim, 1, true] call ace_common_fnc_doAnimation;
+
         if (isMultiplayer) then {
-        [{
-            _this#0 setUnconscious false;
-            [_this#0, _this#1, 2, true] call ace_common_fnc_doAnimation;
-        }, [_unit, _deathAnim], 10] call CBA_fnc_waitAndExecute;
+            [{
+                _this#0 setUnconscious false;
+                [_this#0, _this#1, 2, true] call ace_common_fnc_doAnimation;
+            }, [_unit, _deathAnim], 5] call CBA_fnc_waitAndExecute;
         };
     };
 };
