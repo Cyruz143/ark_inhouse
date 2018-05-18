@@ -8,11 +8,11 @@
                         _x setVariable ["ark_ai_vehicles_repair_eh_applied", true, true];
                     };
 
-                if ((!alive (gunner _x)) && alive (driver _x) && !((driver _x) in PlayableUnits)) then {
+                if ((!alive (gunner _x)) && alive (driver _x) && !((driver _x) in ([] call CBA_fnc_players))) then {
                     [_x] call ark_ai_vehicles_fnc_vehicleGunnerDead;
                 };
 
-                if (!canMove _x && !isNull (driver _x) && !((driver _x) in PlayableUnits)) then {
+                if (!canMove _x && !isNull (driver _x) && !((driver _x) in ([] call CBA_fnc_players))) then {
                     [_x] call ark_ai_vehicles_fnc_vehicleRepair;
                 };
             };
