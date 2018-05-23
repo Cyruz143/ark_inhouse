@@ -1,6 +1,6 @@
 ["ace_unconscious", {
     params [["_unit", objNull],["_isUnconscious", false]];
-    if (_unit != player || [_unit] call ace_medical_fnc_isBeingCarried || [_unit] call ace_medical_fnc_isBeingDragged) exitWith {};
+    if (!(local _unit) || !(vehicle _unit isEqualTo _unit) || [_unit] call ace_medical_fnc_isBeingCarried || [_unit] call ace_medical_fnc_isBeingDragged) exitWith {};
 
     if (lifeState _unit isEqualTo "INCAPACITATED") then {
         _unit setUnconscious _isUnconscious;
@@ -12,7 +12,7 @@
 
 ark_ace_medical_ragdoll_fnc_removeRagdoll = {
     params ["_unit","_anim"];
-    if (_anim == "unconsciousrevivedefault" && {alive _unit && {_unit getVariable ["ACE_isUnconscious",false] && {vehicle _unit == _unit}}}) then {
+    if (_anim isEqualTo "unconsciousrevivedefault" && {alive _unit && {lifeState _unit isEqualTo "INCAPACITATED" && {vehicle _unit isEqualTo _unit}}}) then {
         _unit setUnconscious false;
         [_unit] call ark_ace_medical_ragdoll_fnc_resetAnimation;
     };
