@@ -101,6 +101,7 @@ class CfgVehicles {
                         statement = "[player] remoteExecCall ['ark_admin_tools_fnc_callArmour',2]";
                         icon = "\A3\ui_f\data\map\vehicleicons\iconTank_ca.paa";
                     };
+                    
                 };
             };
         };
