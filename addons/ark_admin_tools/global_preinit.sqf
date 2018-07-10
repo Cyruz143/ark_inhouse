@@ -99,19 +99,3 @@ ark_admin_tools_fnc_unFlip = {
         _vehicle setVariable ["ark_admin_tools_lastUnflipTime", time, true];
     }] remoteExec ["bis_fnc_call", objectParent player];
 };
-
-//Credit to Baer and Gruppe.W
-["ark_admin_tools_eh_createZeus", {
-    params ["_unit"];
-    private _curator = (createGroup sideLogic) createUnit ["ModuleCurator_F", [0, 0, 0], [], 0, "CAN_COLLIDE"];
-    _curator setVariable ["Addons", 3, true];
-    _curator addCuratorEditableObjects [allMissionObjects "", true];
-    _unit assignCurator _curator;
-}] call CBA_fnc_addEventHandler;
-
-["zeus", {
-    if ([] call ark_admin_tools_fnc_isHost) then {
-        systemChat "Creating Zeus module...";
-        ["ark_admin_tools_eh_createZeus", [player]] call CBA_fnc_serverEvent;
-    };
-}, "all"] call CBA_fnc_registerChatCommand;

@@ -200,7 +200,7 @@ ark_admin_tools_fnc_ammoDrop = {
         [_ammoBox, ["faction", _hull3Faction], ["gear", "Truck"]] call hull3_unit_fnc_init;
         _ammoBox attachTo [_parachute, [0, 0, -1.3]];
 
-        private _smokeShell = "SmokeShellPurple";
+        private _smokeShell = "SmokeShellYellow";
 
         switch (_squad) do {
             case "Alpha": { _smokeShell = "SmokeShellRed"; };
