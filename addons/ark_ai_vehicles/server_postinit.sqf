@@ -1,13 +1,14 @@
-[] spawn {
-    while {true} do {
-        {
-            if ((_x isKindOf "Car" || _x isKindOf "Tank") && (count crew _x > 0) && alive _x  && simulationEnabled _x) then {
-                private _isEHAlreadyApplied = _x getVariable ["ark_ai_vehicles_repair_eh_applied", false];
-                    if !(_isEHAlreadyApplied) then {
-                        _x addEventHandler ["Hit", {call ark_ai_vehicles_fnc_vehicleHit}];
-                        _x setVariable ["ark_ai_vehicles_repair_eh_applied", true, true];
-                    };
+["Car", "Hit", {
+    [_this select 0] call ark_ai_vehicles_fnc_vehicleHit
+}] call CBA_fnc_addClassEventHandler;
 
+["Tank", "Hit", {
+    [_this select 0] call ark_ai_vehicles_fnc_vehicleHit
+}] call CBA_fnc_addClassEventHandler;
+
+ark_ai_vehicles_pfh_vehicleLoop = [{
+        {
+            if ((_x isKindOf "Car" || _x isKindOf "Tank") && (count crew _x > 0) && alive _x) then {
                 if (!alive (gunner _x) && alive (driver _x) && !isPlayer (driver _x)) then {
                     [_x] call ark_ai_vehicles_fnc_vehicleGunnerDead;
                 };
@@ -17,9 +18,7 @@
                 };
             };
         } forEach vehicles;
-        sleep 15;
-    };
-};
+}, 15] call CBA_fnc_addPerFrameHandler;
 
 ark_ai_vehicles_fnc_vehicleHit = {
     params ["_vehicle"];
