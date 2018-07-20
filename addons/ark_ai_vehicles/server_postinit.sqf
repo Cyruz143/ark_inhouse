@@ -1,10 +1,4 @@
-["Car", "Hit", {
-    [_this select 0] call ark_ai_vehicles_fnc_vehicleHit
-}] call CBA_fnc_addClassEventHandler;
-
-["Tank", "Hit", {
-    [_this select 0] call ark_ai_vehicles_fnc_vehicleHit
-}] call CBA_fnc_addClassEventHandler;
+{[_x, "Hit", {call ark_ai_vehicles_fnc_vehicleHit}] call CBA_fnc_addClassEventHandler;} forEach ["Car","Tank"];
 
 ark_ai_vehicles_pfh_vehicleLoop = [{
         {
@@ -14,7 +8,7 @@ ark_ai_vehicles_pfh_vehicleLoop = [{
                 };
 
                 if (!canMove _x && !isNull (driver _x) && !isPlayer (driver _x)) then {
-                    [_x] call ark_ai_vehicles_fnc_vehicleRepair;
+                    [_x] call ark_ai_vehicles_fnc_vehicleCanRepair;
                 };
             };
         } forEach vehicles;
@@ -52,7 +46,6 @@ ark_ai_vehicles_fnc_vehicleGunnerDead = {
 ark_ai_vehicles_fnc_vehicleRepair = {
     params ["_vehicle"];
     private _driver = driver _vehicle;
-    private _gunner = gunner _vehicle;
     private _vehicleClassName = typeOf _vehicle;
 
     private _cookingOff = _vehicle getVariable ["ACE_cookoff_isCookingOff", false];
