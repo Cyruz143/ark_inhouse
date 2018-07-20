@@ -8,7 +8,7 @@ ark_ai_vehicles_pfh_vehicleLoop = [{
                 };
 
                 if (!canMove _x && !isNull (driver _x) && !isPlayer (driver _x)) then {
-                    [_x] call ark_ai_vehicles_fnc_vehicleCanRepair;
+                    [_x] call ark_ai_vehicles_fnc_vehicleRepair;
                 };
             };
         } forEach vehicles;
