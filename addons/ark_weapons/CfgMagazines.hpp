@@ -1,45 +1,4 @@
 class CfgMagazines {
-    class CUP_RPG18_M;
-    class ARK_RPG22_M: CUP_RPG18_M {
-        author = "ARK";
-        displayName = "RPG22";
-        ammo = "ARK_R_RPG22_AT";
-        initSpeed = 115;
-        type = "2 * 256";
-        mass = 50;
-        descriptionShort = "Range: 0 - 200 m <br/>Type: HEAT <br/>Used in: RPG22";
-    };
-
-    class ACE_PreloadedMissileDummy_RPG22_ARK: ARK_RPG22_M {
-        author = "ARK";
-        scope = 1;
-        scopeArsenal = 0;
-        displayName = "Preloaded Missle";
-        picture = "\CUP\Weapons\CUP_Weapons_WeaponsCore\ui\blank_icon.paa";
-        weaponPoolAvailable = 0;
-        mass = 0;
-    };
-
-    class CUP_M72A6_M;
-    class ARK_M72E9_M: CUP_M72A6_M {
-        author = "ARK";
-        displayName = "M72E9 Rocket";
-        ammo = "ARK_R_M72E9_AT";
-        initspeed = 150;
-        mass = 50;
-        descriptionshort = "Type: Anti-Tank Grenade<br />Rounds: 1<br />Used in: M72E9";
-    };
-
-    class ACE_PreloadedMissileDummy_M72E9_ARK: ARK_M72E9_M {
-        author = "ARK";
-        scope = 1;
-        scopeArsenal = 0;
-        displayName = "Preloaded Missle";
-        picture = "\CUP\Weapons\CUP_Weapons_WeaponsCore\ui\blank_icon.paa";
-        weaponPoolAvailable = 0;
-        mass = 0;
-    };
-
     class CA_Magazine;
     class 30Rnd_556x45_Stanag : CA_Magazine {
         displayname = "5.56mm 30Rnd Mag";
