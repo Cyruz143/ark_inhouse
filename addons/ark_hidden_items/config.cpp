@@ -11,6 +11,7 @@ class CfgPatches {
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {
             "ark_main",
+            "CUP_AirVehicles_AH6",
             "us_military_units"
         };
         VERSION_CONFIG;
