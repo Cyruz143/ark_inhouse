@@ -4,7 +4,7 @@ ark_building_cleaner_fnc_doClean = {
     params ["_buildingOld", "_buildingNew", "_isRuin"];
     if (_isRuin) then {
         private _buildingPos = getPos _buildingOld;
-        private _radius = sizeOf typeOf _buildingOld / 2;
+        private _radius = sizeOf typeOf _buildingOld;
         private _aiInBuilding = _buildingPos nearEntities ["Man", _radius];
         private _objectsInBuilding = nearestObjects [_buildingPos, ["NonStrategic","Strategic","Thing"], _radius];
 
