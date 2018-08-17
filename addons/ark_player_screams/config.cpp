@@ -19,5 +19,3 @@ class Extended_PostInit_EventHandlers {
         clientInit = "[] call compile preProcessFileLineNumbers 'x\ark\addons\ark_player_screams\client_postinit.sqf';";
     };
 };
-
-#include "CfgSounds.hpp"
