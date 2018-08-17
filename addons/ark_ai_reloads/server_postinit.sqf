@@ -8,3 +8,12 @@
         _unit addMagazine (_oldMagazine select 0);
     };
 }] call CBA_fnc_addClassEventHandler;
+
+{
+    [_x, "Reloaded", {
+        params ["_vehicle"];
+
+        if (isPlayer _vehicle) exitWith {};
+        _vehicle setVehicleAmmoDef 1;
+    }] call CBA_fnc_addClassEventHandler;
+} forEach ["Air","LandVehicle"];
