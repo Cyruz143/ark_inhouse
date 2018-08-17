@@ -18,7 +18,7 @@ ark_player_screams_fnc_doScream = {
             "ark_scream_9",
             "ark_scream_10"
         ];
-        _unit say3D [_sound, 45, (random [0.95,1,1.05])];
+        _unit say3D [_sound, 200, (random [0.95,1,1.05])];
         _unit setVariable ["ark_player_screams_lastScreamTime", time, true];
     };
 };
