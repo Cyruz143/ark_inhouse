@@ -195,7 +195,7 @@ ark_admin_tools_fnc_ammoDrop = {
 
         private _parachute = createVehicle ["B_Parachute_02_F", _position, [], 0, "FLY"];
 
-        private _ammoBox = createVehicle ["B_CargoNet_01_ammo_F", position _parachute, [], 0, "NONE"];
+        private _ammoBox = createVehicle ["C_IDAP_supplyCrate_F", position _parachute, [], 0, "NONE"];
         _ammoBox allowDamage false;
         [_ammoBox, ["faction", _hull3Faction], ["gear", "Truck"]] call hull3_unit_fnc_init;
         _ammoBox attachTo [_parachute, [0, 0, -1.3]];
