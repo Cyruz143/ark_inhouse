@@ -13,7 +13,7 @@ item8[] = {"dist___200",4,218,-10.336380,289.663696,79.663620,339.663696,4.00000
 item9[] = {"Run__Stand__Shoo",2,250,-118.438660,354.766449,-28.438614,404.766449,0.000000,"Run, Stand," \n "Shoot"};
 item10[] = {"Walk__Stand__Sho",2,250,-10.602112,354.912109,79.397903,404.912109,0.000000,"Walk, Stand," \n "Shoot"};
 item11[] = {"Fire_Stage",8,218,-118.114349,430.537323,-28.114365,480.537323,0.000000,"Fire Stage"};
-item12[] = {"firing",2,4346,5.508003,431.097504,95.508026,481.097565,0.000000,"firing"};
+item12[] = {"firing",2,250,5.508003,431.097504,95.508026,481.097565,0.000000,"firing"};
 item13[] = {"D8__Can_Fire",4,218,-344.289642,221.883270,-167.202179,265.321716,2.000000,"D8: Can Fire"};
 item14[] = {"Else",8,218,-4.591614,-12.113190,85.408379,37.886810,0.000000,"Else"};
 item15[] = {"timeout__fire",4,218,118.895126,431.097565,208.895126,481.097565,0.000000,"timeout: fire"};
@@ -22,7 +22,7 @@ item17[] = {"Dead_or_Unknown",4,218,-188.815842,154.573883,-60.793701,204.115814
 item18[] = {"_",2,250,-40.600075,153.137222,49.399948,203.137222,0.000000,""};
 item19[] = {"D8__State",2,250,-120.987671,223.450806,-30.987640,273.450806,0.000000,"D8: State"};
 item20[] = {"D8__Exit",8,218,15.554199,228.568878,105.554199,278.568878,0.000000,"D8: Exit"};
-item21[] = {"Check_Queue",2,250,124.677727,20.904236,214.677734,70.904221,0.000000,"Check Queue"};
+item21[] = {"Check_Queue",2,4346,124.677727,20.904236,214.677734,70.904221,0.000000,"Check Queue"};
 item22[] = {"next",4,218,-3.856262,-78.910492,86.143799,-28.910492,1.000000,"next"};
 item23[] = {"None",8,218,124.464783,-81.891205,214.464783,-31.891174,0.000000,"None"};
 item24[] = {"__1",2,250,-300.919464,23.270905,-210.919434,73.270920,0.000000,""};
@@ -60,7 +60,7 @@ link29[] = {23,4};
 link30[] = {24,25};
 link31[] = {25,0};
 globals[] = {0.000000,0,0,0,0,640,480,1,218,6316128,1,-711.574463,551.475586,671.115479,-285.204865,1643,1244,1};
-window[] = {2,-1,-1,-1,-1,1641,234,2664,234,3,1661};
+window[] = {2,-1,-1,-1,-1,1693,286,2716,286,3,1661};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -307,8 +307,7 @@ class FSM
                 {
                         name = "D8__State";
                         itemno = 19;
-                        init = /*%FSM<STATEINIT""">*/"//_distance = _this distance _dangerCausedBy;" \n
-                         "_aware = (_this knowsabout _dangerCausedBy);" \n
+                        init = /*%FSM<STATEINIT""">*/"_aware = (_this knowsabout _dangerCausedBy);" \n
                          "_visible = [objnull, ""view""] checkvisibility [eyepos _this, eyepos _dangerCausedBy];"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
@@ -320,7 +319,7 @@ class FSM
                                         priority = 6.000000;
                                         to="_";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"_distance >= 1000 || !alive _dangerCausedBy || _aware < 1.5 || _visible == 0"/*%FSM</CONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"_dangerDist >= 1000 || !alive _dangerCausedBy || _aware < 1.5 || _visible == 0"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
