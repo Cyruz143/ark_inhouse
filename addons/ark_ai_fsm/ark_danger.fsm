@@ -21,10 +21,10 @@ item16[] = {"clean_up",2,250,118.067497,356.609650,208.067520,406.609650,0.00000
 item17[] = {"Dead_or_Unknown",4,218,-188.815842,154.573883,-60.793701,204.115814,6.000000,"Dead or Unknown"};
 item18[] = {"_",2,250,-40.600075,153.137222,49.399948,203.137222,0.000000,""};
 item19[] = {"D8__State",2,250,-120.987671,223.450806,-30.987640,273.450806,0.000000,"D8: State"};
-item20[] = {"D8__Exit",8,218,15.554199,228.568878,105.554199,278.568878,0.000000,"D8: Exit"};
+item20[] = {"D8__Exit",8,4314,15.554199,228.568878,105.554199,278.568878,0.000000,"D8: Exit"};
 item21[] = {"Check_Queue",2,250,124.677727,20.904236,214.677734,70.904221,0.000000,"Check Queue"};
 item22[] = {"next",4,218,-3.856262,-78.910492,86.143799,-28.910492,1.000000,"next"};
-item23[] = {"None",8,4314,124.464783,-81.891205,214.464783,-31.891174,0.000000,"None"};
+item23[] = {"None",8,218,124.464783,-81.891205,214.464783,-31.891174,0.000000,"None"};
 item24[] = {"__1",2,250,-300.919464,23.270905,-210.919434,73.270920,0.000000,""};
 item25[] = {"_",8,218,-438.671021,89.460876,-348.671051,139.460876,0.000000,""};
 link0[] = {0,1};
@@ -59,8 +59,8 @@ link28[] = {22,24};
 link29[] = {23,4};
 link30[] = {24,25};
 link31[] = {25,0};
-globals[] = {0.000000,0,0,0,0,640,480,1,218,6316128,1,-711.574463,551.475586,791.341309,-164.979019,1643,1244,1};
-window[] = {2,-1,-1,-1,-1,1767,338,2768,338,3,1661};
+globals[] = {0.000000,0,0,0,0,640,480,1,218,6316128,1,-711.574463,551.475586,671.115479,-285.204865,1643,1244,1};
+window[] = {2,-1,-1,-32000,-32000,1407,26,2456,0,3,1661};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -234,9 +234,9 @@ class FSM
                 {
                         name = "firing";
                         itemno = 12;
-                        init = /*%FSM<STATEINIT""">*/"_suppressArea = getPosATL _dangerCausedBy;" \n
-                         "_this suppressFor (random [3,6,9]);" \n
-                         "_this doSuppressiveFire [(_suppressArea select 0) + random 20, (_suppressArea select 1) + random 20, (_suppressArea select 2) + random 10];"/*%FSM</STATEINIT""">*/;
+                        init = /*%FSM<STATEINIT""">*/"_suppressArea = getPosASL _dangerCausedBy;" \n
+                         "_distanceModifier = _distance / 10" \n
+                         "_this doSuppressiveFire [(_suppressArea #0) + _distanceModifier, (_suppressArea #1) + _distanceModifier, (_suppressArea #2) + random 3];"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
@@ -307,7 +307,7 @@ class FSM
                 {
                         name = "D8__State";
                         itemno = 19;
-                        init = /*%FSM<STATEINIT""">*/"_distance = _this distance _dangerCausedBy;" \n
+                        init = /*%FSM<STATEINIT""">*/"//_distance = _this distance _dangerCausedBy;" \n
                          "_aware = (_this knowsabout _dangerCausedBy);" \n
                          "_visible = [objnull, ""view""] checkvisibility [eyepos _this, eyepos _dangerCausedBy];"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
@@ -331,7 +331,7 @@ class FSM
                                         priority = 4.000000;
                                         to="Walk__Stand__Sho";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"_distance < 200"/*%FSM</CONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"_dangerDist < 200"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
@@ -342,7 +342,7 @@ class FSM
                                         priority = 3.000000;
                                         to="Run__Stand__Shoo";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"_distance < 500"/*%FSM</CONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"_dangerDist < 500"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
@@ -353,7 +353,7 @@ class FSM
                                         priority = 2.000000;
                                         to="Stop__Crouch___S";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"_distance < 1000"/*%FSM</CONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"_dangerDist < 1000"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
