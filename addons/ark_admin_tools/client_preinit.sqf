@@ -20,11 +20,7 @@ ark_admin_tools_fnc_isTownSweep = {
 ark_admin_tools_fnc_assignMapTeleport = {
     params ["_teleportEnabled"];
 
-    if (_teleportEnabled) then {
-        ark_mapTeleportEnabled = true;
-    } else {
-        ark_mapTeleportEnabled = false;
-    };
+    ark_mapTeleportEnabled = _teleportEnabled;
     publicVariable "ark_mapTeleportEnabled";
 };
 
@@ -54,7 +50,7 @@ ark_admin_tools_eh_mapClickTeleport = {
     };
 };
 
-ark_admin_tools_fnc_AiDebug = {
+ark_admin_tools_fnc_createDebugMarkers = {
     private ["_deleteMarkers"];
     _deleteMarkers = if (count _this > 0) then {_this select 0} else {false};
 
@@ -153,21 +149,20 @@ ark_admin_tools_fnc_AiDebug = {
     };
 };
 
-ark_admin_tools_fnc_enableAiDebug = {
-    ark_aiDebugEnabled = true;
-    [] spawn ark_admin_tools_fnc_AiDebug;
-};
-
-ark_admin_tools_fnc_disableAiDebug = {
-    ark_aiDebugEnabled = false;
-    [true] spawn ark_admin_tools_fnc_AiDebug;
+ark_admin_tools_fnc_aiDebug = {
+    params ["_enabled"];
+    ark_aiDebugEnabled = _enabled;
+    if (_enabled) then {
+        [] spawn ark_admin_tools_fnc_createDebugMarkers;
+    else {
+        [true] spawn ark_admin_tools_fnc_createDebugMarkers;
+    };
 };
 
 ark_admin_tools_fnc_ammoDrop = {
     params ["_player"];
     _player setVariable ["ark_ts_paradropInProgress", true, true];
     private _hull3Faction = _player getVariable "hull3_faction";
-    private _dropHeight = 150;
     private _groupId = groupId (group _player);
     private _squad = "misc";
 
@@ -188,7 +183,7 @@ ark_admin_tools_fnc_ammoDrop = {
     };
 
     private _position = getPosATL _player;
-    _position set [2, _dropHeight];
+    _position set [2, 150];
 
     private _parachute = createVehicle ["B_Parachute_02_F", _position, [], 0, "FLY"];
     private _ammoBox = createVehicle ["C_IDAP_supplyCrate_F", position _parachute, [], 0, "NONE"];
@@ -218,5 +213,28 @@ ark_admin_tools_fnc_ammoDrop = {
         },
     [_ammoBox, _parachute, _smoke, _player], 30] call CBA_fnc_waitUntilAndExecute;
 };
+
+// Custom CBA EHs
+["ark_admin_tools_eh_endMission", BIS_fnc_endMission] call CBA_fnc_addEventHandler;
+
+// Custom CBA chat commands
+["endmission", {
+    params ["_ending"];
+    if (_ending == "") then {
+        ["ark_admin_tools_eh_endMission", ["end1", true]] call CBA_fnc_globalEvent;
+    } else {
+        ["ark_admin_tools_eh_endMission", [_ending, true]] call CBA_fnc_globalEvent;
+    };
+}, "adminLogged"] call CBA_fnc_registerChatCommand;
+
+["failmission", {
+    params ["_ending"];
+    if (_ending == "") then {
+        ["ark_admin_tools_eh_endMission", ["loser", false]] call CBA_fnc_globalEvent;
+    } else {
+        ["ark_admin_tools_eh_endMission", [_ending, false]] call CBA_fnc_globalEvent;
+    };
+}, "adminLogged"] call CBA_fnc_registerChatCommand;
+
 
 [] call ark_admin_tools_fnc_initVariables;

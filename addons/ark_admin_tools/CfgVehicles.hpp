@@ -63,14 +63,14 @@ class CfgVehicles {
                     class Enable_AI_Debug : ARK_Action {
                         displayName = "Enable AI Debug";
                         condition = "!ark_aiDebugEnabled"; 
-                        statement = "[] call ark_admin_tools_fnc_enableAiDebug;";
+                        statement = "[true] call ark_admin_tools_fnc_aiDebug;";
                         icon = "\x\ark\addons\ark_main\resources\ai_enable.paa";
                     };
 
                     class Disable_AI_Debug : ARK_Action {
                         displayName = "Disable AI Debug";
                         condition = "ark_aiDebugEnabled"; 
-                        statement = "[] call ark_admin_tools_fnc_disableAiDebug;";
+                        statement = "[false] call ark_admin_tools_fnc_aiDebug;";
                         icon = "\x\ark\addons\ark_main\resources\ai_disable.paa";
                     };
 
