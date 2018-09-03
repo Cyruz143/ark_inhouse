@@ -214,27 +214,4 @@ ark_admin_tools_fnc_ammoDrop = {
     [_ammoBox, _parachute, _smoke, _player], 30] call CBA_fnc_waitUntilAndExecute;
 };
 
-// Custom CBA EHs
-["ark_admin_tools_eh_endMission", BIS_fnc_endMission] call CBA_fnc_addEventHandler;
-
-// Custom CBA chat commands
-["endmission", {
-    params ["_ending"];
-    if (_ending == "") then {
-        ["ark_admin_tools_eh_endMission", ["end1", true]] call CBA_fnc_globalEvent;
-    } else {
-        ["ark_admin_tools_eh_endMission", [_ending, true]] call CBA_fnc_globalEvent;
-    };
-}, "adminLogged"] call CBA_fnc_registerChatCommand;
-
-["failmission", {
-    params ["_ending"];
-    if (_ending == "") then {
-        ["ark_admin_tools_eh_endMission", ["loser", false]] call CBA_fnc_globalEvent;
-    } else {
-        ["ark_admin_tools_eh_endMission", [_ending, false]] call CBA_fnc_globalEvent;
-    };
-}, "adminLogged"] call CBA_fnc_registerChatCommand;
-
-
 [] call ark_admin_tools_fnc_initVariables;
