@@ -187,37 +187,36 @@ ark_admin_tools_fnc_ammoDrop = {
         _squad = "Delta";
     };
 
-    [_player,_hull3Faction,_dropHeight,_squad] spawn {
-        params ["_player", "_hull3Faction", "_dropHeight", "_squad"];
+    private _position = getPosATL _player;
+    _position set [2, _dropHeight];
 
-        private _position = getPosATL _player;
-        _position set [2, _dropHeight];
+    private _parachute = createVehicle ["B_Parachute_02_F", _position, [], 0, "FLY"];
+    private _ammoBox = createVehicle ["C_IDAP_supplyCrate_F", position _parachute, [], 0, "NONE"];
+    _ammoBox allowDamage false;
+    [_ammoBox, ["faction", _hull3Faction], ["gear", "Truck"]] call hull3_unit_fnc_init;
+    _ammoBox attachTo [_parachute, [0, 0, -1.3]];
 
-        private _parachute = createVehicle ["B_Parachute_02_F", _position, [], 0, "FLY"];
+    private _smokeShell = "SmokeShellYellow";
 
-        private _ammoBox = createVehicle ["C_IDAP_supplyCrate_F", position _parachute, [], 0, "NONE"];
-        _ammoBox allowDamage false;
-        [_ammoBox, ["faction", _hull3Faction], ["gear", "Truck"]] call hull3_unit_fnc_init;
-        _ammoBox attachTo [_parachute, [0, 0, -1.3]];
-
-        private _smokeShell = "SmokeShellYellow";
-
-        switch (_squad) do {
-            case "Alpha": { _smokeShell = "SmokeShellRed"; };
-            case "Bravo": { _smokeShell = "SmokeShellBlue"; };
-            case "Charlie": { _smokeShell = "SmokeShellGreen"; };
-            case "Delta": { _smokeShell = "SmokeShellOrange"; };
-            default { diag_log "[ARK] (Admin Tools) - Couldn't get groupID for ammo drop, using default"; };
-        };
-
-        private _smoke = createVehicle [_smokeShell, position _parachute, [], 0, "NONE"];
-        _smoke attachTo [_parachute, [0, 0, 0]];
-
-        waitUntil { getPosATL _ammoBox select 2 < 1 || isNull _parachute };
-        detach _ammoBox;
-        deleteVehicle _smoke;
-        _player setVariable ["ark_ts_paradropInProgress", false, true];
+    switch (_squad) do {
+        case "Alpha": { _smokeShell = "SmokeShellRed"; };
+        case "Bravo": { _smokeShell = "SmokeShellBlue"; };
+        case "Charlie": { _smokeShell = "SmokeShellGreen"; };
+        case "Delta": { _smokeShell = "SmokeShellOrange"; };
+        default { diag_log "[ARK] (Admin Tools) - Couldn't get groupID for ammo drop, using default"; };
     };
+
+    private _smoke = createVehicle [_smokeShell, position _parachute, [], 0, "NONE"];
+    _smoke attachTo [_parachute, [0, 0, 0]];
+
+    [
+        {getPosATL (_this #0) #2 < 1}, 
+        {   detach (_this #0); 
+            deleteVehicle (_this #1); 
+            deleteVehicle (_this #2); 
+            (_this #3) setVariable ["ark_ts_paradropInProgress", false, true];
+        },
+    [_ammoBox, _parachute, _smoke, _player], 30] call CBA_fnc_waitUntilAndExecute;
 };
 
 [] call ark_admin_tools_fnc_initVariables;
