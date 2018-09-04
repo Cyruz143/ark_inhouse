@@ -154,9 +154,17 @@ ark_admin_tools_fnc_aiDebug = {
     ark_aiDebugEnabled = _enabled;
     if (_enabled) then {
         [] spawn ark_admin_tools_fnc_createDebugMarkers;
-    else {
+    } else {
         [true] spawn ark_admin_tools_fnc_createDebugMarkers;
     };
+};
+
+ark_admin_tools_fnc_detachCrate = {
+    params ["_ammoBox", "_parachute", "_smoke", "_player"];
+    detach _ammoBox;
+    deleteVehicle _smoke;
+    [{deleteVehicle (_this #0)}, [_parachute]] call CBA_fnc_execNextFrame;
+    _player setVariable ["ark_ts_paradropInProgress", false, true];
 };
 
 ark_admin_tools_fnc_ammoDrop = {
@@ -164,7 +172,7 @@ ark_admin_tools_fnc_ammoDrop = {
     _player setVariable ["ark_ts_paradropInProgress", true, true];
     private _hull3Faction = _player getVariable "hull3_faction";
     private _groupId = groupId (group _player);
-    private _squad = "misc";
+    private _squad = "";
 
     if (_groupId in ["ASL","A1","A2","A3"]) then {
         _squad = "Alpha";
@@ -182,8 +190,8 @@ ark_admin_tools_fnc_ammoDrop = {
         _squad = "Delta";
     };
 
-    private _position = getPosATL _player;
-    _position set [2, 150];
+    private _position = getPos _player;
+    _position set [2, 75];
 
     private _parachute = createVehicle ["B_Parachute_02_F", _position, [], 0, "FLY"];
     private _ammoBox = createVehicle ["C_IDAP_supplyCrate_F", position _parachute, [], 0, "NONE"];
@@ -204,14 +212,13 @@ ark_admin_tools_fnc_ammoDrop = {
     private _smoke = createVehicle [_smokeShell, position _parachute, [], 0, "NONE"];
     _smoke attachTo [_parachute, [0, 0, 0]];
 
-    [
-        {getPosATL (_this #0) #2 < 1}, 
-        {   detach (_this #0); 
-            deleteVehicle (_this #1); 
-            deleteVehicle (_this #2); 
-            (_this #3) setVariable ["ark_ts_paradropInProgress", false, true];
-        },
-    [_ammoBox, _parachute, _smoke, _player], 30] call CBA_fnc_waitUntilAndExecute;
+   [
+        {getPos (_this #0) #2 < 1.5}, 
+        {[(_this #0),(_this #1),(_this #2),(_this #3)] call ark_admin_tools_fnc_detachCrate;},
+        [_ammoBox, _parachute,_smoke, _player], 
+        45,
+        {[(_this #0),(_this #1),(_this #2),(_this #3)] call ark_admin_tools_fnc_detachCrate;}
+    ] call CBA_fnc_waitUntilAndExecute;
 };
 
 [] call ark_admin_tools_fnc_initVariables;
