@@ -46,6 +46,29 @@ class CfgVehicles {
         respawnMagazines[] = {"30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","SmokeShell","Chemlight_green","Chemlight_green"};
     };
 
+    class B_GEN_Soldier_F;
+    class B_GEN_Soldier_AR_F: B_GEN_Soldier_F {
+        displayName = "Gendarmerie Automatic Rifleman";
+        weapons[] = {"LMG_03_F","Throw","Put"};
+        respawnWeapons[] = {"LMG_03_F","Throw","Put"};
+        magazines[] = {"200Rnd_556x45_Box_Tracer_Red_F","200Rnd_556x45_Box_Tracer_Red_F","SmokeShell","HandGrenade"};
+        respawnMagazines[] = {"200Rnd_556x45_Box_Tracer_Red_F","200Rnd_556x45_Box_Tracer_Red_F","SmokeShell","HandGrenade"};
+    };
+    
+    class B_GEN_Soldier_SG_F: B_GEN_Soldier_F {
+        displayName = "Gendarmerie Breacher";
+        weapons[] = {"CUP_M1014","Throw","Put"};
+        respawnWeapons[] = {"CUP_M1014","Throw","Put"};
+        magazines[] = {"CUP_8Rnd_B_Beneli_74Pellets","CUP_8Rnd_B_Beneli_74Pellets","CUP_8Rnd_B_Beneli_74Pellets","SmokeShell","HandGrenade"};
+        respawnMagazines[] = {"CUP_8Rnd_B_Beneli_74Pellets","CUP_8Rnd_B_Beneli_74Pellets","CUP_8Rnd_B_Beneli_74Pellets","SmokeShell","HandGrenade"};
+    };
+    
+    class B_GEN_Soldier_Pilot_F: B_GEN_Soldier_F {
+        displayName = "Gendarmerie Pilot";
+        linkedItems[] = {"H_PilotHelmetHeli_B", "V_TacVest_gen_F", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio"};
+        respawnLinkedItems[] = {"H_PilotHelmetHeli_B", "V_TacVest_gen_F", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio"};
+    };
+
     //INDFOR
     class I_Soldier_LAT_F;
     class I_Soldier_AT4_F: I_Soldier_LAT_F {
