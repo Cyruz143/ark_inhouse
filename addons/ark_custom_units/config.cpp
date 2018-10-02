@@ -12,6 +12,8 @@ class CfgPatches {
         requiredAddons[] = {
             "ark_main",
             "cup_weapons_sa61",
+            "cup_weapons_m1014",
+            "cup_weapons_m136",
             "cup_weapons_makarov",
             "cup_weapons_pk",
             "cup_Weapons_rpg18",
