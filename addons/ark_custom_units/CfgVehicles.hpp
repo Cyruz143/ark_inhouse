@@ -51,26 +51,46 @@ class CfgVehicles {
         displayName = "Gendarmerie Automatic Rifleman";
         weapons[] = {"LMG_03_F","Throw","Put"};
         respawnWeapons[] = {"LMG_03_F","Throw","Put"};
-        magazines[] = {"200Rnd_556x45_Box_Tracer_Red_F","200Rnd_556x45_Box_Tracer_Red_F","SmokeShell","HandGrenade"};
-        respawnMagazines[] = {"200Rnd_556x45_Box_Tracer_Red_F","200Rnd_556x45_Box_Tracer_Red_F","SmokeShell","HandGrenade"};
+        magazines[] = {"200Rnd_556x45_Box_Tracer_Red_F","200Rnd_556x45_Box_Tracer_Red_F","SmokeShellBlue","HandGrenade"};
+        respawnMagazines[] = {"200Rnd_556x45_Box_Tracer_Red_F","200Rnd_556x45_Box_Tracer_Red_F","SmokeShellBlue","HandGrenade"};
     };
     
     class B_GEN_Soldier_SG_F: B_GEN_Soldier_F {
         displayName = "Gendarmerie Breacher";
         weapons[] = {"CUP_sgun_M1014","Throw","Put"};
         respawnWeapons[] = {"CUP_sgun_M1014","Throw","Put"};
-        magazines[] = {"CUP_8Rnd_B_Beneli_74Pellets","CUP_8Rnd_B_Beneli_74Pellets","CUP_8Rnd_B_Beneli_74Pellets","SmokeShell","HandGrenade"};
-        respawnMagazines[] = {"CUP_8Rnd_B_Beneli_74Pellets","CUP_8Rnd_B_Beneli_74Pellets","CUP_8Rnd_B_Beneli_74Pellets","SmokeShell","HandGrenade"};
+        magazines[] = {"CUP_8Rnd_B_Beneli_74Pellets","CUP_8Rnd_B_Beneli_74Pellets","CUP_8Rnd_B_Beneli_74Pellets","SmokeShellBlue","HandGrenade"};
+        respawnMagazines[] = {"CUP_8Rnd_B_Beneli_74Pellets","CUP_8Rnd_B_Beneli_74Pellets","CUP_8Rnd_B_Beneli_74Pellets","SmokeShellBlue","HandGrenade"};
+    };
+
+    class B_GEN_Soldier_SMG_F: B_GEN_Soldier_F {
+        displayName = "Gendarmerie SMG";
+        weapons[] = {"CUP_smg_bizon","Throw","Put"};
+        respawnWeapons[] = {"CUP_smg_bizon","Throw","Put"};
+        magazines[] = {"CUP_64Rnd_9x19_Bizon_M","CUP_64Rnd_9x19_Bizon_M","CUP_64Rnd_9x19_Bizon_M","SmokeShellBlue","HandGrenade"};
+        respawnMagazines[] = {"CUP_64Rnd_9x19_Bizon_M","CUP_64Rnd_9x19_Bizon_M","CUP_64Rnd_9x19_Bizon_M","SmokeShellBlue","HandGrenade"};
+    };
+
+    class B_GEN_Soldier_Pistol_F: B_GEN_Soldier_F {
+        displayName = "Gendarmerie Pistoleer";
+        weapons[] = {"CUP_hgun_Glock17","Throw","Put"};
+        respawnWeapons[] = {"CUP_hgun_Glock17","Throw","Put"};
+        magazines[] = {"CUP_17Rnd_9x19_glock17","CUP_17Rnd_9x19_glock17","CUP_17Rnd_9x19_glock17","SmokeShellBlue","HandGrenade"};
+        respawnMagazines[] = {"CUP_17Rnd_9x19_glock17","CUP_17Rnd_9x19_glock17","CUP_17Rnd_9x19_glock17","SmokeShellBlue","HandGrenade"};
     };
 
     class B_GEN_Soldier_Crew_F: B_GEN_Soldier_F {
         displayName = "Gendarmerie Crewman";
-        linkedItems[] = {"G_Balaclava_blk", "H_Cap_headphones", "V_TacVest_gen_F", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio"};
-        respawnLinkedItems[] = {"G_Balaclava_blk", "H_Cap_headphones", "V_TacVest_gen_F", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio"};
+        linkedItems[] = {"H_MilCap_blue", "V_TacVest_gen_F", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio"};
+        respawnLinkedItems[] = {"H_MilCap_blue", "V_TacVest_gen_F", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio"};
     };
     
     class B_GEN_Soldier_Pilot_F: B_GEN_Soldier_F {
         displayName = "Gendarmerie Pilot";
+        weapons[] = {"CUP_hgun_Glock17","Throw","Put"};
+        respawnWeapons[] = {"CUP_hgun_Glock17","Throw","Put"};
+        magazines[] = {"CUP_17Rnd_9x19_glock17","CUP_17Rnd_9x19_glock17","CUP_17Rnd_9x19_glock17","SmokeShellBlue","HandGrenade"};
+        respawnMagazines[] = {"CUP_17Rnd_9x19_glock17","CUP_17Rnd_9x19_glock17","CUP_17Rnd_9x19_glock17","SmokeShellBlue","HandGrenade"};
         linkedItems[] = {"H_PilotHelmetHeli_B", "V_TacVest_gen_F", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio"};
         respawnLinkedItems[] = {"H_PilotHelmetHeli_B", "V_TacVest_gen_F", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio"};
     };
@@ -583,8 +603,8 @@ class CfgVehicles {
         role = "MissileSpecialist";
         weapons[] = {"arifle_SPAR_01_blk_F", "CUP_launch_M136", "Throw", "Put"};
         respawnWeapons[] = {"arifle_SPAR_01_blk_F", "CUP_launch_M136", "Throw", "Put"};
-        magazines[] = {"30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag", "SmokeShellBlue", "SmokeShellBlue"};
-        respawnMagazines[] = {"30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag", "SmokeShellBlue", "SmokeShellBlue"};
+        magazines[] = {"30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag", "SmokeShellBlue", "HandGrenade"};
+        respawnMagazines[] = {"30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag", "SmokeShellBlue", "HandGrenade"};
         linkedItems[] = {"G_Balaclava_blk", "CUP_V_PMC_CIRAS_Black_TL", "H_PASGT_basic_black_F", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio"};
         respawnLinkedItems[] = {"G_Balaclava_blk", "CUP_V_PMC_CIRAS_Black_TL", "H_PASGT_basic_black_F", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio"};
     };
@@ -595,13 +615,13 @@ class CfgVehicles {
         scopeCurator = 2;
         displayName = "SWAT Team Leader";
         editorPreview = "\A3\EditorPreviews_F_Exp\Data\CfgVehicles\B_GEN_Soldier_F.jpg";
-        uniformClass = "U_B_GEN_Soldier_F";
+        uniformClass = "U_B_GEN_Commander_F";
         icon = "iconManLeader";
         role = "Grenadier";
         weapons[] = {"arifle_SPAR_01_GL_blk_ERCO_Pointer_F", "Throw", "Put", "Binocular"};
         respawnWeapons[] = {"arifle_SPAR_01_GL_blk_ERCO_Pointer_F", "Throw", "Put", "Binocular"};
-        magazines[] = {"30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag", "1Rnd_HE_Grenade_shell", "SmokeShellBlue", "SmokeShellBlue"};
-        respawnMagazines[] = {"30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag", "1Rnd_HE_Grenade_shell", "SmokeShellBlue", "SmokeShellBlue"};
+        magazines[] = {"30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag", "1Rnd_HE_Grenade_shell", "SmokeShellBlue", "HandGrenade"};
+        respawnMagazines[] = {"30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag", "1Rnd_HE_Grenade_shell", "SmokeShellBlue", "HandGrenade"};
         linkedItems[] = {"H_Beret_gen_F", "CUP_V_PMC_CIRAS_Black_Grenadier", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio"};
         respawnLinkedItems[] = {"H_Beret_gen_F", "CUP_V_PMC_CIRAS_Black_Grenadier", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio"};
     };
@@ -617,8 +637,8 @@ class CfgVehicles {
         role = "MachineGunner";
         weapons[] = {"arifle_SPAR_02_blk_ERCO_Pointer_F", "Throw", "Put"};
         respawnWeapons[] = {"arifle_SPAR_02_blk_ERCO_Pointer_F", "Throw", "Put"};
-        magazines[] = {"150Rnd_556x45_Drum_Mag_Tracer_F", "150Rnd_556x45_Drum_Mag_Tracer_F", "150Rnd_556x45_Drum_Mag_Tracer_F", "SmokeShellBlue", "SmokeShellBlue"};
-        respawnMagazines[] = {"150Rnd_556x45_Drum_Mag_Tracer_F", "150Rnd_556x45_Drum_Mag_Tracer_F", "150Rnd_556x45_Drum_Mag_Tracer_F", "SmokeShellBlue", "SmokeShellBlue"};
+        magazines[] = {"150Rnd_556x45_Drum_Mag_Tracer_F", "150Rnd_556x45_Drum_Mag_Tracer_F", "150Rnd_556x45_Drum_Mag_Tracer_F", "SmokeShellBlue", "HandGrenade"};
+        respawnMagazines[] = {"150Rnd_556x45_Drum_Mag_Tracer_F", "150Rnd_556x45_Drum_Mag_Tracer_F", "150Rnd_556x45_Drum_Mag_Tracer_F", "SmokeShellBlue", "HandGrenade"};
         linkedItems[] = {"G_Balaclava_blk", "H_PASGT_basic_black_F", "CUP_V_PMC_CIRAS_Black_TL", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio"};
         respawnLinkedItems[] = {"G_Balaclava_blk", "H_PASGT_basic_black_F", "CUP_V_PMC_CIRAS_Black_TL", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio"};
     };
@@ -651,8 +671,8 @@ class CfgVehicles {
         role = "Rifleman";
         weapons[] = {"arifle_SPAR_01_blk_ACO_Pointer_F", "Throw", "Put"};
         respawnWeapons[] = {"arifle_SPAR_01_blk_ACO_Pointer_F", "Throw", "Put"};
-        magazines[] = {"30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag", "SmokeShellBlue", "SmokeShellBlue"};
-        respawnMagazines[] = {"30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag", "SmokeShellBlue", "SmokeShellBlue"};
+        magazines[] = {"30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag", "SmokeShellBlue", "HandGrenade"};
+        respawnMagazines[] = {"30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag", "SmokeShellBlue", "HandGrenade"};
         linkedItems[] = {"G_Balaclava_blk", "CUP_V_PMC_CIRAS_Black_Patrol", "H_PASGT_basic_black_F", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio"};
         respawnLinkedItems[] = {"G_Balaclava_blk", "CUP_V_PMC_CIRAS_Black_Patrol", "H_PASGT_basic_black_F", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio"};
     };
@@ -667,8 +687,8 @@ class CfgVehicles {
         role = "Rifleman";
         weapons[] = {"CUP_hgun_BallisticShield_Armed", "Throw", "Put"};
         respawnWeapons[] = {"CUP_hgun_BallisticShield_Armed", "Throw", "Put"};
-        magazines[] = {"CUP_15Rnd_9x19_M9", "CUP_15Rnd_9x19_M9", "SmokeShellBlue", "SmokeShellBlue"};
-        respawnMagazines[] = {"CUP_15Rnd_9x19_M9", "CUP_15Rnd_9x19_M9", "SmokeShellBlue", "SmokeShellBlue"};
+        magazines[] = {"CUP_15Rnd_9x19_M9", "CUP_15Rnd_9x19_M9", "SmokeShellBlue", "HandGrenade"};
+        respawnMagazines[] = {"CUP_15Rnd_9x19_M9", "CUP_15Rnd_9x19_M9", "SmokeShellBlue", "HandGrenade"};
         linkedItems[] = {"G_Balaclava_blk", "H_PASGT_basic_black_F", "CUP_V_PMC_CIRAS_Black_Empty", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio"};
         respawnLinkedItems[] = {"G_Balaclava_blk", "H_PASGT_basic_black_F", "CUP_V_PMC_CIRAS_Black_Empty", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio"};
     };
@@ -695,7 +715,7 @@ class CfgVehicles {
         scopeCurator = 2;
         displayName = "SWAT Pilot";
         editorPreview = "\A3\EditorPreviews_F_Exp\Data\CfgVehicles\B_GEN_Soldier_F.jpg";
-        uniformClass = "U_B_GEN_Soldier_F";
+        uniformClass = "U_B_GEN_Commander_F";
         role = "Crewman";
         weapons[] = {"SMG_05_F", "Throw", "Put"};
         respawnWeapons[] = {"SMG_05_F", "Throw", "Put"};
