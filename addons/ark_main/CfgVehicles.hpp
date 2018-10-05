@@ -23,7 +23,7 @@ class CfgVehicles {
     class FlagCarrier_Asym;
     class ARK_Flag: FlagCarrier_Asym {
         author = "ARK";
-        displayName = "ARK Flag";
+        displayName = "Flag (ARK)";
         scope = 2;
         scopeCurator = 2;
         editorPreview = "\x\ark\addons\ark_main\resources\ark_flag.jpg";
