@@ -19,4 +19,16 @@ class CfgVehicles {
             description = "ARK Module";
         };
     };
+
+    class FlagCarrier_Asym;
+    class ARK_Flag: FlagCarrier_Asym {
+        author = "ARK";
+        displayName = "ARK Flag"
+        scope = 2;
+        scopeCurator = 2;
+        editorPreview = "\x\ark\addons\ark_main\resources\ark_flag.jpg"
+        class EventHandlers {
+            init = "(_this #0) setFlagTexture '\x\ark\addons\ark_main\resources\ark_flag.paa'";
+        };
+    };
 };
