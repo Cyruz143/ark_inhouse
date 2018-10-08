@@ -12,7 +12,7 @@ ark_admin_tools_fnc_callAttackHelo = {
 
     private _randomDir = random [0, 180, 360];
     private _pos = _player getPos [2500, _randomDir];
-    private _vehicle = createVehicle [_helo, position _player, [(_pos #0),(_pos #1), 500], 0, "FLY"]; 
+    private _vehicle = createVehicle [_helo, _pos, [], 0, "FLY"]; 
     private _grp = createGroup _side;
     private _allTurrets = allTurrets [_vehicle, true];
 
