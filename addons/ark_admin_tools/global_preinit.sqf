@@ -10,8 +10,10 @@ ark_admin_tools_fnc_callAttackHelo = {
     private _unit = selectRandom _pilotArray;
     private _helo = selectRandom _heloArray;
 
-    private _vehicle = createVehicle [_helo, position _player, [], 2000, "FLY"]; 
-    private _grp = createGroup _side; 
+    private _randomDir = random [0, 180, 360];
+    private _pos = _player getPos [2500, _randomDir];
+    private _vehicle = createVehicle [_helo, _pos, [], 0, "FLY"]; 
+    private _grp = createGroup _side;
     private _allTurrets = allTurrets [_vehicle, true];
 
     private _driver = _grp createUnit [_unit, [0,0,0], [], 0, "NONE"];
@@ -24,13 +26,20 @@ ark_admin_tools_fnc_callAttackHelo = {
         _units moveInTurret [_vehicle, _x];
     } forEach _allTurrets;
 
-    private _waypoint = _grp addWaypoint [position _player, 0, 1]; 
-    _waypoint setWaypointType "SAD"; 
-    _waypoint setWaypointBehaviour "COMBAT"; 
-    _waypoint setWaypointCombatMode "RED"; 
-    _waypoint setWaypointSpeed "FULL";
-    [_grp, 2] waypointAttachVehicle _player;
-    _grp reveal [_player, 3.5];
+    private _wp1 = _grp addWaypoint [position _player, 0, 1]; 
+    _wp1 setWaypointType "SAD"; 
+    _wp1 setWaypointBehaviour "COMBAT"; 
+    _wp1 setWaypointCombatMode "RED"; 
+    _wp1 setWaypointSpeed "FULL";
+    _grp reveal [_player, 4];
+    
+    private _wp2 = _grp addWaypoint [position _player, 0, 2]; 
+    _wp2 setWaypointType "LOITER"; 
+    _wp2 setWaypointLoiterRadius 200;
+    _wp2 setWaypointLoiterType "CIRCLE_L";
+    _wp2 setWaypointBehaviour "COMBAT"; 
+    _wp2 setWaypointCombatMode "RED"; 
+    _wp2 setWaypointSpeed "LIMITED";
 };
 
 ark_admin_tools_fnc_callArmour = {
@@ -60,12 +69,20 @@ ark_admin_tools_fnc_callArmour = {
     _vehicle allowCrewInImmobile true;
     _vehicle setUnloadInCombat [false, false];
 
-    private _waypoint = _grp addWaypoint [position _player, 0, 1]; 
-    _waypoint setWaypointType "SAD"; 
-    _waypoint setWaypointBehaviour "COMBAT"; 
-    _waypoint setWaypointCombatMode "RED"; 
-    _waypoint setWaypointSpeed "FULL";
-    [_grp, 2] waypointAttachVehicle _player;
+    private _wp1 = _grp addWaypoint [position _player, 0, 1]; 
+    _wp1 setWaypointType "SAD"; 
+    _wp1 setWaypointBehaviour "COMBAT"; 
+    _wp1 setWaypointCombatMode "RED"; 
+    _wp1 setWaypointSpeed "FULL";
+    _grp reveal [_player, 4];
+    
+    private _wp2 = _grp addWaypoint [position _player, 0, 2]; 
+    _wp2 setWaypointType "LOITER"; 
+    _wp2 setWaypointLoiterRadius 200;
+    _wp2 setWaypointLoiterType "CIRCLE_L";
+    _wp2 setWaypointBehaviour "COMBAT"; 
+    _wp2 setWaypointCombatMode "RED"; 
+    _wp2 setWaypointSpeed "LIMITED";
 };
 
 ark_admin_tools_fnc_canUnflip = {
