@@ -25,21 +25,14 @@ ark_admin_tools_fnc_callAttackHelo = {
         _units moveInTurret [_vehicle, _x];
     } forEach allTurrets _vehicle;
 
-    private _wp1 = _grp addWaypoint [position _player, 0, 1]; 
-    _wp1 setWaypointType "MOVE"; 
-    _wp1 setWaypointBehaviour "COMBAT"; 
-    _wp1 setWaypointCombatMode "RED"; 
-    _wp1 setWaypointSpeed "FULL";
-    _grp reveal [_player, 4];
-    
-    private _wp2 = _grp addWaypoint [position _player, 0, 2]; 
-    _wp2 setWaypointType "LOITER"; 
-    _wp2 setWaypointLoiterRadius 250;
-    _wp2 setWaypointLoiterType "CIRCLE_L";
-    _wp2 setWaypointBehaviour "COMBAT"; 
-    _wp2 setWaypointCombatMode "RED"; 
-    _wp2 setWaypointSpeed "LIMITED";
-    _grp reveal [_player, 4];
+    {
+        _x setskill ["spotDistance",1];
+        _x setskill ["spotTime",1];
+        _x setskill ["courage",1];
+        _x setskill ["commanding",1];
+    } forEach units _grp;
+
+    [_grp, position _player, 250, 6, "SAD", "AWARE", "RED", "FULL", "STAG COLUMN", "", [3,6,9]] call CBA_fnc_taskPatrol;
 };
 
 ark_admin_tools_fnc_callArmour = {
