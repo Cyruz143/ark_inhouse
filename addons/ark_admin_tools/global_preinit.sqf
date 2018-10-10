@@ -14,7 +14,6 @@ ark_admin_tools_fnc_callAttackHelo = {
     private _pos = _player getPos [2500, _randomDir];
     private _vehicle = createVehicle [_helo, _pos, [], 0, "FLY"]; 
     private _grp = createGroup _side;
-    private _allTurrets = allTurrets [_vehicle, true];
 
     private _driver = _grp createUnit [_unit, [0,0,0], [], 0, "NONE"];
     _driver assignAsDriver _vehicle;
@@ -24,10 +23,10 @@ ark_admin_tools_fnc_callAttackHelo = {
         private _units = _grp createUnit [_unit, [0,0,0], [], 0, "NONE"];
         _units assignAsTurret [_vehicle, _x];
         _units moveInTurret [_vehicle, _x];
-    } forEach _allTurrets;
+    } forEach allTurrets _vehicle;
 
     private _wp1 = _grp addWaypoint [position _player, 0, 1]; 
-    _wp1 setWaypointType "SAD"; 
+    _wp1 setWaypointType "MOVE"; 
     _wp1 setWaypointBehaviour "COMBAT"; 
     _wp1 setWaypointCombatMode "RED"; 
     _wp1 setWaypointSpeed "FULL";
@@ -35,11 +34,12 @@ ark_admin_tools_fnc_callAttackHelo = {
     
     private _wp2 = _grp addWaypoint [position _player, 0, 2]; 
     _wp2 setWaypointType "LOITER"; 
-    _wp2 setWaypointLoiterRadius 200;
+    _wp2 setWaypointLoiterRadius 250;
     _wp2 setWaypointLoiterType "CIRCLE_L";
     _wp2 setWaypointBehaviour "COMBAT"; 
     _wp2 setWaypointCombatMode "RED"; 
     _wp2 setWaypointSpeed "LIMITED";
+    _grp reveal [_player, 4];
 };
 
 ark_admin_tools_fnc_callArmour = {
@@ -54,7 +54,6 @@ ark_admin_tools_fnc_callArmour = {
 
     private _vehicle = createVehicle [_vic, _pos, [], 0, "NONE"];
     private _grp = createGroup _side;
-    private _allTurrets = allTurrets [_vehicle, true];
 
     private _driver = _grp createUnit [_unit, [0,0,0], [], 0, "NONE"];
     _driver assignAsDriver _vehicle;
@@ -64,25 +63,12 @@ ark_admin_tools_fnc_callArmour = {
         private _units = _grp createUnit [_unit, [0,0,0], [], 0, "NONE"];
         _units assignAsTurret [_vehicle, _x];
         _units moveInTurret [_vehicle, _x];
-    } forEach _allTurrets;
+    } forEach allTurrets _vehicle;
 
     _vehicle allowCrewInImmobile true;
     _vehicle setUnloadInCombat [false, false];
-
-    private _wp1 = _grp addWaypoint [position _player, 0, 1]; 
-    _wp1 setWaypointType "SAD"; 
-    _wp1 setWaypointBehaviour "COMBAT"; 
-    _wp1 setWaypointCombatMode "RED"; 
-    _wp1 setWaypointSpeed "FULL";
-    _grp reveal [_player, 4];
-    
-    private _wp2 = _grp addWaypoint [position _player, 0, 2]; 
-    _wp2 setWaypointType "LOITER"; 
-    _wp2 setWaypointLoiterRadius 200;
-    _wp2 setWaypointLoiterType "CIRCLE_L";
-    _wp2 setWaypointBehaviour "COMBAT"; 
-    _wp2 setWaypointCombatMode "RED"; 
-    _wp2 setWaypointSpeed "LIMITED";
+   
+    [_grp, position _player, 100, 4, "MOVE", "AWARE", "RED", "FULL"] call CBA_fnc_taskPatrol;
 };
 
 ark_admin_tools_fnc_canUnflip = {
