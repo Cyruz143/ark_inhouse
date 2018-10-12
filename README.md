@@ -25,7 +25,6 @@ Modules
 > - `ark_custom_units` - ARK made units for admiral (Using CUP/USM mixed gear)
 > - `ark_deploy` - Adding teleporting framework for mission use
 > - `ark_difficulty` - Configuration adjustments to server difficulty settings
-> - `ark_disable_missions` - Hiding vanilla missions
 > - `ark_enhanced_flares` - Brighter flares
 > - `ark_enhanced_launchers` - Allow AI to fire AT at infantry and some additional sounds
 > - `ark_hidden_items` - Hiding objects from VA/Editor

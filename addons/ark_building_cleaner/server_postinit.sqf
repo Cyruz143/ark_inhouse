@@ -1,3 +1,5 @@
+if !((briefingName find "ark_gtvt") isEqualTo -1) exitWith {};
+
 addMissionEventHandler ["BuildingChanged", {call ark_building_cleaner_fnc_doClean}];
 
 ark_building_cleaner_fnc_doClean = {
