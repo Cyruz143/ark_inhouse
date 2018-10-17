@@ -1,5 +1,6 @@
 // ACE Captives
-force force ace_captives_allowHandcuffOwnSide = false;
+force ace_captives_requireSurrender = 0;
+force ace_captives_allowHandcuffOwnSide = false;
 force force ace_captives_requireSurrenderAi = false;
 
 // ACE Common
