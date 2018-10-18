@@ -31,21 +31,24 @@ ark_deploy_module_init = {
 };
 
 ark_deploy_fnc_deployGroup = {
-    onMapSingleClick "";
     params ["_player", "_position"];
-    
+
     _player setVariable ["ark_deploy_canDeploy", false, true];
-    private _group = group _player;
-    private _pos_x = _position select 0;
-    private _pos_y = _position select 1;
-    private _pos_z = _position select 2;
+    
+    onMapSingleClick "";
+
+    private _pos_x = _position #0;
+    private _pos_y = _position #1;
     {
-        _x setposATL [_pos_x,_pos_y,_pos_z];
+        if (isWeaponDeployed _x || isWeaponRested _x) then {
+            _x setPos (_x modelToWorld [0,0,0]);
+        };
+        _x setposATL [((_position #0) + 1),((_position #1) + 1), 0];
         _pos_x = (_pos_x + 1);
         _pos_y = (_pos_y + 1);
-    } forEach units _group;
+    } forEach units (group _player);
+    
     openMap [false, false];
-    hint "Deploy successful";
 };
 
 ark_deploy_fnc_assignDeployClick = {
