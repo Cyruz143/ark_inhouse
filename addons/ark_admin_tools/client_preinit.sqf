@@ -28,6 +28,10 @@ ark_admin_tools_fnc_enableMapTeleport = {
     params ["_player"];
     hintSilent "Map Click Teleport has been enabled.";
     openMap [true, true];
+    if (isWeaponDeployed _player || isWeaponRested _player) then {
+        _player setPos (_player modelToWorld [0,0,0]);
+    };
+    
     _player onMapSingleClick {
         _this setposATL _pos;
         [] call ark_admin_tools_fnc_disableMapTeleport;
