@@ -43,7 +43,9 @@ ark_deploy_fnc_deployGroup = {
         if (isWeaponDeployed _x || isWeaponRested _x) then {
             _x setPos (_x modelToWorld [0,0,0]);
         };
-        _x setposATL [((_pos_x) + 1),((_pos_y) + 1), 0];
+        _x setposATL [(_pos_x),(_pos_y), 0];
+        _pos_x = _pos_x + 1;
+        _pos_y = _pos_y + 1;
     } forEach units (group _player);
     
     openMap [false, false];
