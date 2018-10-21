@@ -275,7 +275,7 @@ class CfgVehicles {
     class O_Soldier_RPG18_F: O_Soldier_LAT_F {
         displayName = "AT Rifleman (RPG-18)";
         weapons[] = {"arifle_Katiba_ACO_pointer_F","CUP_launch_RPG18","Throw","Put"};
-        respawnWeapons[] = {"arifle_Mk20_ACO_pointer_F","CUP_launch_RPG18","Throw","Put"};
+        respawnWeapons[] = {"arifle_Katiba_ACO_pointer_F","CUP_launch_RPG18","Throw","Put"};
         magazines[] = {"30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","HandGrenade","HandGrenade","SmokeShell","SmokeShellGreen","Chemlight_green","Chemlight_green"};
         respawnMagazines[] = {"30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","HandGrenade","HandGrenade","SmokeShell","SmokeShellGreen","Chemlight_green","Chemlight_green"};
     };
