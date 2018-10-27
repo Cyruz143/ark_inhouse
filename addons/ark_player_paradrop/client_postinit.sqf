@@ -21,6 +21,7 @@ ark_player_paradrop_fnc_canDrop = {
         {
             private _chute = createVehicle ["Steerable_Parachute_F", [0,0,0], [], 0, "NONE"];
             _chute setPos (getPosATL (_this #0));
+            _chute allowDamage false;
             (_this #0) assignAsDriver _chute;
             (_this #0) moveInDriver _chute;
         },

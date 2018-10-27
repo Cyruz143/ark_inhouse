@@ -8,7 +8,7 @@
             params ["_args", "_id"];
             _args params ["_jumpHeight", "_vehicle"];
 
-            private _unit = fullCrew [_vehicle, "cargo", false] param [0, objNull];
+            private _unit = (fullCrew [_vehicle, "cargo", false] param [0, objNull]) param [0, objNull];
 
             if (isNull _unit) exitWith {
                 _id call CBA_fnc_removePerFrameHandler;
