@@ -3,24 +3,21 @@
 
     private _jumpHeight = missionNamespace getVariable ["ark_player_paradrop_var_jumpHeight", 200];
 
-    ark_player_paradrop_pfh_jumpLoop = [
+    [
         {
             params ["_args", "_id"];
-            _args params ["_jumpHeight","_vehicle"];
-            {
-                ["ark_player_paradrop_eh_playerJump", [_jumpHeight], (_x #0)] call CBA_fnc_targetEvent;
-            } forEach (fullCrew [_vehicle, "cargo", false]);
+            _args params ["_jumpHeight", "_vehicle"];
+
+            private _unit = fullCrew [_vehicle, "cargo", false] param [0, objNull];
+
+            if (isNull _unit) exitWith {
+                _id call CBA_fnc_removePerFrameHandler;
+                _vehicle setVariable ["ark_player_paradrop_var_jumpInProgress", nil]
+            };
+
+            ["ark_player_paradrop_eh_playerJump", [_jumpHeight], _unit] call CBA_fnc_targetEvent;
         },
         3,
-        [_jumpHeight,_vehicle]
+        [_jumpHeight, _vehicle]
     ] call CBA_fnc_addPerFrameHandler;
-
-    [
-        {count (fullCrew [_vehicle, "cargo", false]) isEqualTo 0},
-        {
-            [(_this #0)] call CBA_fnc_removePerFrameHandler;
-            (_this #1) setVariable ["ark_player_paradrop_var_jumpInProgress", nil]; 
-        },
-        [ark_player_paradrop_pfh_jumpLoop,_vehicle]
-    ] call CBA_fnc_waitUntilAndExecute;
 }] call CBA_fnc_addEventHandler;
