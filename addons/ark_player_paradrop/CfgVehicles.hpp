@@ -33,10 +33,9 @@ class CfgVehicles {
                 statement = "['ark_player_paradrop_eh_jumpController', [(vehicle player)]] call CBA_fnc_serverEvent; (vehicle player) setVariable ['ark_player_paradrop_var_jumpInProgress', true, true];";
                 icon = "\A3\ui_f\data\map\vehicleicons\iconParachute_ca.paa";
             };
-            class Stop_Drop {
+            class Stop_Drop: Start_Drop {
                 displayName = "Stop Paradrop";
-                exceptions[] = {"isNotInside"};
-                condition = "(vehicle player) getVariable ['ark_player_paradrop_var_jumpInProgress', false];";
+                condition = "call ark_player_paradrop_fnc_stopDrop";
                 statement = "(vehicle player) setVariable ['ark_player_paradrop_var_jumpInProgress', false, true];";
                 icon = "\A3\ui_f\data\map\vehicleicons\iconParachute_ca.paa";
             };

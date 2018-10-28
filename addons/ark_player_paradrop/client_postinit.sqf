@@ -10,6 +10,18 @@ ark_player_paradrop_fnc_canDrop = {
     ark_player_paradrop_var_canDrop
 };
 
+ark_player_paradrop_fnc_stopDrop = {
+    private _isModuleActive = missionNamespace getVariable ["ark_player_paradrop_var_jumpHeight", false];
+
+    if (typeName _isModuleActive != "SCALAR") then {
+        ark_player_paradrop_var_stopDrop = false;
+    } else {
+        ark_player_paradrop_var_stopDrop = (vehicle player) getVariable ["ark_player_paradrop_var_jumpInProgress", false];
+    };
+
+    ark_player_paradrop_var_stopDrop
+};
+
 ["ark_player_paradrop_eh_playerJump", {
     private _jumpHeight = missionNamespace getVariable ["ark_player_paradrop_var_jumpHeight", 200];
     player allowdamage false;

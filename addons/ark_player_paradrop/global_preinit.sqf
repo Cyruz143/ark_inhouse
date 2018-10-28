@@ -23,7 +23,7 @@ private _briefingText = format ["
 <br/>
 JUMP MASTER
 <br/>
-The pilot of the plane has control of the jump, once you're over the target AO, they can ACE self-interact and select Start Paradrop, this will drop all of the player cargo one unit at a time. Be warned, once you start this process you can't stop it so make sure everyone is ready!
+The pilot of the plane has control of the jump, once you're over the target AO, they can ACE self-interact and select Start Paradrop, this will drop all of the player cargo one unit at a time. Once the jump has started you'll have an option to stop the jump if run out of room.
 <br/><br/>
 CHUTE DEPLOY HEIGHT
 <br/>
