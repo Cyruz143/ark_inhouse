@@ -14,6 +14,12 @@ class CfgVehicles {
                 typeName = "NUMBER";
                 defaultValue = 200;
             };
+            class Jump_Gap {
+                displayName = "Time between each jump";
+                description = "Set the time in seconds between each player jumping";
+                typeName = "NUMBER";
+                defaultValue = 2;
+            };
         };
     };
 
@@ -24,7 +30,14 @@ class CfgVehicles {
                 displayName = "Start Paradrop";
                 exceptions[] = {"isNotInside"};
                 condition = "call ark_player_paradrop_fnc_canDrop";
-                statement = "['ark_player_paradrop_eh_jumpController', [(vehicle player)]] call CBA_fnc_serverEvent; (vehicle player) setVariable ['ark_player_paradrop_var_jumpInProgress', true];";
+                statement = "['ark_player_paradrop_eh_jumpController', [(vehicle player)]] call CBA_fnc_serverEvent; (vehicle player) setVariable ['ark_player_paradrop_var_jumpInProgress', true, true];";
+                icon = "\A3\ui_f\data\map\vehicleicons\iconParachute_ca.paa";
+            };
+            class Stop_Drop {
+                displayName = "Stop Paradrop";
+                exceptions[] = {"isNotInside"};
+                condition = "(vehicle player) getVariable ['ark_player_paradrop_var_jumpInProgress', false];";
+                statement = "(vehicle player) setVariable ['ark_player_paradrop_var_jumpInProgress', false, true];";
                 icon = "\A3\ui_f\data\map\vehicleicons\iconParachute_ca.paa";
             };
         };
