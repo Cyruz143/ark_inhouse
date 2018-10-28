@@ -23,8 +23,8 @@ ark_player_paradrop_fnc_stopDrop = {
 };
 
 ark_player_paradrop_fnc_addBriefing = {
-    private _jumpHeight = missionNamespace setVariable ["ark_player_paradrop_var_jumpHeight", 200];
-    private _jumpGap = missionNamespace setVariable ["ark_player_paradrop_var_jumpGap", 2];
+    private _jumpHeight = missionNamespace getVariable ["ark_player_paradrop_var_jumpHeight", 200];
+    private _jumpGap = missionNamespace getVariable ["ark_player_paradrop_var_jumpGap", 2];
     private _briefingText = format ["
 <br/>
 JUMP MASTER
