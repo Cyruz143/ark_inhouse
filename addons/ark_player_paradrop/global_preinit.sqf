@@ -10,5 +10,4 @@ ark_player_paradrop_fnc_setJumpHeight = {
 
     private _jumpGap = _logic getVariable ["Jump_Gap", 2];
     missionNamespace setVariable ["ark_player_paradrop_var_jumpGap", _jumpGap, true];
-    };
 };
