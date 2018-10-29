@@ -45,7 +45,7 @@ A player will be ejected every %2 seconds.
 
 ["ark_player_paradrop_eh_playerJump", {
     private _jumpHeight = missionNamespace getVariable ["ark_player_paradrop_var_jumpHeight", 200];
-    player allowdamage false;
+    player allowDamage false;
     moveOut player;
 
     [
@@ -61,13 +61,13 @@ A player will be ejected every %2 seconds.
     ] call CBA_fnc_waitUntilAndExecute;
 
     [
-        {isTouchingGround (_this #0)}, 
+        {isTouchingGround _this}, 
         {
-            {(_this #0) allowDamage true}, [(_this #0)] call CBA_fnc_execNextFrame;
+            [{_this allowDamage true}, _this] call CBA_fnc_execNextFrame;
         },
-        [player],
+        player,
         90,
-        {(_this #0) allowDamage true}
+        {_this allowDamage true}
     ] call CBA_fnc_waitUntilAndExecute;
 }] call CBA_fnc_addEventHandler;
 
