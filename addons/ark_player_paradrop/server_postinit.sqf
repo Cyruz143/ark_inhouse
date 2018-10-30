@@ -2,7 +2,7 @@
     params ["_vehicle"];
 
     private _jumpHeight = missionNamespace getVariable ["ark_player_paradrop_var_jumpHeight", 200];
-    private _jumpGap = missionNamespace getVariable ["ark_player_paradrop_var_jumpGap", 2];
+    private _jumpGap = missionNamespace getVariable ["ark_player_paradrop_var_jumpGap", 1];
 
     [
         {

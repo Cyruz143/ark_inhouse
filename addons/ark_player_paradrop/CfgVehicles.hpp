@@ -18,7 +18,7 @@ class CfgVehicles {
                 displayName = "Time between each jump";
                 description = "Set the time in seconds between each player jumping";
                 typeName = "NUMBER";
-                defaultValue = 2;
+                defaultValue = 1;
             };
         };
     };

@@ -24,7 +24,7 @@ ark_player_paradrop_fnc_stopDrop = {
 
 ark_player_paradrop_fnc_addBriefing = {
     private _jumpHeight = missionNamespace getVariable ["ark_player_paradrop_var_jumpHeight", 200];
-    private _jumpGap = missionNamespace getVariable ["ark_player_paradrop_var_jumpGap", 2];
+    private _jumpGap = missionNamespace getVariable ["ark_player_paradrop_var_jumpGap", 1];
     private _briefingText = format ["
 <br/>
 JUMP MASTER
@@ -52,8 +52,8 @@ A player will be ejected every %2 seconds.
         {(getPosATL (_this #0) #2) < (_this #1)}, 
         {
             private _chute = createVehicle ["Steerable_Parachute_F", [0,0,0], [], 0, "NONE"];
+			_chute allowDamage false;
             _chute setPos (getPosATL (_this #0));
-            _chute allowDamage false;
             (_this #0) assignAsDriver _chute;
             (_this #0) moveInDriver _chute;
         },
