@@ -52,7 +52,7 @@ A player will be ejected every %2 seconds.
         {(getPosATL (_this #0) #2) < (_this #1)}, 
         {
             private _chute = createVehicle ["Steerable_Parachute_F", [0,0,0], [], 0, "NONE"];
-			_chute allowDamage false;
+            _chute allowDamage false;
             _chute setPos (getPosATL (_this #0));
             (_this #0) assignAsDriver _chute;
             (_this #0) moveInDriver _chute;
