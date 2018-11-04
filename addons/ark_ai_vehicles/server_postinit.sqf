@@ -1,24 +1,15 @@
 ["Car", "Dammaged", {call ark_ai_vehicles_vehicleDamaged}] call CBA_fnc_addClassEventHandler;
-
-ark_ai_vehicles_pfh_vehicleLoop = [{
-        {
-            if ((_x isKindOf "Car" || _x isKindOf "Tank") && (count crew _x > 0) && alive _x) then {
-                if (!alive (gunner _x) && alive (driver _x) && !isPlayer (driver _x)) then {
-                    [_x] call ark_ai_vehicles_fnc_gunnerDead;
-                };
-            };
-        } forEach vehicles;
-}, 15] call CBA_fnc_addPerFrameHandler;
+["CAManBase", "Killed", {call ark_ai_vehicles_fnc_isGunnerDead}] call CBA_fnc_addClassEventHandler;
 
 ark_ai_vehicles_vehicleDamaged = {
-    params ["_vehicle","","","","_hitPoint"];
+    params ["_vehicle","","_damage","","_hitPoint"];
 
     _vehicle setVariable ["ark_ai_vehicles_last_hit", time, true];
     private _wheelArray = ["hitlfwheel", "hitlbwheel", "hitlmwheel", "hitlf2wheel", "hitrfwheel", "hitrbwheel", "hitrmwheel", "hitrf2wheel"];
 
     if !(_hitPoint in _wheelArray) exitWith {};
 
-    if (!isNull (driver _vehicle) && !isPlayer (driver _vehicle) && !(canMove _vehicle)) then {
+    if (!isNull (driver _vehicle) && !isPlayer (driver _vehicle) && _damage isEqualTo 1) then {
         [_vehicle] call ark_ai_vehicles_canRepair;
     };
 };
@@ -83,6 +74,7 @@ ark_ai_vehicles_doRepair = {
 
             _driver setVectorDir (getpos _driver vectorFromTo getpos _vehicle);
             _driver playMoveNow "Acts_carFixingWheel";
+            ["Acts_carFixingWheel", getPosASL _driver, 5, 100] call ace_common_fnc_playConfigSound3D;
             sleep 15;
 
             if (!alive _driver || !alive _vehicle) exitWith {
@@ -93,12 +85,11 @@ ark_ai_vehicles_doRepair = {
                 _vehicle setHit [getText(configFile >> "cfgVehicles" >> _vehicleClassName >> "HitPoints" >> _x >> "name"), 0, true];
             } forEach ["HitLFWheel", "HitLBWheel", "HitLMWheel", "HitLF2Wheel", "HitRFWheel", "HitRBWheel", "HitRMWheel", "HitRF2Wheel"];
 
-            _vehicle setPosATL [getPosATL _vehicle #0, getPosATL _vehicle #1, 0.5];
-
             _driver playMove "";
             _driver assignAsDriver _vehicle;
             _driver moveInDriver _vehicle;
             _driver enableAI "ALL";
+            _vehicle setVectorUp surfaceNormal position _vehicle;
             _vehicle forceSpeed -1;
             
             deleteWaypoint [_group, currentWaypoint _group];
@@ -109,25 +100,60 @@ ark_ai_vehicles_doRepair = {
     };
 };
 
-ark_ai_vehicles_fnc_gunnerDead = {
+ark_ai_vehicles_fnc_isGunnerDead = {
+    params ["_unit"];
+
+    private _vehicle = vehicle _unit;
+
+    if (_vehicle isKindOf "Car" || _vehicle isKindOf "Tank") then { 
+        if (gunner _vehicle isEqualTo _unit && alive (driver _vehicle) && !isPlayer (driver _vehicle)) then {
+            [_vehicle] call ark_ai_vehicles_fnc_replaceGunner;
+        };
+    };
+};
+
+ark_ai_vehicles_fnc_replaceGunner = {
     params ["_vehicle"];
+    
     private _driver = driver _vehicle;
     private _allTurrets = allTurrets [_vehicle, false];
-    private _gunnerTurret = [_vehicle] call ace_common_fnc_getTurretGunner;
 
     if (isNil "_allTurrets" || { count _allTurrets == 0 }) exitWith {
         diag_log "[ARK] (AI Vehicles) - Vehicle has no turrets";
     };
+    
     _vehicle setVariable ["ark_ai_vehicles_gunner_dead", true, true];
+    _vehicle forceSpeed 0;
 
-    [_vehicle,_driver,_gunnerTurret] spawn {
-        params ["_vehicle","_driver","_gunnerTurret"];
+    [
+        {speed (_this #0) isEqualTo 0},
+        {
+            moveOut (_this #1);
+            unassignVehicle (_this #1);
+        },
+        [_vehicle,_driver],
+        4,
+        {
+            moveOut (_this #1);
+            unassignVehicle (_this #1);
+        }
+    ] call CBA_fnc_waitUntilAndExecute;
 
-        _vehicle forceSpeed 0;
-        sleep 4;
-        doGetOut _driver;
-        sleep 2;
-        _driver assignAsTurret [_vehicle,_gunnerTurret];
-        _driver moveInTurret [_vehicle,_gunnerTurret];
-    };
+    [
+        {
+            if (alive (_this #0) && isNull objectParent (_this #0)) then {
+                [(_this #0),(_this #1)] call ark_ai_vehicles_fnc_moveInGunner;
+            };
+        },
+        [_vehicle,_driver],
+        8
+    ] call CBA_fnc_waitAndExecute;
+};
+
+ark_ai_vehicles_fnc_moveInGunner = {
+    params ["_vehicle","_driver"];
+    
+    private _gunnerTurret = [_vehicle] call ace_common_fnc_getTurretGunner;
+    _driver assignAsTurret [_vehicle,_gunnerTurret];
+    _driver moveInTurret [_vehicle,_gunnerTurret];
 };
