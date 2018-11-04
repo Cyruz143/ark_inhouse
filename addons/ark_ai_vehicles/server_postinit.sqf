@@ -1,16 +1,16 @@
-["Car", "Dammaged", {call ark_ai_vehicles_vehicle_hit}] call CBA_fnc_addClassEventHandler;
+["Car", "Dammaged", {call ark_ai_vehicles_vehicleDamaged}] call CBA_fnc_addClassEventHandler;
 
 ark_ai_vehicles_pfh_vehicleLoop = [{
         {
             if ((_x isKindOf "Car" || _x isKindOf "Tank") && (count crew _x > 0) && alive _x) then {
                 if (!alive (gunner _x) && alive (driver _x) && !isPlayer (driver _x)) then {
-                    [_x] call ark_ai_vehicles_fnc_vehicleGunnerDead;
+                    [_x] call ark_ai_vehicles_fnc_gunnerDead;
                 };
             };
         } forEach vehicles;
 }, 15] call CBA_fnc_addPerFrameHandler;
 
-ark_ai_vehicles_vehicle_hit = {
+ark_ai_vehicles_vehicleDamaged = {
     params ["_vehicle","","","","_hitPoint"];
 
     _vehicle setVariable ["ark_ai_vehicles_last_hit", time, true];
@@ -109,7 +109,7 @@ ark_ai_vehicles_doRepair = {
     };
 };
 
-ark_ai_vehicles_fnc_vehicleGunnerDead = {
+ark_ai_vehicles_fnc_gunnerDead = {
     params ["_vehicle"];
     private _driver = driver _vehicle;
     private _allTurrets = allTurrets [_vehicle, false];
