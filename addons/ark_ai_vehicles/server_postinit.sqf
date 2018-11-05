@@ -1,7 +1,7 @@
-["Car", "Dammaged", {call ark_ai_vehicles_vehicleDamaged}] call CBA_fnc_addClassEventHandler;
+["Car", "Dammaged", {call ark_ai_vehicles_fnc_vehicleDamaged}] call CBA_fnc_addClassEventHandler;
 ["CAManBase", "Killed", {call ark_ai_vehicles_fnc_isGunnerDead}] call CBA_fnc_addClassEventHandler;
 
-ark_ai_vehicles_vehicleDamaged = {
+ark_ai_vehicles_fnc_vehicleDamaged = {
     params ["_vehicle","","_damage","","_hitPoint"];
 
     _vehicle setVariable ["ark_ai_vehicles_last_hit", time, true];
@@ -10,22 +10,18 @@ ark_ai_vehicles_vehicleDamaged = {
     if !(_hitPoint in _wheelArray) exitWith {};
 
     if (!isNull (driver _vehicle) && !isPlayer (driver _vehicle) && _damage isEqualTo 1) then {
-        [_vehicle] call ark_ai_vehicles_canRepair;
+        [_vehicle] call ark_ai_vehicles_fnc_canRepair;
     };
 };
 
-ark_ai_vehicles_canRepair = {
+ark_ai_vehicles_fnc_canRepair = {
     params ["_vehicle"];
 
-    private _cookingOff = _vehicle getVariable ["ACE_cookoff_isCookingOff", false];
-    private _waitingToRepair = _vehicle getVariable ["ark_ai_vehicles_awaiting_repair", false];
-    private _gunnerDead = _vehicle getVariable ["ark_ai_vehicles_gunner_dead", false];
-
-    if (_cookingOff || _waitingToRepair) exitWith {
-        diag_log "[ARK] (AI Vehicles) - Vehicle is cooking off / waiting to be repaired already";
+    if (_vehicle getVariable ["ark_ai_vehicles_awaiting_repair", false]) exitWith {
+        diag_log "[ARK] (AI Vehicles) - Vehicle is waiting to be repaired already";
     };
 
-    if (_gunnerDead) exitWith {
+    if (_vehicle getVariable ["ark_ai_vehicles_gunner_dead", false]) exitWith {
         diag_log "[ARK] (AI Vehicles) - Aborting repair due to gunner death";
     };
 
@@ -38,25 +34,24 @@ ark_ai_vehicles_canRepair = {
 
             time >= _outOfCombatDelayTime
         },
-        {[(_this #0)] call ark_ai_vehicles_doRepair},
+        {[(_this #0)] call ark_ai_vehicles_fnc_doRepair},
         [_vehicle],
         30,
-        {[(_this #0)] call ark_ai_vehicles_doRepair}
+        {[(_this #0)] call ark_ai_vehicles_fnc_doRepair}
     ] call CBA_fnc_waitUntilAndExecute;
 };
 
-ark_ai_vehicles_doRepair = {
+ark_ai_vehicles_fnc_doRepair = {
     params ["_vehicle"];
 
     private _driver = driver _vehicle;
-    private _vehicleClassName = typeOf _vehicle;
 
     if (_driver != _vehicle && alive _driver) then {
 
         _vehicle setVariable ["ark_ai_vehicles_awaiting_repair", true, true];
 
-        [_vehicle,_driver,_vehicleClassName] spawn {
-            params ["_vehicle","_driver","_vehicleClassName"];
+        [_vehicle,_driver] spawn {
+            params ["_vehicle","_driver"];
 
             _vehicle forceSpeed 0;
             sleep 2;
@@ -82,7 +77,7 @@ ark_ai_vehicles_doRepair = {
             };
 
             {
-                _vehicle setHit [getText(configFile >> "cfgVehicles" >> _vehicleClassName >> "HitPoints" >> _x >> "name"), 0, true];
+                _vehicle setHit [getText(configFile >> "cfgVehicles" >> typeOf _vehicle >> "HitPoints" >> _x >> "name"), 0, true];
             } forEach ["HitLFWheel", "HitLBWheel", "HitLMWheel", "HitLF2Wheel", "HitRFWheel", "HitRBWheel", "HitRMWheel", "HitRF2Wheel"];
 
             _driver playMove "";
@@ -119,7 +114,7 @@ ark_ai_vehicles_fnc_replaceGunner = {
     private _allTurrets = allTurrets [_vehicle, false];
 
     if (isNil "_allTurrets" || { count _allTurrets == 0 }) exitWith {
-        diag_log "[ARK] (AI Vehicles) - Vehicle has no turrets";
+        diag_log format ["[ARK] (AI Vehicles) - Vehicle: %1 has no turrets",typeOf _vehicle];
     };
     
     _vehicle setVariable ["ark_ai_vehicles_gunner_dead", true, true];
