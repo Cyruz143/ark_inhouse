@@ -37,7 +37,6 @@ class CfgVehicles {
                 displayName = "Stop Paradrop";
                 condition = "call ark_player_paradrop_fnc_stopDrop";
                 statement = "(vehicle player) setVariable ['ark_player_paradrop_var_jumpInProgress', false, true];";
-                icon = "\A3\ui_f\data\map\vehicleicons\iconParachute_ca.paa";
             };
         };
     };
