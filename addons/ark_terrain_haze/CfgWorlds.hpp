@@ -1,75 +1,75 @@
 class CfgWorlds {
     class DefaultWorld;
     class CAWorld: DefaultWorld {
-        hazeBaseBeta0 = 2.9999998e-005;
+        REDUCED_HAZE
     };
     class Altis: CAWorld {
-        hazeBaseBeta0=2.9999998e-005;
+        REDUCED_HAZE
     };
     class Stratis: CAWorld {
-        hazeBaseBeta0=2.9999998e-005;
+        REDUCED_HAZE
     };
     class Tanoa: CAWorld {
-        hazeBaseBeta0=2.9999998e-005;
+        REDUCED_HAZE
     };
     class Mountains_ACR: CAWorld {
-        hazeBaseBeta0=2.9999998e-005;
+        REDUCED_HAZE
     };
     class Woodland_ACR: CAWorld {
-        hazeBaseBeta0=2.9999998e-005;
+        REDUCED_HAZE
     };
     class Bootcamp_ACR: CAWorld {
-        hazeBaseBeta0=2.9999998e-005;
+        REDUCED_HAZE
     };
     class Chernarus: CAWorld {
-        hazeBaseBeta0=2.9999998e-005;
+        REDUCED_HAZE
     };
     class Porto: CAWorld {
-        hazeBaseBeta0=2.9999998e-005;
+        REDUCED_HAZE
     };
     class Desert_E: CAWorld {
-        hazeBaseBeta0=2.9999998e-005;
+        REDUCED_HAZE
     };
     class Desert_Island: CAWorld {
-        hazeBaseBeta0=2.9999998e-005;
+        REDUCED_HAZE
     };
     class ProvingGrounds_PMC: CAWorld {
-        hazeBaseBeta0=2.9999998e-005;
+        REDUCED_HAZE
     };
     class Sara: CAWorld {
-        hazeBaseBeta0=2.9999998e-005;
+        REDUCED_HAZE
     };
     class Sara_dbe1: CAWorld {
-        hazeBaseBeta0=2.9999998e-005;
+        REDUCED_HAZE
     };
     class SaraLite: CAWorld {
-        hazeBaseBeta0=2.9999998e-005;
+        REDUCED_HAZE
     };
     class Shapur_BAF: CAWorld {
-        hazeBaseBeta0=2.9999998e-005;
+        REDUCED_HAZE
     };
     class Takistan: CAWorld {
-        hazeBaseBeta0=2.9999998e-005;
+        REDUCED_HAZE
     };
     class utes: CAWorld {
-        hazeBaseBeta0=2.9999998e-005;
+        REDUCED_HAZE
     };
     class Zargabad: CAWorld {
-        hazeBaseBeta0=2.9999998e-005;
+        REDUCED_HAZE
     };
     class Abel: CAWorld {
-        hazeBaseBeta0=2.9999998e-005;
+        REDUCED_HAZE
     };
     class Cain: CAWorld {
-        hazeBaseBeta0=2.9999998e-005;
+        REDUCED_HAZE
     };
     class Intro: CAWorld {
-        hazeBaseBeta0=2.9999998e-005;
+        REDUCED_HAZE
     };
     class Eden: CAWorld {
-        hazeBaseBeta0=2.9999998e-005;
+        REDUCED_HAZE
     };
     class Noe: CAWorld {
-        hazeBaseBeta0=2.9999998e-005;
+        REDUCED_HAZE
     };
 }; 
