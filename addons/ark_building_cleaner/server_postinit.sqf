@@ -1,9 +1,9 @@
 if !((briefingName find "ark_gtvt") isEqualTo -1) exitWith {};
-
 addMissionEventHandler ["BuildingChanged", {call ark_building_cleaner_fnc_doClean}];
 
 ark_building_cleaner_fnc_doClean = {
     params ["_buildingOld", "_buildingNew", "_isRuin"];
+
     if (_isRuin) then {
         private _buildingPos = getPos _buildingOld;
         private _radius = sizeOf typeOf _buildingOld;

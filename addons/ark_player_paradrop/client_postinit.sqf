@@ -1,6 +1,6 @@
 ark_player_paradrop_fnc_canDrop = {
     private _isModuleActive = missionNamespace getVariable ["ark_player_paradrop_var_jumpHeight", false];
-    
+
     if (typeName _isModuleActive != "SCALAR") then {
         ark_player_paradrop_var_canDrop = false;
     } else {
