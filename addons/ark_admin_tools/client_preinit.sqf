@@ -178,7 +178,7 @@ ark_admin_tools_fnc_detachCrate = {
 ark_admin_tools_fnc_ammoDrop = {
     params ["_player"];
 
-    _player setVariable ["ark_ts_paradropInProgress", true, true];
+    _player setVariable ["ark_ts_paradropInProgress", true];
     private _hull3Faction = _player getVariable "hull3_faction";
     private _groupId = groupId (group _player);
     private _squad = "";
