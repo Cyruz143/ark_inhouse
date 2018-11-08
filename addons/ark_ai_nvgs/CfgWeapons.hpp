@@ -1,6 +1,5 @@
 class CfgWeapons {
     class NVGoggles;
-
     class NVGoggles_AI : NVGoggles {
         author = "ARK";
         descriptionShort = "Night Vision Goggles - AI Only";

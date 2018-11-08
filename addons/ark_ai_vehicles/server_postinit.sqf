@@ -4,7 +4,7 @@
 ark_ai_vehicles_fnc_vehicleDamaged = {
     params ["_vehicle","","_damage","","_hitPoint"];
 
-    _vehicle setVariable ["ark_ai_vehicles_last_hit", time, true];
+    _vehicle setVariable ["ark_ai_vehicles_last_hit", time];
     private _wheelArray = ["hitlfwheel", "hitlbwheel", "hitlmwheel", "hitlf2wheel", "hitrfwheel", "hitrbwheel", "hitrmwheel", "hitrf2wheel"];
 
     if !(_hitPoint in _wheelArray) exitWith {};
@@ -25,7 +25,7 @@ ark_ai_vehicles_fnc_canRepair = {
         diag_log "[ARK] (AI Vehicles) - Aborting repair due to gunner death";
     };
 
-    _vehicle setVariable ["ark_ai_vehicles_awaiting_repair", true, true];
+    _vehicle setVariable ["ark_ai_vehicles_awaiting_repair", true];
 
     [
         {
@@ -45,11 +45,8 @@ ark_ai_vehicles_fnc_doRepair = {
     params ["_vehicle"];
 
     private _driver = driver _vehicle;
-
     if (_driver != _vehicle && alive _driver) then {
-
-        _vehicle setVariable ["ark_ai_vehicles_awaiting_repair", true, true];
-
+        _vehicle setVariable ["ark_ai_vehicles_awaiting_repair", true];
         [_vehicle,_driver] spawn {
             params ["_vehicle","_driver"];
 
@@ -73,7 +70,7 @@ ark_ai_vehicles_fnc_doRepair = {
             sleep 15;
 
             if (!alive _driver || !alive _vehicle) exitWith {
-                _vehicle setVariable ["ark_ai_vehicles_awaiting_repair", false, true];
+                _vehicle setVariable ["ark_ai_vehicles_awaiting_repair", nil];
             };
 
             {
@@ -90,7 +87,7 @@ ark_ai_vehicles_fnc_doRepair = {
             deleteWaypoint [_group, currentWaypoint _group];
             _group lockWP false;
             
-            _vehicle setVariable ["ark_ai_vehicles_awaiting_repair", false, true];
+            _vehicle setVariable ["ark_ai_vehicles_awaiting_repair", nil];
         };
     };
 };
@@ -117,7 +114,7 @@ ark_ai_vehicles_fnc_replaceGunner = {
         diag_log format ["[ARK] (AI Vehicles) - Vehicle: %1 has no turrets",typeOf _vehicle];
     };
     
-    _vehicle setVariable ["ark_ai_vehicles_gunner_dead", true, true];
+    _vehicle setVariable ["ark_ai_vehicles_gunner_dead", true];
     _vehicle forceSpeed 0;
 
     [
