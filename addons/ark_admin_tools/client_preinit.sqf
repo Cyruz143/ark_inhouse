@@ -26,12 +26,14 @@ ark_admin_tools_fnc_assignMapTeleport = {
 
 ark_admin_tools_fnc_enableMapTeleport = {
     params ["_player"];
+
     hintSilent "Map Click Teleport has been enabled.";
     openMap [true, true];
+
     if (isWeaponDeployed _player || isWeaponRested _player) then {
         _player setPos (_player modelToWorld [0,0,0]);
     };
-    
+
     _player onMapSingleClick {
         _this setposATL _pos;
         [] call ark_admin_tools_fnc_disableMapTeleport;
@@ -155,6 +157,7 @@ ark_admin_tools_fnc_createDebugMarkers = {
 
 ark_admin_tools_fnc_aiDebug = {
     params ["_enabled"];
+
     ark_aiDebugEnabled = _enabled;
     if (_enabled) then {
         [] spawn ark_admin_tools_fnc_createDebugMarkers;
@@ -165,14 +168,16 @@ ark_admin_tools_fnc_aiDebug = {
 
 ark_admin_tools_fnc_detachCrate = {
     params ["_ammoBox", "_parachute", "_smoke", "_player"];
+
     detach _ammoBox;
     deleteVehicle _smoke;
     [{deleteVehicle (_this #0)}, [_parachute]] call CBA_fnc_execNextFrame;
-    _player setVariable ["ark_ts_paradropInProgress", false, true];
+    _player setVariable ["ark_ts_paradropInProgress", nil];
 };
 
 ark_admin_tools_fnc_ammoDrop = {
     params ["_player"];
+
     _player setVariable ["ark_ts_paradropInProgress", true, true];
     private _hull3Faction = _player getVariable "hull3_faction";
     private _groupId = groupId (group _player);
@@ -196,12 +201,11 @@ ark_admin_tools_fnc_ammoDrop = {
 
     private _position = getPos _player;
     _position set [2, 75];
-
     private _parachute = createVehicle ["B_Parachute_02_F", _position, [], 0, "FLY"];
     private _ammoBox = createVehicle ["C_IDAP_supplyCrate_F", position _parachute, [], 0, "NONE"];
     _ammoBox allowDamage false;
-    [_ammoBox, ["faction", _hull3Faction], ["gear", "Truck"]] call hull3_unit_fnc_init;
     _ammoBox attachTo [_parachute, [0, 0, -1.3]];
+    [_ammoBox, ["faction", _hull3Faction], ["gear", "Truck"]] call hull3_unit_fnc_init;
 
     private _smokeShell = "SmokeShellYellow";
 
@@ -213,7 +217,7 @@ ark_admin_tools_fnc_ammoDrop = {
         default { diag_log "[ARK] (Admin Tools) - Couldn't get groupID for ammo drop, using default"; };
     };
 
-    private _smoke = createVehicle [_smokeShell, position _parachute, [], 0, "NONE"];
+    private _smoke = createVehicle [_smokeShell, [0,0,0], [], 0, "NONE"];
     _smoke attachTo [_parachute, [0, 0, 0]];
 
    [

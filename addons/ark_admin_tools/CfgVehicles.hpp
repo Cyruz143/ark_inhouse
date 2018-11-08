@@ -37,7 +37,7 @@ class CfgVehicles {
                     displayName = "Request Ammo Drop";
                     exceptions[] = {};
                     icon = "\A3\ui_f\data\map\vehicleicons\iconParachute_ca.paa";
-                    condition = "([player] call ark_deploy_fnc_playerIsLeader) && !(player getVariable ['ark_ts_paradropInProgress', false]) && (getNumber(missionConfigFile >> 'TownSweep' >> 'isEnabled') == 1)";
+                    condition = "call ark_admin_tools_fnc_isTownSweep && [player] call ark_deploy_fnc_playerIsLeader && !(player getVariable ['ark_ts_paradropInProgress', false])";
                     statement = "[player] call ark_admin_tools_fnc_ammoDrop;";
                 };
                 class Unflip_Vehicle : ARK_Action {
@@ -90,14 +90,14 @@ class CfgVehicles {
 
                     class Call_Attack_Helo : ARK_Action {
                         displayName = "Call Attack Helo";
-                        condition = "[] call ark_admin_tools_fnc_isAdmiralEnabled && !([] call ark_admin_tools_fnc_isTownSweep)"; 
+                        condition = "[] call ark_admin_tools_fnc_isAdmiralEnabled && !(call ark_admin_tools_fnc_isTownSweep)"; 
                         statement = "[player] remoteExecCall ['ark_admin_tools_fnc_callAttackHelo',2]";
                         icon = "\a3\Ui_f\data\GUI\Cfg\CommunicationMenu\casheli_ca.paa";
                     };
 
                     class Call_Armour : ARK_Action {
                         displayName = "Call Attack Armour";
-                        condition = "[] call ark_admin_tools_fnc_isAdmiralEnabled && !([] call ark_admin_tools_fnc_isTownSweep)"; 
+                        condition = "[] call ark_admin_tools_fnc_isAdmiralEnabled && !(call ark_admin_tools_fnc_isTownSweep)"; 
                         statement = "[player] remoteExecCall ['ark_admin_tools_fnc_callArmour',2]";
                         icon = "\A3\ui_f\data\map\vehicleicons\iconTank_ca.paa";
                     };
