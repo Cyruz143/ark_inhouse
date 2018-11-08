@@ -15,15 +15,14 @@ ark_ace_spectator_fnc_initSpec = {
         };
     };
 
-    private _attackerName = name _attacker;
-    private _attackerDistance = round (getPos _victim distance getPos _attacker);
-    private _attackerWeapon = getText (configFile >> "CfgWeapons" >> (currentWeapon vehicle _attacker) >> "DisplayName");
-    private _attackerPos = getPosATL _attacker;
-
     if ((!isNull _attacker) && {!(_attacker isKindof "CAManBase")}) then {
         _attacker = effectiveCommander _attacker;
     };
 
+    private _attackerName = name _attacker;
+    private _attackerDistance = round (getPos _victim distance getPos _attacker);
+    private _attackerWeapon = getText (configFile >> "CfgWeapons" >> (currentWeapon vehicle _attacker) >> "DisplayName");
+    private _attackerPos = getPosATL _attacker;
     private _killMessage = format ["You were <t color='#CC0000'>killed</t> by %1 with an %2 at %3 m",_attackerName,_attackerWeapon,_attackerDistance];
 
     if (isNull _attacker) then {
@@ -54,7 +53,7 @@ ark_ace_spectator_fnc_initSpec = {
             2 fadeSound 1;
     };
 
-    [{ [true] call ace_spectator_fnc_setSpectator; }, [], 10] call CBA_fnc_waitAndExecute;
+    [{[true] call ace_spectator_fnc_setSpectator; }, [], 10] call CBA_fnc_waitAndExecute;
 };
 
 ark_ace_spectator_fnc_getInitialPlayableUnitsFromServer = {
