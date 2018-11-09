@@ -44,31 +44,7 @@ A player will be ejected every %2 seconds.
 };
 
 ["ark_player_paradrop_eh_playerJump", {
-    private _jumpHeight = missionNamespace getVariable ["ark_player_paradrop_var_jumpHeight", 200];
-    player allowDamage false;
-    moveOut player;
-
-    [
-        {(getPosATL (_this #0) #2) < (_this #1)}, 
-        {
-            private _chute = createVehicle ["Steerable_Parachute_F", [0,0,0], [], 0, "NONE"];
-            _chute allowDamage false;
-            _chute setPos (getPosATL (_this #0));
-            (_this #0) assignAsDriver _chute;
-            (_this #0) moveInDriver _chute;
-        },
-        [player,_jumpHeight]
-    ] call CBA_fnc_waitUntilAndExecute;
-
-    [
-        {isTouchingGround _this}, 
-        {
-            [{_this allowDamage true}, _this] call CBA_fnc_execNextFrame;
-        },
-        player,
-        90,
-        {_this allowDamage true}
-    ] call CBA_fnc_waitUntilAndExecute;
+    [player] call ark_player_paradrop_fnc_doJump;
 }] call CBA_fnc_addEventHandler;
 
 if (typeName (missionNamespace getVariable ["ark_player_paradrop_var_jumpHeight", false]) isEqualTo "SCALAR") then {

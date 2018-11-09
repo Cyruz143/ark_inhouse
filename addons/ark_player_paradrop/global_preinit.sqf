@@ -11,3 +11,33 @@ ark_player_paradrop_fnc_setJumpHeight = {
     private _jumpGap = _logic getVariable ["Jump_Gap", 1];
     missionNamespace setVariable ["ark_player_paradrop_var_jumpGap", _jumpGap, true];
 };
+
+ark_player_paradrop_fnc_doJump = {
+    params ["_unit"];
+
+    private _jumpHeight = missionNamespace getVariable ["ark_player_paradrop_var_jumpHeight", 200];
+    _unit allowDamage false;
+    moveOut _unit;
+
+    [
+        {(getPosATL (_this #0) #2) < (_this #1)}, 
+        {
+            private _chute = createVehicle ["Steerable_Parachute_F", [0,0,0], [], 0, "NONE"];
+            _chute allowDamage false;
+            _chute setPos (getPosATL (_this #0));
+            (_this #0) assignAsDriver _chute;
+            (_this #0) moveInDriver _chute;
+        },
+        [_unit,_jumpHeight]
+    ] call CBA_fnc_waitUntilAndExecute;
+
+    [
+        {isTouchingGround _this}, 
+        {
+            [{_this allowDamage true}, _this] call CBA_fnc_execNextFrame;
+        },
+        _unit,
+        90,
+        {_this allowDamage true}
+    ] call CBA_fnc_waitUntilAndExecute;
+};

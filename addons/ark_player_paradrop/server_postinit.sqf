@@ -16,7 +16,11 @@
                 _vehicle setVariable ["ark_player_paradrop_var_jumpInProgress", nil, true];
             };
 
-            ["ark_player_paradrop_eh_playerJump", [_jumpHeight], _unit] call CBA_fnc_targetEvent;
+            if (local _unit && !isPlayer _unit) then {
+                [_unit] call ark_player_paradrop_fnc_doJump;
+            } else {
+                ["ark_player_paradrop_eh_playerJump", [], _unit] call CBA_fnc_targetEvent;
+            };
         },
         _jumpGap,
         [_jumpHeight, _vehicle]
