@@ -5,11 +5,13 @@ ark_ai_vehicles_fnc_vehicleDamaged = {
     params ["_vehicle","","_damage","","_hitPoint"];
 
     _vehicle setVariable ["ark_ai_vehicles_last_hit", time];
-    private _wheelArray = ["hitlfwheel", "hitlbwheel", "hitlmwheel", "hitlf2wheel", "hitrfwheel", "hitrbwheel", "hitrmwheel", "hitrf2wheel"];
 
+    if (_damage < 1) exitWith {};
+
+    private _wheelArray = ["hitlfwheel", "hitlbwheel", "hitlmwheel", "hitlf2wheel", "hitrfwheel", "hitrbwheel", "hitrmwheel", "hitrf2wheel"];
     if !(_hitPoint in _wheelArray) exitWith {};
 
-    if (!isNull (driver _vehicle) && !isPlayer (driver _vehicle) && _damage isEqualTo 1) then {
+    if (!isNull (driver _vehicle) && { !isPlayer (driver _vehicle) }) then {
         [_vehicle] call ark_ai_vehicles_fnc_canRepair;
     };
 };
@@ -69,7 +71,7 @@ ark_ai_vehicles_fnc_doRepair = {
             ["Acts_carFixingWheel", getPosASL _driver, 5, 100] call ace_common_fnc_playConfigSound3D;
             sleep 15;
 
-            if (!alive _driver || !alive _vehicle) exitWith {
+            if (!alive _driver || { !alive _vehicle }) exitWith {
                 _vehicle setVariable ["ark_ai_vehicles_awaiting_repair", nil];
             };
 
@@ -87,7 +89,9 @@ ark_ai_vehicles_fnc_doRepair = {
             deleteWaypoint [_group, currentWaypoint _group];
             _group lockWP false;
             
-            _vehicle setVariable ["ark_ai_vehicles_awaiting_repair", nil];
+            {
+                _vehicle setVariable [_x, nil];
+            } forEach ["ark_ai_vehicles_awaiting_repair","ark_ai_vehicles_last_hit"];
         };
     };
 };
@@ -98,7 +102,7 @@ ark_ai_vehicles_fnc_isGunnerDead = {
     private _vehicle = vehicle _unit;
 
     if (_vehicle isKindOf "Car" || _vehicle isKindOf "Tank") then { 
-        if (gunner _vehicle isEqualTo _unit && alive (driver _vehicle) && !isPlayer (driver _vehicle)) then {
+        if (gunner _vehicle isEqualTo _unit && { alive (driver _vehicle) } && { !isPlayer (driver _vehicle) }) then {
             [_vehicle] call ark_ai_vehicles_fnc_replaceGunner;
         };
     };

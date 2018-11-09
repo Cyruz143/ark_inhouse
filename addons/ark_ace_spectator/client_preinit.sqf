@@ -29,11 +29,11 @@ ark_ace_spectator_fnc_initSpec = {
         _killMessage = "You were <t color='#CC0000'>killed</t> by an explosion or grenade";
     };
     
-    if((side group _victim) == (side group _attacker)) then {
+    if ((side group _victim) == (side group _attacker)) then {
         _killMessage = format ["You were <t color='#0066CC'>friendly fired</t> by %1 with an %2 at %3 m",_attackerName,_attackerWeapon,_attackerDistance];
     };
 
-    if(_attacker == _victim) then {
+    if (_attacker == _victim) then {
         _killMessage = "You <t color='#009933'>killed yourself</t>";
     };
 
