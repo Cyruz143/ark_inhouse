@@ -11,6 +11,7 @@ class CfgPatches {
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {
             "ark_main",
+            "ace_logistics_wirecutter",
             "us_military_units"
         };
         VERSION_CONFIG;

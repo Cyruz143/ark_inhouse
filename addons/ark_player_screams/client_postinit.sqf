@@ -19,6 +19,6 @@ ark_player_screams_fnc_doScream = {
             "A3\Sounds_F\characters\human-sfx\P09\Hit_Max_3.wss"
         ];
         playSound3D [_sound, _unit, false, getPosASL _unit, 1.25, (random [0.95,1,1.05]), 200];
-        _unit setVariable ["ark_player_screams_lastScreamTime", time, true];
+        _unit setVariable ["ark_player_screams_lastScreamTime", time];
     };
 };

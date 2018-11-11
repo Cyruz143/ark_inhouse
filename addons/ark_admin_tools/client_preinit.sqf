@@ -202,7 +202,7 @@ ark_admin_tools_fnc_ammoDrop = {
     private _position = getPos _player;
     _position set [2, 75];
     private _parachute = createVehicle ["B_Parachute_02_F", _position, [], 0, "FLY"];
-    private _ammoBox = createVehicle ["C_IDAP_supplyCrate_F", position _parachute, [], 0, "NONE"];
+    private _ammoBox = createVehicle ["C_IDAP_supplyCrate_F", [0,0,0], [], 0, "NONE"];
     _ammoBox allowDamage false;
     _ammoBox attachTo [_parachute, [0, 0, -1.3]];
     [_ammoBox, ["faction", _hull3Faction], ["gear", "Truck"]] call hull3_unit_fnc_init;
@@ -218,7 +218,7 @@ ark_admin_tools_fnc_ammoDrop = {
     };
 
     private _smoke = createVehicle [_smokeShell, [0,0,0], [], 0, "NONE"];
-    _smoke attachTo [_parachute, [0, 0, 0]];
+    _smoke attachTo [_parachute, [0,0,0]];
 
    [
         {getPos (_this #0) #2 < 1.5}, 

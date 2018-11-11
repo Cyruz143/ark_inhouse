@@ -12,4 +12,4 @@
 #define ENHANCED_TANK \
     allowAgainstInfantry = 1; \
     aiAmmoUsageFlags = "64 + 128 + 256 + 512"; \
-    cost = 100;
+    cost = 35;
