@@ -1,5 +1,5 @@
 ark_lumber_jack_fnc_canChop = {
-    private _nearTrees = nearestTerrainObjects [player, ["Tree","Small Tree"], 10];
+    private _nearTrees = nearestTerrainObjects [player, ["TREE", "SMALL TREE"], 3, true, true];
 
     if (isNil "_nearTrees" || { count _nearTrees == 0 }) exitWith {
         false;
@@ -9,7 +9,7 @@ ark_lumber_jack_fnc_canChop = {
 };
 
 ark_lumber_jack_fnc_doChop = {
-    private _nearTrees = nearestTerrainObjects [player, ["Tree","Small Tree"], 10];
+    private _nearTrees = nearestTerrainObjects [player, ["TREE", "SMALL TREE"], 3, true, true];
     private _nearestTree = _nearTrees #0;
     
     [
