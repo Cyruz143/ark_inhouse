@@ -5,7 +5,7 @@ ark_player_paradrop_fnc_canDrop = {
     if (typeName _isModuleActive != "SCALAR") then {
         _ark_player_paradrop_var_canDrop = false;
     } else {
-        _ark_player_paradrop_var_canDrop = (vehicle player) isKindOf "Plane" && (driver (vehicle player)) isEqualTo player && (getPosATL (vehicle player) #2) >= (missionNamespace getVariable ["ark_player_paradrop_var_jumpHeight", 200]) && count (fullCrew [(vehicle player), "cargo", false]) > 0 && !((vehicle player) getVariable ["ark_player_paradrop_var_jumpInProgress", false]);
+        _ark_player_paradrop_var_canDrop = (vehicle player) isKindOf "Plane" && { (driver (vehicle player)) isEqualTo player } && { (getPosATL (vehicle player) #2) >= (missionNamespace getVariable ["ark_player_paradrop_var_jumpHeight", 200]) } && { count (fullCrew [(vehicle player), "cargo", false]) > 0 } && { !((vehicle player) getVariable ["ark_player_paradrop_var_jumpInProgress", false]) };
     };
 
     _ark_player_paradrop_var_canDrop
