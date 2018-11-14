@@ -1,27 +1,27 @@
 ark_player_paradrop_fnc_canDrop = {
     private _isModuleActive = missionNamespace getVariable ["ark_player_paradrop_var_jumpHeight", false];
-    private ["_ark_player_paradrop_var_canDrop"];
+    private _canDrop = false;
 
     if (typeName _isModuleActive != "SCALAR") then {
-        _ark_player_paradrop_var_canDrop = false;
+        _canDrop = false;
     } else {
-        _ark_player_paradrop_var_canDrop = (vehicle player) isKindOf "Plane" && { (driver (vehicle player)) isEqualTo player } && { (getPosATL (vehicle player) #2) >= (missionNamespace getVariable ["ark_player_paradrop_var_jumpHeight", 200]) } && { count (fullCrew [(vehicle player), "cargo", false]) > 0 } && { !((vehicle player) getVariable ["ark_player_paradrop_var_jumpInProgress", false]) };
+        _canDrop = (vehicle player) isKindOf "Plane" && { (driver (vehicle player)) isEqualTo player } && { (getPosATL (vehicle player) #2) >= (missionNamespace getVariable ["ark_player_paradrop_var_jumpHeight", 200]) } && { count (fullCrew [(vehicle player), "cargo", false]) > 0 } && { !((vehicle player) getVariable ["ark_player_paradrop_var_jumpInProgress", false]) };
     };
 
-    _ark_player_paradrop_var_canDrop
+    _canDrop
 };
 
 ark_player_paradrop_fnc_stopDrop = {
     private _isModuleActive = missionNamespace getVariable ["ark_player_paradrop_var_jumpHeight", false];
-    private ["_ark_player_paradrop_var_stopDrop"];
+    private _stopDrop = false;
 
     if (typeName _isModuleActive != "SCALAR") then {
-        _ark_player_paradrop_var_stopDrop = false;
+        _stopDrop = false;
     } else {
-        _ark_player_paradrop_var_stopDrop = (vehicle player) getVariable ["ark_player_paradrop_var_jumpInProgress", false];
+        _stopDrop = (vehicle player) getVariable ["ark_player_paradrop_var_jumpInProgress", false];
     };
 
-    _ark_player_paradrop_var_stopDrop
+    _stopDrop
 };
 
 ark_player_paradrop_fnc_addBriefing = {
