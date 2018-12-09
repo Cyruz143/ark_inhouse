@@ -413,37 +413,5 @@
             <Chinesesimp>PS90 (数位蜂巢迷彩)</Chinesesimp>
             <Korean>PS90 (Hex)</Korean>
         </Key>
-        <Key ID="STR_ARK_P90_Mag_Name">
-            <English>5.7mm 50Rnd Mag</English>
-            <Hungarian>5,7mm 50-as Tár</Hungarian>
-            <German>5,7mm 50-Patronen-Magazin</German>
-            <Spanish>Cargador de 50 balas SD de 5,7mm</Spanish>
-            <French>Ch. 5,7mm 50Cps</French>
-            <Polish>Magazynek 5,7mm 50rd</Polish>
-            <Czech>5.7mm 50náb. Zásobník</Czech>
-            <Portuguese>Carregador de 50 projéteis de 5.7mm</Portuguese>
-            <Italian>Caricatore 5.7mm 50Rnd</Italian>
-            <Russian>Магазин из 50-ти 5,7 мм</Russian>
-            <Japanese>5.7mm 50 発入り弾倉</Japanese>
-            <Chinese>5.7mm 50發 彈匣</Chinese>
-            <Chinesesimp>5.7mm 50发 弹匣</Chinesesimp>
-            <Korean>5.7mm 50Rnd Mag</Korean>
-        </Key>
-        <Key ID="STR_ARK_P90_Mag_DescriptionShort">
-            <English>Caliber: 5.7mm&lt;br /&gt;Rounds: 50&lt;br /&gt;Used in: P90</English>
-            <German>Kaliber: 5,7mm&lt;br /&gt;Patronen: 50&lt;br /&gt;Eingesetzt von: P90</German>
-            <Polish>Kaliber: 5,7mm&lt;br /&gt;Pociski: 50&lt;br /&gt;Używany w: P90</Polish>
-            <French>Calibre : 5,7mm&lt;br /&gt;Cartouches : 50&lt;br /&gt;Utilisé avec : P90</French>
-            <Spanish>Calibre: 5.7mm&lt;br /&gt;Balas: 50&lt;br /&gt;Se usa en: P90</Spanish>
-            <Russian>Калибр: 5,7 мм&lt;br /&gt;Патронов: 50&lt;br /&gt;Используются с: P90</Russian>
-            <Italian>Calibro: 5.7mm&lt;br /&gt;Munizioni: 50&lt;br /&gt;In uso su: P90</Italian>
-            <Czech>Ráže: 5.7mm&lt;br /&gt;Nábojů: 50&lt;br /&gt;Použití u: P90</Czech>
-            <Portuguese>Calibre: 5.7mm&lt;br /&gt;Cartuchos: 50&lt;br /&gt;Usado em: P90</Portuguese>
-            <Hungarian>Kaliber: 5,7mm&lt;br /&gt;Lövedékek: 50&lt;br /&gt;Használható: P90</Hungarian>
-            <Japanese>口径: 5.7mm&lt;br /&gt;装弾数: 50&lt;br /&gt;次で使用: P90</Japanese>
-            <Chinese>口徑: 5.7mm&lt;br /&gt;發數: 50&lt;br /&gt;使用於: P90</Chinese>
-            <Chinesesimp>口径: 5.7mm&lt;br /&gt;发数: 50&lt;br /&gt;使用于: P90</Chinesesimp>
-            <Korean>구경: 5.7mm&lt;br /&gt;장탄수: 50&lt;br /&gt;사용됨: P90</Korean>
-        </Key>
     </Package>
 </Project>
