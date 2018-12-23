@@ -9,10 +9,7 @@ class CfgPatches {
         units[] = {};
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
-        requiredAddons[] = {
-            "ark_main",
-            "CUP_Weapons_ACE_compat"
-        };
+        requiredAddons[] = {"ark_main"};
         VERSION_CONFIG;
     };
 };
@@ -24,4 +21,3 @@ class Extended_PostInit_EventHandlers {
 };
 
 #include "CfgSounds.hpp"
-#include "CfgWeapons.hpp"
