@@ -1,6 +1,7 @@
 // ACE Captives
-force ace_captives_requireSurrender = 0;
 force ace_captives_allowHandcuffOwnSide = false;
+force ace_captives_allowSurrender = true;
+force ace_captives_requireSurrender = 0;
 force force ace_captives_requireSurrenderAi = false;
 
 // ACE Common
@@ -35,8 +36,12 @@ force force ace_interaction_enableTeamManagement = true;
 
 // ACE Logistics
 force force ace_cargo_enable = true;
-force force ace_repair_addSpareParts = true;
-force force ace_repair_autoShutOffEngineWhenStartingRepair = false;
+force force ace_rearm_level = 0;
+force force ace_rearm_supply = 0;
+force ace_refuel_hoseLength = 12;
+force ace_refuel_rate = 1;
+force force ace_repair_addSpareParts = false;
+force force ace_repair_autoShutOffEngineWhenStartingRepair = true;
 force force ace_repair_consumeItem_toolKit = 0;
 force force ace_repair_engineerSetting_fullRepair = 0;
 force force ace_repair_engineerSetting_repair = 0;
@@ -109,7 +114,18 @@ force force ace_medical_useLocation_SurgicalKit = 2;
 
 // ACE Mk6 Mortar
 force force ace_mk6mortar_airResistanceEnabled = false;
+force ace_mk6mortar_allowCompass = true;
+force ace_mk6mortar_allowComputerRangefinder = true;
 force ace_mk6mortar_useAmmoHandling = true;
+
+// ACE Name Tags
+force force ace_nametags_playerNamesMaxAlpha = 0.75;
+force force ace_nametags_playerNamesViewDistance = 10;
+force force ace_nametags_showCursorTagForVehicles = true;
+force force ace_nametags_showNamesForAI = true;
+force force ace_nametags_showPlayerNames = 2;
+force force ace_nametags_showPlayerRanks = false;
+force force ace_nametags_showSoundWaves = 0;
 
 // ACE Nightvision
 force force ace_nightvision_aimDownSightsBlur = 0;
@@ -124,7 +140,8 @@ force force ace_finger_enabled = true;
 force force ace_finger_maxRange = 4;
 
 // ACE Pylons
-force force ace_pylons_enabled = false;
+force force ace_pylons_enabledForZeus = false;
+force force ace_pylons_enabledFromAmmoTrucks = false;
 force force ace_pylons_rearmNewPylons = false;
 force force ace_pylons_requireEngineer = false;
 force force ace_pylons_requireToolkit = true;
@@ -134,10 +151,6 @@ force force ace_pylons_timePerPylon = 5;
 // ACE Quick Mount
 force force ace_quickmount_distance = 3;
 force force ace_quickmount_speed = 18;
-
-// ACE Rearm
-force force ace_rearm_level = 0;
-force force ace_rearm_supply = 0;
 
 // ACE Spectator
 force force ace_spectator_enableAI = true;
@@ -152,7 +165,7 @@ force force ace_overpressure_distanceCoefficient = 1;
 // ACE User Interface
 force force ace_ui_allowSelectiveUI = true;
 force force ace_ui_ammoCount = false;
-force force ace_ui_staminaBar = false;
+force force ace_ui_staminaBar = true;
 
 // ACE View Distance Limiter
 force force ace_viewdistance_enabled = true;
@@ -162,7 +175,7 @@ force force ace_viewdistance_limitViewDistance = 10000;
 force force ace_common_persistentLaserEnabled = false;
 
 // ACRE2
-force acre_sys_core_fullDuplex = false;
+force force acre_sys_core_fullDuplex = false;
 force force acre_sys_core_ignoreAntennaDirection = true;
 force force acre_sys_core_interference = true;
 force force acre_sys_core_revealToAI = true;
@@ -170,9 +183,20 @@ force force acre_sys_core_terrainLoss = 0;
 force force acre_sys_core_ts3ChannelSwitch = false;
 force force acre_sys_core_unmuteClients = true;
 
+// CUP
+force force CUP_Vehicles_PreventBarrelClip = false;
+
+// DUI - Squad Radar
+force force diwako_dui_colors = "ace";
+diwako_dui_compass_style = ["diwako_dui\UI\compass_styles\bi\compass_limited.paa","diwako_dui\UI\compass_styles\bi\compass.paa"];
+force force diwako_dui_compassRange = 30;
+force force diwako_dui_compassRefreshrate = 0;
+force force diwako_dui_enable_compass = true;
+force force diwako_dui_enable_compass_dir = true;
+force force diwako_dui_enable_occlusion = false;
+force force diwako_dui_namelist = true;
+force force diwako_dui_namelist_only_buddy_icon = false;
+force force diwako_dui_namelist_size = 1;
+
 // NIArms
 force force niarms_magSwitch = false;
-
-// STUI Settings
-force force STHud_Settings_Occlusion = false;
-force force STHud_Settings_RemoveDeadViaProximity = true;
