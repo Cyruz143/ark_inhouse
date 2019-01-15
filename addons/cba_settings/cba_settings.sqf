@@ -175,7 +175,7 @@ force force ace_viewdistance_limitViewDistance = 10000;
 force force ace_common_persistentLaserEnabled = false;
 
 // ACRE2
-force force acre_sys_core_fullDuplex = false;
+force acre_sys_core_fullDuplex = false;
 force force acre_sys_core_ignoreAntennaDirection = true;
 force force acre_sys_core_interference = true;
 force force acre_sys_core_revealToAI = true;
