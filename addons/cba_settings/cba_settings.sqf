@@ -122,6 +122,7 @@ force ace_mk6mortar_useAmmoHandling = true;
 force force ace_nametags_playerNamesMaxAlpha = 0.75;
 force force ace_nametags_playerNamesViewDistance = 10;
 force force ace_nametags_showCursorTagForVehicles = true;
+force force ace_nametags_showVehicleCrewInfo = true;
 force force ace_nametags_showNamesForAI = true;
 force force ace_nametags_showPlayerNames = 2;
 force force ace_nametags_showPlayerRanks = false;
@@ -191,12 +192,13 @@ force force diwako_dui_colors = "ace";
 diwako_dui_compass_style = ["diwako_dui\UI\compass_styles\bi\compass_limited.paa","diwako_dui\UI\compass_styles\bi\compass.paa"];
 force force diwako_dui_compassRange = 30;
 force force diwako_dui_compassRefreshrate = 0;
+force force diwako_dui_dir_showMildot = false;
 force force diwako_dui_enable_compass = true;
-force force diwako_dui_enable_compass_dir = true;
+force force diwako_dui_enable_compass_dir = false;
 force force diwako_dui_enable_occlusion = false;
+force force diwako_dui_icon_style = "standard";
 force force diwako_dui_namelist = true;
 force force diwako_dui_namelist_only_buddy_icon = false;
-force force diwako_dui_namelist_size = 1;
 
 // NIArms
 force force niarms_magSwitch = false;
