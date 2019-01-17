@@ -16,7 +16,7 @@ class CfgDifficultyPresets {
                     multipleSaves = 0;
                     reducedDamage = 0;
                     scoreTable = 0;
-                    staminaBar = 0;
+                    staminaBar = 1;
                     stanceIndicator = 1;
                     squadRadar = 0;
                     tacticalPing = 0;
@@ -44,7 +44,7 @@ class CfgDifficultyPresets {
                     multipleSaves = 0;
                     reducedDamage = 0;
                     scoreTable = 0;
-                    staminaBar = 0;
+                    staminaBar = 1;
                     stanceIndicator = 1;
                     squadRadar = 0;
                     tacticalPing = 0;
@@ -72,7 +72,7 @@ class CfgDifficultyPresets {
                     multipleSaves = 0;
                     reducedDamage = 0;
                     scoreTable = 0;
-                    staminaBar = 0;
+                    staminaBar = 1;
                     stanceIndicator = 1;
                     squadRadar = 0;
                     tacticalPing = 0;
@@ -100,7 +100,7 @@ class CfgDifficultyPresets {
                     multipleSaves = 0;
                     reducedDamage = 0;
                     scoreTable = 0;
-                    staminaBar = 0;
+                    staminaBar = 1;
                     stanceIndicator = 1;
                     squadRadar = 0;
                     tacticalPing = 0;
