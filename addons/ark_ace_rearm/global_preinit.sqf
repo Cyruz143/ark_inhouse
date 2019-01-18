@@ -1,7 +1,7 @@
 ark_ace_rearm_fnc_clearVehicle = {
     if (isServer) then {
         params ["_vehicle"];
-        _vehicle setVariable ["ace_rearm_isSupplyVehicle", true, true];
+        [_vehicle, 9999] call ace_rearm_fnc_makeSource;
     };
 };
 
