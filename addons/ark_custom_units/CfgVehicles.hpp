@@ -270,6 +270,24 @@ class CfgVehicles {
         respawnMagazines[] = {"hlc_30Rnd_545x39_B_AK","hlc_30Rnd_545x39_B_AK"};
     };
 
+    class MNP_FIN_Soldier_O;
+    class MNP_FIN_Soldier_AT: MNP_FIN_Soldier_O {
+        displayName = "Rifleman (AT)";
+        backpack = "B_AssaultPack_rgr_LAT";
+        weapons[] = {"launch_MRAWS_green_rail_F","hlc_rifle_RK62","Throw","put"};
+        respawnweapons[] = {"launch_MRAWS_green_rail_F","hlc_rifle_RK62","Throw","put"};
+        magazines[] = {"HandGrenade","HandGrenade","MRAWS_HEAT_F","MRAWS_HEAT_F","hlc_30Rnd_762x39_b_ak","hlc_30Rnd_762x39_b_ak","hlc_30Rnd_762x39_b_ak"};
+        respawnmagazines[] = {"HandGrenade","HandGrenade","MRAWS_HEAT_F","MRAWS_HEAT_F","hlc_30Rnd_762x39_b_ak","hlc_30Rnd_762x39_b_ak","hlc_30Rnd_762x39_b_ak"};
+    };
+
+    class MNP_FIN_Soldier_MAT: MNP_FIN_Soldier_AT {
+        displayName = "AT Specialist (NLAW)";
+        weapons[] = {"CUP_launch_NLAW","hlc_rifle_RK62","Throw","put"};
+        respawnweapons[] = {"CUP_launch_NLAW","hlc_rifle_RK62","Throw","put"};
+        magazines[] = {"CUP_NLAW_M","HandGrenade","HandGrenade","hlc_30Rnd_762x39_b_ak","hlc_30Rnd_762x39_b_ak","hlc_30Rnd_762x39_b_ak"};
+        respawnmagazines[] = {"CUP_NLAW_M","HandGrenade","HandGrenade","hlc_30Rnd_762x39_b_ak","hlc_30Rnd_762x39_b_ak","hlc_30Rnd_762x39_b_ak"};
+    };
+
     //OPFOR
     class O_Soldier_LAT_F;
     class O_Soldier_RPG18_F: O_Soldier_LAT_F {

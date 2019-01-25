@@ -35,7 +35,8 @@ class CfgPatches {
             "CUP_Creatures_Military_USMC",
             "hlcweapons_core",
             "hlcweapons_aks",
-            "skn_nbc_units"
+            "skn_nbc_units",
+            "MNP_INDE_Config"
         };
         VERSION_CONFIG;
     };
