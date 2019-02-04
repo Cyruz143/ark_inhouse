@@ -273,7 +273,7 @@ class CfgVehicles {
     class MNP_FIN_Soldier_O;
     class MNP_FIN_Soldier_AT: MNP_FIN_Soldier_O {
         displayName = "Rifleman (AT)";
-        backpack = "B_AssaultPack_rgr_LAT";
+        backpack = "B_Kitbag_rgr";
         weapons[] = {"launch_MRAWS_green_rail_F","hlc_rifle_RK62","Throw","put"};
         respawnweapons[] = {"launch_MRAWS_green_rail_F","hlc_rifle_RK62","Throw","put"};
         magazines[] = {"HandGrenade","HandGrenade","MRAWS_HEAT_F","MRAWS_HEAT_F","hlc_30Rnd_762x39_b_ak","hlc_30Rnd_762x39_b_ak","hlc_30Rnd_762x39_b_ak"};
@@ -291,7 +291,7 @@ class CfgVehicles {
     class MNP_AFIN_Soldier_F;
     class MNP_AFIN_Soldier_AT: MNP_AFIN_Soldier_F {
         displayName = "Rifleman (AT)";
-        backpack = "B_AssaultPack_rgr_LAT";
+        backpack = "B_Kitbag_rgr";
         weapons[] = {"launch_MRAWS_green_rail_F","hlc_rifle_RK62","Throw","put"};
         respawnweapons[] = {"launch_MRAWS_green_rail_F","hlc_rifle_RK62","Throw","put"};
         magazines[] = {"HandGrenade","HandGrenade","MRAWS_HEAT_F","MRAWS_HEAT_F","hlc_30Rnd_762x39_b_ak","hlc_30Rnd_762x39_b_ak","hlc_30Rnd_762x39_b_ak"};
