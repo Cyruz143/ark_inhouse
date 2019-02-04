@@ -1,4 +1,3 @@
-diag_log "Jonpas is probaby right - POSTINIT RAN";
 [
     {(!isNil "adm_isInitialized") && adm_isInitialized},
     {
