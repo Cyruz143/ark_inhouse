@@ -11,7 +11,8 @@ class CfgPatches {
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {
             "ark_main",
-            "admiral"
+            "admiral",
+            "ace_parachute"
         };
         VERSION_CONFIG;
     };
@@ -20,12 +21,6 @@ class CfgPatches {
 class Extended_PreInit_EventHandlers {
     class ADDON {
         serverinit = "[] call compile preProcessFileLineNumbers 'x\ark\addons\ark_navy\server_preinit.sqf';";
-    };
-};
-
-class Extended_PostInit_EventHandlers {
-    class ADDON {
-        serverinit = "[] call compile preProcessFileLineNumbers 'x\ark\addons\ark_navy\server_postinit.sqf';";
     };
 };
 

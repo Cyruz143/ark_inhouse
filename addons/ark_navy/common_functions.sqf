@@ -103,7 +103,7 @@ ark_navy_fnc_createCargo = {
         _unit assignAsCargo _vehicle;
         _unit moveInCargo _vehicle;
         removeBackpack _unit;
-        _unit addBackpack "B_Parachute";
+        _unit addBackpack "ACE_NonSteerableParachute";
     };
 
     // TO DO, figure out what to do with units on the ground!
