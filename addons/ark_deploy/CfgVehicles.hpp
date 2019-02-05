@@ -2,7 +2,7 @@ class CfgVehicles {
     class ARK_Module;
     class ARK_Enable_Deploy: ARK_Module {
         scope = 2;
-        displayName = "Enable Group Deploy";
+        displayName = "Inhouse - Enable Group Deploy";
         function = "ark_deploy_module_init";
         class ModuleDescription {
             description = "Enables Group Deploy";

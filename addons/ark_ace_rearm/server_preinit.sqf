@@ -1,8 +1,6 @@
 ark_ace_rearm_fnc_clearVehicle = {
-    if (isServer) then {
-        params ["_vehicle"];
-        [_vehicle, 9999] call ace_rearm_fnc_makeSource;
-    };
+    params ["_vehicle"];
+    [_vehicle, 9999] call ace_rearm_fnc_makeSource;
 };
 
 ark_ace_rearm_module_enableRearm = {

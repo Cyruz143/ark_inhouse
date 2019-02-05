@@ -2,7 +2,7 @@ class CfgVehicles {
     class ARK_Module;
     class ARK_Player_Paradrop: ARK_Module {
         scope = 2;
-        displayName = "Player Paradrop";
+        displayName = "Inhouse - Player Paradrop";
         function = "ark_player_paradrop_fnc_setJumpHeight";
         class ModuleDescription {
             description = "Place this module to enable paradrops from planes";

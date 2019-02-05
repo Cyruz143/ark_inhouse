@@ -112,14 +112,14 @@ ark_navy_fnc_createCargo = {
 };
 
 ark_navy_fnc_addWaypoint = {
-    params ["_pilot", "_waypoints", "_index", "_logic"];
+    params ["_pilot", "_waypoints", "_index", "_logic", "_waypointType"];
 
     private _waypointPositions = [];
     {_waypointPositions pushBack (getWPPos _x)} forEach _waypoints;
     private _wp = (group _pilot) addWaypoint [(group _pilot), _index];
     _wp setWPPos (_waypointPositions select _index);
     _wp setWaypointSpeed (_logic getVariable ["Fly_Speed", "NORMAL"]);
-    _wp setWaypointType "MOVE";
+    _wp setWaypointType _waypointType;
     _wp setWaypointBehaviour "CARELESS";
     _wp setWaypointCombatMode "BLUE";
 

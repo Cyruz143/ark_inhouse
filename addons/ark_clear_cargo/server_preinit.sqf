@@ -1,12 +1,10 @@
 ark_clear_cargo_fnc_clearVehicle = {
-    if (isServer) then {
-        params ["_vehicle"];
+    params ["_vehicle"];
 
-        clearMagazineCargoGlobal _vehicle;
-        clearWeaponCargoGlobal _vehicle;
-        clearItemCargoGlobal _vehicle;
-        clearBackpackCargoGlobal _vehicle;
-    };
+    clearMagazineCargoGlobal _vehicle;
+    clearWeaponCargoGlobal _vehicle;
+    clearItemCargoGlobal _vehicle;
+    clearBackpackCargoGlobal _vehicle;
 };
 
 ark_clear_cargo_module_clearVehicle = {

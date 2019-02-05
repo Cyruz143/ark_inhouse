@@ -16,7 +16,7 @@ class CfgPatches {
 
 class Extended_PreInit_EventHandlers {
     class ADDON {
-        init = "[] call compile preProcessFileLineNumbers 'x\ark\addons\ark_ai_sentry\global_preinit.sqf';";
+        serverinit = "[] call compile preProcessFileLineNumbers 'x\ark\addons\ark_ai_sentry\server_preinit.sqf';";
     };
 };
 
