@@ -2,31 +2,31 @@ ark_navy_fnc_checkTrigger = {
     params ["_logic"];
 
     private _syncdTrg = synchronizedObjects _logic;
-    if (count _syncdTrg == 0) exitWith {
+    if (count _syncdTrg isEqualTo 0) exitWith {
         diag_log "[ARK] (Navy) - Trigger not syncd to the module";
     };
+
     if (count _syncdTrg > 1) exitWith {
         diag_log "[ARK] (Navy) - Only sync one trigger to the module";
     };
-    
+
     private _trigger = _syncdTrg #0;
     private _vrUnit = [_trigger] call ark_navy_fnc_checkWaypoints;
-    
+
     if (isNil "_vrUnit") exitWith {
-        diag_log format ["[ARK] (Navy) - No logic found for module: %1 with trigger: %2", _logic, _trigger];
-    };
-    
-    private _waypoints = waypoints _vrUnit;
-    if (count _waypoints == 0) exitWith {
-        diag_log format ["[ARK] (Navy) - Logic: %1 had no waypoints attached!", _vrUnit];
-    } else {
-        deleteVehicle _vrUnit;
+        diag_log "[ARK] (Navy) - No VR entity syncd with trigger"];
     };
 
+    private _waypoints = waypoints _vrUnit;
+    if (count _waypoints isEqualTo 0) exitWith {
+        diag_log format ["[ARK] (Navy) - VR entity: %1 had no waypoints attached!", _vrUnit];
+    };
+
+    deleteVehicle _vrUnit;
     private _unitTemplate = adm_camp_defaultUnitTemplate;
 
     private _heloArray = getArray (configfile >> "Admiral" >> "UnitTemplates" >> _unitTemplate >> "th");
-    if (isNil "_heloArray" || { count _heloArray == 0 }) exitWith {
+    if (isNil "_heloArray" || { count _heloArray isEqualTo 0 }) exitWith {
         diag_log "[ARK] (Navy) - No helo defined in Admiral template";
     };
 
@@ -39,23 +39,23 @@ ark_navy_fnc_checkTrigger = {
 ark_navy_fnc_checkWaypoints = {
     params ["_trigger"];
 
-    private _syncdVR = [];
+    private _syncUnits = [];
     private _vrUnit = nil;
-    
+
     {
         if ((typeOf _x) isEqualTo "C_Jeff_VR") then {
-           _syncdVR pushBack _x;
+           _syncUnits pushBack _x;
         };
     } forEach synchronizedObjects _trigger;
 
-    if (count _syncdVR > 1) then {
+    if (count _syncUnits > 1) then {
        diag_log "[ARK] (Navy) - Only sync one VR entity to the trigger";
-    } else {
-        _vrUnit = _syncdVR #0;
     };
-    
+
+    _vrUnit = _syncUnits #0;
+
     if (isNil "_vrUnit") exitWith {
-        diag_log format ["[ARK] (Navy) - No VR entiy syncd with trigger: %1", _trigger];
+        diag_log "[ARK] (Navy) - No VR entity syncd with trigger"];
     };
 
     _vrUnit;
@@ -79,17 +79,16 @@ ark_navy_fnc_createVehicle = {
 };
 
 ark_navy_fnc_createPilot = {
-    params ["_pilotClassname", "_side", "_vehicle"];
+    params ["_pilotClassnames", "_side", "_vehicle"];
 
+    private _skillArray = ["Camp"] call adm_common_fnc_getZoneTemplateSkillValues;
     private _grp = createGroup _side;
-    private _pilot = _grp createUnit [_pilotClassname, [0,0,0], [], 0, "NONE"];
+    private _unit = [[0,0,0], _grp, _pilotClassnames, _skillArray] call adm_common_fnc_placeMan;
     _pilot assignAsDriver _vehicle;
     _pilot moveInDriver _vehicle;
-
-    {_pilot disableAI _x} forEach ["AUTOTARGET", "AIMINGERROR", "SUPPRESSION"];
-    _pilot setSkill ["general",1];
     _pilot setBehaviour "CARELESS";
     _pilot allowFleeing 0;
+    {_pilot disableAI _x} forEach ["AUTOTARGET", "AIMINGERROR", "SUPPRESSION"];
 
     _pilot;
 };
@@ -99,7 +98,6 @@ ark_navy_fnc_createCargo = {
 
     private _crewCount = (count (fullCrew [_vehicle,'cargo',true])) + (count (fullCrew [_vehicle,'turret',true]));
     private _skillArray = ["Camp"] call adm_common_fnc_getZoneTemplateSkillValues;
-
     private _grp = createGroup _side;
     for "_i" from 1 to _crewCount step 1 do {
         private _unit = [[0,0,0], _grp, _cargoClassnames, _skillArray] call adm_common_fnc_placeMan;
@@ -119,7 +117,6 @@ ark_navy_fnc_addWaypoint = {
 
     private _waypointPositions = [];
     {_waypointPositions pushBack (getWPPos _x)} forEach _waypoints;
-    
     private _wp = (group _pilot) addWaypoint [(group _pilot), _index];
     _wp setWPPos (_waypointPositions select _index);
     _wp setWaypointSpeed (_logic getVariable ["Fly_Speed", "NORMAL"]);
@@ -128,4 +125,11 @@ ark_navy_fnc_addWaypoint = {
     _wp setWaypointCombatMode "BLUE";
 
     _wp;
+};
+
+ark_navy_fnc_cleanUp = {
+    params ["_vehicle"];
+
+    {_vehicle deleteVehicleCrew _x} forEach crew _vehicle;
+    deleteVehicle _vehicle;
 };
