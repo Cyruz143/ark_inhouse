@@ -199,12 +199,15 @@ diwako_dui_compass_style = ["diwako_dui\UI\compass_styles\bi\compass_limited.paa
 force force diwako_dui_compassRange = 30;
 force force diwako_dui_compassRefreshrate = 0;
 force force diwako_dui_dir_showMildot = false;
+force force diwako_dui_distanceWarning = 3;
 force force diwako_dui_enable_compass = true;
 force force diwako_dui_enable_compass_dir = 1;
 force force diwako_dui_enable_occlusion = false;
+force foroce diwako_dui_enable_occlusion_cone = 360;
 force force diwako_dui_icon_style = "standard";
 force force diwako_dui_namelist = true;
 force force diwako_dui_namelist_only_buddy_icon = false;
+force force diwako_dui_show_squadbar = true;
 
 // NIArms
 force force niarms_magSwitch = false;
