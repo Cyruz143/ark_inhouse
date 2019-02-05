@@ -1,11 +1,17 @@
+class CBA_Extended_EventHandlers_base;
+
 class CfgVehicles {
     class C_Soldier_VR_F;
     class C_Jeff_VR : C_Soldier_VR_F {
         author = "Navy";
         displayName = "Navy Path Base";
-        faction = "Admiral";
+        faction = "Navy";
         side = 3;
-        vehicleClass = "Admiral_Camps";
+        vehicleClass = "Navy_Paths";
+        class EventHandlers {
+            init = "(_this #0) disableAI 'ALL'";
+            class CBA_Extended_EventHandlers: CBA_Extended_EventHandlers_base {};
+        };
     };
 
     class ARK_Module;

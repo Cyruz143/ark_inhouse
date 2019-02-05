@@ -13,19 +13,21 @@ ark_navy_fnc_paradrop = {
     private _paradropWP = [_pilot, _waypoints, 1, _logic] call ark_navy_fnc_addWaypoint;
     private _deleteWP = [_pilot, _waypoints, 2, _logic] call ark_navy_fnc_addWaypoint;
     
+    //If taking over 600 seconds delete as something has gone wrong
     [
         {((_this #0) distance (getWPPos (_this #1))) < 500},
         {[(_this #0)] call ark_navy_fnc_jumpController;},
         [_vehicle,_paradropWP],
-        300,
+        600,
         {[(_this #0)] call ark_navy_fnc_cleanUp;}
     ] call CBA_fnc_waitUntilAndExecute;
 
+    // Wait another two minutes, if not at delete WP kill it anyway
     [
         {((_this #0) distance (getWPPos (_this #1))) < 750},
         {[(_this #0)] call ark_navy_fnc_cleanUp;},
         [_vehicle,_deleteWP],
-        360,
+        720,
         {[(_this #0)] call ark_navy_fnc_cleanUp;}
     ] call CBA_fnc_waitUntilAndExecute;
 };
@@ -45,7 +47,7 @@ ark_navy_fnc_jumpController = {
 
             [_unit,_vehicle] call ark_navy_fnc_doJump;
         },
-        0.5,
+        0.75,
         [_vehicle]
     ] call CBA_fnc_addPerFrameHandler;
 };

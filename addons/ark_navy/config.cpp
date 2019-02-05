@@ -29,4 +29,6 @@ class Extended_PostInit_EventHandlers {
     };
 };
 
+#include "CfgFactionClasses.hpp"
+#include "CfgVehicleClasses.hpp"
 #include "CfgVehicles.hpp"

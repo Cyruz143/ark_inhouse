@@ -14,7 +14,7 @@ ark_navy_fnc_checkTrigger = {
     private _vrUnit = [_trigger] call ark_navy_fnc_checkWaypoints;
 
     if (isNil "_vrUnit") exitWith {
-        diag_log "[ARK] (Navy) - No VR entity syncd with trigger"];
+        diag_log "[ARK] (Navy) - No VR entity syncd with trigger";
     };
 
     private _waypoints = waypoints _vrUnit;
@@ -55,7 +55,7 @@ ark_navy_fnc_checkWaypoints = {
     _vrUnit = _syncUnits #0;
 
     if (isNil "_vrUnit") exitWith {
-        diag_log "[ARK] (Navy) - No VR entity syncd with trigger"];
+        diag_log "[ARK] (Navy) - No VR entity syncd with trigger";
     };
 
     _vrUnit;
@@ -83,7 +83,7 @@ ark_navy_fnc_createPilot = {
 
     private _skillArray = ["Camp"] call adm_common_fnc_getZoneTemplateSkillValues;
     private _grp = createGroup _side;
-    private _unit = [[0,0,0], _grp, _pilotClassnames, _skillArray] call adm_common_fnc_placeMan;
+    private _pilot = [[0,0,0], _grp, _pilotClassnames, _skillArray] call adm_common_fnc_placeMan;
     _pilot assignAsDriver _vehicle;
     _pilot moveInDriver _vehicle;
     _pilot setBehaviour "CARELESS";
@@ -96,10 +96,9 @@ ark_navy_fnc_createPilot = {
 ark_navy_fnc_createCargo = {
     params ["_cargoClassnames", "_side", "_vehicle"];
 
-    private _crewCount = (count (fullCrew [_vehicle,'cargo',true])) + (count (fullCrew [_vehicle,'turret',true]));
     private _skillArray = ["Camp"] call adm_common_fnc_getZoneTemplateSkillValues;
     private _grp = createGroup _side;
-    for "_i" from 1 to _crewCount step 1 do {
+    for "_i" from 1 to (count (fullCrew [_vehicle,'cargo',true])) step 1 do {
         private _unit = [[0,0,0], _grp, _cargoClassnames, _skillArray] call adm_common_fnc_placeMan;
         _unit assignAsCargo _vehicle;
         _unit moveInCargo _vehicle;
