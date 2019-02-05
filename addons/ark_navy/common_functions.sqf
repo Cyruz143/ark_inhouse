@@ -1,35 +1,36 @@
 ark_navy_fnc_checkTrigger = {
     params ["_logic"];
 
-    private _syncdObj = synchronizedObjects _logic;
-    if (count _syncdObj == 0) exitWith {
+    private _syncdTrg = synchronizedObjects _logic;
+    if (count _syncdTrg == 0) exitWith {
         diag_log "[ARK] (Navy) - Trigger not syncd to the module";
     };
-    if (count _syncdObj > 1) exitWith {
+    if (count _syncdTrg > 1) exitWith {
         diag_log "[ARK] (Navy) - Only sync one trigger to the module";
     };
     
-    private _trigger = _syncdObj #0;   
-    private _navyLogic = [_trigger] call ark_navy_fnc_checkWaypoints;
+    private _trigger = _syncdTrg #0;
+    private _vrUnit = [_trigger] call ark_navy_fnc_checkWaypoints;
     
-    if (isNil "_navyLogic") exitWith {
+    if (isNil "_vrUnit") exitWith {
         diag_log format ["[ARK] (Navy) - No logic found for module: %1 with trigger: %2", _logic, _trigger];
     };
     
-    private _waypoints = waypoints _navyLogic;
+    private _waypoints = waypoints _vrUnit;
     if (count _waypoints == 0) exitWith {
-        diag_log format ["[ARK] (Navy) - Logic: %1 had no waypoints attached!", _navyLogic];
+        diag_log format ["[ARK] (Navy) - Logic: %1 had no waypoints attached!", _vrUnit];
+    } else {
+        deleteVehicle _vrUnit;
     };
 
     private _unitTemplate = adm_camp_defaultUnitTemplate;
 
-    /*private _heloArray = getArray (configfile >> "Admiral" >> "UnitTemplates" >> _unitTemplate >> "th");
+    private _heloArray = getArray (configfile >> "Admiral" >> "UnitTemplates" >> _unitTemplate >> "th");
     if (isNil "_heloArray" || { count _heloArray == 0 }) exitWith {
         diag_log "[ARK] (Navy) - No helo defined in Admiral template";
     };
 
-    private _vehicleClassname = selectRandom _heloArray;*/
-    private _vehicleClassname = "B_Heli_Transport_01_camo_F"; // FOR TESTING ONLY!
+    private _vehicleClassname = selectRandom _heloArray;
     private _routineFunction = _logic getVariable ["Routine_Function", "ark_navy_fnc_paradrop"];
 
     [_logic, _trigger, _vehicleClassname, _unitTemplate, _waypoints] call (call compile _routineFunction);
@@ -42,7 +43,7 @@ ark_navy_fnc_checkWaypoints = {
     private _vrUnit = nil;
     
     {
-        if ((typeOf _x) isEqualTo "C_Soldier_VR_F") then {
+        if ((typeOf _x) isEqualTo "C_Jeff_VR") then {
            _syncdVR pushBack _x;
         };
     } forEach synchronizedObjects _trigger;
@@ -66,7 +67,7 @@ ark_navy_fnc_createVehicle = {
     if (isNil "_trigger") exitWith {
         diag_log format ["No trigger was provided to try and spawn the vehicle with classname: %1", _vehicleClassname];
     };
-    
+
     private _flyHeight = (_logic getVariable ["Fly_Height", 200]);
     private _spawnPosition = [(triggerArea _trigger), (getposATL _trigger), true] call adm_api_fnc_getRandomPositionInArea;
     _spawnPosition set [2, _flyHeight];
@@ -84,7 +85,9 @@ ark_navy_fnc_createPilot = {
     private _pilot = _grp createUnit [_pilotClassname, [0,0,0], [], 0, "NONE"];
     _pilot assignAsDriver _vehicle;
     _pilot moveInDriver _vehicle;
+
     {_pilot disableAI _x} forEach ["AUTOTARGET", "AIMINGERROR", "SUPPRESSION"];
+    _pilot setSkill ["general",1];
     _pilot setBehaviour "CARELESS";
     _pilot allowFleeing 0;
 

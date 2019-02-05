@@ -1,4 +1,13 @@
 class CfgVehicles {
+    class C_Soldier_VR_F;
+    class C_Jeff_VR : C_Soldier_VR_F {
+        author = "Navy";
+        displayName = "Navy Path Base";
+        faction = "Admiral";
+        side = 3;
+        vehicleClass = "Admiral_Camps";
+    };
+
     class ARK_Module;
     class ARK_Navy_Paradrop: ARK_Module {
         scope = 2;

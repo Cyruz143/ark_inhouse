@@ -7,7 +7,7 @@ ark_navy_fnc_paradrop = {
     private _pilotClassname = selectRandom (getArray (configfile >> "Admiral" >> "UnitTemplates" >> _unitTemplate >> "pilots"));
     _pilot = [_pilotClassname, _side, _vehicle] call ark_navy_fnc_createPilot;
     
-    _cargoClassnames = [_unitTemplate, "infantry"] call adm_common_fnc_getUnitTemplateArray;
+    private _cargoClassnames = [_unitTemplate, "infantry"] call adm_common_fnc_getUnitTemplateArray;
     _cargoGroup = [_cargoClassnames, _side, _vehicle] call ark_navy_fnc_createCargo;
 
     private _paradropWP = [_pilot, _waypoints, 1, _logic] call ark_navy_fnc_addWaypoint;
@@ -22,7 +22,7 @@ ark_navy_fnc_paradrop = {
     ] call CBA_fnc_waitUntilAndExecute;
 
     [
-        {((_this #0) distance (getWPPos (_this #1))) < 1000},
+        {((_this #0) distance (getWPPos (_this #1))) < 750},
         {
             {(_this #0) deleteVehicleCrew _x} forEach crew (_this #0);
             deleteVehicle (_this #0);
