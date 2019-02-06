@@ -49,7 +49,7 @@ ark_navy_fnc_jumpController = {
 
             [_unit,_vehicle] call ark_navy_fnc_doJump;
         },
-        0.75,
+        0.5,
         [_vehicle]
     ] call CBA_fnc_addPerFrameHandler;
 };

@@ -67,7 +67,7 @@ ark_navy_fnc_emtpyCargo = {
             moveOut _unit;
         },
         0.5,
-        [_vehicle,_landingPad,_pilot,_passengers]
+        [_vehicle,_landingPad,_pilot]
     ] call CBA_fnc_addPerFrameHandler;
 };
 
