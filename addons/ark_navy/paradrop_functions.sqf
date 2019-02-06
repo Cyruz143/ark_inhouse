@@ -8,7 +8,7 @@ ark_navy_fnc_paradrop = {
     private _pilot = [_pilotClassnames, _side, _vehicle] call ark_navy_fnc_createPilot;
     
     private _cargoClassnames = [_unitTemplate, "infantry"] call adm_common_fnc_getUnitTemplateArray;
-    private _cargoGroup = [_cargoClassnames, _side, _vehicle] call ark_navy_fnc_createCargo;
+    private _cargoGroup = [_cargoClassnames, _side, _vehicle, true] call ark_navy_fnc_createCargo;
 
     private _paradropWP = [_pilot, _waypoints, 1, _logic, "MOVE"] call ark_navy_fnc_addWaypoint;
     private _deleteWP = [_pilot, _waypoints, 2, _logic, "MOVE"] call ark_navy_fnc_addWaypoint;
@@ -39,9 +39,11 @@ ark_navy_fnc_jumpController = {
             params ["_args", "_id"];
             _args params ["_vehicle"];
 
-            private _unit = fullCrew [_vehicle, "cargo", false] param [0, [objNull]] select 0;
+            private _crewArr = crew _vehicle - [driver _vehicle];
+            private _unit = _crewArr #0;
 
-            if (isNull _unit) exitWith {
+            if (isNil "_crewArr" || { count _crewArr isEqualTo 0 }) exitWith {
+                diag_log "[ARK] (Navy) - All cargo ejected";
                 _id call CBA_fnc_removePerFrameHandler;
             };
 

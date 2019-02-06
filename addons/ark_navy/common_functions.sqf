@@ -94,16 +94,19 @@ ark_navy_fnc_createPilot = {
 };
 
 ark_navy_fnc_createCargo = {
-    params ["_cargoClassnames", "_side", "_vehicle"];
+    params ["_cargoClassnames", "_side", "_vehicle", "_parachute"];
 
     private _skillArray = ["Camp"] call adm_common_fnc_getZoneTemplateSkillValues;
+    private _emptySeats = count (fullCrew [_vehicle, "", true] - fullCrew [_vehicle, "driver"]);
     private _grp = createGroup _side;
-    for "_i" from 1 to (count (fullCrew [_vehicle,'cargo',true])) step 1 do {
+    for "_i" from 1 to _emptySeats do {
         private _unit = [[0,0,0], _grp, _cargoClassnames, _skillArray] call adm_common_fnc_placeMan;
         _unit assignAsCargo _vehicle;
         _unit moveInCargo _vehicle;
-        removeBackpack _unit;
-        _unit addBackpack "ACE_NonSteerableParachute";
+        if (_parachute) then {
+            removeBackpack _unit;
+            _unit addBackpack "ACE_NonSteerableParachute";
+        };
     };
 
     // TO DO, figure out what to do with units on the ground!
