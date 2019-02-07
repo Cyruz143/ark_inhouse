@@ -7,9 +7,6 @@ ark_navy_fnc_barrelbomb = {
     private _pilotClassnames = [_unitTemplate, "pilots"] call adm_common_fnc_getUnitTemplateArray;
     private _pilot = [_pilotClassnames, _side, _vehicle] call ark_navy_fnc_createPilot;
 
-    private _cargoClassnames = [_unitTemplate, "infantry"] call adm_common_fnc_getUnitTemplateArray;
-    private _cargoGroup = [_cargoClassnames, _side, _vehicle, false] call ark_navy_fnc_createCargo;
-
     private _stageWP = [_pilot, _waypoints, 1, _logic] call ark_navy_fnc_addWaypoint;
     private _bombWP = [_pilot, _waypoints, 2, _logic] call ark_navy_fnc_addWaypoint;
     private _deleteWP = [_pilot, _waypoints, 3, _logic] call ark_navy_fnc_addWaypoint;
