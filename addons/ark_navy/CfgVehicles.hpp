@@ -123,6 +123,20 @@ class CfgVehicles {
                     class full_speed {name = "Fast"; value = "FULL";};
                 };
             };
+            class Bomb_Amount {
+                displayName = "Set barrel amount";
+                description = "Set the amount of barrels dropped";
+                typeName = "NUMBER";
+                defaultValue = 3;
+                class Values
+                {
+                    class one_barrel {name = "One";  value = 1;};
+                    class two_barrel {name = "Two";  value = 2;};
+                    class three_barrel {name = "Three";  value = 3;};
+                    class four_barrel {name = "Four";  value = 4;};
+                    class five_barrel {name = "Five";  value = 5;};
+                };
+            };
             class Routine_Function {
                 displayName = "Routine Function";
                 description = "The function called by this module. Do not change this unless you know what it does";

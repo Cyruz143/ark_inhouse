@@ -10,8 +10,8 @@ ark_navy_fnc_insert = {
     private _cargoClassnames = [_unitTemplate, "infantry"] call adm_common_fnc_getUnitTemplateArray;
     private _cargoGroup = [_cargoClassnames, _side, _vehicle, false] call ark_navy_fnc_createCargo;
 
-    private _landWP = [_pilot, _waypoints, 1, _logic, "MOVE"] call ark_navy_fnc_addWaypoint;
-    private _deleteWP = [_pilot, _waypoints, 2, _logic, "MOVE"] call ark_navy_fnc_addWaypoint;
+    private _landWP = [_pilot, _waypoints, 1, _logic] call ark_navy_fnc_addWaypoint;
+    private _deleteWP = [_pilot, _waypoints, 2, _logic] call ark_navy_fnc_addWaypoint;
     private _landingPad = createVehicle ["Land_HelipadEmpty_F", (getWPPos _landWP), [], 0, "NONE"];
 
     //If taking over 600 seconds delete as something has gone wrong

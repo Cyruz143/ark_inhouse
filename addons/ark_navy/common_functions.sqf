@@ -68,7 +68,7 @@ ark_navy_fnc_createVehicle = {
         diag_log format ["No trigger was provided to try and spawn the vehicle with classname: %1", _vehicleClassname];
     };
 
-    private _flyHeight = (_logic getVariable ["Fly_Height", 200]);
+    private _flyHeight = _logic getVariable ["Fly_Height", 200];
     private _spawnPosition = [(triggerArea _trigger), (getposATL _trigger), true] call adm_api_fnc_getRandomPositionInArea;
     _spawnPosition set [2, _flyHeight];
     _vehicle = createVehicle [_vehicleClassname, _spawnPosition, [], 0, "FLY"];
@@ -115,14 +115,14 @@ ark_navy_fnc_createCargo = {
 };
 
 ark_navy_fnc_addWaypoint = {
-    params ["_pilot", "_waypoints", "_index", "_logic", "_waypointType"];
+    params ["_pilot", "_waypoints", "_index", "_logic"];
 
     private _waypointPositions = [];
     {_waypointPositions pushBack (getWPPos _x)} forEach _waypoints;
     private _wp = (group _pilot) addWaypoint [(group _pilot), _index];
     _wp setWPPos (_waypointPositions select _index);
     _wp setWaypointSpeed (_logic getVariable ["Fly_Speed", "NORMAL"]);
-    _wp setWaypointType _waypointType;
+    _wp setWaypointType "MOVE";
     _wp setWaypointBehaviour "CARELESS";
     _wp setWaypointCombatMode "BLUE";
 

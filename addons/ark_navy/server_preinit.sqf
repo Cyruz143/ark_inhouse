@@ -4,3 +4,4 @@ call compile preProcessFileLineNumbers 'x\ark\addons\ark_navy\module_functions.s
 call compile preProcessFileLineNumbers 'x\ark\addons\ark_navy\common_functions.sqf';
 call compile preProcessFileLineNumbers 'x\ark\addons\ark_navy\paradrop_functions.sqf';
 call compile preProcessFileLineNumbers 'x\ark\addons\ark_navy\insert_functions.sqf';
+call compile preProcessFileLineNumbers 'x\ark\addons\ark_navy\barrelbomb_functions.sqf';
