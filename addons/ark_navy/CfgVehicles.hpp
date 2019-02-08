@@ -45,6 +45,19 @@ class CfgVehicles {
                     class full_speed {name = "Fast"; value = "FULL";};
                 };
             };
+            class Crew_Percentage {
+                displayName = "Set amount of troops";
+                description = "Set the percentage of the vehicle filled with troops";
+                typeName = "NUMBER";
+                defaultValue = 50;
+                class Values
+                {
+                    class twenty_five {name = "25%"; value = 25;};
+                    class fifty {name = "50%"; value = 50;};
+                    class seventy_five {name = "75%"; value = 75;};
+                    class one_hundred {name = "100%"; value = 100;};
+                };
+            };
             class Routine_Function {
                 displayName = "Routine Function";
                 description = "The function called by this module. Do not change this unless you know what it does";
@@ -82,6 +95,19 @@ class CfgVehicles {
                     class limited_speed {name = "Slow";  value = "LIMITED";};
                     class normal_speed {name = "Normal"; value = "NORMAL";};
                     class full_speed {name = "Fast"; value = "FULL";};
+                };
+            };
+            class Crew_Percentage {
+                displayName = "Set amount of troops";
+                description = "Set the percentage of the vehicle filled with troops";
+                typeName = "NUMBER";
+                defaultValue = 50;
+                class Values
+                {
+                    class twenty_five {name = "25%"; value = 25;};
+                    class fifty {name = "50%"; value = 50;};
+                    class seventy_five {name = "75%"; value = 75;};
+                    class one_hundred {name = "100%"; value = 100;};
                 };
             };
             class Routine_Function {

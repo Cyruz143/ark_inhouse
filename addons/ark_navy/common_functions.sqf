@@ -94,12 +94,13 @@ ark_navy_fnc_createPilot = {
 };
 
 ark_navy_fnc_createCargo = {
-    params ["_cargoClassnames", "_side", "_vehicle", "_parachute"];
+    params ["_cargoClassnames", "_side", "_vehicle", "_parachute", "_logic"];
 
     private _skillArray = ["Camp"] call adm_common_fnc_getZoneTemplateSkillValues;
     private _emptySeats = count (fullCrew [_vehicle, "", true] - fullCrew [_vehicle, "driver"]);
+    private _adjSeats = floor ((_logic getVariable ["Crew_Percentage", 50])/100 * _emptySeats);
     private _grp = createGroup _side;
-    for "_i" from 1 to _emptySeats do {
+    for "_i" from 1 to _adjSeats do {
         private _unit = [[0,0,0], _grp, _cargoClassnames, _skillArray] call adm_common_fnc_placeMan;
         _unit assignAsCargo _vehicle;
         _unit moveInCargo _vehicle;
