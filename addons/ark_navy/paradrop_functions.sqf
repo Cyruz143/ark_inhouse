@@ -17,18 +17,18 @@ ark_navy_fnc_paradrop = {
     [
         {((_this #0) distance (getWPPos (_this #1))) < 500},
         {[(_this #0)] call ark_navy_fnc_jumpController;},
-        [_vehicle,_paradropWP],
+        [_vehicle,_paradropWP,_logic],
         600,
-        {[(_this #0)] call ark_navy_fnc_cleanUp;}
+        {[(_this #0),(_this #2)] call ark_navy_fnc_cleanUp;}
     ] call CBA_fnc_waitUntilAndExecute;
 
     // Wait another two minutes, if not at delete WP kill it anyway
     [
         {((_this #0) distance (getWPPos (_this #1))) < 750},
-        {[(_this #0)] call ark_navy_fnc_cleanUp;},
-        [_vehicle,_deleteWP],
+        {[(_this #0),(_this #2)] call ark_navy_fnc_cleanUp;},
+        [_vehicle,_deleteWP,_logic],
         720,
-        {[(_this #0)] call ark_navy_fnc_cleanUp;}
+        {[(_this #0),(_this #2)] call ark_navy_fnc_cleanUp;}
     ] call CBA_fnc_waitUntilAndExecute;
 };
 

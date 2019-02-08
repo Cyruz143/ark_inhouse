@@ -1,4 +1,4 @@
-ark_ace_rearm_fnc_clearVehicle = {
+ark_ace_rearm_fnc_makeSource = {
     params ["_vehicle"];
     [_vehicle, 9999] call ace_rearm_fnc_makeSource;
 };
@@ -15,6 +15,6 @@ ark_ace_rearm_module_enableRearm = {
     };
     
     {
-        [_x] call ark_ace_rearm_fnc_clearVehicle;
+        [_x] call ark_ace_rearm_fnc_makeSource;
     } forEach _vehicles;
 };

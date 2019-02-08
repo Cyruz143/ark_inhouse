@@ -131,8 +131,8 @@ ark_navy_fnc_addWaypoint = {
 };
 
 ark_navy_fnc_cleanUp = {
-    params ["_vehicle"];
+    params ["_vehicle","_logic"];
 
     {_vehicle deleteVehicleCrew _x} forEach crew _vehicle;
-    deleteVehicle _vehicle;
+    {deleteVehicle _x} forEach [_vehicle,_logic];
 };

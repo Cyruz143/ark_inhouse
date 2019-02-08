@@ -21,28 +21,28 @@ ark_navy_fnc_insert = {
             (_this #0) land "GET OUT";
             (group (_this #2)) lockWP true; 
         },
-        [_vehicle,_landWP,_pilot],
+        [_vehicle,_landWP,_pilot,_logic],
         600,
-        {[(_this #0)] call ark_navy_fnc_cleanUp;}
+        {[(_this #0),(_this #3)] call ark_navy_fnc_cleanUp;}
     ] call CBA_fnc_waitUntilAndExecute;
 
     [
         {((getPosATL (_this #0)) #2) < 0.5},
         {[(_this #0),(_this #1),(_this #2)] call ark_navy_fnc_emtpyCargo;},
-        [_vehicle,_landingPad,_pilot],
+        [_vehicle,_landingPad,_pilot,_logic],
         600,
-        {[(_this #0)] call ark_navy_fnc_cleanUp;}
+        {[(_this #0),(_this #3)] call ark_navy_fnc_cleanUp;}
     ] call CBA_fnc_waitUntilAndExecute;
 
     // Wait another two minutes, if not at delete WP kill it anyway
     [
         {((_this #0) distance (getWPPos (_this #1))) < 750},
         {
-            [(_this #0)] call ark_navy_fnc_cleanUp;
+            [(_this #0)(_this #2)] call ark_navy_fnc_cleanUp;
         },
-        [_vehicle,_deleteWP],
+        [_vehicle,_deleteWP,_logic],
         720,
-        {[(_this #0)] call ark_navy_fnc_cleanUp;}
+        {[(_this #0),(_this #2)] call ark_navy_fnc_cleanUp;}
     ] call CBA_fnc_waitUntilAndExecute;
 };
 
