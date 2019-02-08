@@ -1,42 +1,46 @@
-ark_navy_fnc_checkTrigger = {
+ark_rotor_fnc_checkTrigger = {
     params ["_logic"];
 
     private _syncdTrg = synchronizedObjects _logic;
     if (count _syncdTrg isEqualTo 0) exitWith {
-        diag_log "[ARK] (Navy) - Trigger not syncd to the module";
+        diag_log "[ARK] (Rotor) - Trigger not syncd to the module";
     };
 
     if (count _syncdTrg > 1) exitWith {
-        diag_log "[ARK] (Navy) - Only sync one trigger to the module";
+        diag_log "[ARK] (Rotor) - Only sync one trigger to the module";
     };
 
     private _trigger = _syncdTrg #0;
-    private _vrUnit = [_trigger] call ark_navy_fnc_checkWaypoints;
+    private _vrUnit = [_trigger] call ark_rotor_fnc_checkWaypoints;
 
     if (isNil "_vrUnit") exitWith {
-        diag_log "[ARK] (Navy) - No VR entity syncd with trigger";
+        diag_log "[ARK] (Rotor) - No VR entity syncd with trigger";
     };
 
     private _waypoints = waypoints _vrUnit;
     if (count _waypoints isEqualTo 0) exitWith {
-        diag_log format ["[ARK] (Navy) - VR entity: %1 had no waypoints attached!", _vrUnit];
+        diag_log format ["[ARK] (Rotor) - VR entity: %1 had no waypoints attached!", _vrUnit];
     };
 
     deleteVehicle _vrUnit;
     private _unitTemplate = adm_camp_defaultUnitTemplate;
 
-    private _heloArray = getArray (configfile >> "Admiral" >> "UnitTemplates" >> _unitTemplate >> "th");
-    if (isNil "_heloArray" || { count _heloArray isEqualTo 0 }) exitWith {
-        diag_log "[ARK] (Navy) - No helo defined in Admiral template";
+    private _vehicleClassname = _logic getVariable ["Vehicle_ClassName", "Default"];
+
+    if (_vehicleClassname isEqualTo "Default") then {
+        private _heloArray = getArray (configfile >> "Admiral" >> "UnitTemplates" >> _unitTemplate >> "th");
+        if (isNil "_heloArray" || { count _heloArray isEqualTo 0 }) exitWith {
+            diag_log "[ARK] (Rotor) - No helo defined in Admiral template";
+        };
+        _vehicleClassname = selectRandom _heloArray;
     };
 
-    private _vehicleClassname = selectRandom _heloArray;
-    private _routineFunction = _logic getVariable ["Routine_Function", "ark_navy_fnc_paradrop"];
+    private _routineFunction = _logic getVariable ["Routine_Function", "ark_rotor_fnc_paradrop"];
 
     [_logic, _trigger, _vehicleClassname, _unitTemplate, _waypoints] call (call compile _routineFunction);
 };
 
-ark_navy_fnc_checkWaypoints = {
+ark_rotor_fnc_checkWaypoints = {
     params ["_trigger"];
 
     private _syncUnits = [];
@@ -49,19 +53,19 @@ ark_navy_fnc_checkWaypoints = {
     } forEach synchronizedObjects _trigger;
 
     if (count _syncUnits > 1) then {
-       diag_log "[ARK] (Navy) - Only sync one VR entity to the trigger";
+       diag_log "[ARK] (Rotor) - Only sync one VR entity to the trigger";
     };
 
     _vrUnit = _syncUnits #0;
 
     if (isNil "_vrUnit") exitWith {
-        diag_log "[ARK] (Navy) - No VR entity syncd with trigger";
+        diag_log "[ARK] (Rotor) - No VR entity syncd with trigger";
     };
 
     _vrUnit;
 };
 
-ark_navy_fnc_createVehicle = {
+ark_rotor_fnc_createVehicle = {
     params ["_vehicleClassname", "_trigger", "_logic"];
 
     if (isNil "_trigger") exitWith {
@@ -78,7 +82,7 @@ ark_navy_fnc_createVehicle = {
     _vehicle;
 };
 
-ark_navy_fnc_createPilot = {
+ark_rotor_fnc_createPilot = {
     params ["_pilotClassnames", "_side", "_vehicle"];
 
     private _skillArray = ["Camp"] call adm_common_fnc_getZoneTemplateSkillValues;
@@ -93,7 +97,7 @@ ark_navy_fnc_createPilot = {
     _pilot;
 };
 
-ark_navy_fnc_createCargo = {
+ark_rotor_fnc_createCargo = {
     params ["_cargoClassnames", "_side", "_vehicle", "_parachute", "_logic"];
 
     private _skillArray = ["Camp"] call adm_common_fnc_getZoneTemplateSkillValues;
@@ -115,7 +119,7 @@ ark_navy_fnc_createCargo = {
     _grp;
 };
 
-ark_navy_fnc_addWaypoint = {
+ark_rotor_fnc_addWaypoint = {
     params ["_pilot", "_waypoints", "_index", "_logic"];
 
     private _waypointPositions = [];
@@ -130,7 +134,7 @@ ark_navy_fnc_addWaypoint = {
     _wp;
 };
 
-ark_navy_fnc_cleanUp = {
+ark_rotor_fnc_cleanUp = {
     params ["_vehicle","_logic"];
 
     {_vehicle deleteVehicleCrew _x} forEach crew _vehicle;

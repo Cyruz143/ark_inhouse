@@ -3,11 +3,11 @@ class CBA_Extended_EventHandlers_base;
 class CfgVehicles {
     class C_Soldier_VR_F;
     class C_Jeff_VR : C_Soldier_VR_F {
-        author = "Navy";
-        displayName = "Navy Path Base";
-        faction = "Navy";
+        author = "Rotor";
+        displayName = "Rotor Path Base";
+        faction = "Rotor";
         side = 3;
-        vehicleClass = "Navy_Paths";
+        vehicleClass = "Rotor_Paths";
         class EventHandlers {
             init = "(_this #0) disableAI 'ALL'";
             class CBA_Extended_EventHandlers: CBA_Extended_EventHandlers_base {};
@@ -15,11 +15,11 @@ class CfgVehicles {
     };
 
     class ARK_Module;
-    class ARK_Navy_Paradrop: ARK_Module {
+    class ARK_Rotor_Paradrop: ARK_Module {
         scope = 2;
-        displayName = "Navy - Paradrop";
-        icon = "\x\ark\addons\ark_navy\resources\paradrop.paa";
-        function = "ark_navy_module_preinit";
+        displayName = "Rotor - Paradrop";
+        icon = "\x\ark\addons\ark_rotor\resources\paradrop.paa";
+        function = "ark_rotor_module_preinit";
         isTriggerActivated = 1;
         isGlobal = 0;
         isDisposable = 1;
@@ -56,20 +56,26 @@ class CfgVehicles {
                     class one_hundred {name = "100%"; value = 100;};
                 };
             };
+            class Vehicle_ClassName {
+                displayName = "Vehicle classname";
+                description = "If you want to specify the vehicle classname enter it here";
+                typeName = "STRING";
+                defaultValue = "Default";
+            };
             class Routine_Function {
                 displayName = "Routine Function";
                 description = "The function called by this module. Do not change this unless you know what it does";
                 typeName = "STRING";
-                defaultValue = "ark_navy_fnc_paradrop";
+                defaultValue = "ark_rotor_fnc_paradrop";
             };
         };
     };
     
-    class ARK_Navy_Insert: ARK_Module {
+    class ARK_Rotor_Insert: ARK_Module {
         scope = 2;
-        displayName = "Navy - Infantry Insert";
-        icon = "\x\ark\addons\ark_navy\resources\insert.paa";
-        function = "ark_navy_module_preinit";
+        displayName = "Rotor - Infantry Insert";
+        icon = "\x\ark\addons\ark_rotor\resources\insert.paa";
+        function = "ark_rotor_module_preinit";
         isTriggerActivated = 1;
         isGlobal = 0;
         isDisposable = 1;
@@ -106,20 +112,26 @@ class CfgVehicles {
                     class one_hundred {name = "100%"; value = 100;};
                 };
             };
+            class Vehicle_ClassName {
+                displayName = "Vehicle classname";
+                description = "If you want to specify the vehicle classname enter it here";
+                typeName = "STRING";
+                defaultValue = "Default";
+            };
             class Routine_Function {
                 displayName = "Routine Function";
                 description = "The function called by this module. Do not change this unless you know what it does";
                 typeName = "STRING";
-                defaultValue = "ark_navy_fnc_insert";
+                defaultValue = "ark_rotor_fnc_insert";
             };
         };
     };
     
-    class ARK_Navy_Barrelbomb: ARK_Module {
+    class ARK_Rotor_Barrelbomb: ARK_Module {
         scope = 2;
-        displayName = "Navy - Barrel Bomb";
-        icon = "\x\ark\addons\ark_navy\resources\barrel.paa";
-        function = "ark_navy_module_preinit";
+        displayName = "Rotor - Barrel Bomb";
+        icon = "\x\ark\addons\ark_rotor\resources\barrel.paa";
+        function = "ark_rotor_module_preinit";
         isTriggerActivated = 1;
         isGlobal = 0;
         isDisposable = 1;
@@ -157,11 +169,17 @@ class CfgVehicles {
                     class five_barrel {name = "Five";  value = 5;};
                 };
             };
+            class Vehicle_ClassName {
+                displayName = "Vehicle classname";
+                description = "If you want to specify the vehicle classname enter it here";
+                typeName = "STRING";
+                defaultValue = "Default";
+            };
             class Routine_Function {
                 displayName = "Routine Function";
                 description = "The function called by this module. Do not change this unless you know what it does";
                 typeName = "STRING";
-                defaultValue = "ark_navy_fnc_barrelbomb";
+                defaultValue = "ark_rotor_fnc_barrelbomb";
             };
         };
     };

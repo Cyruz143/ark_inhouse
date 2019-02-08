@@ -1,5 +1,5 @@
 class CfgVehicleClasses {
-    class Navy_Paths {
+    class Rotor_Paths {
         displayName = "Path Bases";
     };
 };

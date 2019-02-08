@@ -1,5 +1,5 @@
-#define COMPONENT navy
-#define COMPONENT_BEAUTIFIED Navy
+#define COMPONENT rotor
+#define COMPONENT_BEAUTIFIED Rotor
 
 #include "\x\ark\addons\ark_main\script_mod.hpp"
 #include "\x\ark\addons\ark_main\script_macros.hpp"
