@@ -60,7 +60,7 @@ ark_navy_fnc_dropBombs = {
             _bombAmount = _bombAmount - 1;
             [_vehicle] call ark_navy_fnc_createBomb;
         },
-        2.5,
+        4,
         [_vehicle,_landingPad,_pilot]
     ] call CBA_fnc_addPerFrameHandler;
 };

@@ -55,7 +55,6 @@ ark_navy_fnc_emtpyCargo = {
             _args params ["_vehicle","_landingPad","_pilot"];
 
             private _crewArr = crew _vehicle - [driver _vehicle];
-            private _unit = _crewArr #0;
 
             if (isNil "_crewArr" || { count _crewArr isEqualTo 0 }) exitWith {
                 diag_log "[ARK] (Navy) - All cargo ejected";
@@ -63,6 +62,7 @@ ark_navy_fnc_emtpyCargo = {
                 _id call CBA_fnc_removePerFrameHandler;
             };
 
+            private _unit = _crewArr #0;
             unassignVehicle _unit;
             moveOut _unit;
         },

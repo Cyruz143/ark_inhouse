@@ -38,8 +38,7 @@ class CfgVehicles {
                 description = "Set the speed the aircraft will maintain";
                 typeName = "STRING";
                 defaultValue = "NORMAL";
-                class Values
-                {
+                class Values {
                     class limited_speed {name = "Slow";  value = "LIMITED";};
                     class normal_speed {name = "Normal"; value = "NORMAL";};
                     class full_speed {name = "Fast"; value = "FULL";};
@@ -50,8 +49,7 @@ class CfgVehicles {
                 description = "Set the percentage of the vehicle filled with troops";
                 typeName = "NUMBER";
                 defaultValue = 50;
-                class Values
-                {
+                class Values {
                     class twenty_five {name = "25%"; value = 25;};
                     class fifty {name = "50%"; value = 50;};
                     class seventy_five {name = "75%"; value = 75;};
@@ -90,8 +88,7 @@ class CfgVehicles {
                 description = "Set the speed the aircraft will maintain";
                 typeName = "STRING";
                 defaultValue = "NORMAL";
-                class Values
-                {
+                class Values {
                     class limited_speed {name = "Slow";  value = "LIMITED";};
                     class normal_speed {name = "Normal"; value = "NORMAL";};
                     class full_speed {name = "Fast"; value = "FULL";};
@@ -102,8 +99,7 @@ class CfgVehicles {
                 description = "Set the percentage of the vehicle filled with troops";
                 typeName = "NUMBER";
                 defaultValue = 50;
-                class Values
-                {
+                class Values {
                     class twenty_five {name = "25%"; value = 25;};
                     class fifty {name = "50%"; value = 50;};
                     class seventy_five {name = "75%"; value = 75;};
@@ -142,8 +138,7 @@ class CfgVehicles {
                 description = "Set the speed the aircraft will maintain";
                 typeName = "STRING";
                 defaultValue = "NORMAL";
-                class Values
-                {
+                class Values {
                     class limited_speed {name = "Slow";  value = "LIMITED";};
                     class normal_speed {name = "Normal"; value = "NORMAL";};
                     class full_speed {name = "Fast"; value = "FULL";};
@@ -154,8 +149,7 @@ class CfgVehicles {
                 description = "Set the amount of barrels dropped";
                 typeName = "NUMBER";
                 defaultValue = 3;
-                class Values
-                {
+                class Values {
                     class one_barrel {name = "One";  value = 1;};
                     class two_barrel {name = "Two";  value = 2;};
                     class three_barrel {name = "Three";  value = 3;};

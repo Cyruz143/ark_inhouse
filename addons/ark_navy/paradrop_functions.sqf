@@ -40,14 +40,13 @@ ark_navy_fnc_jumpController = {
             _args params ["_vehicle"];
 
             private _crewArr = crew _vehicle - [driver _vehicle];
-            private _unit = _crewArr #0;
 
             if (isNil "_crewArr" || { count _crewArr isEqualTo 0 }) exitWith {
                 diag_log "[ARK] (Navy) - All cargo ejected";
                 _id call CBA_fnc_removePerFrameHandler;
             };
 
-            [_unit,_vehicle] call ark_navy_fnc_doJump;
+            [_crewArr #0,_vehicle] call ark_navy_fnc_doJump;
         },
         0.5,
         [_vehicle]
