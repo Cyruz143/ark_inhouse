@@ -73,7 +73,7 @@ ark_deploy_fnc_activatePreGroupDeploy = {
     ark_deploy_preDeployActive = true;
     publicVariable "ark_deploy_preDeployActive";
     {
-        if ((_x call ark_deploy_fnc_playerIsLeader) && (side _x in ark_deploy_pre_factions)) then {
+        if ((_x isEqualTo leader group _x) && (side _x in ark_deploy_pre_factions)) then {
             _x setVariable ["ark_deploy_canDeploy", true, true];
         };
     } forEach allUnits;
@@ -84,7 +84,7 @@ ark_deploy_fnc_activatePostGroupDeploy = {
     ark_deploy_deployActive = true;
     publicVariable "ark_deploy_deployActive";
     {
-        if ((_x call ark_deploy_fnc_playerIsLeader) && (side _x in ark_deploy_post_factions)) then {
+        if ((_x isEqualTo leader group _x) && (side _x in ark_deploy_post_factions)) then {
             _x setVariable ["ark_deploy_canDeploy", true, true];
         };
     } forEach allUnits;
@@ -102,16 +102,6 @@ ark_deploy_fnc_canPlayerPreDeploy = {
 
     private _canDeploy = _player getVariable ["ark_deploy_canDeploy", false];
     (_canDeploy && ark_deploy_preDeployActive && (side _player in ark_deploy_pre_factions));
-};
-
-ark_deploy_fnc_playerIsLeader = {
-    params ["_unit"];
-    
-    if (!(_unit isEqualTo leader group _unit) || { !(alive _unit) } ) exitWith {
-        false;
-    } else {
-        true;
-    };
 };
 
 [] call ark_deploy_fnc_initVariables;

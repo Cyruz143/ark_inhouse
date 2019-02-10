@@ -37,7 +37,7 @@ class CfgVehicles {
                     displayName = "Request Ammo Drop";
                     exceptions[] = {};
                     icon = "\A3\ui_f\data\map\vehicleicons\iconParachute_ca.paa";
-                    condition = "call ark_admin_tools_fnc_isTownSweep && [player] call ark_deploy_fnc_playerIsLeader && !(player getVariable ['ark_ts_paradropInProgress', false])";
+                    condition = "call ark_admin_tools_fnc_isTownSweep && (player isEqualTo leader group _player) && !(player getVariable ['ark_ts_paradropInProgress', false])";
                     statement = "[player] call ark_admin_tools_fnc_ammoDrop;";
                 };
                 class Unflip_Vehicle : ARK_Action {
