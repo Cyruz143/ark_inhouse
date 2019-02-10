@@ -36,7 +36,7 @@ ark_rotor_fnc_checkTrigger = {
 
     private _routineFunction = _logic getVariable ["Routine_Function", {ark_rotor_fnc_paradrop}];
 
-    [_logic, _trigger, _vehicleClassname, _unitTemplate, _waypoints] call (_routineFunction);
+    [_logic, _trigger, _vehicleClassname, _unitTemplate, _waypoints] call (call compile _routineFunction);
 };
 
 ark_rotor_fnc_checkWaypoints = {
@@ -142,8 +142,10 @@ ark_rotor_fnc_taskAttack = {
     } forEach playableUnits + switchableUnits;
 
     if (count _nearEnemies isEqualTo 0) exitWith {diag_log "[ARK] (Rotor) - No players to attack";};
+    diag_log format ["[ARK] (Rotor) - Available enemies: %1",_nearEnemies];
 
-    [_grp, getpos (selectRandom _nearEnemies), 250, true] call CBA_fnc_taskAttack;
+    [_grp, getpos (selectRandom _nearEnemies), 100, "MOVE", "SAFE", "RED", "FULL", "VEE", "this spawn CBA_fnc_searchNearby", [3,6,9]] call CBA_fnc_addWaypoint;
+    diag_log "[ARK] (Rotor) - Added waypoint";
 };
 
 ark_rotor_fnc_cleanUp = {

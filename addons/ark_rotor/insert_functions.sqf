@@ -50,6 +50,7 @@ ark_rotor_fnc_emtpyCargo = {
     params ["_vehicle","_landingPad","_pilot","_cargoGroup"];
 
     _cargoGroup call ark_rotor_fnc_taskAttack;
+    _vehicle setFuel 0;
 
     [
         {
@@ -59,7 +60,7 @@ ark_rotor_fnc_emtpyCargo = {
             private _crewArr = crew _vehicle - [driver _vehicle];
 
             if (isNil "_crewArr" || { count _crewArr isEqualTo 0 }) exitWith {
-                diag_log "[ARK] (Rotor) - All cargo ejected";
+                diag_log "[ARK] (Rotor) - All cargo dismounted";
                 [_vehicle,_landingPad,_pilot] call ark_rotor_fnc_waitForCargo;
                 _id call CBA_fnc_removePerFrameHandler;
             };
@@ -80,6 +81,7 @@ ark_rotor_fnc_waitForCargo = {
         {
             (group (_this #2)) lockWP false;
             (group (_this #2)) setCurrentWaypoint [(group (_this #2)),2];
+            (_this #0) setfuel 1;
             (_this #0) land "NONE";
             deleteVehicle (_this #1);
         },

@@ -65,8 +65,8 @@ class CfgVehicles {
             class Routine_Function {
                 displayName = "Routine Function";
                 description = "The function called by this module. Do not change this unless you know what it does";
-                typeName = "CODE";
-                defaultValue = {ark_rotor_fnc_paradrop};
+                typeName = "STRING";
+                defaultValue = "ark_rotor_fnc_paradrop";
             };
         };
     };
@@ -121,8 +121,8 @@ class CfgVehicles {
             class Routine_Function {
                 displayName = "Routine Function";
                 description = "The function called by this module. Do not change this unless you know what it does";
-                typeName = "CODE";
-                defaultValue = {ark_rotor_fnc_insert};
+                typeName = "STRING";
+                defaultValue = "ark_rotor_fnc_insert";
             };
         };
     };
@@ -178,8 +178,8 @@ class CfgVehicles {
             class Routine_Function {
                 displayName = "Routine Function";
                 description = "The function called by this module. Do not change this unless you know what it does";
-                typeName = "CODE";
-                defaultValue = {ark_rotor_fnc_barrelbomb};
+                typeName = "STRING";
+                defaultValue = "ark_rotor_fnc_barrelbomb";
             };
         };
     };
