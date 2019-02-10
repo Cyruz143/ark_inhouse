@@ -136,7 +136,7 @@ class CfgVehicles {
         isGlobal = 0;
         isDisposable = 1;
         class ModuleDescription {
-            description = "Drops barrel bombs at the second waypoint";
+            description = "Drops barrel bombs between the first and second waypoint";
         };
         class Arguments {
             class Fly_Height {
