@@ -144,8 +144,7 @@ ark_rotor_fnc_taskAttack = {
     if (count _nearEnemies isEqualTo 0) exitWith {diag_log "[ARK] (Rotor) - No players to attack";};
     diag_log format ["[ARK] (Rotor) - Available enemies: %1",_nearEnemies];
 
-    [_grp, getpos (selectRandom _nearEnemies), 100, "MOVE", "SAFE", "RED", "FULL", "VEE", "this spawn CBA_fnc_searchNearby", [3,6,9]] call CBA_fnc_addWaypoint;
-    diag_log "[ARK] (Rotor) - Added waypoint";
+    [_grp, getpos (selectRandom _nearEnemies), 100, 4, "MOVE", "AWARE", "RED", "FULL", "STAG COLUMN"] call CBA_fnc_taskPatrol;
 };
 
 ark_rotor_fnc_cleanUp = {
