@@ -13,7 +13,7 @@ ark_rotor_fnc_barrelbomb = {
 
     //If taking over 600 seconds delete as something has gone wrong
     [
-        {((_this #0) distance (getWPPos (_this #1))) < 1000},
+        {((_this #0) distance2D (getWPPos (_this #1))) < 750},
         {(_this #0) forceSpeed 50;},
         [_vehicle,_stageWP,_logic],
         600,
@@ -31,7 +31,7 @@ ark_rotor_fnc_barrelbomb = {
 
     // Wait another two minutes, if not at delete WP kill it anyway
     [
-        {((_this #0) distance (getWPPos (_this #1))) < 750},
+        {((_this #0) distance2D (getWPPos (_this #1))) < 250},
         {
             [(_this #0),(_this #2)] call ark_rotor_fnc_cleanUp;
         },
