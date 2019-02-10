@@ -34,15 +34,20 @@ ark_deploy_fnc_deployGroup = {
     params ["_player", "_position"];
 
     _player setVariable ["ark_deploy_canDeploy", false, true];
-    
     onMapSingleClick "";
-
+    
+    private _aliveUnits = [];
     private _pos_x = _position #0;
     private _pos_y = _position #1;
+    
     {
-        if (!alive _x) exitWith {};
-        
-        if (isWeaponDeployed _x || { isWeaponRested _x }) then {
+        if (alive _x) then {
+            _aliveUnits pushBack _x;
+        };
+    } forEach units (group _player);
+
+    {
+       if (isWeaponDeployed _x || { isWeaponRested _x }) then {
             _x setPos (_x modelToWorld [0,0,0]);
         };
         
@@ -53,7 +58,7 @@ ark_deploy_fnc_deployGroup = {
 
         _pos_x = _pos_x + 1;
         _pos_y = _pos_y + 1;
-    } forEach units (group _player);
+    } forEach _aliveUnits;
     
     openMap [false, false];
 };
