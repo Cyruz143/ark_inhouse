@@ -16,7 +16,7 @@ ark_pm_fnc_canAddMarker = {
     };
 
     if (_alt isEqualTo true) then {
-        [] call ark_pm_fnc_removeMarker;
+        call ark_pm_fnc_removeMarker;
     };
 };
 

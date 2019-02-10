@@ -31,7 +31,7 @@ ark_admin_tools_fnc_callAttackHelo = {
         _x setskill ["commanding",1];
     } forEach units _grp;
 
-    [_grp, position _player, 250, 6, "SAD", "AWARE", "RED", "FULL", "STAG COLUMN", "", [3,6,9]] call CBA_fnc_taskPatrol;
+    [_grp, position _player, 250, 6, "SAD", "AWARE", "RED", "FULL"] call CBA_fnc_taskPatrol;
 };
 
 ark_admin_tools_fnc_callArmour = {
@@ -65,8 +65,7 @@ ark_admin_tools_fnc_callArmour = {
 ark_admin_tools_fnc_canUnflip = {
     params ["_vehicle"];
 
-    private _vector = (vectorUp _vehicle) select 2; 
-    private _canUnflip = _vector < 0.5;
+    private _canUnflip = ((vectorUp _vehicle) #2) < 0.5;
 
     _canUnflip;
 };

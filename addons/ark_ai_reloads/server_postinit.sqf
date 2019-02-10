@@ -2,9 +2,7 @@
     params ["_unit", "", "", "", "_oldMagazine"];
 
     if (isPlayer _unit) exitWith {};
-    private _currentWeapon = currentWeapon (vehicle _unit);
-    private _primaryWeapon = primaryWeapon _unit;
-    if (_currentWeapon isEqualTo _primaryWeapon) then {
+    if (currentWeapon (vehicle _unit) isEqualTo primaryWeapon _unit) then {
         _unit addMagazine (_oldMagazine #0);
     };
 }] call CBA_fnc_addClassEventHandler;

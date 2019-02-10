@@ -15,6 +15,6 @@ ark_ace_rearm_module_enableRearm = {
     };
     
     {
-        [_x] call ark_ace_rearm_fnc_makeSource;
+        _x call ark_ace_rearm_fnc_makeSource;
     } forEach _vehicles;
 };

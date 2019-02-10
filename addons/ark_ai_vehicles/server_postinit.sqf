@@ -12,7 +12,7 @@ ark_ai_vehicles_fnc_vehicleDamaged = {
     if !(_hitPoint in _wheelArray) exitWith {};
 
     if (!isNull (driver _vehicle) && { !isPlayer (driver _vehicle) } && { !(_vehicle getVariable ["ark_ai_vehicles_awaiting_repair", false]) }) then {
-        [_vehicle] call ark_ai_vehicles_fnc_canRepair;
+        _vehicle call ark_ai_vehicles_fnc_canRepair;
     };
 };
 
@@ -32,10 +32,10 @@ ark_ai_vehicles_fnc_canRepair = {
 
             time >= _outOfCombatDelayTime
         },
-        {[(_this #0)] call ark_ai_vehicles_fnc_doRepair},
+        {(_this #0) call ark_ai_vehicles_fnc_doRepair},
         [_vehicle],
         30,
-        {[(_this #0)] call ark_ai_vehicles_fnc_doRepair}
+        {(_this #0) call ark_ai_vehicles_fnc_doRepair}
     ] call CBA_fnc_waitUntilAndExecute;
 };
 
@@ -105,7 +105,7 @@ ark_ai_vehicles_fnc_isGunnerDead = {
 
     if (_vehicle isKindOf "Car" || _vehicle isKindOf "Tank") then { 
         if (gunner _vehicle isEqualTo _unit && { alive (driver _vehicle) } && { !isPlayer (driver _vehicle) }) then {
-            [_vehicle] call ark_ai_vehicles_fnc_replaceGunner;
+            _vehicle call ark_ai_vehicles_fnc_replaceGunner;
         };
     };
 };
@@ -151,7 +151,7 @@ ark_ai_vehicles_fnc_replaceGunner = {
 ark_ai_vehicles_fnc_moveInGunner = {
     params ["_vehicle","_driver"];
     
-    private _gunnerTurret = [_vehicle] call ace_common_fnc_getTurretGunner;
+    private _gunnerTurret = _vehicle call ace_common_fnc_getTurretGunner;
     _driver assignAsTurret [_vehicle,_gunnerTurret];
     _driver moveInTurret [_vehicle,_gunnerTurret];
 };

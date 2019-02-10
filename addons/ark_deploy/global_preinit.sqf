@@ -9,7 +9,7 @@ ark_deploy_fnc_initVariables = {
 };
 
 ark_deploy_module_init = {
-    params ["_logic","_units","_activated"];
+    params ["_logic","","_activated"];
 
     if !(_activated) exitWith {
         diag_log "[ARK] (Deploy) - Module not activated";
@@ -40,10 +40,17 @@ ark_deploy_fnc_deployGroup = {
     private _pos_x = _position #0;
     private _pos_y = _position #1;
     {
-        if (isWeaponDeployed _x || isWeaponRested _x) then {
+        if (!alive _x) exitWith {};
+        
+        if (isWeaponDeployed _x || { isWeaponRested _x }) then {
             _x setPos (_x modelToWorld [0,0,0]);
         };
-        _x setposATL [(_pos_x),(_pos_y), 0];
+        
+        [
+            {(_this #0) setposATL [(_this #1),(_this #2), 0]},
+            [_x,_pos_x,_pos_y]
+        ] call CBA_fnc_execNextFrame;
+
         _pos_x = _pos_x + 1;
         _pos_y = _pos_y + 1;
     } forEach units (group _player);
@@ -66,7 +73,7 @@ ark_deploy_fnc_activatePreGroupDeploy = {
     ark_deploy_preDeployActive = true;
     publicVariable "ark_deploy_preDeployActive";
     {
-        if (([_x] call ark_deploy_fnc_playerIsLeader) && (side _x in ark_deploy_pre_factions)) then {
+        if ((_x call ark_deploy_fnc_playerIsLeader) && (side _x in ark_deploy_pre_factions)) then {
             _x setVariable ["ark_deploy_canDeploy", true, true];
         };
     } forEach allUnits;
@@ -77,7 +84,7 @@ ark_deploy_fnc_activatePostGroupDeploy = {
     ark_deploy_deployActive = true;
     publicVariable "ark_deploy_deployActive";
     {
-        if (([_x] call ark_deploy_fnc_playerIsLeader) && (side _x in ark_deploy_post_factions)) then {
+        if ((_x call ark_deploy_fnc_playerIsLeader) && (side _x in ark_deploy_post_factions)) then {
             _x setVariable ["ark_deploy_canDeploy", true, true];
         };
     } forEach allUnits;
@@ -100,26 +107,11 @@ ark_deploy_fnc_canPlayerPreDeploy = {
 ark_deploy_fnc_playerIsLeader = {
     params ["_unit"];
     
-    if !([_unit] call ark_deploy_fnc_playerIsValid) exitWith {
+    if (!(_unit isEqualTo leader group _unit) || { !(alive _unit) } ) exitWith {
         false;
-    };
-
-    private _groupLeader = leader group _unit;
-
-    if (_unit == _groupLeader) then {
-        true;
     } else {
-        false;
+        true;
     };
-};
-
-ark_deploy_fnc_playerIsValid = {
-    params ["_unit"];
-
-    if (!(isPlayer _unit) || !(alive _unit)) then {
-        false;
-    };
-    true;
 };
 
 [] call ark_deploy_fnc_initVariables;

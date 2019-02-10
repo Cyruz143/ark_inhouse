@@ -5,7 +5,7 @@ ark_player_screams_fnc_doScream = {
 
     if (_damage > 0.1) then {
         private _lastScreamTime = _unit getVariable ["ark_player_screams_lastScreamTime", 0];
-        if (!isNull objectParent _unit || time - _lastScreamTime <= 3) exitWith {};
+        if (!isNull objectParent _unit || { time - _lastScreamTime <= 3} ) exitWith {};
         private _sound = selectRandom [
             "A3\Sounds_F\characters\human-sfx\P01\Max_Hit_01.wss",
             "A3\Sounds_F\characters\human-sfx\P02\Mid_Hit_01.wss",

@@ -45,7 +45,7 @@ ark_player_paradrop_fnc_addBriefing = {
 };
 
 ["ark_player_paradrop_eh_playerJump", {
-    [player] call ark_player_paradrop_fnc_doJump;
+    player call ark_player_paradrop_fnc_doJump;
 }] call CBA_fnc_addEventHandler;
 
 if (typeName (missionNamespace getVariable ["ark_player_paradrop_var_jumpHeight", false]) isEqualTo "SCALAR") then {

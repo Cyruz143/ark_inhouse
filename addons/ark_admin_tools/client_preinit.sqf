@@ -1,7 +1,7 @@
 ark_admin_tools_fnc_initVariables = {
     ark_aiDebugEnabled = false;
     ark_mapTeleportEnabled = false;
-    [] call ark_admin_tools_eh_mapClickTeleport;
+    call ark_admin_tools_eh_mapClickTeleport;
 };
 
 ark_admin_tools_fnc_isHost = {
@@ -30,13 +30,13 @@ ark_admin_tools_fnc_enableMapTeleport = {
     hintSilent "Map Click Teleport has been enabled.";
     openMap [true, true];
 
-    if (isWeaponDeployed _player || isWeaponRested _player) then {
+    if (isWeaponDeployed _player || { isWeaponRested _player} ) then {
         _player setPos (_player modelToWorld [0,0,0]);
     };
 
     _player onMapSingleClick {
         _this setposATL _pos;
-        [] call ark_admin_tools_fnc_disableMapTeleport;
+        call ark_admin_tools_fnc_disableMapTeleport;
         openMap [false, false];
     };
 };
@@ -48,7 +48,7 @@ ark_admin_tools_fnc_disableMapTeleport = {
 
 ark_admin_tools_eh_mapClickTeleport = {
     "ark_mapTeleportEnabled" addPublicVariableEventHandler {
-        if (_this select 1) then {
+        if (_this #1) then {
             [player] call ark_admin_tools_fnc_enableMapTeleport;
         } else {
             [] call ark_admin_tools_fnc_disableMapTeleport;
@@ -58,7 +58,7 @@ ark_admin_tools_eh_mapClickTeleport = {
 
 ark_admin_tools_fnc_createDebugMarkers = {
     private ["_deleteMarkers"];
-    _deleteMarkers = if (count _this > 0) then {_this select 0} else {false};
+    _deleteMarkers = if (count _this > 0) then {_this #0} else {false};
 
     call {
         if (!_deleteMarkers && {isNil {ark_admin_canUpdateMarkers} || {!ark_admin_canUpdateMarkers}}) then {
@@ -179,7 +179,6 @@ ark_admin_tools_fnc_ammoDrop = {
     params ["_player"];
 
     _player setVariable ["ark_ts_paradropInProgress", true];
-    private _hull3Faction = _player getVariable "hull3_faction";
     private _groupId = groupId (group _player);
     private _squad = "";
 
@@ -205,7 +204,7 @@ ark_admin_tools_fnc_ammoDrop = {
     private _ammoBox = createVehicle ["C_IDAP_supplyCrate_F", [0,0,0], [], 0, "NONE"];
     _ammoBox allowDamage false;
     _ammoBox attachTo [_parachute, [0, 0, -1.3]];
-    [_ammoBox, ["faction", _hull3Faction], ["gear", "Truck"]] call hull3_unit_fnc_init;
+    [_ammoBox, ["faction", _player getVariable "hull3_faction"], ["gear", "Truck"]] call hull3_unit_fnc_init;
 
     private _smokeShell = "SmokeShellYellow";
 

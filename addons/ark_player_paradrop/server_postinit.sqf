@@ -17,7 +17,7 @@
             };
 
             if (local _unit && !isPlayer _unit) then {
-                [_unit] call ark_player_paradrop_fnc_doJump;
+                _unit call ark_player_paradrop_fnc_doJump;
             } else {
                 ["ark_player_paradrop_eh_playerJump", [], _unit] call CBA_fnc_targetEvent;
             };

@@ -4,4 +4,4 @@ ark_admin_tools_fnc_disablePreventInstaDeath = {
     };
 };
 
-[] call ark_admin_tools_fnc_disablePreventInstaDeath;
+call ark_admin_tools_fnc_disablePreventInstaDeath;
