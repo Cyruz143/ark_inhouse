@@ -16,6 +16,6 @@ class CfgPatches {
 
 class Extended_PostInit_EventHandlers {
     class ADDON {
-        clientInit = "[] call compile preProcessFileLineNumbers 'x\ark\addons\ark_player_screams\client_postinit.sqf';";
+        clientInit = "call compile preProcessFileLineNumbers 'x\ark\addons\ark_player_screams\client_postinit.sqf';";
     };
 };

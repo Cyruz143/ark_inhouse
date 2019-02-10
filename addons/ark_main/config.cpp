@@ -10,8 +10,7 @@ class cfgPatches {
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {
-            "A3_Data_F_Tank_Loadorder",
-            "A3_Data_F_Mod_Loadorder",
+            "A3_Data_F_Sams_Loadorder",
             "cba_main"
         };
         VERSION_CONFIG;

@@ -16,7 +16,7 @@ class CfgPatches {
 
 class Extended_PreInit_EventHandlers {
     class ADDON {
-        clientInit = "[] call compile preProcessFileLineNumbers 'x\ark\addons\ark_lumber_jack\client_preinit.sqf';";
+        clientInit = "call compile preProcessFileLineNumbers 'x\ark\addons\ark_lumber_jack\client_preinit.sqf';";
     };
 };
 

@@ -16,14 +16,14 @@ class CfgPatches {
 
 class Extended_PreInit_EventHandlers {
     class ADDON {
-        clientInit = "[] call compile preProcessFileLineNumbers 'x\ark\addons\ark_admin_tools\client_preinit.sqf';";
-        init = "[] call compile preProcessFileLineNumbers 'x\ark\addons\ark_admin_tools\global_preinit.sqf';";
+        clientInit = "call compile preProcessFileLineNumbers 'x\ark\addons\ark_admin_tools\client_preinit.sqf';";
+        init = "call compile preProcessFileLineNumbers 'x\ark\addons\ark_admin_tools\global_preinit.sqf';";
     };
 };
 
 class Extended_PostInit_EventHandlers {
     class ADDON {
-        clientInit = "[] call compile preProcessFileLineNumbers 'x\ark\addons\ark_admin_tools\client_postinit.sqf';";
+        clientInit = "call compile preProcessFileLineNumbers 'x\ark\addons\ark_admin_tools\client_postinit.sqf';";
     };
 };
 

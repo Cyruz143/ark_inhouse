@@ -24,7 +24,6 @@ ark_rotor_fnc_checkTrigger = {
 
     deleteVehicle _vrUnit;
     private _unitTemplate = adm_camp_defaultUnitTemplate;
-
     private _vehicleClassname = _logic getVariable ["Vehicle_ClassName", "Default"];
 
     if (_vehicleClassname isEqualTo "Default") then {
@@ -35,9 +34,9 @@ ark_rotor_fnc_checkTrigger = {
         _vehicleClassname = selectRandom _heloArray;
     };
 
-    private _routineFunction = _logic getVariable ["Routine_Function", "ark_rotor_fnc_paradrop"];
+    private _routineFunction = _logic getVariable ["Routine_Function", {ark_rotor_fnc_paradrop}];
 
-    [_logic, _trigger, _vehicleClassname, _unitTemplate, _waypoints] call (call compile _routineFunction);
+    [_logic, _trigger, _vehicleClassname, _unitTemplate, _waypoints] call (_routineFunction);
 };
 
 ark_rotor_fnc_checkWaypoints = {
@@ -114,8 +113,6 @@ ark_rotor_fnc_createCargo = {
         };
     };
 
-    // TO DO, figure out what to do with units on the ground!
-
     _grp;
 };
 
@@ -132,6 +129,21 @@ ark_rotor_fnc_addWaypoint = {
     _wp setWaypointCombatMode "BLUE";
 
     _wp;
+};
+
+ark_rotor_fnc_taskAttack = {
+    params ["_grp"];
+
+    private _nearEnemies = [];
+    {
+        if ((_x distance2D (leader _grp)) < 5000) then {
+            _nearEnemies pushBack _x;
+        };
+    } forEach playableUnits + switchableUnits;
+
+    if (count _nearEnemies isEqualTo 0) exitWith {diag_log "[ARK] (Rotor) - No players to attack";};
+
+    [_grp, getpos (selectRandom _nearEnemies), 250, true] call CBA_fnc_taskAttack;
 };
 
 ark_rotor_fnc_cleanUp = {

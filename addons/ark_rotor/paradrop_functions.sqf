@@ -16,8 +16,8 @@ ark_rotor_fnc_paradrop = {
     //If taking over 600 seconds delete as something has gone wrong
     [
         {((_this #0) distance (getWPPos (_this #1))) < 500},
-        {[(_this #0)] call ark_rotor_fnc_jumpController;},
-        [_vehicle,_paradropWP,_logic],
+        {[(_this #0),(_this #3)] call ark_rotor_fnc_jumpController;},
+        [_vehicle,_paradropWP,_logic,_cargoGroup],
         600,
         {[(_this #0),(_this #2)] call ark_rotor_fnc_cleanUp;}
     ] call CBA_fnc_waitUntilAndExecute;
@@ -33,7 +33,9 @@ ark_rotor_fnc_paradrop = {
 };
 
 ark_rotor_fnc_jumpController = {
-    params ["_vehicle"];
+    params ["_vehicle","_cargoGroup"];
+
+    _cargoGroup call ark_rotor_fnc_taskAttack;
     [
         {
             params ["_args", "_id"];

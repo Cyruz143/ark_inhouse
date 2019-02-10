@@ -8,7 +8,7 @@ ark_rotor_fnc_barrelbomb = {
     private _pilot = [_pilotClassnames, _side, _vehicle] call ark_rotor_fnc_createPilot;
 
     private _stageWP = [_pilot, _waypoints, 1, _logic] call ark_rotor_fnc_addWaypoint;
-    private _bombWP = [_pilot, _waypoints, 2, _logic] call ark_rotor_fnc_addWaypoint;
+    [_pilot, _waypoints, 2, _logic] call ark_rotor_fnc_addWaypoint;
     private _deleteWP = [_pilot, _waypoints, 3, _logic] call ark_rotor_fnc_addWaypoint;
 
     //If taking over 600 seconds delete as something has gone wrong

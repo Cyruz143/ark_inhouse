@@ -16,6 +16,6 @@ class CfgPatches {
 
 class Extended_PostInit_EventHandlers {
     class ADDON {
-        serverInit = "[] call compile preProcessFileLineNumbers 'x\ark\addons\ark_building_cleaner\server_postinit.sqf';";
+        serverInit = "call compile preProcessFileLineNumbers 'x\ark\addons\ark_building_cleaner\server_postinit.sqf';";
     };
 };

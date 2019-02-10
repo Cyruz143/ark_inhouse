@@ -28,8 +28,8 @@ ark_rotor_fnc_insert = {
 
     [
         {((getPosATL (_this #0)) #2) < 0.5},
-        {[(_this #0),(_this #1),(_this #2)] call ark_rotor_fnc_emtpyCargo;},
-        [_vehicle,_landingPad,_pilot,_logic],
+        {[(_this #0),(_this #1),(_this #2),(_this #4)] call ark_rotor_fnc_emtpyCargo;},
+        [_vehicle,_landingPad,_pilot,_logic,_cargoGroup],
         600,
         {[(_this #0),(_this #3)] call ark_rotor_fnc_cleanUp;}
     ] call CBA_fnc_waitUntilAndExecute;
@@ -47,7 +47,9 @@ ark_rotor_fnc_insert = {
 };
 
 ark_rotor_fnc_emtpyCargo = {
-    params ["_vehicle","_landingPad","_pilot"];
+    params ["_vehicle","_landingPad","_pilot","_cargoGroup"];
+
+    _cargoGroup call ark_rotor_fnc_taskAttack;
 
     [
         {
