@@ -70,7 +70,7 @@ ark_rotor_fnc_createBomb = {
     params ["_vehicle"];
 
     private _barrelClassname = selectRandom ["Land_WaterBarrel_F","Land_MetalBarrel_F","Land_BarrelEmpty_F"];
-    private _barrel = createVehicle [_barrelClassname, [(getPosATL _vehicle #0), (getPosATL _vehicle #1), (getPosATL _vehicle #2) - 5], [], 0, "FLY"];
+    private _barrel = createVehicle [_barrelClassname, (_vehicle modelToWorld [0,-15,-10]), [], 0, "FLY"];
     _barrel addTorque (_barrel vectorModelToWorld [1000,1000,1000]);
     _barrel addEventHandler ["EpeContactStart", {
         params ["_object1"];
@@ -80,4 +80,3 @@ ark_rotor_fnc_createBomb = {
         deleteVehicle _object1;
     }];
 };
-
