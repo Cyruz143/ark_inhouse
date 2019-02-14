@@ -106,7 +106,7 @@ ark_rotor_fnc_createCargo = {
     for "_i" from 1 to _adjSeats do {
         private _unit = [[0,0,0], _grp, _cargoClassnames, _skillArray] call adm_common_fnc_placeMan;
         _unit assignAsCargo _vehicle;
-        _unit moveInCargo _vehicle;
+        _unit moveInAny _vehicle;
         if (_parachute) then {
             removeBackpack _unit;
             _unit addBackpack "ACE_NonSteerableParachute";
