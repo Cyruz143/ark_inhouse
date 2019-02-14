@@ -50,7 +50,7 @@ ark_rotor_fnc_emtpyCargo = {
     params ["_vehicle","_landingPad","_pilot","_cargoGroup"];
 
     _cargoGroup call ark_rotor_fnc_taskAttack;
-    _vehicle setFuel 0;
+    _vehicle forceSpeed 0;
 
     [
         {
@@ -81,11 +81,11 @@ ark_rotor_fnc_waitForCargo = {
         {
             (group (_this #2)) lockWP false;
             (group (_this #2)) setCurrentWaypoint [(group (_this #2)),2];
-            (_this #0) setfuel 1;
+            (_this #0) forceSpeed -1;
             (_this #0) land "NONE";
             deleteVehicle (_this #1);
         },
         [_vehicle,_landingPad,_pilot],
-        5
+        2
     ] call CBA_fnc_waitAndExecute;
 };
