@@ -14,4 +14,4 @@
         if (isPlayer _vehicle) exitWith {};
         _vehicle setVehicleAmmoDef 1;
     }] call CBA_fnc_addClassEventHandler;
-} forEach ["Air","LandVehicle"];
+} forEach ["Air","Car","Tank"];
