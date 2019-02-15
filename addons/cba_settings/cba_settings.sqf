@@ -195,19 +195,22 @@ force force CUP_Vehicles_PreventBarrelClip = false;
 
 // DUI - Squad Radar
 force force diwako_dui_colors = "ace";
-diwako_dui_compass_style = ["diwako_dui\UI\compass_styles\bi\compass_limited.paa","diwako_dui\UI\compass_styles\bi\compass.paa"];
+diwako_dui_compass_style = ["\z\diwako_dui\addons\radar\UI\compass_styles\bi\compass_limited.paa","\z\diwako_dui\addons\radar\UI\compass_styles\bi\compass.paa"];
 force force diwako_dui_compassRange = 30;
 force force diwako_dui_compassRefreshrate = 0;
 force force diwako_dui_dir_showMildot = false;
 force force diwako_dui_distanceWarning = 3;
-force force diwako_dui_enable_compass = true;
+force diwako_dui_enable_compass = true;
 force force diwako_dui_enable_compass_dir = 1;
 force force diwako_dui_enable_occlusion = false;
 force force diwako_dui_enable_occlusion_cone = 360;
 force force diwako_dui_icon_style = "standard";
-force force diwako_dui_namelist = true;
+force diwako_dui_namelist = true;
 force force diwako_dui_namelist_only_buddy_icon = false;
 force force diwako_dui_show_squadbar = true;
+force force diwako_dui_radar_occlusion_fade_time = 10;
+force force diwako_dui_radar_trackingColor = [0.93,0.26,0.93,1];
+
 
 // NIArms
 force force niarms_magSwitch = false;
