@@ -9,7 +9,7 @@ class CfgVehicles {
         side = 3;
         vehicleClass = "Rotor_Paths";
         class EventHandlers {
-            init = "(_this #0) disableAI 'ALL'; (_this #0) setVariable ['r3_do_not_track', true];";
+            init = "(_this #0) disableAI 'ALL'; (_this #0) setVariable ['r3_do_not_track', true]; (_this #0) allowDamage false;";
             class CBA_Extended_EventHandlers: CBA_Extended_EventHandlers_base {};
         };
     };
