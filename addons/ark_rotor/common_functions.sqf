@@ -134,7 +134,7 @@ ark_rotor_fnc_taskAttack = {
         if ((_x distance2D (leader _grp)) < 5000) then {
             _nearEnemies pushBack _x;
         };
-    } forEach playableUnits + switchableUnits;
+    } forEach ((playableUnits + switchableUnits) select {isPlayer _x && {!(_x isKindOf "HeadlessClient_F")}});
 
     if (count _nearEnemies isEqualTo 0) exitWith {diag_log "[ARK] (Rotor) - No players to attack";};
     diag_log format ["[ARK] (Rotor) - Available enemies: %1",_nearEnemies];
