@@ -57,10 +57,6 @@ ark_rotor_fnc_checkWaypoints = {
 
     _vrUnit = _syncUnits #0;
 
-    if (isNil "_vrUnit") exitWith {
-        diag_log "[ARK] (Rotor) - No VR entity syncd with trigger";
-    };
-
     _vrUnit;
 };
 
