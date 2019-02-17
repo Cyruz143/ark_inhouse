@@ -43,7 +43,6 @@ ark_rotor_fnc_checkWaypoints = {
     params ["_trigger"];
 
     private _syncUnits = [];
-    private _vrUnit = nil;
 
     {
         if ((typeOf _x) isEqualTo "C_Jeff_VR") then {
@@ -55,7 +54,7 @@ ark_rotor_fnc_checkWaypoints = {
        diag_log "[ARK] (Rotor) - Only sync one VR entity to the trigger";
     };
 
-    _vrUnit = _syncUnits #0;
+    private _vrUnit = _syncUnits #0;
 
     _vrUnit;
 };
