@@ -1,3 +1,5 @@
+/* Credit to veteran29 for the code and sane damage values */
+
 player addEventHandler ["Hit", {
     params ["_unit"];
     [{
