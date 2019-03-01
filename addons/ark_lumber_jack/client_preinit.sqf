@@ -25,7 +25,8 @@ ark_lumber_jack_fnc_doChop = {
 
     [
         {
-             (_this #0) remoteExec ["hideObjectGlobal", 2]; 
+             (_this #0) remoteExec ["hideObjectGlobal", 2];
+             [(_this #0), false] remoteExec ["enableSimulationGlobal", 2];
         },
         [_nearestTree],
         10
