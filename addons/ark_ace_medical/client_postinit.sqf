@@ -25,7 +25,7 @@ ark_ace_medical_fnc_doDamage = {
 ["ace_unconscious", {
     params ["_unit", "_state"];
     
-    if (!_state || { !alive _unit }) exitWith {};
+    if (!local _unit || { !_state } || { !alive _unit }) exitWith {};
     
     // Must wait 2 frames for ACE medical damage to be applied!
     [{

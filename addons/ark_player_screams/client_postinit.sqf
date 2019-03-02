@@ -14,7 +14,7 @@ ark_player_screams_var_soundList = [
 ["ace_unconscious", {
     params ["_unit", "_state"];
     
-    if (!_state || { !alive _unit } || { !isNull objectParent _unit }) exitWith {};
+    if (!local _unit  || { !_state } || { !alive _unit } || { !isNull objectParent _unit }) exitWith {};
 
     private _sound = selectRandom ark_player_screams_var_soundList;
     playSound3D [_sound, _unit, false, getPosASL _unit, 1.25, (random [0.95,1,1.05]), 200];
