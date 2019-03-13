@@ -66,6 +66,18 @@ class CfgVehicles {
         class Supply130: ContainerSupply {
             MAXLOAD180
         };
+        class Supply140: ContainerSupply {
+            MAXLOAD180
+        };
+        class Supply150: ContainerSupply {
+            MAXLOAD180
+        };
+        class Supply160: ContainerSupply {
+            MAXLOAD180
+        };
+        class Supply170: ContainerSupply {
+            MAXLOAD180
+        };
         // Fixes USMs incorrect class use, can be removed if it ever gets fixed...
         class Supply280: ContainerSupply {
             MAXLOAD280
