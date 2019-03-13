@@ -11,6 +11,7 @@ class CfgPatches {
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {
             "ark_main",
+            "cup_weapons_ak"
             "cup_weapons_sa61",
             "cup_weapons_m1014",
             "cup_weapons_m136",
@@ -33,10 +34,8 @@ class CfgPatches {
             "CUP_Creatures_Military_TakiInsurgents",
             "CUP_Creatures_Military_USArmy",
             "CUP_Creatures_Military_USMC",
-            "hlcweapons_core",
-            "hlcweapons_aks",
             "skn_nbc_units",
-            "MNP_INDE_Config"
+            "MNP_INDE_Config" //mnp_indep
         };
         VERSION_CONFIG;
     };
