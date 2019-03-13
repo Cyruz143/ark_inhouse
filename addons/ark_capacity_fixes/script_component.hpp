@@ -4,8 +4,8 @@
 #include "\x\ark\addons\ark_main\script_mod.hpp"
 #include "\x\ark\addons\ark_main\script_macros.hpp"
 
-#define MAXLOAD140 \
-    maximumLoad = 140;
+#define MAXLOAD180 \
+    maximumLoad = 180;
 
 #define MAXLOAD280 \
     maximumLoad = 280;
