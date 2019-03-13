@@ -11,7 +11,7 @@ class CfgPatches {
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {
             "ark_main",
-            "cup_weapons_ak"
+            "cup_weapons_ak",
             "cup_weapons_sa61",
             "cup_weapons_m1014",
             "cup_weapons_m136",
