@@ -35,7 +35,7 @@ class CfgVehicles {
         scope = 2;
         displayName = "ARK: MRAWS Kitbag";
         class TransportMagazines {
-            class _xx_CUP_PG7VL_M {
+            class _xx_MRAWS_HEAT_F {
                 magazine = "MRAWS_HEAT_F";
                 count = 2;
             };
@@ -47,7 +47,7 @@ class CfgVehicles {
         scope = 2;
         displayName = "ARK: RPG-7 Fieldpack";
         class TransportMagazines {
-            class _xx_CUP_PG7VL_M {
+            class _xx_CUP_PG7VL_M_2 {
                 magazine = "CUP_PG7V_M";
                 count = 2;
             };
