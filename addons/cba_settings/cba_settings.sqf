@@ -211,6 +211,5 @@ force force diwako_dui_show_squadbar = true;
 force force diwako_dui_radar_occlusion_fade_time = 10;
 force force diwako_dui_radar_trackingColor = [0.93,0.26,0.93,1];
 
-
 // NIArms
 force force niarms_magSwitch = false;

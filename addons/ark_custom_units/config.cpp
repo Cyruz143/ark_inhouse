@@ -34,8 +34,7 @@ class CfgPatches {
             "CUP_Creatures_Military_TakiInsurgents",
             "CUP_Creatures_Military_USArmy",
             "CUP_Creatures_Military_USMC",
-            "skn_nbc_units",
-            "MNP_INDE_Config" //mnp_indep
+            "skn_nbc_units"
         };
         VERSION_CONFIG;
     };

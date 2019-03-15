@@ -54,7 +54,7 @@ class CfgVehicles {
         magazines[] = {"200Rnd_556x45_Box_Tracer_Red_F","200Rnd_556x45_Box_Tracer_Red_F","SmokeShellBlue","HandGrenade"};
         respawnMagazines[] = {"200Rnd_556x45_Box_Tracer_Red_F","200Rnd_556x45_Box_Tracer_Red_F","SmokeShellBlue","HandGrenade"};
     };
-    
+
     class B_GEN_Soldier_SG_F: B_GEN_Soldier_F {
         displayName = "Gendarmerie Breacher";
         weapons[] = {"CUP_sgun_M1014","Throw","Put"};
@@ -84,7 +84,7 @@ class CfgVehicles {
         linkedItems[] = {"H_MilCap_blue", "V_TacVest_gen_F", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio"};
         respawnLinkedItems[] = {"H_MilCap_blue", "V_TacVest_gen_F", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio"};
     };
-    
+
     class B_GEN_Soldier_Pilot_F: B_GEN_Soldier_F {
         displayName = "Gendarmerie Pilot";
         weapons[] = {"CUP_hgun_Glock17","Throw","Put"};
@@ -270,42 +270,6 @@ class CfgVehicles {
         respawnMagazines[] = {"CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M"};
     };
 
-    class MNP_FIN_Soldier_O;
-    class MNP_FIN_Soldier_AT: MNP_FIN_Soldier_O {
-        displayName = "Rifleman (AT)";
-        backpack = "B_Kitbag_rgr";
-        weapons[] = {"launch_MRAWS_green_rail_F","hlc_rifle_RK62","Throw","put"};
-        respawnweapons[] = {"launch_MRAWS_green_rail_F","hlc_rifle_RK62","Throw","put"};
-        magazines[] = {"HandGrenade","HandGrenade","MRAWS_HEAT_F","MRAWS_HEAT_F","CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M"};
-        respawnmagazines[] = {"HandGrenade","HandGrenade","MRAWS_HEAT_F","MRAWS_HEAT_F","CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M"};
-    };
-
-    class MNP_FIN_Soldier_MAT: MNP_FIN_Soldier_AT {
-        displayName = "AT Specialist (NLAW)";
-        weapons[] = {"CUP_launch_NLAW","hlc_rifle_RK62","Throw","put"};
-        respawnweapons[] = {"CUP_launch_NLAW","hlc_rifle_RK62","Throw","put"};
-        magazines[] = {"CUP_NLAW_M","HandGrenade","HandGrenade","CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M"};
-        respawnmagazines[] = {"CUP_NLAW_M","HandGrenade","HandGrenade","CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M"};
-    };
-
-    class MNP_AFIN_Soldier_F;
-    class MNP_AFIN_Soldier_AT: MNP_AFIN_Soldier_F {
-        displayName = "Rifleman (AT)";
-        backpack = "B_Kitbag_rgr";
-        weapons[] = {"launch_MRAWS_green_rail_F","hlc_rifle_RK62","Throw","put"};
-        respawnweapons[] = {"launch_MRAWS_green_rail_F","hlc_rifle_RK62","Throw","put"};
-        magazines[] = {"HandGrenade","HandGrenade","MRAWS_HEAT_F","MRAWS_HEAT_F","CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M"};
-        respawnmagazines[] = {"HandGrenade","HandGrenade","MRAWS_HEAT_F","MRAWS_HEAT_F","CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M"};
-    };
-
-    class MNP_AFIN_Soldier_MAT: MNP_AFIN_Soldier_AT {
-        displayName = "AT Specialist (NLAW)";
-        weapons[] = {"CUP_launch_NLAW","hlc_rifle_RK62","Throw","put"};
-        respawnweapons[] = {"CUP_launch_NLAW","hlc_rifle_RK62","Throw","put"};
-        magazines[] = {"CUP_NLAW_M","HandGrenade","HandGrenade","CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M"};
-        respawnmagazines[] = {"CUP_NLAW_M","HandGrenade","HandGrenade","CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M"};
-    };
-
     //OPFOR
     class O_Soldier_LAT_F;
     class O_Soldier_RPG18_F: O_Soldier_LAT_F {
@@ -315,7 +279,7 @@ class CfgVehicles {
         magazines[] = {"30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","HandGrenade","HandGrenade","SmokeShell","SmokeShellGreen","Chemlight_green","Chemlight_green"};
         respawnMagazines[] = {"30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","HandGrenade","HandGrenade","SmokeShell","SmokeShellGreen","Chemlight_green","Chemlight_green"};
     };
-    
+
     class O_soldierU_LAT_F;
     class O_soldierU_RPG18_F: O_soldierU_LAT_F {
         displayName = "Rifleman (RPG-18)";
@@ -403,7 +367,7 @@ class CfgVehicles {
         uniformClass = "skn_u_nbc_opf_blue";
         icon = "iconManMG";
         role = "MachineGunner";
-        backpack = "B_Kitbag_rgr_RPK74"; 
+        backpack = "B_Kitbag_rgr_RPK74";
         weapons[] = {"CUP_arifle_RPK74M_railed", "Throw", "Put"};
         respawnWeapons[] = {"CUP_arifle_RPK74M_railed", "Throw", "Put"};
         magazines[] = {"CUP_45Rnd_TE4_LRT4_Green_Tracer_545x39_RPK74M_M", "CUP_45Rnd_TE4_LRT4_Green_Tracer_545x39_RPK74M_M", "CUP_45Rnd_TE4_LRT4_Green_Tracer_545x39_RPK74M_M", "SmokeShell", "SmokeShellGreen"};
@@ -611,7 +575,7 @@ class CfgVehicles {
         linkedItems[] = {"CUP_H_RUS_ZSH_Shield_Up", "CUP_V_O_TK_CrewBelt", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio"};
         respawnLinkedItems[] = {"CUP_H_RUS_ZSH_Shield_Up", "CUP_V_O_TK_CrewBelt", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio"};
     };
-    
+
     // Custom Gend SWAT units
     class B_Soldier_F;
     class B_GEN_SWAT_base_F: B_Soldier_F {
@@ -627,7 +591,7 @@ class CfgVehicles {
         scopeArsenal = 0;
         scopeCurator = 0;
     };
-    
+
     class B_GEN_SWAT_LAT_F: B_GEN_SWAT_base_F {
         scope = 2;
         scopeArsenal = 2;
