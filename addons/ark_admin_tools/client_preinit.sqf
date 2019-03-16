@@ -57,57 +57,65 @@ ark_admin_tools_eh_mapClickTeleport = {
 };
 
 ark_admin_tools_fnc_createDebugMarkers = {
-    private ["_deleteMarkers"];
-    _deleteMarkers = if (count _this > 0) then {_this #0} else {false};
+    params ["_enabled"];
 
-    call {
-        if (!_deleteMarkers && {isNil {ark_admin_canUpdateMarkers} || {!ark_admin_canUpdateMarkers}}) then {
-            ark_admin_canUpdateMarkers = true;
-            ark_admin_sideCountMarkers = [];
-            private ["_sides", "_sideColors"];
-            _sides = [EAST, WEST, RESISTANCE, CIVILIAN];
-            _sideColors = ["ColorRed", "ColorBlue", "ColorGreen", "ColorPink"];
-            for "_i" from 0 to (count _sides) - 1 do {
-                private ["_markerName", "_side"];
-                _side = _sides select _i;
-                _markerName = format ["ark_admin_sideCountMarker_%1", _side];
-                createMarkerLocal [_markerName, [-500, 1500 + _i * 200]];
-                _markerName setMarkerShapeLocal "ICON";
-                _markerName setMarkerTypeLocal "mil_dot";
-                _markerName setMarkerColorLocal (_sideColors select _i);
-                _markerName setMarkerTextLocal format ["%1: %2", _side, {side _x == _side} count allUnits];
-                _markerName setMarkerSizeLocal [1,1];
-                ark_admin_sideCountMarkers set [count ark_admin_sideCountMarkers, _side];
-            };
-            [] spawn {
-                while {ark_admin_canUpdateMarkers} do {
-                    {
-                        private "_marker";
-                        _marker = _x getVariable "ark_admin_unitMarker";
-                        if (!isNil {_marker}) then {
-                            deleteMarkerLocal _marker;
-                        }
-                    } foreach allDead;
-                    sleep 30;
+    if (_enabled && {isNil {ark_admin_canUpdateMarkers} || {!ark_admin_canUpdateMarkers}}) then {
+        ark_admin_canUpdateMarkers = true;
+        ark_admin_sideCountMarkers = [];
+        private _sides = [EAST, WEST, RESISTANCE, CIVILIAN];
+        private _sideColors = ["ColorRed", "ColorBlue", "ColorGreen", "ColorPink"];
+        for "_i" from 0 to (count _sides) - 1 do {
+            private _side = _sides select _i;
+            private _markerName = format ["ark_admin_sideCountMarker_%1", _side];
+            createMarkerLocal [_markerName, [-500, 1500 + _i * 200]];
+            _markerName setMarkerShapeLocal "ICON";
+            _markerName setMarkerTypeLocal "mil_dot";
+            _markerName setMarkerColorLocal (_sideColors select _i);
+            _markerName setMarkerTextLocal format ["%1: %2", _side, {side _x == _side} count allUnits];
+            _markerName setMarkerSizeLocal [1,1];
+            ark_admin_sideCountMarkers set [count ark_admin_sideCountMarkers, _side];
+        };
+
+        [
+            {
+                params ["_args", "_id"];
+
+                if (!ark_admin_canUpdateMarkers) exitWith {
+                    _id call CBA_fnc_removePerFrameHandler;
                 };
-            };
-            while {ark_admin_canUpdateMarkers} do {
+
                 {
-                    private ["_unit", "_marker"];
-                    _unit = _x;
-                    _marker = _unit getVariable "ark_admin_unitMarker";
+                    private _marker = _x getVariable "ark_admin_unitMarker";
+                    if (!isNil {_marker}) then {
+                        deleteMarkerLocal _marker;
+                    }
+                } foreach allDead;
+            },
+            10
+        ] call CBA_fnc_addPerFrameHandler;
+
+        [
+            {
+                params ["_args", "_id"];
+                _args params ["_sides"];
+
+                if (!ark_admin_canUpdateMarkers) exitWith {
+                    _id call CBA_fnc_removePerFrameHandler;
+                };
+
+                {
+                    private _unit = _x;
+                    private _marker = _unit getVariable "ark_admin_unitMarker";
                     if (!isNil {_marker}) then {
                         _marker setMarkerPosLocal getPosATL _unit;
                         _marker setMarkerDirLocal getDir _unit;
                     } else {
-                        private ["_markerName", "_sideIndex", "_sideColor"];
-                        _markerName = format ["ark_admin_unitMarker_%1", _unit];
+                        private _markerName = format ["ark_admin_unitMarker_%1", _unit];
                         _unit setVariable ["ark_admin_unitMarker", _markerName, false];
-                        _sideIndex = _sides find side _unit;
+                        private _sideIndex = _sides find side _unit;
+                        private _sideColor = "ColorWhite";
                         if (_sideIndex >= 0) then {
                             _sideColor = ["ColorRed", "ColorBlue", "ColorGreen", "ColorPink"] select _sideIndex;
-                        } else {
-                            _sideColor = "ColorWhite";
                         };
                         createMarkerLocal [_markerName, getPosATL _unit];
                         _markerName setMarkerShapeLocal "ICON";
@@ -121,37 +129,38 @@ ark_admin_tools_fnc_createDebugMarkers = {
                         };
                     };
                 } foreach allUnits;
+
                 {
                     private "_markerName";
                     _side = _x;
                     (format ["ark_admin_sideCountMarker_%1", _side]) setMarkerTextLocal format ["%1: %2", _side, {side _x == _side} count allUnits];
                 } foreach ark_admin_sideCountMarkers;
-                sleep 4;
-            };
-        };
-        if (_deleteMarkers && {!isNil {ark_admin_canUpdateMarkers}} && {ark_admin_canUpdateMarkers}) then {
-            ark_admin_canUpdateMarkers = false;
-            {
-                private "_marker";
-                _marker = _x getVariable "ark_admin_unitMarker";
-                if (!isNil {_marker}) then {
-                    _x setVariable ["ark_admin_unitMarker", nil, false];
-                    deleteMarkerLocal _marker;
-                }
-            } foreach allUnits;
-            {
-                private "_marker";
-                _marker = _x getVariable "ark_admin_unitMarker";
-                if (!isNil {_marker}) then {
-                    _x setVariable ["ark_admin_unitMarker", nil, false];
-                    deleteMarkerLocal _marker;
-                }
-            } foreach allDead;
-            {
-                deleteMarkerLocal (format ["ark_admin_sideCountMarker_%1", _x]);
-            } foreach ark_admin_sideCountMarkers;
-            ark_admin_sideCountMarkers = nil;
-        };
+            },
+            3,
+            [_sides]
+        ] call CBA_fnc_addPerFrameHandler;
+    };
+
+    if (!_enabled && {!isNil {ark_admin_canUpdateMarkers}} && {ark_admin_canUpdateMarkers}) then {
+        ark_admin_canUpdateMarkers = false;
+        {
+            private _marker = _x getVariable "ark_admin_unitMarker";
+            if (!isNil {_marker}) then {
+                _x setVariable ["ark_admin_unitMarker", nil, false];
+                deleteMarkerLocal _marker;
+            }
+        } foreach allUnits;
+        {
+            private _marker = _x getVariable "ark_admin_unitMarker";
+            if (!isNil {_marker}) then {
+                _x setVariable ["ark_admin_unitMarker", nil, false];
+                deleteMarkerLocal _marker;
+            }
+        } foreach allDead;
+        {
+            deleteMarkerLocal (format ["ark_admin_sideCountMarker_%1", _x]);
+        } foreach ark_admin_sideCountMarkers;
+        ark_admin_sideCountMarkers = nil;
     };
 };
 
@@ -159,11 +168,7 @@ ark_admin_tools_fnc_aiDebug = {
     params ["_enabled"];
 
     ark_aiDebugEnabled = _enabled;
-    if (_enabled) then {
-        [] spawn ark_admin_tools_fnc_createDebugMarkers;
-    } else {
-        [true] spawn ark_admin_tools_fnc_createDebugMarkers;
-    };
+    _enabled call ark_admin_tools_fnc_createDebugMarkers;
 };
 
 ark_admin_tools_fnc_detachCrate = {
@@ -220,9 +225,9 @@ ark_admin_tools_fnc_ammoDrop = {
     _smoke attachTo [_parachute, [0,0,0]];
 
    [
-        {getPos (_this #0) #2 < 1.5}, 
+        {getPos (_this #0) #2 < 1.5},
         {[(_this #0),(_this #1),(_this #2),(_this #3)] call ark_admin_tools_fnc_detachCrate;},
-        [_ammoBox, _parachute,_smoke, _player], 
+        [_ammoBox, _parachute,_smoke, _player],
         45,
         {[(_this #0),(_this #1),(_this #2),(_this #3)] call ark_admin_tools_fnc_detachCrate;}
     ] call CBA_fnc_waitUntilAndExecute;

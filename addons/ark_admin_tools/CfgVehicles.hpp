@@ -62,46 +62,46 @@ class CfgVehicles {
 
                     class Enable_AI_Debug : ARK_Action {
                         displayName = "Enable AI Debug";
-                        condition = "!ark_aiDebugEnabled"; 
-                        statement = "[true] call ark_admin_tools_fnc_aiDebug;";
+                        condition = "!ark_aiDebugEnabled";
+                        statement = "true call ark_admin_tools_fnc_aiDebug;";
                         icon = "\x\ark\addons\ark_main\resources\ai_enable.paa";
                     };
 
                     class Disable_AI_Debug : ARK_Action {
                         displayName = "Disable AI Debug";
-                        condition = "ark_aiDebugEnabled"; 
-                        statement = "[false] call ark_admin_tools_fnc_aiDebug;";
+                        condition = "ark_aiDebugEnabled";
+                        statement = "false call ark_admin_tools_fnc_aiDebug;";
                         icon = "\x\ark\addons\ark_main\resources\ai_disable.paa";
                     };
 
                     class Enable_Click_Teleport : ARK_Action {
                         displayName = "Enable Global Click Teleport";
-                        condition = "!ark_mapTeleportEnabled"; 
+                        condition = "!ark_mapTeleportEnabled";
                         statement = "[true] call ark_admin_tools_fnc_assignMapTeleport;";
                         icon = "\x\ark\addons\ark_main\resources\click_enable.paa";
                     };
 
                     class Disable_Click_Teleport : ARK_Action {
                         displayName = "Disable Global Click Teleport";
-                        condition = "ark_mapTeleportEnabled"; 
+                        condition = "ark_mapTeleportEnabled";
                         statement = "[false] call ark_admin_tools_fnc_assignMapTeleport;";
                         icon = "\x\ark\addons\ark_main\resources\click_disable.paa";
                     };
 
                     class Call_Attack_Helo : ARK_Action {
                         displayName = "Call Attack Helo";
-                        condition = "[] call ark_admin_tools_fnc_isAdmiralEnabled && !(call ark_admin_tools_fnc_isTownSweep)"; 
+                        condition = "[] call ark_admin_tools_fnc_isAdmiralEnabled && !(call ark_admin_tools_fnc_isTownSweep)";
                         statement = "[player] remoteExecCall ['ark_admin_tools_fnc_callAttackHelo',2]";
                         icon = "\a3\Ui_f\data\GUI\Cfg\CommunicationMenu\casheli_ca.paa";
                     };
 
                     class Call_Armour : ARK_Action {
                         displayName = "Call Attack Armour";
-                        condition = "[] call ark_admin_tools_fnc_isAdmiralEnabled && !(call ark_admin_tools_fnc_isTownSweep)"; 
+                        condition = "[] call ark_admin_tools_fnc_isAdmiralEnabled && !(call ark_admin_tools_fnc_isTownSweep)";
                         statement = "[player] remoteExecCall ['ark_admin_tools_fnc_callArmour',2]";
                         icon = "\A3\ui_f\data\map\vehicleicons\iconTank_ca.paa";
                     };
-                    
+
                 };
             };
         };
