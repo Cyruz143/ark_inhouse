@@ -15,6 +15,7 @@ class CfgWeapons {
     class CUP_V_PMC_CIRAS_Base;
     class CUP_Vest_RACS_Camo_Base;
     class CUP_Vest_RUS_Camo_Base;
+    class CUP_Vest_RUS_Camo_Ratnik_Base;
     class CUP_Vest_TK_Camo_Base;
     class CUP_Vest_TKI_Camo_Base;
     class CUP_Vest_CIV_Base;
@@ -552,6 +553,18 @@ class CfgWeapons {
         scope = 1;
         class ItemInfo;
     };
+    class CUP_V_RUS_6B45_1: CUP_Vest_RUS_Camo_Ratnik_Base {
+        scope = 1;
+        class ItemInfo;
+    };
+    class CUP_V_RUS_6B45_2: CUP_Vest_RUS_Camo_Ratnik_Base {
+        scope = 1;
+        class ItemInfo;
+    };
+    class CUP_V_RUS_6B45_3: CUP_Vest_RUS_Camo_Ratnik_Base {
+        scope = 1;
+        class ItemInfo;
+    };
     class CUP_V_O_SLA_Carrier_Belt: CUP_Vest_Camo_Base {
         scope = 1;
         class ItemInfo;
@@ -573,6 +586,74 @@ class CfgWeapons {
         class ItemInfo;
     };
     class CUP_V_O_SLA_Flak_Vest03: CUP_Vest_Camo_Base {
+        scope = 1;
+        class ItemInfo;
+    };
+    class CUP_V_O_SLA_6B3_1_DES: CUP_Vest_Camo_Base {
+        scope = 1;
+        class ItemInfo;
+    };
+    class CUP_V_O_SLA_6B3_1_URB: CUP_Vest_Camo_Base {
+        scope = 1;
+        class ItemInfo;
+    };
+    class CUP_V_O_SLA_6B3_1_WDL: CUP_Vest_Camo_Base {
+        scope = 1;
+        class ItemInfo;
+    };
+    class CUP_V_O_SLA_6B3_2_DES: CUP_Vest_Camo_Base {
+        scope = 1;
+        class ItemInfo;
+    };
+    class CUP_V_O_SLA_6B3_2_URB: CUP_Vest_Camo_Base {
+        scope = 1;
+        class ItemInfo;
+    };
+    class CUP_V_O_SLA_6B3_2_WDL: CUP_Vest_Camo_Base {
+        scope = 1;
+        class ItemInfo;
+    };
+    class CUP_V_O_SLA_6B3_3_DES: CUP_Vest_Camo_Base {
+        scope = 1;
+        class ItemInfo;
+    };
+    class CUP_V_O_SLA_6B3_3_URB: CUP_Vest_Camo_Base {
+        scope = 1;
+        class ItemInfo;
+    };
+    class CUP_V_O_SLA_6B3_3_WDL: CUP_Vest_Camo_Base {
+        scope = 1;
+        class ItemInfo;
+    };
+    class CUP_V_O_SLA_6B3_4_DES: CUP_Vest_Camo_Base {
+        scope = 1;
+        class ItemInfo;
+    };
+    class CUP_V_O_SLA_6B3_4_URB: CUP_Vest_Camo_Base {
+        scope = 1;
+        class ItemInfo;
+    };
+    class CUP_V_O_SLA_6B3_4_WDL: CUP_Vest_Camo_Base {
+        scope = 1;
+        class ItemInfo;
+    };
+    class CUP_V_O_SLA_6B3_5_DES: CUP_Vest_Camo_Base {
+        scope = 1;
+        class ItemInfo;
+    };
+    class CUP_V_O_SLA_6B3_5_URB: CUP_Vest_Camo_Base {
+        scope = 1;
+        class ItemInfo;
+    };
+    class CUP_V_O_SLA_6B3_5_WDL: CUP_Vest_Camo_Base {
+        scope = 1;
+        class ItemInfo;
+    };
+    class CUP_V_O_SLA_M23_1_OD: CUP_Vest_Camo_Base {
+        scope = 1;
+        class ItemInfo;
+    };
+    class CUP_V_O_SLA_M23_1_BRN: CUP_Vest_Camo_Base {
         scope = 1;
         class ItemInfo;
     };
@@ -793,26 +874,6 @@ class CfgWeapons {
         class ItemInfo;
     };
     class CUP_V_B_Interceptor_Rifleman_DCU: CUP_Vest_Camo_Base {
-        scope = 1;
-        class ItemInfo;
-    };
-    class CUP_V_B_Interceptor_Base_DCU: CUP_Vest_Camo_Base {
-        scope = 1;
-        class ItemInfo;
-    };
-    class CUP_V_B_Interceptor_Base_M81: CUP_Vest_Camo_Base {
-        scope = 1;
-        class ItemInfo;
-    };
-    class CUP_V_B_Interceptor_Base_Olive: CUP_Vest_Camo_Base {
-        scope = 1;
-        class ItemInfo;
-    };
-    class CUP_V_B_Interceptor_Base_Coyote: CUP_Vest_Camo_Base {
-        scope = 1;
-        class ItemInfo;
-    };
-    class CUP_V_B_Interceptor_Base_Grey: CUP_Vest_Camo_Base {
         scope = 1;
         class ItemInfo;
     };
@@ -1624,266 +1685,6 @@ class CfgWeapons {
         scope = 1;
         class ItemInfo;
     };
-    class MNP_Vest_USMC: V_PlateCarrier3_rgr {
-        scope = 1;
-        class ItemInfo;
-    };
-    class MNP_Vest_USMC_2: V_PlateCarrier3_rgr {
-        scope = 1;
-        class ItemInfo;
-    };
-    class MNP_Vest_Canada_T: V_PlateCarrier3_rgr {
-        scope = 1;
-        class ItemInfo;
-    };
-    class MNP_Vest_Canada_T2: V_PlateCarrier3_rgr {
-        scope = 1;
-        class ItemInfo;
-    };
-    class MNP_Vest_Canada_D: V_PlateCarrier3_rgr {
-        scope = 1;
-        class ItemInfo;
-    };
-    class MNP_Vest_Canada_D2: V_PlateCarrier3_rgr {
-        scope = 1;
-        class ItemInfo;
-    };
-    class MNP_Vest_Germany: V_PlateCarrierIA2_dgtl {
-        scope = 1;
-        class ItemInfo;
-    };
-    class MNP_Vest_Germany_2: V_PlateCarrierIA2_dgtl {
-        scope = 1;
-        class ItemInfo;
-    };
-    class MNP_Vest_Germany_D: V_PlateCarrierIA2_dgtl {
-        scope = 1;
-        class ItemInfo;
-    };
-    class MNP_Vest_Germany_D2: V_PlateCarrierIA2_dgtl {
-        scope = 1;
-        class ItemInfo;
-    };
-    class MNP_Vest_ACU_1: V_PlateCarrierIA2_dgtl {
-        scope = 1;
-        class ItemInfo;
-    };
-    class MNP_Vest_ACU_2: V_PlateCarrierIA2_dgtl {
-        scope = 1;
-        class ItemInfo;
-    };
-    class MNP_Vest_Australia: V_PlateCarrierIA2_dgtl {
-        scope = 1;
-        class ItemInfo;
-    };
-    class MNP_Vest_Australia_B: V_PlateCarrierIA2_dgtl {
-        scope = 1;
-        class ItemInfo;
-    };
-    class MNP_Vest_ROK_1: V_PlateCarrierIA2_dgtl {
-        scope = 1;
-        class ItemInfo;
-    };
-    class MNP_Vest_ROK_2: V_PlateCarrierIA2_dgtl {
-        scope = 1;
-        class ItemInfo;
-    };
-    class MNP_Vest_M81: V_PlateCarrierIA2_dgtl {
-        scope = 1;
-        class ItemInfo;
-    };
-    class MNP_Vest_M81b: V_PlateCarrierIA2_dgtl {
-        scope = 1;
-        class ItemInfo;
-    };
-    class MNP_Vest_DS_1: V_PlateCarrierIA2_dgtl {
-        scope = 1;
-        class ItemInfo;
-    };
-    class MNP_Vest_DS_2: V_PlateCarrierIA2_dgtl {
-        scope = 1;
-        class ItemInfo;
-    };
-    class MNP_Vest_TS_1: V_PlateCarrierIA2_dgtl {
-        scope = 1;
-        class ItemInfo;
-    };
-    class MNP_Vest_TS_2: V_PlateCarrierIA2_dgtl {
-        scope = 1;
-        class ItemInfo;
-    };
-    class MNP_Vest_Scorpion_1: V_PlateCarrierIA2_dgtl {
-        scope = 1;
-        class ItemInfo;
-    };
-    class MNP_Vest_Scorpion_2: V_PlateCarrierIA2_dgtl {
-        scope = 1;
-        class ItemInfo;
-    };
-    class MNP_Vest_UKR_A: V_PlateCarrierIA2_dgtl {
-        scope = 1;
-        class ItemInfo;
-    };
-    class MNP_Vest_UKR_B: V_PlateCarrierIA2_dgtl {
-        scope = 1;
-        class ItemInfo;
-    };
-    class MNP_Vest_AMCU: V_PlateCarrier3_rgr {
-        scope = 1;
-        class ItemInfo;
-    };
-    class MNP_Vest_AMCU_2: V_PlateCarrier3_rgr {
-        scope = 1;
-        class ItemInfo;
-    };
-    class MNP_V_M81_Harness: V_HarnessO_brn {
-        scope = 1;
-        class ItemInfo;
-    };
-    class MNP_V_M81_GL_Harness: V_HarnessO_brn {
-        scope = 1;
-        class ItemInfo;
-    };
-    class MNP_V_OD_Harness: MNP_V_M81_Harness {
-        scope = 1;
-        class ItemInfo;
-    };
-    class MNP_V_OD_GL_Harness: MNP_V_M81_GL_Harness {
-        scope = 1;
-        class ItemInfo;
-    };
-    class MNP_Vest_OD_A: V_PlateCarrierIA2_dgtl {
-        scope = 1;
-        class ItemInfo;
-    };
-    class MNP_Vest_OD_B: V_PlateCarrierIA2_dgtl {
-        scope = 1;
-        class ItemInfo;
-    };
-    class MNP_Vest_Light_M81: V_PlateCarrierIA2_dgtl {
-        scope = 1;
-        class ItemInfo;
-    };
-    class MNP_Vest_Light_OD: V_PlateCarrierIA2_dgtl {
-        scope = 1;
-        class ItemInfo;
-    };
-    class MNP_Vest_Ireland: V_PlateCarrierIA2_dgtl {
-        scope = 1;
-        class ItemInfo;
-    };
-    class MNP_Vest_Ireland_B: V_PlateCarrierIA2_dgtl {
-        scope = 1;
-        class ItemInfo;
-    };
-    class MNP_Vest_ASA_1: V_PlateCarrierIA2_dgtl {
-        scope = 1;
-        class ItemInfo;
-    };
-    class MNP_Vest_ASA_2: V_PlateCarrierIA2_dgtl {
-        scope = 1;
-        class ItemInfo;
-    };
-    class MNP_Vest_FIN_1: V_PlateCarrierIA2_dgtl {
-        scope = 1;
-        class ItemInfo;
-    };
-    class MNP_Vest_FIN_2: V_PlateCarrierIA2_dgtl {
-        scope = 1;
-        class ItemInfo;
-    };
-    class MNP_Vest_Light_DPM: V_PlateCarrierIA2_dgtl {
-        scope = 1;
-        class ItemInfo;
-    };
-    class MNP_Vest_Light_DPM_D: V_PlateCarrierIA2_dgtl {
-        scope = 1;
-        class ItemInfo;
-    };
-    class MNP_Vest_NZ_1: V_PlateCarrierIA2_dgtl {
-        scope = 1;
-        class ItemInfo;
-    };
-    class MNP_Vest_NZ_2: V_PlateCarrierIA2_dgtl {
-        scope = 1;
-        class ItemInfo;
-    };
-    class MNP_Vest_NOR_1: V_PlateCarrierIA2_dgtl {
-        scope = 1;
-        class ItemInfo;
-    };
-    class MNP_Vest_NOR_2: V_PlateCarrierIA2_dgtl {
-        scope = 1;
-        class ItemInfo;
-    };
-    class MNP_Vest_NOR_D_1: V_PlateCarrierIA2_dgtl {
-        scope = 1;
-        class ItemInfo;
-    };
-    class MNP_Vest_NOR_D_2: V_PlateCarrierIA2_dgtl {
-        scope = 1;
-        class ItemInfo;
-    };
-    class MNP_Vest_ChinaH_T: V_PlateCarrierIA2_dgtl {
-        scope = 1;
-        class ItemInfo;
-    };
-    class MNP_Vest_ChinaH_T2: V_PlateCarrierIA2_dgtl {
-        scope = 1;
-        class ItemInfo;
-    };
-    class MNP_Vest_ChinaH_D: V_PlateCarrierIA2_dgtl {
-        scope = 1;
-        class ItemInfo;
-    };
-    class MNP_Vest_ChinaH_D2: V_PlateCarrierIA2_dgtl {
-        scope = 1;
-        class ItemInfo;
-    };
-    class MNP_Vest_RU_T: V_PlateCarrierIA2_dgtl {
-        scope = 1;
-        class ItemInfo;
-    };
-    class MNP_Vest_RU_T2: V_PlateCarrierIA2_dgtl {
-        scope = 1;
-        class ItemInfo;
-    };
-    class MNP_Vest_RU_D: V_PlateCarrierIA2_dgtl {
-        scope = 1;
-        class ItemInfo;
-    };
-    class MNP_Vest_RU_D2: V_PlateCarrierIA2_dgtl {
-        scope = 1;
-        class ItemInfo;
-    };
-    class MNP_Vest_RUMED: V_PlateCarrierIA2_dgtl {
-        scope = 1;
-        class ItemInfo;
-    };
-    class MNP_Vest_RUMED_B: V_PlateCarrierIA2_dgtl {
-        scope = 1;
-        class ItemInfo;
-    };
-    class MNP_Vest_Light_RU: V_PlateCarrierIA2_dgtl {
-        scope = 1;
-        class ItemInfo;
-    };
-    class MNP_Vest_Light_R2: V_PlateCarrierIA2_dgtl {
-        scope = 1;
-        class ItemInfo;
-    };
-    class MNP_Vest_Light_R3: V_PlateCarrierIA2_dgtl {
-        scope = 1;
-        class ItemInfo;
-    };
-    class MNP_Vest_ChinaH_J: V_PlateCarrierIA2_dgtl {
-        scope = 1;
-        class ItemInfo;
-    };
-    class MNP_Vest_ChinaH_J2: V_PlateCarrierIA2_dgtl {
-        scope = 1;
-        class ItemInfo;
-    };
     class skn_o_elbv_worn_no_bp: skn_o_elbv_worn {
         scope = 1;
         class ItemInfo;
@@ -1948,6 +1749,66 @@ class CfgWeapons {
         scope = 1;
         class ItemInfo;
     };
+    class MNP_Vest_ChinaH_T: V_PlateCarrierIA2_dgtl {
+        scope = 1;
+        class ItemInfo;
+    };
+    class MNP_Vest_ChinaH_T2: V_PlateCarrierIA2_dgtl {
+        scope = 1;
+        class ItemInfo;
+    };
+    class MNP_Vest_ChinaH_D: V_PlateCarrierIA2_dgtl {
+        scope = 1;
+        class ItemInfo;
+    };
+    class MNP_Vest_ChinaH_D2: V_PlateCarrierIA2_dgtl {
+        scope = 1;
+        class ItemInfo;
+    };
+    class MNP_Vest_RU_T: V_PlateCarrierIA2_dgtl {
+        scope = 1;
+        class ItemInfo;
+    };
+    class MNP_Vest_RU_T2: V_PlateCarrierIA2_dgtl {
+        scope = 1;
+        class ItemInfo;
+    };
+    class MNP_Vest_RU_D: V_PlateCarrierIA2_dgtl {
+        scope = 1;
+        class ItemInfo;
+    };
+    class MNP_Vest_RU_D2: V_PlateCarrierIA2_dgtl {
+        scope = 1;
+        class ItemInfo;
+    };
+    class MNP_Vest_RUMED: V_PlateCarrierIA2_dgtl {
+        scope = 1;
+        class ItemInfo;
+    };
+    class MNP_Vest_RUMED_B: V_PlateCarrierIA2_dgtl {
+        scope = 1;
+        class ItemInfo;
+    };
+    class MNP_Vest_Light_RU: V_PlateCarrierIA2_dgtl {
+        scope = 1;
+        class ItemInfo;
+    };
+    class MNP_Vest_Light_R2: V_PlateCarrierIA2_dgtl {
+        scope = 1;
+        class ItemInfo;
+    };
+    class MNP_Vest_Light_R3: V_PlateCarrierIA2_dgtl {
+        scope = 1;
+        class ItemInfo;
+    };
+    class MNP_Vest_ChinaH_J: V_PlateCarrierIA2_dgtl {
+        scope = 1;
+        class ItemInfo;
+    };
+    class MNP_Vest_ChinaH_J2: V_PlateCarrierIA2_dgtl {
+        scope = 1;
+        class ItemInfo;
+    };
     class CUP_V_B_GER_Carrier_Rig_2: CUP_V_B_GER_Carrier_Rig {
         scope = 1;
         class ItemInfo;
@@ -1988,11 +1849,267 @@ class CfgWeapons {
         scope = 1;
         class ItemInfo;
     };
+    class MNP_Vest_USMC: V_PlateCarrier3_rgr {
+        scope = 1;
+        class ItemInfo;
+    };
+    class MNP_Vest_USMC_2: V_PlateCarrier3_rgr {
+        scope = 1;
+        class ItemInfo;
+    };
+    class MNP_Vest_Canada_T: V_PlateCarrier3_rgr {
+        scope = 1;
+        class ItemInfo;
+    };
+    class MNP_Vest_Canada_T2: V_PlateCarrier3_rgr {
+        scope = 1;
+        class ItemInfo;
+    };
+    class MNP_Vest_Canada_D: V_PlateCarrier3_rgr {
+        scope = 1;
+        class ItemInfo;
+    };
+    class MNP_Vest_Canada_D2: V_PlateCarrier3_rgr {
+        scope = 1;
+        class ItemInfo;
+    };
+    class MNP_Vest_Germany: V_PlateCarrierIA2_dgtl {
+        scope = 1;
+        class ItemInfo;
+    };
+    class MNP_Vest_Germany_2: V_PlateCarrierIA2_dgtl {
+        scope = 1;
+        class ItemInfo;
+    };
+    class MNP_Vest_Germany_D: V_PlateCarrierIA2_dgtl {
+        scope = 1;
+        class ItemInfo;
+    };
+    class MNP_Vest_Germany_D2: V_PlateCarrierIA2_dgtl {
+        scope = 1;
+        class ItemInfo;
+    };
+    class MNP_Vest_ACU_1: V_PlateCarrierIA2_dgtl {
+        scope = 1;
+        class ItemInfo;
+    };
+    class MNP_Vest_ACU_2: V_PlateCarrierIA2_dgtl {
+        scope = 1;
+        class ItemInfo;
+    };
+    class MNP_Vest_TS_1: V_PlateCarrierIA2_dgtl {
+        scope = 1;
+        class ItemInfo;
+    };
+    class MNP_Vest_TS_2: V_PlateCarrierIA2_dgtl {
+        scope = 1;
+        class ItemInfo;
+    };
+    class MNP_Vest_DS_1: V_PlateCarrierIA2_dgtl {
+        scope = 1;
+        class ItemInfo;
+    };
+    class MNP_Vest_DS_2: V_PlateCarrierIA2_dgtl {
+        scope = 1;
+        class ItemInfo;
+    };
+    class MNP_Vest_Australia: V_PlateCarrierIA2_dgtl {
+        scope = 1;
+        class ItemInfo;
+    };
+    class MNP_Vest_Australia_B: V_PlateCarrierIA2_dgtl {
+        scope = 1;
+        class ItemInfo;
+    };
+    class MNP_Vest_ROK_1: V_PlateCarrierIA2_dgtl {
+        scope = 1;
+        class ItemInfo;
+    };
+    class MNP_Vest_ROK_2: V_PlateCarrierIA2_dgtl {
+        scope = 1;
+        class ItemInfo;
+    };
+    class MNP_Vest_M81: V_PlateCarrierIA2_dgtl {
+        scope = 1;
+        class ItemInfo;
+    };
+    class MNP_Vest_M81b: V_PlateCarrierIA2_dgtl {
+        scope = 1;
+        class ItemInfo;
+    };
+    class MNP_Vest_OD_A: V_PlateCarrierIA2_dgtl {
+        scope = 1;
+        class ItemInfo;
+    };
+    class MNP_Vest_OD_B: V_PlateCarrierIA2_dgtl {
+        scope = 1;
+        class ItemInfo;
+    };
+    class MNP_Vest_Light_M81: V_PlateCarrierIA2_dgtl {
+        scope = 1;
+        class ItemInfo;
+    };
+    class MNP_Vest_Light_OD: V_PlateCarrierIA2_dgtl {
+        scope = 1;
+        class ItemInfo;
+    };
+    class MNP_Vest_UKR_A: V_PlateCarrierIA2_dgtl {
+        scope = 1;
+        class ItemInfo;
+    };
+    class MNP_Vest_UKR_B: V_PlateCarrierIA2_dgtl {
+        scope = 1;
+        class ItemInfo;
+    };
+    class MNP_Vest_Light_DPM: V_PlateCarrierIA2_dgtl {
+        scope = 1;
+        class ItemInfo;
+    };
+    class MNP_Vest_Light_DPM_D: V_PlateCarrierIA2_dgtl {
+        scope = 1;
+        class ItemInfo;
+    };
+    class MNP_Vest_ROKMC: V_PlateCarrier3_rgr {
+        scope = 1;
+        class ItemInfo;
+    };
+    class MNP_Vest_ROKMC_2: V_PlateCarrier3_rgr {
+        scope = 1;
+        class ItemInfo;
+    };
+    class MNP_Vest_Black_Tac_A: V_PlateCarrierIA2_dgtl {
+        scope = 1;
+        class ItemInfo;
+    };
+    class MNP_Vest_Black_Tac_B: V_PlateCarrierIA2_dgtl {
+        scope = 1;
+        class ItemInfo;
+    };
+    class MNP_Vest_USMC_Xtreme_A: V_PlateCarrierIA2_dgtl {
+        scope = 1;
+        class ItemInfo;
+    };
+    class MNP_Vest_USMC_Xtreme_B: V_PlateCarrierIA2_dgtl {
+        scope = 1;
+        class ItemInfo;
+    };
+    class MNP_Vest_AMCU: V_PlateCarrier3_rgr {
+        scope = 1;
+        class ItemInfo;
+    };
+    class MNP_Vest_AMCU_2: V_PlateCarrier3_rgr {
+        scope = 1;
+        class ItemInfo;
+    };
+    class MNP_V_M81_Harness: V_HarnessO_brn {
+        scope = 1;
+        class ItemInfo;
+    };
+    class MNP_V_M81_GL_Harness: V_HarnessO_brn {
+        scope = 1;
+        class ItemInfo;
+    };
+    class MNP_V_OD_Harness: MNP_V_M81_Harness {
+        scope = 1;
+        class ItemInfo;
+    };
+    class MNP_V_OD_GL_Harness: MNP_V_M81_GL_Harness {
+        scope = 1;
+        class ItemInfo;
+    };
+    class MNP_Vest_Scorpion_1: V_PlateCarrierIA2_dgtl {
+        scope = 1;
+        class ItemInfo;
+    };
+    class MNP_Vest_Scorpion_2: V_PlateCarrierIA2_dgtl {
+        scope = 1;
+        class ItemInfo;
+    };
+    class MNP_Vest_ISRKahki_1: V_PlateCarrierIA2_dgtl {
+        scope = 1;
+        class ItemInfo;
+    };
+    class MNP_Vest_ISRKahki_2: V_PlateCarrierIA2_dgtl {
+        scope = 1;
+        class ItemInfo;
+    };
+    class MNP_Vest_6co_A: V_PlateCarrierIA2_dgtl {
+        scope = 1;
+        class ItemInfo;
+    };
+    class MNP_Vest_6co_B: V_PlateCarrierIA2_dgtl {
+        scope = 1;
+        class ItemInfo;
+    };
+    class MNP_Vest_Ireland: V_PlateCarrierIA2_dgtl {
+        scope = 1;
+        class ItemInfo;
+    };
+    class MNP_Vest_Ireland_B: V_PlateCarrierIA2_dgtl {
+        scope = 1;
+        class ItemInfo;
+    };
+    class MNP_Vest_Olive_1: V_PlateCarrierIA2_dgtl {
+        scope = 1;
+        class ItemInfo;
+    };
+    class MNP_Vest_Olive_2: V_PlateCarrierIA2_dgtl {
+        scope = 1;
+        class ItemInfo;
+    };
+    class MNP_Vest_FIN_1: V_PlateCarrierIA2_dgtl {
+        scope = 1;
+        class ItemInfo;
+    };
+    class MNP_Vest_FIN_2: V_PlateCarrierIA2_dgtl {
+        scope = 1;
+        class ItemInfo;
+    };
+    class MNP_Vest_NZ_1: V_PlateCarrierIA2_dgtl {
+        scope = 1;
+        class ItemInfo;
+    };
+    class MNP_Vest_NZ_2: V_PlateCarrierIA2_dgtl {
+        scope = 1;
+        class ItemInfo;
+    };
+    class MNP_Vest_NOR_1: V_PlateCarrierIA2_dgtl {
+        scope = 1;
+        class ItemInfo;
+    };
+    class MNP_Vest_NOR_2: V_PlateCarrierIA2_dgtl {
+        scope = 1;
+        class ItemInfo;
+    };
+    class MNP_Vest_NOR_D_1: V_PlateCarrierIA2_dgtl {
+        scope = 1;
+        class ItemInfo;
+    };
+    class MNP_Vest_NOR_D_2: V_PlateCarrierIA2_dgtl {
+        scope = 1;
+        class ItemInfo;
+    };
+    class MNP_Vest_CZ_1: V_PlateCarrierIA2_dgtl {
+        scope = 1;
+        class ItemInfo;
+    };
+    class MNP_Vest_CZ_2: V_PlateCarrierIA2_dgtl {
+        scope = 1;
+        class ItemInfo;
+    };
     class CUP_V_CDF_OfficerBelt: CUP_V_CDF_CrewBelt {
         scope = 1;
         class ItemInfo;
     };
     class CUP_V_CDF_OfficerBelt2: CUP_V_CDF_CrewBelt {
+        scope = 1;
+        class ItemInfo;
+    };
+    class MNP_Vest_ASA_1: V_PlateCarrierIA2_dgtl {
+        scope = 1;
+        class ItemInfo;
+    };
+    class MNP_Vest_ASA_2: V_PlateCarrierIA2_dgtl {
         scope = 1;
         class ItemInfo;
     };
@@ -4888,1761 +5005,6 @@ class CfgWeapons {
             };
         };
     };
-    class MNP_Vest_USMC_ARM: MNP_Vest_USMC {
-        scope = 2;
-        class ItemInfo: ItemInfo {
-            class HitpointsProtectionInfo {
-                class Chest {
-                    HitpointName = "HitChest";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Diaphragm {
-                    HitpointName = "HitDiaphragm";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Abdomen {
-                    hitpointName = "HitAbdomen";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-                class Body {
-                    hitpointName = "HitBody";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-            };
-        };
-    };
-    class MNP_Vest_USMC_2_ARM: MNP_Vest_USMC_2 {
-        scope = 2;
-        class ItemInfo: ItemInfo {
-            class HitpointsProtectionInfo {
-                class Chest {
-                    HitpointName = "HitChest";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Diaphragm {
-                    HitpointName = "HitDiaphragm";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Abdomen {
-                    hitpointName = "HitAbdomen";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-                class Body {
-                    hitpointName = "HitBody";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-            };
-        };
-    };
-    class MNP_Vest_Canada_T_ARM: MNP_Vest_Canada_T {
-        scope = 2;
-        class ItemInfo: ItemInfo {
-            class HitpointsProtectionInfo {
-                class Chest {
-                    HitpointName = "HitChest";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Diaphragm {
-                    HitpointName = "HitDiaphragm";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Abdomen {
-                    hitpointName = "HitAbdomen";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-                class Body {
-                    hitpointName = "HitBody";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-            };
-        };
-    };
-    class MNP_Vest_Canada_T2_ARM: MNP_Vest_Canada_T2 {
-        scope = 2;
-        class ItemInfo: ItemInfo {
-            class HitpointsProtectionInfo {
-                class Chest {
-                    HitpointName = "HitChest";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Diaphragm {
-                    HitpointName = "HitDiaphragm";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Abdomen {
-                    hitpointName = "HitAbdomen";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-                class Body {
-                    hitpointName = "HitBody";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-            };
-        };
-    };
-    class MNP_Vest_Canada_D_ARM: MNP_Vest_Canada_D {
-        scope = 2;
-        class ItemInfo: ItemInfo {
-            class HitpointsProtectionInfo {
-                class Chest {
-                    HitpointName = "HitChest";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Diaphragm {
-                    HitpointName = "HitDiaphragm";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Abdomen {
-                    hitpointName = "HitAbdomen";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-                class Body {
-                    hitpointName = "HitBody";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-            };
-        };
-    };
-    class MNP_Vest_Canada_D2_ARM: MNP_Vest_Canada_D2 {
-        scope = 2;
-        class ItemInfo: ItemInfo {
-            class HitpointsProtectionInfo {
-                class Chest {
-                    HitpointName = "HitChest";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Diaphragm {
-                    HitpointName = "HitDiaphragm";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Abdomen {
-                    hitpointName = "HitAbdomen";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-                class Body {
-                    hitpointName = "HitBody";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-            };
-        };
-    };
-    class MNP_Vest_Germany_ARM: MNP_Vest_Germany {
-        scope = 2;
-        class ItemInfo: ItemInfo {
-            class HitpointsProtectionInfo {
-                class Chest {
-                    HitpointName = "HitChest";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Diaphragm {
-                    HitpointName = "HitDiaphragm";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Abdomen {
-                    hitpointName = "HitAbdomen";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-                class Body {
-                    hitpointName = "HitBody";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-            };
-        };
-    };
-    class MNP_Vest_Germany_2_ARM: MNP_Vest_Germany_2 {
-        scope = 2;
-        class ItemInfo: ItemInfo {
-            class HitpointsProtectionInfo {
-                class Chest {
-                    HitpointName = "HitChest";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Diaphragm {
-                    HitpointName = "HitDiaphragm";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Abdomen {
-                    hitpointName = "HitAbdomen";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-                class Body {
-                    hitpointName = "HitBody";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-            };
-        };
-    };
-    class MNP_Vest_Germany_D_ARM: MNP_Vest_Germany_D {
-        scope = 2;
-        class ItemInfo: ItemInfo {
-            class HitpointsProtectionInfo {
-                class Chest {
-                    HitpointName = "HitChest";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Diaphragm {
-                    HitpointName = "HitDiaphragm";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Abdomen {
-                    hitpointName = "HitAbdomen";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-                class Body {
-                    hitpointName = "HitBody";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-            };
-        };
-    };
-    class MNP_Vest_Germany_D2_ARM: MNP_Vest_Germany_D2 {
-        scope = 2;
-        class ItemInfo: ItemInfo {
-            class HitpointsProtectionInfo {
-                class Chest {
-                    HitpointName = "HitChest";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Diaphragm {
-                    HitpointName = "HitDiaphragm";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Abdomen {
-                    hitpointName = "HitAbdomen";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-                class Body {
-                    hitpointName = "HitBody";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-            };
-        };
-    };
-    class MNP_Vest_ACU_1_ARM: MNP_Vest_ACU_1 {
-        scope = 2;
-        class ItemInfo: ItemInfo {
-            class HitpointsProtectionInfo {
-                class Chest {
-                    HitpointName = "HitChest";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Diaphragm {
-                    HitpointName = "HitDiaphragm";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Abdomen {
-                    hitpointName = "HitAbdomen";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-                class Body {
-                    hitpointName = "HitBody";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-            };
-        };
-    };
-    class MNP_Vest_ACU_2_ARM: MNP_Vest_ACU_2 {
-        scope = 2;
-        class ItemInfo: ItemInfo {
-            class HitpointsProtectionInfo {
-                class Chest {
-                    HitpointName = "HitChest";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Diaphragm {
-                    HitpointName = "HitDiaphragm";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Abdomen {
-                    hitpointName = "HitAbdomen";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-                class Body {
-                    hitpointName = "HitBody";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-            };
-        };
-    };
-    class MNP_Vest_Australia_ARM: MNP_Vest_Australia {
-        scope = 2;
-        class ItemInfo: ItemInfo {
-            class HitpointsProtectionInfo {
-                class Chest {
-                    HitpointName = "HitChest";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Diaphragm {
-                    HitpointName = "HitDiaphragm";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Abdomen {
-                    hitpointName = "HitAbdomen";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-                class Body {
-                    hitpointName = "HitBody";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-            };
-        };
-    };
-    class MNP_Vest_Australia_B_ARM: MNP_Vest_Australia_B {
-        scope = 2;
-        class ItemInfo: ItemInfo {
-            class HitpointsProtectionInfo {
-                class Chest {
-                    HitpointName = "HitChest";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Diaphragm {
-                    HitpointName = "HitDiaphragm";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Abdomen {
-                    hitpointName = "HitAbdomen";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-                class Body {
-                    hitpointName = "HitBody";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-            };
-        };
-    };
-    class MNP_Vest_ROK_1_ARM: MNP_Vest_ROK_1 {
-        scope = 2;
-        class ItemInfo: ItemInfo {
-            class HitpointsProtectionInfo {
-                class Chest {
-                    HitpointName = "HitChest";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Diaphragm {
-                    HitpointName = "HitDiaphragm";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Abdomen {
-                    hitpointName = "HitAbdomen";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-                class Body {
-                    hitpointName = "HitBody";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-            };
-        };
-    };
-    class MNP_Vest_ROK_2_ARM: MNP_Vest_ROK_2 {
-        scope = 2;
-        class ItemInfo: ItemInfo {
-            class HitpointsProtectionInfo {
-                class Chest {
-                    HitpointName = "HitChest";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Diaphragm {
-                    HitpointName = "HitDiaphragm";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Abdomen {
-                    hitpointName = "HitAbdomen";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-                class Body {
-                    hitpointName = "HitBody";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-            };
-        };
-    };
-    class MNP_Vest_M81_ARM: MNP_Vest_M81 {
-        scope = 2;
-        class ItemInfo: ItemInfo {
-            class HitpointsProtectionInfo {
-                class Chest {
-                    HitpointName = "HitChest";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Diaphragm {
-                    HitpointName = "HitDiaphragm";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Abdomen {
-                    hitpointName = "HitAbdomen";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-                class Body {
-                    hitpointName = "HitBody";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-            };
-        };
-    };
-    class MNP_Vest_M81b_ARM: MNP_Vest_M81b {
-        scope = 2;
-        class ItemInfo: ItemInfo {
-            class HitpointsProtectionInfo {
-                class Chest {
-                    HitpointName = "HitChest";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Diaphragm {
-                    HitpointName = "HitDiaphragm";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Abdomen {
-                    hitpointName = "HitAbdomen";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-                class Body {
-                    hitpointName = "HitBody";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-            };
-        };
-    };
-    class MNP_Vest_DS_1_ARM: MNP_Vest_DS_1 {
-        scope = 2;
-        class ItemInfo: ItemInfo {
-            class HitpointsProtectionInfo {
-                class Chest {
-                    HitpointName = "HitChest";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Diaphragm {
-                    HitpointName = "HitDiaphragm";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Abdomen {
-                    hitpointName = "HitAbdomen";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-                class Body {
-                    hitpointName = "HitBody";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-            };
-        };
-    };
-    class MNP_Vest_DS_2_ARM: MNP_Vest_DS_2 {
-        scope = 2;
-        class ItemInfo: ItemInfo {
-            class HitpointsProtectionInfo {
-                class Chest {
-                    HitpointName = "HitChest";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Diaphragm {
-                    HitpointName = "HitDiaphragm";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Abdomen {
-                    hitpointName = "HitAbdomen";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-                class Body {
-                    hitpointName = "HitBody";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-            };
-        };
-    };
-    class MNP_Vest_TS_1_ARM: MNP_Vest_TS_1 {
-        scope = 2;
-        class ItemInfo: ItemInfo {
-            class HitpointsProtectionInfo {
-                class Chest {
-                    HitpointName = "HitChest";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Diaphragm {
-                    HitpointName = "HitDiaphragm";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Abdomen {
-                    hitpointName = "HitAbdomen";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-                class Body {
-                    hitpointName = "HitBody";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-            };
-        };
-    };
-    class MNP_Vest_TS_2_ARM: MNP_Vest_TS_2 {
-        scope = 2;
-        class ItemInfo: ItemInfo {
-            class HitpointsProtectionInfo {
-                class Chest {
-                    HitpointName = "HitChest";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Diaphragm {
-                    HitpointName = "HitDiaphragm";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Abdomen {
-                    hitpointName = "HitAbdomen";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-                class Body {
-                    hitpointName = "HitBody";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-            };
-        };
-    };
-    class MNP_Vest_Scorpion_1_ARM: MNP_Vest_Scorpion_1 {
-        scope = 2;
-        class ItemInfo: ItemInfo {
-            class HitpointsProtectionInfo {
-                class Chest {
-                    HitpointName = "HitChest";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Diaphragm {
-                    HitpointName = "HitDiaphragm";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Abdomen {
-                    hitpointName = "HitAbdomen";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-                class Body {
-                    hitpointName = "HitBody";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-            };
-        };
-    };
-    class MNP_Vest_Scorpion_2_ARM: MNP_Vest_Scorpion_2 {
-        scope = 2;
-        class ItemInfo: ItemInfo {
-            class HitpointsProtectionInfo {
-                class Chest {
-                    HitpointName = "HitChest";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Diaphragm {
-                    HitpointName = "HitDiaphragm";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Abdomen {
-                    hitpointName = "HitAbdomen";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-                class Body {
-                    hitpointName = "HitBody";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-            };
-        };
-    };
-    class MNP_Vest_UKR_A_ARM: MNP_Vest_UKR_A {
-        scope = 2;
-        class ItemInfo: ItemInfo {
-            class HitpointsProtectionInfo {
-                class Chest {
-                    HitpointName = "HitChest";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Diaphragm {
-                    HitpointName = "HitDiaphragm";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Abdomen {
-                    hitpointName = "HitAbdomen";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-                class Body {
-                    hitpointName = "HitBody";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-            };
-        };
-    };
-    class MNP_Vest_UKR_B_ARM: MNP_Vest_UKR_B {
-        scope = 2;
-        class ItemInfo: ItemInfo {
-            class HitpointsProtectionInfo {
-                class Chest {
-                    HitpointName = "HitChest";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Diaphragm {
-                    HitpointName = "HitDiaphragm";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Abdomen {
-                    hitpointName = "HitAbdomen";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-                class Body {
-                    hitpointName = "HitBody";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-            };
-        };
-    };
-    class MNP_Vest_AMCU_ARM: MNP_Vest_AMCU {
-        scope = 2;
-        class ItemInfo: ItemInfo {
-            class HitpointsProtectionInfo {
-                class Chest {
-                    HitpointName = "HitChest";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Diaphragm {
-                    HitpointName = "HitDiaphragm";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Abdomen {
-                    hitpointName = "HitAbdomen";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-                class Body {
-                    hitpointName = "HitBody";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-            };
-        };
-    };
-    class MNP_Vest_AMCU_2_ARM: MNP_Vest_AMCU_2 {
-        scope = 2;
-        class ItemInfo: ItemInfo {
-            class HitpointsProtectionInfo {
-                class Chest {
-                    HitpointName = "HitChest";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Diaphragm {
-                    HitpointName = "HitDiaphragm";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Abdomen {
-                    hitpointName = "HitAbdomen";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-                class Body {
-                    hitpointName = "HitBody";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-            };
-        };
-    };
-    class MNP_V_M81_Harness_ARM: MNP_V_M81_Harness {
-        scope = 2;
-        class ItemInfo: ItemInfo {
-            class HitpointsProtectionInfo {
-                class Chest {
-                    HitpointName = "HitChest";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Diaphragm {
-                    HitpointName = "HitDiaphragm";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Abdomen {
-                    hitpointName = "HitAbdomen";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-                class Body {
-                    hitpointName = "HitBody";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-            };
-        };
-    };
-    class MNP_V_M81_GL_Harness_ARM: MNP_V_M81_GL_Harness {
-        scope = 2;
-        class ItemInfo: ItemInfo {
-            class HitpointsProtectionInfo {
-                class Chest {
-                    HitpointName = "HitChest";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Diaphragm {
-                    HitpointName = "HitDiaphragm";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Abdomen {
-                    hitpointName = "HitAbdomen";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-                class Body {
-                    hitpointName = "HitBody";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-            };
-        };
-    };
-    class MNP_V_OD_Harness_ARM: MNP_V_OD_Harness {
-        scope = 2;
-        class ItemInfo: ItemInfo {
-            class HitpointsProtectionInfo {
-                class Chest {
-                    HitpointName = "HitChest";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Diaphragm {
-                    HitpointName = "HitDiaphragm";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Abdomen {
-                    hitpointName = "HitAbdomen";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-                class Body {
-                    hitpointName = "HitBody";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-            };
-        };
-    };
-    class MNP_V_OD_GL_Harness_ARM: MNP_V_OD_GL_Harness {
-        scope = 2;
-        class ItemInfo: ItemInfo {
-            class HitpointsProtectionInfo {
-                class Chest {
-                    HitpointName = "HitChest";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Diaphragm {
-                    HitpointName = "HitDiaphragm";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Abdomen {
-                    hitpointName = "HitAbdomen";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-                class Body {
-                    hitpointName = "HitBody";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-            };
-        };
-    };
-    class MNP_Vest_OD_A_ARM: MNP_Vest_OD_A {
-        scope = 2;
-        class ItemInfo: ItemInfo {
-            class HitpointsProtectionInfo {
-                class Chest {
-                    HitpointName = "HitChest";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Diaphragm {
-                    HitpointName = "HitDiaphragm";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Abdomen {
-                    hitpointName = "HitAbdomen";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-                class Body {
-                    hitpointName = "HitBody";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-            };
-        };
-    };
-    class MNP_Vest_OD_B_ARM: MNP_Vest_OD_B {
-        scope = 2;
-        class ItemInfo: ItemInfo {
-            class HitpointsProtectionInfo {
-                class Chest {
-                    HitpointName = "HitChest";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Diaphragm {
-                    HitpointName = "HitDiaphragm";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Abdomen {
-                    hitpointName = "HitAbdomen";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-                class Body {
-                    hitpointName = "HitBody";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-            };
-        };
-    };
-    class MNP_Vest_Light_M81_ARM: MNP_Vest_Light_M81 {
-        scope = 2;
-        class ItemInfo: ItemInfo {
-            class HitpointsProtectionInfo {
-                class Chest {
-                    HitpointName = "HitChest";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Diaphragm {
-                    HitpointName = "HitDiaphragm";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Abdomen {
-                    hitpointName = "HitAbdomen";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-                class Body {
-                    hitpointName = "HitBody";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-            };
-        };
-    };
-    class MNP_Vest_Light_OD_ARM: MNP_Vest_Light_OD {
-        scope = 2;
-        class ItemInfo: ItemInfo {
-            class HitpointsProtectionInfo {
-                class Chest {
-                    HitpointName = "HitChest";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Diaphragm {
-                    HitpointName = "HitDiaphragm";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Abdomen {
-                    hitpointName = "HitAbdomen";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-                class Body {
-                    hitpointName = "HitBody";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-            };
-        };
-    };
-    class MNP_Vest_Ireland_ARM: MNP_Vest_Ireland {
-        scope = 2;
-        class ItemInfo: ItemInfo {
-            class HitpointsProtectionInfo {
-                class Chest {
-                    HitpointName = "HitChest";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Diaphragm {
-                    HitpointName = "HitDiaphragm";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Abdomen {
-                    hitpointName = "HitAbdomen";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-                class Body {
-                    hitpointName = "HitBody";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-            };
-        };
-    };
-    class MNP_Vest_Ireland_B_ARM: MNP_Vest_Ireland_B {
-        scope = 2;
-        class ItemInfo: ItemInfo {
-            class HitpointsProtectionInfo {
-                class Chest {
-                    HitpointName = "HitChest";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Diaphragm {
-                    HitpointName = "HitDiaphragm";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Abdomen {
-                    hitpointName = "HitAbdomen";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-                class Body {
-                    hitpointName = "HitBody";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-            };
-        };
-    };
-    class MNP_Vest_ASA_1_ARM: MNP_Vest_ASA_1 {
-        scope = 2;
-        class ItemInfo: ItemInfo {
-            class HitpointsProtectionInfo {
-                class Chest {
-                    HitpointName = "HitChest";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Diaphragm {
-                    HitpointName = "HitDiaphragm";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Abdomen {
-                    hitpointName = "HitAbdomen";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-                class Body {
-                    hitpointName = "HitBody";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-            };
-        };
-    };
-    class MNP_Vest_ASA_2_ARM: MNP_Vest_ASA_2 {
-        scope = 2;
-        class ItemInfo: ItemInfo {
-            class HitpointsProtectionInfo {
-                class Chest {
-                    HitpointName = "HitChest";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Diaphragm {
-                    HitpointName = "HitDiaphragm";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Abdomen {
-                    hitpointName = "HitAbdomen";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-                class Body {
-                    hitpointName = "HitBody";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-            };
-        };
-    };
-    class MNP_Vest_FIN_1_ARM: MNP_Vest_FIN_1 {
-        scope = 2;
-        class ItemInfo: ItemInfo {
-            class HitpointsProtectionInfo {
-                class Chest {
-                    HitpointName = "HitChest";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Diaphragm {
-                    HitpointName = "HitDiaphragm";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Abdomen {
-                    hitpointName = "HitAbdomen";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-                class Body {
-                    hitpointName = "HitBody";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-            };
-        };
-    };
-    class MNP_Vest_FIN_2_ARM: MNP_Vest_FIN_2 {
-        scope = 2;
-        class ItemInfo: ItemInfo {
-            class HitpointsProtectionInfo {
-                class Chest {
-                    HitpointName = "HitChest";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Diaphragm {
-                    HitpointName = "HitDiaphragm";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Abdomen {
-                    hitpointName = "HitAbdomen";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-                class Body {
-                    hitpointName = "HitBody";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-            };
-        };
-    };
-    class MNP_Vest_Light_DPM_ARM: MNP_Vest_Light_DPM {
-        scope = 2;
-        class ItemInfo: ItemInfo {
-            class HitpointsProtectionInfo {
-                class Chest {
-                    HitpointName = "HitChest";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Diaphragm {
-                    HitpointName = "HitDiaphragm";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Abdomen {
-                    hitpointName = "HitAbdomen";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-                class Body {
-                    hitpointName = "HitBody";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-            };
-        };
-    };
-    class MNP_Vest_Light_DPM_D_ARM: MNP_Vest_Light_DPM_D {
-        scope = 2;
-        class ItemInfo: ItemInfo {
-            class HitpointsProtectionInfo {
-                class Chest {
-                    HitpointName = "HitChest";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Diaphragm {
-                    HitpointName = "HitDiaphragm";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Abdomen {
-                    hitpointName = "HitAbdomen";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-                class Body {
-                    hitpointName = "HitBody";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-            };
-        };
-    };
-    class MNP_Vest_NZ_1_ARM: MNP_Vest_NZ_1 {
-        scope = 2;
-        class ItemInfo: ItemInfo {
-            class HitpointsProtectionInfo {
-                class Chest {
-                    HitpointName = "HitChest";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Diaphragm {
-                    HitpointName = "HitDiaphragm";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Abdomen {
-                    hitpointName = "HitAbdomen";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-                class Body {
-                    hitpointName = "HitBody";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-            };
-        };
-    };
-    class MNP_Vest_NZ_2_ARM: MNP_Vest_NZ_2 {
-        scope = 2;
-        class ItemInfo: ItemInfo {
-            class HitpointsProtectionInfo {
-                class Chest {
-                    HitpointName = "HitChest";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Diaphragm {
-                    HitpointName = "HitDiaphragm";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Abdomen {
-                    hitpointName = "HitAbdomen";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-                class Body {
-                    hitpointName = "HitBody";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-            };
-        };
-    };
-    class MNP_Vest_NOR_1_ARM: MNP_Vest_NOR_1 {
-        scope = 2;
-        class ItemInfo: ItemInfo {
-            class HitpointsProtectionInfo {
-                class Chest {
-                    HitpointName = "HitChest";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Diaphragm {
-                    HitpointName = "HitDiaphragm";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Abdomen {
-                    hitpointName = "HitAbdomen";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-                class Body {
-                    hitpointName = "HitBody";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-            };
-        };
-    };
-    class MNP_Vest_NOR_2_ARM: MNP_Vest_NOR_2 {
-        scope = 2;
-        class ItemInfo: ItemInfo {
-            class HitpointsProtectionInfo {
-                class Chest {
-                    HitpointName = "HitChest";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Diaphragm {
-                    HitpointName = "HitDiaphragm";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Abdomen {
-                    hitpointName = "HitAbdomen";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-                class Body {
-                    hitpointName = "HitBody";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-            };
-        };
-    };
-    class MNP_Vest_NOR_D_1_ARM: MNP_Vest_NOR_D_1 {
-        scope = 2;
-        class ItemInfo: ItemInfo {
-            class HitpointsProtectionInfo {
-                class Chest {
-                    HitpointName = "HitChest";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Diaphragm {
-                    HitpointName = "HitDiaphragm";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Abdomen {
-                    hitpointName = "HitAbdomen";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-                class Body {
-                    hitpointName = "HitBody";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-            };
-        };
-    };
-    class MNP_Vest_NOR_D_2_ARM: MNP_Vest_NOR_D_2 {
-        scope = 2;
-        class ItemInfo: ItemInfo {
-            class HitpointsProtectionInfo {
-                class Chest {
-                    HitpointName = "HitChest";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Diaphragm {
-                    HitpointName = "HitDiaphragm";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Abdomen {
-                    hitpointName = "HitAbdomen";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-                class Body {
-                    hitpointName = "HitBody";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-            };
-        };
-    };
-    class MNP_Vest_ChinaH_T_ARM: MNP_Vest_ChinaH_T {
-        scope = 2;
-        class ItemInfo: ItemInfo {
-            class HitpointsProtectionInfo {
-                class Chest {
-                    HitpointName = "HitChest";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Diaphragm {
-                    HitpointName = "HitDiaphragm";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Abdomen {
-                    hitpointName = "HitAbdomen";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-                class Body {
-                    hitpointName = "HitBody";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-            };
-        };
-    };
-    class MNP_Vest_ChinaH_T2_ARM: MNP_Vest_ChinaH_T2 {
-        scope = 2;
-        class ItemInfo: ItemInfo {
-            class HitpointsProtectionInfo {
-                class Chest {
-                    HitpointName = "HitChest";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Diaphragm {
-                    HitpointName = "HitDiaphragm";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Abdomen {
-                    hitpointName = "HitAbdomen";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-                class Body {
-                    hitpointName = "HitBody";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-            };
-        };
-    };
-    class MNP_Vest_ChinaH_D_ARM: MNP_Vest_ChinaH_D {
-        scope = 2;
-        class ItemInfo: ItemInfo {
-            class HitpointsProtectionInfo {
-                class Chest {
-                    HitpointName = "HitChest";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Diaphragm {
-                    HitpointName = "HitDiaphragm";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Abdomen {
-                    hitpointName = "HitAbdomen";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-                class Body {
-                    hitpointName = "HitBody";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-            };
-        };
-    };
-    class MNP_Vest_ChinaH_D2_ARM: MNP_Vest_ChinaH_D2 {
-        scope = 2;
-        class ItemInfo: ItemInfo {
-            class HitpointsProtectionInfo {
-                class Chest {
-                    HitpointName = "HitChest";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Diaphragm {
-                    HitpointName = "HitDiaphragm";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Abdomen {
-                    hitpointName = "HitAbdomen";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-                class Body {
-                    hitpointName = "HitBody";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-            };
-        };
-    };
-    class MNP_Vest_RU_T_ARM: MNP_Vest_RU_T {
-        scope = 2;
-        class ItemInfo: ItemInfo {
-            class HitpointsProtectionInfo {
-                class Chest {
-                    HitpointName = "HitChest";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Diaphragm {
-                    HitpointName = "HitDiaphragm";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Abdomen {
-                    hitpointName = "HitAbdomen";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-                class Body {
-                    hitpointName = "HitBody";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-            };
-        };
-    };
-    class MNP_Vest_RU_T2_ARM: MNP_Vest_RU_T2 {
-        scope = 2;
-        class ItemInfo: ItemInfo {
-            class HitpointsProtectionInfo {
-                class Chest {
-                    HitpointName = "HitChest";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Diaphragm {
-                    HitpointName = "HitDiaphragm";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Abdomen {
-                    hitpointName = "HitAbdomen";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-                class Body {
-                    hitpointName = "HitBody";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-            };
-        };
-    };
-    class MNP_Vest_RU_D_ARM: MNP_Vest_RU_D {
-        scope = 2;
-        class ItemInfo: ItemInfo {
-            class HitpointsProtectionInfo {
-                class Chest {
-                    HitpointName = "HitChest";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Diaphragm {
-                    HitpointName = "HitDiaphragm";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Abdomen {
-                    hitpointName = "HitAbdomen";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-                class Body {
-                    hitpointName = "HitBody";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-            };
-        };
-    };
-    class MNP_Vest_RU_D2_ARM: MNP_Vest_RU_D2 {
-        scope = 2;
-        class ItemInfo: ItemInfo {
-            class HitpointsProtectionInfo {
-                class Chest {
-                    HitpointName = "HitChest";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Diaphragm {
-                    HitpointName = "HitDiaphragm";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Abdomen {
-                    hitpointName = "HitAbdomen";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-                class Body {
-                    hitpointName = "HitBody";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-            };
-        };
-    };
-    class MNP_Vest_RUMED_ARM: MNP_Vest_RUMED {
-        scope = 2;
-        class ItemInfo: ItemInfo {
-            class HitpointsProtectionInfo {
-                class Chest {
-                    HitpointName = "HitChest";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Diaphragm {
-                    HitpointName = "HitDiaphragm";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Abdomen {
-                    hitpointName = "HitAbdomen";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-                class Body {
-                    hitpointName = "HitBody";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-            };
-        };
-    };
-    class MNP_Vest_RUMED_B_ARM: MNP_Vest_RUMED_B {
-        scope = 2;
-        class ItemInfo: ItemInfo {
-            class HitpointsProtectionInfo {
-                class Chest {
-                    HitpointName = "HitChest";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Diaphragm {
-                    HitpointName = "HitDiaphragm";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Abdomen {
-                    hitpointName = "HitAbdomen";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-                class Body {
-                    hitpointName = "HitBody";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-            };
-        };
-    };
-    class MNP_Vest_Light_RU_ARM: MNP_Vest_Light_RU {
-        scope = 2;
-        class ItemInfo: ItemInfo {
-            class HitpointsProtectionInfo {
-                class Chest {
-                    HitpointName = "HitChest";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Diaphragm {
-                    HitpointName = "HitDiaphragm";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Abdomen {
-                    hitpointName = "HitAbdomen";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-                class Body {
-                    hitpointName = "HitBody";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-            };
-        };
-    };
-    class MNP_Vest_Light_R2_ARM: MNP_Vest_Light_R2 {
-        scope = 2;
-        class ItemInfo: ItemInfo {
-            class HitpointsProtectionInfo {
-                class Chest {
-                    HitpointName = "HitChest";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Diaphragm {
-                    HitpointName = "HitDiaphragm";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Abdomen {
-                    hitpointName = "HitAbdomen";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-                class Body {
-                    hitpointName = "HitBody";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-            };
-        };
-    };
-    class MNP_Vest_Light_R3_ARM: MNP_Vest_Light_R3 {
-        scope = 2;
-        class ItemInfo: ItemInfo {
-            class HitpointsProtectionInfo {
-                class Chest {
-                    HitpointName = "HitChest";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Diaphragm {
-                    HitpointName = "HitDiaphragm";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Abdomen {
-                    hitpointName = "HitAbdomen";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-                class Body {
-                    hitpointName = "HitBody";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-            };
-        };
-    };
-    class MNP_Vest_ChinaH_J_ARM: MNP_Vest_ChinaH_J {
-        scope = 2;
-        class ItemInfo: ItemInfo {
-            class HitpointsProtectionInfo {
-                class Chest {
-                    HitpointName = "HitChest";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Diaphragm {
-                    HitpointName = "HitDiaphragm";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Abdomen {
-                    hitpointName = "HitAbdomen";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-                class Body {
-                    hitpointName = "HitBody";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-            };
-        };
-    };
-    class MNP_Vest_ChinaH_J2_ARM: MNP_Vest_ChinaH_J2 {
-        scope = 2;
-        class ItemInfo: ItemInfo {
-            class HitpointsProtectionInfo {
-                class Chest {
-                    HitpointName = "HitChest";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Diaphragm {
-                    HitpointName = "HitDiaphragm";
-                    armor = 16;
-                    PassThrough = 0.3;
-                };
-                class Abdomen {
-                    hitpointName = "HitAbdomen";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-                class Body {
-                    hitpointName = "HitBody";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-            };
-        };
-    };
     class skn_o_elbv_worn_ARM: skn_o_elbv_worn {
         scope = 2;
         class ItemInfo: ItemInfo {
@@ -8575,6 +6937,411 @@ class CfgWeapons {
             };
         };
     };
+    class MNP_Vest_ChinaH_T_ARM: MNP_Vest_ChinaH_T {
+        scope = 2;
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Chest {
+                    HitpointName = "HitChest";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Diaphragm {
+                    HitpointName = "HitDiaphragm";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 20;
+                    passThrough = 0.2;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2;
+                };
+            };
+        };
+    };
+    class MNP_Vest_ChinaH_T2_ARM: MNP_Vest_ChinaH_T2 {
+        scope = 2;
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Chest {
+                    HitpointName = "HitChest";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Diaphragm {
+                    HitpointName = "HitDiaphragm";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 20;
+                    passThrough = 0.2;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2;
+                };
+            };
+        };
+    };
+    class MNP_Vest_ChinaH_D_ARM: MNP_Vest_ChinaH_D {
+        scope = 2;
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Chest {
+                    HitpointName = "HitChest";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Diaphragm {
+                    HitpointName = "HitDiaphragm";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 20;
+                    passThrough = 0.2;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2;
+                };
+            };
+        };
+    };
+    class MNP_Vest_ChinaH_D2_ARM: MNP_Vest_ChinaH_D2 {
+        scope = 2;
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Chest {
+                    HitpointName = "HitChest";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Diaphragm {
+                    HitpointName = "HitDiaphragm";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 20;
+                    passThrough = 0.2;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2;
+                };
+            };
+        };
+    };
+    class MNP_Vest_RU_T_ARM: MNP_Vest_RU_T {
+        scope = 2;
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Chest {
+                    HitpointName = "HitChest";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Diaphragm {
+                    HitpointName = "HitDiaphragm";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 20;
+                    passThrough = 0.2;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2;
+                };
+            };
+        };
+    };
+    class MNP_Vest_RU_T2_ARM: MNP_Vest_RU_T2 {
+        scope = 2;
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Chest {
+                    HitpointName = "HitChest";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Diaphragm {
+                    HitpointName = "HitDiaphragm";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 20;
+                    passThrough = 0.2;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2;
+                };
+            };
+        };
+    };
+    class MNP_Vest_RU_D_ARM: MNP_Vest_RU_D {
+        scope = 2;
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Chest {
+                    HitpointName = "HitChest";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Diaphragm {
+                    HitpointName = "HitDiaphragm";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 20;
+                    passThrough = 0.2;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2;
+                };
+            };
+        };
+    };
+    class MNP_Vest_RU_D2_ARM: MNP_Vest_RU_D2 {
+        scope = 2;
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Chest {
+                    HitpointName = "HitChest";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Diaphragm {
+                    HitpointName = "HitDiaphragm";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 20;
+                    passThrough = 0.2;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2;
+                };
+            };
+        };
+    };
+    class MNP_Vest_RUMED_ARM: MNP_Vest_RUMED {
+        scope = 2;
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Chest {
+                    HitpointName = "HitChest";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Diaphragm {
+                    HitpointName = "HitDiaphragm";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 20;
+                    passThrough = 0.2;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2;
+                };
+            };
+        };
+    };
+    class MNP_Vest_RUMED_B_ARM: MNP_Vest_RUMED_B {
+        scope = 2;
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Chest {
+                    HitpointName = "HitChest";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Diaphragm {
+                    HitpointName = "HitDiaphragm";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 20;
+                    passThrough = 0.2;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2;
+                };
+            };
+        };
+    };
+    class MNP_Vest_Light_RU_ARM: MNP_Vest_Light_RU {
+        scope = 2;
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Neck {
+                    hitpointName = "HitNeck";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+                class Chest {
+                    HitpointName = "HitChest";
+                    armor = 16;
+                    PassThrough = 0.2;
+                };
+                class Diaphragm {
+                    HitpointName = "HitDiaphragm";
+                    armor = 16;
+                    PassThrough = 0.2;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 16;
+                    passThrough = 0.2;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2;
+                };
+            };
+        };
+    };
+    class MNP_Vest_Light_R2_ARM: MNP_Vest_Light_R2 {
+        scope = 2;
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Neck {
+                    hitpointName = "HitNeck";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+                class Chest {
+                    HitpointName = "HitChest";
+                    armor = 16;
+                    PassThrough = 0.2;
+                };
+                class Diaphragm {
+                    HitpointName = "HitDiaphragm";
+                    armor = 16;
+                    PassThrough = 0.2;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 16;
+                    passThrough = 0.2;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2;
+                };
+            };
+        };
+    };
+    class MNP_Vest_Light_R3_ARM: MNP_Vest_Light_R3 {
+        scope = 2;
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Neck {
+                    hitpointName = "HitNeck";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+                class Chest {
+                    HitpointName = "HitChest";
+                    armor = 16;
+                    PassThrough = 0.2;
+                };
+                class Diaphragm {
+                    HitpointName = "HitDiaphragm";
+                    armor = 16;
+                    PassThrough = 0.2;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 16;
+                    passThrough = 0.2;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2;
+                };
+            };
+        };
+    };
+    class MNP_Vest_ChinaH_J_ARM: MNP_Vest_ChinaH_J {
+        scope = 2;
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Chest {
+                    HitpointName = "HitChest";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Diaphragm {
+                    HitpointName = "HitDiaphragm";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 20;
+                    passThrough = 0.2;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2;
+                };
+            };
+        };
+    };
+    class MNP_Vest_ChinaH_J2_ARM: MNP_Vest_ChinaH_J2 {
+        scope = 2;
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Chest {
+                    HitpointName = "HitChest";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Diaphragm {
+                    HitpointName = "HitDiaphragm";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 20;
+                    passThrough = 0.2;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2;
+                };
+            };
+        };
+    };
     class CUP_V_B_GER_Carrier_Rig_ARM: CUP_V_B_GER_Carrier_Rig {
         scope = 2;
         class ItemInfo: ItemInfo {
@@ -9779,6 +8546,84 @@ class CfgWeapons {
             };
         };
     };
+    class CUP_V_RUS_6B45_1_ARM: CUP_V_RUS_6B45_1 {
+        scope = 2;
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Chest {
+                    hitpointName = "HitChest";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+                class Diaphragm {
+                    hitpointName = "HitDiaphragm";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.3;
+                };
+            };
+        };
+    };
+    class CUP_V_RUS_6B45_2_ARM: CUP_V_RUS_6B45_2 {
+        scope = 2;
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Chest {
+                    hitpointName = "HitChest";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+                class Diaphragm {
+                    hitpointName = "HitDiaphragm";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.3;
+                };
+            };
+        };
+    };
+    class CUP_V_RUS_6B45_3_ARM: CUP_V_RUS_6B45_3 {
+        scope = 2;
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Chest {
+                    hitpointName = "HitChest";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+                class Diaphragm {
+                    hitpointName = "HitDiaphragm";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.3;
+                };
+            };
+        };
+    };
     class CUP_V_O_SLA_Carrier_Belt_ARM: CUP_V_O_SLA_Carrier_Belt {
         scope = 2;
         class ItemInfo: ItemInfo {
@@ -9888,6 +8733,420 @@ class CfgWeapons {
                 };
                 class Body {
                     hitpointName = "HitBody";
+                    passThrough = 0.3;
+                };
+            };
+        };
+    };
+    class CUP_V_O_SLA_6B3_1_DES_ARM: CUP_V_O_SLA_6B3_1_DES {
+        scope = 2;
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Chest {
+                    hitpointName = "HitChest";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+                class Diaphragm {
+                    hitpointName = "HitDiaphragm";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.3;
+                };
+            };
+        };
+    };
+    class CUP_V_O_SLA_6B3_1_URB_ARM: CUP_V_O_SLA_6B3_1_URB {
+        scope = 2;
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Chest {
+                    hitpointName = "HitChest";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+                class Diaphragm {
+                    hitpointName = "HitDiaphragm";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.3;
+                };
+            };
+        };
+    };
+    class CUP_V_O_SLA_6B3_1_WDL_ARM: CUP_V_O_SLA_6B3_1_WDL {
+        scope = 2;
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Chest {
+                    hitpointName = "HitChest";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+                class Diaphragm {
+                    hitpointName = "HitDiaphragm";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.3;
+                };
+            };
+        };
+    };
+    class CUP_V_O_SLA_6B3_2_DES_ARM: CUP_V_O_SLA_6B3_2_DES {
+        scope = 2;
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Chest {
+                    hitpointName = "HitChest";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+                class Diaphragm {
+                    hitpointName = "HitDiaphragm";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.3;
+                };
+            };
+        };
+    };
+    class CUP_V_O_SLA_6B3_2_URB_ARM: CUP_V_O_SLA_6B3_2_URB {
+        scope = 2;
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Chest {
+                    hitpointName = "HitChest";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+                class Diaphragm {
+                    hitpointName = "HitDiaphragm";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.3;
+                };
+            };
+        };
+    };
+    class CUP_V_O_SLA_6B3_2_WDL_ARM: CUP_V_O_SLA_6B3_2_WDL {
+        scope = 2;
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Chest {
+                    hitpointName = "HitChest";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+                class Diaphragm {
+                    hitpointName = "HitDiaphragm";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.3;
+                };
+            };
+        };
+    };
+    class CUP_V_O_SLA_6B3_3_DES_ARM: CUP_V_O_SLA_6B3_3_DES {
+        scope = 2;
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Chest {
+                    hitpointName = "HitChest";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+                class Diaphragm {
+                    hitpointName = "HitDiaphragm";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.3;
+                };
+            };
+        };
+    };
+    class CUP_V_O_SLA_6B3_3_URB_ARM: CUP_V_O_SLA_6B3_3_URB {
+        scope = 2;
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Chest {
+                    hitpointName = "HitChest";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+                class Diaphragm {
+                    hitpointName = "HitDiaphragm";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.3;
+                };
+            };
+        };
+    };
+    class CUP_V_O_SLA_6B3_3_WDL_ARM: CUP_V_O_SLA_6B3_3_WDL {
+        scope = 2;
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Chest {
+                    hitpointName = "HitChest";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+                class Diaphragm {
+                    hitpointName = "HitDiaphragm";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.3;
+                };
+            };
+        };
+    };
+    class CUP_V_O_SLA_6B3_4_DES_ARM: CUP_V_O_SLA_6B3_4_DES {
+        scope = 2;
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Chest {
+                    hitpointName = "HitChest";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+                class Diaphragm {
+                    hitpointName = "HitDiaphragm";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.3;
+                };
+            };
+        };
+    };
+    class CUP_V_O_SLA_6B3_4_URB_ARM: CUP_V_O_SLA_6B3_4_URB {
+        scope = 2;
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Chest {
+                    hitpointName = "HitChest";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+                class Diaphragm {
+                    hitpointName = "HitDiaphragm";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.3;
+                };
+            };
+        };
+    };
+    class CUP_V_O_SLA_6B3_4_WDL_ARM: CUP_V_O_SLA_6B3_4_WDL {
+        scope = 2;
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Chest {
+                    hitpointName = "HitChest";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+                class Diaphragm {
+                    hitpointName = "HitDiaphragm";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.3;
+                };
+            };
+        };
+    };
+    class CUP_V_O_SLA_6B3_5_DES_ARM: CUP_V_O_SLA_6B3_5_DES {
+        scope = 2;
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Chest {
+                    hitpointName = "HitChest";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+                class Diaphragm {
+                    hitpointName = "HitDiaphragm";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.3;
+                };
+            };
+        };
+    };
+    class CUP_V_O_SLA_6B3_5_URB_ARM: CUP_V_O_SLA_6B3_5_URB {
+        scope = 2;
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Chest {
+                    hitpointName = "HitChest";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+                class Diaphragm {
+                    hitpointName = "HitDiaphragm";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.3;
+                };
+            };
+        };
+    };
+    class CUP_V_O_SLA_6B3_5_WDL_ARM: CUP_V_O_SLA_6B3_5_WDL {
+        scope = 2;
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Chest {
+                    hitpointName = "HitChest";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+                class Diaphragm {
+                    hitpointName = "HitDiaphragm";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.3;
+                };
+            };
+        };
+    };
+    class CUP_V_O_SLA_M23_1_OD_ARM: CUP_V_O_SLA_M23_1_OD {
+        scope = 2;
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Body {
+                    hitpointName = "HitBody";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+            };
+        };
+    };
+    class CUP_V_O_SLA_M23_1_BRN_ARM: CUP_V_O_SLA_M23_1_BRN {
+        scope = 2;
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Body {
+                    hitpointName = "HitBody";
+                    armor = 16;
                     passThrough = 0.3;
                 };
             };
@@ -10801,136 +10060,6 @@ class CfgWeapons {
         };
     };
     class CUP_V_B_Interceptor_Rifleman_DCU_ARM: CUP_V_B_Interceptor_Rifleman_DCU {
-        scope = 2;
-        class ItemInfo: ItemInfo {
-            class HitpointsProtectionInfo {
-                class Chest {
-                    hitpointName = "HitChest";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-                class Diaphragm {
-                    hitpointName = "HitDiaphragm";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-                class Abdomen {
-                    hitpointName = "HitAbdomen";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-                class Body {
-                    hitpointName = "HitBody";
-                    passThrough = 0.3;
-                };
-            };
-        };
-    };
-    class CUP_V_B_Interceptor_Base_DCU_ARM: CUP_V_B_Interceptor_Base_DCU {
-        scope = 2;
-        class ItemInfo: ItemInfo {
-            class HitpointsProtectionInfo {
-                class Chest {
-                    hitpointName = "HitChest";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-                class Diaphragm {
-                    hitpointName = "HitDiaphragm";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-                class Abdomen {
-                    hitpointName = "HitAbdomen";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-                class Body {
-                    hitpointName = "HitBody";
-                    passThrough = 0.3;
-                };
-            };
-        };
-    };
-    class CUP_V_B_Interceptor_Base_M81_ARM: CUP_V_B_Interceptor_Base_M81 {
-        scope = 2;
-        class ItemInfo: ItemInfo {
-            class HitpointsProtectionInfo {
-                class Chest {
-                    hitpointName = "HitChest";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-                class Diaphragm {
-                    hitpointName = "HitDiaphragm";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-                class Abdomen {
-                    hitpointName = "HitAbdomen";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-                class Body {
-                    hitpointName = "HitBody";
-                    passThrough = 0.3;
-                };
-            };
-        };
-    };
-    class CUP_V_B_Interceptor_Base_Olive_ARM: CUP_V_B_Interceptor_Base_Olive {
-        scope = 2;
-        class ItemInfo: ItemInfo {
-            class HitpointsProtectionInfo {
-                class Chest {
-                    hitpointName = "HitChest";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-                class Diaphragm {
-                    hitpointName = "HitDiaphragm";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-                class Abdomen {
-                    hitpointName = "HitAbdomen";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-                class Body {
-                    hitpointName = "HitBody";
-                    passThrough = 0.3;
-                };
-            };
-        };
-    };
-    class CUP_V_B_Interceptor_Base_Coyote_ARM: CUP_V_B_Interceptor_Base_Coyote {
-        scope = 2;
-        class ItemInfo: ItemInfo {
-            class HitpointsProtectionInfo {
-                class Chest {
-                    hitpointName = "HitChest";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-                class Diaphragm {
-                    hitpointName = "HitDiaphragm";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-                class Abdomen {
-                    hitpointName = "HitAbdomen";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-                class Body {
-                    hitpointName = "HitBody";
-                    passThrough = 0.3;
-                };
-            };
-        };
-    };
-    class CUP_V_B_Interceptor_Base_Grey_ARM: CUP_V_B_Interceptor_Base_Grey {
         scope = 2;
         class ItemInfo: ItemInfo {
             class HitpointsProtectionInfo {
@@ -12260,6 +11389,1638 @@ class CfgWeapons {
                     hitpointName = "HitBody";
                     armor = 16;
                     passThrough = 0.3;
+                };
+            };
+        };
+    };
+    class MNP_Vest_USMC_ARM: MNP_Vest_USMC {
+        scope = 2;
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Chest {
+                    HitpointName = "HitChest";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Diaphragm {
+                    HitpointName = "HitDiaphragm";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 20;
+                    passThrough = 0.2;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2;
+                };
+            };
+        };
+    };
+    class MNP_Vest_USMC_2_ARM: MNP_Vest_USMC_2 {
+        scope = 2;
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Chest {
+                    HitpointName = "HitChest";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Diaphragm {
+                    HitpointName = "HitDiaphragm";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 20;
+                    passThrough = 0.2;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2;
+                };
+            };
+        };
+    };
+    class MNP_Vest_Canada_T_ARM: MNP_Vest_Canada_T {
+        scope = 2;
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Chest {
+                    HitpointName = "HitChest";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Diaphragm {
+                    HitpointName = "HitDiaphragm";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 20;
+                    passThrough = 0.2;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2;
+                };
+            };
+        };
+    };
+    class MNP_Vest_Canada_T2_ARM: MNP_Vest_Canada_T2 {
+        scope = 2;
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Chest {
+                    HitpointName = "HitChest";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Diaphragm {
+                    HitpointName = "HitDiaphragm";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 20;
+                    passThrough = 0.2;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2;
+                };
+            };
+        };
+    };
+    class MNP_Vest_Canada_D_ARM: MNP_Vest_Canada_D {
+        scope = 2;
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Chest {
+                    HitpointName = "HitChest";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Diaphragm {
+                    HitpointName = "HitDiaphragm";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 20;
+                    passThrough = 0.2;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2;
+                };
+            };
+        };
+    };
+    class MNP_Vest_Canada_D2_ARM: MNP_Vest_Canada_D2 {
+        scope = 2;
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Chest {
+                    HitpointName = "HitChest";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Diaphragm {
+                    HitpointName = "HitDiaphragm";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 20;
+                    passThrough = 0.2;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2;
+                };
+            };
+        };
+    };
+    class MNP_Vest_Germany_ARM: MNP_Vest_Germany {
+        scope = 2;
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Chest {
+                    HitpointName = "HitChest";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Diaphragm {
+                    HitpointName = "HitDiaphragm";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 20;
+                    passThrough = 0.2;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2;
+                };
+            };
+        };
+    };
+    class MNP_Vest_Germany_2_ARM: MNP_Vest_Germany_2 {
+        scope = 2;
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Chest {
+                    HitpointName = "HitChest";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Diaphragm {
+                    HitpointName = "HitDiaphragm";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 20;
+                    passThrough = 0.2;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2;
+                };
+            };
+        };
+    };
+    class MNP_Vest_Germany_D_ARM: MNP_Vest_Germany_D {
+        scope = 2;
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Chest {
+                    HitpointName = "HitChest";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Diaphragm {
+                    HitpointName = "HitDiaphragm";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 20;
+                    passThrough = 0.2;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2;
+                };
+            };
+        };
+    };
+    class MNP_Vest_Germany_D2_ARM: MNP_Vest_Germany_D2 {
+        scope = 2;
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Chest {
+                    HitpointName = "HitChest";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Diaphragm {
+                    HitpointName = "HitDiaphragm";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 20;
+                    passThrough = 0.2;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2;
+                };
+            };
+        };
+    };
+    class MNP_Vest_ACU_1_ARM: MNP_Vest_ACU_1 {
+        scope = 2;
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Chest {
+                    HitpointName = "HitChest";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Diaphragm {
+                    HitpointName = "HitDiaphragm";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 20;
+                    passThrough = 0.2;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2;
+                };
+            };
+        };
+    };
+    class MNP_Vest_ACU_2_ARM: MNP_Vest_ACU_2 {
+        scope = 2;
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Chest {
+                    HitpointName = "HitChest";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Diaphragm {
+                    HitpointName = "HitDiaphragm";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 20;
+                    passThrough = 0.2;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2;
+                };
+            };
+        };
+    };
+    class MNP_Vest_TS_1_ARM: MNP_Vest_TS_1 {
+        scope = 2;
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Chest {
+                    HitpointName = "HitChest";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Diaphragm {
+                    HitpointName = "HitDiaphragm";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 20;
+                    passThrough = 0.2;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2;
+                };
+            };
+        };
+    };
+    class MNP_Vest_TS_2_ARM: MNP_Vest_TS_2 {
+        scope = 2;
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Chest {
+                    HitpointName = "HitChest";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Diaphragm {
+                    HitpointName = "HitDiaphragm";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 20;
+                    passThrough = 0.2;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2;
+                };
+            };
+        };
+    };
+    class MNP_Vest_DS_1_ARM: MNP_Vest_DS_1 {
+        scope = 2;
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Chest {
+                    HitpointName = "HitChest";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Diaphragm {
+                    HitpointName = "HitDiaphragm";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 20;
+                    passThrough = 0.2;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2;
+                };
+            };
+        };
+    };
+    class MNP_Vest_DS_2_ARM: MNP_Vest_DS_2 {
+        scope = 2;
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Chest {
+                    HitpointName = "HitChest";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Diaphragm {
+                    HitpointName = "HitDiaphragm";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 20;
+                    passThrough = 0.2;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2;
+                };
+            };
+        };
+    };
+    class MNP_Vest_Australia_ARM: MNP_Vest_Australia {
+        scope = 2;
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Chest {
+                    HitpointName = "HitChest";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Diaphragm {
+                    HitpointName = "HitDiaphragm";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 20;
+                    passThrough = 0.2;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2;
+                };
+            };
+        };
+    };
+    class MNP_Vest_Australia_B_ARM: MNP_Vest_Australia_B {
+        scope = 2;
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Chest {
+                    HitpointName = "HitChest";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Diaphragm {
+                    HitpointName = "HitDiaphragm";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 20;
+                    passThrough = 0.2;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2;
+                };
+            };
+        };
+    };
+    class MNP_Vest_ROK_1_ARM: MNP_Vest_ROK_1 {
+        scope = 2;
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Chest {
+                    HitpointName = "HitChest";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Diaphragm {
+                    HitpointName = "HitDiaphragm";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 20;
+                    passThrough = 0.2;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2;
+                };
+            };
+        };
+    };
+    class MNP_Vest_ROK_2_ARM: MNP_Vest_ROK_2 {
+        scope = 2;
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Chest {
+                    HitpointName = "HitChest";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Diaphragm {
+                    HitpointName = "HitDiaphragm";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 20;
+                    passThrough = 0.2;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2;
+                };
+            };
+        };
+    };
+    class MNP_Vest_M81_ARM: MNP_Vest_M81 {
+        scope = 2;
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Chest {
+                    HitpointName = "HitChest";
+                    armor = 18;
+                    PassThrough = 0.2;
+                };
+                class Diaphragm {
+                    HitpointName = "HitDiaphragm";
+                    armor = 18;
+                    PassThrough = 0.2;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 18;
+                    passThrough = 0.2;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2;
+                };
+            };
+        };
+    };
+    class MNP_Vest_M81b_ARM: MNP_Vest_M81b {
+        scope = 2;
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Chest {
+                    HitpointName = "HitChest";
+                    armor = 18;
+                    PassThrough = 0.2;
+                };
+                class Diaphragm {
+                    HitpointName = "HitDiaphragm";
+                    armor = 18;
+                    PassThrough = 0.2;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 18;
+                    passThrough = 0.2;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2;
+                };
+            };
+        };
+    };
+    class MNP_Vest_OD_A_ARM: MNP_Vest_OD_A {
+        scope = 2;
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Chest {
+                    HitpointName = "HitChest";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Diaphragm {
+                    HitpointName = "HitDiaphragm";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 20;
+                    passThrough = 0.2;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2;
+                };
+            };
+        };
+    };
+    class MNP_Vest_OD_B_ARM: MNP_Vest_OD_B {
+        scope = 2;
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Chest {
+                    HitpointName = "HitChest";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Diaphragm {
+                    HitpointName = "HitDiaphragm";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 20;
+                    passThrough = 0.2;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2;
+                };
+            };
+        };
+    };
+    class MNP_Vest_Light_M81_ARM: MNP_Vest_Light_M81 {
+        scope = 2;
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Neck {
+                    hitpointName = "HitNeck";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+                class Chest {
+                    HitpointName = "HitChest";
+                    armor = 16;
+                    PassThrough = 0.2;
+                };
+                class Diaphragm {
+                    HitpointName = "HitDiaphragm";
+                    armor = 16;
+                    PassThrough = 0.2;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 16;
+                    passThrough = 0.2;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2;
+                };
+            };
+        };
+    };
+    class MNP_Vest_Light_OD_ARM: MNP_Vest_Light_OD {
+        scope = 2;
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Neck {
+                    hitpointName = "HitNeck";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+                class Chest {
+                    HitpointName = "HitChest";
+                    armor = 16;
+                    PassThrough = 0.2;
+                };
+                class Diaphragm {
+                    HitpointName = "HitDiaphragm";
+                    armor = 16;
+                    PassThrough = 0.2;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 16;
+                    passThrough = 0.2;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2;
+                };
+            };
+        };
+    };
+    class MNP_Vest_UKR_A_ARM: MNP_Vest_UKR_A {
+        scope = 2;
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Chest {
+                    HitpointName = "HitChest";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Diaphragm {
+                    HitpointName = "HitDiaphragm";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 20;
+                    passThrough = 0.2;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2;
+                };
+            };
+        };
+    };
+    class MNP_Vest_UKR_B_ARM: MNP_Vest_UKR_B {
+        scope = 2;
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Chest {
+                    HitpointName = "HitChest";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Diaphragm {
+                    HitpointName = "HitDiaphragm";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 20;
+                    passThrough = 0.2;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2;
+                };
+            };
+        };
+    };
+    class MNP_Vest_Light_DPM_ARM: MNP_Vest_Light_DPM {
+        scope = 2;
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Neck {
+                    hitpointName = "HitNeck";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+                class Chest {
+                    HitpointName = "HitChest";
+                    armor = 16;
+                    PassThrough = 0.2;
+                };
+                class Diaphragm {
+                    HitpointName = "HitDiaphragm";
+                    armor = 16;
+                    PassThrough = 0.2;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 16;
+                    passThrough = 0.2;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2;
+                };
+            };
+        };
+    };
+    class MNP_Vest_Light_DPM_D_ARM: MNP_Vest_Light_DPM_D {
+        scope = 2;
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Neck {
+                    hitpointName = "HitNeck";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+                class Chest {
+                    HitpointName = "HitChest";
+                    armor = 16;
+                    PassThrough = 0.2;
+                };
+                class Diaphragm {
+                    HitpointName = "HitDiaphragm";
+                    armor = 16;
+                    PassThrough = 0.2;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 16;
+                    passThrough = 0.2;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2;
+                };
+            };
+        };
+    };
+    class MNP_Vest_ROKMC_ARM: MNP_Vest_ROKMC {
+        scope = 2;
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Chest {
+                    HitpointName = "HitChest";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Diaphragm {
+                    HitpointName = "HitDiaphragm";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 20;
+                    passThrough = 0.2;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2;
+                };
+            };
+        };
+    };
+    class MNP_Vest_ROKMC_2_ARM: MNP_Vest_ROKMC_2 {
+        scope = 2;
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Chest {
+                    HitpointName = "HitChest";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Diaphragm {
+                    HitpointName = "HitDiaphragm";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 20;
+                    passThrough = 0.2;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2;
+                };
+            };
+        };
+    };
+    class MNP_Vest_Black_Tac_A_ARM: MNP_Vest_Black_Tac_A {
+        scope = 2;
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Chest {
+                    HitpointName = "HitChest";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Diaphragm {
+                    HitpointName = "HitDiaphragm";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 20;
+                    passThrough = 0.2;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2;
+                };
+            };
+        };
+    };
+    class MNP_Vest_Black_Tac_B_ARM: MNP_Vest_Black_Tac_B {
+        scope = 2;
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Chest {
+                    HitpointName = "HitChest";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Diaphragm {
+                    HitpointName = "HitDiaphragm";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 20;
+                    passThrough = 0.2;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2;
+                };
+            };
+        };
+    };
+    class MNP_Vest_USMC_Xtreme_A_ARM: MNP_Vest_USMC_Xtreme_A {
+        scope = 2;
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Chest {
+                    HitpointName = "HitChest";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Diaphragm {
+                    HitpointName = "HitDiaphragm";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 20;
+                    passThrough = 0.2;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2;
+                };
+            };
+        };
+    };
+    class MNP_Vest_USMC_Xtreme_B_ARM: MNP_Vest_USMC_Xtreme_B {
+        scope = 2;
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Chest {
+                    HitpointName = "HitChest";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Diaphragm {
+                    HitpointName = "HitDiaphragm";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 20;
+                    passThrough = 0.2;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2;
+                };
+            };
+        };
+    };
+    class MNP_Vest_AMCU_ARM: MNP_Vest_AMCU {
+        scope = 2;
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Chest {
+                    HitpointName = "HitChest";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Diaphragm {
+                    HitpointName = "HitDiaphragm";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 20;
+                    passThrough = 0.2;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2;
+                };
+            };
+        };
+    };
+    class MNP_Vest_AMCU_2_ARM: MNP_Vest_AMCU_2 {
+        scope = 2;
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Chest {
+                    HitpointName = "HitChest";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Diaphragm {
+                    HitpointName = "HitDiaphragm";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 20;
+                    passThrough = 0.2;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2;
+                };
+            };
+        };
+    };
+    class MNP_V_M81_Harness_ARM: MNP_V_M81_Harness {
+        scope = 2;
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Chest {
+                    HitpointName = "HitChest";
+                    armor = 16;
+                    PassThrough = 0.3;
+                };
+                class Diaphragm {
+                    HitpointName = "HitDiaphragm";
+                    armor = 16;
+                    PassThrough = 0.3;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.3;
+                };
+            };
+        };
+    };
+    class MNP_V_M81_GL_Harness_ARM: MNP_V_M81_GL_Harness {
+        scope = 2;
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Chest {
+                    HitpointName = "HitChest";
+                    armor = 16;
+                    PassThrough = 0.3;
+                };
+                class Diaphragm {
+                    HitpointName = "HitDiaphragm";
+                    armor = 16;
+                    PassThrough = 0.3;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.3;
+                };
+            };
+        };
+    };
+    class MNP_V_OD_Harness_ARM: MNP_V_OD_Harness {
+        scope = 2;
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Chest {
+                    HitpointName = "HitChest";
+                    armor = 16;
+                    PassThrough = 0.3;
+                };
+                class Diaphragm {
+                    HitpointName = "HitDiaphragm";
+                    armor = 16;
+                    PassThrough = 0.3;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.3;
+                };
+            };
+        };
+    };
+    class MNP_V_OD_GL_Harness_ARM: MNP_V_OD_GL_Harness {
+        scope = 2;
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Chest {
+                    HitpointName = "HitChest";
+                    armor = 16;
+                    PassThrough = 0.3;
+                };
+                class Diaphragm {
+                    HitpointName = "HitDiaphragm";
+                    armor = 16;
+                    PassThrough = 0.3;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.3;
+                };
+            };
+        };
+    };
+    class MNP_Vest_Scorpion_1_ARM: MNP_Vest_Scorpion_1 {
+        scope = 2;
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Chest {
+                    HitpointName = "HitChest";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Diaphragm {
+                    HitpointName = "HitDiaphragm";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 20;
+                    passThrough = 0.2;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2;
+                };
+            };
+        };
+    };
+    class MNP_Vest_Scorpion_2_ARM: MNP_Vest_Scorpion_2 {
+        scope = 2;
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Chest {
+                    HitpointName = "HitChest";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Diaphragm {
+                    HitpointName = "HitDiaphragm";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 20;
+                    passThrough = 0.2;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2;
+                };
+            };
+        };
+    };
+    class MNP_Vest_ISRKahki_1_ARM: MNP_Vest_ISRKahki_1 {
+        scope = 2;
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Chest {
+                    HitpointName = "HitChest";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Diaphragm {
+                    HitpointName = "HitDiaphragm";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 20;
+                    passThrough = 0.2;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2;
+                };
+            };
+        };
+    };
+    class MNP_Vest_ISRKahki_2_ARM: MNP_Vest_ISRKahki_2 {
+        scope = 2;
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Chest {
+                    HitpointName = "HitChest";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Diaphragm {
+                    HitpointName = "HitDiaphragm";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 20;
+                    passThrough = 0.2;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2;
+                };
+            };
+        };
+    };
+    class MNP_Vest_6co_A_ARM: MNP_Vest_6co_A {
+        scope = 2;
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Chest {
+                    HitpointName = "HitChest";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Diaphragm {
+                    HitpointName = "HitDiaphragm";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 20;
+                    passThrough = 0.2;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2;
+                };
+            };
+        };
+    };
+    class MNP_Vest_6co_B_ARM: MNP_Vest_6co_B {
+        scope = 2;
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Chest {
+                    HitpointName = "HitChest";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Diaphragm {
+                    HitpointName = "HitDiaphragm";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 20;
+                    passThrough = 0.2;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2;
+                };
+            };
+        };
+    };
+    class MNP_Vest_Ireland_ARM: MNP_Vest_Ireland {
+        scope = 2;
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Chest {
+                    HitpointName = "HitChest";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Diaphragm {
+                    HitpointName = "HitDiaphragm";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 20;
+                    passThrough = 0.2;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2;
+                };
+            };
+        };
+    };
+    class MNP_Vest_Ireland_B_ARM: MNP_Vest_Ireland_B {
+        scope = 2;
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Chest {
+                    HitpointName = "HitChest";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Diaphragm {
+                    HitpointName = "HitDiaphragm";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 20;
+                    passThrough = 0.2;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2;
+                };
+            };
+        };
+    };
+    class MNP_Vest_Olive_1_ARM: MNP_Vest_Olive_1 {
+        scope = 2;
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Chest {
+                    HitpointName = "HitChest";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Diaphragm {
+                    HitpointName = "HitDiaphragm";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 20;
+                    passThrough = 0.2;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2;
+                };
+            };
+        };
+    };
+    class MNP_Vest_Olive_2_ARM: MNP_Vest_Olive_2 {
+        scope = 2;
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Chest {
+                    HitpointName = "HitChest";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Diaphragm {
+                    HitpointName = "HitDiaphragm";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 20;
+                    passThrough = 0.2;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2;
+                };
+            };
+        };
+    };
+    class MNP_Vest_FIN_1_ARM: MNP_Vest_FIN_1 {
+        scope = 2;
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Chest {
+                    HitpointName = "HitChest";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Diaphragm {
+                    HitpointName = "HitDiaphragm";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 20;
+                    passThrough = 0.2;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2;
+                };
+            };
+        };
+    };
+    class MNP_Vest_FIN_2_ARM: MNP_Vest_FIN_2 {
+        scope = 2;
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Chest {
+                    HitpointName = "HitChest";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Diaphragm {
+                    HitpointName = "HitDiaphragm";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 20;
+                    passThrough = 0.2;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2;
+                };
+            };
+        };
+    };
+    class MNP_Vest_NZ_1_ARM: MNP_Vest_NZ_1 {
+        scope = 2;
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Chest {
+                    HitpointName = "HitChest";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Diaphragm {
+                    HitpointName = "HitDiaphragm";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 20;
+                    passThrough = 0.2;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2;
+                };
+            };
+        };
+    };
+    class MNP_Vest_NZ_2_ARM: MNP_Vest_NZ_2 {
+        scope = 2;
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Chest {
+                    HitpointName = "HitChest";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Diaphragm {
+                    HitpointName = "HitDiaphragm";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 20;
+                    passThrough = 0.2;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2;
+                };
+            };
+        };
+    };
+    class MNP_Vest_NOR_1_ARM: MNP_Vest_NOR_1 {
+        scope = 2;
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Chest {
+                    HitpointName = "HitChest";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Diaphragm {
+                    HitpointName = "HitDiaphragm";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 20;
+                    passThrough = 0.2;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2;
+                };
+            };
+        };
+    };
+    class MNP_Vest_NOR_2_ARM: MNP_Vest_NOR_2 {
+        scope = 2;
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Chest {
+                    HitpointName = "HitChest";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Diaphragm {
+                    HitpointName = "HitDiaphragm";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 20;
+                    passThrough = 0.2;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2;
+                };
+            };
+        };
+    };
+    class MNP_Vest_NOR_D_1_ARM: MNP_Vest_NOR_D_1 {
+        scope = 2;
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Chest {
+                    HitpointName = "HitChest";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Diaphragm {
+                    HitpointName = "HitDiaphragm";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 20;
+                    passThrough = 0.2;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2;
+                };
+            };
+        };
+    };
+    class MNP_Vest_NOR_D_2_ARM: MNP_Vest_NOR_D_2 {
+        scope = 2;
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Chest {
+                    HitpointName = "HitChest";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Diaphragm {
+                    HitpointName = "HitDiaphragm";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 20;
+                    passThrough = 0.2;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2;
+                };
+            };
+        };
+    };
+    class MNP_Vest_CZ_1_ARM: MNP_Vest_CZ_1 {
+        scope = 2;
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Chest {
+                    HitpointName = "HitChest";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Diaphragm {
+                    HitpointName = "HitDiaphragm";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 20;
+                    passThrough = 0.2;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2;
+                };
+            };
+        };
+    };
+    class MNP_Vest_CZ_2_ARM: MNP_Vest_CZ_2 {
+        scope = 2;
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Chest {
+                    HitpointName = "HitChest";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Diaphragm {
+                    HitpointName = "HitDiaphragm";
+                    armor = 20;
+                    PassThrough = 0.2;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 20;
+                    passThrough = 0.2;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.2;
                 };
             };
         };
@@ -13607,6 +14368,68 @@ class CfgWeapons {
                 };
                 class Abdomen {
                     hitpointName = "HitAbdomen";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.3;
+                };
+            };
+        };
+    };
+    class MNP_Vest_ASA_1_ARM: MNP_Vest_ASA_1 {
+        scope = 2;
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Chest {
+                    hitpointName = "HitChest";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+                class Diaphragm {
+                    hitpointName = "HitDiaphragm";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+                class Pelvis {
+                    hitpointName = "HitPelvis";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.3;
+                };
+            };
+        };
+    };
+    class MNP_Vest_ASA_2_ARM: MNP_Vest_ASA_2 {
+        scope = 2;
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Chest {
+                    hitpointName = "HitChest";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+                class Diaphragm {
+                    hitpointName = "HitDiaphragm";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+                class Pelvis {
+                    hitpointName = "HitPelvis";
                     armor = 16;
                     passThrough = 0.3;
                 };
