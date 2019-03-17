@@ -367,7 +367,7 @@ class CfgVehicles {
         uniformClass = "skn_u_nbc_opf_blue";
         icon = "iconManMG";
         role = "MachineGunner";
-        backpack = "B_Kitbag_rgr_RPK74";
+        backpack = "B_Kitbag_rgr";
         weapons[] = {"CUP_arifle_RPK74M_railed", "Throw", "Put"};
         respawnWeapons[] = {"CUP_arifle_RPK74M_railed", "Throw", "Put"};
         magazines[] = {"CUP_45Rnd_TE4_LRT4_Green_Tracer_545x39_RPK74M_M", "CUP_45Rnd_TE4_LRT4_Green_Tracer_545x39_RPK74M_M", "CUP_45Rnd_TE4_LRT4_Green_Tracer_545x39_RPK74M_M", "SmokeShell", "SmokeShellGreen"};
@@ -385,7 +385,7 @@ class CfgVehicles {
         uniformClass = "skn_u_nbc_opf_blue";
         icon = "iconManMG";
         role = "MachineGunner";
-        backpack = "B_Kitbag_rgr_PKM";
+        backpack = "B_Kitbag_rgr";
         weapons[] = {"CUP_lmg_Pecheneg", "Throw", "Put"};
         respawnWeapons[] = {"CUP_lmg_Pecheneg", "Throw", "Put"};
         magazines[] = {"CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Green_M", "CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Green_M", "SmokeShell", "SmokeShellGreen"};
@@ -501,7 +501,7 @@ class CfgVehicles {
         uniformClass = "MNP_CombatUniform_NKR_Sh";
         icon = "iconManMG";
         role = "MachineGunner";
-        backpack = "B_Kitbag_rgr_RPK47";
+        backpack = "B_Kitbag_rgr";
         weapons[] = {"CUP_arifle_RPK74", "Throw", "Put"};
         respawnWeapons[] = {"CUP_arifle_RPK74", "Throw", "Put"};
         magazines[] = {"CUP_75Rnd_TE4_LRT4_Green_Tracer_762x39_RPK_M", "CUP_75Rnd_TE4_LRT4_Green_Tracer_762x39_RPK_M", "CUP_75Rnd_TE4_LRT4_Green_Tracer_762x39_RPK_M", "SmokeShell", "SmokeShellGreen"};
@@ -519,7 +519,7 @@ class CfgVehicles {
         uniformClass = "MNP_CombatUniform_NKR_Sh";
         icon = "iconManMG";
         role = "MachineGunner";
-        backpack = "B_Kitbag_rgr_PKM";
+        backpack = "B_Kitbag_rgr";
         weapons[] = {"CUP_lmg_PKM", "Throw", "Put"};
         respawnWeapons[] = {"CUP_lmg_PKM", "Throw", "Put"};
         magazines[] = {"CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Green_M", "CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Green_M", "SmokeShell", "SmokeShellGreen"};
@@ -652,7 +652,7 @@ class CfgVehicles {
         uniformClass = "U_B_GEN_Soldier_F";
         icon = "iconManMG";
         role = "MachineGunner";
-        backpack = "B_Kitbag_rgr_PKM";
+        backpack = "B_Kitbag_rgr";
         weapons[] = {"CUP_lmg_Pecheneg", "Throw", "Put"};
         respawnWeapons[] = {"CUP_lmg_Pecheneg", "Throw", "Put"};
         magazines[] = {"CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Green_M", "CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Green_M", "SmokeShellBlue", "SmokeShellBlue"};
