@@ -2,21 +2,21 @@
 
 ark_ace_medical_fnc_doDamage = {
     params ["_unit"];
-    
+
     private _aceHitpoints = _unit getVariable ["ace_medical_bodypartstatus",[0,0,0,0,0,0]];
     _aceHitpoints params ["_head", "_body", "_hand_l", "_hand_r", "_leg_l", "_leg_r"];
-    
+
     private _damage = _body;
     {_damage = _damage + _x} forEach _aceHitpoints;
 
     if (_head > 6) exitWith {
         _unit call ace_medical_fnc_setDead;
     };
-    
-    if (_body > 3) exitWith {
+
+    if (_body > 4) exitWith {
         _unit call ace_medical_fnc_setDead;
     };
-    
+
     if (_damage > 16) exitWith {
         _unit call ace_medical_fnc_setDead;
     };
