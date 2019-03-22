@@ -35,11 +35,11 @@ ark_deploy_fnc_deployGroup = {
 
     _player setVariable ["ark_deploy_canDeploy", false, true];
     onMapSingleClick "";
-    
+
     private _aliveUnits = [];
     private _pos_x = _position #0;
     private _pos_y = _position #1;
-    
+
     {
         if (alive _x) then {
             _aliveUnits pushBack _x;
@@ -50,7 +50,7 @@ ark_deploy_fnc_deployGroup = {
        if (isWeaponDeployed _x || { isWeaponRested _x }) then {
             _x setPos (_x modelToWorld [0,0,0]);
         };
-        
+
         [
             {(_this #0) setposATL [(_this #1),(_this #2), 0]},
             [_x,_pos_x,_pos_y]
@@ -59,13 +59,13 @@ ark_deploy_fnc_deployGroup = {
         _pos_x = _pos_x + 1;
         _pos_y = _pos_y + 1;
     } forEach _aliveUnits;
-    
+
     openMap [false, false];
 };
 
 ark_deploy_fnc_assignDeployClick = {
     params ["_player"];
-    
+
     hint "Click anywhere on the map to deploy";
     openMap [true, true];
     _player onMapSingleClick {
@@ -109,4 +109,4 @@ ark_deploy_fnc_canPlayerPreDeploy = {
     (_canDeploy && ark_deploy_preDeployActive && (side _player in ark_deploy_pre_factions));
 };
 
-[] call ark_deploy_fnc_initVariables;
+call ark_deploy_fnc_initVariables;

@@ -43,13 +43,13 @@ ark_ai_vehicles_fnc_doRepair = {
     params ["_vehicle"];
 
     private _driver = driver _vehicle;
-    
+
     if (!alive _driver || { !alive _vehicle }) exitWith {
         {
             _vehicle setVariable [_x, nil];
         } forEach ["ark_ai_vehicles_awaiting_repair","ark_ai_vehicles_last_hit"];
     };
-    
+
     [_vehicle,_driver] spawn {
         params ["_vehicle","_driver"];
 
@@ -63,7 +63,7 @@ ark_ai_vehicles_fnc_doRepair = {
         {
             _driver disableAI _x;
         } forEach ["TARGET", "AUTOTARGET", "PATH", "FSM", "AUTOCOMBAT"];
-        
+
         doGetOut _driver;
         sleep 2;
 
@@ -88,10 +88,10 @@ ark_ai_vehicles_fnc_doRepair = {
         _driver enableAI "ALL";
         _vehicle setVectorUp surfaceNormal position _vehicle;
         _vehicle forceSpeed -1;
-        
+
         deleteWaypoint [_group, currentWaypoint _group];
         _group lockWP false;
-        
+
         {
             _vehicle setVariable [_x, nil];
         } forEach ["ark_ai_vehicles_awaiting_repair","ark_ai_vehicles_last_hit"];
@@ -103,7 +103,7 @@ ark_ai_vehicles_fnc_isGunnerDead = {
 
     private _vehicle = vehicle _unit;
 
-    if (_vehicle isKindOf "Car" || _vehicle isKindOf "Tank") then { 
+    if (_vehicle isKindOf "Car" || _vehicle isKindOf "Tank") then {
         if (gunner _vehicle isEqualTo _unit && { alive (driver _vehicle) } && { !isPlayer (driver _vehicle) }) then {
             _vehicle call ark_ai_vehicles_fnc_replaceGunner;
         };
@@ -112,14 +112,14 @@ ark_ai_vehicles_fnc_isGunnerDead = {
 
 ark_ai_vehicles_fnc_replaceGunner = {
     params ["_vehicle"];
-    
+
     private _driver = driver _vehicle;
     private _allTurrets = allTurrets [_vehicle, false];
 
     if (isNil "_allTurrets" || { count _allTurrets == 0 }) exitWith {
         diag_log format ["[ARK] (AI Vehicles) - Vehicle: %1 has no turrets",typeOf _vehicle];
     };
-    
+
     _vehicle setVariable ["ark_ai_vehicles_gunner_dead", true];
     _vehicle forceSpeed 0;
 
@@ -150,7 +150,7 @@ ark_ai_vehicles_fnc_replaceGunner = {
 
 ark_ai_vehicles_fnc_moveInGunner = {
     params ["_vehicle","_driver"];
-    
+
     private _gunnerTurret = _vehicle call ace_common_fnc_getTurretGunner;
     _driver assignAsTurret [_vehicle,_gunnerTurret];
     _driver moveInTurret [_vehicle,_gunnerTurret];

@@ -24,12 +24,10 @@ ark_ace_medical_fnc_doDamage = {
 
 ["ace_unconscious", {
     params ["_unit", "_state"];
-    
+
     if (!local _unit || { !_state } || { !alive _unit }) exitWith {};
-    
     // Must wait 2 frames for ACE medical damage to be applied!
     [{
             [ark_ace_medical_fnc_doDamage, _this] call CBA_fnc_execNextFrame;
     }, _unit] call CBA_fnc_execNextFrame;
-
 }] call CBA_fnc_addEventHandler;

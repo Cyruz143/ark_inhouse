@@ -12,7 +12,7 @@ ACRE_CUSTOM_SIGNAL_FUNC = {
     private _Ptx = 10 * (log ((_mW)/1000)) + 30; /* Transmitter Power (mW to dBm) */
 
     if (_realRadioRx isEqualTo "acre_prc343") then { // AN/PRC-343
-        _Lfs = _Lfs - 17; // 17 dB boost.                   
+        _Lfs = _Lfs - 17; // 17 dB boost.
     };
 
     private _ituLoss = 36; /* base loss level (based on empirical testing...) */
@@ -34,7 +34,7 @@ ACRE_CUSTOM_SIGNAL_FUNC = {
     /* Signal Percentage equation */
     private _bottom = _sinadRating - (_Sl*_Slp);
     private _Snd = abs ((_bottom - (_Lb max _bottom))/_Sl);
-    private _Px = 100 min (0 max (_Snd*100)); 
+    private _Px = 100 min (0 max (_Snd*100));
     _Px = _Px/100;
 
     private _signal = _Lb;
@@ -54,6 +54,6 @@ ACRE_CUSTOM_SIGNAL_FUNC = {
 
 [{!isNil "ACRE_MAP_LOADED"},
 {
-    ACRE_MAP_LOADED = true; 
+    ACRE_MAP_LOADED = true;
 }, []] call CBA_fnc_waitUntilAndExecute;
 

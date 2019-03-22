@@ -11,7 +11,7 @@ ark_admin_tools_fnc_callAttackHelo = {
 
     private _randomDir = random [0, 180, 360];
     private _pos = _player getPos [2500, _randomDir];
-    private _vehicle = createVehicle [(selectRandom _heloArray), _pos, [], 0, "FLY"]; 
+    private _vehicle = createVehicle [(selectRandom _heloArray), _pos, [], 0, "FLY"];
     private _grp = createGroup _side;
 
     private _driver = _grp createUnit [(selectRandom _pilotArray), [0,0,0], [], 0, "NONE"];
@@ -61,57 +61,3 @@ ark_admin_tools_fnc_callArmour = {
 
     [_grp, position _player, 100, 4, "MOVE", "AWARE", "RED", "FULL"] call CBA_fnc_taskPatrol;
 };
-
-ark_admin_tools_fnc_canUnflip = {
-    params ["_vehicle"];
-
-    private _canUnflip = ((vectorUp _vehicle) #2) < 0.5;
-
-    _canUnflip;
-};
-
-ark_admin_tools_fnc_unFlip = {
-    [[objectParent player], {
-        params ["_vehicle"];
-
-        private _lastUnflipTime = _vehicle getVariable ["ark_admin_tools_lastUnflipTime", 0];
-        if (time - _lastUnflipTime <= 10) exitWith {
-            {"Please wait 10 seconds \nbefore trying to unflip again" remoteExec ["hint", _x];} forEach (crew _vehicle);
-        };
-        
-        private _position = getPosATL _vehicle;
-        private _emptyPos = _position findEmptyPosition [0, 20, (typeOf _vehicle)];
-
-        if (isNil "_emptyPos" || { count _emptyPos == 0 }) exitWith {
-            {"No room to flip \nPlease contact Staff!" remoteExec ["hint", _x];} forEach (crew _vehicle);
-        };
-
-        _vehicle allowDamage false;
-        _vehicle setVectorUp surfaceNormal _emptyPos;
-        _vehicle setPosATL _emptyPos;
-        _vehicle allowDamage true;
-        _vehicle setVariable ["ark_admin_tools_lastUnflipTime", time, true];
-    }] remoteExec ["bis_fnc_call", objectParent player];
-};
-
-// Custom CBA EHs
-["ark_admin_tools_eh_endMission", BIS_fnc_endMission] call CBA_fnc_addEventHandler;
-
-// Custom CBA chat commands
-["endmission", {
-    params ["_ending"];
-    if (_ending == "") then {
-        ["ark_admin_tools_eh_endMission", ["end1", true]] call CBA_fnc_globalEvent;
-    } else {
-        ["ark_admin_tools_eh_endMission", [_ending, true]] call CBA_fnc_globalEvent;
-    };
-}, "adminLogged"] call CBA_fnc_registerChatCommand;
-
-["failmission", {
-    params ["_ending"];
-    if (_ending == "") then {
-        ["ark_admin_tools_eh_endMission", ["loser", false]] call CBA_fnc_globalEvent;
-    } else {
-        ["ark_admin_tools_eh_endMission", [_ending, false]] call CBA_fnc_globalEvent;
-    };
-}, "adminLogged"] call CBA_fnc_registerChatCommand;
