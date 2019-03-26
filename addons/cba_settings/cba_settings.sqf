@@ -183,12 +183,11 @@ force force ace_common_persistentLaserEnabled = false;
 
 // ACRE2
 force acre_sys_core_fullDuplex = false;
-force force acre_sys_core_ignoreAntennaDirection = true;
 force force acre_sys_core_interference = true;
-force force acre_sys_core_revealToAI = true;
-force force acre_sys_core_terrainLoss = 0;
+force force acre_sys_core_revealToAI = 1;
 force force acre_sys_core_ts3ChannelSwitch = false;
 force force acre_sys_core_unmuteClients = true;
+force force acre_sys_signal_signalModel = 0;
 
 // CUP
 force force CUP_Vehicles_PreventBarrelClip = false;
