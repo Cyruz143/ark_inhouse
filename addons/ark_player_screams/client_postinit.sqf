@@ -4,5 +4,5 @@ ark_player_screams_var_soundList = ["hit_snd_01","hit_snd_02","hit_snd_03","hit_
     params ["_unit", "_state"];
 
     if (!_state || { !alive _unit } || { !isNull objectParent _unit }) exitWith {};
-    _unit say3D [(selectRandom ark_player_screams_var_soundList), 200, (random [0.85,1,1.25]), false]
+    _unit say3D [(selectRandom ark_player_screams_var_soundList), 200, (random [0.85,1,1.25]), false];
 }] call CBA_fnc_addEventHandler;
