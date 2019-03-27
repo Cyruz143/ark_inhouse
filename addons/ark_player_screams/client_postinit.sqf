@@ -1,19 +1,8 @@
-ark_player_screams_var_soundList = [
-    "A3\Sounds_F\characters\human-sfx\P01\Max_Hit_01.wss",
-    "A3\Sounds_F\characters\human-sfx\P02\Mid_Hit_01.wss",
-    "A3\Sounds_F\characters\human-sfx\P03\Hit_Mid_1.wss",
-    "A3\Sounds_F\characters\human-sfx\P03\Hit_Mid_3.wss",
-    "A3\Sounds_F\characters\human-sfx\P04\Hit_Max_3.wss",
-    "A3\Sounds_F\characters\human-sfx\P05\Hit_Max_2.wss",
-    "A3\Sounds_F\characters\human-sfx\P05\Hit_Max_4.wss",
-    "A3\Sounds_F\characters\human-sfx\P04\Hit_Mid_3.wss",
-    "A3\Sounds_F\characters\human-sfx\P08\Hit_Max_4.wss",
-    "A3\Sounds_F\characters\human-sfx\P09\Hit_Max_3.wss"
-];
+ark_player_screams_var_soundList = ["hit_snd_01","hit_snd_02","hit_snd_03","hit_snd_04","hit_snd_05","hit_snd_06","hit_snd_07","hit_snd_08","hit_snd_09","hit_snd_10"];
 
 ["ace_unconscious", {
     params ["_unit", "_state"];
 
-    if (!local _unit  || { !_state } || { !alive _unit } || { !isNull objectParent _unit }) exitWith {};
-    playSound3D [(selectRandom ark_player_screams_var_soundList), _unit, false, getPosASL _unit, 1.25, (random [0.95,1,1.05]), 200];
+    if (!_state || { !alive _unit } || { !isNull objectParent _unit }) exitWith {};
+    _unit say3D [(selectRandom ark_player_screams_var_soundList), 200, (random [0.85,1,1.25]), false]
 }] call CBA_fnc_addEventHandler;
