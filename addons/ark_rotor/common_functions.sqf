@@ -3,23 +3,23 @@ ark_rotor_fnc_checkTrigger = {
 
     private _syncdTrg = synchronizedObjects _logic;
     if (count _syncdTrg isEqualTo 0) exitWith {
-        diag_log "[ARK] (Rotor) - Trigger not syncd to the module";
+        diag_log "[ARK] (Rotor) - ERROR - Trigger not syncd to the module";
     };
 
-    if (count _syncdTrg > 1) exitWith {
-        diag_log "[ARK] (Rotor) - Only sync one trigger to the module";
+    if (count _syncdTrg > 1) then {
+        diag_log "[ARK] (Rotor) - WARNING - Only sync one trigger to the module";
     };
 
     private _trigger = _syncdTrg #0;
     private _vrUnit = [_trigger] call ark_rotor_fnc_checkWaypoints;
 
     if (isNil "_vrUnit") exitWith {
-        diag_log "[ARK] (Rotor) - No VR entity syncd with trigger";
+        diag_log format ["[ARK] (Rotor) - ERROR - No VR entity syncd with trigger: %1", _trigger];
     };
 
     private _waypoints = waypoints _vrUnit;
     if (count _waypoints isEqualTo 0) exitWith {
-        diag_log format ["[ARK] (Rotor) - VR entity: %1 had no waypoints attached!", _vrUnit];
+        diag_log format ["[ARK] (Rotor) - ERROR - VR entity: %1 had no waypoints attached!", _vrUnit];
     };
 
     deleteVehicle _vrUnit;
@@ -29,7 +29,7 @@ ark_rotor_fnc_checkTrigger = {
     if (_vehicleClassname isEqualTo "Default") then {
         private _heloArray = getArray (configfile >> "Admiral" >> "UnitTemplates" >> _unitTemplate >> "th");
         if (isNil "_heloArray" || { count _heloArray isEqualTo 0 }) exitWith {
-            diag_log "[ARK] (Rotor) - No helo defined in Admiral template";
+            diag_log "[ARK] (Rotor) - ERROR - No helo defined in Admiral template";
         };
         _vehicleClassname = selectRandom _heloArray;
     };
@@ -51,10 +51,12 @@ ark_rotor_fnc_checkWaypoints = {
     } forEach synchronizedObjects _trigger;
 
     if (count _syncUnits > 1) then {
-       diag_log "[ARK] (Rotor) - Only sync one VR entity to the trigger";
+       diag_log "[ARK] (Rotor) - WARNING - Only sync one VR entity to the trigger";
     };
 
     private _vrUnit = _syncUnits #0;
+
+    if (isNil "_vrUnit") exitWith {};
 
     _vrUnit;
 };
@@ -63,7 +65,7 @@ ark_rotor_fnc_createVehicle = {
     params ["_vehicleClassname", "_trigger", "_logic"];
 
     if (isNil "_trigger") exitWith {
-        diag_log format ["No trigger was provided to try and spawn the vehicle with classname: %1", _vehicleClassname];
+        diag_log format ["[ARK] (Rotor) - WARNING - No trigger was provided to try and spawn the vehicle with classname: %1", _vehicleClassname];
     };
 
     private _flyHeight = _logic getVariable ["Fly_Height", 200];
@@ -137,7 +139,7 @@ ark_rotor_fnc_taskAttack = {
     } forEach ((playableUnits + switchableUnits) select {isPlayer _x && {!(_x isKindOf "HeadlessClient_F")}});
 
     if (count _nearEnemies isEqualTo 0) exitWith {diag_log "[ARK] (Rotor) - No players to attack";};
-    diag_log format ["[ARK] (Rotor) - Available enemies: %1",_nearEnemies];
+    diag_log format ["[ARK] (Rotor) - INFO - Available enemies: %1",_nearEnemies];
 
     [_grp, getpos (selectRandom _nearEnemies), 100, 4, "MOVE", "AWARE", "RED", "FULL", "STAG COLUMN"] call CBA_fnc_taskPatrol;
 };
