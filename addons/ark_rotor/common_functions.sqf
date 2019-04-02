@@ -23,6 +23,8 @@ ark_rotor_fnc_checkTrigger = {
     };
 
     deleteVehicle _vrUnit;
+    // These should appear in pairs, one from the EH, one from the below line, if you get 1 of 2 then something external has deleted the VR unit!
+    diag_log format ["[ARK] (Rotor) - INFO - VR entity: %1 deleted 2/2", _vrUnit];
     private _unitTemplate = adm_camp_defaultUnitTemplate;
     private _vehicleClassname = _logic getVariable ["Vehicle_ClassName", "Default"];
 
