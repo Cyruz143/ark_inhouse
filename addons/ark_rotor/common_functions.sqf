@@ -23,8 +23,7 @@ ark_rotor_fnc_checkTrigger = {
     };
 
     deleteVehicle _vrUnit;
-    // These should appear in pairs, one from the EH, one from the below line, if you get 1 of 2 then something external has deleted the VR unit!
-    diag_log format ["[ARK] (Rotor) - INFO - VR entity: %1 deleted 2/2", _vrUnit];
+    diag_log format ["[ARK] (Rotor) - INFO - VR entity: %1 deleted", _vrUnit];
     private _unitTemplate = adm_camp_defaultUnitTemplate;
     private _vehicleClassname = _logic getVariable ["Vehicle_ClassName", "Default"];
 
@@ -67,7 +66,7 @@ ark_rotor_fnc_createVehicle = {
     params ["_vehicleClassname", "_trigger", "_logic"];
 
     if (isNil "_trigger") exitWith {
-        diag_log format ["[ARK] (Rotor) - WARNING - No trigger was provided to try and spawn the vehicle with classname: %1", _vehicleClassname];
+        diag_log format ["[ARK] (Rotor) - ERROR - No trigger was provided to try and spawn the vehicle with classname: %1", _vehicleClassname];
     };
 
     private _flyHeight = _logic getVariable ["Fly_Height", 200];
@@ -140,7 +139,7 @@ ark_rotor_fnc_taskAttack = {
         };
     } forEach ((playableUnits + switchableUnits) select {isPlayer _x && {!(_x isKindOf "HeadlessClient_F")}});
 
-    if (count _nearEnemies isEqualTo 0) exitWith {diag_log "[ARK] (Rotor) - No players to attack";};
+    if (count _nearEnemies isEqualTo 0) exitWith {diag_log "[ARK] (Rotor) - ERROR - No players to attack";};
     diag_log format ["[ARK] (Rotor) - INFO - Available enemies: %1",_nearEnemies];
 
     [_grp, getpos (selectRandom _nearEnemies), 100, 4, "MOVE", "AWARE", "RED", "FULL", "STAG COLUMN"] call CBA_fnc_taskPatrol;
