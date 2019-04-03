@@ -87,22 +87,13 @@ class CfgWorlds {
     class NapfWinter: CAWorld {
         REDUCED_HAZE
     };
-    class fallujah: CAWorld {
-        REDUCED_HAZE
-    };
     class FDF_Isle1_a: CAWorld {
         REDUCED_HAZE
     };
     class clafghan: CAWorld {
         REDUCED_HAZE
     };
-    class Caribou: CAWorld {
-        REDUCED_HAZE
-    };
     class mbg_celle2: CAWorld {
-        REDUCED_HAZE
-    };
-    class isladuala3: CAWorld {
         REDUCED_HAZE
     };
     class prei_khmaoch_luong: CAWorld {
