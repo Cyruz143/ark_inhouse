@@ -24,6 +24,12 @@ class CfgWorlds {
     class Chernarus: CAWorld {
         REDUCED_HAZE
     };
+    class Chernarus_Summer: CAWorld {
+        REDUCED_HAZE
+    };
+    class Chernarus_Winter: CAWorld {
+        REDUCED_HAZE
+    };
     class Porto: CAWorld {
         REDUCED_HAZE
     };
@@ -72,4 +78,43 @@ class CfgWorlds {
     class Noe: CAWorld {
         REDUCED_HAZE
     };
-}; 
+    class DYA: CAWorld {
+        REDUCED_HAZE
+    };
+    class Napf: CAWorld {
+        REDUCED_HAZE
+    };
+    class NapfWinter: CAWorld {
+        REDUCED_HAZE
+    };
+    class fallujah: CAWorld {
+        REDUCED_HAZE
+    };
+    class FDF_Isle1_a: CAWorld {
+        REDUCED_HAZE
+    };
+    class clafghan: CAWorld {
+        REDUCED_HAZE
+    };
+    class Caribou: CAWorld {
+        REDUCED_HAZE
+    };
+    class mbg_celle2: CAWorld {
+        REDUCED_HAZE
+    };
+    class isladuala3: CAWorld {
+        REDUCED_HAZE
+    };
+    class prei_khmaoch_luong: CAWorld {
+        REDUCED_HAZE
+    };
+    class hellanmaa: CAWorld {
+        REDUCED_HAZE
+    };
+    class ruha: CAWorld {
+        REDUCED_HAZE
+    };
+    class WL_Rosche: CAWorld {
+        REDUCED_HAZE
+    };
+};
