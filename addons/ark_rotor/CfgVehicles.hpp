@@ -9,9 +9,7 @@ class CfgVehicles {
         side = 3;
         vehicleClass = "Rotor_Paths";
         class EventHandlers {
-            init = "if (local _this #0) then {
-                        [{(_this #0) disableAI 'ALL'; (_this #0) setVariable ['r3_do_not_track', true]; (_this #0) allowDamage false; hideObjectGlobal (_this #0)}, [(_this #0)]] call CBA_fnc_execNextFrame;
-                    };";
+            init = "if (local (_this #0)) then {[{(_this #0) disableAI 'ALL'; (_this #0) setVariable ['r3_do_not_track', true]; (_this #0) allowDamage false; hideObjectGlobal (_this #0)}, [(_this #0)]] call CBA_fnc_execNextFrame;};";
             killed = "diag_log format ['[ARK] (Rotor) - ERROR - VR Unit: %1 was killed', (_this #0)];";
             class CBA_Extended_EventHandlers: CBA_Extended_EventHandlers_base {};
         };
