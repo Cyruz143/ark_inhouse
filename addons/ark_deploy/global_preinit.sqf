@@ -30,10 +30,58 @@ ark_deploy_module_init = {
     publicVariable "ark_deploy_post_factions";
 };
 
-ark_deploy_fnc_deployGroup = {
-    params ["_player", "_position"];
+ark_deploy_fnc_assignDeployClick = {
+    params ["_unit"];
 
-    _player setVariable ["ark_deploy_canDeploy", false, true];
+    hint "Click anywhere on the map to deploy";
+    openMap [true, true];
+    _unit onMapSingleClick {
+        if (surfaceIsWater _pos) then {
+            [_this, _pos] call ark_fnc_ch_waterDeploy;
+        } else {
+            [_this, _pos] call ark_fnc_ch_landDeploy;
+        };
+    };
+};
+
+ark_fnc_ch_waterDeploy = {
+    params ["_unit", "_position"];
+
+    _unit setVariable ["ark_deploy_canDeploy", false, true];
+    onMapSingleClick "";
+
+    private _underSurface = (abs (getTerrainHeightASL _position)) / 2;
+    private _aliveUnits = [];
+    private _pos_x = _position #0;
+    private _pos_y = _position #1;
+
+    {
+        if (alive _x) then {
+            _aliveUnits pushBack _x;
+        };
+    } forEach units (group _unit);
+
+    {
+       if (isWeaponDeployed _x || { isWeaponRested _x }) then {
+            _x setPosASL (_x modelToWorldWorld [0,0,0]);
+        };
+
+        [
+            {!(isWeaponDeployed (_this #0)) && !(isWeaponRested (_this #0))},
+            {(_this #0) setposASL [(_this #1),(_this #2),-(_this #3)]},
+            [_x,_pos_x,_pos_y,_underSurface],
+            1,
+            {(_this #0) setposASL [(_this #1),(_this #2),-(_this #3)]}
+        ] call CBA_fnc_waitUntilAndExecute;
+    } forEach _aliveUnits;
+
+    openMap [false, false];
+};
+
+ark_fnc_ch_landDeploy = {
+    params ["_unit", "_position"];
+
+    _unit setVariable ["ark_deploy_canDeploy", false, true];
     onMapSingleClick "";
 
     private _aliveUnits = [];
@@ -44,33 +92,23 @@ ark_deploy_fnc_deployGroup = {
         if (alive _x) then {
             _aliveUnits pushBack _x;
         };
-    } forEach units (group _player);
+    } forEach units (group _unit);
 
     {
        if (isWeaponDeployed _x || { isWeaponRested _x }) then {
-            _x setPos (_x modelToWorld [0,0,0]);
+            _x setPosASL (_x modelToWorldWorld [0,0,0]);
         };
 
         [
+            {!(isWeaponDeployed (_this #0)) && !(isWeaponRested (_this #0))},
             {(_this #0) setposATL [(_this #1),(_this #2), 0]},
-            [_x,_pos_x,_pos_y]
-        ] call CBA_fnc_execNextFrame;
-
-        _pos_x = _pos_x + 1;
-        _pos_y = _pos_y + 1;
+            [_x,_pos_x,_pos_y],
+            1,
+            {(_this #0) setposATL [(_this #1),(_this #2), 0]}
+        ] call CBA_fnc_waitUntilAndExecute;
     } forEach _aliveUnits;
 
     openMap [false, false];
-};
-
-ark_deploy_fnc_assignDeployClick = {
-    params ["_player"];
-
-    hint "Click anywhere on the map to deploy";
-    openMap [true, true];
-    _player onMapSingleClick {
-        [_this, _pos] call ark_deploy_fnc_deployGroup;
-    };
 };
 
 ark_deploy_fnc_activatePreGroupDeploy = {
@@ -96,17 +134,17 @@ ark_deploy_fnc_activatePostGroupDeploy = {
 };
 
 ark_deploy_fnc_canPlayerPostDeploy = {
-    params ["_player"];
+    params ["_unit"];
 
-    private _canDeploy = _player getVariable ["ark_deploy_canDeploy", false];
-    (_canDeploy && ark_deploy_deployActive && ((side _player) in ark_deploy_post_factions));
+    private _canDeploy = _unit getVariable ["ark_deploy_canDeploy", false];
+    (_canDeploy && ark_deploy_deployActive && ((side _unit) in ark_deploy_post_factions));
 };
 
 ark_deploy_fnc_canPlayerPreDeploy = {
-    params ["_player"];
+    params ["_unit"];
 
-    private _canDeploy = _player getVariable ["ark_deploy_canDeploy", false];
-    (_canDeploy && ark_deploy_preDeployActive && (side _player in ark_deploy_pre_factions));
+    private _canDeploy = _unit getVariable ["ark_deploy_canDeploy", false];
+    (_canDeploy && ark_deploy_preDeployActive && (side _unit in ark_deploy_pre_factions));
 };
 
 call ark_deploy_fnc_initVariables;
