@@ -29,24 +29,33 @@ ark_admin_tools_fnc_enableMapTeleport = {
 
     hintSilent "Map Click Teleport has been enabled.";
     openMap [true, true];
-
     _unit onMapSingleClick {
-        if (isWeaponDeployed _unit || { isWeaponRested _unit }) then {
-            _unit setPosASL (_unit modelToWorldWorld [0,0,0]);
-        };
-
-        [
-            {!(isWeaponDeployed (_this #0)) && !(isWeaponRested (_this #0))},
-            {
-                (_this #0) setposATL (_this #1);
-                call ark_admin_tools_fnc_disableMapTeleport;
-                openMap [false, false];
-            },
-            [_unit,_pos],
-            1,
-            {(_this #0) setposATL [(_this #1),(_this #2), 0]}
-        ] call CBA_fnc_waitUntilAndExecute;
+        [_this, _pos] call ark_admin_tools_fnc_teleportUnit
     };
+};
+
+ark_admin_tools_fnc_teleportUnit = {
+    params ["_unit","_pos"];
+
+    if (isWeaponDeployed _unit || { isWeaponRested _unit }) then {
+        _unit setPosASL (_unit modelToWorldWorld [0,0,0]);
+    };
+
+    [
+        {!(isWeaponDeployed (_this #0)) && !(isWeaponRested (_this #0))},
+        {
+            (_this #0) setposATL (_this #1);
+            openMap [false, false];
+            call ark_admin_tools_fnc_disableMapTeleport;
+        },
+        [_unit,_pos],
+        1,
+        {
+            (_this #0) setposATL (_this #1);
+            openMap [false, false];
+            call ark_admin_tools_fnc_disableMapTeleport;
+        }
+    ] call CBA_fnc_waitUntilAndExecute;
 };
 
 ark_admin_tools_fnc_disableMapTeleport = {
