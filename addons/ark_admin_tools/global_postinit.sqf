@@ -3,9 +3,10 @@ ark_admin_tools_fnc_callAttackHelo = {
 
     private _unitTemplate = adm_camp_defaultUnitTemplate;
     private _side = [_unitTemplate] call adm_common_fnc_getUnitTemplateSide;
-    private _pilotClassnames = [_unitTemplate, "pilots"] call adm_common_fnc_getUnitTemplateArray;
     private _skillArray = ["Camp"] call adm_common_fnc_getZoneTemplateSkillValues;
-    private _heloArray = getArray (configfile >> "Admiral" >> "UnitTemplates" >> _unitTemplate >> "ah");
+    private _pilotClassnames = [_unitTemplate, "pilots"] call adm_common_fnc_getUnitTemplateArray;
+    private _heloArray = [_unitTemplate, "ah"] call adm_common_fnc_getUnitTemplateArray;
+
     if (isNil "_heloArray" || { count _heloArray == 0 }) exitWith {
         diag_log "[ARK] (Admin Tools) - No helo defined in Admiral template";
     };
@@ -32,10 +33,10 @@ ark_admin_tools_fnc_callArmour = {
 
     private _unitTemplate = adm_camp_defaultUnitTemplate;
     private _side = [_unitTemplate] call adm_common_fnc_getUnitTemplateSide;
+    private _skillArray = ["Camp"] call adm_common_fnc_getZoneTemplateSkillValues;
     private _pos = [_player, 850, 1000, 3, 0, 20, 0] call BIS_fnc_findSafePos;
     private _crewmanClassnames = [_unitTemplate, "crewmen"] call adm_common_fnc_getUnitTemplateArray;
-    private _skillArray = ["Camp"] call adm_common_fnc_getZoneTemplateSkillValues;
-    private _armourArray = getArray (configfile >> "Admiral" >> "UnitTemplates" >> _unitTemplate >> "armour");
+    private _armourArray = [_unitTemplate, "armour"] call adm_common_fnc_getUnitTemplateArray;
 
     private _vehicle = createVehicle [(selectRandom _armourArray), _pos, [], 0, "NONE"];
     private _grp = createGroup _side;
@@ -61,10 +62,10 @@ ark_admin_tools_fnc_callTechnical = {
 
     private _unitTemplate = adm_camp_defaultUnitTemplate;
     private _side = [_unitTemplate] call adm_common_fnc_getUnitTemplateSide;
+    private _skillArray = ["Camp"] call adm_common_fnc_getZoneTemplateSkillValues;
     private _pos = [_player, 850, 1000, 3, 0, 20, 0] call BIS_fnc_findSafePos;
     private _infantryClassnames = [_unitTemplate, "infantry"] call adm_common_fnc_getUnitTemplateArray;
-    private _skillArray = ["Camp"] call adm_common_fnc_getZoneTemplateSkillValues;
-    private _technicalArray = getArray (configfile >> "Admiral" >> "UnitTemplates" >> _unitTemplate >> "technicals");
+    private _technicalArray = [_unitTemplate, "technicals"] call adm_common_fnc_getUnitTemplateArray;
 
     private _vehicle = createVehicle [(selectRandom _technicalArray), _pos, [], 0, "NONE"];
     private _grp = createGroup _side;
