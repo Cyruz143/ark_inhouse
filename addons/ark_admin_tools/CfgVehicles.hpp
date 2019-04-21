@@ -6,7 +6,7 @@ class CfgVehicles {
                 displayName = "ARK";
                 runOnHover = 0;
                 hotkey = "";
-                exceptions[] = {"isNotInside"};
+                exceptions[] = {"isNotInside","isNotSwimming"};
                 condition = "true";
                 statement = "";
                 icon = "\x\ark\addons\ark_main\resources\ark_star.paa";
@@ -14,7 +14,7 @@ class CfgVehicles {
                 class ARK_Category {
                     displayName = "ARK Client Action";
                     icon = "\x\ark\addons\ark_main\resources\ark_star.paa";
-                    exceptions[] = {"isNotInside"};
+                    exceptions[] = {"isNotInside","isNotSwimming"};
                     condition = "true";
                     statement = "";
                 };
@@ -22,14 +22,13 @@ class CfgVehicles {
                 class ARK_Action {
                     displayName = "ARK Client Action";
                     icon = "\x\ark\addons\ark_main\resources\ark_star.paa";
-                    exceptions[] = {"isNotInside"};
+                    exceptions[] = {"isNotInside","isNotSwimming"};
                     condition = "true";
                     statement = "";
                 };
 
                 class Map_Click_Teleport : ARK_Action {
                     displayName = "Click Map Teleport";
-                    exceptions[] = {};
                     icon = "\x\ark\addons\ark_main\resources\click.paa";
                     condition = "ark_mapTeleportEnabled";
                     statement = "player call ark_admin_tools_fnc_enableMapTeleport;";
@@ -37,7 +36,6 @@ class CfgVehicles {
 
                 class Ammo_Drop : ARK_Action {
                     displayName = "Request Ammo Drop";
-                    exceptions[] = {};
                     icon = "\A3\ui_f\data\map\vehicleicons\iconParachute_ca.paa";
                     condition = "call ark_admin_tools_fnc_isTownSweep && (player isEqualTo leader group _player) && !(player getVariable ['ark_ts_paradropInProgress', false])";
                     statement = "player call ark_admin_tools_fnc_ammoDrop;";
