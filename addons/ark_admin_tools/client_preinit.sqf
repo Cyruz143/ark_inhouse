@@ -25,25 +25,33 @@ ark_admin_tools_fnc_assignMapTeleport = {
 };
 
 ark_admin_tools_fnc_enableMapTeleport = {
-    params ["_player"];
+    params ["_unit"];
 
     hintSilent "Map Click Teleport has been enabled.";
     openMap [true, true];
 
-    if (isWeaponDeployed _player || { isWeaponRested _player} ) then {
-        _player setPos (_player modelToWorld [0,0,0]);
-    };
+    _unit onMapSingleClick {
+        if (isWeaponDeployed _unit || { isWeaponRested _unit }) then {
+            _unit setPosASL (_unit modelToWorldWorld [0,0,0]);
+        };
 
-    _player onMapSingleClick {
-        _this setposATL _pos;
-        call ark_admin_tools_fnc_disableMapTeleport;
-        openMap [false, false];
+        [
+            {!(isWeaponDeployed (_this #0)) && !(isWeaponRested (_this #0))},
+            {
+                (_this #0) setposATL (_this #1);
+                call ark_admin_tools_fnc_disableMapTeleport;
+                openMap [false, false];
+            },
+            [_unit,_pos],
+            1,
+            {(_this #0) setposATL [(_this #1),(_this #2), 0]}
+        ] call CBA_fnc_waitUntilAndExecute;
     };
 };
 
 ark_admin_tools_fnc_disableMapTeleport = {
     hintSilent "Map Click Teleport has been disabled";
-    onMapSingleClick {};
+    onMapSingleClick "";
 };
 
 ark_admin_tools_eh_mapClickTeleport = {
