@@ -26,6 +26,7 @@ class CfgVehicles {
                     condition = "true";
                     statement = "";
                 };
+
                 class Map_Click_Teleport : ARK_Action {
                     displayName = "Click Map Teleport";
                     exceptions[] = {};
@@ -33,6 +34,7 @@ class CfgVehicles {
                     condition = "ark_mapTeleportEnabled";
                     statement = "player call ark_admin_tools_fnc_enableMapTeleport;";
                 };
+
                 class Ammo_Drop : ARK_Action {
                     displayName = "Request Ammo Drop";
                     exceptions[] = {};
@@ -40,6 +42,7 @@ class CfgVehicles {
                     condition = "call ark_admin_tools_fnc_isTownSweep && (player isEqualTo leader group _player) && !(player getVariable ['ark_ts_paradropInProgress', false])";
                     statement = "player call ark_admin_tools_fnc_ammoDrop;";
                 };
+
                 class Unflip_Vehicle : ARK_Action {
                     displayName = "Unflip Vehicle";
                     icon = "\A3\ui_f\data\Map\VehicleIcons\pictureRepair_ca.paa";
@@ -92,14 +95,21 @@ class CfgVehicles {
                         displayName = "Call Attack Helo";
                         condition = "call ark_admin_tools_fnc_isAdmiralEnabled && { !(call ark_admin_tools_fnc_isTownSweep) }";
                         statement = "[player] remoteExecCall ['ark_admin_tools_fnc_callAttackHelo',2]";
-                        icon = "\a3\Ui_f\data\GUI\Cfg\CommunicationMenu\casheli_ca.paa";
+                        icon = "\A3\ui_f\data\map\vehicleicons\iconHelicopter_ca.paa";
                     };
 
                     class Call_Armour : ARK_Action {
-                        displayName = "Call Attack Armour";
-                        condition = "[] call ark_admin_tools_fnc_isAdmiralEnabled && { !(call ark_admin_tools_fnc_isTownSweep) }";
+                        displayName = "Call Armour";
+                        condition = "call ark_admin_tools_fnc_isAdmiralEnabled && { !(call ark_admin_tools_fnc_isTownSweep) }";
                         statement = "[player] remoteExecCall ['ark_admin_tools_fnc_callArmour',2]";
                         icon = "\A3\ui_f\data\map\vehicleicons\iconTank_ca.paa";
+                    };
+
+                    class Call_Technical : ARK_Action {
+                        displayName = "Call Technical";
+                        condition = "call ark_admin_tools_fnc_isAdmiralEnabled && { !(call ark_admin_tools_fnc_isTownSweep) }";
+                        statement = "[player] remoteExecCall ['ark_admin_tools_fnc_callTechnical',2]";
+                        icon = "\A3\ui_f\data\map\vehicleicons\iconAPC_ca.paa";
                     };
 
                 };
