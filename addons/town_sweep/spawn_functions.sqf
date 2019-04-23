@@ -33,21 +33,27 @@ ts_spawn_fnc_onAdmiralInit = {
 ts_spawn_fnc_selectLocation = {
     hintSilent "Click on map to select attack location.";
     ["ts_mapClick", "onMapSingleClick", {
-        [0, { _this call ts_spawn_fnc_moveLocationMarker }, [_pos, 1000]] call CBA_fnc_globalExecute;
+        [0, { _this call ts_spawn_fnc_moveLocationMarker; ts_spawn_selectedLocation set [0, (_this #0)]; ts_spawn_selectedLocation set [1, (_this #1)]; }, [_pos, 1000]] call CBA_fnc_globalExecute;
         ["ts_mapClick", "onMapSingleClick"] call BIS_fnc_removeStackedEventHandler;
     }] call BIS_fnc_addStackedEventHandler;
     ts_spawn_playerCount = count (playableUnits select { isPlayer _x });
 };
 
+ts_spawn_fnc_canLocationBeActivated = {
+    count ts_spawn_selectedLocation > 0 && {!(ts_spawn_selectedLocation select 3)}
+};
+
 ts_spawn_fnc_changeLocationSize = {
     params ["_sizeChange"];
 
+    if !(call ts_spawn_fnc_canLocationBeActivated) exitWith {};
     private _size = (ts_spawn_selectedLocation select 1) + _sizeChange;
     ts_spawn_selectedLocation set [1, _size];
     ts_spawn_selectedLocationMarkerName setMarkerSize [_size, _size];
 };
 
 ts_spawn_fnc_activateLocation = {
+    if !(call ts_spawn_fnc_canLocationBeActivated) exitWith {};
     call ts_spawn_fnc_activateLocationMarker;
     ts_spawn_aiCount = ceil (ts_spawn_playerCount * ts_spawn_ai_multiplier);
     ts_spawn_cqcCount = ceil (ts_spawn_aiCount * ts_spawn_cqc_percent);
@@ -71,8 +77,6 @@ ts_spawn_fnc_createLocationMarker = {
 
 ts_spawn_fnc_moveLocationMarker = {
     params ["_position", "_size"];
-    ts_spawn_selectedLocation set [0, _position];
-    ts_spawn_selectedLocation set [1, _size];
     ts_spawn_selectedLocationMarkerName setMarkerPos _position;
     ts_spawn_selectedLocationMarkerName setMarkerSize [_size, _size];
     ts_spawn_selectedLocationMarkerName setMarkerAlpha 0.5;
