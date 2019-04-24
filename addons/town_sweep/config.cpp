@@ -2,8 +2,13 @@ class CfgPatches {
     class town_sweep {
         units[] = {};
         weapons[] = {};
-        requiredVersion = 1.0;
-        requiredAddons[] = {"CBA_MAIN", "Hull3", "Admiral"};
+        requiredVersion = 1.90;
+        requiredAddons[] = {
+            "ark_main",
+            "Hull3",
+            "Admiral",
+            "ark_rotor"
+        };
         author = "ARK";
         authorUrl = "https://github.com/Cyruz143/ark_inhouse";
     };

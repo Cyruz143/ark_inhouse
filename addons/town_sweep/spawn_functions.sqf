@@ -22,7 +22,7 @@ ts_spawn_fnc_preinit = {
 
 ts_spawn_fnc_onAdmiralInit = {
     private _templateConfigs = "ts_camouflage in getArray (_x >> 'camouflage') && {configName _x != 'Base'} && {getText (_x >> 'side') != ts_player_factionRawSide}" configClasses (ADMIRAL_CONFIG_FILE >> "UnitTemplates");
-    private _templateConfig = _templateConfigs select floor random count _templateConfigs;
+    private _templateConfig = selectRandom _templateConfigs;
     ts_spawn_unitTemplate = configName _templateConfig;
     adm_camp_defaultUnitTemplate = ts_spawn_unitTemplate;
     adm_patrol_defaultUnitTemplate = ts_spawn_unitTemplate;
@@ -47,7 +47,7 @@ ts_spawn_fnc_changeLocationSize = {
     params ["_sizeChange"];
 
     if !(call ts_spawn_fnc_canLocationBeActivated) exitWith {};
-    private _size = (ts_spawn_selectedLocation select 1) + _sizeChange;
+    private _size = (ts_spawn_selectedLocation #1) + _sizeChange;
     ts_spawn_selectedLocation set [1, _size];
     ts_spawn_selectedLocationMarkerName setMarkerSize [_size, _size];
 };
@@ -64,6 +64,13 @@ ts_spawn_fnc_activateLocation = {
     ts_spawn_patrolArmourGroupCount = 1 + (floor (ts_spawn_playerCount / 25));
     call ts_spawn_fnc_createLocationZones;
     ts_spawn_selectedLocation set [2, true];
+    [
+        {count (allPlayers inAreaArray ts_spawn_selectedLocationMarkerName) > 0},
+        {
+            private _insertType = selectRandomWeighted ["paradrop", 0.5, "insert", 0.5];
+            _insertType call ts_spawn_enableRotor;
+        }
+    ] call CBA_fnc_waitUntilAndExecute;
 };
 
 ts_spawn_fnc_createLocationMarker = {
@@ -110,4 +117,29 @@ ts_spawn_fnc_createLocationZones = {
     , ["zoneTemplate", adm_patrol_defaultZoneTemplate]
     , ["enabled", _active]
     ] call adm_api_fnc_initZone;
+};
+
+ts_spawn_enableRotor = {
+    params ["_insertType"];
+    ts_spawn_selectedLocation params ["_position"];
+
+    // Empty trigger for Rotor to use as a spawn pos
+    private _spawnZone = createTrigger ["EmptyDetector", [0,0,0], false];
+    private _grp = createGroup civilian;
+    private _jeff = _grp createUnit ["C_Jeff_VR", [0,0,0], [], 0, "NONE"];
+    _grp addWaypoint [_position, 100, 1];
+    _grp addWaypoint [[worldSize, worldSize, 0], 100, 2];
+
+    private "_module";
+    if (_insertType isEqualTo "paradrop") then {
+        _module = "ARK_Rotor_Paradrop" createVehicleLocal [0,0,0];
+        _module setVariable ["Routine_Function", "ark_rotor_fnc_paradrop"];
+    } else {
+        _module = "ARK_Rotor_Insert" createVehicleLocal [0,0,0];
+        _module setVariable ["Routine_Function", "ark_rotor_fnc_insert"];
+        _module setVariable ["Fly_Height", 75];
+    };
+
+    _module setVariable ["Crew_Percentage", 100];
+    _spawnZone synchronizeObjectsAdd [_module,_jeff];
 };

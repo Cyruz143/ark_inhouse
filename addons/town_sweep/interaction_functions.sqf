@@ -24,7 +24,7 @@ ts_interaction_fnc_addInteractions = {
     [player, 1, ["ACE_SelfActions"], _action] call ace_interact_menu_fnc_addActionToObject;
     private _actions =
         [ ["Select Location", "\x\ark\addons\ark_main\resources\ark_star.paa", { [0, { [] call ts_spawn_fnc_selectLocation }, []] call CBA_fnc_globalExecute; }]
-        , ["Activate Town", "\x\ark\addons\ark_main\resources\ai_enable.paa", { [0, { [] call ts_spawn_fnc_activateLocation }, []] call CBA_fnc_globalExecute; }]
+        , ["Activate Zone", "\x\ark\addons\ark_main\resources\ai_enable.paa", { [0, { [] call ts_spawn_fnc_activateLocation }, []] call CBA_fnc_globalExecute; }]
         , ["Enable Group Deploy", "\x\ark\addons\ark_main\resources\click_enable.paa", { [0, { [] call ts_fnc_enableGroupDeploy }, []] call CBA_fnc_globalExecute; }]
         ];
     {

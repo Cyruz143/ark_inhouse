@@ -28,7 +28,7 @@ ark_rotor_fnc_checkTrigger = {
     private _vehicleClassname = _logic getVariable ["Vehicle_ClassName", "Default"];
 
     if (_vehicleClassname isEqualTo "Default") then {
-        private _heloArray = getArray (configfile >> "Admiral" >> "UnitTemplates" >> _unitTemplate >> "th");
+        private _heloArray = [_unitTemplate, "th"] call adm_common_fnc_getUnitTemplateArray;
         if (isNil "_heloArray" || { count _heloArray isEqualTo 0 }) exitWith {
             diag_log "[ARK] (Rotor) - ERROR - No helo defined in Admiral template";
         };
@@ -37,6 +37,7 @@ ark_rotor_fnc_checkTrigger = {
 
     private _routineFunction = _logic getVariable ["Routine_Function", {ark_rotor_fnc_paradrop}];
 
+    diag_log format ["[ARK] (Rotor) - INFO - Compiled Rotor routine - Logic: %1 - Trigger: %2 - Classname: %3 - Template: %4 - Waypoints: %5 - Routine: %6", _logic, _trigger, _vehicleClassname, _unitTemplate, _waypoints, _routineFunction];
     [_logic, _trigger, _vehicleClassname, _unitTemplate, _waypoints] call (call compile _routineFunction);
 };
 
