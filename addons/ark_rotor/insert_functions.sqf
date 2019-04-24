@@ -3,10 +3,10 @@ ark_rotor_fnc_insert = {
 
     private _side = [_unitTemplate] call adm_common_fnc_getUnitTemplateSide;
     private _vehicle = [_vehicleClassname, _trigger, _logic] call ark_rotor_fnc_createVehicle;
-    
+
     private _pilotClassnames = [_unitTemplate, "pilots"] call adm_common_fnc_getUnitTemplateArray;
     private _pilot = [_pilotClassnames, _side, _vehicle] call ark_rotor_fnc_createPilot;
-    
+
     private _cargoClassnames = [_unitTemplate, "infantry"] call adm_common_fnc_getUnitTemplateArray;
     private _cargoGroup = [_cargoClassnames, _side, _vehicle, false, _logic] call ark_rotor_fnc_createCargo;
 
@@ -19,7 +19,7 @@ ark_rotor_fnc_insert = {
         {((_this #0) distance2D (getWPPos (_this #1))) < 500},
         {
             (_this #0) land "GET OUT";
-            (group (_this #2)) lockWP true; 
+            (group (_this #2)) lockWP true;
         },
         [_vehicle,_landWP,_pilot,_logic],
         600,
@@ -27,7 +27,7 @@ ark_rotor_fnc_insert = {
     ] call CBA_fnc_waitUntilAndExecute;
 
     [
-        {((getPosATL (_this #0)) #2) < 0.5},
+        {((getPos (_this #0)) #2) < 0.5},
         {[(_this #0),(_this #1),(_this #2),(_this #4)] call ark_rotor_fnc_emtpyCargo;},
         [_vehicle,_landingPad,_pilot,_logic,_cargoGroup],
         600,
