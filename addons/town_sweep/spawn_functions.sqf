@@ -68,7 +68,7 @@ ts_spawn_fnc_activateLocation = {
         {count (allPlayers inAreaArray ts_spawn_selectedLocationMarkerName) > 0},
         {
             private _insertType = selectRandomWeighted ["paradrop", 0.5, "insert", 0.5];
-            _insertType call ts_spawn_enableRotor;
+            _insertType call ts_spawn_fnc_enableRotor;
         }
     ] call CBA_fnc_waitUntilAndExecute;
 };
@@ -119,7 +119,7 @@ ts_spawn_fnc_createLocationZones = {
     ] call adm_api_fnc_initZone;
 };
 
-ts_spawn_enableRotor = {
+ts_spawn_fnc_enableRotor = {
     params ["_insertType"];
     ts_spawn_selectedLocation params ["_position"];
 
