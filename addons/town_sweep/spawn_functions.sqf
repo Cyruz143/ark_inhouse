@@ -33,10 +33,9 @@ ts_spawn_fnc_onAdmiralInit = {
 ts_spawn_fnc_selectLocation = {
     hintSilent "Click on map to select attack location.";
     ["ts_mapClick", "onMapSingleClick", {
-        [0, { _this call ts_spawn_fnc_moveLocationMarker; ts_spawn_selectedLocation set [0, (_this #0)]; ts_spawn_selectedLocation set [1, (_this #1)]; ts_spawn_selectedLocation set [2, (_this #2)];}, [_pos, 1000, false]] call CBA_fnc_globalExecute;
+        [0, { _this call ts_spawn_fnc_moveLocationMarker; ts_spawn_selectedLocation set [0, (_this #0)]; ts_spawn_selectedLocation set [1, (_this #1)]; ts_spawn_selectedLocation set [2, (_this #2)]; ts_spawn_playerCount = count (playableUnits select { isPlayer _x });}, [_pos, 1000, false]] call CBA_fnc_globalExecute;
         ["ts_mapClick", "onMapSingleClick"] call BIS_fnc_removeStackedEventHandler;
     }] call BIS_fnc_addStackedEventHandler;
-    ts_spawn_playerCount = count (playableUnits select { isPlayer _x });
 };
 
 ts_spawn_fnc_canLocationBeActivated = {
@@ -123,19 +122,19 @@ ts_spawn_fnc_enableRotor = {
     params ["_insertType"];
     ts_spawn_selectedLocation params ["_position"];
 
-    // Empty trigger for Rotor to use as a spawn pos
-    private _spawnZone = createTrigger ["EmptyDetector", [0,0,0], false];
+    private _spawnPos = AGLToASL (_position getPos [3000, random 360]);
+    private _spawnZone = createTrigger ["EmptyDetector", _spawnPos, false];
     private _grp = createGroup civilian;
-    private _jeff = _grp createUnit ["C_Jeff_VR", [0,0,0], [], 0, "NONE"];
+    private _jeff = _grp createUnit ["C_Jeff_VR", _spawnPos, [], 0, "NONE"];
     _grp addWaypoint [_position, 100, 1];
     _grp addWaypoint [[worldSize, worldSize, 0], 100, 2];
 
     private "_module";
     if (_insertType isEqualTo "paradrop") then {
-        _module = "ARK_Rotor_Paradrop" createVehicleLocal [0,0,0];
+        _module = "ARK_Rotor_Paradrop" createVehicleLocal _spawnPos;
         _module setVariable ["Routine_Function", "ark_rotor_fnc_paradrop"];
     } else {
-        _module = "ARK_Rotor_Insert" createVehicleLocal [0,0,0];
+        _module = "ARK_Rotor_Insert" createVehicleLocal _spawnPos;
         _module setVariable ["Routine_Function", "ark_rotor_fnc_insert"];
         _module setVariable ["Fly_Height", 75];
     };

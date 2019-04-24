@@ -71,10 +71,10 @@ ark_rotor_fnc_createVehicle = {
     };
 
     private _flyHeight = _logic getVariable ["Fly_Height", 200];
-    private _spawnPosition = [(triggerArea _trigger), (getposATL _trigger), true] call adm_api_fnc_getRandomPositionInArea;
+    private _spawnPosition = [(triggerArea _trigger), (getposASL _trigger), true] call adm_api_fnc_getRandomPositionInArea;
     _spawnPosition set [2, _flyHeight];
     _vehicle = createVehicle [_vehicleClassname, _spawnPosition, [], 0, "FLY"];
-    _vehicle setPosATL _spawnPosition;
+    _vehicle setPosASL _spawnPosition;
     _vehicle flyInHeight _flyHeight;
 
     _vehicle;
