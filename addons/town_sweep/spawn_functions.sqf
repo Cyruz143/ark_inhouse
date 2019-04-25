@@ -175,21 +175,11 @@ ts_spawn_fnc_createFortifications = {
         if (count _selectedPos isEqualTo 3) exitWith {};
 
         private _fortification = createVehicle [_selectedFortification, _selectedPos, [], 0, "NONE"];
-        //_fortification setVectorDir ((getpos _fortification vectorFromTo _position) vectorMultiply -1);
         _fortification setVectorDir (getpos _fortification vectorFromTo _position);
         _fortification setVectorUp surfaceNormal position _fortification;
         _fortification call ts_spawn_fnc_fillFortifications;
         ts_spawn_placedFortifications pushBack _fortification;
     };
-
-    // Debug only -- Remove before LIVE
-    {
-        private _mkr = createMarker [(str getPosASL _x), (getPosASL _x)];
-        _mkr setMarkerShape "ICON";
-        _mkr setMarkerType "mil_dot";
-        _mkr setMarkerColor "ColorBlue";
-        // Add dudes
-    } forEach ts_spawn_placedFortifications;
 };
 
 ts_spawn_fnc_fillFortifications = {
