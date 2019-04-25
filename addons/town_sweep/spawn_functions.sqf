@@ -7,6 +7,7 @@ ts_spawn_location_sizeChange = 100;
 ts_spawn_fnc_preinit = {
     ts_spawn_selectedLocationMarkerName = "ts_spawn_selectedLocation";
     ts_spawn_selectedLocation = [];
+    ts_spawn_placedFortifications = [];
     ts_spawn_ai_multiplier = 2;
     ts_spawn_cqc_percent = 0.3;
     ts_spawn_playerCount = 0;
@@ -63,6 +64,7 @@ ts_spawn_fnc_activateLocation = {
     ts_spawn_patrolArmourGroupCount = 1 + (floor (ts_spawn_playerCount / 25));
     call ts_spawn_fnc_createLocationZones;
     ts_spawn_selectedLocation set [2, true];
+    call ts_spawn_fnc_createFortifications;
     [
         {count (allPlayers inAreaArray ts_spawn_selectedLocationMarkerName) > 0},
         {
@@ -122,11 +124,15 @@ ts_spawn_fnc_enableRotor = {
     params ["_insertType"];
     ts_spawn_selectedLocation params ["_position"];
 
-    private _spawnPos = AGLToASL (_position getPos [3000, random 360]);
+    private _lzPos = [_position, 0, 150, 10, 0, 0.2] call BIS_fnc_findSafePos;
+    // BIS_fnc_findSafePos returns X and Y with success and  X Y Z on failure... fucking BI
+    if (count _selectedPos isEqualTo 3) exitWith {};
+
+    private _spawnPos = _position getPos [3000, random 360];
     private _spawnZone = createTrigger ["EmptyDetector", _spawnPos, false];
     private _grp = createGroup civilian;
     private _jeff = _grp createUnit ["C_Jeff_VR", _spawnPos, [], 0, "NONE"];
-    _grp addWaypoint [_position, 100, 1];
+    _grp addWaypoint [_lzPos, 0, 1];
     _grp addWaypoint [[worldSize, worldSize, 0], 100, 2];
 
     private "_module";
@@ -141,4 +147,67 @@ ts_spawn_fnc_enableRotor = {
 
     _module setVariable ["Crew_Percentage", 100];
     _spawnZone synchronizeObjectsAdd [_module,_jeff];
+};
+
+ts_spawn_fnc_createFortifications = {
+    ts_spawn_selectedLocation params ["_position"];
+
+    private "_fortificationArr";
+    if (ts_camouflage isEqualTo "woodland") then {
+        _fortificationArr = [
+            "Land_BagBunker_01_small_green_F",
+            "Land_BagBunker_01_large_green_F",
+            "Land_Misc_deerstand",
+            "WarfareBDepot"
+        ];
+    } else {
+        _fortificationArr = [
+            "Land_BagBunker_Large_F",
+            "Land_BagBunker_Small_F",
+            "Land_Misc_deerstand",
+            "WarfareBDepot"
+        ];
+    };
+
+    for "_i" from 0 to 5 do {
+        private _selectedFortification = selectRandom _fortificationArr;
+        private _selectedPos = [_position, 250, 400, 10, 0, 0.2] call BIS_fnc_findSafePos;
+        if (count _selectedPos isEqualTo 3) exitWith {};
+
+        private _fortification = createVehicle [_selectedFortification, _selectedPos, [], 0, "NONE"];
+        //_fortification setVectorDir ((getpos _fortification vectorFromTo _position) vectorMultiply -1);
+        _fortification setVectorDir (getpos _fortification vectorFromTo _position);
+        _fortification setVectorUp surfaceNormal position _fortification;
+        _fortification call ts_spawn_fnc_fillFortifications;
+        ts_spawn_placedFortifications pushBack _fortification;
+    };
+
+    // Debug only -- Remove before LIVE
+    {
+        private _mkr = createMarker [(str getPosASL _x), (getPosASL _x)];
+        _mkr setMarkerShape "ICON";
+        _mkr setMarkerType "mil_dot";
+        _mkr setMarkerColor "ColorBlue";
+        // Add dudes
+    } forEach ts_spawn_placedFortifications;
+};
+
+ts_spawn_fnc_fillFortifications = {
+    params ["_building"];
+
+    private _buildingPositions = _building buildingPos -1;
+    private _scaledBuildingPositions = [];
+    for "_i" from 0 to (count _buildingPositions -1) step 2 do {
+        _scaledBuildingPositions pushBack (_buildingPositions select _i);
+    };
+
+    private _grp = createGroup ts_enemy_side;
+    private _skillArray = ["Camp"] call adm_common_fnc_getZoneTemplateSkillValues;
+    private _infantryClassnames = [adm_camp_defaultUnitTemplate, "infantry"] call adm_common_fnc_getUnitTemplateArray;
+
+    {
+        private _unit = [_x, _grp, _infantryClassnames, _skillArray] call adm_common_fnc_placeMan;
+        [_unit,true] call ark_ai_sentry_fnc_make_sentry;
+        _unit setUnitPos "UP";
+    } forEach _scaledBuildingPositions;
 };
