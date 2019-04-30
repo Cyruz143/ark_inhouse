@@ -26,11 +26,11 @@ class CfgVehicles {
                     condition = "true";
                     statement = "";
                 };
-                
+
                 class Chop_Tree : ARK_Action {
                     displayName = "Chop down tree";
                     exceptions[] = {};
-                    icon = "\a3\Ui_f\data\Map\MapControl\tree_CA.paa";
+                    icon = "\x\ark\addons\ark_lumber_jack\resources\tree.paa";
                     condition = "call ark_lumber_jack_fnc_canChop";
                     statement = "call ark_lumber_jack_fnc_doChop";
                 };
