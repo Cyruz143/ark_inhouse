@@ -68,6 +68,11 @@ Enable group deploy.
 <br/>
 [] call ts_fnc_enableGroupDeploy
 <br/><br/>
+
+Array of spawned foritications.
+<br/>
+ts_spawn_placedFortifications
+<br/><br/>
 "]];
 
 // Credits
