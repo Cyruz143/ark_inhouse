@@ -184,8 +184,11 @@ ark_admin_tools_fnc_ammoDrop = {
 ark_admin_tools_fnc_canUnflip = {
     params ["_vehicle"];
 
-    private _canUnflip = !(isNull _vehicle) && { (speed _vehicle) isEqualTo 0 } &&  { ((vectorUp _vehicle) #2) < 0.5 };
-    _canUnflip;
+    if (isNull _vehicle) exitWith {false};
+    if ((speed _vehicle) > 2) exitWith {false};
+
+    private _pB = _vehicle call BIS_fnc_getPitchBank;
+    if ((_pB #0 < -60 || _pB #0 > 60) || (_pB #1 < -60 || _pB #1 > 60)) then {true} else {false};
 };
 
 ark_admin_tools_fnc_unFlip = {
@@ -197,7 +200,7 @@ ark_admin_tools_fnc_unFlip = {
             {"Please wait 10 seconds \nbefore trying to unflip again" remoteExec ["hint", _x];} forEach (crew _vehicle);
         };
 
-        private _emptyPos = (getPosATL _vehicle) findEmptyPosition [0, 20, (typeOf _vehicle)];
+        private _emptyPos = (getPosASL _vehicle) findEmptyPosition [0, 20, (typeOf _vehicle)];
 
         if (isNil "_emptyPos" || { count _emptyPos == 0 }) exitWith {
             {"No room to flip \nPlease contact Staff!" remoteExec ["hint", _x];} forEach (crew _vehicle);
@@ -205,10 +208,12 @@ ark_admin_tools_fnc_unFlip = {
 
         _vehicle allowDamage false;
         _vehicle setVectorUp surfaceNormal _emptyPos;
-        _vehicle setPosATL _emptyPos;
+        _vehicle setPosASL _emptyPos;
         _vehicle allowDamage true;
         _vehicle setVariable ["ark_admin_tools_lastUnflipTime", time, true];
     }] remoteExec ["bis_fnc_call", objectParent player];
 };
 
 call ark_admin_tools_fnc_disableInstaDeath;
+
+_pB #1 < -60 || _pB #1 > 60

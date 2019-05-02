@@ -18,6 +18,6 @@ ark_blood_pools_fnc_createBlood = {
     _blood setDir random 360;
     _blood setVectorUp surfaceNormal position _blood;
 
-    // Using ACE's medical_blood module to handle clean up (server only)
-    ["ace_medical_blood_bloodDropCreated", [_blood]] call CBA_fnc_localEvent;
+    // Using ACE's medical_blood module to handle clean up
+    ["ace_medical_blood_bloodDropCreated", [_blood]] call CBA_fnc_serverEvent;
 };
