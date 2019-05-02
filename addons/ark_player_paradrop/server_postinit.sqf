@@ -14,15 +14,13 @@
             params ["_args", "_id"];
             _args params ["_jumpHeight", "_vehicle", "_fullPlayerCrew"];
 
-            private _unit = _fullPlayerCrew param [0, [objNull]];
-
-            if (isNull _unit || !(_vehicle getVariable ["ark_player_paradrop_var_jumpInProgress", false])) exitWith {
-                _id call CBA_fnc_removePerFrameHandler;
+            if (count _fullPlayerCrew isEqualTo 0 || !(_vehicle getVariable ["ark_player_paradrop_var_jumpInProgress", false])) exitWith {
                 _vehicle setVariable ["ark_player_paradrop_var_jumpInProgress", nil, true];
                 _fullPlayerCrew = nil;
+                _id call CBA_fnc_removePerFrameHandler;
             };
 
-            ["ark_player_paradrop_eh_playerJump", [], _unit] call CBA_fnc_targetEvent;
+            ["ark_player_paradrop_eh_playerJump", [], (_fullPlayerCrew #0)] call CBA_fnc_targetEvent;
             _fullPlayerCrew deleteAt 0;
         },
         _jumpGap,
