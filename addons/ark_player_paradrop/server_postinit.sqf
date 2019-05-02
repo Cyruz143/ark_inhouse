@@ -14,7 +14,7 @@
             params ["_args", "_id"];
             _args params ["_jumpHeight", "_vehicle", "_fullPlayerCrew"];
 
-            private _unit = _fullPlayerCrew param [0, [objNull]] select 0;
+            private _unit = _fullPlayerCrew param [0, [objNull];
 
             if (isNull _unit || !(_vehicle getVariable ["ark_player_paradrop_var_jumpInProgress", false])) exitWith {
                 _id call CBA_fnc_removePerFrameHandler;
