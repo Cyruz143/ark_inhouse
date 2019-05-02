@@ -19,9 +19,11 @@
             if (isNull _unit || !(_vehicle getVariable ["ark_player_paradrop_var_jumpInProgress", false])) exitWith {
                 _id call CBA_fnc_removePerFrameHandler;
                 _vehicle setVariable ["ark_player_paradrop_var_jumpInProgress", nil, true];
+                _fullPlayerCrew = nil;
             };
 
             ["ark_player_paradrop_eh_playerJump", [], _unit] call CBA_fnc_targetEvent;
+            _fullPlayerCrew deleteAt 0;
         },
         _jumpGap,
         [_jumpHeight, _vehicle, _fullPlayerCrew]
