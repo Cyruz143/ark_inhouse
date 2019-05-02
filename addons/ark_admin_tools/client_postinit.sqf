@@ -215,5 +215,3 @@ ark_admin_tools_fnc_unFlip = {
 };
 
 call ark_admin_tools_fnc_disableInstaDeath;
-
-_pB #1 < -60 || _pB #1 > 60

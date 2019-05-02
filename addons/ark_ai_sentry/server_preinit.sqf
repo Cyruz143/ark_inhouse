@@ -1,14 +1,14 @@
 ark_ai_sentry_fnc_make_sentry = {
     params ["_unit", "_enabledNightvision"];
-    
+
     if (isNil "_unit") exitWith {
         diag_log "[ARK] (AI Sentry) - Not synced to any units";
     };
-    
+
     private _grp = group _unit;
     _grp enableAttack false;
-    
-    private _guardWaypoint = _grp addWaypoint [(getposATL _unit), 0];
+
+    private _guardWaypoint = _grp addWaypoint [(getposASL _unit), 0];
     _guardWaypoint setWaypointType "GUARD";
     _guardWaypoint setWaypointCombatMode "YELLOW";
     _guardWaypoint setWaypointBehaviour "AWARE";
@@ -32,7 +32,7 @@ ark_ai_sentry_module_make_sentry = {
     if !(_activated) exitWith {
         diag_log "[ARK] (AI Sentry) - Logic not activated";
     };
-    
+
     if (count _units == 0) exitWith {
         diag_log "[ARK] (AI Sentry) - Not synced to any units";
     };
