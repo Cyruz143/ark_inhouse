@@ -7,7 +7,7 @@
 
     {
         if (isPlayer (_x #0)) then {_fullPlayerCrew pushBack (_x #0)};
-    } forEach (fullCrew [_vehicle, "cargo", false] + fullCrew [_vehicle, "turret", false]);
+    } forEach fullCrew [_vehicle, "cargo", false];
 
     [
         {
