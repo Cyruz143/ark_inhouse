@@ -50,10 +50,8 @@ ark_player_paradrop_fnc_doJump = {
     params ["_unit"];
 
     private _jumpHeight = missionNamespace getVariable ["ark_player_paradrop_var_jumpHeight", 200];
-    private _jumpDirection = ((getDir (vehicle player)) - 180);
     _unit allowDamage false;
     moveOut _unit;
-    _unit setDir _jumpDirection;
 
     [
         {(getPosATL (_this #0) #2) < (_this #1)},
