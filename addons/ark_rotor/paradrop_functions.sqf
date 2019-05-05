@@ -48,7 +48,7 @@ ark_rotor_fnc_jumpController = {
                 _id call CBA_fnc_removePerFrameHandler;
             };
 
-            [_crewArr #0,_vehicle] call ark_rotor_fnc_doJump;
+            _crewArr #0 call ark_rotor_fnc_doJump;
         },
         0.5,
         [_vehicle]
@@ -56,10 +56,8 @@ ark_rotor_fnc_jumpController = {
 };
 
 ark_rotor_fnc_doJump = {
-    params ["_unit", "_vehicle"];
+    params ["_unit"];
 
-    private _jumpDirection = ((getDir _vehicle) - 180);
     unassignVehicle _unit;
     moveOut _unit;
-    _unit setDir _jumpDirection;
 };
