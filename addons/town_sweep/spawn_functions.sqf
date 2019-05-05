@@ -67,10 +67,7 @@ ts_spawn_fnc_activateLocation = {
     call ts_spawn_fnc_createFortifications;
     [
         {count (allPlayers inAreaArray ts_spawn_selectedLocationMarkerName) > 0},
-        {
-            private _insertType = selectRandomWeighted ["paradrop", 0.5, "insert", 0.5];
-            _insertType call ts_spawn_fnc_enableRotor;
-        }
+        {[{private _insertType = selectRandomWeighted ["paradrop", 0.5, "insert", 0.5]; _insertType call ts_spawn_fnc_enableRotor;}, [], 180] call CBA_fnc_waitAndExecute;}
     ] call CBA_fnc_waitUntilAndExecute;
 };
 

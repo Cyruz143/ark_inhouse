@@ -82,6 +82,7 @@ force force ace_medical_bleedingCoefficient = 1.5;
 force force ace_medical_blood_enabledFor = 1;
 force force ace_medical_consumeItem_PAK = 0;
 force force ace_medical_consumeItem_SurgicalKit = 0;
+force force ace_medical_convertItems = 1;
 force force ace_medical_delayUnconCaptive = 5;
 force force ace_medical_enableAdvancedWounds = false;
 force force ace_medical_enableFor = 0;
@@ -165,6 +166,7 @@ force force ace_spectator_restrictModes = 0;
 force force ace_spectator_restrictVisions = 0;
 
 // ACE Uncategorized
+force force ace_fastroping_requireRopeItems = false;
 force force ace_hitreactions_minDamageToTrigger = 0.2;
 force force ace_laser_dispersionCount = 2;
 force force ace_overpressure_distanceCoefficient = 1;
@@ -182,12 +184,17 @@ force force ace_viewdistance_limitViewDistance = 10000;
 force force ace_common_persistentLaserEnabled = false;
 
 // ACRE2
+force acre_sys_core_ignoreAntennaDirection = true;
 force acre_sys_core_fullDuplex = false;
 force force acre_sys_core_interference = true;
 force force acre_sys_core_revealToAI = 1;
 force force acre_sys_core_ts3ChannelSwitch = false;
 force force acre_sys_core_unmuteClients = true;
 force force acre_sys_signal_signalModel = 0;
+
+// CBA Weapons
+force force cba_disposable_dropUsedLauncher = 2;
+force force cba_disposable_replaceDisposableLauncher = true;
 
 // CUP
 force force CUP_Vehicles_PreventBarrelClip = false;
@@ -214,8 +221,9 @@ force force diwako_dui_enable_occlusion_cone = 360;
 force diwako_dui_namelist = true;
 force force diwako_dui_namelist_only_buddy_icon = false;
 force force diwako_dui_radar_occlusion_fade_time = 10;
+force force diwako_dui_radar_sortType = "none";
+force force diwako_dui_radar_sqlFirst = true;
 force force diwako_dui_radar_trackingColor = [0.93,0.26,0.93,1];
-force force diwako_dui_show_squadbar = true;
 
 // NIArms
 force force niarms_magSwitch = false;
