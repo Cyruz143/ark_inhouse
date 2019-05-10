@@ -12,7 +12,7 @@ ark_lumber_jack_fnc_doChop = {
     private _nearTrees = nearestTerrainObjects [player, ["TREE", "SMALL TREE"], 3, true, true];
     private _nearestTree = _nearTrees #0;
 
-    playSound3D ["x\ark\addons\ark_lumber_jack\resources\chop.ogg", objNull, false, getPosASL player, 10, 1, 50];
+    playSound3D ["x\ark\addons\ark_lumber_jack\resources\chop.ogg", objNull, false, getPosASL player, 5, 1, 75];
     [
         5,
         _nearestTree,
