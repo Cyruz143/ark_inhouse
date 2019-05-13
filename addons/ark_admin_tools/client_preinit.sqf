@@ -37,25 +37,15 @@ ark_admin_tools_fnc_enableMapTeleport = {
 ark_admin_tools_fnc_teleportUnit = {
     params ["_unit","_pos"];
 
-    if (isWeaponDeployed _unit || { isWeaponRested _unit }) then {
-        _unit setPosASL (_unit modelToWorldWorld [0,0,0]);
-    };
-
+    _unit setPosWorld (_unit modelToWorldWorld [0,0,0]);
     [
-        {!(isWeaponDeployed (_this #0)) && !(isWeaponRested (_this #0))},
         {
-            (_this #0) setposATL (_this #1);
+            (_this #0) setposATL [(_this #1),(_this #2),0];
             openMap [false, false];
             call ark_admin_tools_fnc_disableMapTeleport;
         },
-        [_unit,_pos],
-        1,
-        {
-            (_this #0) setposATL (_this #1);
-            openMap [false, false];
-            call ark_admin_tools_fnc_disableMapTeleport;
-        }
-    ] call CBA_fnc_waitUntilAndExecute;
+        [_unit, _pos #0, _pos #1]
+    ] call CBA_fnc_execNextFrame;
 };
 
 ark_admin_tools_fnc_disableMapTeleport = {

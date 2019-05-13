@@ -52,8 +52,6 @@ ark_fnc_ch_waterDeploy = {
 
     private _underSurface = (abs (getTerrainHeightASL _position)) / 2;
     private _aliveUnits = [];
-    private _pos_x = _position #0;
-    private _pos_y = _position #1;
 
     {
         if (alive _x) then {
@@ -62,17 +60,8 @@ ark_fnc_ch_waterDeploy = {
     } forEach units (group _unit);
 
     {
-       if (isWeaponDeployed _x || { isWeaponRested _x }) then {
-            _x setPosASL (_x modelToWorldWorld [0,0,0]);
-        };
-
-        [
-            {!(isWeaponDeployed (_this #0)) && !(isWeaponRested (_this #0))},
-            {(_this #0) setposASL [(_this #1),(_this #2),-(_this #3)]},
-            [_x,_pos_x,_pos_y,_underSurface],
-            1,
-            {(_this #0) setposASL [(_this #1),(_this #2),-(_this #3)]}
-        ] call CBA_fnc_waitUntilAndExecute;
+        _x setPosWorld (_x modelToWorldWorld [0,0,0]);
+        [{(_this #0) setposASL [(_this #1),(_this #2),-(_this #3)]}, [_x, _position #0, _position #1, _underSurface]] call CBA_fnc_execNextFrame;
     } forEach _aliveUnits;
 
     openMap [false, false];
@@ -85,9 +74,6 @@ ark_fnc_ch_landDeploy = {
     onMapSingleClick "";
 
     private _aliveUnits = [];
-    private _pos_x = _position #0;
-    private _pos_y = _position #1;
-
     {
         if (alive _x) then {
             _aliveUnits pushBack _x;
@@ -95,17 +81,8 @@ ark_fnc_ch_landDeploy = {
     } forEach units (group _unit);
 
     {
-       if (isWeaponDeployed _x || { isWeaponRested _x }) then {
-            _x setPosASL (_x modelToWorldWorld [0,0,0]);
-        };
-
-        [
-            {!(isWeaponDeployed (_this #0)) && !(isWeaponRested (_this #0))},
-            {(_this #0) setposATL [(_this #1),(_this #2), 0]},
-            [_x,_pos_x,_pos_y],
-            1,
-            {(_this #0) setposATL [(_this #1),(_this #2), 0]}
-        ] call CBA_fnc_waitUntilAndExecute;
+        _x setPosWorld (_x modelToWorldWorld [0,0,0]);
+        [{(_this #0) setposATL [(_this #1),(_this #2),0]}, [_x, _position #0, _position #1]] call CBA_fnc_execNextFrame;
     } forEach _aliveUnits;
 
     openMap [false, false];
