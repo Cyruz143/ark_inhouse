@@ -155,14 +155,23 @@ ts_spawn_fnc_createFortifications = {
             "Land_BagBunker_01_small_green_F",
             "Land_BagBunker_01_large_green_F",
             "Land_Misc_deerstand",
-            "WarfareBDepot"
+            "WarfareBDepot",
+            "cwa_Fortress2",
+            "cwa_Fortress1",
+            "Land_PillboxBunker_01_hex_F",
+            "Land_PillboxBunker_01_rectangle_F",
+            "Land_Bunker_01_small_F"
         ];
     } else {
         _fortificationArr = [
             "Land_BagBunker_Large_F",
             "Land_BagBunker_Small_F",
             "Land_Misc_deerstand",
-            "WarfareBDepot"
+            "WarfareBDepot",
+            "Fortress2",
+            "Fortress1",
+            "Land_PillboxBunker_01_hex_F",
+            "Land_PillboxBunker_01_rectangle_F"
         ];
     };
 
@@ -184,9 +193,14 @@ ts_spawn_fnc_fillFortifications = {
 
     private _buildingPositions = _building buildingPos -1;
     private _scaledBuildingPositions = [];
-    for "_i" from 0 to (count _buildingPositions -1) step 2 do {
-        _scaledBuildingPositions pushBack (_buildingPositions select _i);
-    };
+
+    if (count _buildingPositions < 6) then {
+        _scaledBuildingPositions = _buildingPositions;
+    } else {
+        for "_i" from 0 to (count _buildingPositions) step 2 do {
+            _scaledBuildingPositions pushBack (_buildingPositions select _i);
+        };
+    }
 
     private _grp = createGroup ts_enemy_side;
     private _skillArray = ["Camp"] call adm_common_fnc_getZoneTemplateSkillValues;
@@ -194,7 +208,7 @@ ts_spawn_fnc_fillFortifications = {
 
     {
         private _unit = [_x, _grp, _infantryClassnames, _skillArray] call adm_common_fnc_placeMan;
-        [_unit,true] call ark_ai_sentry_fnc_make_sentry;
+        [_unit, true] call ark_ai_sentry_fnc_make_sentry;
         _unit setUnitPos "UP";
     } forEach _scaledBuildingPositions;
 };
