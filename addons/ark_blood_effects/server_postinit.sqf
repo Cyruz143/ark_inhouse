@@ -12,9 +12,10 @@ ark_blood_effects_fnc_createBlood = {
     params ["_unit"];
 
     // Ignore units in vehicles
-    if (!isNull objectParent _unit) exitWith {};
+    if (!isNull objectParent _unit && {(vehicle _unit) isKindOf "StaticWeapon"}) exitWith {};
 
-    private _blood = createSimpleObject [(selectRandom ark_blood_effects_var_models), (getPosWorld _unit)];
+    private _pos = (getPosWorld _unit) vectorAdd [0,0,0.05];
+    private _blood = createSimpleObject [(selectRandom ark_blood_effects_var_models), _pos];
     _blood setDir random 360;
     _blood setVectorUp surfaceNormal position _blood;
 
