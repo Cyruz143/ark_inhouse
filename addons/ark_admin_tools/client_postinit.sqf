@@ -200,15 +200,15 @@ ark_admin_tools_fnc_unFlip = {
             {"Please wait 10 seconds \nbefore trying to unflip again" remoteExec ["hint", _x];} forEach (crew _vehicle);
         };
 
-        private _emptyPos = (getPosASL _vehicle) findEmptyPosition [0, 20, (typeOf _vehicle)];
+        private _emptyPos = (getPos _vehicle) findEmptyPosition [0, 20, (typeOf _vehicle)];
 
         if (isNil "_emptyPos" || { count _emptyPos == 0 }) exitWith {
             {"No room to flip \nPlease contact Staff!" remoteExec ["hint", _x];} forEach (crew _vehicle);
         };
 
         _vehicle allowDamage false;
+        _vehicle setPos _emptyPos;
         _vehicle setVectorUp surfaceNormal _emptyPos;
-        _vehicle setPosASL _emptyPos;
         _vehicle allowDamage true;
         _vehicle setVariable ["ark_admin_tools_lastUnflipTime", time, true];
     }] remoteExec ["bis_fnc_call", objectParent player];
