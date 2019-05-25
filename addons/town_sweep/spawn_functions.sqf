@@ -200,7 +200,7 @@ ts_spawn_fnc_fillFortifications = {
         for "_i" from 0 to (count _buildingPositions) step 2 do {
             _scaledBuildingPositions pushBack (_buildingPositions select _i);
         };
-    }
+    };
 
     private _grp = createGroup ts_enemy_side;
     private _skillArray = ["Camp"] call adm_common_fnc_getZoneTemplateSkillValues;
