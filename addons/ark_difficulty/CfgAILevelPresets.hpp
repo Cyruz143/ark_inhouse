@@ -1,7 +1,7 @@
 class CfgAILevelPresets {
     class AILevelLow {
         displayName = "ARK";
-        precisionAI = 0.3;
-        skillAI = 1;  
+        precisionAI = 0.35;
+        skillAI = 1;
     };
 };
