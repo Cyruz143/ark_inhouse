@@ -1,11 +1,13 @@
-ark_pm_eh_mapSingleClick = addMissionEventHandler ["MapSingleClick", {call ark_pm_fnc_canAddMarker}];
-ark_pm_eh_onGetOut = player addEventHandler ["GetOutMan", {call ark_pm_fnc_removeMarker}];
-ark_pm_eh_onDeath = player addEventHandler ["Killed", {call ark_pm_fnc_removeMarker}];
+addMissionEventHandler ["MapSingleClick", {call ark_pm_fnc_canAddMarker}];
+player addEventHandler ["GetOutMan", {call ark_pm_fnc_removeMarker}];
+player addEventHandler ["Killed", {call ark_pm_fnc_removeMarker}];
 
 ark_pm_fnc_canAddMarker = {
     params ["","_pos","_alt","_shift"];
 
-    if ((objectParent player) isKindOf "Air" && _shift isEqualTo true) then {
+    if !((objectParent player) isKindOf "Air") exitWith {};
+
+    if (_shift isEqualTo true) then {
         player setVariable ["ark_map_wp_POI", _pos, false];
 
         if !(isNil "ark_pm_eh_ID") then {
