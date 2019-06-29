@@ -15,6 +15,7 @@ ark_admin_tools_fnc_callAttackHelo = {
     private _vehicle = createVehicle [(selectRandom _heloArray), _pos, [], 0, "FLY"];
 
     private _grp = createGroup _side;
+    _grp deleteGroupWhenEmpty true;
     private _pilot = [[0,0,0], _grp, _pilotClassnames, _skillArray] call adm_common_fnc_placeMan;
     _pilot assignAsDriver _vehicle;
     _pilot moveInDriver _vehicle;
@@ -40,6 +41,7 @@ ark_admin_tools_fnc_callArmour = {
 
     private _vehicle = createVehicle [(selectRandom _armourArray), _pos, [], 0, "NONE"];
     private _grp = createGroup _side;
+    _grp deleteGroupWhenEmpty true;
 
     private _driver = [[0,0,0], _grp, _crewmanClassnames, _skillArray] call adm_common_fnc_placeMan;
     _driver assignAsDriver _vehicle;
@@ -69,6 +71,7 @@ ark_admin_tools_fnc_callTechnical = {
 
     private _vehicle = createVehicle [(selectRandom _technicalArray), _pos, [], 0, "NONE"];
     private _grp = createGroup _side;
+    _grp deleteGroupWhenEmpty true;
 
     private _driver = [[0,0,0], _grp, _infantryClassnames, _skillArray] call adm_common_fnc_placeMan;
     _driver assignAsDriver _vehicle;

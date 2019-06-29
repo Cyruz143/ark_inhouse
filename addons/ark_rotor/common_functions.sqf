@@ -85,6 +85,7 @@ ark_rotor_fnc_createPilot = {
 
     private _skillArray = ["Camp"] call adm_common_fnc_getZoneTemplateSkillValues;
     private _grp = createGroup _side;
+    _grp deleteGroupWhenEmpty true;
     private _pilot = [[0,0,0], _grp, _pilotClassnames, _skillArray] call adm_common_fnc_placeMan;
     _pilot assignAsDriver _vehicle;
     _pilot moveInDriver _vehicle;
@@ -102,6 +103,7 @@ ark_rotor_fnc_createCargo = {
     private _emptySeats = count (fullCrew [_vehicle, "", true] - fullCrew [_vehicle, "driver"]);
     private _adjSeats = floor ((_logic getVariable ["Crew_Percentage", 50])/100 * _emptySeats);
     private _grp = createGroup _side;
+    _grp deleteGroupWhenEmpty true;
     for "_i" from 1 to _adjSeats do {
         private _unit = [[0,0,0], _grp, _cargoClassnames, _skillArray] call adm_common_fnc_placeMan;
         _unit assignAsCargo _vehicle;

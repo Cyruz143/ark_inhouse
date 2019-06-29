@@ -128,6 +128,7 @@ ts_spawn_fnc_enableRotor = {
     private _spawnPos = _position getPos [3000, random 360];
     private _spawnZone = createTrigger ["EmptyDetector", _spawnPos, false];
     private _grp = createGroup civilian;
+    _grp deleteGroupWhenEmpty true;
     private _jeff = _grp createUnit ["C_Jeff_VR", _spawnPos, [], 0, "NONE"];
     _grp addWaypoint [_lzPos, 0, 1];
     _grp addWaypoint [[worldSize, worldSize, 0], 100, 2];
@@ -203,6 +204,7 @@ ts_spawn_fnc_fillFortifications = {
     };
 
     private _grp = createGroup ts_enemy_side;
+    _grp deleteGroupWhenEmpty true;
     private _skillArray = ["Camp"] call adm_common_fnc_getZoneTemplateSkillValues;
     private _infantryClassnames = [adm_camp_defaultUnitTemplate, "infantry"] call adm_common_fnc_getUnitTemplateArray;
 
