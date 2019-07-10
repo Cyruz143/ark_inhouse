@@ -1,0 +1,1 @@
+CUP_stopLampCheck = true;
