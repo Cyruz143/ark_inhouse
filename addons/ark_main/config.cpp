@@ -9,10 +9,7 @@ class cfgPatches {
         units[] = {"ARK_Flag"};
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
-        requiredAddons[] = {
-            "A3_Data_F_Enoch_Loadorder",
-            "cba_main"
-        };
+        requiredAddons[] = {"cba_main"};
         VERSION_CONFIG;
     };
     class ark_scripts {
