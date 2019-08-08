@@ -1,4 +1,4 @@
-ark_lumber_jack_fnc_canChop = {
+ark_forestry_fnc_canChop = {
     private _nearTrees = nearestTerrainObjects [player, ["TREE", "SMALL TREE"], 3, true, true];
 
     if (isNil "_nearTrees" || { count _nearTrees == 0 }) exitWith {
@@ -8,24 +8,24 @@ ark_lumber_jack_fnc_canChop = {
     true;
 };
 
-ark_lumber_jack_fnc_doChop = {
+ark_forestry_fnc_doChop = {
     private _nearTrees = nearestTerrainObjects [player, ["TREE", "SMALL TREE"], 3, true, true];
     private _nearestTree = _nearTrees #0;
 
-    playSound3D ["x\ark\addons\ark_lumber_jack\resources\chop.ogg", objNull, false, getPosASL player, 5, 1, 75];
+    playSound3D ["x\ark\addons\ark_forestry\resources\chop.ogg", objNull, false, getPosASL player, 5, 1, 75];
     [
         5,
         _nearestTree,
         {
             params ["_nearestTree"];
-            _nearestTree call ark_lumber_jack_fnc_tidyTree;
+            _nearestTree call ark_forestry_fnc_tidyTree;
         },
         {hint "Aborted tree surgery"},
         "Chopping down tree"
     ] call ace_common_fnc_progressBar;
 };
 
-ark_lumber_jack_fnc_tidyTree = {
+ark_forestry_fnc_tidyTree = {
     params ["_nearestTree"];
 
     _nearestTree setDamage 1;
@@ -38,4 +38,23 @@ ark_lumber_jack_fnc_tidyTree = {
         [_nearestTree],
         5
     ] call CBA_fnc_waitAndExecute;
+};
+
+ark_forestry_fnc_canFlatten = {
+    //To do, check for buildings so won't work inside
+    true;
+};
+
+ark_forestry_fnc_doFlatten = {
+    playSound3D ["x\ark\addons\ark_forestry\resources\flatten.ogg", objNull, false, getPosASL player, 5, 1, 25];
+    [
+        5,
+        [],
+        {
+            private _dummy = "Land_ClutterCutter_large_F" createVehicle [0,0,0];
+            _dummy setPosASL (getPosASL player);
+        },
+        {hint "Aborted grass flattening"},
+        "Flattening Grass"
+    ] call ace_common_fnc_progressBar;
 };

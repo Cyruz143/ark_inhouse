@@ -30,9 +30,17 @@ class CfgVehicles {
                 class Chop_Tree : ARK_Action {
                     displayName = "Chop down tree";
                     exceptions[] = {};
-                    icon = "\x\ark\addons\ark_lumber_jack\resources\tree.paa";
-                    condition = "call ark_lumber_jack_fnc_canChop";
-                    statement = "call ark_lumber_jack_fnc_doChop";
+                    icon = "\x\ark\addons\ark_forestry\resources\tree.paa";
+                    condition = "call ark_forestry_fnc_canChop";
+                    statement = "call ark_forestry_fnc_doChop";
+                };
+
+                class Flatten_Grass : ARK_Action {
+                    displayName = "Flatten Grass";
+                    exceptions[] = {};
+                    icon = "\x\ark\addons\ark_forestry\resources\grass.paa";
+                    condition = "call ark_forestry_fnc_canFlatten";
+                    statement = "call ark_forestry_fnc_doFlatten";
                 };
             };
         };
