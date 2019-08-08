@@ -39,7 +39,7 @@ class CfgVehicles {
                     displayName = "Flatten Grass";
                     exceptions[] = {};
                     icon = "\x\ark\addons\ark_forestry\resources\grass.paa";
-                    condition = "call ark_forestry_fnc_canFlatten";
+                    condition = "!(player call ace_common_fnc_isInBuilding)";
                     statement = "call ark_forestry_fnc_doFlatten";
                 };
             };

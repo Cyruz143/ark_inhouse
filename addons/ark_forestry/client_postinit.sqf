@@ -1,3 +1,5 @@
+// Credits to Commy2 and ACE2 team for the grass cutter idea!
+
 ark_forestry_fnc_canChop = {
     private _nearTrees = nearestTerrainObjects [player, ["TREE", "SMALL TREE"], 3, true, true];
 
@@ -40,13 +42,9 @@ ark_forestry_fnc_tidyTree = {
     ] call CBA_fnc_waitAndExecute;
 };
 
-ark_forestry_fnc_canFlatten = {
-    //To do, check for buildings so won't work inside
-    true;
-};
-
 ark_forestry_fnc_doFlatten = {
     playSound3D ["x\ark\addons\ark_forestry\resources\flatten.ogg", objNull, false, getPosASL player, 5, 1, 25];
+    player call ace_common_fnc_goKneeling;
     [
         5,
         [],
