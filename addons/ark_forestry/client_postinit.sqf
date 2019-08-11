@@ -48,7 +48,7 @@ ark_forestry_fnc_doFlatten = {
     [
         5,
         [],
-        {createSimpleObject ["Land_ClutterCutter_large_F", (getPosASL player), false]},
+        {createSimpleObject ["Land_ClutterCutter_medium_F", (player modelToWorldVisualWorld [0,2.5,0]), false]},
         {hint "Aborted grass flattening"},
         "Flattening Grass"
     ] call ace_common_fnc_progressBar;
