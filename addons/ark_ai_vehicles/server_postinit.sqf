@@ -1,5 +1,4 @@
-["Car", "Dammaged", {call ark_ai_vehicles_fnc_vehicleDamaged}] call CBA_fnc_addClassEventHandler;
-["CAManBase", "Killed", {call ark_ai_vehicles_fnc_isGunnerDead}] call CBA_fnc_addClassEventHandler;
+ark_ai_vehicles_var_wheelArray = ["hitlfwheel", "hitlbwheel", "hitlmwheel", "hitlf2wheel", "hitrfwheel", "hitrbwheel", "hitrmwheel", "hitrf2wheel"];
 
 ark_ai_vehicles_fnc_vehicleDamaged = {
     params ["_vehicle","","_damage","","_hitPoint"];
@@ -7,10 +6,7 @@ ark_ai_vehicles_fnc_vehicleDamaged = {
     _vehicle setVariable ["ark_ai_vehicles_last_hit", time];
 
     if (_damage < 1) exitWith {};
-
-    private _wheelArray = ["hitlfwheel", "hitlbwheel", "hitlmwheel", "hitlf2wheel", "hitrfwheel", "hitrbwheel", "hitrmwheel", "hitrf2wheel"];
-    if !(_hitPoint in _wheelArray) exitWith {};
-
+    if !(_hitPoint in ark_ai_vehicles_var_wheelArray) exitWith {};
     if (!isNull (driver _vehicle) && { !isPlayer (driver _vehicle) } && { !(_vehicle getVariable ["ark_ai_vehicles_awaiting_repair", false]) }) then {
         _vehicle call ark_ai_vehicles_fnc_canRepair;
     };
@@ -155,3 +151,6 @@ ark_ai_vehicles_fnc_moveInGunner = {
     _driver assignAsTurret [_vehicle,_gunnerTurret];
     _driver moveInTurret [_vehicle,_gunnerTurret];
 };
+
+["Car", "Dammaged", {call ark_ai_vehicles_fnc_vehicleDamaged}] call CBA_fnc_addClassEventHandler;
+["CAManBase", "Killed", {call ark_ai_vehicles_fnc_isGunnerDead}] call CBA_fnc_addClassEventHandler;
