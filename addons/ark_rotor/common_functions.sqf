@@ -104,15 +104,28 @@ ark_rotor_fnc_createCargo = {
     private _adjSeats = floor ((_logic getVariable ["Crew_Percentage", 50])/100 * _emptySeats);
     private _grp = createGroup _side;
     _grp deleteGroupWhenEmpty true;
-    for "_i" from 1 to _adjSeats do {
-        private _unit = [[0,0,0], _grp, _cargoClassnames, _skillArray] call adm_common_fnc_placeMan;
-        _unit assignAsCargo _vehicle;
-        _unit moveInAny _vehicle;
-        if (_parachute) then {
-            removeBackpack _unit;
-            _unit addBackpack "ACE_NonSteerableParachute";
-        };
-    };
+
+    [
+        {
+            params ["_args", "_id"];
+            _args params ["_vehicle","_adjSeats","_grp","_cargoClassnames","_skillArray","_parachute"];
+
+            if (count (crew _vehicle) >= _adjSeats) exitWith {
+                diag_log format ["[ARK] (Rotor) - INFO - Delayed spawning of %1 cargo units completed",_adjSeats];
+                _id call CBA_fnc_removePerFrameHandler;
+            };
+
+            private _unit = [[0,0,0], _grp, _cargoClassnames, _skillArray] call adm_common_fnc_placeMan;
+            _unit assignAsCargo _vehicle;
+            _unit moveInAny _vehicle;
+            if (_parachute) then {
+                removeBackpack _unit;
+                _unit addBackpack "ACE_NonSteerableParachute";
+            };
+        },
+        1,
+        [_vehicle,_adjSeats,_grp,_cargoClassnames,_skillArray,_parachute]
+    ] call CBA_fnc_addPerFrameHandler;
 
     _grp;
 };
