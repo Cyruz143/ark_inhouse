@@ -154,34 +154,50 @@ ts_spawn_fnc_createFortifications = {
     if (ts_camouflage isEqualTo "woodland") then {
         _fortificationArr = [
             "Land_BagBunker_01_small_green_F",
-            "Land_BagBunker_01_large_green_F",
             "Land_Misc_deerstand",
             "WarfareBDepot",
-            "cwa_Fortress2",
             "cwa_Fortress1",
+            "cwa_Fortress2",
+            "Land_Bunker_01_small_F",
             "Land_PillboxBunker_01_hex_F",
-            "Land_PillboxBunker_01_rectangle_F",
-            "Land_Bunker_01_small_F"
+            "Land_BagBunker_01_large_green_F",
+            "Land_GuardTower_01_F",
+            "Land_Bunker_02_double_F",
+            "Land_CastleRuins_01_bastion_F"
         ];
     } else {
         _fortificationArr = [
-            "Land_BagBunker_Large_F",
             "Land_BagBunker_Small_F",
             "Land_Misc_deerstand",
             "WarfareBDepot",
-            "Fortress2",
             "Fortress1",
+            "Fortress2",
             "Land_PillboxBunker_01_hex_F",
-            "Land_PillboxBunker_01_rectangle_F"
+            "Land_BagBunker_Large_F",
+            "Land_GuardTower_01_F"
         ];
     };
 
-    for "_i" from 0 to 5 do {
-        private _selectedFortification = selectRandom _fortificationArr;
+    private _fortificationPosArr = [];
+    for "_i" from 1 to 20 do {
         private _selectedPos = [_position, 250, 400, 10, 0, 0.2] call BIS_fnc_findSafePos;
-        if (count _selectedPos isEqualTo 3) exitWith {};
+        if (count _selectedPos isEqualTo 2 && { !(isOnRoad _selectedPos) }) then {
+            _fortificationPosArr pushBackUnique _selectedPos;
+        };
+    };
 
-        private _fortification = createVehicle [_selectedFortification, _selectedPos, [], 0, "NONE"];
+    private _totalPosAmount = count _fortificationPosArr;
+    private _fortificationAmount = 5;
+    if (_totalPosAmount < 5) then {
+        _fortificationAmount = _totalPosAmount;
+    };
+
+    for "_i" from 1 to _fortificationAmount do {
+        private _selectedFortification = selectRandom _fortificationArr;
+        private _selectedLocation = selectRandom _fortificationPosArr;
+        _fortificationPosArr deleteAt (_fortificationPosArr find _selectedLocation);
+
+        private _fortification = createVehicle [_selectedFortification, _selectedLocation, [], 0, "NONE"];
         _fortification setVectorDir (getpos _fortification vectorFromTo _position);
         _fortification setVectorUp surfaceNormal position _fortification;
         _fortification call ts_spawn_fnc_fillFortifications;
@@ -214,3 +230,4 @@ ts_spawn_fnc_fillFortifications = {
         _unit setUnitPos "UP";
     } forEach _scaledBuildingPositions;
 };
+
