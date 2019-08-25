@@ -155,9 +155,12 @@ ark_rotor_fnc_taskAttack = {
         };
     } forEach ((playableUnits + switchableUnits) select {isPlayer _x && {!(_x isKindOf "HeadlessClient_F")}});
 
-    if (count _nearEnemies isEqualTo 0) exitWith {diag_log "[ARK] (Rotor) - ERROR - No players to attack";};
-    diag_log format ["[ARK] (Rotor) - INFO - Available enemies: %1",_nearEnemies];
+    if (count _nearEnemies isEqualTo 0) exitWith {
+        diag_log "[ARK] (Rotor) - ERROR - No players to attack";
+        {deleteVehicle _x} forEach units _grp;
+    };
 
+    diag_log format ["[ARK] (Rotor) - INFO - Available enemies: %1",_nearEnemies];
     [_grp, getpos (selectRandom _nearEnemies), 100, 4, "MOVE", "AWARE", "RED", "FULL", "STAG COLUMN"] call CBA_fnc_taskPatrol;
 };
 
