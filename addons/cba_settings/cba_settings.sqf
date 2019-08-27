@@ -16,7 +16,7 @@ force force ace_cookoff_ammoCookoffDuration = 0.3;
 force force ace_cookoff_enable = 2;
 force force ace_cookoff_enableAmmobox = true;
 force force ace_cookoff_enableAmmoCookoff = true;
-force force ace_cookoff_probabilityCoef = 5;
+force force ace_cookoff_probabilityCoef = 1;
 
 // ACE Explosives
 force force ace_explosives_explodeOnDefuse = false;
