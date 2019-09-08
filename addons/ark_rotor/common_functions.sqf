@@ -110,6 +110,11 @@ ark_rotor_fnc_createCargo = {
             params ["_args", "_id"];
             _args params ["_vehicle","_adjSeats","_grp","_cargoClassnames","_skillArray","_parachute"];
 
+            if (isNil "_vehicle" || { !alive _vehicle }) exitWith {
+                diag_log format ["[ARK] (Rotor) - ERROR - Vehicle %1 is dead or undefined",_vehicle];
+                _id call CBA_fnc_removePerFrameHandler;
+            };
+
             if (count (crew _vehicle) >= _adjSeats) exitWith {
                 diag_log format ["[ARK] (Rotor) - INFO - Delayed spawning of %1 cargo units completed",_adjSeats];
                 _id call CBA_fnc_removePerFrameHandler;
