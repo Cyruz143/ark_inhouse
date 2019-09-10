@@ -15,6 +15,7 @@ class CfgWeapons {
     class V_CarrierRigKBT_01_heavy_base_F;
     class V_SmershVest_01_base_F;
     class V_SmershVest_01_radio_base_F;
+    class CUP_Vest_GER_Camo_Base;
     class CUP_V_PMC_IOTV_Base;
     class CUP_V_PMC_CIRAS_Base;
     class CUP_Vest_RACS_Camo_Base;
@@ -385,7 +386,35 @@ class CfgWeapons {
         scope = 1;
         class ItemInfo;
     };
-    class CUP_Vest_GER_Camo_Base: ItemCore {
+    class CUP_V_B_GER_Carrier_Rig: CUP_Vest_GER_Camo_Base {
+        scope = 1;
+        class ItemInfo;
+    };
+    class CUP_V_B_GER_Carrier_Rig_2_Brown: CUP_Vest_GER_Camo_Base {
+        scope = 1;
+        class ItemInfo;
+    };
+    class CUP_V_B_GER_Carrier_Rig_3_Brown: CUP_Vest_GER_Camo_Base {
+        scope = 1;
+        class ItemInfo;
+    };
+    class CUP_V_B_GER_Carrier_Vest: CUP_Vest_GER_Camo_Base {
+        scope = 1;
+        class ItemInfo;
+    };
+    class CUP_V_B_GER_Carrier_Vest_2: CUP_Vest_GER_Camo_Base {
+        scope = 1;
+        class ItemInfo;
+    };
+    class CUP_V_B_GER_Carrier_Vest_3: CUP_Vest_GER_Camo_Base {
+        scope = 1;
+        class ItemInfo;
+    };
+    class CUP_V_B_GER_Vest_1: CUP_Vest_GER_Camo_Base {
+        scope = 1;
+        class ItemInfo;
+    };
+    class CUP_V_B_GER_Vest_2: CUP_Vest_GER_Camo_Base {
         scope = 1;
         class ItemInfo;
     };
@@ -1945,39 +1974,7 @@ class CfgWeapons {
         scope = 1;
         class ItemInfo;
     };
-    class CUP_V_B_GER_Carrier_Rig: CUP_Vest_GER_Camo_Base {
-        scope = 1;
-        class ItemInfo;
-    };
     class CUP_V_B_GER_Carrier_Rig_2: CUP_V_B_GER_Carrier_Rig {
-        scope = 1;
-        class ItemInfo;
-    };
-    class CUP_V_B_GER_Carrier_Rig_2_Brown: CUP_Vest_GER_Camo_Base {
-        scope = 1;
-        class ItemInfo;
-    };
-    class CUP_V_B_GER_Carrier_Rig_3_Brown: CUP_Vest_GER_Camo_Base {
-        scope = 1;
-        class ItemInfo;
-    };
-    class CUP_V_B_GER_Carrier_Vest: CUP_Vest_GER_Camo_Base {
-        scope = 1;
-        class ItemInfo;
-    };
-    class CUP_V_B_GER_Carrier_Vest_2: CUP_Vest_GER_Camo_Base {
-        scope = 1;
-        class ItemInfo;
-    };
-    class CUP_V_B_GER_Carrier_Vest_3: CUP_Vest_GER_Camo_Base {
-        scope = 1;
-        class ItemInfo;
-    };
-    class CUP_V_B_GER_Vest_1: CUP_Vest_GER_Camo_Base {
-        scope = 1;
-        class ItemInfo;
-    };
-    class CUP_V_B_GER_Vest_2: CUP_Vest_GER_Camo_Base {
         scope = 1;
         class ItemInfo;
     };
@@ -7738,18 +7735,6 @@ class CfgWeapons {
                 class Body {
                     hitpointName = "HitBody";
                     passThrough = 0.2;
-                };
-            };
-        };
-    };
-    class CUP_Vest_GER_Camo_Base_ARM: CUP_Vest_GER_Camo_Base {
-        scope = 2;
-        class ItemInfo: ItemInfo {
-            class HitpointsProtectionInfo {
-                class Body {
-                    hitpointName = "HitBody";
-                    armor = 16;
-                    passThrough = 0.3;
                 };
             };
         };
