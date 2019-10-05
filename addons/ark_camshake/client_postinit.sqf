@@ -1,7 +1,7 @@
-{[_x, "Killed", {call ark_camshake_fnc_doShake}] call CBA_fnc_addClassEventHandler} forEach ["Car","Tank"];
 enableCamShake true;
+{[_x, "Killed", {call ark_camshake_fnc_explosionShake}] call CBA_fnc_addClassEventHandler} forEach ["Car","Tank"];
 
-ark_camshake_fnc_doShake = {
+ark_camshake_fnc_explosionShake = {
     params ["_unit"];
 
     private _dist = player distance2D _unit;
