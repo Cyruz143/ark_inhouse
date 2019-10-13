@@ -15,6 +15,9 @@ class CfgAmmo {
     class CUP_R_PG7VR_AT: RocketBase {
         ENHANCED_AI
     };
+    class CUP_R_PG7VM_AT: RocketBase {
+        ENHANCED_AI
+    };
     class CUP_R_OG7_AT: RocketBase {
         ENHANCED_AI
     };
