@@ -72,12 +72,15 @@ ark_rotor_fnc_createBomb = {
     private _barrelClassname = selectRandom ["Land_WaterBarrel_F","Land_MetalBarrel_F","Land_BarrelEmpty_F"];
     private _barrel = createVehicle [_barrelClassname, (_vehicle modelToWorld [0,-15,-10]), [], 0, "FLY"];
     _barrel addTorque (_barrel vectorModelToWorld [1000,1000,1000]);
-    _barrel addEventHandler ["EpeContactStart", {
-        params ["_barrel"];
-        private _impactPos = getPos _barrel;
-        private _gbu = createVehicle ["Bo_GBU12_LGB", _impactPos,[], 0, "CAN_COLLIDE"];
-        private _explosion = createVehicle ["HelicopterExploBig", _impactPos,[], 0, "CAN_COLLIDE"];
-        _gbu setVelocity [0,0,-100];
-        deleteVehicle _barrel;
-    }];
+    _barrel addEventHandler ["EpeContactStart", {call ark_rotor_fnc_bombContact}];
+};
+
+ark_rotor_fnc_bombContact = {
+    params ["_barrel"];
+
+    private _impactPos = getPosATL _barrel;
+    private _gbu = createVehicle ["Bo_GBU12_LGB", _impactPos, [], 0, "CAN_COLLIDE"];
+    private _explosion = createVehicle ["HelicopterExploBig", _impactPos, [], 0, "CAN_COLLIDE"];
+    _gbu setVelocity [0,0,-100];
+    deleteVehicle _barrel;
 };

@@ -79,9 +79,10 @@ ark_rotor_fnc_waitForCargo = {
 
     [
         {
+            private _grp = group (_this #2);
             (_this #2) enableAI "MOVE";
-            (group (_this #2)) lockWP false;
-            (group (_this #2)) setCurrentWaypoint [(group (_this #2)),2];
+            _grp lockWP false;
+            _grp setCurrentWaypoint [_grp, 2];
             (_this #0) land "NONE";
             deleteVehicle (_this #1);
         },
