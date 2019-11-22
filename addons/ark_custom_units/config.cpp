@@ -11,7 +11,7 @@ class CfgPatches {
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {
             "ark_main",
-            "CUP_Weapons_LoadOrder"
+            "CUP_Weapons_LoadOrder",
             "CUP_Creatures_People_Civil_Chernarus",
             "CUP_Creatures_Military_ACR",
             "CUP_Creatures_Military_BAF",
