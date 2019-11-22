@@ -11,7 +11,7 @@ class CfgPatches {
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {
             "ark_main",
-            "CUP_Weapons_Ammunition"
+            "CUP_Weapons_LoadOrder"
         };
         VERSION_CONFIG;
     };

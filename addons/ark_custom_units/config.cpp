@@ -11,15 +11,7 @@ class CfgPatches {
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {
             "ark_main",
-            "cup_weapons_ak",
-            "cup_weapons_sa61",
-            "cup_weapons_m1014",
-            "cup_weapons_m136",
-            "cup_weapons_makarov",
-            "cup_weapons_pk",
-            "cup_Weapons_rpg18",
-            "cup_weapons_rpg7",
-            "cup_weapons_ammunition",
+            "CUP_Weapons_LoadOrder"
             "CUP_Creatures_People_Civil_Chernarus",
             "CUP_Creatures_Military_ACR",
             "CUP_Creatures_Military_BAF",
