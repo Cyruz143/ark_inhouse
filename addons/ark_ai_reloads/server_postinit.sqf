@@ -1,9 +1,11 @@
 ["CAManBase", "Reloaded", {
-    params ["_unit", "", "", "", "_oldMagazine"];
+    params ["_unit", "_weapon", "_muzzle", "_newMagazine"];
 
-    if (isPlayer _unit) exitWith {};
-    if (currentWeapon (vehicle _unit) isEqualTo primaryWeapon _unit) then {
-        _unit addMagazine (_oldMagazine #0);
+    if (isPlayer _unit || { _muzzle != _weapon }) exitWith {};
+    if (_weapon in ["throw","put"]) exitWith {};
+
+    if (currentWeapon _unit isEqualTo primaryWeapon _unit) then {
+        _unit addMagazine (_newMagazine #0);
     };
 }] call CBA_fnc_addClassEventHandler;
 
