@@ -155,7 +155,6 @@ ts_spawn_fnc_createFortifications = {
         _fortificationArr = [
             "Land_BagBunker_01_small_green_F",
             "Land_Misc_deerstand",
-            "WarfareBDepot",
             "cwa_Fortress1",
             "cwa_Fortress2",
             "Land_Bunker_01_small_F",
@@ -169,7 +168,6 @@ ts_spawn_fnc_createFortifications = {
         _fortificationArr = [
             "Land_BagBunker_Small_F",
             "Land_Misc_deerstand",
-            "WarfareBDepot",
             "Fortress1",
             "Fortress2",
             "Land_PillboxBunker_01_hex_F",
