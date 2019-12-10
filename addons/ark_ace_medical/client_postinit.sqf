@@ -9,11 +9,11 @@ ark_ace_medical_fnc_doDamage = {
     private _damage = _body;
     {_damage = _damage + _x} forEach _aceHitpoints;
 
-    if (_head > 6) exitWith {
+    if (_head > 7) exitWith {
         _unit call ace_medical_fnc_setDead;
     };
 
-    if (_body > 4) exitWith {
+    if (_body > 5) exitWith {
         _unit call ace_medical_fnc_setDead;
     };
 
