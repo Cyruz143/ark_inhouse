@@ -47,6 +47,14 @@ class CfgVehicles {
     };
 
     class B_GEN_Soldier_F;
+    class B_GEN_Soldier_1_F: B_GEN_Soldier_F {
+        displayName = "Gendarmerie Rifleman";
+        weapons[] = {"CUP_Famas_F1","Throw","Put"};
+        respawnWeapons[] = {"CUP_Famas_F1","Throw","Put"};
+        magazines[] = {"CUP_25Rnd_556x45_Famas","CUP_25Rnd_556x45_Famas","CUP_25Rnd_556x45_Famas_Tracer_Red","SmokeShellBlue","HandGrenade"};
+        respawnMagazines[] = {"CUP_25Rnd_556x45_Famas","CUP_25Rnd_556x45_Famas","CUP_25Rnd_556x45_Famas_Tracer_Red","SmokeShellBlue","HandGrenade"};
+    };
+
     class B_GEN_Soldier_AR_F: B_GEN_Soldier_F {
         displayName = "Gendarmerie Automatic Rifleman";
         weapons[] = {"LMG_03_F","Throw","Put"};
