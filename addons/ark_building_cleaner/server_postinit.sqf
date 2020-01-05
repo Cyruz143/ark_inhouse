@@ -6,20 +6,22 @@ ark_building_cleaner_fnc_doClean = {
     params ["_buildingOld", "_buildingNew", "_isRuin"];
 
     if (_isRuin) then {
+        private _radius = (sizeOf typeOf _buildingOld) / 2;
         private _buildingPos = getPos _buildingOld;
-        private _radius = sizeOf typeOf _buildingOld;
-        private _aiInBuilding = _buildingPos nearEntities ["Man", _radius];
-        private _objectsInBuilding = nearestObjects [_buildingPos, ["NonStrategic","Strategic","Thing"], _radius];
-
-        _objectsInBuilding deleteAt (_objectsInBuilding find _buildingNew);
+        private _buildingEntities = entities [["Man","Thing"], ["Logic"], true] select {_x distance _buildingPos < _radius};
+        private _buildingObjects = nearestObjects [_buildingPos, ["LandVehicle","Strategic","Thing"], _radius];
+        _buildingObjects deleteAt (_buildingObjects find _buildingNew);
+        {deleteVehicle _x} forEach _buildingObjects;
 
         {
             if (!isPlayer _x) then {
-                _x setDamage [1, false];
+                if (alive _x) then {
+                    _x setDamage 1;
+                } else {
+                    deleteVehicle _x;
+                };
             };
-        } forEach _aiInBuilding;
-
-        {deleteVehicle _x} forEach _objectsInBuilding;
+        } forEach _buildingEntities;
 
         diag_log "[ARK] (Building Cleaner) - Killed AI and removed objects from a ruin";
     };
