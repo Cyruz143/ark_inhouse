@@ -81,7 +81,7 @@ force force ace_map_gestures_interval = 0.03;
 force force ace_map_gestures_maxRange = 7;
 
 // ACE Medical
-force force ace_medical_ai_enabledFor = 1;
+force force ace_medical_ai_enabledFor = 0;
 force force ace_medical_AIDamageThreshold = 0.7;
 force force ace_medical_bleedingCoefficient = 1;
 force force ace_medical_blood_bloodLifetime = 600;
@@ -96,7 +96,7 @@ force force ace_medical_painCoefficient = 1;
 force force ace_medical_playerDamageThreshold = 1;
 force force ace_medical_spontaneousWakeUpChance = 0.2;
 force force ace_medical_spontaneousWakeUpEpinephrineBoost = 1;
-force force ace_medical_statemachine_AIUnconsciousness = true;
+force force ace_medical_statemachine_AIUnconsciousness = false;
 force force ace_medical_statemachine_cardiacArrestTime = 180;
 force force ace_medical_statemachine_fatalInjuriesAI = 0;
 force force ace_medical_statemachine_fatalInjuriesPlayer = 1;
