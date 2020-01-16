@@ -17,7 +17,7 @@ class CfgPatches {
     };
 };
 
-class Extended_PreInit_EventHandlers {
+class Extended_PostInit_EventHandlers {
     class ADDON {
         clientinit = "call compile preProcessFileLineNumbers 'x\ark\addons\ark_ace_medical_fixes\client_postinit.sqf';";
     };
