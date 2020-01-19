@@ -39,6 +39,7 @@ ark_ace_spectator_fnc_initSpec = {
 
     ["west", "east", "resistance", "civ"] call acre_api_fnc_babelSetSpokenLanguages;
     [2, _attacker, -2, _attackerPos] call ace_spectator_fnc_setCameraAttributes;
+    ["unconscious", false] call ace_common_fnc_setDisableUserInputStatus;
 
     [_killMessage] spawn {
         params ["_killMessage"];
