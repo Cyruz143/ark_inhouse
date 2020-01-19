@@ -207,3 +207,7 @@ ark_admin_tools_fnc_unFlip = {
         _vehicle setVariable ["ark_admin_tools_lastUnflipTime", time, true];
     }] remoteExec ["bis_fnc_call", objectParent player];
 };
+
+ark_admin_tools_fnc_countSpec = {
+    player sideChat format ['There are %1 people in spectator',count (call ace_spectator_fnc_players)];
+};

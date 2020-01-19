@@ -19,7 +19,7 @@ force ace_parachute_hideAltimeter = false;
 
 // ACE Cook off
 force force ace_cookoff_ammoCookoffDuration = 0.3;
-force force ace_cookoff_enable = 1;
+force force ace_cookoff_enable = 0;
 force force ace_cookoff_enableAmmobox = true;
 force force ace_cookoff_enableAmmoCookoff = true;
 force force ace_cookoff_probabilityCoef = 1;
@@ -42,6 +42,9 @@ force force ace_interaction_enableTeamManagement = true;
 
 // ACE Logistics
 force force ace_cargo_enable = true;
+force ace_cargo_loadTimeCoefficient = 5;
+force ace_cargo_paradropTimeCoefficent = 2.5;
+force ace_rearm_distance = 20;
 force force ace_rearm_level = 0;
 force force ace_rearm_supply = 0;
 force ace_refuel_hoseLength = 12;
@@ -51,11 +54,14 @@ force force ace_repair_autoShutOffEngineWhenStartingRepair = true;
 force force ace_repair_consumeItem_toolKit = 0;
 force force ace_repair_engineerSetting_fullRepair = 0;
 force force ace_repair_engineerSetting_repair = 0;
-force force ace_repair_engineerSetting_wheel = 0;
+force force ace_repair_engineerSetting_wheel = 2;
 force force ace_repair_fullRepairLocation = 0;
+force force ace_repair_fullRepairRequiredItems = [];
+force force ace_repair_miscRepairRequiredItems = [];
 force force ace_repair_repairDamageThreshold = 0.6;
 force force ace_repair_repairDamageThreshold_engineer = 0.4;
-force force ace_repair_wheelRepairRequiredItems = 0;
+force force ace_repair_wheelRepairRequiredItems = [];
+
 
 // ACE Magazine Repack
 force force ace_magazinerepack_timePerAmmo = 1;
@@ -82,7 +88,7 @@ force force ace_map_gestures_maxRange = 7;
 
 // ACE Medical
 force force ace_medical_ai_enabledFor = 0;
-force force ace_medical_AIDamageThreshold = 0.7;
+force force ace_medical_AIDamageThreshold = 0.5;
 force force ace_medical_bleedingCoefficient = 0.5;
 force force ace_medical_blood_bloodLifetime = 600;
 force force ace_medical_blood_enabledFor = 1;
@@ -94,10 +100,10 @@ force force ace_medical_ivFlowRate = 1;
 force force ace_medical_limping = 1;
 force force ace_medical_painCoefficient = 1;
 force force ace_medical_playerDamageThreshold = 1;
-force force ace_medical_spontaneousWakeUpChance = 0.2;
-force force ace_medical_spontaneousWakeUpEpinephrineBoost = 2;
+force force ace_medical_spontaneousWakeUpChance = 0.25;
+force force ace_medical_spontaneousWakeUpEpinephrineBoost = 5;
 force force ace_medical_statemachine_AIUnconsciousness = false;
-force force ace_medical_statemachine_cardiacArrestTime = 180;
+force force ace_medical_statemachine_cardiacArrestTime = 300;
 force force ace_medical_statemachine_fatalInjuriesAI = 0;
 force force ace_medical_statemachine_fatalInjuriesPlayer = 0;
 force force ace_medical_treatment_advancedBandages = false;

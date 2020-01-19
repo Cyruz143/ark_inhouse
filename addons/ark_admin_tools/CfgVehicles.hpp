@@ -31,28 +31,28 @@ class CfgVehicles {
                     displayName = "Click Map Teleport";
                     icon = "\x\ark\addons\ark_main\resources\click.paa";
                     condition = "ark_mapTeleportEnabled";
-                    statement = "player call ark_admin_tools_fnc_enableMapTeleport;";
+                    statement = "player call ark_admin_tools_fnc_enableMapTeleport";
                 };
 
                 class Ammo_Drop : ARK_Action {
                     displayName = "Request Ammo Drop";
                     icon = "\A3\ui_f\data\map\vehicleicons\iconParachute_ca.paa";
                     condition = "call ark_admin_tools_fnc_isTownSweep && (player isEqualTo leader group _player) && !(player getVariable ['ark_ts_paradropInProgress', false])";
-                    statement = "player call ark_admin_tools_fnc_ammoDrop;";
+                    statement = "player call ark_admin_tools_fnc_ammoDrop";
                 };
 
                 class Unflip_Vehicle : ARK_Action {
                     displayName = "Unflip Vehicle";
                     icon = "\A3\ui_f\data\Map\VehicleIcons\pictureRepair_ca.paa";
                     condition = "objectParent player call ark_admin_tools_fnc_canUnflip";
-                    statement = "call ark_admin_tools_fnc_unFlip;";
+                    statement = "call ark_admin_tools_fnc_unFlip";
                 };
 
                 class Check_Spectators : ARK_Action {
                     displayName = "Count Spectators";
                     icon = "\z\ace\addons\spectator\data\Icon_Module_Spectator_ca.paa";
-                    condition = "['ark_co', briefingName] call BIS_fnc_inString;";
-                    statement = "player sideChat format ['There are %1 people in spectator',count (call ace_spectator_fnc_players)];";
+                    condition = "['ark_co', briefingName] call BIS_fnc_inString";
+                    statement = "call ark_admin_tools_fnc_countSpec";
                 };
 
                 // Host Menu
