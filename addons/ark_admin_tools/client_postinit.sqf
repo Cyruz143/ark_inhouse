@@ -1,9 +1,3 @@
-ark_admin_tools_fnc_disableInstaDeath = {
-    if !((briefingName find "ark_gtvt") isEqualTo -1) then {
-        player setvariable ["ace_medical_preventInstaDeath", false, true];
-    };
-};
-
 ark_admin_tools_fnc_createDebugMarkers = {
     params ["_enabled"];
 
@@ -213,5 +207,3 @@ ark_admin_tools_fnc_unFlip = {
         _vehicle setVariable ["ark_admin_tools_lastUnflipTime", time, true];
     }] remoteExec ["bis_fnc_call", objectParent player];
 };
-
-call ark_admin_tools_fnc_disableInstaDeath;

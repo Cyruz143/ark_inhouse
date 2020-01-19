@@ -48,6 +48,13 @@ class CfgVehicles {
                     statement = "call ark_admin_tools_fnc_unFlip;";
                 };
 
+                class Check_Spectators : ARK_Action {
+                    displayName = "Count Spectators";
+                    icon = "\z\ace\addons\spectator\data\Icon_Module_Spectator_ca.paa";
+                    condition = "['ark_co', briefingName] call BIS_fnc_inString;";
+                    statement = "player sideChat format ['There are %1 people in spectator',count (call ace_spectator_fnc_players)];";
+                };
+
                 // Host Menu
                 class Host_Actions : ARK_Category {
                     displayName = "Host Menu";
