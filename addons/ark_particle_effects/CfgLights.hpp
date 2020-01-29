@@ -3,9 +3,8 @@ class CfgLights {
         diffuse[] = {1,0.6,0.4};
         color[] = {1,0.6,0.4};
         ambient[] = {0,0,0,0};
-        brightness = 10;
         size = 1;
-        intensity = 10000;
+        intensity = 5000;
         drawLight = 0;
         blinking = 1;
         class Attenuation {
@@ -22,9 +21,8 @@ class CfgLights {
         diffuse[] = {1,0.5,0.4};
         color[] = {1,0.6,0.4};
         ambient[] = {0,0,0,0};
-        brightness = 2;
         size = 1;
-        intensity = 1000;
+        intensity = 500;
         drawLight = 0;
         blinking = 1;
         class Attenuation {
