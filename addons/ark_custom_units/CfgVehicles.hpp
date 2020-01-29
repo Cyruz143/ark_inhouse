@@ -113,6 +113,15 @@ class CfgVehicles {
         respawnMagazines[] = {"30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","9Rnd_45ACP_Mag","9Rnd_45ACP_Mag","9Rnd_45ACP_Mag","HandGrenade","HandGrenade","SmokeShell","SmokeShellGreen","Chemlight_green","Chemlight_green"};
     };
 
+    class I_E_Soldier_LAT_F;
+    class I_E_Soldier_AT4_F: I_E_Soldier_LAT_F {
+        displayName = "Rifleman (AT)";
+        weapons[] = {"arifle_MSBS65_ico_pointer_f", "CUP_launch_M136", "hgun_Pistol_heavy_01_green_F", "Throw", "Put"};
+        respawnWeapons[] = {"arifle_MSBS65_ico_pointer_f", "CUP_launch_M136", "hgun_Pistol_heavy_01_green_F", "Throw", "Put"};
+        magazines[] = {"30Rnd_65x39_caseless_msbs_mag", "30Rnd_65x39_caseless_msbs_mag", "30Rnd_65x39_caseless_msbs_mag", "11Rnd_45ACP_Mag", "11Rnd_45ACP_Mag", "11Rnd_45ACP_Mag", "SmokeShell", "SmokeShellBlue", "Chemlight_Blue", "Chemlight_Blue"};
+        respawnMagazines[] = {"30Rnd_65x39_caseless_msbs_mag", "30Rnd_65x39_caseless_msbs_mag", "30Rnd_65x39_caseless_msbs_mag", "11Rnd_45ACP_Mag", "11Rnd_45ACP_Mag", "11Rnd_45ACP_Mag", "SmokeShell", "SmokeShellBlue", "Chemlight_Blue", "Chemlight_Blue"};
+    };
+
     class skn_i_nbc_LAT;
     class skn_i_nbc_AT4: skn_i_nbc_LAT {
         displayName = "Rifleman (AT-4)";
@@ -304,6 +313,16 @@ class CfgVehicles {
         respawnWeapons[] = {"arifle_CTAR_blk_ACO_F","CUP_launch_RPG18","hgun_Rook40_F","Throw","Put"};
         magazines[] = {"30Rnd_580x42_Mag_F","30Rnd_580x42_Mag_F","30Rnd_580x42_Mag_F","16Rnd_9x21_Mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","SmokeShell","SmokeShellRed","Chemlight_red","Chemlight_red"};
         respawnMagazines[] = {"30Rnd_580x42_Mag_F","30Rnd_580x42_Mag_F","30Rnd_580x42_Mag_F","16Rnd_9x21_Mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","SmokeShell","SmokeShellRed","Chemlight_red","Chemlight_red"};
+    };
+
+    class O_R_Soldier_LAT_F ;
+    class O_R_Soldier_RPG7_F: O_R_Soldier_LAT_F  {
+        displayName = "Rifleman (RPG-7)";
+        weapons[] = {"arifle_AK12U_lush_holo_pointer_F", "CUP_launch_RPG7V", "hgun_Rook40_F", "Throw", "Put"};
+        respawnWeapons[] = {"arifle_AK12U_lush_holo_pointer_F", "CUP_launch_RPG7V", "hgun_Rook40_F", "Throw", "Put"};
+        magazines[] = {"30rnd_762x39_AK12_Lush_Mag_F", "30rnd_762x39_AK12_Lush_Mag_F", "30rnd_762x39_AK12_Lush_Mag_F", "16Rnd_9x21_Mag", "16Rnd_9x21_Mag", "16Rnd_9x21_Mag", "SmokeShell", "SmokeShellRed", "Chemlight_red", "Chemlight_red"};
+        respawnMagazines[] = {"30rnd_762x39_AK12_Lush_Mag_F", "30rnd_762x39_AK12_Lush_Mag_F", "30rnd_762x39_AK12_Lush_Mag_F", "16Rnd_9x21_Mag", "16Rnd_9x21_Mag", "16Rnd_9x21_Mag", "SmokeShell", "SmokeShellRed", "Chemlight_red", "Chemlight_red"};
+        backpack = "B_Kitbag_rgr_RPG7";
     };
 
     class skn_o_nbc_lat;
