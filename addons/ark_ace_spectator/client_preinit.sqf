@@ -1,29 +1,26 @@
 ark_ace_spectator_fnc_initSpec = {
     params ["_victim","_killer","_instigator"];
 
-    if ((getMissionConfigValue ["respawn",1];) != 1) exitWith {};
+    if ((getMissionConfigValue ["respawn",1]) != 1) exitWith {};
     private _killerVehicle = "";
 
     if (isNull _killer) then {
         _killer = _instigator;
     };
 
+    //If killer in a vehicle then get the DisplayName for later use
     if ((!isNull _killer) && {!(_killer isKindof "CAManBase")}) then {
         _killerVehicle = getText (configfile >> "CfgVehicles" >> (typeOf _killer) >> "displayName");
         _killer = effectiveCommander _killer;
     };
 
-    private _killerName = name _killer;
-    private _killerDistance = round (getPos _victim distance2D getPos _killer);
+    private _killerName = [_killer] call ace_common_fnc_getName;
+    private _killerDistance = round ((getPosASL _victim) distance (getPosASL _killer));
     private _killerWeapon = getText (configFile >> "CfgWeapons" >> (currentWeapon vehicle _killer) >> "DisplayName");
     private _killMessage = format ["You were <t color='#CC0000'>killed</t> by %1 with an %2 at %3 m",_killerName,_killerWeapon,_killerDistance];
 
     if (_killerVehicle != "") then {
         _killMessage = format ["You were <t color='#CC0000'>killed</t> by %1 in a %2 at %3 m",_killerName,_killerVehicle,_killerDistance];
-    };
-
-    if (isNull _killer) then {
-        _killMessage = "You were <t color='#CC0000'>killed</t> by an explosion or grenade";
     };
 
     if ([(side group _victim), (side group _killer)] call BIS_fnc_areFriendly) then {
@@ -32,6 +29,10 @@ ark_ace_spectator_fnc_initSpec = {
 
     if (_killer isEqualTo _victim) then {
         _killMessage = "You <t color='#009933'>killed yourself</t>";
+    };
+
+    if (isNull _killer) then {
+        _killMessage = "You were <t color='#CC0000'>killed</t> by an explosion or grenade";
     };
 
     ["west", "east", "resistance", "civ"] call acre_api_fnc_babelSetSpokenLanguages;
