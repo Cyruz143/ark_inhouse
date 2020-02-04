@@ -1,60 +1,56 @@
 ark_ace_spectator_fnc_initSpec = {
-    params ["_victim","_attacker","_instigator"];
+    params ["_victim","_killer","_instigator"];
 
-    private _respawn = getMissionConfigValue ["respawn",1];
-    if (_respawn != 1) exitWith {};
+    if ((getMissionConfigValue ["respawn",1];) != 1) exitWith {};
+    private _killerVehicle = "";
 
-    if (isNull _attacker) then {
-        _attacker = _instigator;
+    if (isNull _killer) then {
+        _killer = _instigator;
     };
 
-    if ((isNull _attacker) || (_attacker == _victim)) then {
-        private _aceSource = _victim getVariable ["ace_medical_lastDamageSource", objNull];
-        if ((!isNull _aceSource) && {_aceSource != _victim}) then {
-            _attacker = _aceSource;
-        };
+    if ((!isNull _killer) && {!(_killer isKindof "CAManBase")}) then {
+        _killerVehicle = getText (configfile >> "CfgVehicles" >> (typeOf _killer) >> "displayName");
+        _killer = effectiveCommander _killer;
     };
 
-    if ((!isNull _attacker) && {!(_attacker isKindof "CAManBase")}) then {
-        _attacker = effectiveCommander _attacker;
+    private _killerName = name _killer;
+    private _killerDistance = round (getPos _victim distance2D getPos _killer);
+    private _killerWeapon = getText (configFile >> "CfgWeapons" >> (currentWeapon vehicle _killer) >> "DisplayName");
+    private _killMessage = format ["You were <t color='#CC0000'>killed</t> by %1 with an %2 at %3 m",_killerName,_killerWeapon,_killerDistance];
+
+    if (_killerVehicle != "") then {
+        _killMessage = format ["You were <t color='#CC0000'>killed</t> by %1 in a %2 at %3 m",_killerName,_killerVehicle,_killerDistance];
     };
 
-    private _attackerName = name _attacker;
-    private _attackerDistance = round (getPos _victim distance2D getPos _attacker);
-    private _attackerWeapon = getText (configFile >> "CfgWeapons" >> (currentWeapon vehicle _attacker) >> "DisplayName");
-    private _attackerPos = getPosATL _attacker;
-    private _killMessage = format ["You were <t color='#CC0000'>killed</t> by %1 with an %2 at %3 m",_attackerName,_attackerWeapon,_attackerDistance];
-
-    if (isNull _attacker) then {
+    if (isNull _killer) then {
         _killMessage = "You were <t color='#CC0000'>killed</t> by an explosion or grenade";
     };
 
-    if ((side group _victim) == (side group _attacker)) then {
-        _killMessage = format ["You were <t color='#0066CC'>friendly fired</t> by %1 with an %2 at %3 m",_attackerName,_attackerWeapon,_attackerDistance];
+    if ([(side group _victim), (side group _killer)] call BIS_fnc_areFriendly) then {
+        _killMessage = format ["You were <t color='#0066CC'>friendly fired</t> by %1 with an %2 at %3 m",_killerName,_killerWeapon,_killerDistance];
     };
 
-    if (_attacker == _victim) then {
+    if (_killer isEqualTo _victim) then {
         _killMessage = "You <t color='#009933'>killed yourself</t>";
     };
 
     ["west", "east", "resistance", "civ"] call acre_api_fnc_babelSetSpokenLanguages;
-    [2, _attacker, -2, _attackerPos] call ace_spectator_fnc_setCameraAttributes;
+    [2, _killer, -2, (getPosATL _killer)] call ace_spectator_fnc_setCameraAttributes;
     ["unconscious", false] call ace_common_fnc_setDisableUserInputStatus;
 
     [_killMessage] spawn {
         params ["_killMessage"];
-            5 fadeSound 0;
+            [true] call ace_common_fnc_setVolume;
             cutText ["", "BLACK OUT", 5];
             uiSleep 5;
 
             [_killMessage,-1,-1,5,1] spawn BIS_fnc_dynamicText;
 
             uiSleep 5;
-            cutText ["", "PLAIN", 0];
-            2 fadeSound 1;
+            cutText ["", "PLAIN", 2];
+            [true] call ace_spectator_fnc_setSpectator;
+            [false] call ace_common_fnc_setVolume;
     };
-
-    [{[true] call ace_spectator_fnc_setSpectator; }, [], 10] call CBA_fnc_waitAndExecute;
 };
 
 ark_ace_spectator_fnc_getInitialPlayableUnitsFromServer = {
