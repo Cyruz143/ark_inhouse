@@ -1,7 +1,7 @@
 ark_ace_spectator_fnc_initSpec = {
-    params ["_victim","_killer","_instigator"];
+    params ["_unit", "", "_killer", "_instigator"];
 
-    if ((getMissionConfigValue ["respawn",1]) != 1) exitWith {};
+    if (!local _unit || { (getMissionConfigValue ["respawn",1]) != 1 }) exitWith {};
     private _killMessage = "";
     private _killerVehicle = "";
 
@@ -16,7 +16,7 @@ ark_ace_spectator_fnc_initSpec = {
         };
 
         private _killerName = [_killer] call ace_common_fnc_getName;
-        private _killerDistance = round ((getPosASL _victim) distance (getPosASL _killer));
+        private _killerDistance = round ((getPosASL _unit) distance (getPosASL _killer));
         private _killerWeapon = getText (configFile >> "CfgWeapons" >> (currentWeapon vehicle _killer) >> "DisplayName");
         private _killMessage = format ["You were <t color='#CC0000'>killed</t> by %1 with an %2 at %3 m",_killerName,_killerWeapon,_killerDistance];
 
@@ -24,18 +24,18 @@ ark_ace_spectator_fnc_initSpec = {
             _killMessage = format ["You were <t color='#CC0000'>killed</t> by %1 in a %2 at %3 m",_killerName,_killerVehicle,_killerDistance];
         };
 
-        if ([(side group _victim), (side group _killer)] call BIS_fnc_areFriendly) then {
+        if ([(side group _unit), (side group _killer)] call BIS_fnc_areFriendly) then {
             _killMessage = format ["You were <t color='#0066CC'>friendly fired</t> by %1 with an %2 at %3 m",_killerName,_killerWeapon,_killerDistance];
         };
 
-        if (_killer isEqualTo _victim) then {
+        if (_killer isEqualTo _unit) then {
             _killMessage = "You <t color='#009933'>killed yourself</t>";
         };
 
         [2, _killer, -2, (getPosATL _killer)] call ace_spectator_fnc_setCameraAttributes;
     } else {
         _killMessage = "You were <t color='#CC0000'>killed</t> by an explosion or grenade";
-        [2, _victim, -2, (getPosATL _victim)] call ace_spectator_fnc_setCameraAttributes;
+        [2, _unit, -2, (getPosATL _unit)] call ace_spectator_fnc_setCameraAttributes;
     };
 
     ["west", "east", "resistance", "civ"] call acre_api_fnc_babelSetSpokenLanguages;
@@ -43,7 +43,7 @@ ark_ace_spectator_fnc_initSpec = {
 
     [_killMessage] spawn {
         params ["_killMessage"];
-            [true] call ace_common_fnc_setVolume;
+            [false] call ace_common_fnc_setVolume;
             cutText ["", "BLACK OUT", 5];
             uiSleep 5;
 
@@ -51,8 +51,8 @@ ark_ace_spectator_fnc_initSpec = {
 
             uiSleep 5;
             cutText ["", "PLAIN", 2];
-            [true] call ace_spectator_fnc_setSpectator;
             [false] call ace_common_fnc_setVolume;
+            [true] call ace_spectator_fnc_setSpectator;
     };
 };
 
@@ -92,6 +92,6 @@ ark_ace_spectator_fnc_checkIfNotInitialPlayableUnit = {
 };
 
 ["player.initialized", {
-    player addEventHandler ["Killed", {call ark_ace_spectator_fnc_initSpec}];
+    ["ace_killed", {call ark_ace_spectator_fnc_initSpec}] call CBA_fnc_addEventHandler;
     [] call ark_ace_spectator_fnc_getInitialPlayableUnitsFromServer;
 }] call hull3_event_fnc_addEventHandler;
