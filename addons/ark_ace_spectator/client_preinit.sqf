@@ -51,7 +51,7 @@ ark_ace_spectator_fnc_initSpec = {
 
             uiSleep 5;
             cutText ["", "PLAIN", 2];
-            [false] call ace_common_fnc_setVolume;
+            [true] call ace_common_fnc_setVolume;
             [true] call ace_spectator_fnc_setSpectator;
     };
 };
