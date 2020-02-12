@@ -33,6 +33,6 @@ ark_ace_medical_fnc_throwGun = {
 ["ace_unconscious", {
     params ["_unit", "_state"];
 
-    if (!local _unit || { !_state } || { !alive _unit } || { !isNull objectParent _unit }) exitWith {};
+    if (!local _unit || { !(_unit isEqualTo player) } || { !_state } || { !alive _unit } || { !isNull objectParent _unit }) exitWith {};
     player call ark_ace_medical_fnc_throwGun;
 }] call CBA_fnc_addEventHandler;
