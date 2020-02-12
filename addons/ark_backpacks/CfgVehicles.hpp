@@ -1,6 +1,16 @@
 class CfgVehicles {
     class B_Kitbag_rgr;
+    class B_FieldPack_oli;
+
+    class ark_backpack: B_Kitbag_rgr {
+        author = "ARK";
+        displayName = "ARK: Bag of holding";
+        model = "\A3\Weapons_F\empty.p3d";
+        MAXLOAD320
+    };
+
     class B_Kitbag_rgr_ARK: B_Kitbag_rgr {
+        author = "ARK";
         displayName = "ARK: Kitbag Test Bag";
         scope = 1;
         scopeArsenal = 0;
@@ -9,8 +19,8 @@ class CfgVehicles {
         MAXLOAD320
     };
 
-    class B_FieldPack_oli;
     class B_FieldPack_oli_ARK: B_FieldPack_oli {
+        author = "ARK";
         displayName = "ARK: Fieldpack Test Bag";
         scope = 1;
         scopeArsenal = 0;
