@@ -2,34 +2,31 @@ class CfgVehicles {
     class B_AssaultPack_rgr;
     class B_Kitbag_rgr;
     class B_Carryall_oli;
+    class B_Bergen_mcamo_F;
     class B_FieldPack_oli;
 
     class ark_backpack_small: B_AssaultPack_rgr {
         author = "ARK";
         displayName = "ARK: Bag of holding (small)";
         model = "\A3\Weapons_F\empty.p3d";
-        maximumLoad = 180;
     };
 
     class ark_backpack_med: B_Kitbag_rgr {
         author = "ARK";
         displayName = "ARK: Bag of holding (medium)";
         model = "\A3\Weapons_F\empty.p3d";
-        maximumLoad = 280;
     };
 
     class ark_backpack_large: B_Carryall_oli {
         author = "ARK";
         displayName = "ARK: Bag of holding (large)";
         model = "\A3\Weapons_F\empty.p3d";
-        maximumLoad = 320;
     };
 
-    class ark_backpack_huge: B_Carryall_oli {
+    class ark_backpack_huge: B_Bergen_mcamo_F {
         author = "ARK";
         displayName = "ARK: Bag of holding (huge)";
         model = "\A3\Weapons_F\empty.p3d";
-        maximumLoad = 480;
     };
 
     class B_Kitbag_rgr_ARK: B_Kitbag_rgr {
