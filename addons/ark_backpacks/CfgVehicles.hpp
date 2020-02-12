@@ -1,12 +1,28 @@
 class CfgVehicles {
+    class B_AssaultPack_rgr;
     class B_Kitbag_rgr;
+    class B_Carryall_oli;
     class B_FieldPack_oli;
 
-    class ark_backpack: B_Kitbag_rgr {
+    class ark_backpack_small: B_AssaultPack_rgr {
         author = "ARK";
-        displayName = "ARK: Bag of holding";
+        displayName = "ARK: Bag of holding (small)";
         model = "\A3\Weapons_F\empty.p3d";
-        MAXLOAD320
+        maximumLoad = 180;
+    };
+
+    class ark_backpack_med: B_Kitbag_rgr {
+        author = "ARK";
+        displayName = "ARK: Bag of holding (medium)";
+        model = "\A3\Weapons_F\empty.p3d";
+        maximumLoad = 280;
+    };
+
+    class ark_backpack_large: B_Carryall_oli {
+        author = "ARK";
+        displayName = "ARK: Bag of holding (large)";
+        model = "\A3\Weapons_F\empty.p3d";
+        maximumLoad = 480;
     };
 
     class B_Kitbag_rgr_ARK: B_Kitbag_rgr {
@@ -16,7 +32,7 @@ class CfgVehicles {
         scopeArsenal = 0;
         scopeCurator = 0;
         hiddenSelections[] = {"Camo"};
-        MAXLOAD320
+        maximumLoad = 320;
     };
 
     class B_FieldPack_oli_ARK: B_FieldPack_oli {
@@ -26,7 +42,7 @@ class CfgVehicles {
         scopeArsenal = 0;
         scopeCurator = 0;
         hiddenSelections[] = {"Camo"};
-        MAXLOAD320
+        maximumLoad = 320;
     }
 
     class B_Kitbag_rgr_RPG7: B_Kitbag_rgr_ARK {
