@@ -10,7 +10,8 @@ class CfgPatches {
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {
-            "ark_main"
+            "ark_main",
+            "hlcweapons_aks"
         };
         VERSION_CONFIG;
     };
