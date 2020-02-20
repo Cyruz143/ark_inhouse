@@ -7,18 +7,13 @@ ark_ai_sentry_fnc_make_sentry = {
 
     private _grp = group _unit;
     _grp enableAttack false;
+    _grp enableDynamicSimulation true;
 
-    private _guardWaypoint = _grp addWaypoint [(getposASL _unit), 0];
-    _guardWaypoint setWaypointType "GUARD";
-    _guardWaypoint setWaypointCombatMode "YELLOW";
-    _guardWaypoint setWaypointBehaviour "AWARE";
-    _grp setCurrentWaypoint _guardWaypoint;
-    _unit setVariable ["ark_ai_sentry_isSentry", true];
+    private _wp = [_grp, (getposASL _unit), 0, "GUARD", "AWARE", "YELLOW"] call CBA_fnc_addWaypoint;
+    _unit setCurrentWaypoint _wp;
     _unit allowFleeing 0;
-    _unit setCombatMode "YELLOW";
-    _unit setBehaviour "AWARE";
     _unit setSkill 0.2;
-    {_unit disableAI _x} forEach ["FSM","PATH"];
+    _unit disableAI "PATH";
 
     _unit unlinkItem hmd _unit;
     if (_enabledNightvision) then {
