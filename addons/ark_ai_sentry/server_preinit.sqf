@@ -9,8 +9,7 @@ ark_ai_sentry_fnc_make_sentry = {
     _grp enableAttack false;
     _grp enableDynamicSimulation true;
 
-    private _wp = [_grp, (getposASL _unit), 0, "GUARD", "AWARE", "YELLOW"] call CBA_fnc_addWaypoint;
-    _unit setCurrentWaypoint _wp;
+    [_grp, (getposASL _unit), 0, "GUARD", "AWARE", "YELLOW"] call CBA_fnc_addWaypoint;
     _unit allowFleeing 0;
     _unit setSkill 0.2;
     _unit disableAI "PATH";
