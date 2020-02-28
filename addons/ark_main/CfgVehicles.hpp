@@ -31,4 +31,12 @@ class CfgVehicles {
             init = "(_this #0) setFlagTexture '\x\ark\addons\ark_main\resources\ark_flag.paa'";
         };
     };
+
+    class Rhod_Flag: ARK_Flag {
+        displayName = "Flag (Rhodesia)";
+        editorPreview = "\x\ark\addons\ark_main\resources\rhod_flag.jpg";
+        class EventHandlers {
+            init = "(_this #0) setFlagTexture '\x\ark\addons\ark_main\resources\rhod_flag.paa'";
+        };
+    };
 };
