@@ -161,8 +161,7 @@ ts_spawn_fnc_createFortifications = {
             "Land_PillboxBunker_01_hex_F",
             "Land_BagBunker_01_large_green_F",
             "Land_GuardTower_01_F",
-            "Land_Bunker_02_double_F",
-            "Land_CastleRuins_01_bastion_F"
+            "Land_Bunker_02_double_F"
         ];
     } else {
         _fortificationArr = [
@@ -172,7 +171,8 @@ ts_spawn_fnc_createFortifications = {
             "Fortress2",
             "Land_PillboxBunker_01_hex_F",
             "Land_BagBunker_Large_F",
-            "Land_GuardTower_01_F"
+            "Land_GuardTower_01_F",
+            "WarfareBCamp"
         ];
     };
 
