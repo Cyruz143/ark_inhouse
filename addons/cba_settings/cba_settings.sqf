@@ -241,7 +241,7 @@ force force diwako_dui_namelist_only_buddy_icon = false;
 force force diwako_dui_radar_ace_finger = true;
 force force diwako_dui_radar_group_by_vehicle = true;
 force force diwako_dui_radar_occlusion_fade_time = 10;
-force force diwako_dui_radar_sortType = "none";
+force force diwako_dui_radar_sortType = "fireteam2";
 force force diwako_dui_radar_sqlFirst = true;
 force force diwako_dui_radar_trackingColor = [0.7,0.7,0.7,1];
 
