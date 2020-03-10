@@ -39,7 +39,6 @@ ark_ace_spectator_fnc_initSpec = {
     };
 
     ["west", "east", "resistance", "civ"] call acre_api_fnc_babelSetSpokenLanguages;
-    ["unconscious", false] call ace_common_fnc_setDisableUserInputStatus; //Remove with ACE 3.13.1
 
     [_killMessage] spawn {
         params ["_killMessage"];

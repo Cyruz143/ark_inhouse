@@ -11,10 +11,14 @@ class CfgPatches {
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {
             "ark_main",
-            "CUP_Weapons_LoadOrder"
+            "ace_medical_damage"
         };
         VERSION_CONFIG;
     };
 };
 
-#include "CfgWeapons.hpp"
+class Extended_PostInit_EventHandlers {
+    class ADDON {
+        clientInit = "call compile preProcessFileLineNumbers 'x\ark\addons\ark_ace_medical\client_postinit.sqf';";
+    };
+};
