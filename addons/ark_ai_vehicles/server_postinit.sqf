@@ -76,7 +76,7 @@ ark_ai_vehicles_fnc_doRepair = {
 
         {
             _vehicle setHitPointDamage [_x, 0, true];
-        } forEach ark_ai_vehicles_var_wheelArray
+        } forEach ark_ai_vehicles_var_wheelArray;
 
         _driver playMove "";
         _driver assignAsDriver _vehicle;
