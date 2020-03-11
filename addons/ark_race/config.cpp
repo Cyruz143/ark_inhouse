@@ -11,7 +11,7 @@ class CfgPatches {
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {
             "ark_main",
-            "ace_comomn"
+            "ace_common"
 
         };
         VERSION_CONFIG;

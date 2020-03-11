@@ -3,6 +3,7 @@ if ((briefingName find "ark_race") != -1 ) then {
     player call ark_race_fnc_createUnitMarker;
     player call ark_race_fnc_addActions;
     player addEventHandler ["GetInMan", {call ark_race_fnc_noDamage}];
+    call ark_race_fnc_finalBoost;
 };
 
 ark_race_fnc_noDamage = {
@@ -75,6 +76,19 @@ ark_race_fnc_goFast = {
 
     _veh setVelocityModelSpace [0,100,0];
     _veh setVariable ["ark_race_fnc_var_lastBoostTime", time, false];
+};
+
+ark_race_fnc_finalBoost = {
+    [
+        {
+            private _veh = objectParent player;
+            if (isNil "_veh") then {_veh = player};
+
+            if (_veh inArea boost_trigger) then {
+                _veh setVelocityModelSpace [0,350,10];
+            };
+        }
+    ] call CBA_fnc_addPerFrameHandler;
 };
 
 
