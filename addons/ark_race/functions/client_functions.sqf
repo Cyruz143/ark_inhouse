@@ -72,7 +72,6 @@ ark_race_fnc_flipCar = {
 ark_race_fnc_goFast = {
     params ["_veh"];
 
-    params ["_veh"];
     private _lastBoostTime = _veh getVariable ["ark_race_fnc_var_lastBoostTime", 0];
 
     if (time - _lastBoostTime <= 30) exitWith {
