@@ -1,4 +1,5 @@
 if (ark_brass_enabled) then {
+    if (!hasInterface) exitWith {};
     ["CAManBase", "FiredMan", {call ark_brass_fnc_createCase}] call CBA_fnc_addClassEventHandler;
     ark_brass_caseArr = [];
 };
