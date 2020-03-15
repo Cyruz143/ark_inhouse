@@ -1,5 +1,7 @@
-player addEventHandler ["FiredMan", {call ark_brass_fnc_createCase}];
+["CAManBase", "FiredMan", {call ark_brass_fnc_createCase}] call CBA_fnc_addClassEventHandler;
 ark_brass_caseArr = [];
+
+// Make CBA setting 0 500 250 -1
 ark_brass_maxCases = 500;
 
 ark_brass_fnc_createCase = {
@@ -10,18 +12,21 @@ ark_brass_fnc_createCase = {
     private _cartridge = getText (configFile >> "CfgAmmo" >> _ammo >> "cartridge");
     if (_cartridge isEqualTo "") exitWith {};
 
-    private _modelPath = "A3\Weapons_f\ammo\cartridge.p3d"; //Default cartridge is a 5.56mm model
+    private _unitPosATL = getposATL _unit;
+    // Distant shooters don't produce as many cases
+    if ((positionCameraToWorld [0,0,0]) vectorDistance _unitPosATL > 100 && {random 1 < 0.9}) exitWith {};
+    //Default cartridge is a 5.56mm model
+    private _modelPath = "A3\Weapons_f\ammo\cartridge.p3d";
 
     switch (_cartridge) do {
-    case "FxCartridge_9mm": { _modelPath = "A3\Weapons_f\ammo\cartridge_small.p3d" };
-    case "FxCartridge_65": { _modelPath = "A3\weapons_f\ammo\cartridge_65.p3d" };
-    case "FxCartridge_762": { _modelPath = "A3\weapons_f\ammo\cartridge_762.p3d" };
-    case "FxCartridge_127": { _modelPath = "A3\weapons_f\ammo\cartridge_127.p3d" };
-    case "FxCartridge_slug": { _modelPath = "A3\weapons_f\ammo\cartridge_slug.p3d" };
+    case "FxCartridge_9mm":     { _modelPath = "A3\Weapons_f\ammo\cartridge_small.p3d" };
+    case "FxCartridge_65":      { _modelPath = "A3\weapons_f\ammo\cartridge_65.p3d" };
+    case "FxCartridge_762":     { _modelPath = "A3\weapons_f\ammo\cartridge_762.p3d" };
+    case "FxCartridge_127":     { _modelPath = "A3\weapons_f\ammo\cartridge_127.p3d" };
+    case "FxCartridge_slug":    { _modelPath = "A3\weapons_f\ammo\cartridge_slug.p3d" };
 };
 
-    // This is all ACE magic stuff
-    private _unitPosATL = getposATL _unit;
+    // This is all ACE magic math stuff
     private _weapDir = _unit weaponDirection currentWeapon _unit;
     private _ejectDir = _weapDir vectorCrossProduct [0, 0, 1];
     private _posATL = _unitPosATL vectorAdd
@@ -38,13 +43,12 @@ ark_brass_fnc_createCase = {
         _casing setdir (random 360);
         ark_brass_caseArr pushBack _casing;
 
-        private _totalCasings = count ark_brass_caseArr);
+        private _totalCasings = count ark_brass_caseArr;
 
         if (_totalCasings > ark_brass_maxCases) then {
             for "_i" from 0 to (_totalCasings - ark_brass_maxCases) do {
                 deleteVehicle (ark_brass_totalCases deleteAt 0);
             };
         };
-
     }, [_modelPath,_posATL], 0.4] call CBA_fnc_waitAndExecute;
 };
