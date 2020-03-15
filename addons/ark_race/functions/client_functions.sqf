@@ -18,9 +18,11 @@ ark_race_fnc_addActions = {
 ark_race_fnc_noDamage = {
     params ["", "", "_vehicle"];
 
-    if (local _vehicle) then {
-        _vehicle allowDamage false;
-    };
+    [
+        {local (_this #0)},
+        {(_this #0) allowDamage false},
+        [_vehicle]
+    ] call CBA_fnc_waitUntilAndExecute;
 };
 
 ark_race_fnc_createUnitMarker = {

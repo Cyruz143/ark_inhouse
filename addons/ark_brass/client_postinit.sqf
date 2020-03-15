@@ -1,10 +1,11 @@
 player addEventHandler ["FiredMan", {call ark_brass_fnc_createCase}];
-ark_brass_localArr = [];
+ark_brass_caseArr = [];
+ark_brass_maxCases = 500;
 
 ark_brass_fnc_createCase = {
     params ["_unit", "_weapon", "", "", "_ammo"];
 
-    if (!local _unit || { !isNull objectParent _unit } || { _weapon in ["throw","put"] } ) exitWith {};
+    if (!isNull objectParent _unit || { _weapon in ["throw","put"] } ) exitWith {};
 
     private _cartridge = getText (configFile >> "CfgAmmo" >> _ammo >> "cartridge");
     if (_cartridge isEqualTo "") exitWith {};
@@ -35,18 +36,15 @@ ark_brass_fnc_createCase = {
         private _casing = createSimpleObject [_modelPath, [0,0,0], true];
         _casing setposATL _posATL;
         _casing setdir (random 360);
-        ark_brass_localArr pushBack _casing;
+        ark_brass_caseArr pushBack _casing;
+
+        private _totalCasings = count ark_brass_caseArr);
+
+        if (_totalCasings > ark_brass_maxCases) then {
+            for "_i" from 0 to (_totalCasings - ark_brass_maxCases) do {
+                deleteVehicle (ark_brass_totalCases deleteAt 0);
+            };
+        };
 
     }, [_modelPath,_posATL], 0.4] call CBA_fnc_waitAndExecute;
 };
-
-// To save having 30 events fire out in a second when someone mag dumps a gun, gather them locally and send batches
-[
-    {
-        if (ark_brass_localArr isEqualTo []) exitWith {};
-
-        ["ark_brass_createdCase", [ark_brass_localArr]] call CBA_fnc_serverEvent;
-        ark_brass_localArr = [];
-    },
-    10
-] call CBA_fnc_addPerFrameHandler;
