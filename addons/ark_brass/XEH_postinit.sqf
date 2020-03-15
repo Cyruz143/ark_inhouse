@@ -1,8 +1,7 @@
-["CAManBase", "FiredMan", {call ark_brass_fnc_createCase}] call CBA_fnc_addClassEventHandler;
-ark_brass_caseArr = [];
-
-// Make CBA setting 0 500 250 -1
-ark_brass_maxCases = 500;
+if (ark_brass_enabled) then {
+    ["CAManBase", "FiredMan", {call ark_brass_fnc_createCase}] call CBA_fnc_addClassEventHandler;
+    ark_brass_caseArr = [];
+};
 
 ark_brass_fnc_createCase = {
     params ["_unit", "_weapon", "", "", "_ammo"];
@@ -33,7 +32,7 @@ ark_brass_fnc_createCase = {
                       (_weapDir vectorMultiply (-0.5 + random 1.0 + random 1.0)) vectorAdd
                       (_ejectDir vectorMultiply (0.2 + random 1.0 + random 1.0));
 
-    _posATL set [2, (_unitPosATL #2) + 0.01];
+    _posATL set [2, (_unitPosATL #2) + 0.005];
 
     [
         {
@@ -48,7 +47,7 @@ ark_brass_fnc_createCase = {
 
             if (_totalCasings > ark_brass_maxCases) then {
                 for "_i" from 0 to (_totalCasings - ark_brass_maxCases) do {
-                    deleteVehicle (ark_brass_totalCases deleteAt 0);
+                    deleteVehicle (ark_brass_caseArr deleteAt 0);
                 };
             };
         },

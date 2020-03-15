@@ -14,6 +14,12 @@ class CfgPatches {
     };
 };
 
+class Extended_PreInit_EventHandlers {
+    class ADDON {
+        init = "call compile preProcessFileLineNumbers 'x\ark\addons\ark_brass\XEH_preinit.sqf';";
+    };
+};
+
 class Extended_PostInit_EventHandlers {
     class ADDON {
         init = "call compile preProcessFileLineNumbers 'x\ark\addons\ark_brass\XEH_postinit.sqf';";
