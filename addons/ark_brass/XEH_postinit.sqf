@@ -19,12 +19,12 @@ ark_brass_fnc_createCase = {
     private _modelPath = "A3\Weapons_f\ammo\cartridge.p3d";
 
     switch (_cartridge) do {
-    case "FxCartridge_9mm":     { _modelPath = "A3\Weapons_f\ammo\cartridge_small.p3d" };
-    case "FxCartridge_65":      { _modelPath = "A3\weapons_f\ammo\cartridge_65.p3d" };
-    case "FxCartridge_762":     { _modelPath = "A3\weapons_f\ammo\cartridge_762.p3d" };
-    case "FxCartridge_127":     { _modelPath = "A3\weapons_f\ammo\cartridge_127.p3d" };
-    case "FxCartridge_slug":    { _modelPath = "A3\weapons_f\ammo\cartridge_slug.p3d" };
-};
+        case "FxCartridge_9mm":     { _modelPath = "A3\Weapons_f\ammo\cartridge_small.p3d" };
+        case "FxCartridge_65":      { _modelPath = "A3\weapons_f\ammo\cartridge_65.p3d" };
+        case "FxCartridge_762":     { _modelPath = "A3\weapons_f\ammo\cartridge_762.p3d" };
+        case "FxCartridge_127":     { _modelPath = "A3\weapons_f\ammo\cartridge_127.p3d" };
+        case "FxCartridge_slug":    { _modelPath = "A3\weapons_f\ammo\cartridge_slug.p3d" };
+    };
 
     // This is all ACE magic math stuff
     private _weapDir = _unit weaponDirection currentWeapon _unit;
@@ -35,20 +35,24 @@ ark_brass_fnc_createCase = {
 
     _posATL set [2, (_unitPosATL #2) + 0.01];
 
-    [{
-        params ["_modelPath","_posATL"];
+    [
+        {
+            params ["_modelPath","_posATL"];
 
-        private _casing = createSimpleObject [_modelPath, [0,0,0], true];
-        _casing setposATL _posATL;
-        _casing setdir (random 360);
-        ark_brass_caseArr pushBack _casing;
+            private _casing = createSimpleObject [_modelPath, [0,0,0], true];
+            _casing setposATL _posATL;
+            _casing setdir (random 360);
+            ark_brass_caseArr pushBack _casing;
 
-        private _totalCasings = count ark_brass_caseArr;
+            private _totalCasings = count ark_brass_caseArr;
 
-        if (_totalCasings > ark_brass_maxCases) then {
-            for "_i" from 0 to (_totalCasings - ark_brass_maxCases) do {
-                deleteVehicle (ark_brass_totalCases deleteAt 0);
+            if (_totalCasings > ark_brass_maxCases) then {
+                for "_i" from 0 to (_totalCasings - ark_brass_maxCases) do {
+                    deleteVehicle (ark_brass_totalCases deleteAt 0);
+                };
             };
-        };
-    }, [_modelPath,_posATL], 0.4] call CBA_fnc_waitAndExecute;
+        },
+        [_modelPath,_posATL],
+        0.4
+    ] call CBA_fnc_waitAndExecute;
 };
