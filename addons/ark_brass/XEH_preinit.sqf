@@ -5,7 +5,7 @@
     ["ARK Inhouse","ARK Brass"],
     true,
     0,
-    {ark_brass_enabled = _this},
+    {},
     true
 ] call CBA_fnc_addSetting;
 
