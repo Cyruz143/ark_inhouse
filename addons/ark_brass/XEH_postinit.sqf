@@ -1,10 +1,8 @@
-if (ark_brass_enabled) then {
-    if (!hasInterface) exitWith {};
+if (!hasInterface || !(ark_brass_enabled)) exitWith {};
 
-    ark_brass_namespace = call CBA_fnc_createNamespace;
-    ark_brass_caseArr = [];
-    ["CAManBase", "FiredMan", {call ark_brass_fnc_createCase}] call CBA_fnc_addClassEventHandler;
-};
+ark_brass_namespace = call CBA_fnc_createNamespace;
+ark_brass_caseArr = [];
+["CAManBase", "FiredMan", {call ark_brass_fnc_createCase}] call CBA_fnc_addClassEventHandler;
 
 ark_brass_fnc_createCase = {
     params ["_unit", "_weapon", "", "", "_ammo"];
