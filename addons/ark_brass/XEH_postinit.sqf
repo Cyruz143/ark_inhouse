@@ -7,7 +7,7 @@ ark_brass_caseArr = [];
 ark_brass_fnc_createCase = {
     params ["_unit", "_weapon", "", "", "_ammo"];
 
-    if (!isNull objectParent _unit || { _weapon in ["throw","put"] } ) exitWith {};
+    if (!isNull objectParent _unit || { _weapon in ["Throw","Put"] } ) exitWith {};
 
     private _modelPath = ark_brass_namespace getVariable _ammo;
 
