@@ -13,6 +13,11 @@ ark_volume_fnc_setVolume = {
         1 fadeSound ark_volume_groundVolume;
     };
 
+    if (_vehicle isKindOf "Ship") then {
+        _unit setVariable ["ark_volume_var_currentVolume",ark_volume_waterVolume];
+        1 fadeSound ark_volume_waterVolume;
+    };
+
     if (_vehicle isKindOf "Air") then {
         _unit setVariable ["ark_volume_var_currentVolume",ark_volume_airVolume];
         1 fadeSound ark_volume_airVolume;
