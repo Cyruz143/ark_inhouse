@@ -146,7 +146,7 @@ ark_admin_tools_fnc_ammoDrop = {
     };
 
     private _position = getPos _player;
-    _position set [2, 75];
+    _position set [2, 35];
     private _parachute = createVehicle ["NonSteerable_Parachute_F", _position, [], 0, "FLY"];
     private _ammoBox = createVehicle ["C_IDAP_supplyCrate_F", [0,0,0], [], 0, "NONE"];
     _ammoBox allowDamage false;
