@@ -2,10 +2,10 @@
 #define PREFIX ark
 
 #define MAJOR 2
-#define MINOR 4
+#define MINOR 5
 #define PATCH 0
 
-#define REQUIRED_VERSION 1.94
+#define REQUIRED_VERSION 1.98
 
 #ifdef COMPONENT_BEAUTIFIED
     #define COMPONENT_NAME QUOTE(ARK Inhouse - COMPONENT_BEAUTIFIED)
