@@ -571,6 +571,15 @@ class CfgVehicles {
         respawnLinkedItems[] = {"CUP_V_O_Ins_Carrier_Rig_Light", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio"};
     };
 
+    class ARK_NVA_Soldier_F_SKS: ARK_NVA_Soldier_F {
+        displayName = "Rifleman (SKS)";
+        role = "Rifleman";
+        weapons[] = {"CUP_SKS", "Throw", "Put"};
+        respawnWeapons[] = {"CUP_SKS", "Throw", "Put"};
+        magazines[] = {"CUP_10Rnd_762x39_SKS_M", "CUP_10Rnd_762x39_SKS_M", "CUP_10Rnd_762x39_SKS_M", "SmokeShell", "SmokeShellGreen"};
+        respawnMagazines[] = {"CUP_10Rnd_762x39_SKS_M", "CUP_10Rnd_762x39_SKS_M", "CUP_10Rnd_762x39_SKS_M", "SmokeShell", "SmokeShellGreen"};
+    };
+
     class ARK_NVA_Crew_F: ARK_NVA_Soldier_base_F {
         scope = 2;
         scopeArsenal = 2;
