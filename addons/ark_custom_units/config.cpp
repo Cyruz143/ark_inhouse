@@ -26,8 +26,7 @@ class CfgPatches {
             "CUP_Creatures_Military_Taki",
             "CUP_Creatures_Military_TakiInsurgents",
             "CUP_Creatures_Military_USArmy",
-            "CUP_Creatures_Military_USMC",
-            "skn_nbc_units"
+            "CUP_Creatures_Military_USMC"
         };
         VERSION_CONFIG;
     };
@@ -35,4 +34,8 @@ class CfgPatches {
 
 #include "CfgEditorSubcategories.hpp"
 #include "CfgFactionClasses.hpp"
-#include "CfgVehicles.hpp"
+#include "CfgWeapons.hpp"
+#include "config\VanillaUnits.hpp"
+#include "config\CBRNUnits.hpp"
+#include "config\NVAUnits.hpp"
+#include "config\GendUnits.hpp"
