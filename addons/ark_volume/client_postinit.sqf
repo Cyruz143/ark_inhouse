@@ -46,7 +46,7 @@ ark_volume_fnc_mapVolume = {
 ["CBA_SettingChanged", {
     params ["_setting"];
 
-    if (_setting isEqualTo "ark_volume_ground" || { _setting isEqualTo "ark_volume_air" }) then {
+    if (_setting isEqualTo "ark_volume_ground" || { _setting isEqualTo "ark_volume_water" } || { _setting isEqualTo "ark_volume_air" }) then {
         [player,nil,objectParent player] call ark_volume_fnc_setVolume;
     };
 }] call CBA_fnc_addEventHandler;
