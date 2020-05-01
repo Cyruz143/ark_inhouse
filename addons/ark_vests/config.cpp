@@ -30,7 +30,6 @@ class CfgPatches {
             "cup_creatures_military_baf",
             "cup_creatures_military_cdf",
             "cup_creatures_military_chedaki",
-            "skn_nbc_units",
             "us_military_units",
             "mnp_main",
             "mnp_blufor",
