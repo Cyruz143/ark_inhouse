@@ -89,24 +89,11 @@ ark_admin_tools_fnc_callTechnical = {
     [_grp, position _player, 100, 4, "MOVE", "AWARE", "RED", "FULL"] call CBA_fnc_taskPatrol;
 };
 
-// Custom CBA EHs
-["ark_admin_tools_eh_endMission", BIS_fnc_endMission] call CBA_fnc_addEventHandler;
-
 // Custom CBA chat commands
 ["endmission", {
-    params ["_ending"];
-    if (_ending == "") then {
-        ["ark_admin_tools_eh_endMission", ["end1", true]] call CBA_fnc_globalEvent;
-    } else {
-        ["ark_admin_tools_eh_endMission", [_ending, true]] call CBA_fnc_globalEvent;
-    };
+    ["end1",true] remoteExecCall ['BIS_fnc_endMission',0];
 }, "adminLogged"] call CBA_fnc_registerChatCommand;
 
 ["failmission", {
-    params ["_ending"];
-    if (_ending == "") then {
-        ["ark_admin_tools_eh_endMission", ["loser", false]] call CBA_fnc_globalEvent;
-    } else {
-        ["ark_admin_tools_eh_endMission", [_ending, false]] call CBA_fnc_globalEvent;
-    };
+    ["loser",false] remoteExecCall ['BIS_fnc_endMission',0];
 }, "adminLogged"] call CBA_fnc_registerChatCommand;
