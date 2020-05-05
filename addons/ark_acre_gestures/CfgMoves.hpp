@@ -28,24 +28,26 @@ class CfgGesturesMale {
     class Default;
     class States {
         class acre_radio_base: Default {
-            canPullTrigger = 0;
+            canPullTrigger = 1;
             connectAs = "";
             connectFrom[] = {};
             connectTo[] = {};
             disableWeapons = 0;
+            disableWeaponsLong = 0;
             enableBinocular = 1;
             enableMissile = 1;
             enableOptics = 0;
             equivalentTo = "";
             forceAim = 0;
-            headBobMode = 0;
-            headBobStrength = 0;
+            headBobMode = 1;
+            headBobStrength = 0.001;
             interpolateFrom[] = {};
             interpolateTo[] = {};
             interpolateWith[] = {};
             interpolationRestart = 0;
             interpolationSpeed = 6;
-            looped = 1;
+            limitGunMovement = 0;
+            looped = 0;
             mask = "acre_UpperBody";
             minPlayTime = 0.5;
             preload = 0;
@@ -71,46 +73,21 @@ class CfgGesturesMale {
             rightHandIKEnd = 1;
         };
         class acre_radio_helmet: acre_radio_base {
-            connectAs = "";
-            connectFrom[] = {};
-            connectTo[] = {};
             file = "a3\anims_f_epa\data\anim\sdr\cts\custom\a_in\acts_listeningtoradioloop.rtm";
             minPlayTime = 2;
-            looped = 0;
             speed = 0.3;
             mask = "acre_UpperBodyNoRArm";
-            disableWeapons = 0;
-            disableWeaponsLong = 0;
             weaponLowered = 0;
-            showWeaponAim = 1;
-            showHandGun = 0;
-            canPullTrigger = 1;
             canReload = 0;
-            terminal = 0;
-            limitGunMovement = 0;
             preload = 1;
-            headBobMode = 1;
-            headBobStrength = 0.001;
-            interpolateTo[] = {};
         };
         class acre_radio_vest: acre_radio_base {
             file = "a3\anims_f_bootcamp\data\anim\sdr\cts\acts_kore_talkingoverradio_loop.rtm";
             speed = 0.3;
-            looped = 0;
             mask = "acre_UpperBodyNoRArm";
-            disableWeapons = 0;
-            disableWeaponsLong = 0;
             weaponLowered = 0;
-            showWeaponAim = 1;
-            showHandGun = 0;
-            canPullTrigger = 1;
             canReload = 0;
-            terminal = 0;
-            limitGunMovement = 0;
             preload = 1;
-            headBobMode = 1;
-            headBobStrength = 0.001;
-            interpolateTo[] = {};
         };
     };
     class BlendAnims {
