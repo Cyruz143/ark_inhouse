@@ -1,4 +1,4 @@
-ark_acre_gestures_var_blackListAnims = ["amovppnemstpsraswrfldnon","aadjppnemstpsraswrfldleft","aadjppnemstpsraswrfldright","amovpercmstpsoptwbindnon"];
+ark_acre_gestures_var_blackListAnims = ["amovppnemstpsraswrfldnon","aadjppnemstpsraswrfldleft","aadjppnemstpsraswrfldright","amovpercmstpsoptwbindnon","amovpknlmstpsoptwbindnon","amovppnemstpsoptwbindnon"];
 
 ark_acre_gestures_fnc_stopGesture = {
     params ["_unit"];
