@@ -1,4 +1,4 @@
-ark_acre_gestures_var_blackListAnims = ["amovppnemstpsraswrfldnon","aadjppnemstpsraswrfldleft","aadjppnemstpsraswrfldright"];
+ark_acre_gestures_var_blackListAnims = ["amovppnemstpsraswrfldnon","aadjppnemstpsraswrfldleft","aadjppnemstpsraswrfldright","amovpercmstpsoptwbindnon"];
 
 ark_acre_gestures_fnc_stopGesture = {
     params ["_unit"];
@@ -12,7 +12,7 @@ ark_acre_gestures_fnc_stopGesture = {
 ["acre_startedSpeaking", {
     params ["_unit", "_onRadio", "_radio"];
 
-    if (!_onRadio || { !isNull objectParent _unit } || { ace_common_isReloading } || { isWeaponDeployed _unit } || { binocular _unit != "" } || { animationState _unit in ark_acre_gestures_var_blackListAnims }) exitWith {};
+    if (!_onRadio || { !isNull objectParent _unit } || { ace_common_isReloading } || { isWeaponDeployed _unit } || { animationState _unit in ark_acre_gestures_var_blackListAnims }) exitWith {};
     _unit setVariable ["ark_acre_gestures_var_onRadio", true];
 
     private _hasVest = vest _unit != "";
@@ -35,13 +35,13 @@ ark_acre_gestures_fnc_stopGesture = {
 ["acre_stoppedSpeaking", {
     params ["_unit", "_onRadio"];
 
-    if (!_onRadio || { !isNull objectParent _unit } || { ace_common_isReloading } || { isWeaponDeployed _unit }) exitWith {};
+    if (!_onRadio || { !isNull objectParent _unit } || { ace_common_isReloading } || { isWeaponDeployed _unit } || { animationState _unit in ark_acre_gestures_var_blackListAnims }) exitWith {};
     _unit call ark_acre_gestures_fnc_stopGesture;
-
 }] call CBA_fnc_addEventHandler;
 
 player addEventHandler ["GetInMan", {
     params ["_unit"];
+
     _unit call ark_acre_gestures_fnc_stopGesture;
 }];
 
