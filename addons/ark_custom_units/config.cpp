@@ -35,7 +35,10 @@ class CfgPatches {
 #include "CfgEditorSubcategories.hpp"
 #include "CfgFactionClasses.hpp"
 #include "CfgWeapons.hpp"
-#include "config\VanillaUnits.hpp"
-#include "config\CBRNUnits.hpp"
-#include "config\NVAUnits.hpp"
-#include "config\GendUnits.hpp"
+
+class CfgVehicles {
+    #include "config\VanillaUnits.hpp"
+    #include "config\CBRNUnits.hpp"
+    #include "config\NVAUnits.hpp"
+    #include "config\GendUnits.hpp"
+};
