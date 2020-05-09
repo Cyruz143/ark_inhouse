@@ -1,3 +1,5 @@
+if (!hasInterface || !(ark_acre_gestures_enabled)) exitWith {};
+
 ark_acre_gestures_var_blackListAnims = ["amovppnemstpsraswrfldnon","aadjppnemstpsraswrfldleft","aadjppnemstpsraswrfldright","amovpercmstpsoptwbindnon","amovpknlmstpsoptwbindnon","amovppnemstpsoptwbindnon"];
 
 ark_acre_gestures_fnc_stopGesture = {
