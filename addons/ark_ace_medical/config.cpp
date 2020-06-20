@@ -11,7 +11,8 @@ class CfgPatches {
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {
             "ark_main",
-            "ace_medical_damage"
+            "ace_medical_damage",
+            "ace_medical_treatment"
         };
         VERSION_CONFIG;
     };
@@ -22,3 +23,5 @@ class Extended_PostInit_EventHandlers {
         serverInit = "call compile preProcessFileLineNumbers 'x\ark\addons\ark_ace_medical\server_postinit.sqf';";
     };
 };
+
+#include "ACE_Medical_Treatment_Actions.hpp"
