@@ -38,7 +38,7 @@ ark_acre_gestures_fnc_stopGesture = {
 ["acre_stoppedSpeaking", {
     params ["_unit", "_onRadio"];
 
-    if (!_onRadio || { !isNull objectParent _unit } || { !(cameraView isEqualTo "INTERNAL") } || { ace_common_isReloading } || { isWeaponDeployed _unit } || { animationState _unit in ark_acre_gestures_blackListAnims } || { currentWeapon _unit in ark_acre_gestures_binoClasses } ) exitWith {};
+    if (!_onRadio || { !isNull objectParent _unit } || { !(cameraView isEqualTo "INTERNAL") } || { ace_common_isReloading } || { isWeaponDeployed _unit } || { currentWeapon _unit in ark_acre_gestures_binoClasses } ) exitWith {};
     _unit call ark_acre_gestures_fnc_stopGesture;
 }] call CBA_fnc_addEventHandler;
 
