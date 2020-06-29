@@ -6,7 +6,7 @@ ark_acre_gestures_binoClasses = "getText (_x >> 'simulation') == 'Binocular'" co
 ark_acre_gestures_fnc_stopGesture = {
     params ["_unit"];
 
-    if (local _unit && { _unit getVariable ["ark_acre_gestures_var_onRadio", false] }) then {
+    if (_unit getVariable ["ark_acre_gestures_var_onRadio", false]) then {
         _unit playActionNow "GestureNod";
         _unit setVariable ["ark_acre_gestures_var_onRadio", false];
     };
@@ -38,7 +38,7 @@ ark_acre_gestures_fnc_stopGesture = {
 ["acre_stoppedSpeaking", {
     params ["_unit", "_onRadio"];
 
-    if (!_onRadio) exitWith {};
+    if (!local _unit || { !_onRadio }) exitWith {};
     _unit call ark_acre_gestures_fnc_stopGesture;
 }] call CBA_fnc_addEventHandler;
 
