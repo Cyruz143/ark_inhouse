@@ -15,7 +15,7 @@ ark_acre_gestures_fnc_stopGesture = {
 ["acre_startedSpeaking", {
     params ["_unit", "_onRadio", "_radio"];
 
-    if (local _unit || { !_onRadio } || { !isNull objectParent _unit } || { !(cameraView isEqualTo "INTERNAL") } || { ace_common_isReloading } || { isWeaponDeployed _unit } || { animationState _unit in ark_acre_gestures_blackListAnims } || { currentWeapon _unit in ark_acre_gestures_binoClasses } ) exitWith {};
+    if (!local _unit || { !_onRadio } || { !isNull objectParent _unit } || { !(cameraView isEqualTo "INTERNAL") } || { ace_common_isReloading } || { isWeaponDeployed _unit } || { animationState _unit in ark_acre_gestures_blackListAnims } || { currentWeapon _unit in ark_acre_gestures_binoClasses } ) exitWith {};
     _unit setVariable ["ark_acre_gestures_var_onRadio", true];
 
     private _hasVest = vest _unit != "";
