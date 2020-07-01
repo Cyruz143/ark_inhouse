@@ -44,8 +44,11 @@ ark_acre_gestures_fnc_stopGesture = {
     // If the unit started a reload while already talking, need to wait to finish to not delete a magazine
     [
         {!ace_common_isReloading},
-        {(_this #0) call ark_acre_gestures_fnc_stopGesture},
-        [_unit]
+        {
+            // Wait 1 frame as mag doesn't report as loaded til events completed
+            [ark_acre_gestures_fnc_stopGesture, _this] call CBA_fnc_execNextFrame;
+        },
+        _unit
     ] call CBA_fnc_waitUntilAndExecute;
 }] call CBA_fnc_addEventHandler;
 
