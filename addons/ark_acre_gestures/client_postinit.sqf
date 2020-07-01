@@ -39,7 +39,15 @@ ark_acre_gestures_fnc_stopGesture = {
     params ["_unit", "_onRadio"];
 
     if (!_onRadio) exitWith {};
-    _unit call ark_acre_gestures_fnc_stopGesture;
+
+    // If the unit started a reload while already talking, need to wait to finish to not delete a magazine
+    [
+        {!ace_common_isReloading},
+        {(_this #0) call ark_acre_gestures_fnc_stopGesture},
+        [_unit],
+        10,
+        {(_this #0) call ark_acre_gestures_fnc_stopGesture}
+    ] call CBA_fnc_waitUntilAndExecute;
 }] call CBA_fnc_addEventHandler;
 
 player addEventHandler ["GetInMan", {
