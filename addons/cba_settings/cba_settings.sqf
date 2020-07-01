@@ -24,6 +24,12 @@ force force ace_cookoff_enableAmmobox = true;
 force force ace_cookoff_enableAmmoCookoff = true;
 force force ace_cookoff_probabilityCoef = 1;
 
+// ACE Crew Served Weapons
+force force ace_csw_ammoHandling = 1;
+force force ace_csw_defaultAssemblyMode = true;
+force force ace_csw_handleExtraMagazines = true;
+force force ace_csw_progressBarTimeCoefficent = 1;
+
 // ACE Explosives
 force force ace_explosives_explodeOnDefuse = false;
 force force ace_explosives_punishNonSpecialists = true;
@@ -85,6 +91,7 @@ force force ace_markers_moveRestriction = 0;
 force force ace_map_gestures_enabled = true;
 force force ace_map_gestures_interval = 0.03;
 force force ace_map_gestures_maxRange = 7;
+force force ace_map_gestures_onlyShowFriendlys = false;
 
 // ACE Medical
 force force ace_medical_ai_enabledFor = 0;
@@ -97,6 +104,7 @@ force force ace_medical_fatalDamageSource = 1;
 force force ace_medical_fractures = 1;
 force force ace_medical_fractureChance = 0.2;
 force force ace_medical_gui_maxDistance = 3;
+force force ace_medical_gui_openAfterTreatment = false;
 force force ace_medical_ivFlowRate = 1.5;
 force force ace_medical_limping = 1;
 force force ace_medical_painCoefficient = 1;
@@ -167,7 +175,7 @@ force force ace_pylons_enabledForZeus = false;
 force force ace_pylons_enabledFromAmmoTrucks = false;
 force force ace_pylons_rearmNewPylons = false;
 force force ace_pylons_requireEngineer = false;
-force force ace_pylons_requireToolkit = true;
+force force ace_pylons_requireToolkit = false;
 force force ace_pylons_searchDistance = 15;
 force force ace_pylons_timePerPylon = 5;
 
@@ -184,6 +192,7 @@ force force ace_spectator_restrictVisions = 0;
 
 // ACE Uncategorized
 force force ace_fastroping_requireRopeItems = false;
+force force ace_gunbag_swapGunbagEnabled = true;
 force force ace_hitreactions_minDamageToTrigger = 0.25;
 force force ace_laser_dispersionCount = 2;
 force force ace_overpressure_distanceCoefficient = 1;
