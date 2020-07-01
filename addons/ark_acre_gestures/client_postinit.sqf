@@ -1,4 +1,4 @@
-if (!hasInterface || !(ark_acre_gestures_enabled)) exitWith {};
+if (is3DEN || {!hasInterface || {!(ark_acre_gestures_enabled)}}) exitWith {};
 
 ark_acre_gestures_blackListAnims = ["amovppnemstpsraswrfldnon","aadjppnemstpsraswrfldleft","aadjppnemstpsraswrfldright"];
 ark_acre_gestures_binoClasses = "getText (_x >> 'simulation') == 'Binocular'" configClasses (configFile >> "CfgWeapons") apply {configName _x};
@@ -7,7 +7,7 @@ ark_acre_gestures_fnc_stopGesture = {
     params ["_unit"];
 
     if (_unit getVariable ["ark_acre_gestures_var_onRadio", false]) then {
-        _unit playActionNow "GestureNod";
+        _unit playActionNow "acre_radio_stop";
         _unit setVariable ["ark_acre_gestures_var_onRadio", false];
     };
 };
@@ -15,7 +15,13 @@ ark_acre_gestures_fnc_stopGesture = {
 ["acre_startedSpeaking", {
     params ["_unit", "_onRadio", "_radio"];
 
-    if (!_onRadio || { !isNull objectParent _unit } || { !(cameraView isEqualTo "INTERNAL") } || { ace_common_isReloading } || { isWeaponDeployed _unit } || { animationState _unit in ark_acre_gestures_blackListAnims } || { currentWeapon _unit in ark_acre_gestures_binoClasses } ) exitWith {};
+    if (!_onRadio ||
+        { !isNull objectParent _unit } ||
+        { !(cameraView in ["INTERNAL","EXTERNAL"]) } ||
+        { ace_common_isReloading } ||
+        { isWeaponDeployed _unit } ||
+        { animationState _unit in ark_acre_gestures_blackListAnims } ||
+        { currentWeapon _unit in ark_acre_gestures_binoClasses } ) exitWith {};
 
     private _hasVest = vest _unit != "";
     private _hasHeadgear = headgear _unit != "";

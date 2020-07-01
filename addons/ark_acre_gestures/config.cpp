@@ -30,4 +30,5 @@ class Extended_PostInit_EventHandlers {
     };
 };
 
-#include "CfgMoves.hpp"
+#include "CfgMovesBasic.hpp"
+#include "CfgGesturesMale.hpp"

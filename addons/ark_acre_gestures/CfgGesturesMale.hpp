@@ -1,18 +1,3 @@
-class CfgMovesBasic {
-    class DefaultDie;
-    class ManActions {
-        acre_radio_helmet = "acre_radio_helmet";
-        acre_radio_vest = "acre_radio_vest";
-    };
-    class Actions {
-        class Default;
-        class NoActions: ManActions {
-            acre_radio_helmet[] = {"acre_radio_helmet","Gesture"};
-            acre_radio_vest[] = {"acre_radio_vest","Gesture"};
-        };
-    };
-};
-
 class CfgGesturesMale {
     skeletonName = "OFP2_ManSkeleton";
     class Default;
@@ -71,6 +56,14 @@ class CfgGesturesMale {
         class acre_radio_vest: acre_radio_base {
             file = "a3\anims_f_bootcamp\data\anim\sdr\cts\acts_kore_talkingoverradio_loop.rtm";
             mask = "acre_UpperBodyNoRArm";
+        };
+        class GestureNod;
+        class acre_radio_stop: GestureNod {
+            file = "a3\anims_f\data\anim\sdr\gst\gestureEmpty.rtm";
+            disableWeaponsLong = 0;
+            enableBinocular = 1;
+            enableMissile = 1;
+            enableOptics = 1;
         };
     };
     class BlendAnims {
