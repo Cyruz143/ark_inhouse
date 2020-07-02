@@ -22,7 +22,7 @@ ark_forestry_fnc_doChop = {
             params ["_nearestTree"];
             _nearestTree call ark_forestry_fnc_tidyTree;
         },
-        {hint "Aborted tree surgery"},
+        {[["\x\ark\addons\ark_forestry\resources\tree.paa", 2.0], ["Aborted tree surgery"]] call CBA_fnc_notify},
         "Chopping down tree"
     ] call ace_common_fnc_progressBar;
 };
@@ -49,7 +49,7 @@ ark_forestry_fnc_doFlatten = {
         5,
         [],
         {createSimpleObject ["Land_ClutterCutter_medium_F", (player modelToWorldVisualWorld [0,2.5,0]), false]},
-        {hint "Aborted grass flattening"},
+        {[["\x\ark\addons\ark_forestry\resources\grass.paa", 2.0], ["Aborted grass flattening"]] call CBA_fnc_notify},
         "Flattening Grass"
     ] call ace_common_fnc_progressBar;
 };

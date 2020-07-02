@@ -33,7 +33,7 @@ ark_deploy_module_init = {
 ark_deploy_fnc_assignDeployClick = {
     params ["_unit"];
 
-    hint "Click anywhere on the map to deploy";
+    [["\x\ark\addons\ark_main\resources\click.paa", 2.0], ["Click anywhere on the map to deploy"]] call CBA_fnc_notify;
     openMap [true, true];
     _unit onMapSingleClick {
         if (surfaceIsWater _pos) then {
@@ -89,7 +89,7 @@ ark_fnc_ch_landDeploy = {
 };
 
 ark_deploy_fnc_activatePreGroupDeploy = {
-    hint "Activating (Pre Safety) Group Deploy now";
+    [["\x\ark\addons\ark_main\resources\click.paa", 2.0], ["Activating (Pre Safety) Group Deploy now"]] call CBA_fnc_notify;
     ark_deploy_preDeployActive = true;
     publicVariable "ark_deploy_preDeployActive";
     {
@@ -100,7 +100,7 @@ ark_deploy_fnc_activatePreGroupDeploy = {
 };
 
 ark_deploy_fnc_activatePostGroupDeploy = {
-    hint "Activating (Post Safety) Group Deploy now";
+    [["\x\ark\addons\ark_main\resources\click.paa", 2.0], ["Activating (Post Safety) Group Deploy now"]] call CBA_fnc_notify;
     ark_deploy_deployActive = true;
     publicVariable "ark_deploy_deployActive";
     {

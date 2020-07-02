@@ -85,7 +85,7 @@ re_interaction_fnc_addInteractions = {
 };
 
 re_interaction_fnc_selectLocation = {
-    hintSilent "Click on map to select attack location.";
+    [["\x\ark\addons\ark_main\resources\click.paa", 2.0], ["Click on map to select attack location"]] call CBA_fnc_notify;
     ["re_mapClick", "onMapSingleClick", {
         [0, { _this call re_fnc_moveLocationMarker }, [_pos]] call CBA_fnc_globalExecute;
         ["re_mapClick", "onMapSingleClick"] call BIS_fnc_removeStackedEventHandler;

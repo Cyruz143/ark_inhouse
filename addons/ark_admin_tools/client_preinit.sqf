@@ -27,7 +27,7 @@ ark_admin_tools_fnc_assignMapTeleport = {
 ark_admin_tools_fnc_enableMapTeleport = {
     params ["_unit"];
 
-    hintSilent "Map Click Teleport has been enabled.";
+    [["\x\ark\addons\ark_main\resources\click_enable.paa", 2.0], ["Map Click Teleport has been enabled"]] call CBA_fnc_notify;
     openMap [true, true];
     _unit onMapSingleClick {
         [_this, _pos] call ark_admin_tools_fnc_teleportUnit
@@ -49,7 +49,7 @@ ark_admin_tools_fnc_teleportUnit = {
 };
 
 ark_admin_tools_fnc_disableMapTeleport = {
-    hintSilent "Map Click Teleport has been disabled";
+    [["\x\ark\addons\ark_main\resources\click_disable.paa", 2.0], ["Map Click Teleport has been disabled"]] call CBA_fnc_notify;
     onMapSingleClick "";
 };
 
