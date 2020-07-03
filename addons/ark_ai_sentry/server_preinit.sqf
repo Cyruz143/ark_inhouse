@@ -14,9 +14,15 @@ ark_ai_sentry_fnc_make_sentry = {
     _unit setSkill 0.2;
     _unit disableAI "PATH";
 
-    _unit unlinkItem hmd _unit;
+    private _hmd = hmd _unit;
+
     if (_enabledNightvision) then {
-        _unit linkItem "NVGoggles_AI";
+        // If unit has NVGs by default, keep them as they'll look better than fake invisible ones
+        if (_hmd isEqualTo "") then {
+            _unit linkItem "NVGoggles_AI";
+        }
+    } else {
+        _unit unlinkItem hmd _unit;
     };
 };
 
