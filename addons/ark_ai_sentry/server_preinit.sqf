@@ -22,7 +22,7 @@ ark_ai_sentry_fnc_make_sentry = {
             _unit linkItem "NVGoggles_AI";
         }
     } else {
-        _unit unlinkItem hmd _unit;
+        _unit unlinkItem _hmd;
     };
 };
 
