@@ -104,7 +104,6 @@ force force ace_medical_fatalDamageSource = 1;
 force force ace_medical_fractures = 1;
 force force ace_medical_fractureChance = 0.2;
 force force ace_medical_gui_maxDistance = 3;
-force force ace_medical_gui_openAfterTreatment = false;
 force force ace_medical_ivFlowRate = 1.5;
 force force ace_medical_limping = 1;
 force force ace_medical_painCoefficient = 1;
@@ -141,6 +140,8 @@ force force ace_medical_treatment_medicPAK = 0;
 force force ace_medical_treatment_medicSurgicalKit = 0;
 force force ace_medical_treatment_timeCoefficientPAK = 1;
 force force ace_medical_treatment_woundReopening = false;
+force force ace_medical_treatment_woundReopenChance = 1;
+
 
 // ACE Name Tags
 force force ace_nametags_defaultNametagColor = [1,1,1,1];
