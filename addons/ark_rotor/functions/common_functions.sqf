@@ -155,18 +155,21 @@ ark_rotor_fnc_taskAttack = {
 
     private _nearEnemies = [];
     {
-        if ((_x distance2D (leader _grp)) < 5000) then {
+        if ((_x distance2D (leader _grp)) < 2500) then {
             _nearEnemies pushBack _x;
         };
     } forEach ((playableUnits + switchableUnits) select {isPlayer _x && {!(_x isKindOf "HeadlessClient_F")}});
 
-    if (count _nearEnemies isEqualTo 0) exitWith {
+    if (_nearEnemies isEqualTo []) exitWith {
         diag_log "[ARK] (Rotor) - ERROR - No players to attack";
         {deleteVehicle _x} forEach units _grp;
     };
 
-    diag_log format ["[ARK] (Rotor) - INFO - Available enemies: %1",_nearEnemies];
-    [_grp, getpos (selectRandom _nearEnemies), 100, 4, "MOVE", "AWARE", "RED", "FULL", "STAG COLUMN"] call CBA_fnc_taskPatrol;
+    _nearEnemies sort true;
+    private _target = _nearEnemies #0;
+
+    [_grp, getpos _target, 100, true] call CBA_fnc_taskAttack;
+    diag_log format ["[ARK] (Rotor) - INFO - Units attacking player: %1",_target];
 };
 
 ark_rotor_fnc_cleanUp = {
