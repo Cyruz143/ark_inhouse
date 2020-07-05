@@ -3,7 +3,7 @@ ark_admin_tools_fnc_callAttackHelo = {
 
     private _unitTemplate = adm_camp_defaultUnitTemplate;
     private _side = [_unitTemplate] call adm_common_fnc_getUnitTemplateSide;
-    private _skillArray = ["Camp"] call adm_common_fnc_getZoneTemplateSkillValues;
+    private _skillArray = ["Vehicles"] call adm_common_fnc_getZoneTemplateSkillValues;
     private _pilotClassnames = [_unitTemplate, "pilots"] call adm_common_fnc_getUnitTemplateArray;
     private _heloArray = [_unitTemplate, "ah"] call adm_common_fnc_getUnitTemplateArray;
 
@@ -34,7 +34,7 @@ ark_admin_tools_fnc_callArmour = {
 
     private _unitTemplate = adm_camp_defaultUnitTemplate;
     private _side = [_unitTemplate] call adm_common_fnc_getUnitTemplateSide;
-    private _skillArray = ["Camp"] call adm_common_fnc_getZoneTemplateSkillValues;
+    private _skillArray = ["Vehicles"] call adm_common_fnc_getZoneTemplateSkillValues;
     private _pos = [_player, 850, 1000, 3, 0, 20, 0] call BIS_fnc_findSafePos;
     private _crewmanClassnames = [_unitTemplate, "crewmen"] call adm_common_fnc_getUnitTemplateArray;
     private _armourArray = [_unitTemplate, "armour"] call adm_common_fnc_getUnitTemplateArray;
@@ -64,7 +64,7 @@ ark_admin_tools_fnc_callTechnical = {
 
     private _unitTemplate = adm_camp_defaultUnitTemplate;
     private _side = [_unitTemplate] call adm_common_fnc_getUnitTemplateSide;
-    private _skillArray = ["Camp"] call adm_common_fnc_getZoneTemplateSkillValues;
+    private _skillArray = ["Vehicles"] call adm_common_fnc_getZoneTemplateSkillValues;
     private _pos = [_player, 850, 1000, 3, 0, 20, 0] call BIS_fnc_findSafePos;
     private _infantryClassnames = [_unitTemplate, "infantry"] call adm_common_fnc_getUnitTemplateArray;
     private _technicalArray = [_unitTemplate, "technicals"] call adm_common_fnc_getUnitTemplateArray;

@@ -220,7 +220,7 @@ ts_spawn_fnc_fillFortifications = {
     private _grp = createGroup ts_enemy_side;
     _grp deleteGroupWhenEmpty true;
     _grp enableDynamicSimulation true;
-    private _skillArray = ["Camp"] call adm_common_fnc_getZoneTemplateSkillValues;
+    private _skillArray = ["Cqc"] call adm_common_fnc_getZoneTemplateSkillValues;
     private _infantryClassnames = [adm_camp_defaultUnitTemplate, "infantry"] call adm_common_fnc_getUnitTemplateArray;
 
     {
