@@ -7,7 +7,7 @@ class CfgPatches {
         authors[] = {"ARK"};
         url = "http://www.ark-group.org";
         units[] = {};
-        weapons[] = {};
+        weapons[] = {"SatchelMuzzle"};
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {
             "ark_main"

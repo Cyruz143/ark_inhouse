@@ -22,5 +22,11 @@ class cfgAmmo {
         ace_explosives_magazine = "SatchelCharge_Remote_Mag_Throwable";
         ace_explosives_Explosive = "SatchelCharge_Remote_Ammo_Scripted";
         ace_frag_skip = 1;
+        class CamShakeExplode {
+            power = 30;
+            duration = 2;
+            frequency = 20;
+            distance = 350;
+        };
     };
 };
