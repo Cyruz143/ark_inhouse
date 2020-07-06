@@ -1,7 +1,6 @@
 class cfgAmmo {
     class GrenadeCore;
     class SatchelCharge_Remote_Ammo_Thrown: GrenadeCore {
-        displayName = "Satchel Charge"
         hit = 3000;
         indirectHit = 3000;
         indirectHitRange = 5;
@@ -18,7 +17,10 @@ class cfgAmmo {
         fuseDistance = 0;
         explosionTime = 7;
         deflectionSlowDown = 0.2;
+        explosionType = "bomb";
+        ace_damageType = "explosive";
         ace_explosives_magazine = "SatchelCharge_Remote_Mag_Throwable";
         ace_explosives_Explosive = "SatchelCharge_Remote_Ammo_Scripted";
+        ace_frag_skip = 1;
     };
 };

@@ -8,11 +8,12 @@ class CfgMagazines {
             libTextDesc = "An explosive satchel that is throwable. 7 second fixed fuse";
         };
         descriptionUse = "";
-        initSpeed = 5;
+        initSpeed = 10;
         maxLeadSpeed = 7;
         weaponPoolAvailable = 0;
         useActionTitle = "";
         displayName = "Explosive Satchel (Throwable)";
+        displayNameShort = "Satchel Charge";
         ace_explosives_Placeable = 0;
         useAction = 0;
         class ACE_Triggers {
