@@ -18,6 +18,7 @@ class CfgPatches {
             "CUP_Creatures_Military_BAF",
             "CUP_Creatures_Military_Chedaki",
             "CUP_Creatures_Military_Germany",
+            "CUP_Creatures_Military_HIL",
             "CUP_Creatures_Military_NAPA",
             "CUP_Creatures_Military_PMC",
             "CUP_Creatures_Military_RACS",
@@ -41,4 +42,5 @@ class CfgVehicles {
     #include "config\CBRNUnits.hpp"
     #include "config\NVAUnits.hpp"
     #include "config\GendUnits.hpp"
+    #include "config\CUPUnits.hpp"
 };
