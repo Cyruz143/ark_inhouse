@@ -14,6 +14,7 @@ class CfgPatches {
             "cup_creatures_people_core",
             "cup_creatures_people_military_dummyinfantryset",
             "cup_creatures_military_germany",
+            "cup_creatures_military_hil",
             "cup_creatures_military_napa",
             "cup_creatures_military_pmc",
             "cup_creatures_military_racs",
