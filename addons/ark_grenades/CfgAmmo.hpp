@@ -1,6 +1,6 @@
 class CfgAmmo {
-    class GrenadeCore;
-    class SatchelCharge_Remote_Ammo_Thrown: GrenadeCore {
+    class Grenade;
+    class SatchelCharge_Remote_Ammo_Thrown: Grenade {
         hit = 3000;
         indirectHit = 3000;
         indirectHitRange = 5;
@@ -17,12 +17,14 @@ class CfgAmmo {
         timeToLive = 8;
         fuseDistance = 0;
         explosionTime = 7;
-        deflectionSlowDown = 0.2;
+        deflectionSlowDown = 0.1;
         explosionType = "bomb";
         ace_damageType = "explosive";
         ace_explosives_magazine = "SatchelCharge_Remote_Mag_Throwable";
         ace_explosives_Explosive = "SatchelCharge_Remote_Ammo_Scripted";
         ace_frag_skip = 1;
+        ace_grenades_pullPinSound[] = {"A3\Sounds_F_Orange\arsenal\explosives\Handling\ExplosiveSatchel_TouchOff_01.wss",2,1,50};
+        ace_advanced_throwing_torqueMagnitude = "(5 + random 20) * selectRandom [1, -1]";
         class CamShakeExplode {
             power = 20;
             duration = 2;
