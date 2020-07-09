@@ -8,8 +8,7 @@ class CfgMagazines {
             libTextDesc = "An explosive satchel that is throwable. 7 second fixed fuse";
         };
         descriptionUse = "";
-        initSpeed = 10;
-        maxLeadSpeed = 7;
+        initSpeed = 15;
         weaponPoolAvailable = 0;
         useActionTitle = "";
         displayName = "Explosive Satchel (Throwable)";

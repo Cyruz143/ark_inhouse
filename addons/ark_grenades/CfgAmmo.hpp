@@ -1,4 +1,4 @@
-class cfgAmmo {
+class CfgAmmo {
     class GrenadeCore;
     class SatchelCharge_Remote_Ammo_Thrown: GrenadeCore {
         hit = 3000;
@@ -12,6 +12,7 @@ class cfgAmmo {
         soundDeactivation[] = {"", 0, 0, 0};
         ExplosionEffects = "MineNondirectionalExplosion";
         CraterEffects = "MineNondirectionalCrater";
+        whistleDist = 10;
         SoundSetExplosion[] = {"ClaymoreMine_Exp_SoundSet", "ClaymoreMine_Tail_SoundSet", "Explosion_Debris_SoundSet"};
         timeToLive = 8;
         fuseDistance = 0;
@@ -23,10 +24,10 @@ class cfgAmmo {
         ace_explosives_Explosive = "SatchelCharge_Remote_Ammo_Scripted";
         ace_frag_skip = 1;
         class CamShakeExplode {
-            power = 30;
+            power = 20;
             duration = 2;
             frequency = 20;
-            distance = 350;
+            distance = 250;
         };
     };
 };
