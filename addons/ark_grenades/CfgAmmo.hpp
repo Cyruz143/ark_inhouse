@@ -23,7 +23,7 @@ class CfgAmmo {
         ace_explosives_magazine = "SatchelCharge_Remote_Mag_Throwable";
         ace_explosives_Explosive = "SatchelCharge_Remote_Ammo_Scripted";
         ace_frag_skip = 1;
-        ace_grenades_pullPinSound[] = {"A3\Sounds_F_Orange\arsenal\explosives\Handling\ExplosiveSatchel_TouchOff_01.wss",2,1,50};
+        ace_grenades_pullPinSound[] = {"A3\Sounds_F_Orange\arsenal\explosives\Handling\ExplosiveSatchel_TouchOff_01.wss", 2, 1, 50};
         ace_advanced_throwing_torqueMagnitude = "(5 + random 20) * selectRandom [1, -1]";
         class CamShakeExplode {
             power = 20;

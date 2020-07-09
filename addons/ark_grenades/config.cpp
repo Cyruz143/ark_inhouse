@@ -10,7 +10,8 @@ class CfgPatches {
         weapons[] = {"SatchelMuzzle"};
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {
-            "ark_main"
+            "ark_main",
+            "ace_explosives"
         };
         VERSION_CONFIG;
     };
