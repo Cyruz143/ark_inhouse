@@ -175,6 +175,12 @@ ark_rotor_fnc_taskAttack = {
 ark_rotor_fnc_cleanUp = {
     params ["_vehicle","_logic"];
 
-    {_vehicle deleteVehicleCrew _x} forEach crew _vehicle;
-    {deleteVehicle _x} forEach [_vehicle,_logic];
+    private _crew = crew _vehicle;
+
+    if ((_crew select {isPlayer _x}) isEqualTo []) then {
+        {_vehicle deleteVehicleCrew _x} forEach _crew;
+        {deleteVehicle _x} forEach [_vehicle,_logic];
+    } else {
+        diag_log "[ARK] (Rotor) - INFO - Not removing vehicle as player crew detected";
+    };
 };
