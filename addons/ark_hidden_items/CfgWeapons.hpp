@@ -20,6 +20,10 @@ class CfgWeapons {
     class arifle_SPAR_03_khk_F: arifle_SPAR_03_base_F { HIDDEN };
     class arifle_SPAR_03_snd_F: arifle_SPAR_03_base_F { HIDDEN };
 
+    // Hide BI RPG mess
+    class Launcher_Base_F;
+    class launch_RPG7_F: Launcher_Base_F { HIDDEN };
+
     // Hide Toadie AKs
     class hlc_ak_base;
     class optic_ACO_grn;
