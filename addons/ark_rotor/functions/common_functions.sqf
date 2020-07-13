@@ -37,7 +37,7 @@ ark_rotor_fnc_checkTrigger = {
 
     private _routineFunction = _logic getVariable ["Routine_Function", {ark_rotor_fnc_paradrop}];
 
-    ["INFO","fnc_checkTrigger","Compiled Rotor routine",str (_logic, _trigger, _vehicleClassname, _unitTemplate, _waypoints, _routineFunction)] call ark_rotor_fnc_log;
+    ["INFO","fnc_checkTrigger","Compiled Rotor routine",[_logic, _trigger, _vehicleClassname, _unitTemplate, _waypoints, _routineFunction]] call ark_rotor_fnc_log;
     [_logic, _trigger, _vehicleClassname, _unitTemplate, _waypoints] call (call compile _routineFunction);
 };
 
@@ -180,6 +180,7 @@ ark_rotor_fnc_cleanUp = {
     if ((_crew select {isPlayer _x}) isEqualTo []) then {
         {_vehicle deleteVehicleCrew _x} forEach _crew;
         {deleteVehicle _x} forEach [_vehicle,_logic];
+        ["INFO","fnc_cleanUp","Cleaned up vehicle",_vehicle] call ark_rotor_fnc_log;
     } else {
         deleteVehicle _logic;
         ["INFO","fnc_cleanUp","Not removing vehicle as player crew detected"] call ark_rotor_fnc_log;
@@ -191,12 +192,12 @@ ark_rotor_fnc_log = {
 
     private _txt = format ["[ARK] (Rotor) - [%1] - (%2) - %3", _level, _fnc, _msg];
 
-    if (!isNull "_args") then {
+    if (!isNil "_args") then {
         _txt = format ["[ARK] (Rotor) - [%1] - (%2) - %3: %4", _level, _fnc, _msg, _args];
     };
 
     if ((isServer && !isDedicated) || { _level isEqualTo "ERROR" } || { _level isEqualTo "WARNING" }) then {
-        [player, _txt] remoteExec ["sideChat", 0];
+        [_txt] remoteExec ["systemChat", 0];
     };
 
     diag_log _txt;
