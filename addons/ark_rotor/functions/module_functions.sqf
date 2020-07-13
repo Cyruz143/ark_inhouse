@@ -2,7 +2,7 @@ ark_rotor_module_preinit = {
     params ["_logic", "", "_activated"];
 
     if !(_activated) exitWith {
-        diag_log "[ARK] (Rotor) - ERROR - Module not activated - Disabling";
+        ["ERROR","module_preinit","Module not activated - Disabling"] call ark_rotor_fnc_log;
     };
 
     [_logic] call ark_rotor_fnc_checkTrigger;

@@ -60,7 +60,7 @@ ark_rotor_fnc_emtpyCargo = {
             private _crewArr = crew _vehicle - [driver _vehicle];
 
             if (isNil "_crewArr" || { count _crewArr isEqualTo 0 }) exitWith {
-                diag_log "[ARK] (Rotor) - INFO - All cargo dismounted";
+                ["INFO","fnc_emtpyCargo","All cargo dismounted"] call ark_rotor_fnc_log;
                 [_vehicle,_landingPad,_pilot] call ark_rotor_fnc_waitForCargo;
                 _id call CBA_fnc_removePerFrameHandler;
             };
