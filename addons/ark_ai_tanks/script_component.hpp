@@ -7,21 +7,22 @@
 #define ENHANCED_IFV \
     allowAgainstInfantry = 1; \
     aiAmmoUsageFlags = "64 + 128 + 256 + 512"; \
-    cost = 5;
 
 #define ENHANCED_TANK \
     allowAgainstInfantry = 1; \
     aiAmmoUsageFlags = "64 + 128 + 256 + 512"; \
-    cost = 3;
 
 #define ENHANCED_MODES \
     class player; \
     class close: player { \
-        minRangeProbab = 0.85; \
+        minRangeProbab = 0.35; \
+        midRangeProbab = 0.78; \
+        maxRangeProbab = 0.04; \
+        aiDispersionCoefX = 6; \
+        aiDispersionCoefY = 6; \
     }; \
     class short: close { \
-        minRangeProbab = 0.85; \
-    }; \
-    class medium: close { \
-        minRangeProbab = 0.85; \
+        minRangeProbab = 0.05; \
+        midRangeProbab = 0.58; \
+        maxRangeProbab = 0.04; \
     };

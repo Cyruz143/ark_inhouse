@@ -2,7 +2,7 @@
     params ["_unit", "_weapon", "_muzzle", "_newMagazine"];
 
     if (isPlayer _unit || { _muzzle != _weapon }) exitWith {};
-    if (_weapon in ["throw","put"]) exitWith {};
+    if (_weapon in ["Throw","Put"]) exitWith {};
 
     if (currentWeapon _unit isEqualTo primaryWeapon _unit) then {
         _unit addMagazine (_newMagazine #0);
@@ -14,6 +14,6 @@
         params ["_vehicle"];
 
         if (isPlayer _vehicle) exitWith {};
-        _vehicle setVehicleAmmoDef 1;
+        _vehicle setVehicleAmmo 1;
     }] call CBA_fnc_addClassEventHandler;
 } forEach ["Air","Car","Tank"];
