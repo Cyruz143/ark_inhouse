@@ -11,15 +11,27 @@ ark_rotor_fnc_checkTrigger = {
     };
 
     private _trigger = _syncdTrg #0;
-    private _vrUnit = [_trigger] call ark_rotor_fnc_checkWaypoints;
+    private _syncUnits = [];
+
+    {
+        if ((typeOf _x) isEqualTo "C_Jeff_VR") then {
+           _syncUnits pushBack _x;
+        };
+    } forEach synchronizedObjects _trigger;
+
+    if (count _syncUnits > 1) then {
+       ["WARNING","fnc_checkTrigger","Only sync one VR entity to the trigger"] call ark_rotor_fnc_log;
+    };
+
+    private _vrUnit = _syncUnits #0;
 
     if (isNil "_vrUnit") exitWith {
         ["ERROR","fnc_checkTrigger","No VR entity syncd with trigger",_trigger] call ark_rotor_fnc_log;
     };
 
-    private _waypoints = waypoints _vrUnit;
-    if (count _waypoints isEqualTo 0) exitWith {
-        ["ERROR","fnc_checkTrigger","VR entity had no waypoints attached",_vrUnit] call ark_rotor_fnc_log;
+    private _waypoints = waypoints (group _vrUnit);
+    if (count _waypoints < 3) exitWith {
+        ["ERROR","fnc_checkTrigger","VR entity needs minimum 2 waypoints",_vrUnit] call ark_rotor_fnc_log;
     };
 
     deleteVehicle _vrUnit;
@@ -39,26 +51,6 @@ ark_rotor_fnc_checkTrigger = {
 
     ["INFO","fnc_checkTrigger","Compiled Rotor routine",[_logic, _trigger, _vehicleClassname, _unitTemplate, _waypoints, _routineFunction]] call ark_rotor_fnc_log;
     [_logic, _trigger, _vehicleClassname, _unitTemplate, _waypoints] call (call compile _routineFunction);
-};
-
-ark_rotor_fnc_checkWaypoints = {
-    params ["_trigger"];
-
-    private _syncUnits = [];
-
-    {
-        if ((typeOf _x) isEqualTo "C_Jeff_VR") then {
-           _syncUnits pushBack _x;
-        };
-    } forEach synchronizedObjects _trigger;
-
-    if (count _syncUnits > 1) then {
-       ["WARNING","fnc_checkWaypoints","Only sync one VR entity to the trigger"] call ark_rotor_fnc_log;
-    };
-
-    private _vrUnit = _syncUnits #0;
-
-    _vrUnit;
 };
 
 ark_rotor_fnc_createVehicle = {
