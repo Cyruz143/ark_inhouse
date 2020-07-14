@@ -58,8 +58,6 @@ ark_rotor_fnc_checkWaypoints = {
 
     private _vrUnit = _syncUnits #0;
 
-    if (isNil "_vrUnit") exitWith {};
-
     _vrUnit;
 };
 

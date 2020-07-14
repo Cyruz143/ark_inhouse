@@ -24,6 +24,7 @@ class CfgVehicles {
         isTriggerActivated = 1;
         isGlobal = 0;
         isDisposable = 1;
+        is3DEN = 0;
         class ModuleDescription {
             description = "Paradrops EI on the first waypoint";
         };
@@ -80,6 +81,7 @@ class CfgVehicles {
         isTriggerActivated = 1;
         isGlobal = 0;
         isDisposable = 1;
+        is3DEN = 0;
         class ModuleDescription {
             description = "Lands the helo at the first waypoint";
         };
@@ -136,6 +138,7 @@ class CfgVehicles {
         isTriggerActivated = 1;
         isGlobal = 0;
         isDisposable = 1;
+        is3DEN = 0;
         class ModuleDescription {
             description = "Drops barrel bombs between the first and second waypoint";
         };
