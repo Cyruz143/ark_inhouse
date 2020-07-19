@@ -16,15 +16,17 @@ class CfgVehicles {
     };
 
     class ARK_Module;
-    class ARK_Rotor_Paradrop: ARK_Module {
+    class ARK_Rotor_Base : ARK_Module {
+        scope = 1;
+        function = "ark_rotor_module_preinit";
+        isTriggerActivated = 1;
+        isGlobal = 1;
+    };
+
+    class ARK_Rotor_Paradrop: ARK_Rotor_Base {
         scope = 2;
         displayName = "Rotor - Paradrop";
         icon = "\x\ark\addons\ark_rotor\resources\paradrop.paa";
-        function = "ark_rotor_module_preinit";
-        isTriggerActivated = 1;
-        isGlobal = 0;
-        isDisposable = 1;
-        is3DEN = 0;
         class ModuleDescription {
             description = "Paradrops EI on the first waypoint";
         };
@@ -73,15 +75,10 @@ class CfgVehicles {
         };
     };
 
-    class ARK_Rotor_Insert: ARK_Module {
+    class ARK_Rotor_Insert: ARK_Rotor_Base {
         scope = 2;
         displayName = "Rotor - Infantry Insert";
         icon = "\x\ark\addons\ark_rotor\resources\insert.paa";
-        function = "ark_rotor_module_preinit";
-        isTriggerActivated = 1;
-        isGlobal = 0;
-        isDisposable = 1;
-        is3DEN = 0;
         class ModuleDescription {
             description = "Lands the helo at the first waypoint";
         };
@@ -130,15 +127,10 @@ class CfgVehicles {
         };
     };
 
-    class ARK_Rotor_Barrelbomb: ARK_Module {
+    class ARK_Rotor_Barrelbomb: ARK_Rotor_Base {
         scope = 2;
         displayName = "Rotor - Barrel Bomb";
         icon = "\x\ark\addons\ark_rotor\resources\barrel.paa";
-        function = "ark_rotor_module_preinit";
-        isTriggerActivated = 1;
-        isGlobal = 0;
-        isDisposable = 1;
-        is3DEN = 0;
         class ModuleDescription {
             description = "Drops barrel bombs between the first and second waypoint";
         };
