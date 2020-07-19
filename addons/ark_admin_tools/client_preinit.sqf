@@ -1,8 +1,5 @@
-ark_admin_tools_fnc_initVariables = {
-    ark_aiDebugEnabled = false;
-    ark_mapTeleportEnabled = false;
-    call ark_admin_tools_eh_mapClickTeleport;
-};
+ark_aiDebugEnabled = false;
+ark_mapTeleportEnabled = false;
 
 ark_admin_tools_fnc_isHost = {
     private _adminWhiteList = ["76561197969272205", "76561198001868030", "76561197980517821", "76561197972043388"];
@@ -63,4 +60,4 @@ ark_admin_tools_eh_mapClickTeleport = {
     };
 };
 
-call ark_admin_tools_fnc_initVariables;
+call ark_admin_tools_eh_mapClickTeleport;

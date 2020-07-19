@@ -12,17 +12,13 @@ ark_clear_cargo_module_clearVehicle = {
 
     if !(_activated) exitWith {
         diag_log "[ARK] (Clear Cargo) - Module not activated";
-        true;
     };
 
-    if (count _units == 0) exitWith {
+    if (count _units isEqualTo 0) exitWith {
         diag_log "[ARK] (Clear Cargo) - Module not syncd to any vehicle";
-        true;
     };
 
     {
         [_x] call ark_clear_cargo_fnc_clearVehicle;
     } forEach _units;
-
-    true;
 };

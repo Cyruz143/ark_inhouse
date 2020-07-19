@@ -145,13 +145,13 @@ ark_rotor_fnc_taskAttack = {
 
     private _nearEnemies = [];
     {
-        if ((_x distance2D (leader _grp)) < 2500) then {
+        if ((_x distance2D (leader _grp)) < 5000) then {
             _nearEnemies pushBack _x;
         };
     } forEach ((playableUnits + switchableUnits) select {isPlayer _x && {!(_x isKindOf "HeadlessClient_F")}});
 
     if (_nearEnemies isEqualTo []) exitWith {
-        ["ERROR","fnc_taskAttack","No players to attack"] call ark_rotor_fnc_log;
+        ["INFO","fnc_taskAttack","No players to attack"] call ark_rotor_fnc_log;
         {deleteVehicle _x} forEach units _grp;
     };
 

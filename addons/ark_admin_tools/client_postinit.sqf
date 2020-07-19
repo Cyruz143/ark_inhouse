@@ -200,10 +200,11 @@ ark_admin_tools_fnc_unFlip = {
             {"No room to flip \nPlease contact Staff!" remoteExec ["hint", _x];} forEach (crew _vehicle);
         };
 
+        private _allowDamage = isDamageAllowed _vehicle;
         _vehicle allowDamage false;
         _vehicle setPos _emptyPos;
         _vehicle setVectorUp surfaceNormal _emptyPos;
-        _vehicle allowDamage true;
+        _vehicle allowDamage _allowDamage;
         _vehicle setVariable ["ark_admin_tools_lastUnflipTime", time, true];
     }] remoteExec ["bis_fnc_call", objectParent player];
 };

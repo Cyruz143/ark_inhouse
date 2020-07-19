@@ -31,12 +31,10 @@ ark_ai_sentry_module_make_sentry = {
 
     if !(_activated) exitWith {
         diag_log "[ARK] (AI Sentry) - Logic not activated";
-        true;
     };
 
-    if (count _units == 0) exitWith {
+    if (count _units isEqualTo 0) exitWith {
         diag_log "[ARK] (AI Sentry) - Not synced to any units";
-        true;
     };
 
     private _enabledNightvision = _logic getVariable ["Enabled_Nightvision", true];
@@ -44,6 +42,4 @@ ark_ai_sentry_module_make_sentry = {
     {
         [_x, _enabledNightvision] call ark_ai_sentry_fnc_make_sentry;
     } forEach _units;
-
-    true;
 };
