@@ -2,7 +2,7 @@ ark_rotor_module_preinit = {
     params ["_logic", "", "_activated"];
 
     if (_logic getVariable ["ark_rotor_var_moduleRan", false]) exitWith {
-        ["ERROR","module_preinit","Module tried to execute multiple times - Check triggers are server only:",_logic] call ark_rotor_fnc_log;
+        ["INFO","module_preinit","Module tried to execute multiple times - Check triggers are evaluated on the server only",_logic] call ark_rotor_fnc_log;
     };
 
     if (!_activated) exitWith {
