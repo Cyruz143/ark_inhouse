@@ -1,6 +1,6 @@
 class CfgDifficultyPresets {
-    defaultPreset = "ARK";
-        class ARK {
+    defaultPreset = "CustomDifficulty";
+        class CustomDifficulty {
             description = "ARK Difficulty Settings";
             levelAI = "AILevelLow";
                 class Options {
