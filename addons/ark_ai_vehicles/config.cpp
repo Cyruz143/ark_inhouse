@@ -16,6 +16,7 @@ class CfgPatches {
 
 class Extended_PostInit_EventHandlers {
     class ADDON {
+        clientInit = "call compile preProcessFileLineNumbers 'x\ark\addons\ark_ai_vehicles\client_postinit.sqf';";
         serverInit = "call compile preProcessFileLineNumbers 'x\ark\addons\ark_ai_vehicles\server_postinit.sqf';";
     };
 };
