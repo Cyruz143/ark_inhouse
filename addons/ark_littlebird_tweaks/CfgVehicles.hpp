@@ -6,8 +6,8 @@ class CfgVehicles {
 
         liftForceCoef = 1.4; //1.5
         bodyFrictionCoef = 0.25; //0.4
-        cyclicAsideForceCoef = 0.75; //0.35
-        cyclicForwardForceCoef = 0.50; //0.35
+        cyclicAsideForceCoef = 0.5; //0.35
+        cyclicForwardForceCoef = 0.5; //0.35
         backRotorForceCoef = 0.8; //0.5
     };
 };
