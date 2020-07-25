@@ -27,7 +27,7 @@ class CfgPatches {
             "CUP_Utes_Config",
             "CUP_Zargabad_Config",
             "CUP_Terrains_Abel",
-            "CUP_Terrains_Cain", 
+            "CUP_Terrains_Cain",
             "CUP_Terrains_Eden",
             "CUP_Intro_Config",
             "CUP_Terrains_Noe"

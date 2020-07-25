@@ -12,8 +12,6 @@ class CfgPatches {
         requiredAddons[] = {
             "ark_main",
             "clafghan",
-            "takistan",
-            "CUP_Worlds",
             "fallujah_hou"
         };
         VERSION_CONFIG;

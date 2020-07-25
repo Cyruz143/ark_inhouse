@@ -1,17 +1,18 @@
 // Fixes CLAfghan's weird purple sun thingy...
 class CfgWorlds {
-    class CAWorld;
-    class Takistan: CAWorld {
+    class DefaultWorld;
+    class CAWorld: DefaultWorld {
         class Grid;
     };
-    class Clafghan: Takistan {
+    class Clafghan: CAWorld {
         MaxTide = 1;
         description = "Clafghan";
         horizontObject = "A3\Map_stratis\data\horizont.p3d";
         skyObject = "A3\Map_Stratis\data\obloha.p3d";
         skyTexture = "A3\Map_Stratis\data\sky_semicloudy_sky.paa";
         skyTextureR = "A3\Map_Stratis\data\sky_semicloudy_lco.paa";
-        class Grid {
+
+        class Grid: Grid {
             offsetX = 0;
             offsetY = 20480;
             class Zoom1 {

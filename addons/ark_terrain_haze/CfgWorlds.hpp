@@ -102,10 +102,40 @@ class CfgWorlds {
     class hellanmaa: CAWorld {
         REDUCED_HAZE
     };
+    class hellanmaaw: CAWorld {
+        REDUCED_HAZE
+    };
     class ruha: CAWorld {
         REDUCED_HAZE
     };
     class WL_Rosche: CAWorld {
+        REDUCED_HAZE
+    };
+    class Caribou: Chernarus {
+        REDUCED_HAZE
+    };
+    class cup_chernarus_A3: Stratis {
+        REDUCED_HAZE
+    };
+    class Enoch: CAWorld {
+        REDUCED_HAZE
+    };
+    class fallujah: Utes {
+        REDUCED_HAZE
+    };
+    class isladuala3: Stratis {
+        REDUCED_HAZE
+    };
+    class Malden: CAWorld {
+        REDUCED_HAZE
+    };
+    class pulau: CAWorld {
+        REDUCED_HAZE
+    };
+    class tem_kujari: CAWorld {
+        REDUCED_HAZE
+    };
+    class vr: CAWorld {
         REDUCED_HAZE
     };
 };
