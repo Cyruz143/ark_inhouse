@@ -101,7 +101,7 @@ ark_rotor_fnc_createCargo = {
             _args params ["_vehicle","_adjSeats","_grp","_cargoClassnames","_skillArray","_parachute"];
 
             if (isNil "_vehicle" || { !alive _vehicle }) exitWith {
-                ["ERROR","fnc_createCargo","Vehicle is dead or undefined",_vehicle] call ark_rotor_fnc_log;
+                ["ERROR","fnc_createCargo","Vehicle is dead or has incorrect classname"] call ark_rotor_fnc_log;
                 _id call CBA_fnc_removePerFrameHandler;
             };
 
