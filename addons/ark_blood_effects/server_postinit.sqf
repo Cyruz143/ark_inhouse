@@ -14,8 +14,7 @@ ark_blood_effects_fnc_createBlood = {
     // Ignore units in vehicles
     if (!(_unit isKindOf "CAManBase") || { !(isNull objectParent _unit) }) exitWith {};
 
-    private _pos = (getPosWorld _unit) vectorAdd [random 0.4 - 0.2, random 0.4 - 0.2, 0.05];
-    private _blood = createSimpleObject [(selectRandom ark_blood_effects_var_models), _pos];
+    private _blood = createSimpleObject [(selectRandom ark_blood_effects_var_models), (getPosWorld _unit)];
     _blood setDir random 360;
     _blood setVectorUp surfaceNormal position _blood;
 
