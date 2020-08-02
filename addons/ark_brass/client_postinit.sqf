@@ -28,26 +28,26 @@ ark_brass_fnc_createCase = {
 
     if (_modelPath isEqualTo "") exitWith {};
 
-    private _unitPosATL = getposATL _unit;
+    private _unitPos = getposATL _unit;
     // Distant shooters don't produce as many cases
-    if ((positionCameraToWorld [0,0,0]) vectorDistance _unitPosATL > 100 && {random 1 < 0.9}) exitWith {};
+    if ((positionCameraToWorld [0,0,0]) vectorDistance _unitPos > 100 && {random 1 < 0.9}) exitWith {};
 
     // This is all ACE magic math stuff
     private _weapDir = _unit weaponDirection currentWeapon _unit;
     private _ejectDir = _weapDir vectorCrossProduct [0, 0, 1];
-    private _posATL = _unitPosATL vectorAdd
+    private _pos = _unitPos vectorAdd
                       (_weapDir vectorMultiply (-0.5 + random 1.0 + random 1.0)) vectorAdd
                       (_ejectDir vectorMultiply (0.2 + random 1.0 + random 1.0));
 
-    _posATL set [2, (_unitPosATL #2) + 0.005];
+    _pos set [2, (_pos #2) + 0.005];
 
     [
         {
-            params ["_modelPath","_posATL"];
+            params ["_modelPath","_pos"];
 
             private _casing = createSimpleObject [_modelPath, [0,0,0], true];
-            _casing setposATL _posATL;
-            _casing setdir (random 360);
+            _casing setPosATL _pos;
+            _casing setDir (random 360);
             ark_brass_caseArr pushBack _casing;
 
             private _totalCasings = count ark_brass_caseArr;
@@ -58,7 +58,7 @@ ark_brass_fnc_createCase = {
                 };
             };
         },
-        [_modelPath,_posATL],
+        [_modelPath,_pos],
         0.4
     ] call CBA_fnc_waitAndExecute;
 };
