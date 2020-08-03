@@ -26,17 +26,25 @@ class CfgVehicles {
         displayName = "Flag (ARK)";
         scope = 2;
         scopeCurator = 2;
-        editorPreview = "\x\ark\addons\ark_main\resources\ark_flag.jpg";
+        editorPreview = "\x\ark\addons\ark_main\resources\flags\ark_flag.jpg";
         class EventHandlers {
-            init = "(_this #0) setFlagTexture '\x\ark\addons\ark_main\resources\ark_flag.paa'";
+            init = "(_this #0) setFlagTexture '\x\ark\addons\ark_main\resources\flags\ark_flag.paa'";
         };
     };
 
     class Rhod_Flag: ARK_Flag {
         displayName = "Flag (Rhodesia)";
-        editorPreview = "\x\ark\addons\ark_main\resources\rhod_flag.jpg";
+        editorPreview = "\x\ark\addons\ark_main\resources\flags\rhod_flag.jpg";
         class EventHandlers {
-            init = "(_this #0) setFlagTexture '\x\ark\addons\ark_main\resources\rhod_flag.paa'";
+            init = "(_this #0) setFlagTexture '\x\ark\addons\ark_main\resources\flags\rhod_flag.paa'";
+        };
+    };
+
+    class CH_Flag: ARK_Flag {
+        displayName = "Flag (China)";
+        editorPreview = "\x\ark\addons\ark_main\resources\flags\china_flag.jpg";
+        class EventHandlers {
+            init = "(_this #0) setFlagTexture '\x\ark\addons\ark_main\resources\flags\china_flag.paa'";
         };
     };
 };
