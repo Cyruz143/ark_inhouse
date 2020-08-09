@@ -14,7 +14,17 @@ ark_ai_sentry_fnc_make_sentry = {
     _unit disableAI "PATH";
     {
         _unit setSkill _x;
-    } foreach ["Cqc"] call adm_common_fnc_getZoneTemplateSkillValues;
+    } foreach [
+        ["aimingAccuracy",0.2],
+        ["aimingShake",0.15],
+        ["aimingSpeed",0.5],
+        ["spotDistance",0.4],
+        ["spotTime",1],
+        ["courage",1],
+        ["reloadSpeed",1],
+        ["commanding",1],
+        ["general",0.7]
+    ];
 
     private _hmd = hmd _unit;
 
