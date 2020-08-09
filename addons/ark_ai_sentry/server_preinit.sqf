@@ -11,8 +11,10 @@ ark_ai_sentry_fnc_make_sentry = {
 
     [_grp, (getposASL _unit), 0, "GUARD", "AWARE", "YELLOW"] call CBA_fnc_addWaypoint;
     _unit allowFleeing 0;
-    _unit setSkill 0.2;
     _unit disableAI "PATH";
+    {
+        _unit setSkill _x;
+    } foreach ["Cqc"] call adm_common_fnc_getZoneTemplateSkillValues;
 
     private _hmd = hmd _unit;
 
@@ -33,7 +35,7 @@ ark_ai_sentry_module_make_sentry = {
         diag_log "[ARK] (AI Sentry) - Logic not activated";
     };
 
-    if (count _units isEqualTo 0) exitWith {
+    if (_units isEqualTo []) exitWith {
         diag_log "[ARK] (AI Sentry) - Not synced to any units";
     };
 

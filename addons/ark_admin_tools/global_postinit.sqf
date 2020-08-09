@@ -7,7 +7,7 @@ ark_admin_tools_fnc_callAttackHelo = {
     private _pilotClassnames = [_unitTemplate, "pilots"] call adm_common_fnc_getUnitTemplateArray;
     private _heloArray = [_unitTemplate, "ah"] call adm_common_fnc_getUnitTemplateArray;
 
-    if (isNil "_heloArray" || { count _heloArray == 0 }) exitWith {
+    if (isNil "_heloArray" || { _heloArray isEqualTo [] }) exitWith {
         diag_log "[ARK] (Admin Tools) - No helo defined in Admiral template";
     };
 

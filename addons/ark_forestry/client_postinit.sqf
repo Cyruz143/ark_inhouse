@@ -3,7 +3,7 @@
 ark_forestry_fnc_canChop = {
     private _nearTrees = nearestTerrainObjects [player, ["TREE", "SMALL TREE"], 3, true, true];
 
-    if (isNil "_nearTrees" || { count _nearTrees == 0 }) exitWith {
+    if (isNil "_nearTrees" || { _nearTrees isEqualTo [] }) exitWith {
         false;
     };
 

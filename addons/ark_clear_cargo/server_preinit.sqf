@@ -14,7 +14,7 @@ ark_clear_cargo_module_clearVehicle = {
         diag_log "[ARK] (Clear Cargo) - Module not activated";
     };
 
-    if (count _units isEqualTo 0) exitWith {
+    if (_units isEqualTo []) exitWith {
         diag_log "[ARK] (Clear Cargo) - Module not syncd to any vehicle";
     };
 

@@ -10,7 +10,7 @@ ark_ace_rearm_module_enableRearm = {
         diag_log "[ARK] (ACE Rearm) - Module not activated";
     };
 
-    if (count _vehicles isEqualTo 0) exitWith {
+    if (_vehicles isEqualTo []) exitWith {
         diag_log "[ARK] (ACE Rearm) - Module not syncd to any vehicle";
     };
 

@@ -11,7 +11,7 @@ ark_admin_tools_fnc_isAdmiralEnabled = {
 };
 
 ark_admin_tools_fnc_isTownSweep = {
-    getNumber(missionConfigFile >> 'TownSweep' >> 'isEnabled') == 1
+    getNumber(missionConfigFile >> 'TownSweep' >> 'isEnabled') == 1;
 };
 
 ark_admin_tools_fnc_assignMapTeleport = {

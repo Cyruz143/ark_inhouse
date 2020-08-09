@@ -60,7 +60,7 @@ ark_race_fnc_flipCar = {
     private _carPos = (getPosATL _veh);
     private _emptyPos = _carPos findEmptyPosition [0, 20, (typeOf _veh)];
 
-    if (isNil "_emptyPos" || { count _emptyPos == 0 }) then {
+    if (isNil "_emptyPos" || { _emptyPos isEqualTo [] }) then {
         _veh setVectorUp surfaceNormal _carPos;
         _veh setPosATL _carPos;
     } else {

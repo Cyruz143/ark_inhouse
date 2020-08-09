@@ -2,7 +2,7 @@ ark_rotor_fnc_checkTrigger = {
     params ["_logic"];
 
     private _syncdTrg = synchronizedObjects _logic;
-    if (count _syncdTrg isEqualTo 0) exitWith {
+    if (_syncdTrg isEqualTo []) exitWith {
         ["ERROR","fnc_checkTrigger","Trigger not syncd to the module"] call ark_rotor_fnc_log;
     };
 
@@ -41,7 +41,7 @@ ark_rotor_fnc_checkTrigger = {
 
     if (_vehicleClassname isEqualTo "Default") then {
         private _heloArray = [_unitTemplate, "th"] call adm_common_fnc_getUnitTemplateArray;
-        if (isNil "_heloArray" || { count _heloArray isEqualTo 0 }) exitWith {
+        if (isNil "_heloArray" || { _heloArray isEqualTo [] }) exitWith {
             ["ERROR","fnc_checkTrigger","No helo defined in Admiral template"] call ark_rotor_fnc_log;
         };
         _vehicleClassname = selectRandom _heloArray;

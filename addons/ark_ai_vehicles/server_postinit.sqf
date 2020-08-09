@@ -112,7 +112,7 @@ ark_ai_vehicles_fnc_replaceGunner = {
     private _driver = driver _vehicle;
     private _allTurrets = allTurrets [_vehicle, false];
 
-    if (isNil "_allTurrets" || { count _allTurrets == 0 }) exitWith {
+    if (isNil "_allTurrets" || { _allTurrets isEqualTo [] }) exitWith {
         diag_log format ["[ARK] (AI Vehicles) - Vehicle: %1 has no turrets",typeOf _vehicle];
     };
 
