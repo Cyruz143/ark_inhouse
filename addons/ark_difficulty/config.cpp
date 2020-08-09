@@ -16,5 +16,4 @@ class CfgPatches {
 
 #include "CfgSurfaces.hpp"
 #include "CfgAILevelPresets.hpp"
-#include "CfgAISkill.hpp"
 #include "CfgDifficultyPresets.hpp"
