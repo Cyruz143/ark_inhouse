@@ -97,3 +97,9 @@ ark_admin_tools_fnc_callTechnical = {
 ["failmission", {
     ["loser",false] remoteExecCall ['BIS_fnc_endMission',0];
 }, "adminLogged"] call CBA_fnc_registerChatCommand;
+
+["boogie", {
+    private _dance = selectRandom [["Acts_Dance_01", 25],["Acts_Dance_02",21]];
+    [player, _dance #0, 2] call ace_common_fnc_doAnimation;
+    [{[player, "", 2] call ace_common_fnc_doAnimation}, [], _dance #1] call CBA_fnc_waitAndExecute;
+}, "all"] call CBA_fnc_registerChatCommand;

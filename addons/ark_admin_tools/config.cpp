@@ -12,7 +12,8 @@ class CfgPatches {
         requiredAddons[] = {
             "ark_main",
             "admiral",
-            "Hull3"
+            "Hull3",
+            "ace_common"
         };
         VERSION_CONFIG;
     };
