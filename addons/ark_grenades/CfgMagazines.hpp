@@ -41,6 +41,7 @@ class CfgMagazines {
         allowedSlots[] = {901, 701};
         ammo = "DemoCharge_Remote_Ammo_Thrown";
         mass = 20;
+        initSpeed = 15;
         displayName = "Explosive Charge (Throwable)";
         displayNameShort = "Explosive Charge";
     };
