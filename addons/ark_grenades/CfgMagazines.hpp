@@ -31,4 +31,17 @@ class CfgMagazines {
             SupportedTriggers[] = {};
         };
     };
+    class DemoCharge_Remote_Mag_Throwable: SatchelCharge_Remote_Mag_Throwable {
+        picture = "\A3\Weapons_F\Data\UI\gear_c4_charge_small_CA.paa";
+        model = "\A3\Weapons_F\explosives\c4_charge_small_d";
+        descriptionShort = "Type: Charge<br />Rounds: 1<br />Used on: Things that need to die";
+        class Library {
+            libTextDesc = "An explosive charge that is throwable. 7 second fixed fuse";
+        };
+        allowedSlots[] = {901, 701};
+        ammo = "DemoCharge_Remote_Ammo_Thrown";
+        mass = 20;
+        displayName = "Explosive Charge (Throwable)";
+        displayNameShort = "Explosive Charge";
+    };
 };
