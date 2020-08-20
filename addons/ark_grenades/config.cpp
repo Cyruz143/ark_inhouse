@@ -7,12 +7,12 @@ class CfgPatches {
         authors[] = {"ARK"};
         url = "http://www.ark-group.org";
         units[] = {};
-        weapons[] = {"SatchelMuzzle"};
-        requiredVersion = REQUIRED_VERSION;
-        requiredAddons[] = {
-            "ark_main",
-            "ace_explosives"
+        weapons[] = {
+            "SatchelCharge_Remote_Mag_Throwable",
+            "DemoCharge_Remote_Mag_Throwable"
         };
+        requiredVersion = REQUIRED_VERSION;
+        requiredAddons[] = {"ark_main"};
         VERSION_CONFIG;
     };
 };

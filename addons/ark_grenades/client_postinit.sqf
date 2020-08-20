@@ -6,7 +6,7 @@
         "CONTAINER",
         "Covert to short fuse",
         nil,
-        "\z\ace\addons\explosives\UI\Place_Explosive_ca.paa",
+        "\a3\ui_f\data\igui\cfg\simpletasks\types\destroy_ca.paa",
         [
             {true},
             {
@@ -28,7 +28,7 @@
         "CONTAINER",
         "Remove short fuse",
         nil,
-        "\z\ace\addons\explosives\UI\Place_Explosive_ca.paa",
+        "\a3\ui_f\data\igui\cfg\simpletasks\types\destroy_ca.paa",
         [
             {true},
             {
