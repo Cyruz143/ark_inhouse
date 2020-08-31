@@ -1,5 +1,5 @@
 class CfgEditorSubcategories {
-	class EdSubcat_Personnel_SWAT {
-		displayName = "SWAT";
-	};
+    class EdSubcat_Personnel_SWAT {
+        displayName = "SWAT";
+    };
 };
