@@ -262,6 +262,11 @@ ts_spawn_fnc_objDestroyVeh = {
         _vehicle setVectorUp surfaceNormal position _vehicle;
     };
 
+    if (!(_vehicle inArea ts_spawn_selectedLocationMarkerName)) exitWith {
+        deleteVehicle _vehicle;
+        diag_log "[ARK] (Town Sweep) - Cannot find position for armour in selected town"
+    };
+
     {
         private _unit = [[0,0,0], _grp, _crewmanClassnames, _skillArray] call adm_common_fnc_placeMan;
         _unit assignAsTurret [_vehicle, _x];
@@ -318,13 +323,18 @@ ts_spawn_fnc_objCrashedHelo = {
         _helo setVectorUp surfaceNormal position _helo;
     };
 
+    if (!(_helo inArea ts_spawn_selectedLocationMarkerName)) exitWith {
+        deleteVehicle _helo;
+        diag_log "[ARK] (Town Sweep) - Cannot find position for helo in selected town"
+    };
+
     private _smoke = createVehicle ["test_EmptyObjectForSmoke", (getPos _helo), [], 0, "CAN_COLLIDE"];
     private _boxPos = _helo getPos [10 + (random 5), random 360];
     private _box = createVehicle ["Box_NATO_Equip_F", _boxPos, [], 0, "NONE"];
     _box allowDamage false;
     _box call ark_clear_cargo_fnc_clearVehicle;
     _box setVectorUp surfaceNormal position _box;
-    _box addItemCargoGlobal ["Item_SecretFiles", 1];
+    _box addItemCargoGlobal ["ACE_Banana", 1];
 
     [true, [str _box], ["Locate and secure the intel from the crash site", "Recover Intel"], _position, "ASSIGNED", -1, true, "intel"] call BIS_fnc_taskCreate;
 
