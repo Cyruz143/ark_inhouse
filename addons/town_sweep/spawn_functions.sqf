@@ -255,7 +255,7 @@ ts_spawn_fnc_objDestroyVeh = {
     if (_nearRoad isEqualTo []) then {
         private _pos = [_position, 0, 100, 3, 0, 20, 0] call BIS_fnc_findSafePos;
         _vehicle = createVehicle [(selectRandom _armourArray), _pos, [], 0, "NONE"];
-        _vehicle setVectorDir (getPos _vehicle vectorFromTo _position);
+        _vehicle setVectorDir (getPos _position vectorFromTo _vehicle);
     } else {
         _vehicle = createVehicle [(selectRandom _armourArray), (getPos _nearRoad), [], 0, "NONE"];
         _vehicle setDir (getDir _nearRoad);
@@ -324,7 +324,7 @@ ts_spawn_fnc_objCrashedHelo = {
     _box allowDamage false;
     _box call ark_clear_cargo_fnc_clearVehicle;
     _box setVectorUp surfaceNormal position _box;
-    _box addItemCargoGlobal ["ACE_Banana", 1]; // Needs changed!
+    _box addItemCargoGlobal ["Item_SecretFiles", 1];
 
     [true, [str _box], ["Locate and secure the intel from the crash site", "Recover Intel"], _position, "ASSIGNED", -1, true, "intel"] call BIS_fnc_taskCreate;
 
