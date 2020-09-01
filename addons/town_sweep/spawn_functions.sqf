@@ -65,9 +65,18 @@ ts_spawn_fnc_activateLocation = {
     call ts_spawn_fnc_createLocationZones;
     ts_spawn_selectedLocation set [2, true];
     call ts_spawn_fnc_createFortifications;
+
+    switch (selectRandom [1,2,3]) do {
+        case 1: { call ts_spawn_fnc_objDestroyVeh };
+        case 2: { call ts_spawn_fnc_objCrashedHelo };
+        default { call ts_spawn_fnc_objDestroyAmmo };
+    };
+
     [
         {count (allPlayers inAreaArray ts_spawn_selectedLocationMarkerName) > 0},
-        {[{private _insertType = selectRandomWeighted ["paradrop", 0.5, "insert", 0.5]; _insertType call ts_spawn_fnc_enableRotor;}, [], 180] call CBA_fnc_waitAndExecute;}
+        {
+            [{(selectRandom ["paradrop","insert"]) call ts_spawn_fnc_enableRotor}, [], 240] call CBA_fnc_waitAndExecute;
+        }
     ] call CBA_fnc_waitUntilAndExecute;
 };
 
@@ -230,3 +239,98 @@ ts_spawn_fnc_fillFortifications = {
     } forEach _scaledBuildingPositions;
 };
 
+ts_spawn_fnc_objDestroyVeh = {
+    ts_spawn_selectedLocation params ["_position"];
+
+    private _grp = createGroup ts_enemy_side;
+    _grp deleteGroupWhenEmpty true;
+    _grp enableDynamicSimulation true;
+    private _skillArray = ["Vehicles"] call adm_common_fnc_getZoneTemplateSkillValues;
+    private _crewmanClassnames = [adm_camp_defaultUnitTemplate, "crewmen"] call adm_common_fnc_getUnitTemplateArray;
+    private _armourArray = [adm_camp_defaultUnitTemplate, "armour"] call adm_common_fnc_getUnitTemplateArray;
+
+    private _nearRoad = selectRandom (_position nearRoads 100);
+
+    private ["_vehicle"];
+    if (_nearRoad isEqualTo []) then {
+        private _pos = [_position, 0, 100, 3, 0, 20, 0] call BIS_fnc_findSafePos;
+        _vehicle = createVehicle [(selectRandom _armourArray), _pos, [], 0, "NONE"];
+        _vehicle setVectorDir (getPos _vehicle vectorFromTo _position);
+    } else {
+        _vehicle = createVehicle [(selectRandom _armourArray), (getPos _nearRoad), [], 0, "NONE"];
+        _vehicle setDir (getDir _nearRoad);
+        _vehicle setVectorUp surfaceNormal position _vehicle;
+    };
+
+    {
+        private _unit = [[0,0,0], _grp, _crewmanClassnames, _skillArray] call adm_common_fnc_placeMan;
+        _unit assignAsTurret [_vehicle, _x];
+        _unit moveInTurret [_vehicle, _x];
+    } forEach allTurrets _vehicle;
+
+    _vehicle allowCrewInImmobile true;
+    _vehicle setUnloadInCombat [false, false];
+    _vehicle setFuel 0;
+    _vehicle call ark_clear_cargo_fnc_clearVehicle;
+
+    [true, [str _vehicle], ["Locate and destroy the static armour in town", "Destroy Armour"], _position, "ASSIGNED", -1, true, "target"] call BIS_fnc_taskCreate;
+
+    [
+        {!alive _this},
+        {[str _this,"SUCCEEDED"] call BIS_fnc_taskSetState},
+        _vehicle
+    ] call CBA_fnc_waitUntilAndExecute;
+};
+
+ts_spawn_fnc_objDestroyAmmo = {
+    ts_spawn_selectedLocation params ["_position"];
+
+    private _building = nearestBuilding _position;
+    if (isNull _building) exitWith {diag_log "[ARK] (Town Sweep) - Cannot find building for ammo"};
+
+    private _buildingPos = selectRandom (_building buildingPos -1);
+    private _crate = createVehicle ["CUP_BOX_GER_Wps_F", _buildingPos, [], 0, "CAN_COLLIDE"];
+    _crate call ark_clear_cargo_fnc_clearVehicle;
+    _crate addMagazineCargoGlobal ["SatchelCharge_Remote_Mag", 10];
+
+    [true, [str _crate], ["Locate and destroy the ammo cache hidden in town", "Destroy Cache"], _position, "ASSIGNED", -1, true, "destroy"] call BIS_fnc_taskCreate;
+
+    [
+        {!alive _this},
+        {[str _this,"SUCCEEDED"] call BIS_fnc_taskSetState},
+        _crate
+    ] call CBA_fnc_waitUntilAndExecute;
+};
+
+ts_spawn_fnc_objCrashedHelo = {
+    ts_spawn_selectedLocation params ["_position"];
+
+    private _nearRoad = selectRandom (_position nearRoads 100);
+
+    private ["_helo"];
+    if (_nearRoad isEqualTo []) then {
+        private _heloPos = [_position, 0, 100, 3, 0, 20, 0] call BIS_fnc_findSafePos;
+        _helo = createVehicle ["cup_mh47e_wreck2", _heloPos, [], 0, "NONE"];
+        _helo setDir (random 360);
+    } else {
+        _helo = createVehicle ["cup_mh47e_wreck2", (getPos _nearRoad), [], 0, "NONE"];
+        _helo setDir (getDir _nearRoad);
+        _helo setVectorUp surfaceNormal position _helo;
+    };
+
+    private _smoke = createVehicle ["test_EmptyObjectForSmoke", (getPos _helo), [], 0, "CAN_COLLIDE"];
+    private _boxPos = _helo getPos [10 + (random 5), random 360];
+    private _box = createVehicle ["Box_NATO_Equip_F", _boxPos, [], 0, "NONE"];
+    _box allowDamage false;
+    _box call ark_clear_cargo_fnc_clearVehicle;
+    _box setVectorUp surfaceNormal position _box;
+    _box addItemCargoGlobal ["ACE_Banana", 1]; // Needs changed!
+
+    [true, [str _box], ["Locate and secure the intel from the crash site", "Recover Intel"], _position, "ASSIGNED", -1, true, "intel"] call BIS_fnc_taskCreate;
+
+    [
+        {itemCargo _this isEqualTo []},
+        {[str _this,"SUCCEEDED"] call BIS_fnc_taskSetState},
+        _box
+    ] call CBA_fnc_waitUntilAndExecute;
+};
