@@ -41,7 +41,7 @@ ts_interaction_fnc_addInteractions = {
     _action =
         [ "Difficulty"
         , "Difficulty"
-        , ""
+        , "\a3\ui_f\data\igui\cfg\simpletasks\types\use_ca.paa"
         , {}
         , _condition
         ] call ace_interact_menu_fnc_createAction;
@@ -66,8 +66,8 @@ ts_interaction_fnc_addInteractions = {
 
     _action =
         [ "Town Size"
-        , "Town Size (Before activation)"
-        , ""
+        , "Town Size"
+        , "\a3\ui_f\data\igui\cfg\simpletasks\types\search_ca.paa"
         , {}
         , _condition
         ] call ace_interact_menu_fnc_createAction;
