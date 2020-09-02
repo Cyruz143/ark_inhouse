@@ -258,7 +258,12 @@ ts_spawn_fnc_objDestroyVeh = {
         _vehicle setVectorDir (getPos _position vectorFromTo _vehicle);
     } else {
         _vehicle = createVehicle [(selectRandom _armourArray), (getPos _nearRoad), [], 0, "NONE"];
-        _vehicle setDir (getDir _nearRoad);
+        private _dir = random 360;
+        private _roadConnectedTo = roadsConnectedTo _nearRoad;
+        if !(_roadConnectedTo isEqualTo []) then {
+            _dir = _nearRoad getDir _roadConnectedTo #0;
+        };
+        _vehicle setDir _dir;
         _vehicle setVectorUp surfaceNormal position _vehicle;
     };
 
@@ -319,7 +324,12 @@ ts_spawn_fnc_objCrashedHelo = {
         _helo setDir (random 360);
     } else {
         _helo = createVehicle ["cup_mh47e_wreck2", (getPos _nearRoad), [], 0, "NONE"];
-        _helo setDir (getDir _nearRoad);
+        private _dir = random 360;
+        private _roadConnectedTo = roadsConnectedTo _nearRoad;
+        if !(_roadConnectedTo isEqualTo []) then {
+            _dir = _nearRoad getDir _roadConnectedTo #0;
+        };
+        _helo setDir _dir;
         _helo setVectorUp surfaceNormal position _helo;
     };
 
@@ -328,7 +338,14 @@ ts_spawn_fnc_objCrashedHelo = {
         diag_log "[ARK] (Town Sweep) - Cannot find position for helo in selected town"
     };
 
-    private _smoke = createVehicle ["test_EmptyObjectForSmoke", (getPos _helo), [], 0, "CAN_COLLIDE"];
+    private _smoke = createVehicle ["test_EmptyObjectForSmoke", [0,0,0], [], 0, "CAN_COLLIDE"];
+    _smoke attachTo [_helo, [0, 3.5, 0.5]];
+
+    [{
+        detach _this;
+        deleteVehicle _this;
+    }, _smoke, 600] call CBA_fnc_waitAndExecute;
+
     private _boxPos = _helo getPos [10 + (random 5), random 360];
     private _box = createVehicle ["Box_NATO_Equip_F", _boxPos, [], 0, "NONE"];
     _box allowDamage false;
