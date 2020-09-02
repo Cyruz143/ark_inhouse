@@ -17,13 +17,13 @@ ts_interaction_fnc_addInteractions = {
     private _action =
         [ "Town Sweep"
         , "Town Sweep"
-        , "\x\ark\addons\ark_main\resources\ark_star.paa"
+        , "\a3\ui_f\data\igui\cfg\simpletasks\types\attack_ca.paa"
         , {}
         , _condition
         ] call ace_interact_menu_fnc_createAction;
     [player, 1, ["ACE_SelfActions"], _action] call ace_interact_menu_fnc_addActionToObject;
     private _actions =
-        [ ["Select Location", "\x\ark\addons\ark_main\resources\ark_star.paa", { call ts_spawn_fnc_selectLocation }]
+        [ ["Select Location", "\a3\ui_f\data\igui\cfg\simpletasks\types\interact_ca.paa", { call ts_spawn_fnc_selectLocation }]
         , ["Activate Zone", "\x\ark\addons\ark_main\resources\ai_enable.paa", { [0, { [] call ts_spawn_fnc_activateLocation }, []] call CBA_fnc_globalExecute; }]
         , ["Enable Group Deploy", "\x\ark\addons\ark_main\resources\click_enable.paa", { [0, { [] call ts_fnc_enableGroupDeploy }, []] call CBA_fnc_globalExecute; }]
         ];
@@ -41,7 +41,7 @@ ts_interaction_fnc_addInteractions = {
     _action =
         [ "Difficulty"
         , "Difficulty"
-        , "\x\ark\addons\ark_main\resources\ark_star.paa"
+        , ""
         , {}
         , _condition
         ] call ace_interact_menu_fnc_createAction;
@@ -55,7 +55,7 @@ ts_interaction_fnc_addInteractions = {
         _action =
             [ _x select 0
             , format ["%1 (%2x)", _x select 0, _x select 1]
-            , "\x\ark\addons\ark_main\resources\ark_star.paa"
+            , ""
             , { [0, { ts_spawn_ai_multiplier = _this select 0 }, [_this select 2 select 0]] call CBA_fnc_globalExecute; }
             , _condition
             , {}
@@ -67,7 +67,7 @@ ts_interaction_fnc_addInteractions = {
     _action =
         [ "Town Size"
         , "Town Size (Before activation)"
-        , "\x\ark\addons\ark_main\resources\ark_star.paa"
+        , ""
         , {}
         , _condition
         ] call ace_interact_menu_fnc_createAction;
@@ -82,7 +82,7 @@ ts_interaction_fnc_addInteractions = {
         _action =
             [ _x select 0
             , format ["%1 (%2m)", _x select 0, _x select 1]
-            , "\x\ark\addons\ark_main\resources\ark_star.paa"
+            , ""
             , { [0, { _this call ts_spawn_fnc_changeLocationSize; }, [_this select 2 select 0]] call CBA_fnc_globalExecute; }
             , _condition
             , {}
