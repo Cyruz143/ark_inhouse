@@ -17,6 +17,7 @@ ts_spawn_fnc_preinit = {
     ts_spawn_patrolTechGroupCount = 0;
     ts_spawn_patrolArmourGroupCount = 0;
     ts_spawn_unitTemplate = "Base";
+    ts_spawn_availableMissions = [1,2,3];
 
     call ts_spawn_fnc_createLocationMarker;
 };
@@ -66,11 +67,14 @@ ts_spawn_fnc_activateLocation = {
     ts_spawn_selectedLocation set [2, true];
     call ts_spawn_fnc_createFortifications;
 
-    switch (selectRandom [1,2,3]) do {
+    // Remove the picked mission so subsequent choices will be different
+    private _selectedMission = selectRandom ts_spawn_availableMissions;
+    switch (_selectedMission) do {
         case 1: { call ts_spawn_fnc_objDestroyVeh };
         case 2: { call ts_spawn_fnc_objCrashedHelo };
         default { call ts_spawn_fnc_objDestroyAmmo };
     };
+    ts_spawn_availableMissions deleteAt (ts_spawn_availableMissions find _selectedMission);
 
     [
         {count (allPlayers inAreaArray ts_spawn_selectedLocationMarkerName) > 0},
@@ -283,13 +287,9 @@ ts_spawn_fnc_objDestroyVeh = {
     _vehicle setFuel 0;
     _vehicle call ark_clear_cargo_fnc_clearVehicle;
 
-    [true, [str _vehicle], ["Locate and destroy the static armour in town", "Destroy Armour"], _position, "ASSIGNED", -1, true, "target"] call BIS_fnc_taskCreate;
+    [true, ["task1"], ["Locate and destroy the static armour in town", "Destroy Armour"], _position, "ASSIGNED", -1, true, "target"] call BIS_fnc_taskCreate;
 
-    [
-        {!alive _this},
-        {[str _this,"SUCCEEDED"] call BIS_fnc_taskSetState},
-        _vehicle
-    ] call CBA_fnc_waitUntilAndExecute;
+    _vehicle addEventHandler ["Killed", {["task1","SUCCEEDED"] call BIS_fnc_taskSetState}];
 };
 
 ts_spawn_fnc_objDestroyAmmo = {
@@ -303,13 +303,9 @@ ts_spawn_fnc_objDestroyAmmo = {
     _crate call ark_clear_cargo_fnc_clearVehicle;
     _crate addMagazineCargoGlobal ["SatchelCharge_Remote_Mag", 10];
 
-    [true, [str _crate], ["Locate and destroy the ammo cache hidden in town", "Destroy Cache"], _position, "ASSIGNED", -1, true, "destroy"] call BIS_fnc_taskCreate;
+    [true, ["task2"], ["Locate and destroy the ammo cache hidden in town", "Destroy Cache"], _position, "ASSIGNED", -1, true, "destroy"] call BIS_fnc_taskCreate;
 
-    [
-        {!alive _this},
-        {[str _this,"SUCCEEDED"] call BIS_fnc_taskSetState},
-        _crate
-    ] call CBA_fnc_waitUntilAndExecute;
+    _crate addEventHandler ["Killed", {["task2","SUCCEEDED"] call BIS_fnc_taskSetState}];
 };
 
 ts_spawn_fnc_objCrashedHelo = {
@@ -353,11 +349,11 @@ ts_spawn_fnc_objCrashedHelo = {
     _box setVectorUp surfaceNormal position _box;
     _box addItemCargoGlobal ["ACE_Banana", 1];
 
-    [true, [str _box], ["Locate and secure the intel from the crash site", "Recover Intel"], _position, "ASSIGNED", -1, true, "intel"] call BIS_fnc_taskCreate;
+    [true, ["task3"], ["Locate and secure the intel from the crash site", "Recover Intel"], _position, "ASSIGNED", -1, true, "intel"] call BIS_fnc_taskCreate;
 
     [
         {itemCargo _this isEqualTo []},
-        {[str _this,"SUCCEEDED"] call BIS_fnc_taskSetState},
+        {["task3","SUCCEEDED"] call BIS_fnc_taskSetState},
         _box
     ] call CBA_fnc_waitUntilAndExecute;
 };
