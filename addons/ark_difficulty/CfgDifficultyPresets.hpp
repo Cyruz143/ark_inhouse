@@ -3,6 +3,7 @@ class CfgDifficultyPresets {
         class Recruit {
             description = "Recruit - ARK";
             levelAI = "AILevelLow";
+            displayName = "ARK";
                 class Options {
                     autoReport = 0;
                     cameraShake = 1;
@@ -31,6 +32,7 @@ class CfgDifficultyPresets {
         class Regular {
             description = "Regular - ARK";
             levelAI = "AILevelLow";
+            displayName = "ARK";
                 class Options {
                     autoReport = 0;
                     cameraShake = 1;
@@ -59,6 +61,7 @@ class CfgDifficultyPresets {
         class Veteran {
             description = "Veteran - ARK";
             levelAI = "AILevelLow";
+            displayName = "ARK";
                 class Options {
                     autoReport = 0;
                     cameraShake = 1;
@@ -87,6 +90,7 @@ class CfgDifficultyPresets {
         class Mercenary {
             description = "Mercenary - ARK";
             levelAI = "AILevelLow";
+            displayName = "ARK";
                 class Options {
                     autoReport = 0;
                     cameraShake = 1;
