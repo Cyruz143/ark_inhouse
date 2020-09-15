@@ -47,10 +47,16 @@ ark_admin_tools_fnc_createDebugMarkers = {
 
                 {
                     private _unit = _x;
+                    private _simEnabled = simulationEnabled _x;
                     private _marker = _unit getVariable "ark_admin_unitMarker";
                     if (!isNil {_marker}) then {
                         _marker setMarkerPosLocal getPosATL _unit;
                         _marker setMarkerDirLocal getDir _unit;
+                        if (_simEnabled) then {
+                            _marker setMarkerAlphaLocal 1;
+                        } else {
+                            _marker setMarkerAlphaLocal 0.25;
+                        };
                     } else {
                         private _markerName = format ["ark_admin_unitMarker_%1", _unit];
                         _unit setVariable ["ark_admin_unitMarker", _markerName, false];
@@ -75,7 +81,7 @@ ark_admin_tools_fnc_createDebugMarkers = {
                 {
                     private "_markerName";
                     _side = _x;
-                    (format ["ark_admin_sideCountMarker_%1", _side]) setMarkerTextLocal format ["%1: %2", _side, {side _x == _side} count allUnits];
+                    (format ["ark_admin_sideCountMarker_%1", _side]) setMarkerTextLocal format ["%1: %2 (%3)", _side, count (allUnits select {side _x == _side && {simulationEnabled _x} }), count (allUnits select {side _x == _side})];
                 } foreach ark_admin_sideCountMarkers;
             },
             3,
