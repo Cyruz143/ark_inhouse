@@ -71,7 +71,7 @@ ts_spawn_fnc_activateLocation = {
     private _selectedMission = selectRandom ts_spawn_availableMissions;
     switch (_selectedMission) do {
         case 1: { call ts_spawn_fnc_objDestroyVeh };
-        case 2: { call ts_spawn_fnc_objCrashedHelo };
+        case 2: { call ts_spawn_fnc_objRecoverIntel };
         default { call ts_spawn_fnc_objDestroyAmmo };
     };
     ts_spawn_availableMissions deleteAt (ts_spawn_availableMissions find _selectedMission);
@@ -243,6 +243,22 @@ ts_spawn_fnc_fillFortifications = {
     } forEach _scaledBuildingPositions;
 };
 
+ts_spawn_fnc_pullEI = {
+    params ["_pos"];
+
+    private _moveToPos = _pos getPos [1, random 360];
+    private _closeUnits = allUnits select {(side group _x) isEqualTo ts_enemy_side && { ((getpos _x) distance2D _moveToPos) <= 1000} };
+    {
+        [group _x] call CBA_fnc_clearWaypoints;
+        _x disableAI "SUPPRESSION";
+        _x disableAI "AUTOCOMBAT";
+        _x enableAI "PATH";
+        _x enableAttack true;
+        _x setDestination [_moveToPos, "LEADER PLANNED", true];
+        _x doMove _moveToPos;
+    } forEach _closeUnits;
+};
+
 ts_spawn_fnc_objDestroyVeh = {
     ts_spawn_selectedLocation params ["_position"];
 
@@ -289,7 +305,11 @@ ts_spawn_fnc_objDestroyVeh = {
 
     [true, ["task1"], ["Locate and destroy the static armour in town", "Destroy Armour"], _position, "ASSIGNED", -1, true, "target"] call BIS_fnc_taskCreate;
 
-    _vehicle addEventHandler ["Killed", {["task1","SUCCEEDED"] call BIS_fnc_taskSetState}];
+    _vehicle addEventHandler ["Killed", {
+        params ["_unit"];
+        ["task1","SUCCEEDED"] call BIS_fnc_taskSetState;
+        [getPos _unit] call ts_spawn_fnc_pullEI;
+    }];
 };
 
 ts_spawn_fnc_objDestroyAmmo = {
@@ -305,10 +325,14 @@ ts_spawn_fnc_objDestroyAmmo = {
 
     [true, ["task2"], ["Locate and destroy the ammo cache hidden in town", "Destroy Cache"], _position, "ASSIGNED", -1, true, "destroy"] call BIS_fnc_taskCreate;
 
-    _crate addEventHandler ["Killed", {["task2","SUCCEEDED"] call BIS_fnc_taskSetState}];
+    _crate addEventHandler ["Killed", {
+        params ["_unit"];
+        ["task2","SUCCEEDED"] call BIS_fnc_taskSetState;
+        [getPos _unit] call ts_spawn_fnc_pullEI;
+    }];
 };
 
-ts_spawn_fnc_objCrashedHelo = {
+ts_spawn_fnc_objRecoverIntel = {
     ts_spawn_selectedLocation params ["_position"];
 
     private _nearRoad = selectRandom (_position nearRoads 100);
@@ -353,7 +377,10 @@ ts_spawn_fnc_objCrashedHelo = {
 
     [
         {itemCargo _this isEqualTo []},
-        {["task3","SUCCEEDED"] call BIS_fnc_taskSetState},
+        {
+            ["task3","SUCCEEDED"] call BIS_fnc_taskSetState;
+            [getPos _this] call ts_spawn_fnc_pullEI;
+        },
         _box
     ] call CBA_fnc_waitUntilAndExecute;
 };
