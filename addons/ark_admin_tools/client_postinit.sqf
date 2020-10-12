@@ -119,66 +119,23 @@ ark_admin_tools_fnc_aiDebug = {
     _enabled call ark_admin_tools_fnc_createDebugMarkers;
 };
 
-ark_admin_tools_fnc_detachCrate = {
-    params ["_ammoBox", "_parachute", "_smoke", "_player"];
+ark_admin_tools_fnc_ammoCrate = {
+    player call ace_common_fnc_goKneeling;
 
-    detach _ammoBox;
-    deleteVehicle _smoke;
-    [{deleteVehicle (_this #0)}, [_parachute]] call CBA_fnc_execNextFrame;
-    _player setVariable ["ark_ts_paradropInProgress", nil];
-};
-
-ark_admin_tools_fnc_ammoDrop = {
-    params ["_player"];
-
-    _player setVariable ["ark_ts_paradropInProgress", true];
-    private _groupId = groupId (group _player);
-    private _squad = "";
-
-    if (_groupId in ["ASL","A1","A2","A3"]) then {
-        _squad = "Alpha";
-    };
-
-    if (_groupId in ["BSL","B1","B2","B3"]) then {
-        _squad = "Bravo";
-    };
-
-    if (_groupId in ["CSL","C1","C2","C3"]) then {
-        _squad = "Charlie";
-    };
-
-    if (_groupId in ["DSL","D1","D2","D3"]) then {
-        _squad = "Delta";
-    };
-
-    private _position = getPos _player;
-    _position set [2, 35];
-    private _parachute = createVehicle ["NonSteerable_Parachute_F", _position, [], 0, "FLY"];
-    private _ammoBox = createVehicle ["C_IDAP_supplyCrate_F", [0,0,0], [], 0, "NONE"];
-    _ammoBox allowDamage false;
-    _ammoBox attachTo [_parachute, [0, 0, -1.3]];
-    [_ammoBox, ["faction", _player getVariable "hull3_faction"], ["gear", "Truck"]] call hull3_unit_fnc_init;
-
-    private _smokeShell = "SmokeShellYellow";
-
-    switch (_squad) do {
-        case "Alpha": { _smokeShell = "SmokeShellRed"; };
-        case "Bravo": { _smokeShell = "SmokeShellBlue"; };
-        case "Charlie": { _smokeShell = "SmokeShellGreen"; };
-        case "Delta": { _smokeShell = "SmokeShellOrange"; };
-        default { diag_log "[ARK] (Admin Tools) - Couldn't get groupID for ammo drop, using default"; };
-    };
-
-    private _smoke = createVehicle [_smokeShell, [0,0,0], [], 0, "NONE"];
-    _smoke attachTo [_parachute, [0,0,0]];
-
-   [
-        {getPos (_this #0) #2 < 1.5},
-        {[(_this #0),(_this #1),(_this #2),(_this #3)] call ark_admin_tools_fnc_detachCrate;},
-        [_ammoBox, _parachute,_smoke, _player],
-        45,
-        {[(_this #0),(_this #1),(_this #2),(_this #3)] call ark_admin_tools_fnc_detachCrate;}
-    ] call CBA_fnc_waitUntilAndExecute;
+    [
+        5,
+        [],
+        {
+            private _pos = ASLtoATL (player modelToWorldVisualWorld [0,1,0]);
+            private _box = createVehicle ["gm_AmmoBox_wood_03_empty", _pos, [], 0, "CAN_COLLIDE"];
+            createSimpleObject ["Land_ClutterCutter_medium_F", _pos, false];
+            _box allowDamage false;
+            [_box, ["faction", player getVariable "hull3_faction"], ["gear", "Truck"]] call hull3_unit_fnc_init;
+        },
+        {hint "Aborted!"},
+        "Deploying box",
+        {alive player}
+    ] call ace_common_fnc_progressBar;
 };
 
 ark_admin_tools_fnc_canUnflip = {
