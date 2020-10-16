@@ -34,11 +34,11 @@ class CfgVehicles {
                     statement = "player call ark_admin_tools_fnc_enableMapTeleport";
                 };
 
-                class Ammo_Drop : ARK_Action {
-                    displayName = "Request Ammo Drop";
-                    icon = "\A3\ui_f\data\map\vehicleicons\iconParachute_ca.paa";
-                    condition = "call ark_admin_tools_fnc_isTownSweep && (player isEqualTo leader group _player) && !(player getVariable ['ark_ts_paradropInProgress', false])";
-                    statement = "player call ark_admin_tools_fnc_ammoDrop";
+                class Ammo_Crate : ARK_Action {
+                    displayName = "Deploy Ammo Crate";
+                    icon = "\a3\ui_f\data\igui\cfg\simpletasks\types\rearm_ca.paa";
+                    condition = "call ark_admin_tools_fnc_isTownSweep && {player isEqualTo leader group player}";
+                    statement = "call ark_admin_tools_fnc_ammoCrate";
                 };
 
                 class Unflip_Vehicle : ARK_Action {
