@@ -313,19 +313,20 @@ ts_spawn_fnc_objDestroyVeh = {
 };
 
 ts_spawn_fnc_objDestroyAmmo = {
-    ts_spawn_selectedLocation params ["_position"];
+    ts_spawn_selectedLocation params ["_position", "_size"];
 
-    private _building = nearestBuilding _position;
-    if (isNull _building) exitWith {diag_log "[ARK] (Town Sweep) - Cannot find building for ammo"};
+    private _buildingArr = _position nearObjects ["House", (_size / 2)] select {count (_x buildingPos -1) > 1};
+    if (_buildingArr isEqualTo []) exitWith {diag_log "[ARK] (Town Sweep) - Cannot find building for ammo crate"};
 
+    private _building = selectRandom _buildingArr;
     private _buildingPos = selectRandom (_building buildingPos -1);
-    private _crate = createVehicle ["CUP_BOX_GER_Wps_F", _buildingPos, [], 0, "CAN_COLLIDE"];
-    _crate call ark_clear_cargo_fnc_clearVehicle;
-    _crate addMagazineCargoGlobal ["SatchelCharge_Remote_Mag", 10];
+    ts_spawn_var_ammoCrate = createVehicle ["CUP_BOX_GER_Wps_F", _buildingPos, [], 0, "CAN_COLLIDE"];
+    ts_spawn_var_ammoCrate call ark_clear_cargo_fnc_clearVehicle;
+    ts_spawn_var_ammoCrate addMagazineCargoGlobal ["SatchelCharge_Remote_Mag", 10];
 
     [true, ["task2"], ["Locate and destroy the ammo cache hidden in town", "Destroy Cache"], _position, "ASSIGNED", -1, true, "destroy"] call BIS_fnc_taskCreate;
 
-    _crate addEventHandler ["Killed", {
+    ts_spawn_var_ammoCrate addEventHandler ["Killed", {
         params ["_unit"];
         ["task2","SUCCEEDED"] call BIS_fnc_taskSetState;
         [getPos _unit] call ts_spawn_fnc_pullEI;
