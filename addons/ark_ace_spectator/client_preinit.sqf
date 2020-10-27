@@ -2,6 +2,11 @@ ark_ace_spectator_fnc_initSpec = {
     params ["_unit", "", "_killer", "_instigator"];
 
     if (!local _unit || { !(_unit isEqualTo player) } || { (getMissionConfigValue ["respawn",0]) != 0 }) exitWith {};
+
+    // Remove unit from group after delay
+    if (group _unit isEqualTo grpNull) exitWith {};
+    [{[_this] join grpNull}, _unit, 90] call CBA_fnc_waitAndExecute;
+
     private _killMessage = "";
     private _killerVehicle = "";
 
