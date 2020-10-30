@@ -315,7 +315,7 @@ ts_spawn_fnc_objDestroyVeh = {
 ts_spawn_fnc_objDestroyAmmo = {
     ts_spawn_selectedLocation params ["_position", "_size"];
 
-    private _buildingArr = _position nearObjects ["House", (_size / 2)] select {count (_x buildingPos -1) > 1};
+    private _buildingArr = nearestObjects [_position, "House", (_size / 2), true] select {count (_x buildingPos -1) > 1};
     if (_buildingArr isEqualTo []) exitWith {diag_log "[ARK] (Town Sweep) - Cannot find building for ammo crate"};
 
     private _building = selectRandom _buildingArr;
