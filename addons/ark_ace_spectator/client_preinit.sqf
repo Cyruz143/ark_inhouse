@@ -4,8 +4,14 @@ ark_ace_spectator_fnc_initSpec = {
     if (!local _unit || { !(_unit isEqualTo player) } || { (getMissionConfigValue ["respawn",0]) != 0 }) exitWith {};
 
     // Remove unit from group after delay
-    if (group _unit isEqualTo grpNull) exitWith {};
-    [{[_this] join grpNull}, _unit, 90] call CBA_fnc_waitAndExecute;
+    if (group _unit isEqualTo grpNull) then {
+        diag_log "[ARK] (ACE Spectator) - Unit had no group";
+    } else {
+        [{
+            [_this] join grpNull;
+            diag_log format ["[ARK] (ACE Spectator) - Removed unit: %1 from group: %2",_this, group _this];
+        }, _unit, 90] call CBA_fnc_waitAndExecute;
+    };
 
     private _killMessage = "";
     private _killerVehicle = "";
