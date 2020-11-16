@@ -11,6 +11,7 @@ class CfgPatches {
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {
             "ark_main",
+            "ace_medical_engine",
             "ace_medical_damage",
             "ace_medical_treatment"
         };
@@ -26,3 +27,4 @@ class Extended_PostInit_EventHandlers {
 
 #include "ACE_Medical_Treatment.hpp"
 #include "ACE_Medical_Treatment_Actions.hpp"
+#include "CfgActions.hpp"
