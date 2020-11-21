@@ -1,5 +1,5 @@
 class CfgCloudlets {
-    class Default; 
+    class Default;
     class gokoFX_Starter_SparksBurstLOW : Default {
         interval = 0.001;
         color[] = { { 1, 0.8, 0.8, -500 }, { 1, 0.3, 0.1, -500 } };
@@ -283,6 +283,5 @@ class gokoFX_SparksSparkleEffect {
         intensity = 1;
         interval = 1;
         lifeTime = 0.03;
-
     };
 };
