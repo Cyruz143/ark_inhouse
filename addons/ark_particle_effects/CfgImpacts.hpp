@@ -64,7 +64,7 @@ class ImpactConcrete {
         simulation = "particles";
         type = "ImpactDustConcrete";
         position[] = {0, 0, 0};
-        intensity = 2.5;
+        intensity = 2;
         interval = 1;
         lifeTime = 3;
     };
@@ -72,7 +72,7 @@ class ImpactConcrete {
         simulation = "particles";
         type = "ImpactDustConcrete2";
         position[] = {0, 0, 0};
-        intensity = 2.5;
+        intensity = 2;
         interval = 1;
         lifeTime = 3;
     };
@@ -84,7 +84,7 @@ class ImpactEffectsSmall {
         type = "ImpactDust2";
         position[] = {0, 0, 0};
         qualityLevel = 2;
-        intensity = 2.5;
+        intensity = 2;
         interval = 1;
         lifeTime = 3;
     };
@@ -93,7 +93,7 @@ class ImpactEffectsSmall {
         type = "ImpactDust2";
         position[] = {0, 0, 0};
         qualityLevel = 1;
-        intensity = 2.5;
+        intensity = 2;
         interval = 1;
         lifeTime = 3;
     };
@@ -102,7 +102,7 @@ class ImpactEffectsSmall {
         type = "ImpactDust2Low";
         position[] = {0, 0, 0};
         qualityLevel = 0;
-        intensity = 2.5;
+        intensity = 2;
         interval = 1;
         lifeTime = 3;
     };
@@ -110,7 +110,7 @@ class ImpactEffectsSmall {
         simulation = "particles";
         type = "ImpactDustWater2";
         position[] = {0, 0, 0};
-        intensity = 2.5;
+        intensity = 2;
         interval = 1;
         lifeTime = 3;
     };
@@ -119,7 +119,7 @@ class ImpactEffectsSmall {
         type = "ImpactConcrete";
         position[] = {0, 0, 0};
         qualityLevel = 2;
-        intensity = 2.5;
+        intensity = 2;
         interval = 1;
         lifeTime = 3;
     };
@@ -128,7 +128,7 @@ class ImpactEffectsSmall {
         type = "ImpactConcrete";
         position[] = {0, 0, 0};
         qualityLevel = 1;
-        intensity = 2.5;
+        intensity = 2;
         interval = 1;
         lifeTime = 3;
     };
@@ -136,7 +136,7 @@ class ImpactEffectsSmall {
         simulation = "particles";
         type = "ImpactSandSmoke2";
         position[] = {0, 0, 0};
-        intensity = 2.5;
+        intensity = 2;
         interval = 1;
         lifeTime = 3;
     };
@@ -148,7 +148,7 @@ class ImpactPlaster {
         type = "ImpactDustPlaster";
         position[] = {0, 0, 0};
         qualityLevel = 2;
-        intensity = 2.5;
+        intensity = 2;
         interval = 1;
         lifeTime = 3;
     };
@@ -157,7 +157,7 @@ class ImpactPlaster {
         type = "ImpactDustPlaster";
         position[] = {0, 0, 0};
         qualityLevel = 1;
-        intensity = 2.5;
+        intensity = 2;
         interval = 1;
         lifeTime = 3;
     };
@@ -166,7 +166,7 @@ class ImpactPlaster {
         type = "ImpactDustPlasterLow";
         position[] = {0, 0, 0};
         qualityLevel = 0;
-        intensity = 2.5;
+        intensity = 2;
         interval = 1;
         lifeTime = 3;
     };
@@ -175,7 +175,7 @@ class ImpactPlaster {
         type = "ImpactConcreteWall1";
         position[] = {0, 0, 0};
         qualityLevel = 2;
-        intensity = 2.5;
+        intensity = 2;
         interval = 1;
         lifeTime = 3;
     };
@@ -184,7 +184,7 @@ class ImpactPlaster {
         type = "ImpactConcreteWall2";
         position[] = {0, 0, 0};
         qualityLevel = 2;
-        intensity = 2.5;
+        intensity = 2;
         interval = 1;
         lifeTime = 3;
     };
@@ -193,7 +193,7 @@ class ImpactPlaster {
         type = "ImpactConcreteWall2";
         position[] = {0, 0, 0};
         qualityLevel = 1;
-        intensity = 2.5;
+        intensity = 2;
         interval = 1;
         lifeTime = 3;
     };
@@ -202,7 +202,7 @@ class ImpactPlaster {
         type = "ImpactConcreteWall3";
         position[] = {0, 0, 0};
         qualityLevel = 2;
-        intensity = 2.5;
+        intensity = 2;
         interval = 1;
         lifeTime = 3;
     };
@@ -211,7 +211,7 @@ class ImpactPlaster {
         type = "ImpactConcreteWall3";
         position[] = {0, 0, 0};
         qualityLevel = 1;
-        intensity = 2.5;
+        intensity = 2;
         interval = 1;
         lifeTime = 3;
     };
