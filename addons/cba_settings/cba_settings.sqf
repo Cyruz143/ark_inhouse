@@ -1,4 +1,6 @@
 // ACE Artillery
+force force ace_artillerytables_advancedCorrections = false;
+force ace_artillerytables_disableArtilleryComputer = false;
 force force ace_mk6mortar_airResistanceEnabled = false;
 force ace_mk6mortar_useAmmoHandling = true;
 force ace_mk6mortar_allowCompass = true;
@@ -22,15 +24,19 @@ force force ace_cookoff_ammoCookoffDuration = 0.3;
 force force ace_cookoff_enable = 1;
 force force ace_cookoff_enableAmmobox = true;
 force force ace_cookoff_enableAmmoCookoff = true;
-force force ace_cookoff_probabilityCoef = 1;
+force force ace_cookoff_probabilityCoef = 1.5;
 
 // ACE Crew Served Weapons
 force force ace_csw_ammoHandling = 1;
 force force ace_csw_defaultAssemblyMode = true;
 force force ace_csw_handleExtraMagazines = true;
 force force ace_csw_progressBarTimeCoefficent = 1;
+ace_csw_dragAfterDeploy = true;
 
 // ACE Explosives
+force ace_explosives_customTimerDefault = 60;
+force ace_explosives_customTimerMax = 300;
+force ace_explosives_customTimerMin = 10;
 force force ace_explosives_explodeOnDefuse = false;
 force force ace_explosives_punishNonSpecialists = true;
 force force ace_explosives_requireSpecialist = false;
@@ -41,6 +47,9 @@ force force ace_frag_maxTrack = 10;
 force force ace_frag_maxTrackPerFrame = 10;
 force force ace_frag_reflectionsEnabled = false;
 force force ace_frag_spallEnabled = false;
+
+// ACE Grenades
+ace_grenades_convertExplosives = true;
 
 // ACE Interaction
 force force ace_interaction_disableNegativeRating = true;
@@ -68,7 +77,6 @@ force force ace_repair_repairDamageThreshold = 0.6;
 force force ace_repair_repairDamageThreshold_engineer = 0.4;
 force force ace_repair_wheelRepairRequiredItems = [];
 
-
 // ACE Magazine Repack
 force force ace_magazinerepack_timePerAmmo = 1;
 force force ace_magazinerepack_timePerBeltLink = 4;
@@ -86,12 +94,22 @@ force force ace_map_mapLimitZoom = false;
 force force ace_map_mapShake = false;
 force force ace_map_mapShowCursorCoordinates = true;
 force force ace_markers_moveRestriction = 0;
+force forc ace_markers_timestampEnabled = true;
+force force ace_markers_timestampFormat = "HH:MM";
+force force ace_markers_timestampHourFormat = 24;
 
 // ACE Map Gestures
+force force ace_map_gestures_allowCurator = false;
+force force ace_map_gestures_allowSpectator = false;
+force force ace_map_gestures_briefingMode = 0;
 force force ace_map_gestures_enabled = true;
 force force ace_map_gestures_interval = 0.03;
 force force ace_map_gestures_maxRange = 7;
+force force ace_map_gestures_maxRangeCamera = 14;
 force force ace_map_gestures_onlyShowFriendlys = false;
+
+// ACE Map Tools
+force force ace_maptools_drawStraightLines = false;
 
 // ACE Medical
 force force ace_medical_ai_enabledFor = 0;
@@ -111,12 +129,14 @@ force force ace_medical_playerDamageThreshold = 4;
 force force ace_medical_spontaneousWakeUpChance = 0.5;
 force force ace_medical_spontaneousWakeUpEpinephrineBoost = 5;
 force force ace_medical_statemachine_AIUnconsciousness = false;
+force force ace_medical_statemachine_cardiacArrestBleedoutEnabled = true;
 force force ace_medical_statemachine_cardiacArrestTime = 300;
 force force ace_medical_statemachine_fatalInjuriesAI = 0;
 force force ace_medical_statemachine_fatalInjuriesPlayer = 0;
 force force ace_medical_treatment_advancedBandages = 0;
 force force ace_medical_treatment_advancedDiagnose = false;
 force force ace_medical_treatment_advancedMedication = false;
+force force ace_medical_treatment_allowBodyBagUnconscious = true;
 force force ace_medical_treatment_allowLitterCreation = true;
 force force ace_medical_treatment_allowSelfIV = 1;
 force force ace_medical_treatment_allowSelfStitch = 1;
@@ -139,8 +159,14 @@ force force ace_medical_treatment_medicIV = 0;
 force force ace_medical_treatment_medicPAK = 0;
 force force ace_medical_treatment_medicSurgicalKit = 0;
 force force ace_medical_treatment_timeCoefficientPAK = 1;
-force force ace_medical_treatment_woundReopening = false;
+force force ace_medical_treatment_treatmentTimeAutoinjector = 5;
+force force ace_medical_treatment_treatmentTimeBodyBag = 15;
+force force ace_medical_treatment_treatmentTimeCPR = 10;
+force force ace_medical_treatment_treatmentTimeIV = 10;
+force force ace_medical_treatment_treatmentTimeSplint = 5;
+force force ace_medical_treatment_treatmentTimeTourniquet = 0.5;
 force force ace_medical_treatment_woundReopenChance = 1;
+force force ace_medical_treatment_woundStitchTime = 5;
 
 
 // ACE Name Tags
@@ -225,7 +251,12 @@ force force cba_disposable_dropUsedLauncher = 2;
 force force cba_disposable_replaceDisposableLauncher = true;
 
 // CUP
+force force CUP_CheckCfgPatches = false;
 force force CUP_Vehicles_PreventBarrelClip = false;
+
+// CUP Static Weapons
+force force CUP_staticWeapons_allowMovement = false;
+force force CUP_staticWeapons_allowRotation = false;
 
 // DUI - Squad Radar - Main
 force force diwako_dui_colors = "ace";
