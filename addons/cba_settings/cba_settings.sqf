@@ -94,7 +94,7 @@ force force ace_map_mapLimitZoom = false;
 force force ace_map_mapShake = false;
 force force ace_map_mapShowCursorCoordinates = true;
 force force ace_markers_moveRestriction = 0;
-force forc ace_markers_timestampEnabled = true;
+force force ace_markers_timestampEnabled = true;
 force force ace_markers_timestampFormat = "HH:MM";
 force force ace_markers_timestampHourFormat = 24;
 
