@@ -2,7 +2,7 @@
 #define PREFIX ark
 
 #define MAJOR 2
-#define MINOR 5
+#define MINOR 6
 #define PATCH 0
 
 #define REQUIRED_VERSION 2.00
