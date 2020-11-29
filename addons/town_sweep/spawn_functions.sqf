@@ -272,7 +272,7 @@ ts_spawn_fnc_objDestroyVeh = {
     private _nearRoad = selectRandom (_position nearRoads 100);
 
     private ["_vehicle"];
-    if (_nearRoad isEqualTo []) then {
+    if (isNil "_nearRoad") then {
         private _pos = [_position, 0, 100, 3, 0, 20, 0] call BIS_fnc_findSafePos;
         _vehicle = createVehicle [(selectRandom _armourArray), _pos, [], 0, "NONE"];
         _vehicle setVectorDir (getPos _position vectorFromTo _vehicle);
@@ -339,7 +339,7 @@ ts_spawn_fnc_objRecoverIntel = {
     private _nearRoad = selectRandom (_position nearRoads 100);
 
     private ["_helo"];
-    if (_nearRoad isEqualTo []) then {
+    if (isNil "_nearRoad") then {
         private _heloPos = [_position, 0, 100, 3, 0, 20, 0] call BIS_fnc_findSafePos;
         _helo = createVehicle ["cup_mh47e_wreck2", _heloPos, [], 0, "NONE"];
         _helo setDir (random 360);
