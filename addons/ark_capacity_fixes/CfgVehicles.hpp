@@ -1,5 +1,8 @@
 class CfgVehicles {
         class ContainerSupply;
+        class Supply0: ContainerSupply {
+            MAXLOAD180
+        };
         class Supply1: ContainerSupply {
             MAXLOAD180
         };
