@@ -3,6 +3,15 @@ ark_ace_spectator_fnc_initSpec = {
 
     if (!local _unit || { !(_unit isEqualTo player) } || { (getMissionConfigValue ["respawn",0]) != 0 }) exitWith {};
 
+    if (isNull _killer) then {
+        _killer = _instigator;
+    };
+
+    // If hosted SP, exit to default ending screen
+    if ((call bis_fnc_getNetMode) isEqualTo "SinglePlayer") exitWith {
+        [_unit,_killer] spawn BIS_fnc_respawnNone;
+    };
+
     // Remove unit from group after delay
     if (group _unit isEqualTo grpNull) then {
         diag_log "[ARK] (ACE Spectator) - Unit had no group";
@@ -15,10 +24,6 @@ ark_ace_spectator_fnc_initSpec = {
 
     private _killMessage = "";
     private _killerVehicle = "";
-
-    if (isNull _killer) then {
-        _killer = _instigator;
-    };
 
     if (!isNull _killer) then {
         if (!(_killer isKindof "CAManBase")) then {
