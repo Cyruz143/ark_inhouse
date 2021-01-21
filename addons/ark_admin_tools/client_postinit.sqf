@@ -119,28 +119,6 @@ ark_admin_tools_fnc_aiDebug = {
     _enabled call ark_admin_tools_fnc_createDebugMarkers;
 };
 
-ark_admin_tools_fnc_ammoCrate = {
-    player call ace_common_fnc_goKneeling;
-
-    [
-        5,
-        [],
-        {
-            private _pos = ASLtoATL (player modelToWorldVisualWorld [0,1,0]);
-            private _box = createVehicle ["gm_AmmoBox_wood_03_empty", _pos, [], 0, "CAN_COLLIDE"];
-            _box allowDamage false;
-            [_box, ["faction", player getVariable "hull3_faction"], ["gear", "Truck"]] call hull3_unit_fnc_init;
-
-            if !(player call ace_common_fnc_isInBuilding) then {
-                createSimpleObject ["Land_ClutterCutter_medium_F", _pos, false];
-            };
-        },
-        {hint "Aborted!"},
-        "Deploying box",
-        {alive player}
-    ] call ace_common_fnc_progressBar;
-};
-
 ark_admin_tools_fnc_canUnflip = {
     params ["_vehicle"];
 

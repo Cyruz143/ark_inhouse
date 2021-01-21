@@ -34,13 +34,6 @@ class CfgVehicles {
                     statement = "player call ark_admin_tools_fnc_enableMapTeleport";
                 };
 
-                class Ammo_Crate : ARK_Action {
-                    displayName = "Deploy Ammo Crate";
-                    icon = "\a3\ui_f\data\igui\cfg\simpletasks\types\rearm_ca.paa";
-                    condition = "call ark_admin_tools_fnc_isTownSweep && {player isEqualTo leader group player}";
-                    statement = "call ark_admin_tools_fnc_ammoCrate";
-                };
-
                 class Unflip_Vehicle : ARK_Action {
                     displayName = "Unflip Vehicle";
                     icon = "\A3\ui_f\data\Map\VehicleIcons\pictureRepair_ca.paa";

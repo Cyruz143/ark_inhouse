@@ -385,3 +385,52 @@ ts_spawn_fnc_objRecoverIntel = {
         _box
     ] call CBA_fnc_waitUntilAndExecute;
 };
+
+ts_spawn_fnc_ammoCrate = {
+    player call ace_common_fnc_goKneeling;
+
+    [
+        5,
+        [],
+        {
+            private _pos = ASLtoATL (player modelToWorldVisualWorld [0,1,0]);
+            private _box = createVehicle ["gm_AmmoBox_wood_03_empty", _pos, [], 0, "CAN_COLLIDE"];
+            _box allowDamage false;
+            [_box, ["faction", player getVariable "hull3_faction"], ["gear", "Truck"]] call hull3_unit_fnc_init;
+
+            if !(player call ace_common_fnc_isInBuilding) then {
+                createSimpleObject ["Land_ClutterCutter_medium_F", _pos, false];
+            };
+        },
+        {hint "Aborted!"},
+        "Deploying ammo box",
+        {alive player}
+    ] call ace_common_fnc_progressBar;
+};
+
+ts_spawn_fnc_medicalCrate = {
+    player call ace_common_fnc_goKneeling;
+
+    [
+        5,
+        [],
+        {
+            private _pos = ASLtoATL (player modelToWorldVisualWorld [0,1,0]);
+            private _box = createVehicle ["ACE_medicalSupplyCrate", _pos, [], 0, "CAN_COLLIDE"];
+            _box allowDamage false;
+            clearItemCargoGlobal _box;
+            _box addItemCargoGlobal ["ACE_morphine", 15];
+            _box addItemCargoGlobal ["ACE_epinephrine", 15];
+            _box addItemCargoGlobal ["ACE_bloodIV_500", 12];
+            _box addItemCargoGlobal ["ACE_splint", 12];
+            _box addItemCargoGlobal ["ACE_fieldDressing", 30];
+
+            if !(player call ace_common_fnc_isInBuilding) then {
+                createSimpleObject ["Land_ClutterCutter_medium_F", _pos, false];
+            };
+        },
+        {hint "Aborted!"},
+        "Deploying medical box",
+        {alive player}
+    ] call ace_common_fnc_progressBar;
+};
