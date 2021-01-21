@@ -7,7 +7,7 @@ class CfgPatches {
             "ark_main",
             "Hull3",
             "Admiral",
-            "ark_rotor"
+            "ark_rotor",
             "ark_admin_tools"
         };
         author = "ARK";
