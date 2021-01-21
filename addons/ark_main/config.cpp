@@ -35,7 +35,6 @@ class Extended_PreInit_EventHandlers {
 #include "ARK.hpp"
 #include "CfgFactionClasses.hpp"
 class CfgVehicles {
-    #include "CfgActions.hpp"
     #include "CfgFlags.hpp"
     #include "CfgModules.hpp"
 };

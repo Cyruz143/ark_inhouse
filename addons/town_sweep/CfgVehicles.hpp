@@ -2,7 +2,6 @@ class CfgVehicles {
     class Man;
     class CAManBase: Man {
         class ACE_SelfActions {
-        class ARK_Interaction;
             class ARK_Menu {
                 displayName = "ARK";
                 condition = "true";
@@ -10,7 +9,7 @@ class CfgVehicles {
                 icon = "\x\ark\addons\ark_main\resources\ark_star.paa";
                 exceptions[] = {"isNotSwimming", "isNotInside", "isNotSitting", "isNotOnLadder", "isNotRefueling"};
 
-                class Ammo_Crate : ARK_Interaction {
+                class Ammo_Crate {
                     displayName = "Deploy Ammo Crate";
                     icon = "\a3\ui_f\data\igui\cfg\simpletasks\types\rearm_ca.paa";
                     condition = "call ark_main_fnc_isTownSweep && {player isEqualTo leader group player}";
@@ -18,7 +17,7 @@ class CfgVehicles {
                     exceptions[] = {"isNotInside", "isNotSitting", "isNotRefueling"};
                 };
 
-                class Medical_Crate : ARK_Interaction {
+                class Medical_Crate {
                     displayName = "Deploy Medical Crate";
                     icon = "\a3\ui_f\data\igui\cfg\simpletasks\types\heal_ca.paa";
                     condition = "call ark_main_fnc_isTownSweep && {player getUnitTrait 'Medic'}";

@@ -26,7 +26,6 @@ class CfgVehicles {
     class Man;
     class CAManBase: Man {
         class ACE_SelfActions {
-            class ARK_Interaction;
             class ARK_Menu {
                 displayName = "ARK";
                 condition = "true";
@@ -34,27 +33,30 @@ class CfgVehicles {
                 icon = "\x\ark\addons\ark_main\resources\ark_star.paa";
                 exceptions[] = {"isNotSwimming", "isNotInside", "isNotSitting", "isNotOnLadder", "isNotRefueling"};
 
-                class Deploy_Group : ARK_Interaction {
+                class Deploy_Group {
                     displayName = "Deploy Group (Post Safety)";
                     condition = "([player] call ark_deploy_fnc_canPlayerPostDeploy) && ark_deploy_deployEnabled";
                     statement = "[player] call ark_deploy_fnc_assignDeployClick;";
                     icon = "\x\ark\addons\ark_main\resources\deploy.paa";
+                    exceptions[] = {"isNotSwimming", "isNotInside", "isNotSitting", "isNotOnLadder", "isNotRefueling"};
                 };
 
-                class Pre_Deploy_Group : Deploy_Group {
+                class Pre_Deploy_Group {
                     displayName = "Deploy Group (Pre Safety)";
                     condition = "([player] call ark_deploy_fnc_canPlayerPreDeploy) && ark_deploy_deployEnabled";
                     statement = "[player] call ark_deploy_fnc_assignDeployClick;";
+                    icon = "\x\ark\addons\ark_main\resources\deploy.paa";
                     exceptions[] = {"isNotSwimming", "isNotInside", "isNotSitting", "isNotOnLadder", "isNotRefueling"};
                 };
 
-                class Host_Actions;
                 class Host_Menu {
                     displayName = "Host Menu";
+                    condition = "((call ark_main_fnc_isHost) || { (isServer && hasInterface) })";
+                    statement = "";
                     icon = "\x\ark\addons\ark_main\resources\ark_star.paa";
                     exceptions[] = {"isNotSwimming", "isNotInside", "isNotSitting", "isNotOnLadder", "isNotRefueling"};
 
-                    class Activate_Pre_Deploy : Host_Actions {
+                    class Activate_Pre_Deploy {
                         displayName = "Activate (Pre Safety) Group Deploy";
                         icon = "\x\ark\addons\ark_main\resources\deploy_activate.paa";
                         condition = "ark_deploy_deployEnabled && (!ark_deploy_preDeployActive) && ark_deploy_preDeployRequired";
