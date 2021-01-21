@@ -8,6 +8,8 @@ class CfgVehicles {
                 condition = "true";
                 statement = "";
                 icon = "\x\ark\addons\ark_main\resources\ark_star.paa";
+                exceptions[] = {"isNotSwimming", "isNotInside", "isNotSitting", "isNotOnLadder", "isNotRefueling"};
+
                 class Chop_Tree : ARK_Interaction {
                     displayName = "Chop down tree";
                     exceptions[] = {};
@@ -20,7 +22,6 @@ class CfgVehicles {
                     displayName = "Flatten Grass";
                     exceptions[] = {};
                     icon = "\x\ark\addons\ark_forestry\resources\grass.paa";
-                    condition = "!(player call ace_common_fnc_isInBuilding)";
                     statement = "call ark_forestry_fnc_doFlatten";
                 };
             };

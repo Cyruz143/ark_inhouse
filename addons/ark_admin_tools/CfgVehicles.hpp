@@ -8,6 +8,7 @@ class CfgVehicles {
             condition = "true";
             statement = "";
             icon = "\x\ark\addons\ark_main\resources\ark_star.paa";
+            exceptions[] = {"isNotSwimming", "isNotInside", "isNotSitting", "isNotOnLadder", "isNotRefueling"};
 
                 class Map_Click_Teleport : ARK_Interaction {
                     displayName = "Click Map Teleport";
@@ -34,6 +35,8 @@ class CfgVehicles {
                 class Host_Menu {
                     displayName = "Host Menu";
                     icon = "\x\ark\addons\ark_main\resources\ark_star.paa";
+                    exceptions[] = {"isNotSwimming", "isNotInside", "isNotSitting", "isNotOnLadder", "isNotRefueling"};
+
                     class Safety_Off : Host_Actions {
                         displayName = "Turn Safety Off";
                         condition = "!(call hull3_mission_fnc_hasSafetyTimerEnded)";

@@ -32,6 +32,7 @@ class CfgVehicles {
                 condition = "true";
                 statement = "";
                 icon = "\x\ark\addons\ark_main\resources\ark_star.paa";
+                exceptions[] = {"isNotSwimming", "isNotInside", "isNotSitting", "isNotOnLadder", "isNotRefueling"};
 
                 class Deploy_Group : ARK_Interaction {
                     displayName = "Deploy Group (Post Safety)";
@@ -52,6 +53,8 @@ class CfgVehicles {
                 class Host_Menu {
                     displayName = "Host Menu";
                     icon = "\x\ark\addons\ark_main\resources\ark_star.paa";
+                    exceptions[] = {"isNotSwimming", "isNotInside", "isNotSitting", "isNotOnLadder", "isNotRefueling"};
+
                     class Activate_Pre_Deploy : Host_Actions {
                         displayName = "Activate (Pre Safety) Group Deploy";
                         icon = "\x\ark\addons\ark_main\resources\deploy_activate.paa";
