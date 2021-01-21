@@ -30,7 +30,7 @@ re_fnc_enablePostGroupDeploy = {
 };
 
 re_interaction_fnc_addInteractions = {
-    private _condition = { [] call ark_admin_tools_fnc_isHost && {[_player, _target, []] call ace_common_fnc_canInteractWith} };
+    private _condition = { [] call ark_main_fnc_isHost && {[_player, _target, []] call ace_common_fnc_canInteractWith} };
     private _action =
         [ "Random Engagements"
         , "Random Engagements"

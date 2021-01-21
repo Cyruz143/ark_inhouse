@@ -26,6 +26,16 @@ class cfgPatches {
     class ark_replacer_vests: ark_scripts {};
 };
 
-#include "CfgFactionClasses.hpp"
-#include "CfgVehicles.hpp"
+class Extended_PreInit_EventHandlers {
+    class ADDON {
+        clientInit = "call compile preProcessFileLineNumbers 'x\ark\addons\ark_main\client_preinit.sqf';";
+    };
+};
+
 #include "ARK.hpp"
+#include "CfgFactionClasses.hpp"
+class CfgVehicles {
+    #include "CfgActions.hpp"
+    #include "CfgFlags.hpp"
+    #include "CfgModules.hpp"
+};
