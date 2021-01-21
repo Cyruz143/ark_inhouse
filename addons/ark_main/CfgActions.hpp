@@ -10,6 +10,9 @@ class CAManBase: Man {
             class Host_Actions {
                 displayName = "Host Menu";
                 condition = "((call ark_main_fnc_isHost) || { (isServer && hasInterface) })";
+                statement = "";
+                icon = "\x\ark\addons\ark_main\resources\ark_star.paa";
+                exceptions[] = {"isNotSwimming", "isNotInside", "isNotSitting", "isNotOnLadder", "isNotRefueling"};
             };
         };
     };

@@ -36,7 +36,6 @@ class CfgVehicles {
 
                 class Deploy_Group : ARK_Interaction {
                     displayName = "Deploy Group (Post Safety)";
-                    exceptions[] = {};
                     condition = "([player] call ark_deploy_fnc_canPlayerPostDeploy) && ark_deploy_deployEnabled";
                     statement = "[player] call ark_deploy_fnc_assignDeployClick;";
                     icon = "\x\ark\addons\ark_main\resources\deploy.paa";
@@ -44,9 +43,9 @@ class CfgVehicles {
 
                 class Pre_Deploy_Group : Deploy_Group {
                     displayName = "Deploy Group (Pre Safety)";
-                    exceptions[] = {};
                     condition = "([player] call ark_deploy_fnc_canPlayerPreDeploy) && ark_deploy_deployEnabled";
                     statement = "[player] call ark_deploy_fnc_assignDeployClick;";
+                    exceptions[] = {"isNotSwimming", "isNotInside", "isNotSitting", "isNotOnLadder", "isNotRefueling"};
                 };
 
                 class Host_Actions;
@@ -60,6 +59,7 @@ class CfgVehicles {
                         icon = "\x\ark\addons\ark_main\resources\deploy_activate.paa";
                         condition = "ark_deploy_deployEnabled && (!ark_deploy_preDeployActive) && ark_deploy_preDeployRequired";
                         statement = "[] call ark_deploy_fnc_activatePreGroupDeploy;";
+                        exceptions[] = {"isNotSwimming", "isNotInside", "isNotSitting", "isNotOnLadder", "isNotRefueling"};
                     };
                 };
             };

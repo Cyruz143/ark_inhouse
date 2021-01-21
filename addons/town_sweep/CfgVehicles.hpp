@@ -15,7 +15,7 @@ class CfgVehicles {
                     icon = "\a3\ui_f\data\igui\cfg\simpletasks\types\rearm_ca.paa";
                     condition = "call ark_main_fnc_isTownSweep && {player isEqualTo leader group player}";
                     statement = "call ts_spawn_fnc_ammoCrate";
-                    exceptions[] = {"isNotInside"};
+                    exceptions[] = {"isNotInside", "isNotSitting", "isNotRefueling"};
                 };
 
                 class Medical_Crate : ARK_Interaction {
@@ -23,7 +23,7 @@ class CfgVehicles {
                     icon = "\a3\ui_f\data\igui\cfg\simpletasks\types\heal_ca.paa";
                     condition = "call ark_main_fnc_isTownSweep && {player getUnitTrait 'Medic'}";
                     statement = "call ts_spawn_fnc_medicalCrate";
-                    exceptions[] = {"isNotInside"};
+                    exceptions[] = {"isNotInside", "isNotSitting", "isNotRefueling"};
                 };
             };
         };

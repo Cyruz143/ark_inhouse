@@ -12,17 +12,18 @@ class CfgVehicles {
 
                 class Chop_Tree : ARK_Interaction {
                     displayName = "Chop down tree";
-                    exceptions[] = {};
                     icon = "\x\ark\addons\ark_forestry\resources\tree.paa";
                     condition = "call ark_forestry_fnc_canChop";
                     statement = "call ark_forestry_fnc_doChop";
+                    exceptions[] = {};
                 };
 
                 class Flatten_Grass : ARK_Interaction {
                     displayName = "Flatten Grass";
-                    exceptions[] = {};
                     icon = "\x\ark\addons\ark_forestry\resources\grass.paa";
+                    condition = "!(player call ace_common_fnc_isInBuilding)";
                     statement = "call ark_forestry_fnc_doFlatten";
+                    exceptions[] = {};
                 };
             };
         };

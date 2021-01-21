@@ -15,6 +15,7 @@ class CfgVehicles {
                     icon = "\x\ark\addons\ark_main\resources\click.paa";
                     condition = "ark_mapTeleportEnabled";
                     statement = "player call ark_admin_tools_fnc_enableMapTeleport";
+                    exceptions[] = {"isNotSwimming", "isNotInside", "isNotSitting", "isNotOnLadder", "isNotRefueling"};
                 };
 
                 class Unflip_Vehicle : ARK_Interaction {
@@ -22,6 +23,7 @@ class CfgVehicles {
                     icon = "\A3\ui_f\data\Map\VehicleIcons\pictureRepair_ca.paa";
                     condition = "objectParent player call ark_admin_tools_fnc_canUnflip";
                     statement = "call ark_admin_tools_fnc_unFlip";
+                    exceptions[] = {"isNotSwimming", "isNotInside", "isNotSitting", "isNotOnLadder", "isNotRefueling"};
                 };
 
                 class Check_Spectators : ARK_Interaction {
@@ -29,6 +31,7 @@ class CfgVehicles {
                     icon = "\z\ace\addons\spectator\data\Icon_Module_Spectator_ca.paa";
                     condition = "['ark_co', briefingName] call BIS_fnc_inString";
                     statement = "call ark_admin_tools_fnc_countSpec";
+                    exceptions[] = {"isNotSwimming", "isNotInside", "isNotSitting", "isNotOnLadder", "isNotRefueling"};
                 };
 
                 class Host_Actions;
@@ -43,6 +46,7 @@ class CfgVehicles {
                         showDisabled = 1;
                         statement = "[nil, nil, nil, ['confirm']] call compile preProcessFileLineNumbers 'x\ark\addons\hull3\mission_host_safetytimer_stop.sqf';";
                         icon = "\x\ark\addons\ark_main\resources\hull_disable.paa";
+                        exceptions[] = {"isNotSwimming", "isNotInside", "isNotSitting", "isNotOnLadder", "isNotRefueling"};
                     };
 
                     class Enable_AI_Debug : Host_Actions {
@@ -50,6 +54,7 @@ class CfgVehicles {
                         condition = "!ark_aiDebugEnabled";
                         statement = "true call ark_admin_tools_fnc_aiDebug;";
                         icon = "\x\ark\addons\ark_main\resources\ai_enable.paa";
+                        exceptions[] = {"isNotSwimming", "isNotInside", "isNotSitting", "isNotOnLadder", "isNotRefueling"};
                     };
 
                     class Disable_AI_Debug : Host_Actions {
@@ -57,6 +62,7 @@ class CfgVehicles {
                         condition = "ark_aiDebugEnabled";
                         statement = "false call ark_admin_tools_fnc_aiDebug;";
                         icon = "\x\ark\addons\ark_main\resources\ai_disable.paa";
+                        exceptions[] = {"isNotSwimming", "isNotInside", "isNotSitting", "isNotOnLadder", "isNotRefueling"};
                     };
 
                     class Enable_Click_Teleport : Host_Actions {
@@ -64,6 +70,7 @@ class CfgVehicles {
                         condition = "!ark_mapTeleportEnabled";
                         statement = "true call ark_admin_tools_fnc_assignMapTeleport;";
                         icon = "\x\ark\addons\ark_main\resources\click_enable.paa";
+                        exceptions[] = {"isNotSwimming", "isNotInside", "isNotSitting", "isNotOnLadder", "isNotRefueling"};
                     };
 
                     class Disable_Click_Teleport : Host_Actions {
@@ -71,6 +78,7 @@ class CfgVehicles {
                         condition = "ark_mapTeleportEnabled";
                         statement = "false call ark_admin_tools_fnc_assignMapTeleport;";
                         icon = "\x\ark\addons\ark_main\resources\click_disable.paa";
+                        exceptions[] = {"isNotSwimming", "isNotInside", "isNotSitting", "isNotOnLadder", "isNotRefueling"};
                     };
 
                     class Call_Attack_Helo : Host_Actions {
@@ -78,6 +86,7 @@ class CfgVehicles {
                         condition = "call ark_main_fnc_isAdmiralEnabled && { !(call ark_main_fnc_isTownSweep) }";
                         statement = "[player] remoteExecCall ['ark_admin_tools_fnc_callAttackHelo',2]";
                         icon = "\A3\ui_f\data\map\vehicleicons\iconHelicopter_ca.paa";
+                        exceptions[] = {"isNotInside", "isNotSitting", "isNotOnLadder", "isNotRefueling"};
                     };
 
                     class Call_Armour : Host_Actions {
@@ -85,6 +94,7 @@ class CfgVehicles {
                         condition = "call ark_main_fnc_isAdmiralEnabled && { !(call ark_main_fnc_isTownSweep) }";
                         statement = "[player] remoteExecCall ['ark_admin_tools_fnc_callArmour',2]";
                         icon = "\A3\ui_f\data\map\vehicleicons\iconTank_ca.paa";
+                        exceptions[] = {"isNotInside", "isNotSitting", "isNotOnLadder", "isNotRefueling"};
                     };
 
                     class Call_Technical : Host_Actions {
@@ -92,6 +102,7 @@ class CfgVehicles {
                         condition = "call ark_main_fnc_isAdmiralEnabled && { !(call ark_main_fnc_isTownSweep) }";
                         statement = "[player] remoteExecCall ['ark_admin_tools_fnc_callTechnical',2]";
                         icon = "\A3\ui_f\data\map\vehicleicons\iconAPC_ca.paa";
+                        exceptions[] = {"isNotInside", "isNotSitting", "isNotOnLadder", "isNotRefueling"};
                     };
                 };
             };
