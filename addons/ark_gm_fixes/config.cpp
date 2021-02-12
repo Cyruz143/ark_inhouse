@@ -11,12 +11,10 @@ class CfgPatches {
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {
             "ark_main",
-            "gm_core_vehicles",
-            "CUP_Weapons_LoadOrder"
+            "gm_core_vehicles"
         };
         VERSION_CONFIG;
     };
 };
 
-#include "CfgWeapons.hpp"
 #include "CfgVehicles.hpp"
