@@ -7,7 +7,7 @@ ark_building_cleaner_fnc_doClean = {
         private _radius = (0 boundingBoxReal _buildingOld) #2;
         private _buildingPos = getPos _buildingOld;
         private _buildingEntities = entities [["Man","Thing"], ["Logic"], true] select {_x distance _buildingPos < _radius};
-        private _buildingObjects = nearestObjects [_buildingPos, ["LandVehicle","Strategic","Thing"], _radius];
+        private _buildingObjects = nearestObjects [_buildingPos, ["StaticWeapon","Strategic","Thing"], _radius];
         _buildingObjects deleteAt (_buildingObjects find _buildingNew);
         {deleteVehicle _x} forEach _buildingObjects;
 
