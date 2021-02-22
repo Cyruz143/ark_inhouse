@@ -416,14 +416,8 @@ ts_spawn_fnc_medicalCrate = {
         [],
         {
             private _pos = ASLtoATL (player modelToWorldVisualWorld [0,1,0]);
-            private _box = createVehicle ["ACE_medicalSupplyCrate", _pos, [], 0, "CAN_COLLIDE"];
+            private _box = createVehicle ["ARK_medicalSupplyCrate", _pos, [], 0, "CAN_COLLIDE"];
             _box allowDamage false;
-            clearItemCargoGlobal _box;
-            _box addItemCargoGlobal ["ACE_morphine", 15];
-            _box addItemCargoGlobal ["ACE_epinephrine", 15];
-            _box addItemCargoGlobal ["ACE_bloodIV_500", 12];
-            _box addItemCargoGlobal ["ACE_splint", 12];
-            _box addItemCargoGlobal ["ACE_fieldDressing", 30];
 
             if !(player call ace_common_fnc_isInBuilding) then {
                 createSimpleObject ["Land_ClutterCutter_medium_F", _pos, false];
