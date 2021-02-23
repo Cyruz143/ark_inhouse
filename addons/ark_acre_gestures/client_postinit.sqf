@@ -23,8 +23,8 @@ ark_acre_gestures_fnc_stopGesture = {
         { animationState _unit in ark_acre_gestures_blackListAnims } ||
         { currentWeapon _unit in ark_acre_gestures_binoClasses } ) exitWith {};
 
-    private _hasVest = vest _unit != "";
-    private _hasHeadgear = headgear _unit != "";
+    private _hasVest = vest _unit isNotEqualTo "";
+    private _hasHeadgear = headgear _unit isNotEqualTo "";
     if (!_hasVest && !_hasHeadgear) exitWith {};
 
     private _shortRange = "343" in _radio;

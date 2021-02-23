@@ -36,7 +36,7 @@ ark_ace_spectator_fnc_initSpec = {
         private _killerWeapon = getText (configFile >> "CfgWeapons" >> (currentWeapon vehicle _killer) >> "DisplayName");
         _killMessage = format ["You were <t color='#CC0000'>killed</t> by %1 with an %2 at %3 m",_killerName,_killerWeapon,_killerDistance];
 
-        if (_killerVehicle != "") then {
+        if (_killerVehicle isNotEqualTo "") then {
             _killMessage = format ["You were <t color='#CC0000'>killed</t> by %1 in a %2 at %3 m",_killerName,_killerVehicle,_killerDistance];
         };
 

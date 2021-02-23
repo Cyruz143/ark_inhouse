@@ -24,7 +24,7 @@ ts_fnc_preinit = {
 
 ts_fnc_selectRandomFaction = {
     private ["_factionConfigs", "_factionConfig"];
-    _factionConfigs = "ts_camouflage in getArray (_x >> 'camouflage') && {getText (_x >> 'name') != 'Default'}" configClasses (HULL3_CONFIG_FILE >> FACTION_CONFIG);
+    _factionConfigs = "ts_camouflage in getArray (_x >> 'camouflage') && {getText (_x >> 'name') isNotEqualTo 'Default'}" configClasses (HULL3_CONFIG_FILE >> FACTION_CONFIG);
     _factionConfig = _factionConfigs select floor random count _factionConfigs;
     ts_player_faction = configName _factionConfig;
     ts_player_factionRawSide = getText (_factionConfig >> "side");

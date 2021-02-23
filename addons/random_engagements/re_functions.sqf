@@ -46,7 +46,7 @@ re_fnc_preinit = {
 };
 
 re_fnc_randomizeFactions = {
-    private _factionConfigs = "re_camouflage in getArray (_x >> 'camouflage') && {getText (_x >> 'name') != 'Default'}" configClasses (HULL3_CONFIG_FILE >> FACTION_CONFIG);
+    private _factionConfigs = "re_camouflage in getArray (_x >> 'camouflage') && {getText (_x >> 'name') isNotEqualTo 'Default'}" configClasses (HULL3_CONFIG_FILE >> FACTION_CONFIG);
     private _attackerFactionConfig = _factionConfigs select floor random count _factionConfigs;
     re_attacker_faction = configName _attackerFactionConfig;
     publicVariable "re_attacker_faction";
@@ -55,7 +55,7 @@ re_fnc_randomizeFactions = {
     re_attacker_gearTemplate = getText (_attackerFactionConfig >> "gear");
     re_attacker_uniformTemplate = getText (_attackerFactionConfig >> "uniform");
 
-    private _defenderFactionConfigs = _factionConfigs select { call compile getText (_x >> "side") != re_attacker_factionSide };
+    private _defenderFactionConfigs = _factionConfigs select { call compile getText (_x >> "side") isNotEqualTo re_attacker_factionSide };
     private _defenderFactionConfig = _defenderFactionConfigs select floor random count _defenderFactionConfigs;
     re_defender_faction = configName _defenderFactionConfig;
     publicVariable "re_defender_faction";

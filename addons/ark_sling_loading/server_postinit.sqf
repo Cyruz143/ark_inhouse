@@ -10,7 +10,7 @@
         // Use setGroupOwner instead." is printed in RPT either way (BI T136908)
         if ((fullCrew _cargo) isEqualTo []) then {
             private _heliOwner = owner _heli;
-            if (_heliOwner != owner _cargo) then {
+            if (_heliOwner isNotEqualTo owner _cargo) then {
                 _cargo setOwner _heliOwner;
             };
         };

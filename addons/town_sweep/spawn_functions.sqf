@@ -23,7 +23,7 @@ ts_spawn_fnc_preinit = {
 };
 
 ts_spawn_fnc_onAdmiralInit = {
-    private _templateConfigs = "ts_camouflage in getArray (_x >> 'camouflage') && {configName _x != 'Base'} && {getText (_x >> 'side') != ts_player_factionRawSide}" configClasses (ADMIRAL_CONFIG_FILE >> "UnitTemplates");
+    private _templateConfigs = "ts_camouflage in getArray (_x >> 'camouflage') && {configName _x isNotEqualTo 'Base'} && {getText (_x >> 'side') isNotEqualTo ts_player_factionRawSide}" configClasses (ADMIRAL_CONFIG_FILE >> "UnitTemplates");
     private _templateConfig = selectRandom _templateConfigs;
     ts_spawn_unitTemplate = configName _templateConfig;
     adm_camp_defaultUnitTemplate = ts_spawn_unitTemplate;
