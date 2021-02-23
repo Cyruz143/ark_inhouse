@@ -98,8 +98,8 @@ re_fnc_enablePlank = {
         private _gearClass = _unit getVariable "hull3_gear_class";
         if (isNil {_unit getVariable "re_areFortsAssigned"}) then {
             call {
-                if (side _unit == re_attacker_side && {_gearClass in ["HMGAG"]})exitWith { [] call re_fnc_addTechnicalToPlank; };
-                if (side _unit == re_attacker_side)                             exitWith {};
+                if (side _unit isEqualTo re_attacker_side && {_gearClass in ["HMGAG"]})exitWith { [] call re_fnc_addTechnicalToPlank; };
+                if (side _unit isEqualTo re_attacker_side)                             exitWith {};
 
                 ["mission.safetytimer.ended", {[player] call plank_api_fnc_forceRemoveAllFortifications;}] call hull3_event_fnc_addEventHandler;
                 private _fortCount = [0, 0, 0, 3, 0];
@@ -129,7 +129,7 @@ re_fnc_addBaseFortsToPlank = {
 };
 
 re_fnc_addTechnicalToPlank = {
-    private _techincalClassnameEntries = getArray (HULL3_CONFIG_FILE >> FACTION_CONFIG >> re_attacker_faction >> "vehicleClassnames") select { _x select 0 == "Technical"};
+    private _techincalClassnameEntries = getArray (HULL3_CONFIG_FILE >> FACTION_CONFIG >> re_attacker_faction >> "vehicleClassnames") select { _x select 0 isEqualTo "Technical"};
     private _techincalClassname = _techincalClassnameEntries select 0 select 1;
     private _fortIndex = [player, _techincalClassname, format ["Technical (%1)", _techincalClassname]] call plank_api_fnc_addNewBoundingFortification;
     [player, _fortIndex, 1] call plank_api_fnc_addFortification;

@@ -21,17 +21,17 @@ re_fnc_preinit = {
     hull3_gear_fnc_validateFaction = { true };
     hull3_gear_fnc_getFaction = {
         params ["_unit"];
-        if (side _unit == re_attacker_side) exitWith { re_attacker_faction };
+        if (side _unit isEqualTo re_attacker_side) exitWith { re_attacker_faction };
         re_defender_faction;
     };
     hull3_gear_fnc_getTemplate = {
         params ["_unit"];
-        if (side _unit == re_attacker_side) exitWith { re_attacker_gearTemplate };
+        if (side _unit isEqualTo re_attacker_side) exitWith { re_attacker_gearTemplate };
         re_defender_gearTemplate;
     };
     hull3_uniform_fnc_getTemplate = {
         params ["_unit"];
-        if (side _unit == re_attacker_side) exitWith { re_attacker_uniformTemplate };
+        if (side _unit isEqualTo re_attacker_side) exitWith { re_attacker_uniformTemplate };
         re_defender_uniformTemplate;
     };
 

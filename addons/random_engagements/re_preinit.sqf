@@ -1,7 +1,7 @@
 #include "re_macros.h"
 
 
-if (getNumber(missionConfigFile >> "RandomEngagements" >> "isEnabled") == 0) exitWith {};
+if (getNumber(missionConfigFile >> "RandomEngagements" >> "isEnabled") isEqualTo 0) exitWith {};
 
 call compile preprocessFileLineNumbers ADDON_PATH(re_functions.sqf);
 call compile preprocessFileLineNumbers ADDON_PATH(interaction_functions.sqf);

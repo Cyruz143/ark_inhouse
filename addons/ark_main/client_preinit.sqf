@@ -4,9 +4,9 @@ ark_main_fnc_isHost = {
 };
 
 ark_main_fnc_isAdmiralEnabled = {
-    getNumber (missionConfigFile >> "Admiral" >> "isEnabled") == 1;
+    getNumber (missionConfigFile >> "Admiral" >> "isEnabled") isEqualTo 1;
 };
 
 ark_main_fnc_isTownSweep = {
-    getNumber(missionConfigFile >> 'TownSweep' >> 'isEnabled') == 1;
+    getNumber(missionConfigFile >> 'TownSweep' >> 'isEnabled') isEqualTo 1;
 };

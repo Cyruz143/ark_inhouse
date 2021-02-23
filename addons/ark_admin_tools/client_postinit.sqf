@@ -13,7 +13,7 @@ ark_admin_tools_fnc_createDebugMarkers = {
             _markerName setMarkerShapeLocal "ICON";
             _markerName setMarkerTypeLocal "mil_dot";
             _markerName setMarkerColorLocal (_sideColors select _i);
-            _markerName setMarkerTextLocal format ["%1: %2", _side, {side _x == _side} count allUnits];
+            _markerName setMarkerTextLocal format ["%1: %2", _side, {side _x isEqualTo _side} count allUnits];
             _markerName setMarkerSizeLocal [1,1];
             ark_admin_sideCountMarkers set [count ark_admin_sideCountMarkers, _side];
         };
@@ -81,7 +81,7 @@ ark_admin_tools_fnc_createDebugMarkers = {
                 {
                     private "_markerName";
                     _side = _x;
-                    (format ["ark_admin_sideCountMarker_%1", _side]) setMarkerTextLocal format ["%1: %2 (%3)", _side, count (allUnits select {side _x == _side && {simulationEnabled _x} }), count (allUnits select {side _x == _side})];
+                    (format ["ark_admin_sideCountMarker_%1", _side]) setMarkerTextLocal format ["%1: %2 (%3)", _side, count (allUnits select {side _x isEqualTo _side && {simulationEnabled _x} }), count (allUnits select {side _x isEqualTo _side})];
                 } foreach ark_admin_sideCountMarkers;
             },
             3,
@@ -140,7 +140,7 @@ ark_admin_tools_fnc_unFlip = {
 
         private _emptyPos = (getPos _vehicle) findEmptyPosition [0, 20, (typeOf _vehicle)];
 
-        if (isNil "_emptyPos" || { count _emptyPos == 0 }) exitWith {
+        if (isNil "_emptyPos" || { count _emptyPos isEqualTo 0 }) exitWith {
             {"No room to flip \nPlease contact Staff!" remoteExec ["hint", _x];} forEach (crew _vehicle);
         };
 

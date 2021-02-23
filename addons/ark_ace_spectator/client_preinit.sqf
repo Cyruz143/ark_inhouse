@@ -1,7 +1,7 @@
 ark_ace_spectator_fnc_initSpec = {
     params ["_unit", "", "_killer", "_instigator"];
 
-    if (!local _unit || { !(_unit isEqualTo player) } || { (getMissionConfigValue ["respawn",0]) != 0 }) exitWith {};
+    if (!local _unit || { _unit isNotEqualTo player } || { (getMissionConfigValue ["respawn",0]) isNotEqualTo 0 }) exitWith {};
 
     if (isNull _killer) then {
         _killer = _instigator;

@@ -1,7 +1,7 @@
 if (is3DEN || {!hasInterface || {!(ark_acre_gestures_enabled)}}) exitWith {};
 
 ark_acre_gestures_blackListAnims = ["amovppnemstpsraswrfldnon","aadjppnemstpsraswrfldleft","aadjppnemstpsraswrfldright"];
-ark_acre_gestures_binoClasses = "getText (_x >> 'simulation') == 'Binocular'" configClasses (configFile >> "CfgWeapons") apply {configName _x};
+ark_acre_gestures_binoClasses = "getText (_x >> 'simulation') isEqualTo 'Binocular'" configClasses (configFile >> "CfgWeapons") apply {configName _x};
 
 ark_acre_gestures_fnc_stopGesture = {
     params ["_unit"];

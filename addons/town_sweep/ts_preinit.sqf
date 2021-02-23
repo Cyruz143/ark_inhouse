@@ -1,7 +1,7 @@
 #include "ts_macros.h"
 
 
-if (getNumber(missionConfigFile >> "TownSweep" >> "isEnabled") == 0) exitWith {};
+if (getNumber(missionConfigFile >> "TownSweep" >> "isEnabled") isEqualTo 0) exitWith {};
 
 call compile preprocessFileLineNumbers ADDON_PATH(ts_functions.sqf);
 call compile preprocessFileLineNumbers ADDON_PATH(interaction_functions.sqf);
