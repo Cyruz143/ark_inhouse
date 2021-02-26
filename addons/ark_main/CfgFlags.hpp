@@ -24,6 +24,7 @@ class CH_Flag: ARK_Flag {
     class EventHandlers {
         init = "(_this #0) setFlagTexture '\x\ark\addons\ark_main\resources\flags\china_flag.paa'";
     };
+};
 
 class UKR_Flag: ARK_Flag {
     displayName = "Flag (Ukraine)";
