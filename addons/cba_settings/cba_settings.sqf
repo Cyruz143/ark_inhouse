@@ -125,6 +125,7 @@ force force ace_medical_gui_maxDistance = 3;
 force force ace_medical_ivFlowRate = 1.5;
 force force ace_medical_limping = 1;
 force force ace_medical_painCoefficient = 1;
+force force ace_medical_painUnconsciousChance = 0.1;
 force force ace_medical_playerDamageThreshold = 4;
 force force ace_medical_spontaneousWakeUpChance = 0.5;
 force force ace_medical_spontaneousWakeUpEpinephrineBoost = 5;
@@ -237,6 +238,15 @@ force force ace_viewdistance_limitViewDistance = 10000;
 force force ace_laserpointer_enabled = true;
 force force ace_common_persistentLaserEnabled = true;
 
+// ACE Zeus
+force force ace_zeus_autoAddObjects = true;
+force force ace_zeus_canCreateZeus = -1;
+force force ace_zeus_radioOrdnance = false;
+force force ace_zeus_remoteWind = false;
+force force ace_zeus_revealMines = 0;
+force force ace_zeus_zeusAscension = false;
+force force ace_zeus_zeusBird = false;
+
 // ACRE2
 force force acre_sys_core_ignoreAntennaDirection = true;
 force acre_sys_core_fullDuplex = false;
@@ -249,6 +259,9 @@ force force acre_sys_signal_signalModel = 0;
 // CBA Weapons
 force force cba_disposable_dropUsedLauncher = 2;
 force force cba_disposable_replaceDisposableLauncher = true;
+
+// CBA Network
+force force cba_network_loadoutValidation = 1;
 
 // CUP
 force force CUP_CheckCfgPatches = false;
