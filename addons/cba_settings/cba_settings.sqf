@@ -262,7 +262,7 @@ force force cba_disposable_dropUsedLauncher = 2;
 force force cba_disposable_replaceDisposableLauncher = true;
 
 // CBA Network
-force force cba_network_loadoutValidation = 1;
+force force cba_network_loadoutValidation = 0;
 
 // CUP
 force force CUP_CheckCfgPatches = false;
