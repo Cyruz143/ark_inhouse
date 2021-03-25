@@ -18,7 +18,7 @@ ark_ace_medical_fnc_vehKilled = {
         {_x setDamage 1} forEach _crew;
         diag_log format ["[ARK] (ACE Medical) - Killed AI %1 inside a dead vehicle: %2",_crew,_veh];
     } else {
-        {_x setPos (_veh getPos [5 + (random 2), random 360])} forEach _crew;
+        {[_x] call ace_common_fnc_unloadPerson} forEach _crew;
         diag_log format ["[ARK] (ACE Medical) - Ejected players %1 from a dead vehicle: %2",_crew,_veh];
     };
 };
