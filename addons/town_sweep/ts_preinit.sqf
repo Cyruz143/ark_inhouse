@@ -3,9 +3,9 @@
 
 if (getNumber(missionConfigFile >> "TownSweep" >> "isEnabled") isEqualTo 0) exitWith {};
 
-call compile preprocessFileLineNumbers ADDON_PATH(ts_functions.sqf);
-call compile preprocessFileLineNumbers ADDON_PATH(interaction_functions.sqf);
-call compile preprocessFileLineNumbers ADDON_PATH(spawn_functions.sqf);
+call compileScript [ADDON_PATH(ts_functions.sqf)];
+call compileScript [ADDON_PATH(interaction_functions.sqf)];
+call compileScript [ADDON_PATH(spawn_functions.sqf)];
 
 if (isServer) then {
     [] call ts_fnc_preinit;

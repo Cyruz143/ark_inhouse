@@ -16,14 +16,14 @@ class CfgPatches {
 
 class Extended_PreInit_EventHandlers {
     class ADDON {
-        init = "call compile preProcessFileLineNumbers 'x\ark\addons\ark_player_paradrop\global_preinit.sqf';";
+        init = "call compileScript ['x\ark\addons\ark_player_paradrop\global_preinit.sqf'];";
     };
 };
 
 class Extended_PostInit_EventHandlers {
     class ADDON {
-        clientInit = "call compile preProcessFileLineNumbers 'x\ark\addons\ark_player_paradrop\client_postinit.sqf';";
-        serverInit = "call compile preProcessFileLineNumbers 'x\ark\addons\ark_player_paradrop\server_postinit.sqf';";
+        clientInit = "call compileScript ['x\ark\addons\ark_player_paradrop\client_postinit.sqf'];";
+        serverInit = "call compileScript ['x\ark\addons\ark_player_paradrop\server_postinit.sqf'];";
     };
 };
 

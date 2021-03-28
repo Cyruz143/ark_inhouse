@@ -44,7 +44,7 @@ class CfgVehicles {
                         displayName = "Turn Safety Off";
                         condition = "!(call hull3_mission_fnc_hasSafetyTimerEnded)";
                         showDisabled = 1;
-                        statement = "[nil, nil, nil, ['confirm']] call compile preProcessFileLineNumbers 'x\ark\addons\hull3\mission_host_safetytimer_stop.sqf';";
+                        statement = "[nil, nil, nil, ['confirm']] call compileScript ['x\ark\addons\hull3\mission_host_safetytimer_stop.sqf'];";
                         icon = "\x\ark\addons\ark_main\resources\hull_disable.paa";
                         exceptions[] = {"isNotSwimming", "isNotInside", "isNotSitting", "isNotOnLadder", "isNotRefueling"};
                     };

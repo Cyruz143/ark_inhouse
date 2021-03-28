@@ -11,6 +11,6 @@ class CfgPatches {
 
 class Extended_PreInit_EventHandlers {
     class ARK_Inhouse_Random_Engagements {
-        init = "call compile preProcessFileLineNumbers 'x\ark\addons\random_engagements\re_preinit.sqf';";
+        init = "call compileScript ['x\ark\addons\random_engagements\re_preinit.sqf'];";
     };
 };

@@ -17,7 +17,7 @@ class CfgPatches {
 
 class Extended_PreInit_EventHandlers {
     class ARK_Inhouse_Town_Sweep {
-        init = "call compile preProcessFileLineNumbers 'x\ark\addons\town_sweep\ts_preinit.sqf';";
+        init = "call compileScript ['x\ark\addons\town_sweep\ts_preinit.sqf'];";
     };
 };
 

@@ -22,12 +22,12 @@ class CfgPatches {
 
 class Extended_PreInit_EventHandlers {
     class ADDON {
-        clientInit = "call compile preProcessFileLineNumbers 'x\ark\addons\ark_ace_spectator\client_preinit.sqf';";
+        clientInit = "call compileScript ['x\ark\addons\ark_ace_spectator\client_preinit.sqf'];";
     };
 };
 
 class Extended_PostInit_EventHandlers {
     class ADDON {
-        serverInit = "call compile preProcessFileLineNumbers 'x\ark\addons\ark_ace_spectator\server_postinit.sqf';";
+        serverInit = "call compileScript ['x\ark\addons\ark_ace_spectator\server_postinit.sqf'];";
     };
 };

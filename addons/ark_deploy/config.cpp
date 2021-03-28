@@ -19,7 +19,7 @@ class CfgPatches {
 
 class Extended_PreInit_EventHandlers {
     class ADDON {
-        init = "call compile preProcessFileLineNumbers 'x\ark\addons\ark_deploy\global_preinit.sqf';";
+        init = "call compileScript ['x\ark\addons\ark_deploy\global_preinit.sqf'];";
     };
 };
 
