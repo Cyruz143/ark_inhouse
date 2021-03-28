@@ -17,6 +17,7 @@ class CfgPatches {
     };
 };
 
+#include "CfgAnimation.hpp"
 #include "CfgMovesFatigue.hpp"
 #include "CfgMovesMaleSdr.hpp"
 #include "CfgInventoryGlobalVariable.hpp"

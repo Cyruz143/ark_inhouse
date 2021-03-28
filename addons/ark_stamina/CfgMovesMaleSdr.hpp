@@ -1,6 +1,12 @@
 class CfgMovesBasic;
 class CfgMovesMaleSdr: CfgMovesBasic {
     class States {
+        // Ladders
+        class LadderCivilStatic;
+        class LadderCivilUpLoop: LadderCivilStatic {
+            speed = 1.575;
+        };
+        // Swimming
         class AswmPercMstpSnonWnonDnon;
         class AswmPercMrunSnonWnonDf: AswmPercMstpSnonWnonDnon {
             speed = 0.3575205;
