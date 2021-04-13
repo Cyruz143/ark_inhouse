@@ -170,23 +170,6 @@ force force ace_medical_treatment_treatmentTimeTourniquet = 0.5;
 force force ace_medical_treatment_woundReopenChance = 1;
 force force ace_medical_treatment_woundStitchTime = 5;
 
-
-// ACE Name Tags
-force force ace_nametags_defaultNametagColor = [1,1,1,1];
-force force ace_nametags_nametagColorBlue = [0.67,0.67,1,1];
-force force ace_nametags_nametagColorGreen = [0.67,1,0.67,1];
-force force ace_nametags_nametagColorMain = [1,1,1,1];
-force force ace_nametags_nametagColorRed = [1,0.67,0.67,1];
-force force ace_nametags_nametagColorYellow = [1,1,0.67,1];
-force force ace_nametags_playerNamesMaxAlpha = 0.75;
-force force ace_nametags_playerNamesViewDistance = 10;
-force force ace_nametags_showCursorTagForVehicles = true;
-force force ace_nametags_showNamesForAI = true;
-force force ace_nametags_showPlayerNames = 2;
-force force ace_nametags_showPlayerRanks = false;
-force force ace_nametags_showSoundWaves = 0;
-force force ace_nametags_showVehicleCrewInfo = true;
-
 // ACE Nightvision
 force force ace_nightvision_aimDownSightsBlur = 0;
 force force ace_nightvision_disableNVGsWithSights = false;
