@@ -264,6 +264,21 @@ force force diwako_dui_main_squadMain = [0,0,1,0];
 force force diwako_dui_main_squadRed = [1,0,0,1];
 force force diwako_dui_main_squadYellow = [1,1,0,1];
 
+// DUI - Squad Radar - Nametags
+force force diwako_dui_nametags_deadColor = [0.2,0.2,0.2,1];
+force force diwako_dui_nametags_deadRenderDistance = 3.5;
+force force diwako_dui_nametags_drawRank = false;
+force force diwako_dui_nametags_enabled = true;
+force force diwako_dui_nametags_enableFOVBoost = false;
+force force diwako_dui_nametags_enableOcclusion = false;
+force force diwako_dui_nametags_groupColor = [1,1,1,1];
+force force diwako_dui_nametags_groupNameOtherGroupColor = [0.6,0.85,0.6,1];
+force force diwako_dui_nametags_nameOtherGroupColor = [0.2,1,0,1];
+force force diwako_dui_nametags_renderDistance = 15;
+force force diwako_dui_nametags_showUnconAsDead = true;
+force force diwako_dui_nametags_useLIS = true;
+force force diwako_dui_nametags_useSideIsFriendly = true;
+
 // DUI - Squad Radar - Radar
 diwako_dui_compass_style = ["\z\diwako_dui\addons\radar\UI\compass_styles\bi\compass_limited.paa","\z\diwako_dui\addons\radar\UI\compass_styles\bi\compass.paa"];
 force force diwako_dui_compassRange = 50;
@@ -275,13 +290,17 @@ force force diwako_dui_enable_compass_dir = 1;
 force force diwako_dui_enable_occlusion = false;
 force force diwako_dui_enable_occlusion_cone = 360;
 force diwako_dui_namelist = true;
-force force diwako_dui_namelist_only_buddy_icon = false;
 force force diwako_dui_radar_ace_finger = true;
+force force diwako_dui_radar_ace_medic = true;
+force force diwako_dui_radar_compassRangeCrew = 500;
 force force diwako_dui_radar_group_by_vehicle = true;
 force force diwako_dui_radar_occlusion_fade_time = 10;
+force force diwako_dui_radar_showSpeaking = false;
+force force diwako_dui_radar_showSpeaking_radioOnly = false;
+force force diwako_dui_radar_showSpeaking_replaceIcon = false;
 force force diwako_dui_radar_sortType = "none";
 force force diwako_dui_radar_sqlFirst = false;
-force force diwako_dui_radar_trackingColor = [0.7,0.7,0.7,1];
+force force diwako_dui_radar_vehicleCompassEnabled = true;
 
 // NIArms
 force force niarms_magSwitch = false;
