@@ -1,27 +1,21 @@
 ark_player_paradrop_fnc_canDrop = {
-    private _isModuleActive = missionNamespace getVariable ["ark_player_paradrop_var_jumpHeight", false];
     private _canDrop = false;
 
-    if (typeName _isModuleActive isNotEqualTo "SCALAR") then {
-        _canDrop = false;
-    } else {
+    if (missionNamespace getVariable ["ark_player_paradrop_var_enabled", false]) then {
         private _veh = objectParent player;
-        _canDrop = _veh isKindOf "Air" && { (driver _veh) isEqualTo player } && { (getPosATL _veh #2) >= (missionNamespace getVariable ["ark_player_paradrop_var_jumpHeight", 200]) } && { count (fullCrew [_veh, "cargo", false]) > 0 } && { !(_veh getVariable ["ark_player_paradrop_var_jumpInProgress", false]) };
+        _canDrop = _veh isKindOf "Air" &&
+            { (driver _veh) isEqualTo player } &&
+            { (getPosATL _veh #2) >= (missionNamespace getVariable ["ark_player_paradrop_var_jumpHeight", 200]) } &&
+            { count (fullCrew [_veh, "cargo", false]) > 0 } &&
+            { !(_veh getVariable ["ark_player_paradrop_var_jumpInProgress", false])
+        };
     };
 
     _canDrop
 };
 
 ark_player_paradrop_fnc_stopDrop = {
-    private _isModuleActive = missionNamespace getVariable ["ark_player_paradrop_var_jumpHeight", false];
-    private _stopDrop = false;
-
-    if (typeName _isModuleActive isNotEqualTo "SCALAR") then {
-        _stopDrop = false;
-    } else {
-        private _veh = objectParent player;
-        _stopDrop = _veh getVariable ["ark_player_paradrop_var_jumpInProgress", false];
-    };
+    private _stopDrop = objectParent player getVariable ["ark_player_paradrop_var_jumpInProgress", false];
 
     _stopDrop
 };
@@ -46,9 +40,8 @@ ark_player_paradrop_fnc_addBriefing = {
     player createDiaryRecord ["Diary", ["Static Line Jump", _briefingText]];
 };
 
-ark_player_paradrop_fnc_doJump = {
-    params ["_unit"];
-
+["ark_player_paradrop_eh_playerJump", {
+    private _unit = call CBA_fnc_currentUnit;
     private _jumpHeight = missionNamespace getVariable ["ark_player_paradrop_var_jumpHeight", 200];
     _unit allowDamage false;
     moveOut _unit;
@@ -74,12 +67,8 @@ ark_player_paradrop_fnc_doJump = {
         120,
         {_this allowDamage true}
     ] call CBA_fnc_waitUntilAndExecute;
-};
-
-["ark_player_paradrop_eh_playerJump", {
-    player call ark_player_paradrop_fnc_doJump;
 }] call CBA_fnc_addEventHandler;
 
-if (typeName (missionNamespace getVariable ["ark_player_paradrop_var_jumpHeight", false]) isEqualTo "SCALAR") then {
+if (missionNamespace getVariable ["ark_player_paradrop_var_enabled", false]) then {
     call ark_player_paradrop_fnc_addBriefing;
 };

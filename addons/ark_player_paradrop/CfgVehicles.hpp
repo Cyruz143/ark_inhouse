@@ -3,11 +3,17 @@ class CfgVehicles {
     class ARK_Player_Paradrop: ARK_Module {
         scope = 2;
         displayName = "Inhouse - Player Paradrop";
-        function = "ark_player_paradrop_fnc_setJumpHeight";
+        function = "ark_player_paradrop_fnc_init";
         class ModuleDescription {
-            description = "Place this module to enable paradrops from planes";
+            description = "Module to enable paradrops from planes";
         };
         class Arguments {
+            class Enabled {
+                displayName = "Enabled";
+                description = "Enable the player paradrop system";
+                typeName = "BOOL";
+                defaultValue = false;
+            };
             class Chute_Height {
                 displayName = "Set chute deploy height";
                 description = "Set height the chute will automatically deploy";
@@ -25,7 +31,7 @@ class CfgVehicles {
 
     class Man;
     class CAManBase: Man {
-        class ACE_SelfActions {               
+        class ACE_SelfActions {
             class Start_Drop {
                 displayName = "Start Paradrop";
                 exceptions[] = {"isNotInside"};

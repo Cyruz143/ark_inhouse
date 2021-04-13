@@ -16,7 +16,7 @@ class CfgPatches {
 
 class Extended_PreInit_EventHandlers {
     class ADDON {
-        init = "call compileScript ['x\ark\addons\ark_player_paradrop\global_preinit.sqf'];";
+        serverinit = "call compileScript ['x\ark\addons\ark_player_paradrop\server_preinit.sqf'];";
     };
 };
 
