@@ -8,12 +8,6 @@ class CfgVehicles {
             description = "Module to enable paradrops from planes";
         };
         class Arguments {
-            class Enabled {
-                displayName = "Enabled";
-                description = "Enable the player paradrop system";
-                typeName = "BOOL";
-                defaultValue = false;
-            };
             class Chute_Height {
                 displayName = "Set chute deploy height";
                 description = "Set height the chute will automatically deploy";
