@@ -101,7 +101,7 @@ force force ace_markers_timestampHourFormat = 24;
 // ACE Map Gestures
 force force ace_map_gestures_allowCurator = false;
 force force ace_map_gestures_allowSpectator = false;
-force force ace_map_gestures_briefingMode = 0;
+force force ace_map_gestures_briefingMode = 2;
 force force ace_map_gestures_enabled = true;
 force force ace_map_gestures_interval = 0.03;
 force force ace_map_gestures_maxRange = 7;
