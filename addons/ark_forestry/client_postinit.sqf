@@ -1,7 +1,7 @@
 // Credits to Commy2 and ACE2 team for the grass cutter idea!
 
 ark_forestry_fnc_canChop = {
-    private _nearTrees = nearestTerrainObjects [player, ["TREE", "SMALL TREE"], 3, true, true];
+    private _nearTrees = nearestTerrainObjects [player, ["TREE", "SMALL TREE", "BUSH"], 3, true, true];
 
     if (isNil "_nearTrees" || { _nearTrees isEqualTo [] }) exitWith {
         false;
@@ -11,7 +11,7 @@ ark_forestry_fnc_canChop = {
 };
 
 ark_forestry_fnc_doChop = {
-    private _nearTrees = nearestTerrainObjects [player, ["TREE", "SMALL TREE"], 3, true, true];
+    private _nearTrees = nearestTerrainObjects [player, ["TREE", "SMALL TREE", "BUSH"], 3, true, true];
     private _nearestTree = _nearTrees #0;
 
     playSound3D ["x\ark\addons\ark_forestry\resources\chop.ogg", objNull, false, getPosASL player, 5, 1, 75];
@@ -22,8 +22,8 @@ ark_forestry_fnc_doChop = {
             params ["_nearestTree"];
             _nearestTree call ark_forestry_fnc_tidyTree;
         },
-        {[["\x\ark\addons\ark_forestry\resources\tree.paa", 2.0], ["Aborted tree surgery"]] call CBA_fnc_notify},
-        "Chopping down tree"
+        {[["\x\ark\addons\ark_forestry\resources\tree.paa", 2.0], ["Aborted nature abuse"]] call CBA_fnc_notify},
+        "Attacking nature"
     ] call ace_common_fnc_progressBar;
 };
 
