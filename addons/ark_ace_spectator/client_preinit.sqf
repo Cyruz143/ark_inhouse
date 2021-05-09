@@ -12,16 +12,6 @@ ark_ace_spectator_fnc_initSpec = {
         [_unit,_killer] spawn BIS_fnc_respawnNone;
     };
 
-    // Remove unit from group after delay
-    if (group _unit isEqualTo grpNull) then {
-        diag_log "[ARK] (ACE Spectator) - Unit had no group";
-    } else {
-        [{
-            [_this] join grpNull;
-            diag_log format ["[ARK] (ACE Spectator) - Removed unit: %1 from group: %2",_this, group _this];
-        }, _unit, 90] call CBA_fnc_waitAndExecute;
-    };
-
     private _killMessage = "";
     private _killerVehicle = "";
 
