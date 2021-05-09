@@ -11,6 +11,7 @@ class CfgPatches {
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {
             "ark_main",
+            "ace_common",
             "ace_medical_engine",
             "ace_medical_damage",
             "ace_medical_treatment"
