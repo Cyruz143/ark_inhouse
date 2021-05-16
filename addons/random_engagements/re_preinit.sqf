@@ -12,5 +12,4 @@ if (isServer) then {
 
 if (hasInterface) then {
     [] call re_interaction_fnc_preinit;
-    [] call re_fnc_clientinit;
 };

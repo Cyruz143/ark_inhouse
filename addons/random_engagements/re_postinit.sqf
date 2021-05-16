@@ -1,6 +1,3 @@
-#include "re_macros.h"
-
-
 if (getNumber(missionConfigFile >> "RandomEngagements" >> "isEnabled") isEqualTo 0) exitWith {};
 
 if (hasInterface) then {
