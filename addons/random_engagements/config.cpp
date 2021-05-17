@@ -14,3 +14,9 @@ class Extended_PreInit_EventHandlers {
         init = "call compileScript ['x\ark\addons\random_engagements\re_preinit.sqf'];";
     };
 };
+
+class Extended_PostInit_EventHandlers {
+    class ARK_Inhouse_Random_Engagements {
+        init = "call compileScript ['x\ark\addons\random_engagements\re_postinit.sqf'];";
+    };
+};

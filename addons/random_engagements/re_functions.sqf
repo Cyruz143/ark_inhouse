@@ -50,6 +50,8 @@ re_fnc_randomizeFactions = {
     private _attackerFactionConfig = _factionConfigs select floor random count _factionConfigs;
     re_attacker_faction = configName _attackerFactionConfig;
     publicVariable "re_attacker_faction";
+    re_attacker_factionName = getText (_attackerFactionConfig >> "name");
+    publicVariable "re_attacker_factionName";
     re_attacker_factionRawSide = getText (_attackerFactionConfig >> "side");
     re_attacker_factionSide = call compile re_attacker_factionRawSide;
     re_attacker_gearTemplate = getText (_attackerFactionConfig >> "gear");
@@ -59,6 +61,8 @@ re_fnc_randomizeFactions = {
     private _defenderFactionConfig = _defenderFactionConfigs select floor random count _defenderFactionConfigs;
     re_defender_faction = configName _defenderFactionConfig;
     publicVariable "re_defender_faction";
+    re_defender_factionName = getText (_defenderFactionConfig >> "name");
+    publicVariable "re_defender_factionName";
     re_defender_factionRawSide = getText (_defenderFactionConfig >> "side");
     re_defender_factionSide = call compile re_defender_factionRawSide;
     re_defender_gearTemplate = getText (_defenderFactionConfig >> "gear");
