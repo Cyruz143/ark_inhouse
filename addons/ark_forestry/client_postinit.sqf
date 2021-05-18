@@ -1,9 +1,9 @@
 // Credits to Commy2 and ACE2 team for the grass cutter idea!
 
 ark_forestry_fnc_canChop = {
-    private _nearTrees = nearestTerrainObjects [player, ["TREE", "SMALL TREE", "BUSH"], 3, true, true];
+    private _nearObj = nearestTerrainObjects [player, ["TREE", "SMALL TREE", "BUSH"], 3, true, true];
 
-    if (isNil "_nearTrees" || { _nearTrees isEqualTo [] }) exitWith {
+    if (isNil "_nearObj" || { _nearObj isEqualTo [] }) exitWith {
         false;
     };
 
@@ -11,16 +11,15 @@ ark_forestry_fnc_canChop = {
 };
 
 ark_forestry_fnc_doChop = {
-    private _nearTrees = nearestTerrainObjects [player, ["TREE", "SMALL TREE", "BUSH"], 3, true, true];
-    private _nearestTree = _nearTrees #0;
+    private _nearObjs = nearestTerrainObjects [player, ["TREE", "SMALL TREE", "BUSH"], 3, true, true];
 
     playSound3D ["x\ark\addons\ark_forestry\resources\chop.ogg", objNull, false, getPosASL player, 5, 1, 75];
     [
         5,
-        _nearestTree,
+        _nearObjs,
         {
-            params ["_nearestTree"];
-            _nearestTree call ark_forestry_fnc_tidyTree;
+            params ["_nearObjs"];
+            [_nearObjs] call ark_forestry_fnc_tidyTree;
         },
         {[["\x\ark\addons\ark_forestry\resources\tree.paa", 2.0], ["Aborted nature abuse"]] call CBA_fnc_notify},
         "Attacking nature"
@@ -28,18 +27,21 @@ ark_forestry_fnc_doChop = {
 };
 
 ark_forestry_fnc_tidyTree = {
-    params ["_nearestTree"];
+    params ["_nearObjs"];
 
-    _nearestTree setDamage 1;
+    {
+        private _nearestObj = _x;
+        _nearestObj setDamage 1;
 
-    [
-        {
-             (_this #0) remoteExec ["hideObjectGlobal", 2];
-             [(_this #0), false] remoteExec ["enableSimulationGlobal", 2];
-        },
-        [_nearestTree],
-        5
-    ] call CBA_fnc_waitAndExecute;
+        [
+            {
+                 (_this #0) remoteExec ["hideObjectGlobal", 2];
+                 [(_this #0), false] remoteExec ["enableSimulationGlobal", 2];
+            },
+            [_nearestObj],
+            5
+        ] call CBA_fnc_waitAndExecute;
+    } forEach _nearObjs;
 };
 
 ark_forestry_fnc_doFlatten = {
