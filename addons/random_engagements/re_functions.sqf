@@ -94,3 +94,17 @@ re_fnc_moveLocationMarker = {
     re_selectedLocationMarkerName setMarkerSize [re_selectedLocationMarkerSize, re_selectedLocationMarkerSize];
     [-1, { player globalChat "A new attack location has been selected by the host!" }, []] call CBA_fnc_globalExecute;
 };
+
+re_fnc_getUniformPath = {
+    params ["_side"];
+
+    private "_finalPath";
+    private _rawPath = getText (configFile >> "CfgWeapons" >> (uniform (units _side #0)) >> "picture");
+    if (_rawPath find ".paa" != -1) then {
+        _finalPath = _rawPath;
+    } else {
+        _finalPath = _rawPath + ".paa";
+    };
+
+    _finalPath
+};
