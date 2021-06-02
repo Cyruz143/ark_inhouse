@@ -33,3 +33,11 @@ class UKR_Flag: ARK_Flag {
         init = "(_this #0) setFlagTexture '\x\ark\addons\ark_main\resources\flags\ukr_flag.paa'";
     };
 };
+
+class FR_Flag: ARK_Flag {
+    displayName = "Flag (France)";
+    editorPreview = "\x\ark\addons\ark_main\resources\flags\fr_flag.jpg";
+    class EventHandlers {
+        init = "(_this #0) setFlagTexture '\x\ark\addons\ark_main\resources\flags\fr_flag.paa'";
+    };
+};
