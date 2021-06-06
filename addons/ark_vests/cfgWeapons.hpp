@@ -18,6 +18,8 @@ class CfgWeapons {
     class gm_ge_vest_80_base;
     class gm_ge_vest_80_02_base;
     class gm_ge_vest_80_mp_base;
+    class gm_ge_vest_armor_90_base;
+    class gm_ge_vest_90_base;
     class gm_ge_vest_pilot_base;
     class gm_pl_army_vest_80_base;
     class gm_dk_vest_54_base;
@@ -333,6 +335,66 @@ class CfgWeapons {
         class ItemInfo;
     };
     class gm_ge_pol_vest_80_wht: gm_ge_vest_80_mp_base {
+        HIDDEN
+        class ItemInfo;
+    };
+    class gm_ge_vest_armor_90_flk: gm_ge_vest_armor_90_base {
+        HIDDEN
+        class ItemInfo;
+    };
+    class gm_ge_vest_armor_90_crew_flk: gm_ge_vest_armor_90_base {
+        HIDDEN
+        class ItemInfo;
+    };
+    class gm_ge_vest_armor_90_leader_flk: gm_ge_vest_armor_90_base {
+        HIDDEN
+        class ItemInfo;
+    };
+    class gm_ge_vest_armor_90_machinegunner_flk: gm_ge_vest_armor_90_base {
+        HIDDEN
+        class ItemInfo;
+    };
+    class gm_ge_vest_armor_90_officer_flk: gm_ge_vest_armor_90_base {
+        HIDDEN
+        class ItemInfo;
+    };
+    class gm_ge_vest_armor_90_rifleman_flk: gm_ge_vest_armor_90_base {
+        HIDDEN
+        class ItemInfo;
+    };
+    class gm_ge_vest_armor_90_demolition_flk: gm_ge_vest_armor_90_base {
+        HIDDEN
+        class ItemInfo;
+    };
+    class gm_ge_vest_armor_90_medic_flk: gm_ge_vest_armor_90_base {
+        HIDDEN
+        class ItemInfo;
+    };
+    class gm_ge_vest_90_crew_flk: gm_ge_vest_90_base {
+        HIDDEN
+        class ItemInfo;
+    };
+    class gm_ge_vest_90_demolition_flk: gm_ge_vest_90_base {
+        HIDDEN
+        class ItemInfo;
+    };
+    class gm_ge_vest_90_leader_flk: gm_ge_vest_90_base {
+        HIDDEN
+        class ItemInfo;
+    };
+    class gm_ge_vest_90_machinegunner_flk: gm_ge_vest_90_base {
+        HIDDEN
+        class ItemInfo;
+    };
+    class gm_ge_vest_90_medic_flk: gm_ge_vest_90_base {
+        HIDDEN
+        class ItemInfo;
+    };
+    class gm_ge_vest_90_officer_flk: gm_ge_vest_90_base {
+        HIDDEN
+        class ItemInfo;
+    };
+    class gm_ge_vest_90_rifleman_flk: gm_ge_vest_90_base {
         HIDDEN
         class ItemInfo;
     };
@@ -1088,14 +1150,6 @@ class CfgWeapons {
         HIDDEN
         class ItemInfo;
     };
-    class CUP_V_RUS_Smersh_1: CUP_Vest_RUS_Camo_Base {
-        HIDDEN
-        class ItemInfo;
-    };
-    class CUP_V_RUS_Smersh_2: CUP_Vest_RUS_Camo_Base {
-        HIDDEN
-        class ItemInfo;
-    };
     class CUP_V_RUS_6B45_1: CUP_Vest_RUS_Camo_Ratnik_Base {
         HIDDEN
         class ItemInfo;
@@ -1365,6 +1419,10 @@ class CfgWeapons {
         class ItemInfo;
     };
     class CUP_Vest_RUS_6B45_Sh117_VOG_Full_Green: CUP_Vest_RUS_Camo_RatnikV2_Base {
+        HIDDEN
+        class ItemInfo;
+    };
+    class CUP_V_RUS_Smersh_New_Full: CUP_Vest_RUS_Camo_Base {
         HIDDEN
         class ItemInfo;
     };
@@ -2105,18 +2163,6 @@ class CfgWeapons {
         class ItemInfo;
     };
     class CUP_V_O_Ins_Carrier_Rig: CUP_Vest_Ins_Camo_Base {
-        HIDDEN
-        class ItemInfo;
-    };
-    class CUP_V_O_Ins_Carrier_Rig_MG: CUP_Vest_Ins_Camo_Base {
-        HIDDEN
-        class ItemInfo;
-    };
-    class CUP_V_O_Ins_Carrier_Rig_Com: CUP_Vest_Ins_Camo_Base {
-        HIDDEN
-        class ItemInfo;
-    };
-    class CUP_V_O_Ins_Carrier_Rig_Light: CUP_Vest_Ins_Camo_Base {
         HIDDEN
         class ItemInfo;
     };
@@ -2953,6 +2999,34 @@ class CfgWeapons {
         class ItemInfo;
     };
     class CUP_V_RUS_6B3_Flora_4: CUP_V_RUS_6B3_4 {
+        HIDDEN
+        class ItemInfo;
+    };
+    class CUP_V_RUS_Smersh_New_Full_Spectre: CUP_V_RUS_Smersh_New_Full {
+        HIDDEN
+        class ItemInfo;
+    };
+    class CUP_V_RUS_Smersh_New_Radio: CUP_V_RUS_Smersh_New_Full {
+        HIDDEN
+        class ItemInfo;
+    };
+    class CUP_V_RUS_Smersh_New_Radio_Spectre: CUP_V_RUS_Smersh_New_Radio {
+        HIDDEN
+        class ItemInfo;
+    };
+    class CUP_V_RUS_Smersh_New_Buttpack: CUP_V_RUS_Smersh_New_Full {
+        HIDDEN
+        class ItemInfo;
+    };
+    class CUP_V_RUS_Smersh_New_Buttpack_Spectre: CUP_V_RUS_Smersh_New_Buttpack {
+        HIDDEN
+        class ItemInfo;
+    };
+    class CUP_V_RUS_Smersh_New_Light: CUP_V_RUS_Smersh_New_Full {
+        HIDDEN
+        class ItemInfo;
+    };
+    class CUP_V_RUS_Smersh_New_Light_Spectre: CUP_V_RUS_Smersh_New_Light {
         HIDDEN
         class ItemInfo;
     };
@@ -7415,6 +7489,378 @@ class CfgWeapons {
         };
     };
     class gm_ge_pol_vest_80_wht_ARM: gm_ge_pol_vest_80_wht {
+        SHOWN
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Body {
+                    hitpointName = "HitBody";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+            };
+        };
+    };
+    class gm_ge_vest_armor_90_flk_ARM: gm_ge_vest_armor_90_flk {
+        SHOWN
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Neck {
+                    hitpointName = "HitNeck";
+                    armor = 16;
+                    passThrough = 0.3;
+                    explosionShielding = 0.1;
+                };
+                class Chest {
+                    HitpointName = "HitChest";
+                    armor = 16;
+                    PassThrough = 0.3;
+                    explosionShielding = 0.1;
+                };
+                class Diaphragm {
+                    HitpointName = "HitDiaphragm";
+                    armor = 16;
+                    PassThrough = 0.3;
+                    explosionShielding = 0.1;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 16;
+                    passThrough = 0.3;
+                    explosionShielding = 0.1;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.3;
+                    explosionShielding = 0.1;
+                };
+            };
+        };
+    };
+    class gm_ge_vest_armor_90_crew_flk_ARM: gm_ge_vest_armor_90_crew_flk {
+        SHOWN
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Neck {
+                    hitpointName = "HitNeck";
+                    armor = 16;
+                    passThrough = 0.3;
+                    explosionShielding = 0.1;
+                };
+                class Chest {
+                    HitpointName = "HitChest";
+                    armor = 16;
+                    PassThrough = 0.3;
+                    explosionShielding = 0.1;
+                };
+                class Diaphragm {
+                    HitpointName = "HitDiaphragm";
+                    armor = 16;
+                    PassThrough = 0.3;
+                    explosionShielding = 0.1;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 16;
+                    passThrough = 0.3;
+                    explosionShielding = 0.1;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.3;
+                    explosionShielding = 0.1;
+                };
+            };
+        };
+    };
+    class gm_ge_vest_armor_90_leader_flk_ARM: gm_ge_vest_armor_90_leader_flk {
+        SHOWN
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Neck {
+                    hitpointName = "HitNeck";
+                    armor = 16;
+                    passThrough = 0.3;
+                    explosionShielding = 0.1;
+                };
+                class Chest {
+                    HitpointName = "HitChest";
+                    armor = 16;
+                    PassThrough = 0.3;
+                    explosionShielding = 0.1;
+                };
+                class Diaphragm {
+                    HitpointName = "HitDiaphragm";
+                    armor = 16;
+                    PassThrough = 0.3;
+                    explosionShielding = 0.1;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 16;
+                    passThrough = 0.3;
+                    explosionShielding = 0.1;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.3;
+                    explosionShielding = 0.1;
+                };
+            };
+        };
+    };
+    class gm_ge_vest_armor_90_machinegunner_flk_ARM: gm_ge_vest_armor_90_machinegunner_flk {
+        SHOWN
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Neck {
+                    hitpointName = "HitNeck";
+                    armor = 16;
+                    passThrough = 0.3;
+                    explosionShielding = 0.1;
+                };
+                class Chest {
+                    HitpointName = "HitChest";
+                    armor = 16;
+                    PassThrough = 0.3;
+                    explosionShielding = 0.1;
+                };
+                class Diaphragm {
+                    HitpointName = "HitDiaphragm";
+                    armor = 16;
+                    PassThrough = 0.3;
+                    explosionShielding = 0.1;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 16;
+                    passThrough = 0.3;
+                    explosionShielding = 0.1;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.3;
+                    explosionShielding = 0.1;
+                };
+            };
+        };
+    };
+    class gm_ge_vest_armor_90_officer_flk_ARM: gm_ge_vest_armor_90_officer_flk {
+        SHOWN
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Neck {
+                    hitpointName = "HitNeck";
+                    armor = 16;
+                    passThrough = 0.3;
+                    explosionShielding = 0.1;
+                };
+                class Chest {
+                    HitpointName = "HitChest";
+                    armor = 16;
+                    PassThrough = 0.3;
+                    explosionShielding = 0.1;
+                };
+                class Diaphragm {
+                    HitpointName = "HitDiaphragm";
+                    armor = 16;
+                    PassThrough = 0.3;
+                    explosionShielding = 0.1;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 16;
+                    passThrough = 0.3;
+                    explosionShielding = 0.1;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.3;
+                    explosionShielding = 0.1;
+                };
+            };
+        };
+    };
+    class gm_ge_vest_armor_90_rifleman_flk_ARM: gm_ge_vest_armor_90_rifleman_flk {
+        SHOWN
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Neck {
+                    hitpointName = "HitNeck";
+                    armor = 16;
+                    passThrough = 0.3;
+                    explosionShielding = 0.1;
+                };
+                class Chest {
+                    HitpointName = "HitChest";
+                    armor = 16;
+                    PassThrough = 0.3;
+                    explosionShielding = 0.1;
+                };
+                class Diaphragm {
+                    HitpointName = "HitDiaphragm";
+                    armor = 16;
+                    PassThrough = 0.3;
+                    explosionShielding = 0.1;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 16;
+                    passThrough = 0.3;
+                    explosionShielding = 0.1;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.3;
+                    explosionShielding = 0.1;
+                };
+            };
+        };
+    };
+    class gm_ge_vest_armor_90_demolition_flk_ARM: gm_ge_vest_armor_90_demolition_flk {
+        SHOWN
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Neck {
+                    hitpointName = "HitNeck";
+                    armor = 16;
+                    passThrough = 0.3;
+                    explosionShielding = 0.1;
+                };
+                class Chest {
+                    HitpointName = "HitChest";
+                    armor = 16;
+                    PassThrough = 0.3;
+                    explosionShielding = 0.1;
+                };
+                class Diaphragm {
+                    HitpointName = "HitDiaphragm";
+                    armor = 16;
+                    PassThrough = 0.3;
+                    explosionShielding = 0.1;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 16;
+                    passThrough = 0.3;
+                    explosionShielding = 0.1;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.3;
+                    explosionShielding = 0.1;
+                };
+            };
+        };
+    };
+    class gm_ge_vest_armor_90_medic_flk_ARM: gm_ge_vest_armor_90_medic_flk {
+        SHOWN
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Neck {
+                    hitpointName = "HitNeck";
+                    armor = 16;
+                    passThrough = 0.3;
+                    explosionShielding = 0.1;
+                };
+                class Chest {
+                    HitpointName = "HitChest";
+                    armor = 16;
+                    PassThrough = 0.3;
+                    explosionShielding = 0.1;
+                };
+                class Diaphragm {
+                    HitpointName = "HitDiaphragm";
+                    armor = 16;
+                    PassThrough = 0.3;
+                    explosionShielding = 0.1;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 16;
+                    passThrough = 0.3;
+                    explosionShielding = 0.1;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.3;
+                    explosionShielding = 0.1;
+                };
+            };
+        };
+    };
+    class gm_ge_vest_90_crew_flk_ARM: gm_ge_vest_90_crew_flk {
+        SHOWN
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Body {
+                    hitpointName = "HitBody";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+            };
+        };
+    };
+    class gm_ge_vest_90_demolition_flk_ARM: gm_ge_vest_90_demolition_flk {
+        SHOWN
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Body {
+                    hitpointName = "HitBody";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+            };
+        };
+    };
+    class gm_ge_vest_90_leader_flk_ARM: gm_ge_vest_90_leader_flk {
+        SHOWN
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Body {
+                    hitpointName = "HitBody";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+            };
+        };
+    };
+    class gm_ge_vest_90_machinegunner_flk_ARM: gm_ge_vest_90_machinegunner_flk {
+        SHOWN
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Body {
+                    hitpointName = "HitBody";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+            };
+        };
+    };
+    class gm_ge_vest_90_medic_flk_ARM: gm_ge_vest_90_medic_flk {
+        SHOWN
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Body {
+                    hitpointName = "HitBody";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+            };
+        };
+    };
+    class gm_ge_vest_90_officer_flk_ARM: gm_ge_vest_90_officer_flk {
+        SHOWN
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Body {
+                    hitpointName = "HitBody";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+            };
+        };
+    };
+    class gm_ge_vest_90_rifleman_flk_ARM: gm_ge_vest_90_rifleman_flk {
         SHOWN
         class ItemInfo: ItemInfo {
             class HitpointsProtectionInfo {
@@ -12462,30 +12908,6 @@ class CfgWeapons {
             };
         };
     };
-    class CUP_V_RUS_Smersh_1_ARM: CUP_V_RUS_Smersh_1 {
-        SHOWN
-        class ItemInfo: ItemInfo {
-            class HitpointsProtectionInfo {
-                class Body {
-                    hitpointName = "HitBody";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-            };
-        };
-    };
-    class CUP_V_RUS_Smersh_2_ARM: CUP_V_RUS_Smersh_2 {
-        SHOWN
-        class ItemInfo: ItemInfo {
-            class HitpointsProtectionInfo {
-                class Body {
-                    hitpointName = "HitBody";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-            };
-        };
-    };
     class CUP_V_RUS_6B45_1_ARM: CUP_V_RUS_6B45_1 {
         SHOWN
         class ItemInfo: ItemInfo {
@@ -14649,6 +15071,102 @@ class CfgWeapons {
                 };
                 class Body {
                     hitpointName = "HitBody";
+                    passThrough = 0.3;
+                };
+            };
+        };
+    };
+    class CUP_V_RUS_Smersh_New_Full_ARM: CUP_V_RUS_Smersh_New_Full {
+        SHOWN
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Body {
+                    hitpointName = "HitBody";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+            };
+        };
+    };
+    class CUP_V_RUS_Smersh_New_Full_Spectre_ARM: CUP_V_RUS_Smersh_New_Full_Spectre {
+        SHOWN
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Body {
+                    hitpointName = "HitBody";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+            };
+        };
+    };
+    class CUP_V_RUS_Smersh_New_Radio_ARM: CUP_V_RUS_Smersh_New_Radio {
+        SHOWN
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Body {
+                    hitpointName = "HitBody";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+            };
+        };
+    };
+    class CUP_V_RUS_Smersh_New_Radio_Spectre_ARM: CUP_V_RUS_Smersh_New_Radio_Spectre {
+        SHOWN
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Body {
+                    hitpointName = "HitBody";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+            };
+        };
+    };
+    class CUP_V_RUS_Smersh_New_Buttpack_ARM: CUP_V_RUS_Smersh_New_Buttpack {
+        SHOWN
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Body {
+                    hitpointName = "HitBody";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+            };
+        };
+    };
+    class CUP_V_RUS_Smersh_New_Buttpack_Spectre_ARM: CUP_V_RUS_Smersh_New_Buttpack_Spectre {
+        SHOWN
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Body {
+                    hitpointName = "HitBody";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+            };
+        };
+    };
+    class CUP_V_RUS_Smersh_New_Light_ARM: CUP_V_RUS_Smersh_New_Light {
+        SHOWN
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Body {
+                    hitpointName = "HitBody";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+            };
+        };
+    };
+    class CUP_V_RUS_Smersh_New_Light_Spectre_ARM: CUP_V_RUS_Smersh_New_Light_Spectre {
+        SHOWN
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Body {
+                    hitpointName = "HitBody";
+                    armor = 16;
                     passThrough = 0.3;
                 };
             };
@@ -20496,42 +21014,6 @@ class CfgWeapons {
         };
     };
     class CUP_V_O_Ins_Carrier_Rig_ARM: CUP_V_O_Ins_Carrier_Rig {
-        SHOWN
-        class ItemInfo: ItemInfo {
-            class HitpointsProtectionInfo {
-                class Body {
-                    hitpointName = "HitBody";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-            };
-        };
-    };
-    class CUP_V_O_Ins_Carrier_Rig_MG_ARM: CUP_V_O_Ins_Carrier_Rig_MG {
-        SHOWN
-        class ItemInfo: ItemInfo {
-            class HitpointsProtectionInfo {
-                class Body {
-                    hitpointName = "HitBody";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-            };
-        };
-    };
-    class CUP_V_O_Ins_Carrier_Rig_Com_ARM: CUP_V_O_Ins_Carrier_Rig_Com {
-        SHOWN
-        class ItemInfo: ItemInfo {
-            class HitpointsProtectionInfo {
-                class Body {
-                    hitpointName = "HitBody";
-                    armor = 16;
-                    passThrough = 0.3;
-                };
-            };
-        };
-    };
-    class CUP_V_O_Ins_Carrier_Rig_Light_ARM: CUP_V_O_Ins_Carrier_Rig_Light {
         SHOWN
         class ItemInfo: ItemInfo {
             class HitpointsProtectionInfo {
