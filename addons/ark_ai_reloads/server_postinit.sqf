@@ -9,11 +9,14 @@
     };
 }] call CBA_fnc_addClassEventHandler;
 
+//Pylons and CSW weapons don't reload so need to use Fired
 {
-    [_x, "Reloaded", {
-        params ["_vehicle"];
+    [_x, "Fired", {
+        params ["_vehicle", "", "_muzzle"];
 
         if (isPlayer _vehicle) exitWith {};
-        _vehicle setVehicleAmmo 1;
+        if (_vehicle ammo _muzzle isEqualTo 0) then {
+            _vehicle setVehicleAmmoDef 1;
+        }
     }] call CBA_fnc_addClassEventHandler;
-} forEach ["Air","Car","Tank"];
+} forEach ["Air","Car","Tank","StaticWeapon"];
