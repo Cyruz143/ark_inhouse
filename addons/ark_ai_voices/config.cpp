@@ -9,10 +9,7 @@ class CfgPatches {
         units[] = {};
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
-        requiredAddons[] = {
-            "ark_main",
-            "ace_common"
-        };
+        requiredAddons[] = {"ark_main"};
         VERSION_CONFIG;
     };
 };
