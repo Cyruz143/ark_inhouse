@@ -1,3 +1,7 @@
+/*
+ * Big thanks to @diwako for helping with this, it's a straight nightmare
+*/
+
 ark_ai_voices_fnc_selectSound = {
     params ["_unit","_sndType"];
 
