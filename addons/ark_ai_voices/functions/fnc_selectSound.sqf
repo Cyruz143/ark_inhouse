@@ -11,7 +11,7 @@ ark_ai_voices_fnc_selectSound = {
             _voiceLine = selectRandom ["UnderFireE", "ContactE_1", "ContactE_2", "ContactE_3", "CombatGenericE", "CoverMeE", "moveBack", "EndangeredE"];
         };
         case ("firing"): {
-            _voiceLine = selectRandom ["CheeringE", "CombatGenericE", "ContactE_1", "ContactE_2", "ContactE_3", "moveUp", "CoveringE", "SuppressingE"];
+            _voiceLine = selectRandom ["CheeringE", "ContactE_1", "ContactE_2", "ContactE_3", "CombatGenericE", "CoveringE", "moveUp", "SuppressingE"];
         };
         case ("grenade"): {
             _voiceLine = selectRandom ["ThrowingGrenadeE_1", "ThrowingGrenadeE_2", "ThrowingGrenadeE_3"];
