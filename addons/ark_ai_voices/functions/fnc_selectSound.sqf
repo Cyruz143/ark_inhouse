@@ -52,7 +52,5 @@ ark_ai_voices_fnc_selectSound = {
         ["ERROR", "fnc_selectSound", "No sound file to play for unit", _unit] call ark_ai_voices_fnc_log;
     };
 
-    private _rndSnd = selectRandom _soundPathArr;
-    ["INFO", "fnc_selectSound", "Sound playing",_unit,_rndSnd] call ark_ai_voices_fnc_log;
     ["ark_ai_voices_ps3d", [_unit, (selectRandom _soundPathArr)]] call CBA_fnc_globalEvent;
 };
