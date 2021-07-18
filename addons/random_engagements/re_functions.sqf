@@ -113,10 +113,9 @@ re_fnc_aoWarning = {
     if (side group player isEqualTo re_attacker_side) exitWith {};
 
     [{
-        params ["","_id"];
         if (alive player && { !(player inArea re_selectedLocationMarkerName) }) then {
             private _msg = "<t color='#FF0000'>You're outside of the playable area!</t>";
-            [_msg,0,0,3,0] spawn BIS_fnc_dynamicText;
+            [_msg,0,0,0,0] spawn BIS_fnc_dynamicText;
             playSound "Alarm";
         };
     }, 1] call CBA_fnc_addPerFrameHandler;
