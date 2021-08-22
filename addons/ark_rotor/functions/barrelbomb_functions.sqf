@@ -59,7 +59,7 @@ ark_rotor_fnc_dropBombs = {
                 _id call CBA_fnc_removePerFrameHandler;
             };
 
-            _vehicle setVariable ["ark_rotor_var_bombAmount", (_vehicle getVariable ["ark_rotor_var_bombAmount", 0] - 1)];
+            _vehicle setVariable ["ark_rotor_var_bombAmount", ((_vehicle getVariable ["ark_rotor_var_bombAmount", 0]) - 1)];
             [_vehicle] call ark_rotor_fnc_createBomb;
         },
         4,
