@@ -14,19 +14,19 @@ ark_rotor_fnc_barrelbomb = {
     //If taking over 600 seconds delete as something has gone wrong
     [
         {((_this #0) distance2D (getWPPos (_this #1))) < 750},
-        {(_this #0) forceSpeed 50;},
+        {(_this #0) forceSpeed 50},
         [_vehicle,_stageWP,_logic],
         600,
-        {[(_this #0),(_this #2)] call ark_rotor_fnc_cleanUp;}
+        {[(_this #0),(_this #2)] call ark_rotor_fnc_cleanUp}
     ] call CBA_fnc_waitUntilAndExecute;
 
     //When 1st WP completed drop the bombs
     [
         {(currentWaypoint (group (_this #2))) isEqualTo 2},
-        {[(_this #0),(_this #1),(_this #2)] call ark_rotor_fnc_dropBombs;},
+        {[(_this #0),(_this #1),(_this #2)] call ark_rotor_fnc_dropBombs},
         [_vehicle,_logic,_pilot],
         600,
-        {[(_this #0),(_this #1)] call ark_rotor_fnc_cleanUp;}
+        {[(_this #0),(_this #1)] call ark_rotor_fnc_cleanUp}
     ] call CBA_fnc_waitUntilAndExecute;
 
     // Wait another two minutes, if not at delete WP kill it anyway
@@ -37,28 +37,29 @@ ark_rotor_fnc_barrelbomb = {
         },
         [_vehicle,_deleteWP,_logic],
         720,
-        {[(_this #0),(_this #2)] call ark_rotor_fnc_cleanUp;}
+        {[(_this #0),(_this #2)] call ark_rotor_fnc_cleanUp}
     ] call CBA_fnc_waitUntilAndExecute;
 };
 
 ark_rotor_fnc_dropBombs = {
     params ["_vehicle","_logic","_pilot"];
 
-    ark_rotor_var_bombAmount = _logic getVariable ["Bomb_Amount", 3];
+    _vehicle setVariable ["ark_rotor_var_bombAmount", (_logic getVariable ["Bomb_Amount", 3])];
+
     [
         {
             params ["_args", "_id"];
             _args params ["_vehicle","_pilot"];
 
-            if (ark_rotor_var_bombAmount < 1) exitWith {
+            if (_vehicle getVariable ["ark_rotor_var_bombAmount", 0] < 1 || {!alive _pilot} || {!alive _vehicle}) exitWith {
                 ["INFO","fnc_dropBombs","All bombs dropped"] call ark_rotor_fnc_log;
                 _vehicle forceSpeed -1;
                 (group _pilot) setCurrentWaypoint [(group _pilot), 3];
-                ark_rotor_var_bombAmount = nil;
+                 _vehicle setVariable ["ark_rotor_var_bombAmount", nil];
                 _id call CBA_fnc_removePerFrameHandler;
             };
 
-            ark_rotor_var_bombAmount = ark_rotor_var_bombAmount - 1;
+            _vehicle setVariable ["ark_rotor_var_bombAmount", (_vehicle getVariable ["ark_rotor_var_bombAmount", 0] - 1)];
             [_vehicle] call ark_rotor_fnc_createBomb;
         },
         4,
