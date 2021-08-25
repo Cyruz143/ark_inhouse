@@ -48,7 +48,7 @@ ark_ai_voices_fnc_selectSound = {
         ark_ai_voices_namespace setVariable [_speakerVoiceLine, _soundPathArr];
     };
 
-    if (_soundPathArr isEqualTo []) exitWith {
+    if (_soundPathArr isEqualTo [] || { isNil "_soundPathArr" }) exitWith {
         ["ERROR", "fnc_selectSound", "No sound file to play for unit", _unit] call ark_ai_voices_fnc_log;
     };
 
