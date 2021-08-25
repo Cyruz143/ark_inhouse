@@ -5,6 +5,8 @@
 ark_ai_voices_fnc_selectSound = {
     params ["_unit","_sndType"];
 
+    if (_unit getVariable ["ark_ai_voices_var_brokenVoice", false]) exitWith {};
+
     private "_voiceLine";
     switch (_sndType) do {
         case ("suppressed"): {
@@ -27,6 +29,7 @@ ark_ai_voices_fnc_selectSound = {
         private _dirPath = (getArray (configFile >> "CfgVoice" >> _speaker >> "directories")) #0;
         if (_dirPath isEqualTo "") exitWith {
             ["ERROR", "fnc_selectSound", "No directory path for sounds found for", _speaker] call ark_ai_voices_fnc_log;
+            _unit setVariable ["ark_ai_voices_var_brokenVoice", true];
         };
 
         // Fucking config returns with a leading slash that breaks PS3D.... fucking bi
@@ -36,7 +39,8 @@ ark_ai_voices_fnc_selectSound = {
 
         private _protocolArr = getArray (configFile >> (getText (configFile >> "CfgVoice" >> _speaker >> "protocol")) >> "Words" >> "Combat" >> _voiceLine);
         if (_protocolArr isEqualTo []) exitWith {
-            ["ERROR", "fnc_selectSound", "No protocol path sound files available for", _voiceLine] call ark_ai_voices_fnc_log;
+            ["ERROR", "fnc_selectSound", "No protocol path sound files available for", [_speaker, _voiceLine]] call ark_ai_voices_fnc_log;
+            _unit setVariable ["ark_ai_voices_var_brokenVoice", true];
         };
 
         _soundPathArr = [];
@@ -48,8 +52,9 @@ ark_ai_voices_fnc_selectSound = {
         ark_ai_voices_namespace setVariable [_speakerVoiceLine, _soundPathArr];
     };
 
-    if (_soundPathArr isEqualTo [] || { isNil "_soundPathArr" }) exitWith {
+    if (isNil "_soundPathArr" || { _soundPathArr isEqualTo [] }) exitWith {
         ["ERROR", "fnc_selectSound", "No sound file to play for unit", _unit] call ark_ai_voices_fnc_log;
+        _unit setVariable ["ark_ai_voices_var_brokenVoice", true];
     };
 
     ["ark_ai_voices_ps3d", [_unit, (selectRandom _soundPathArr)]] call CBA_fnc_globalEvent;
