@@ -9,7 +9,10 @@ class CfgPatches {
         units[] = {};
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
-        requiredAddons[] = {"ark_main"};
+        requiredAddons[] = {
+            "ark_main",
+            "CUP_Creatures_People_LoadOrder"
+        };
         VERSION_CONFIG;
     };
 };
@@ -26,3 +29,5 @@ class Extended_PostInit_EventHandlers {
         serverInit = "call compileScript ['x\ark\addons\ark_ai_voices\server_postinit.sqf'];";
     };
 };
+
+#include "CfgVoice.hpp"
