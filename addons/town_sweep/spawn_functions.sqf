@@ -293,6 +293,10 @@ ts_spawn_fnc_objDestroyVeh = {
     };
 
     {
+        if (_vehicle lockedTurret _x) exitWith {
+            diag_log format  ["[ARK] (Town Sweep) - Locked turret in vehicle: %1", _vehicle];
+        };
+
         private _unit = [[0,0,0], _grp, _crewmanClassnames, _skillArray] call adm_common_fnc_placeMan;
         _unit assignAsTurret [_vehicle, _x];
         _unit moveInTurret [_vehicle, _x];
