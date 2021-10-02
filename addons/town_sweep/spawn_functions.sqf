@@ -273,9 +273,12 @@ ts_spawn_fnc_objDestroyVeh = {
 
     private ["_vehicle"];
     if (isNil "_nearRoad") then {
-        private _pos = [_position, 0, 100, 3, 0, 20, 0] call BIS_fnc_findSafePos;
+        private _pos = [_position, 0, 100, 5, 0, 20, 0] call BIS_fnc_findSafePos;
+        // BIS_fnc_findSafePos returns X and Y with success and  X Y Z on failure... fucking BI
+        if (count _pos isEqualTo 3) exitWith {};
         _vehicle = createVehicle [(selectRandom _armourArray), _pos, [], 0, "NONE"];
-        _vehicle setVectorDir (getPos _position vectorFromTo _vehicle);
+        _vehicle setDir (random 360);
+        _vehicle setVectorUp surfaceNormal position _vehicle;
     } else {
         _vehicle = createVehicle [(selectRandom _armourArray), (getPos _nearRoad), [], 0, "NONE"];
         private _dir = random 360;
