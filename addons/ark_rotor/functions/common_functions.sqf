@@ -168,7 +168,7 @@ ark_rotor_fnc_cleanUp = {
     private _crew = crew _vehicle;
 
     if ((_crew select {isPlayer _x}) isEqualTo []) then {
-        {_vehicle deleteVehicleCrew _x} forEach _crew;
+        deleteVehicleCrew _vehicle;
         {deleteVehicle _x} forEach [_vehicle,_logic];
         ["INFO","fnc_cleanUp","Cleaned up vehicle",_vehicle] call ark_rotor_fnc_log;
     } else {
