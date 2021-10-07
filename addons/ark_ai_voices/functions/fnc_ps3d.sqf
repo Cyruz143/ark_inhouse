@@ -1,7 +1,7 @@
 ["ark_ai_voices_ps3d", {
     params ["_unit","_snd"];
 
-    if ((AGLToASL positionCameraToWorld [0,0,0]) distance _unit > 150) exitWith {};
+    if ((positionCameraToWorld [0,0,0]) distance _unit > 150) exitWith {};
 
     playSound3D [_snd, _unit, (!isNull objectParent _unit), getPosASL _unit, 5, 1, 200, 0, true];
 
