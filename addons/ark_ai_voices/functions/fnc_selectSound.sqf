@@ -47,7 +47,6 @@ ark_ai_voices_fnc_selectSound = {
     private _soundPathArr = ark_ai_voices_namespace getVariable _speakerVoiceLine;
 
     if (isNil "_soundPathArr") then {
-        ["INFO", "fnc_selectSound", "Building cached array for", _speakerVoiceLine] call ark_ai_voices_fnc_log;
         private _dirPath = (getArray (configFile >> "CfgVoice" >> _speaker >> "directories")) #0;
         if (_dirPath isEqualTo "") exitWith {
             ["ERROR", "fnc_selectSound", "No directory path for sounds found for", _speaker] call ark_ai_voices_fnc_log;
