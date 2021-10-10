@@ -1,8 +1,7 @@
 ark_ai_voices_fnc_firing = {
     params ["_unit", "_weapon"];
 
-    if (isPlayer _unit || { !local _unit }) exitWith {};
-    if (_unit getVariable ["ark_ai_voices_var_isSpeaking", false]) exitWith {};
+    if (_unit getVariable ["ark_ai_voices_var_isSpeaking", false] || { isPlayer _unit } || { !local _unit } || { _unit getVariable ["ark_ai_voices_var_disableVoice", false] } ) exitWith {};
 
     _unit setVariable ["ark_ai_voices_var_isSpeaking", true];
 

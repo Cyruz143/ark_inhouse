@@ -5,7 +5,6 @@
 ark_ai_voices_fnc_selectSound = {
     params ["_unit","_sndType"];
 
-    if (_unit getVariable ["ark_ai_voices_var_disableVoice", false]) exitWith {};
     private _lastLine = _unit getVariable ["ark_ai_voices_var_lastLine", nil];
 
     private "_voiceLine";
@@ -19,6 +18,9 @@ ark_ai_voices_fnc_selectSound = {
             };
             case ("grenade"): {
                 _voiceLine = selectRandom ["ThrowingGrenadeE_1", "ThrowingGrenadeE_2", "ThrowingGrenadeE_3"];
+            };
+            case ("reloading"): {
+                _voiceLine = "ReloadingE";
             };
         };
     } else {
@@ -37,6 +39,9 @@ ark_ai_voices_fnc_selectSound = {
                 private _arr = ["ThrowingGrenadeE_1", "ThrowingGrenadeE_2", "ThrowingGrenadeE_3"];
                 _arr deleteAt (_arr find _lastLine);
                 _voiceLine = selectRandom _arr;
+            };
+            case ("reloading"): {
+                _voiceLine = "ReloadingE";
             };
         };
     };
@@ -60,7 +65,7 @@ ark_ai_voices_fnc_selectSound = {
 
         private _protocolArr = getArray (configFile >> (getText (configFile >> "CfgVoice" >> _speaker >> "protocol")) >> "Words" >> "Combat" >> _voiceLine);
 
-        // GM only has words for "Normal" and not "Combat"
+        // Some mods/DLCS don't have combat words, fallbakc to "Normal"
         if (_protocolArr isEqualTo []) then {
             _protocolArr = getArray (configFile >> (getText (configFile >> "CfgVoice" >> _speaker >> "protocol")) >> "Words" >> "Normal" >> _voiceLine);
         };
