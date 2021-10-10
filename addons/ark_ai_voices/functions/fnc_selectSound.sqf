@@ -59,6 +59,13 @@ ark_ai_voices_fnc_selectSound = {
         };
 
         private _protocolArr = getArray (configFile >> (getText (configFile >> "CfgVoice" >> _speaker >> "protocol")) >> "Words" >> "Combat" >> _voiceLine);
+
+        // GM only has words for "Normal" and not "Combat"
+        if (_protocolArr isEqualTo []) then {
+            _protocolArr = getArray (configFile >> (getText (configFile >> "CfgVoice" >> _speaker >> "protocol")) >> "Words" >> "Normal" >> _voiceLine);
+        };
+
+        // If it's still empty, unit has fucked config
         if (_protocolArr isEqualTo []) exitWith {
             ["ERROR", "fnc_selectSound", "No protocol path sound files available for", [_speaker, _voiceLine]] call ark_ai_voices_fnc_log;
             _unit setVariable ["ark_ai_voices_var_disableVoice", true];
