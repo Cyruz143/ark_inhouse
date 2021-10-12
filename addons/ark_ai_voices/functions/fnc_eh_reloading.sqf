@@ -1,4 +1,4 @@
-ark_ai_voices_fnc_reloading = {
+ark_ai_voices_fnc_eh_reloading = {
     params ["_unit"];
 
     if (_unit getVariable ["ark_ai_voices_var_isSpeaking", false] || { isPlayer _unit } || { !local _unit } || { _unit getVariable ["ark_ai_voices_var_disableVoice", false] } ) exitWith {};
