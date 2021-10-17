@@ -265,6 +265,7 @@ force force diwako_dui_main_squadRed = [1,0,0,1];
 force force diwako_dui_main_squadYellow = [1,1,0,1];
 
 // DUI - Squad Radar - Nametags
+force force diwako_dui_nametags_customRankStyle = "[[""PRIVATE"",""CORPORAL"",""SERGEANT"",""LIEUTENANT"",""CAPTAIN"",""MAJOR"",""COLONEL""],[""Pvt."",""Cpl."",""Sgt."",""Lt."",""Capt."",""Maj."",""Col.""]]";
 force force diwako_dui_nametags_deadColor = [0.2,0.2,0.2,1];
 force force diwako_dui_nametags_deadRenderDistance = 3.5;
 force force diwako_dui_nametags_drawRank = false;
@@ -274,6 +275,7 @@ force force diwako_dui_nametags_enableOcclusion = false;
 force force diwako_dui_nametags_groupColor = [1,1,1,1];
 force force diwako_dui_nametags_groupNameOtherGroupColor = [0.6,0.85,0.6,1];
 force force diwako_dui_nametags_nameOtherGroupColor = [0.2,1,0,1];
+force force diwako_dui_nametags_rankNameStyle = "default";
 force force diwako_dui_nametags_renderDistance = 15;
 force force diwako_dui_nametags_showUnconAsDead = true;
 force force diwako_dui_nametags_useLIS = true;
@@ -299,6 +301,7 @@ force force diwako_dui_radar_group_by_vehicle = true;
 force force diwako_dui_radar_icon_priority_setting = 1;
 force force diwako_dui_radar_icon_scale_crew = 2;
 force force diwako_dui_radar_namelist_hideWhenLeader = false;
+force force diwako_dui_radar_occlusion_fade_in_time = 1;
 force force diwako_dui_radar_occlusion_fade_time = 10;
 force force diwako_dui_radar_showSpeaking = false;
 force force diwako_dui_radar_showSpeaking_radioOnly = false;
