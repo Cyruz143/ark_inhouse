@@ -280,6 +280,8 @@ force force diwako_dui_nametags_useLIS = true;
 force force diwako_dui_nametags_useSideIsFriendly = true;
 
 // DUI - Squad Radar - Radar
+force force diwako_dui_compass_hide_alone_group = false;
+force force diwako_dui_compass_hide_blip_alone_group = false;
 diwako_dui_compass_style = ["\z\diwako_dui\addons\radar\UI\compass_styles\bi\compass_limited.paa","\z\diwako_dui\addons\radar\UI\compass_styles\bi\compass.paa"];
 force force diwako_dui_compassRange = 50;
 force force diwako_dui_compassRefreshrate = 0;
@@ -294,13 +296,16 @@ force force diwako_dui_radar_ace_finger = true;
 force force diwako_dui_radar_ace_medic = true;
 force force diwako_dui_radar_compassRangeCrew = 100;
 force force diwako_dui_radar_group_by_vehicle = true;
+force force diwako_dui_radar_icon_priority_setting = 1;
 force force diwako_dui_radar_icon_scale_crew = 2;
+force force diwako_dui_radar_namelist_hideWhenLeader = false;
 force force diwako_dui_radar_occlusion_fade_time = 10;
 force force diwako_dui_radar_showSpeaking = false;
 force force diwako_dui_radar_showSpeaking_radioOnly = false;
 force force diwako_dui_radar_showSpeaking_replaceIcon = false;
 force force diwako_dui_radar_sortType = "none";
 force force diwako_dui_radar_sqlFirst = false;
+force force diwako_dui_radar_syncGroup = true;
 force force diwako_dui_radar_vehicleCompassEnabled = true;
 
 // NIArms
