@@ -47,7 +47,13 @@ ark_ai_voices_fnc_selectSound = {
     };
 
     _unit setVariable ["ark_ai_voices_var_lastLine", _voiceLine];
+
+    // Halloween testing, some units have "NoVoice" set
     private _speaker = speaker _unit;
+    if (_speaker in ["", "NoVoice","ACE_NoVoice"]) exitWith {
+        _unit setVariable ["ark_ai_voices_var_disableVoice", true];
+    };
+
     private _speakerVoiceLine = _speaker + _voiceLine;
     private _soundPathArr = ark_ai_voices_namespace getVariable _speakerVoiceLine;
 
