@@ -50,7 +50,7 @@ ark_ai_voices_fnc_selectSound = {
 
     // Halloween testing, some units have "NoVoice" set
     private _speaker = speaker _unit;
-    if (_speaker in ["", "NoVoice","ACE_NoVoice"]) exitWith {
+    if (toLower _speaker in ["", "novoice","ace_novoice"]) exitWith {
         _unit setVariable ["ark_ai_voices_var_disableVoice", true];
     };
 
