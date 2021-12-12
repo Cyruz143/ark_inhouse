@@ -12,21 +12,16 @@ ark_chase_ai_fnc_init = {
 
     private _trigger = _syncdTrg #0;
 
-    private _unitTemplate = _logic getVariable ["Unit_Template", "Default"];
-    if (isNil "_unitTemplate" || { _unitTemplate isEqualTo "" }) exitWith {
-        ["ERROR","fnc_init","Blank unit template provided!"] call ark_chase_ai_fnc_log;
-    };
-
-    if (_unitTemplate isEqualTo "Default") then {
+    private _unitTemplate = _logic getVariable ["Unit_Template", ""];
+    if (_unitTemplate isEqualTo "") then {
         private _unitTemplate = adm_camp_defaultUnitTemplate;
     };
 
-    private _unitClassNames = _logic getVariable ["Unit_Classnames", "Default"];
-    if (isNil "_unitClassNames" || { _unitClassNames isEqualTo "" || { !((typeName _unitClassNames) isEqualTo "ARRAY") } }) exitWith {
-        ["ERROR","fnc_init","Improper classnames provided!"] call ark_chase_ai_fnc_log;
+    private _unitClassNames = _logic getVariable ["Unit_Classnames", []];
+    if (!((typeName _unitClassNames) isEqualTo "ARRAY")) exitWith {
+        ["ERROR","fnc_init","Improper classname formatting provided, must be an ARRAY!"] call ark_chase_ai_fnc_log;
     };
-
-    if (_unitClassNames isEqualTo "Default") then {
+    if (_unitClassNames isEqualTo []) then {
         private _unitClassNames = [_unitTemplate, "infantry"] call adm_common_fnc_getUnitTemplateArray;
     };
 
@@ -42,3 +37,8 @@ ark_chase_ai_fnc_init = {
     ark_chase_ai_var_unitPool = [];
     ark_chase_ai_var_spawning = false;
 };
+
+[{triggerActivated ark_chase_ai_var_triggerArea}, {
+    ark_chase_ai_var_spawning = true;
+    call ark_chase_ai_fnc_unitSpawner;
+}] call CBA_fnc_waitUntilAndExecute;

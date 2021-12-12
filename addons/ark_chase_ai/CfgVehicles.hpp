@@ -2,32 +2,30 @@ class CBA_Extended_EventHandlers_base;
 
 class CfgVehicles {
     class ARK_Module;
-    class ark_chase_ai_Base : ARK_Module {
-        scope = 1;
+    class ark_chase_ai_module: ARK_Module {
+        scope = 2;
+        displayName = "Chase AI - Module";
+        icon = "\x\ark\addons\ark_chase_ai\resources\chase.paa";
         function = "ark_chase_ai_module_preinit";
         isTriggerActivated = 1;
         isGlobal = 1;
-    };
-
-    class ark_chase_ai_Paradrop: ark_chase_ai_Base {
-        scope = 2;
-        displayName = "Chase AI";
-        icon = "\x\ark\addons\ark_rotor\resources\chase.paa";
+        isDisposable = 1;
+        is3DEN = 0;
         class ModuleDescription {
-            description = "Paradrops EI on the first waypoint";
+            description = "Spawns AI that hunt players";
         };
         class Arguments {
             class Unit_Template {
                 displayName = "Admiral template name";
-                description = "Default will use admiral camps template";
+                description = "Blank will use admiral camps template";
                 typeName = "STRING";
-                defaultValue = "Default";
+                defaultValue = "";
             };
             class Unit_Classnames {
                 displayName = "Override default classnames";
                 description = "Must be an ARRAY e.g. ['class1','class2']";
-                typeName = "STRING";
-                defaultValue = "Default";
+                typeName = "ARRAY";
+                defaultValue = {[]};
             };
             class Unit_Amount {
                 displayName = "Total unit amount";
