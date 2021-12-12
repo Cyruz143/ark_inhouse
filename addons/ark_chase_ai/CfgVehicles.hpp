@@ -25,7 +25,7 @@ class CfgVehicles {
                 displayName = "Override default classnames";
                 description = "Must be an ARRAY e.g. ['class1','class2']";
                 typeName = "ARRAY";
-                defaultValue = {[]};
+                defaultValue[] = {};
             };
             class Unit_Amount {
                 displayName = "Total unit amount";
