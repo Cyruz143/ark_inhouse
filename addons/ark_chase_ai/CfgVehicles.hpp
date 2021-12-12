@@ -16,37 +16,37 @@ class CfgVehicles {
         };
         class Arguments {
             class Unit_Template {
-                displayName = "Admiral template name";
-                description = "Blank will use admiral camps template";
+                displayName = "Template Override";
+                description = "Default will use admiral camps template";
                 typeName = "STRING";
-                defaultValue = "";
+                defaultValue = "ADMIRAL";
             };
             class Unit_Classnames {
-                displayName = "Override default classnames";
+                displayName = "Classnames Override";
                 description = "Must be an ARRAY e.g. ['class1','class2']";
-                typeName = "ARRAY";
-                defaultValue[] = {};
+                typeName = "STRING";
+                defaultValue = "[ADMIRAL]";
             };
             class Unit_Amount {
-                displayName = "Total unit amount";
+                displayName = "Total Amount of Units";
                 description = "Maxmimum number of chase units spawned";
                 typeName = "NUMBER";
                 defaultValue = 20;
             };
             class Max_Distance {
-                displayName = "Maxmimum spawn range";
+                displayName = "Max Spawn Range";
                 description = "Furthest away a unit can spawn";
                 typeName = "NUMBER";
                 defaultValue = 500;
             };
             class Min_Distance {
-                displayName = "Minimum spawn range";
+                displayName = "Min Spawn Range";
                 description = "Closest a unit can spawn";
                 typeName = "NUMBER";
                 defaultValue = 300;
             };
             class Spawn_Time {
-                displayName = "Unit spawn time";
+                displayName = "Unit Spawn Time";
                 description = "How long between unit spawns";
                 typeName = "NUMBER";
                 defaultValue = 5;

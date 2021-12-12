@@ -10,22 +10,28 @@ ark_chase_ai_fnc_init = {
         ["WARNING","fnc_init","Only sync one trigger to the module"] call ark_chase_ai_fnc_log;
     };
 
-    private _trigger = _syncdTrg #0;
-
-    private _unitTemplate = _logic getVariable ["Unit_Template", ""];
-    if (_unitTemplate isEqualTo "") then {
-        private _unitTemplate = adm_camp_defaultUnitTemplate;
+    private _unitTemplate = _logic getVariable ["Unit_Template", "ADMIRAL"];
+    if (_unitTemplate isEqualTo "") exitWith {
+        ["ERROR","fnc_init","Blank unit template provided!"] call ark_chase_ai_fnc_log;
+    };
+    if (_unitTemplate isEqualTo "ADMIRAL") then {
+        _unitTemplate = adm_camp_defaultUnitTemplate;
+        ["INFO","fnc_init","Using default unit template",_unitTemplate] call ark_chase_ai_fnc_log;
     };
 
-    private _unitClassNames = _logic getVariable ["Unit_Classnames", []];
-    if (!((typeName _unitClassNames) isEqualTo "ARRAY")) exitWith {
-        ["ERROR","fnc_init","Improper classname formatting provided, must be an ARRAY!"] call ark_chase_ai_fnc_log;
-    };
-    if (_unitClassNames isEqualTo []) then {
-        private _unitClassNames = [_unitTemplate, "infantry"] call adm_common_fnc_getUnitTemplateArray;
+    private _unitClassNames = _logic getVariable ["Unit_Classnames", "[ADMIRAL]"];
+    if (_unitClassNames isEqualTo "[ADMIRAL]") then {
+        _unitClassNames = [_unitTemplate, "infantry"] call adm_common_fnc_getUnitTemplateArray;
+        ["INFO","fnc_init","Using default unit classnames",_unitClassNames] call ark_chase_ai_fnc_log;
+    } else {
+        _unitClassNames = call compile (_unitClassNames);
+        if (!((typeName _unitClassNames) isEqualTo "ARRAY")) exitWith {
+            ["ERROR","fnc_init","Improper classname formatting provided, must be an ARRAY!",_unitClassNames] call ark_chase_ai_fnc_log;
+        };
+        ["INFO","fnc_init","Using custom unit classnames",_unitClassNames] call ark_chase_ai_fnc_log;
     };
 
-    ark_chase_ai_var_triggerArea = _trigger;
+    ark_chase_ai_var_triggerArea = _syncdTrg #0;
     ark_chase_ai_var_unitTemplate = _unitTemplate;
     ark_chase_ai_var_classNames = _unitClassNames;
     ark_chase_ai_var_maxAIUnits = _logic getVariable ["Unit_Amount", 20];
