@@ -41,13 +41,19 @@ class CfgVehicles {
             };
             class Min_Distance {
                 displayName = "Min Spawn Range";
-                description = "Closest a unit can spawn";
+                description = "Closest a unit can spawn (Use with caution!)";
                 typeName = "NUMBER";
                 defaultValue = 300;
             };
+            class Waypoint_Accuracy {
+                displayName = "Waypoint Accuracy";
+                description = "How close to the chosen target the AI will move in metres";
+                typeName = "NUMBER";
+                defaultValue = 50;
+            };
             class Spawn_Time {
                 displayName = "Unit Spawn Time";
-                description = "How long between unit spawns";
+                description = "How long between unit spawns (Minimum: 1!)";
                 typeName = "NUMBER";
                 defaultValue = 5;
             };
