@@ -10,3 +10,7 @@ ark_chase_ai_fnc_setVars = {
     ark_chase_ai_var_minDistance = 300;
     ark_chase_ai_var_spawning = false;
 };
+
+["mission.safetytimer.ended", {
+    call ark_bb_fnc_setVars;
+}] call hull3_event_fnc_addEventHandler;

@@ -1,6 +1,8 @@
 ark_chase_ai_fnc_findSpawnPos = {
     private _units = allPlayers select {alive _x && { _x inArea trgAO }};
-    if (_units isEqualTo []) exitWith {diag_log "ARK - GH - INFO - No players available alive or in AO - Exiting ark_chase_ai_fnc_findSpawnPos"};
+    if (_units isEqualTo []) exitWith {
+        ["INFO","fnc_findSpawnPos","No players available alive or in AO"] call ark_chase_ai_fnc_log;
+    };
 
     private _distance = ark_chase_ai_var_minDistance;
     private _validPositions = [];

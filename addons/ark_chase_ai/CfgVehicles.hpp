@@ -17,46 +17,41 @@ class CfgVehicles {
             description = "Paradrops EI on the first waypoint";
         };
         class Arguments {
-            class Fly_Height {
-                displayName = "Set fly in height";
-                description = "Set the height in meters the helo will try to fly at";
+            class Unit_Amount {
+                displayName = "Unit amount";
+                description = "Maxmimum number of chase units spawned";
                 typeName = "NUMBER";
-                defaultValue = 200;
+                defaultValue = 20;
             };
-            class Fly_Speed {
-                displayName = "Set aircraft speed";
-                description = "Set the speed the aircraft will maintain";
-                typeName = "STRING";
-                defaultValue = "NORMAL";
-                class Values {
-                    class limited_speed {name = "Slow";  value = "LIMITED";};
-                    class normal_speed {name = "Normal"; value = "NORMAL";};
-                    class full_speed {name = "Fast"; value = "FULL";};
-                };
-            };
-            class Crew_Percentage {
-                displayName = "Set amount of troops";
-                description = "Set the percentage of the vehicle filled with troops";
+            class Respawn_Time {
+                displayName = "Unit spawn time";
+                description = "How long between unit spawns";
                 typeName = "NUMBER";
-                defaultValue = 50;
-                class Values {
-                    class twenty_five {name = "25%"; value = 25;};
-                    class fifty {name = "50%"; value = 50;};
-                    class seventy_five {name = "75%"; value = 75;};
-                    class one_hundred {name = "100%"; value = 100;};
-                };
+                defaultValue = 5;
             };
-            class Vehicle_ClassName {
-                displayName = "Vehicle classname";
-                description = "If you want to specify the vehicle classname enter it here";
+            class Max_Distance {
+                displayName = "Maxmimum spawn range";
+                description = "Furthest away a unit can spawn";
+                typeName = "NUMBER";
+                defaultValue = 500;
+            };
+            class Min_Distance {
+                displayName = "Minimum spawn range";
+                description = "Closest a unit can spawn";
+                typeName = "NUMBER";
+                defaultValue = 300;
+            };
+            class Unit_Template {
+                displayName = "Admiral template name";
+                description = "Default will use admiral camps template";
                 typeName = "STRING";
                 defaultValue = "Default";
             };
-            class Routine_Function {
-                displayName = "Routine Function";
-                description = "The function called by this module. Do not change this unless you know what it does";
+            class Unit_Classnames {
+                displayName = "Override default classnames";
+                description = "Must be an ARRAY e.g. ['class1','class2']";
                 typeName = "STRING";
-                defaultValue = "ark_chase_ai_fnc_paradrop";
+                defaultValue = "Default";
             };
         };
     };
