@@ -24,6 +24,7 @@ ark_chase_ai_fnc_setVars = {
     ark_chase_ai_var_maxAIUnits = _logic getVariable ["Unit_Amount", 20];
     ark_chase_ai_var_maxDistance = _logic getVariable ["Max_Distance", 500];
     ark_chase_ai_var_minDistance = _logic getVariable ["Min_Distance", 300];
+    ark_chase_ai_var_spawnTime = _logic getVariable ["Spawn_Time", 5];
     ark_chase_ai_var_side = [ark_chase_ai_var_unitTemplate] call adm_common_fnc_getUnitTemplateSide;
     ark_chase_ai_var_skillArray = ["Camp"] call adm_common_fnc_getZoneTemplateSkillValues;
     ark_chase_ai_var_unitPool = [];

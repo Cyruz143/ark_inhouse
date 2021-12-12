@@ -29,6 +29,12 @@ class CfgVehicles {
                 typeName = "STRING";
                 defaultValue = "Default";
             };
+            class Unit_Amount {
+                displayName = "Total unit amount";
+                description = "Maxmimum number of chase units spawned";
+                typeName = "NUMBER";
+                defaultValue = 20;
+            };
             class Max_Distance {
                 displayName = "Maxmimum spawn range";
                 description = "Furthest away a unit can spawn";
@@ -41,13 +47,7 @@ class CfgVehicles {
                 typeName = "NUMBER";
                 defaultValue = 300;
             };
-            class Unit_Amount {
-                displayName = "Total unit amount";
-                description = "Maxmimum number of chase units spawned";
-                typeName = "NUMBER";
-                defaultValue = 20;
-            };
-            class Respawn_Time {
+            class Spawn_Time {
                 displayName = "Unit spawn time";
                 description = "How long between unit spawns";
                 typeName = "NUMBER";

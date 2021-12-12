@@ -17,6 +17,6 @@ ark_chase_ai_fnc_unitSpawner = {
                 [_unit,_nearEnemy] call ark_chase_ai_fnc_doMove;
             };
         },
-        1
+        ark_chase_ai_var_spawnTime
     ] call CBA_fnc_addPerFrameHandler;
 };
