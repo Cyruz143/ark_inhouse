@@ -7,7 +7,7 @@ ark_chase_ai_module_preinit = {
         };
 
         _logic setVariable ["ark_chase_ai_var_moduleRan", _activated];
-        [_logic] call ark_chase_ai_fnc_checkTrigger;
+        [_logic] call ark_chase_ai_fnc_setVars;
     } else {
         ["ERROR","module_preinit","Module not activated - Disabling"] call ark_chase_ai_fnc_log;
     };

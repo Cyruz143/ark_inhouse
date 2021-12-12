@@ -17,17 +17,17 @@ class CfgVehicles {
             description = "Paradrops EI on the first waypoint";
         };
         class Arguments {
-            class Unit_Amount {
-                displayName = "Unit amount";
-                description = "Maxmimum number of chase units spawned";
-                typeName = "NUMBER";
-                defaultValue = 20;
+            class Unit_Template {
+                displayName = "Admiral template name";
+                description = "Default will use admiral camps template";
+                typeName = "STRING";
+                defaultValue = "Default";
             };
-            class Respawn_Time {
-                displayName = "Unit spawn time";
-                description = "How long between unit spawns";
-                typeName = "NUMBER";
-                defaultValue = 5;
+            class Unit_Classnames {
+                displayName = "Override default classnames";
+                description = "Must be an ARRAY e.g. ['class1','class2']";
+                typeName = "STRING";
+                defaultValue = "Default";
             };
             class Max_Distance {
                 displayName = "Maxmimum spawn range";
@@ -41,17 +41,17 @@ class CfgVehicles {
                 typeName = "NUMBER";
                 defaultValue = 300;
             };
-            class Unit_Template {
-                displayName = "Admiral template name";
-                description = "Default will use admiral camps template";
-                typeName = "STRING";
-                defaultValue = "Default";
+            class Unit_Amount {
+                displayName = "Total unit amount";
+                description = "Maxmimum number of chase units spawned";
+                typeName = "NUMBER";
+                defaultValue = 20;
             };
-            class Unit_Classnames {
-                displayName = "Override default classnames";
-                description = "Must be an ARRAY e.g. ['class1','class2']";
-                typeName = "STRING";
-                defaultValue = "Default";
+            class Respawn_Time {
+                displayName = "Unit spawn time";
+                description = "How long between unit spawns";
+                typeName = "NUMBER";
+                defaultValue = 5;
             };
         };
     };

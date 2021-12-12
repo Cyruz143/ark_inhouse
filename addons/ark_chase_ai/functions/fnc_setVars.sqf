@@ -1,16 +1,31 @@
 ark_chase_ai_fnc_setVars = {
-    ark_chase_ai_var_unitTemplate = adm_camp_defaultUnitTemplate;
+    params ["_logic"];
+
+    private _unitTemplate = _logic getVariable ["Unit_Template", "Default"];
+    if (isNil "_unitTemplate" || { _unitTemplate isEqualTo "" }) exitWith {
+        ["ERROR","fnc_setVars","Blank unit template provided!"] call ark_chase_ai_fnc_log;
+    };
+
+    if (_unitTemplate isEqualTo "Default") then {
+        private _unitTemplate = adm_camp_defaultUnitTemplate;
+    };
+
+    private _unitClassNames = _logic getVariable ["Unit_Classnames", "Default"];
+    if (isNil "_unitClassNames" || { _unitClassNames isEqualTo "" || { !((typeName _unitClassNames) isEqualTo "ARRAY") } }) exitWith {
+        ["ERROR","fnc_setVars","Improper classnames provided!"] call ark_chase_ai_fnc_log;
+    };
+
+    if (_unitClassNames isEqualTo "Default") then {
+        private _unitClassNames = [_unitTemplate, "infantry"] call adm_common_fnc_getUnitTemplateArray;
+    };
+
+    ark_chase_ai_var_unitTemplate = _unitTemplate;
+    ark_chase_ai_var_classNames = _unitClassNames;
+    ark_chase_ai_var_maxAIUnits = _logic getVariable ["Unit_Amount", 20];
+    ark_chase_ai_var_maxDistance = _logic getVariable ["Max_Distance", 500];
+    ark_chase_ai_var_minDistance = _logic getVariable ["Min_Distance", 300];
     ark_chase_ai_var_side = [ark_chase_ai_var_unitTemplate] call adm_common_fnc_getUnitTemplateSide;
     ark_chase_ai_var_skillArray = ["Camp"] call adm_common_fnc_getZoneTemplateSkillValues;
-    ark_chase_ai_var_classNames = ["CUP_I_TK_GUE_Soldier_AR","CUP_I_TK_GUE_Soldier","CUP_I_TK_GUE_Soldier_AK_47S","CUP_I_TK_GUE_Soldier_M16A2","CUP_I_TK_GUE_Mechanic","CUP_I_TK_GUE_Soldier_MG","CUP_I_TK_GUE_Soldier_TL","CUP_I_TK_GUE_Commander","CUP_I_TK_GUE_Soldier_AT"];
     ark_chase_ai_var_unitPool = [];
-    ark_chase_ai_var_maxAIUnits = (round ((count allPlayers) * 1.5)) min 50;
-    ark_chase_ai_var_AIincrease = round (ark_chase_ai_var_maxAIUnits / 4);
-    ark_chase_ai_var_maxDistance = 500;
-    ark_chase_ai_var_minDistance = 300;
     ark_chase_ai_var_spawning = false;
 };
-
-["mission.safetytimer.ended", {
-    call ark_bb_fnc_setVars;
-}] call hull3_event_fnc_addEventHandler;
