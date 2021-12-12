@@ -1,5 +1,9 @@
 ark_chase_ai_fnc_findSpawnPos = {
-    private _units = allPlayers select {alive _x && { _x inArea ark_chase_ai_var_triggerArea }};
+    private _units = allPlayers select {alive _x &&
+        { _x inArea ark_chase_ai_var_triggerArea } &&
+        { !(objectParent _x isKindOf "Air") }
+    };
+
     if (_units isEqualTo []) exitWith {
         ["INFO","fnc_findSpawnPos","No players available alive or in AO"] call ark_chase_ai_fnc_log;
     };

@@ -3,7 +3,7 @@ ark_chase_ai_fnc_nearEnemies = {
 
     private _selectedEnemy = _unit findNearestEnemy _unit;
 
-    if (_selectedEnemy isEqualTo objNull) then {
+    if (_selectedEnemy isEqualTo objNull || { objectParent _selectedEnemy isKindOf "Air" }) then {
         private _nearEnemies = _unit nearEntities ["Man", ark_chase_ai_var_maxDistance] select {isPlayer _x  && {alive _x}};
 
         if (_nearEnemies isEqualTo []) then {
