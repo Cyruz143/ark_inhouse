@@ -18,7 +18,7 @@ ark_chase_ai_fnc_doMove = {
             };
 
             private _targetPos = _target getPos [ark_chase_ai_var_wpAccuracy, random 360];
-            if (_unit distance2D _targetPos < ark_chase_ai_var_maxDistance) then {
+            if (_unit distance2D _targetPos < (ark_chase_ai_var_maxDistance + 50)) then {
                 _unit setDestination [_targetPos, "LEADER PLANNED", true];
                 _unit doMove _targetPos;
             } else {
