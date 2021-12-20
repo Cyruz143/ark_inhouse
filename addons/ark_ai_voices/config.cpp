@@ -11,6 +11,7 @@ class CfgPatches {
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {
             "ark_main",
+            "ark_admin_tools",
             "CUP_Creatures_People_LoadOrder"
         };
         VERSION_CONFIG;
