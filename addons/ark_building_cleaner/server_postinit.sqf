@@ -21,6 +21,6 @@ ark_building_cleaner_fnc_doClean = {
             };
         } forEach _buildingEntities;
 
-        [COMPONENT_BEAUTIFIED,"INFO","fnc_doClean","Killed AI and removed objects from a ruin"] call ark_admin_tools_fnc_log;
+        ["Building Cleaner","INFO","fnc_doClean","Killed AI and removed objects from a ruin"] call ark_admin_tools_fnc_log;
     };
 };

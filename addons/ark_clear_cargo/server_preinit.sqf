@@ -8,14 +8,10 @@ ark_clear_cargo_fnc_doClearVehicle = {
 };
 
 ark_clear_cargo_fnc_clearVehicle = {
-    params ["_logic","_units","_activated"];
-
-    if !(_activated) exitWith {
-        [COMPONENT_BEAUTIFIED,"ERROR","fnc_clearVehicle","Module not activated",_logic] call ark_admin_tools_fnc_log;
-    };
+    params ["_logic","_units"];
 
     if (_units isEqualTo []) exitWith {
-        [COMPONENT_BEAUTIFIED,"ERROR","fnc_clearVehicle","Module not syncd to any vehicle",_logic] call ark_admin_tools_fnc_log;
+        ["Clear Cargo","ERROR","fnc_clearVehicle","Module not syncd to any vehicle",_logic] call ark_admin_tools_fnc_log;
     };
 
     {

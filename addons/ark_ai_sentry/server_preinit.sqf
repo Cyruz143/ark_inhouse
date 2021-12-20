@@ -35,14 +35,10 @@ ark_ai_sentry_fnc_make_sentry = {
 };
 
 ark_ai_sentry_fnc_makeSentry = {
-    params ["_logic","_units","_activated"];
-
-    if !(_activated) exitWith {
-        [COMPONENT_BEAUTIFIED, "ERROR", "fnc_makeSentry", "Logic not activated", _logic] call ark_admin_tools_fnc_log;
-    };
+    params ["_logic","_units"];
 
     if (_units isEqualTo []) exitWith {
-        [COMPONENT_BEAUTIFIED, "ERROR", "fnc_makeSentry"," Module not syncd to any units", _logic] call ark_admin_tools_fnc_log;
+        ["AI Sentry", "ERROR", "fnc_makeSentry"," Module not syncd to any units", _logic] call ark_admin_tools_fnc_log;
     };
 
     private _enabledNightvision = _logic getVariable ["Enabled_Nightvision", true];

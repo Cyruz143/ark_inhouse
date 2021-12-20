@@ -5,7 +5,7 @@ class CfgPatches {
         requiredVersion = 2.00;
         requiredAddons[] = {
             "ark_main",
-            "ark_admin_tools"
+            "ark_admin_tools",
             "Hull3",
             "Admiral",
             "ark_rotor"

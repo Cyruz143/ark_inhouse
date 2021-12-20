@@ -52,7 +52,7 @@ ark_rotor_fnc_dropBombs = {
             _args params ["_vehicle","_pilot"];
 
             if (_vehicle getVariable ["ark_rotor_var_bombAmount", 0] < 1 || {!alive _pilot} || {!alive _vehicle}) exitWith {
-                [COMPONENT_BEAUTIFIED, "INFO","fnc_dropBombs","All bombs dropped"] call ark_admin_tools_fnc_log;
+                ["Rotor", "INFO","fnc_dropBombs","All bombs dropped"] call ark_admin_tools_fnc_log;
                 _vehicle forceSpeed -1;
                 (group _pilot) setCurrentWaypoint [(group _pilot), 3];
                  _vehicle setVariable ["ark_rotor_var_bombAmount", nil];

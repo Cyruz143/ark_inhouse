@@ -3,11 +3,11 @@ ark_rotor_fnc_checkTrigger = {
 
     private _syncdTrg = synchronizedObjects _logic;
     if (_syncdTrg isEqualTo []) exitWith {
-        [COMPONENT_BEAUTIFIED, "ERROR","fnc_checkTrigger","Trigger not syncd to the module"] call ark_admin_tools_fnc_log;
+        ["Rotor", "ERROR","fnc_checkTrigger","Trigger not syncd to the module"] call ark_admin_tools_fnc_log;
     };
 
     if (count _syncdTrg > 1) then {
-        [COMPONENT_BEAUTIFIED, "WARNING","fnc_checkTrigger","Only sync one trigger to the module"] call ark_admin_tools_fnc_log;
+        ["Rotor", "WARNING","fnc_checkTrigger","Only sync one trigger to the module"] call ark_admin_tools_fnc_log;
     };
 
     private _trigger = _syncdTrg #0;
@@ -20,36 +20,36 @@ ark_rotor_fnc_checkTrigger = {
     } forEach synchronizedObjects _trigger;
 
     if (count _syncUnits > 1) then {
-       [COMPONENT_BEAUTIFIED, "WARNING","fnc_checkTrigger","Only sync one VR entity to the trigger"] call ark_admin_tools_fnc_log;
+       ["Rotor", "WARNING","fnc_checkTrigger","Only sync one VR entity to the trigger"] call ark_admin_tools_fnc_log;
     };
 
     private _vrUnit = _syncUnits #0;
 
     if (isNil "_vrUnit") exitWith {
-        [COMPONENT_BEAUTIFIED, "ERROR","fnc_checkTrigger","No VR entity syncd with trigger",_trigger] call ark_admin_tools_fnc_log;
+        ["Rotor", "ERROR","fnc_checkTrigger","No VR entity syncd with trigger",_trigger] call ark_admin_tools_fnc_log;
     };
 
     private _waypoints = waypoints (group _vrUnit);
     if (count _waypoints < 3) exitWith {
-        [COMPONENT_BEAUTIFIED, "ERROR","fnc_checkTrigger","VR entity needs minimum 2 waypoints",_vrUnit] call ark_admin_tools_fnc_log;
+        ["Rotor", "ERROR","fnc_checkTrigger","VR entity needs minimum 2 waypoints",_vrUnit] call ark_admin_tools_fnc_log;
     };
 
     deleteVehicle _vrUnit;
-    [COMPONENT_BEAUTIFIED, "INFO","fnc_checkTrigger","VR entity deleted",_vrUnit] call ark_admin_tools_fnc_log;
+    ["Rotor", "INFO","fnc_checkTrigger","VR entity deleted",_vrUnit] call ark_admin_tools_fnc_log;
     private _unitTemplate = adm_camp_defaultUnitTemplate;
     private _vehicleClassname = _logic getVariable ["Vehicle_ClassName", "Default"];
 
     if (_vehicleClassname isEqualTo "Default") then {
         private _heloArray = [_unitTemplate, "th"] call adm_common_fnc_getUnitTemplateArray;
         if (isNil "_heloArray" || { _heloArray isEqualTo [] }) exitWith {
-            [COMPONENT_BEAUTIFIED, "ERROR","fnc_checkTrigger","No helo defined in Admiral template"] call ark_admin_tools_fnc_log;
+            ["Rotor", "ERROR","fnc_checkTrigger","No helo defined in Admiral template"] call ark_admin_tools_fnc_log;
         };
         _vehicleClassname = selectRandom _heloArray;
     };
 
     private _routineFunction = _logic getVariable ["Routine_Function", {ark_rotor_fnc_paradrop}];
 
-    [COMPONENT_BEAUTIFIED, "INFO","fnc_checkTrigger","Compiled Rotor routine",[_logic, _trigger, _vehicleClassname, _unitTemplate, _waypoints, _routineFunction]] call ark_admin_tools_fnc_log;
+    ["Rotor", "INFO","fnc_checkTrigger","Compiled Rotor routine",[_logic, _trigger, _vehicleClassname, _unitTemplate, _waypoints, _routineFunction]] call ark_admin_tools_fnc_log;
     [_logic, _trigger, _vehicleClassname, _unitTemplate, _waypoints] call (call compile _routineFunction);
 };
 
@@ -57,7 +57,7 @@ ark_rotor_fnc_createVehicle = {
     params ["_vehicleClassname", "_trigger", "_logic"];
 
     if (isNil "_trigger") exitWith {
-        [COMPONENT_BEAUTIFIED, "ERROR","fnc_createVehicle","No trigger was provided to try and spawn the vehicle with classname",_vehicleClassname] call ark_admin_tools_fnc_log;
+        ["Rotor", "ERROR","fnc_createVehicle","No trigger was provided to try and spawn the vehicle with classname",_vehicleClassname] call ark_admin_tools_fnc_log;
     };
 
     private _flyHeight = _logic getVariable ["Fly_Height", 200];
@@ -151,7 +151,7 @@ ark_rotor_fnc_taskAttack = {
     } forEach ((playableUnits + switchableUnits) select {isPlayer _x && {!(_x isKindOf "HeadlessClient_F")}});
 
     if (_nearEnemies isEqualTo []) exitWith {
-        [COMPONENT_BEAUTIFIED, "INFO","fnc_taskAttack","No players to attack"] call ark_admin_tools_fnc_log;
+        ["Rotor", "INFO","fnc_taskAttack","No players to attack"] call ark_admin_tools_fnc_log;
         {deleteVehicle _x} forEach units _grp;
     };
 
@@ -159,7 +159,7 @@ ark_rotor_fnc_taskAttack = {
     private _target = _nearEnemies #0;
 
     [_grp, getpos _target, 100, true] call CBA_fnc_taskAttack;
-    [COMPONENT_BEAUTIFIED, "INFO","fnc_taskAttack","Units attacking player",_target] call ark_admin_tools_fnc_log;
+    ["Rotor", "INFO","fnc_taskAttack","Units attacking player",_target] call ark_admin_tools_fnc_log;
 };
 
 ark_rotor_fnc_cleanUp = {
@@ -170,9 +170,9 @@ ark_rotor_fnc_cleanUp = {
     if ((_crew select {isPlayer _x}) isEqualTo []) then {
         deleteVehicleCrew _vehicle;
         {deleteVehicle _x} forEach [_vehicle,_logic];
-        [COMPONENT_BEAUTIFIED, "INFO","fnc_cleanUp","Cleaned up vehicle",_vehicle] call ark_admin_tools_fnc_log;
+        ["Rotor", "INFO","fnc_cleanUp","Cleaned up vehicle",_vehicle] call ark_admin_tools_fnc_log;
     } else {
         deleteVehicle _logic;
-        [COMPONENT_BEAUTIFIED, "INFO","fnc_cleanUp","Not removing vehicle as player crew detected"] call ark_admin_tools_fnc_log;
+        ["Rotor", "INFO","fnc_cleanUp","Not removing vehicle as player crew detected"] call ark_admin_tools_fnc_log;
     };
 };
