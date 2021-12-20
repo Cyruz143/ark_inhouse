@@ -6,7 +6,7 @@ ark_admin_tools_fnc_callReinforcements = {
     private _skillArray = ["Vehicles"] call adm_common_fnc_getZoneTemplateSkillValues;
     private _crewClasses = [_unitTemplate, "crewmen"] call adm_common_fnc_getUnitTemplateArray;
     private _vehArr = [_unitTemplate, _type] call adm_common_fnc_getUnitTemplateArray;
-    private _pos = [_player, 850, 1000, 3, 0, 20, 0] call BIS_fnc_findSafePos;
+    private _pos = _unit call ark_admin_tools_fnc_findPos;
     private _spawnType = "NONE";
 
     if (_type isEqualTo "ah") then {
@@ -20,6 +20,13 @@ ark_admin_tools_fnc_callReinforcements = {
     };
 
     private _vehicle = createVehicle [(selectRandom _vehArr), _pos, [], 0, _spawnType];
+    private _roadObj = roadAt _pos;
+
+    if (_roadObj isNotEqualTo objNull) then {
+        private _roadInfo = getRoadInfo _roadObj;
+        _vehicle setDir ((_roadInfo #6) getDir (_roadInfo #7));
+    };
+
     private _grp = createGroup _side;
     _grp deleteGroupWhenEmpty true;
 
@@ -35,5 +42,23 @@ ark_admin_tools_fnc_callReinforcements = {
 
     _vehicle allowCrewInImmobile true;
     _vehicle setUnloadInCombat [false, false];
-    [_grp, position _player, 250, 6, "SAD", "AWARE", "RED", "FULL"] call CBA_fnc_taskPatrol;
+
+    [_grp, position _unit, 250, 6, "SAD", "AWARE", "RED", "FULL"] call CBA_fnc_taskPatrol;
+};
+
+ark_admin_tools_fnc_findPos = {
+    params ["_unit"];
+
+    private _pos = [0,0,0];
+    private _roadsMax = _unit nearRoads 1000;
+    private _roadsMin = _unit nearRoads 800;
+    private _roads = _roadsMax - _roadsMin;
+
+    if (_roads isEqualTo []) then {
+        _pos = [_unit, 850, 1000, 3, 0, 20, 0] call BIS_fnc_findSafePos;
+    } else {
+        _pos = getPosATL (selectRandom _roads);
+    };
+
+    _pos //return
 };
