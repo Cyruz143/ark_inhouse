@@ -44,7 +44,7 @@ ark_rotor_fnc_jumpController = {
             private _crewArr = crew _vehicle - [driver _vehicle];
 
             if (isNil "_crewArr" || { _crewArr isEqualTo [] }) exitWith {
-                ["Rotor", "INFO","fnc_jumpController","All cargo ejected"] call ark_admin_tools_fnc_log;
+                [COMPONENT_BEAUTIFIED, "INFO","fnc_jumpController","All cargo ejected"] call ark_admin_tools_fnc_log;
                 _id call CBA_fnc_removePerFrameHandler;
             };
 

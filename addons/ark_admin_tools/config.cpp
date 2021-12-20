@@ -19,10 +19,15 @@ class CfgPatches {
     };
 };
 
+class Extended_PreInit_EventHandlers {
+    class ADDON {
+        serverInit = "call compileScript ['x\ark\addons\ark_admin_tools\server_preinit.sqf'];";
+    };
+};
+
 class Extended_PostInit_EventHandlers {
     class ADDON {
         clientInit = "call compileScript ['x\ark\addons\ark_admin_tools\client_postinit.sqf'];";
-        serverInit = "call compileScript ['x\ark\addons\ark_admin_tools\server_postinit.sqf'];";
     };
 };
 
