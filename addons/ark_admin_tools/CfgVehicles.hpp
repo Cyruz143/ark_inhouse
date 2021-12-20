@@ -84,7 +84,7 @@ class CfgVehicles {
                     class Call_Attack_Helo {
                         displayName = "Call Attack Helo";
                         condition = "call ark_main_fnc_isAdmiralEnabled && { !(call ark_main_fnc_isTownSweep) }";
-                        statement = "[player] remoteExecCall ['ark_admin_tools_fnc_callAttackHelo',2]";
+                        statement = "[player,'ah'] remoteExecCall ['ark_admin_tools_fnc_callReinforcements',2]";
                         icon = "\A3\ui_f\data\map\vehicleicons\iconHelicopter_ca.paa";
                         exceptions[] = {"isNotInside", "isNotSitting", "isNotOnLadder", "isNotRefueling"};
                     };
@@ -92,7 +92,7 @@ class CfgVehicles {
                     class Call_Armour {
                         displayName = "Call Armour";
                         condition = "call ark_main_fnc_isAdmiralEnabled && { !(call ark_main_fnc_isTownSweep) }";
-                        statement = "[player] remoteExecCall ['ark_admin_tools_fnc_callArmour',2]";
+                        statement = "[player,'armour'] remoteExecCall ['ark_admin_tools_fnc_callReinforcements',2]";
                         icon = "\A3\ui_f\data\map\vehicleicons\iconTank_ca.paa";
                         exceptions[] = {"isNotInside", "isNotSitting", "isNotOnLadder", "isNotRefueling"};
                     };
@@ -100,7 +100,7 @@ class CfgVehicles {
                     class Call_Technical {
                         displayName = "Call Technical";
                         condition = "call ark_main_fnc_isAdmiralEnabled && { !(call ark_main_fnc_isTownSweep) }";
-                        statement = "[player] remoteExecCall ['ark_admin_tools_fnc_callTechnical',2]";
+                        statement = "[player,'technicals'] remoteExecCall ['ark_admin_tools_fnc_callReinforcements',2]";
                         icon = "\A3\ui_f\data\map\vehicleicons\iconAPC_ca.paa";
                         exceptions[] = {"isNotInside", "isNotSitting", "isNotOnLadder", "isNotRefueling"};
                     };
