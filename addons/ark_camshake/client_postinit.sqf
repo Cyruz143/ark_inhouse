@@ -1,5 +1,5 @@
 enableCamShake true;
-{[_x, "Killed", {call ark_camshake_fnc_explosionShake}] call CBA_fnc_addClassEventHandler} forEach ["Car","Tank"];
+{[_x, "Killed", {call ark_camshake_fnc_explosionShake}] call CBA_fnc_addClassEventHandler} forEach ["Air","Car","Tank"];
 
 ark_camshake_fnc_explosionShake = {
     params ["_unit"];

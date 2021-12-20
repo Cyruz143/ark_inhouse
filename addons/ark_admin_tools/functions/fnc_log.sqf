@@ -1,3 +1,5 @@
+// [COMPONENT_BEAUTIFIED,"LEVEL","fnc_myFnc","Message",_args] call ark_admin_tools_fnc_log
+
 ark_admin_tools_fnc_log = {
     params ["_module","_level","_fnc","_msg","_args"];
 

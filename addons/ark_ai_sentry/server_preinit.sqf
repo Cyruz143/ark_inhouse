@@ -1,10 +1,6 @@
 ark_ai_sentry_fnc_make_sentry = {
     params ["_unit", "_enabledNightvision"];
 
-    if (isNil "_unit") exitWith {
-        diag_log "[ARK] (AI Sentry) - Not synced to any units";
-    };
-
     private _grp = group _unit;
     _grp enableAttack false;
     _grp enableDynamicSimulation true;
@@ -38,15 +34,15 @@ ark_ai_sentry_fnc_make_sentry = {
     };
 };
 
-ark_ai_sentry_module_make_sentry = {
+ark_ai_sentry_fnc_makeSentry = {
     params ["_logic","_units","_activated"];
 
     if !(_activated) exitWith {
-        diag_log "[ARK] (AI Sentry) - Logic not activated";
+        [COMPONENT_BEAUTIFIED, "ERROR", "fnc_makeSentry", "Logic not activated", _logic] call ark_admin_tools_fnc_log;
     };
 
     if (_units isEqualTo []) exitWith {
-        diag_log "[ARK] (AI Sentry) - Not synced to any units";
+        [COMPONENT_BEAUTIFIED, "ERROR", "fnc_makeSentry"," Module not syncd to any units", _logic] call ark_admin_tools_fnc_log;
     };
 
     private _enabledNightvision = _logic getVariable ["Enabled_Nightvision", true];

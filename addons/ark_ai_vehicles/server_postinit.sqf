@@ -16,7 +16,7 @@ ark_ai_vehicles_fnc_canRepair = {
     params ["_vehicle"];
 
     if (_vehicle getVariable ["ark_ai_vehicles_gunner_dead", false]) exitWith {
-        diag_log "[ARK] (AI Vehicles) - Aborting repair due to gunner death";
+        [COMPONENT_BEAUTIFIED,"INFO","fnc_canRepair","Aborting repair due to gunner death"] call ark_admin_tools_fnc_log;
     };
 
     _vehicle setVariable ["ark_ai_vehicles_awaiting_repair", true];
@@ -113,7 +113,7 @@ ark_ai_vehicles_fnc_replaceGunner = {
     private _allTurrets = allTurrets [_vehicle, false];
 
     if (isNil "_allTurrets" || { _allTurrets isEqualTo [] }) exitWith {
-        diag_log format ["[ARK] (AI Vehicles) - Vehicle: %1 has no turrets",typeOf _vehicle];
+        [COMPONENT_BEAUTIFIED,"ERROR","fnc_replaceGunner","Vehicle has no turrets", typeOf _vehicle] call ark_admin_tools_fnc_log;
     };
 
     _vehicle setVariable ["ark_ai_vehicles_gunner_dead", true];

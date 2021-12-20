@@ -16,10 +16,10 @@ ark_ace_medical_fnc_vehKilled = {
 
     if ((_crew select {isPlayer _x}) isEqualTo []) then {
         {_x setDamage 1} forEach _crew;
-        diag_log format ["[ARK] (ACE Medical) - Killed AI %1 inside a dead vehicle: %2",_crew,_veh];
+        [COMPONENT_BEAUTIFIED,"INFO","fnc_vehKilled"," Killed AI in dead vehicle",_crew, _veh] call ark_admin_tools_fnc_log;
     } else {
         {[_x] call ace_common_fnc_unloadPerson} forEach _crew;
-        diag_log format ["[ARK] (ACE Medical) - Ejected players %1 from a dead vehicle: %2",_crew,_veh];
+        [COMPONENT_BEAUTIFIED,"INFO","fnc_vehKilled"," Ejected players from dead vehicle",_crew, _veh] call ark_admin_tools_fnc_log;
     };
 };
 

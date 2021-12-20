@@ -3,10 +3,10 @@
 
     if (!alive _target) exitWith {
         if (group _target isEqualTo grpNull) then {
-            diag_log "[ARK] (ACE Medical) - Unit had no group";
+            [COMPONENT_BEAUTIFIED,"INFO","ace_treatmentSucceded"," Unit had no group",_target] call ark_admin_tools_fnc_log;
         } else {
             [_target] joinSilent grpNull;
-            diag_log format ["[ARK] (ACE Medical) - Removed unit: %1 from group: %2",_target, group _target];
+            [COMPONENT_BEAUTIFIED,"INFO","ace_treatmentSucceded"," Removed unit from group",_target, group _target] call ark_admin_tools_fnc_log;
         };
     };
 
