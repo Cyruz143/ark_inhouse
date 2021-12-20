@@ -11,6 +11,7 @@ class CfgPatches {
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {
             "ark_main",
+            "ark_admin_tools",
             "ark_clear_cargo",
             "ace_common",
             "Hull3"

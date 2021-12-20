@@ -5,10 +5,10 @@ class CfgPatches {
         requiredVersion = 2.00;
         requiredAddons[] = {
             "ark_main",
+            "ark_admin_tools"
             "Hull3",
             "Admiral",
-            "ark_rotor",
-            "ark_admin_tools"
+            "ark_rotor"
         };
         author = "ARK";
         authorUrl = "https://github.com/Cyruz143/ark_inhouse";

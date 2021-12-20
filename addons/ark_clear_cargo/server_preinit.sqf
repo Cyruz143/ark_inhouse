@@ -11,7 +11,6 @@ ark_clear_cargo_fnc_clearVehicle = {
     params ["_logic","_units","_activated"];
 
     if !(_activated) exitWith {
-        diag_log "[ARK] (Clear Cargo) - Module not activated";
         [COMPONENT_BEAUTIFIED,"ERROR","fnc_clearVehicle","Module not activated",_logic] call ark_admin_tools_fnc_log;
     };
 

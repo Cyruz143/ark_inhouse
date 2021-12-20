@@ -1,4 +1,5 @@
 ark_race_fnc_clientInit = {
+    [COMPONENT_BEAUTIFIED,"INFO","fnc_clientInit","Race mission detected"] call ark_admin_tools_fnc_log;
     //Disable damage for vehicles and units
     player addEventHandler ["GetInMan", {call ark_race_fnc_noDamage}];
     player allowDamage false;

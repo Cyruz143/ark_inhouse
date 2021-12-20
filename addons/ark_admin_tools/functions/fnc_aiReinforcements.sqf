@@ -8,7 +8,7 @@ ark_admin_tools_fnc_callAttackHelo = {
     private _heloArray = [_unitTemplate, "ah"] call adm_common_fnc_getUnitTemplateArray;
 
     if (isNil "_heloArray" || { _heloArray isEqualTo [] }) exitWith {
-        diag_log "[ARK] (Admin Tools) - No helo defined in Admiral template";
+        [COMPONENT_BEAUTIFIED,"ERROR","fnc_callAttackHelo","No helo defined in Admiral template",_unitTemplate] call ark_admin_tools_fnc_log;
     };
 
     private _pos = _player getPos [2500, (random [0, 180, 360])];

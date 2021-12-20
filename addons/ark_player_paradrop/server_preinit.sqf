@@ -5,5 +5,5 @@ ark_player_paradrop_fnc_init = {
     missionNamespace setVariable ["ark_player_paradrop_var_jumpHeight", (_logic getVariable ["Chute_Height", 200]), true];
     missionNamespace setVariable ["ark_player_paradrop_var_jumpGap", (_logic getVariable ["Jump_Gap", 1]), true];
 
-    diag_log "[ARK] (Player Paradrop) - System Enabled";
+    [COMPONENT_BEAUTIFIED,"INFO","fnc_init","System Enabled"] call ark_admin_tools_fnc_log;
 };

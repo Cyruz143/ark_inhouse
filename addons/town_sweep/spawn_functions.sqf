@@ -292,12 +292,12 @@ ts_spawn_fnc_objDestroyVeh = {
 
     if (!(_vehicle inArea ts_spawn_selectedLocationMarkerName)) exitWith {
         deleteVehicle _vehicle;
-        diag_log "[ARK] (Town Sweep) - Cannot find position for armour in selected town"
+        [COMPONENT_BEAUTIFIED,"ERROR","fnc_objDestroyVeh","Cannot find position for armour in selected town"] call ark_admin_tools_fnc_log;
     };
 
     {
         if (_vehicle lockedTurret _x) exitWith {
-            diag_log format  ["[ARK] (Town Sweep) - Locked turret in vehicle: %1", _vehicle];
+            [COMPONENT_BEAUTIFIED,"INFO","fnc_objDestroyVeh","Locked turret in vehicle, skipping crewman spawn", typeOf _vehicle] call ark_admin_tools_fnc_log;
         };
 
         private _unit = [[0,0,0], _grp, _crewmanClassnames, _skillArray] call adm_common_fnc_placeMan;

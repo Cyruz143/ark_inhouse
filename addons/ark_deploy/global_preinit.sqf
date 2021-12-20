@@ -12,7 +12,7 @@ ark_deploy_module_init = {
     params ["_logic","","_activated"];
 
     if !(_activated) exitWith {
-        diag_log "[ARK] (Deploy) - Module not activated";
+        [COMPONENT_BEAUTIFIED,"ERROR","module_init","Module not activated",_logic] call ark_admin_tools_fnc_log;
     };
     ark_deploy_pre_factions = _logic getVariable "Pre_Safety";
     ark_deploy_post_factions = _logic getVariable "Post_Safety";
