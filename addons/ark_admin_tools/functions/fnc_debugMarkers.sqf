@@ -1,3 +1,5 @@
+ark_aiDebugEnabled = false;
+
 ark_admin_tools_fnc_createDebugMarkers = {
     params ["_enabled"];
 

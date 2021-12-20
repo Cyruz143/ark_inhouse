@@ -101,12 +101,12 @@ ark_rotor_fnc_createCargo = {
             _args params ["_vehicle","_adjSeats","_grp","_cargoClassnames","_skillArray","_parachute"];
 
             if (isNil "_vehicle" || { !alive _vehicle }) exitWith {
-                [COMPONENT_BEAUTIFIED, "ERROR","fnc_createCargo","Vehicle is dead or has incorrect classname"] call ark_admin_tools_fnc_log;
+                ["Rotor", "ERROR","fnc_createCargo","Vehicle is dead or has incorrect classname"] call ark_admin_tools_fnc_log;
                 _id call CBA_fnc_removePerFrameHandler;
             };
 
             if (count (crew _vehicle) >= _adjSeats) exitWith {
-                [COMPONENT_BEAUTIFIED, "INFO","fnc_createCargo","Delayed spawning completed. Spawned total units",_adjSeats] call ark_admin_tools_fnc_log;
+                ["Rotor", "INFO","fnc_createCargo","Delayed spawning completed. Spawned total units",_adjSeats] call ark_admin_tools_fnc_log;
                 _id call CBA_fnc_removePerFrameHandler;
             };
 

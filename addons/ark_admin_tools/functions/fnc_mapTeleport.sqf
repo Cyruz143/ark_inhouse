@@ -1,4 +1,3 @@
-ark_aiDebugEnabled = false;
 ark_mapTeleportEnabled = false;
 
 ark_admin_tools_fnc_assignMapTeleport = {

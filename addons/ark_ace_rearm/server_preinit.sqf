@@ -7,7 +7,7 @@ ark_ace_rearm_fnc_enableRearm = {
     params ["_logic","_vehicles"];
 
     if (_vehicles isEqualTo []) exitWith {
-        ["ACE Rearm","LEVEL","fnc_enableRearm","Module not syncd to any vehicle",_logic] call ark_admin_tools_fnc_log;
+        ["ACE Rearm","ERROR","fnc_enableRearm","Module not syncd to any vehicle",_logic] call ark_admin_tools_fnc_log;
     };
 
     {
