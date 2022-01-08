@@ -308,7 +308,7 @@ ts_spawn_fnc_objDestroyVeh = {
     _vehicle allowCrewInImmobile true;
     _vehicle setUnloadInCombat [false, false];
     _vehicle setFuel 0;
-    _vehicle call ark_clear_cargo_fnc_clearVehicle;
+    _vehicle call ark_clear_cargo_fnc_doClearVehicle;
 
     [true, ["task1"], ["Locate and destroy the static armour in town", "Destroy Armour"], _position, "ASSIGNED", -1, true, "target"] call BIS_fnc_taskCreate;
 
@@ -328,7 +328,7 @@ ts_spawn_fnc_objDestroyAmmo = {
     private _building = selectRandom _buildingArr;
     private _buildingPos = selectRandom (_building buildingPos -1);
     ts_spawn_var_ammoCrate = createVehicle ["CUP_BOX_GER_Wps_F", _buildingPos, [], 0, "CAN_COLLIDE"];
-    ts_spawn_var_ammoCrate call ark_clear_cargo_fnc_clearVehicle;
+    ts_spawn_var_ammoCrate call ark_clear_cargo_fnc_doClearVehicle;
     ts_spawn_var_ammoCrate addMagazineCargoGlobal ["SatchelCharge_Remote_Mag", 10];
 
     [true, ["task2"], ["Locate and destroy the ammo cache hidden in town", "Destroy Cache"], _position, "ASSIGNED", -1, true, "destroy"] call BIS_fnc_taskCreate;
@@ -377,7 +377,7 @@ ts_spawn_fnc_objRecoverIntel = {
     private _boxPos = _helo getPos [10 + (random 5), random 360];
     private _box = createVehicle ["Box_NATO_Equip_F", _boxPos, [], 0, "NONE"];
     _box allowDamage false;
-    _box call ark_clear_cargo_fnc_clearVehicle;
+    _box call ark_clear_cargo_fnc_doClearVehicle;
     _box setVectorUp surfaceNormal position _box;
     _box addItemCargoGlobal ["ACE_Banana", 1];
 
