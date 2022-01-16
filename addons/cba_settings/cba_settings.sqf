@@ -26,11 +26,11 @@ force force ace_noradio_enabled = true;
 
 // ACE Cook off
 force force ace_cookoff_ammoCookoffDuration = 0.3;
-force force ace_cookoff_enable = 2;
+force force ace_cookoff_enable = 0;
 force force ace_cookoff_enableAmmobox = true;
 force force ace_cookoff_enableAmmoCookoff = true;
-force force ace_cookoff_enableFire = true;
-force force ace_cookoff_probabilityCoef = 0.5;
+force force ace_cookoff_enableFire = false;
+force force ace_cookoff_probabilityCoef = 1;
 
 // ACE Crew Served Weapons
 force force ace_csw_ammoHandling = 1;

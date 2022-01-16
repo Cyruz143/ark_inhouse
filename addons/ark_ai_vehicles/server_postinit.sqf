@@ -110,12 +110,6 @@ ark_ai_vehicles_fnc_replaceGunner = {
     params ["_vehicle"];
 
     private _driver = driver _vehicle;
-    private _allTurrets = allTurrets [_vehicle, false];
-
-    if (isNil "_allTurrets" || { _allTurrets isEqualTo [] }) exitWith {
-        ["AI Vehicles","ERROR","fnc_replaceGunner","Vehicle has no turrets", typeOf _vehicle] call ark_admin_tools_fnc_log;
-    };
-
     _vehicle setVariable ["ark_ai_vehicles_gunner_dead", true];
     _vehicle forceSpeed 0;
 
