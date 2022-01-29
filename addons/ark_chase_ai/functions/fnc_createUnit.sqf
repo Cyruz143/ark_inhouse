@@ -1,8 +1,6 @@
 ark_chase_ai_fnc_createUnit = {
     private _pos = call ark_chase_ai_fnc_findSpawnPos;
-    if (isNil "_pos" || { _pos isEqualTo [] }) exitWith {
-        ["Chase AI", "ERROR","fnc_createUnit"," Bad spawn position returned",_pos] call ark_admin_tools_fnc_log;
-    };
+    if (isNil "_pos" || { _pos isEqualTo [] }) exitWith {};
 
     private _grp = createGroup ark_chase_ai_var_side;
     _grp deleteGroupWhenEmpty true;
