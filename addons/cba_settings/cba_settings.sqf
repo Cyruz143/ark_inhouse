@@ -8,8 +8,8 @@ force ace_mk6mortar_allowComputerRangefinder = true;
 
 // ACE Advanced Vehicle Damage
 force force ace_vehicle_damage_enableCarDamage = false;
-force force ace_vehicle_damage_enabled = true;
-force force ace_vehicle_damage_removeAmmoDuringCookoff = true;
+force force ace_vehicle_damage_enabled = false;
+force force ace_vehicle_damage_removeAmmoDuringCookoff = false;
 
 // ACE Captives
 force ace_captives_allowHandcuffOwnSide = false;
