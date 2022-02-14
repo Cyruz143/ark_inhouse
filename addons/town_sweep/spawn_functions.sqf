@@ -243,22 +243,6 @@ ts_spawn_fnc_fillFortifications = {
     } forEach _scaledBuildingPositions;
 };
 
-ts_spawn_fnc_pullEI = {
-    params ["_pos"];
-
-    private _moveToPos = _pos getPos [1, random 360];
-    private _closeUnits = allUnits select {(side group _x) isEqualTo ts_enemy_side && { ((getpos _x) distance2D _moveToPos) <= 1000} };
-    {
-        [group _x] call CBA_fnc_clearWaypoints;
-        _x disableAI "SUPPRESSION";
-        _x disableAI "AUTOCOMBAT";
-        _x enableAI "PATH";
-        _x enableAttack true;
-        _x setDestination [_moveToPos, "LEADER PLANNED", true];
-        _x doMove _moveToPos;
-    } forEach _closeUnits;
-};
-
 ts_spawn_fnc_objDestroyVeh = {
     ts_spawn_selectedLocation params ["_position"];
 
@@ -315,7 +299,7 @@ ts_spawn_fnc_objDestroyVeh = {
     _vehicle addEventHandler ["Killed", {
         params ["_unit"];
         ["task1","SUCCEEDED"] call BIS_fnc_taskSetState;
-        [getPos _unit] call ts_spawn_fnc_pullEI;
+        [getPos _unit] call ark_admin_tools_fnc_chaseAI;
     }];
 };
 
@@ -336,7 +320,7 @@ ts_spawn_fnc_objDestroyAmmo = {
     ts_spawn_var_ammoCrate addEventHandler ["Killed", {
         params ["_unit"];
         ["task2","SUCCEEDED"] call BIS_fnc_taskSetState;
-        [getPos _unit] call ts_spawn_fnc_pullEI;
+        [getPos _unit] call ark_admin_tools_fnc_chaseAI;
     }];
 };
 
@@ -387,7 +371,7 @@ ts_spawn_fnc_objRecoverIntel = {
         {itemCargo _this isEqualTo []},
         {
             ["task3","SUCCEEDED"] call BIS_fnc_taskSetState;
-            [getPos _this] call ts_spawn_fnc_pullEI;
+            [getPos _this] call ark_admin_tools_fnc_chaseAI;
         },
         _box
     ] call CBA_fnc_waitUntilAndExecute;
