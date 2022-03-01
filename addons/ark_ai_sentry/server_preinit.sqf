@@ -28,7 +28,7 @@ ark_ai_sentry_fnc_make_sentry = {
         // If unit has NVGs by default, keep them as they'll look better than fake invisible ones
         if (_hmd isEqualTo "") then {
             _unit linkItem "NVGoggles_AI";
-        }
+        };
     } else {
         _unit unlinkItem _hmd;
     };
