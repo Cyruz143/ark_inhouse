@@ -39,6 +39,7 @@ ark_chase_ai_fnc_init = {
     ark_chase_ai_var_minDistance = _logic getVariable ["Min_Distance", 300];
     ark_chase_ai_var_wpAccuracy = _logic getVariable ["Waypoint_Accuracy", 5];
     ark_chase_ai_var_spawnTime = (_logic getVariable ["Spawn_Time", 5]) max 1;
+    ark_chase_ai_var_allowNVG = _logic getVariable ["Allow_NVG", true];
     ark_chase_ai_var_side = [ark_chase_ai_var_unitTemplate] call adm_common_fnc_getUnitTemplateSide;
     ark_chase_ai_var_skillArray = ["Camp"] call adm_common_fnc_getZoneTemplateSkillValues;
     ark_chase_ai_var_unitPool = [];

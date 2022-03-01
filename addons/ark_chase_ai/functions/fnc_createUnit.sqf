@@ -11,7 +11,13 @@ ark_chase_ai_fnc_createUnit = {
     _unit setSpeedMode "FULL";
     _unit setUnitPos "UP";
     {_unit disableAI _x} forEach ["SUPPRESSION", "AUTOCOMBAT"];
-    _unit linkItem "NVGoggles_AI";
+    if (ark_chase_ai_var_allowNVG) then {
+        if (_hmd isEqualTo "") then {
+            _unit linkItem "NVGoggles_AI";
+        }
+    } else {
+        _unit unlinkItem _hmd;
+    };
     ark_chase_ai_var_unitPool pushBack _unit;
 
     _unit addEventHandler ["Killed", {

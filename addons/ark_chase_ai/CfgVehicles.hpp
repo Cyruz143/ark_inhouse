@@ -57,6 +57,12 @@ class CfgVehicles {
                 typeName = "NUMBER";
                 defaultValue = 5;
             };
+            class Allow_NVG {
+                displayName = "Allow NVGs";
+                description = "Will add/leave existing NVGs or remove";
+                typeName = "BOOL";
+                defaultValue = true;
+            };
         };
     };
 };
