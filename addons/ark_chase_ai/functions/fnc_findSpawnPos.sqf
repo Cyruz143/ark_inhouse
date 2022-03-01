@@ -4,9 +4,7 @@ ark_chase_ai_fnc_findSpawnPos = {
         { !(objectParent _x isKindOf "Air") }
     };
 
-    if (_units isEqualTo []) exitWith {
-        ["Chase AI", "INFO","fnc_findSpawnPos","No players available alive or in AO"] call ark_admin_tools_fnc_log;
-    };
+    if (_units isEqualTo []) exitWith {};
 
     private _distance = ark_chase_ai_var_minDistance;
     private _validPositions = [];

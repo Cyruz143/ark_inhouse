@@ -6,7 +6,7 @@ ark_chase_ai_fnc_unitSpawner = {
             if ((count ark_chase_ai_var_unitPool) < ark_chase_ai_var_maxAIUnits) then {
                 private _unit = call ark_chase_ai_fnc_createUnit;
                 if (isNil "_unit") exitWith {
-                    ["Chase AI", "INFO","fnc_unitSpawner","Unable to create unit due to no spawn pos"] call ark_admin_tools_fnc_log;
+                    ["Chase AI", "INFO","fnc_unitSpawner","No players available alive or in AO"] call ark_admin_tools_fnc_log;
                 };
 
                 private _nearEnemy = _unit call ark_chase_ai_fnc_nearEnemies;
