@@ -24,7 +24,7 @@ ark_admin_tools_fnc_chaseAI = {
         _unit disableAI "AUTOCOMBAT";
         _unit enableAI "PATH";
         _unit enableAI "MOVE";
-        _unit enableAttack true;
+        _unit enableAttack false;
         _unit setBehaviour "AWARE";
         _unit setSpeedMode "FULL";
         _unit allowFleeing 0;
