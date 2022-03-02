@@ -346,7 +346,7 @@ force force diwako_dui_radar_showSpeaking = false;
 force force diwako_dui_radar_showSpeaking_radioOnly = false;
 force force diwako_dui_radar_showSpeaking_replaceIcon = false;
 force force diwako_dui_radar_sortType = "none";
-force force diwako_dui_radar_sqlFirst = false;
+force force diwako_dui_radar_sqlFirst = true;
 force force diwako_dui_radar_syncGroup = true;
 force force diwako_dui_radar_vehicleCompassEnabled = true;
 
