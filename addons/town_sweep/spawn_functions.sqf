@@ -166,7 +166,7 @@ ts_spawn_fnc_createChaseTrg = {
     private _trg = createTrigger ["EmptyDetector", (getPos _obj), false];
     _trg setTriggerArea [100, 100, 0, false];
     _trg setTriggerActivation ["ANYPLAYER", "PRESENT", false];
-    _trg setTriggerStatements ["this", "(getPos thisTrigger) call ark_admin_tools_fnc_chaseAI", ""];
+    _trg setTriggerStatements ["this", "[(getPos thisTrigger)] call ark_admin_tools_fnc_chaseAI", ""];
 };
 
 ts_spawn_fnc_createFortifications = {
@@ -328,7 +328,7 @@ ts_spawn_fnc_objDestroyAmmo = {
     } else {
         private _building = selectRandom _buildingArr;
         private _buildingPos = selectRandom (_building buildingPos -1);
-        ts_spawn_var_ammoCrate setPosATL _buildingPos;
+        ts_spawn_var_ammoCrate setPos _buildingPos;
     };
 
     [true, ["task2"], ["Locate and destroy the ammo cache hidden in town", "Destroy Cache"], _position, "ASSIGNED", -1, true, "destroy"] call BIS_fnc_taskCreate;
