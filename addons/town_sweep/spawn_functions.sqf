@@ -307,13 +307,20 @@ ts_spawn_fnc_objDestroyAmmo = {
     ts_spawn_selectedLocation params ["_position", "_size"];
 
     private _buildingArr = nearestObjects [_position, ["House"], (_size / 2), true] select {count (_x buildingPos -1) > 1};
-    if (_buildingArr isEqualTo []) exitWith {diag_log "[ARK] (Town Sweep) - Cannot find building for ammo crate"};
+    // Stop objective spawning in random bunkers etc
+    _buildingArr = _buildingArr - ts_spawn_placedFortifications;
 
-    private _building = selectRandom _buildingArr;
-    private _buildingPos = selectRandom (_building buildingPos -1);
-    ts_spawn_var_ammoCrate = createVehicle ["CUP_BOX_GER_Wps_F", _buildingPos, [], 0, "CAN_COLLIDE"];
+    ts_spawn_var_ammoCrate = createVehicle ["CUP_BOX_GER_Wps_F", [0,0,0], [], 0, "CAN_COLLIDE"];
     ts_spawn_var_ammoCrate call ark_clear_cargo_fnc_doClearVehicle;
     ts_spawn_var_ammoCrate addMagazineCargoGlobal ["SatchelCharge_Remote_Mag", 10];
+
+    if (_buildingArr isEqualTo []) then {
+        ts_spawn_var_ammoCrate setPos _position;
+    } else {
+        private _building = selectRandom _buildingArr;
+        private _buildingPos = selectRandom (_building buildingPos -1);
+        ts_spawn_var_ammoCrate setPosATL _buildingPos;
+    };
 
     [true, ["task2"], ["Locate and destroy the ammo cache hidden in town", "Destroy Cache"], _position, "ASSIGNED", -1, true, "destroy"] call BIS_fnc_taskCreate;
 
