@@ -160,6 +160,15 @@ ts_spawn_fnc_enableRotor = {
     _spawnZone synchronizeObjectsAdd [_module,_jeff];
 };
 
+ts_spawn_fnc_createChaseTrg = {
+    params ["_obj"];
+
+    private _trg = createTrigger ["EmptyDetector", (getPos _obj), false];
+    _trg setTriggerArea [100, 100, 0, false];
+    _trg setTriggerActivation ["ANYPLAYER", "PRESENT", false];
+    _trg setTriggerStatements ["this", "(getPos thisTrigger) call ark_admin_tools_fnc_chaseAI", ""];
+};
+
 ts_spawn_fnc_createFortifications = {
     ts_spawn_selectedLocation params ["_position"];
 
@@ -295,11 +304,11 @@ ts_spawn_fnc_objDestroyVeh = {
     _vehicle call ark_clear_cargo_fnc_doClearVehicle;
 
     [true, ["task1"], ["Locate and destroy the static armour in town", "Destroy Armour"], _position, "ASSIGNED", -1, true, "target"] call BIS_fnc_taskCreate;
+    _vehicle call ts_spawn_fnc_createChaseTrg;
 
     _vehicle addEventHandler ["Killed", {
         params ["_unit"];
         ["task1","SUCCEEDED"] call BIS_fnc_taskSetState;
-        [getPos _unit] call ark_admin_tools_fnc_chaseAI;
     }];
 };
 
@@ -323,11 +332,11 @@ ts_spawn_fnc_objDestroyAmmo = {
     };
 
     [true, ["task2"], ["Locate and destroy the ammo cache hidden in town", "Destroy Cache"], _position, "ASSIGNED", -1, true, "destroy"] call BIS_fnc_taskCreate;
+    ts_spawn_var_ammoCrate call ts_spawn_fnc_createChaseTrg;
 
     ts_spawn_var_ammoCrate addEventHandler ["Killed", {
         params ["_unit"];
         ["task2","SUCCEEDED"] call BIS_fnc_taskSetState;
-        [getPos _unit] call ark_admin_tools_fnc_chaseAI;
     }];
 };
 
@@ -373,12 +382,12 @@ ts_spawn_fnc_objRecoverIntel = {
     _box addItemCargoGlobal ["ACE_Banana", 1];
 
     [true, ["task3"], ["Locate and secure the intel from the crash site", "Recover Intel"], _position, "ASSIGNED", -1, true, "intel"] call BIS_fnc_taskCreate;
+    _helo call ts_spawn_fnc_createChaseTrg;
 
     [
         {itemCargo _this isEqualTo []},
         {
             ["task3","SUCCEEDED"] call BIS_fnc_taskSetState;
-            [getPos _this] call ark_admin_tools_fnc_chaseAI;
         },
         _box
     ] call CBA_fnc_waitUntilAndExecute;
