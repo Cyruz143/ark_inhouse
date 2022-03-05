@@ -164,7 +164,7 @@ ts_spawn_fnc_createChaseTrg = {
     params ["_obj"];
 
     private _trg = createTrigger ["EmptyDetector", (getPos _obj), false];
-    _trg setTriggerArea [100, 100, 0, false];
+    _trg setTriggerArea [35, 35, 0, false];
     _trg setTriggerActivation ["ANYPLAYER", "PRESENT", false];
     _trg setTriggerStatements ["this", "[(getPos thisTrigger)] call ark_admin_tools_fnc_chaseAI", ""];
 };
