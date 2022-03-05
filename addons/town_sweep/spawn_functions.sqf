@@ -309,6 +309,7 @@ ts_spawn_fnc_objDestroyVeh = {
     _vehicle addEventHandler ["Killed", {
         params ["_unit"];
         ["task1","SUCCEEDED"] call BIS_fnc_taskSetState;
+        [getPos _unit] call ark_admin_tools_fnc_chaseAI;
     }];
 };
 
