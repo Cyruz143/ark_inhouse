@@ -22,7 +22,11 @@ ark_chase_ai_fnc_doMove = {
                 _unit setDestination [_targetPos, "LEADER PLANNED", true];
                 _unit doMove _targetPos;
             } else {
-                deleteVehicle _unit;
+                private _pos = call ark_chase_ai_fnc_findSpawnPos;
+                if (isNil "_pos" || { _pos isEqualTo [] }) exitWith {
+                    deleteVehicle _unit;
+                };
+                _unit setPosASL _pos;
             };
         },
         30,
