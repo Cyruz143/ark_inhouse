@@ -18,7 +18,8 @@ ark_admin_tools_fnc_chaseAI = {
 
     {
         private _unit = _x;
-        [group _unit] call CBA_fnc_clearWaypoints;
+        private _grp = group _unit;
+        [_grp] call CBA_fnc_clearWaypoints;
         _unit disableAI "SUPPRESSION";
         _unit disableAI "AUTOCOMBAT";
         _unit enableAI "PATH";
@@ -30,12 +31,12 @@ ark_admin_tools_fnc_chaseAI = {
         _unit setDestination [_pos, "LEADER PLANNED", true];
         _unit doMove _pos;
         _unit setVariable ["ark_admin_tools_fnc_chaseAI_hunting", true, false];
-        if (_search isEqualTo true) then {
+        if (_search isEqualTo true && { leader _grp isEqualTo _unit }) then {
             [{
-                (_this#0 distance2D _this#1) < 15
+                (_this#0 distance2D _this#2) < 15
             }, {
-                [_this#0] call CBA_fnc_searchNearby;
-            }, [_unit,_pos]] call CBA_fnc_waitUntilAndExecute;
+                [_this#1] call CBA_fnc_searchNearby;
+            }, [_unit,_grp,_pos]] call CBA_fnc_waitUntilAndExecute;
         };
     } forEach _closeUnits;
 
