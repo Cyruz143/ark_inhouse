@@ -29,7 +29,7 @@ ark_chase_ai_fnc_doMove = {
                 _unit setPosASL _pos;
             };
         },
-        30,
+        15,
         [_unit,_target]
     ] call CBA_fnc_addPerFrameHandler;
 };
