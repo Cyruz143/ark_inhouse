@@ -19,7 +19,6 @@ ark_admin_tools_fnc_chaseAI = {
     {
         private _unit = _x;
         [group _unit] call CBA_fnc_clearWaypoints;
-        [_unit] joinSilent grpNull;
         _unit disableAI "SUPPRESSION";
         _unit disableAI "AUTOCOMBAT";
         _unit enableAI "PATH";
