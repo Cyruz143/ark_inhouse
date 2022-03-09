@@ -17,7 +17,7 @@ ark_ace_spectator_fnc_initSpec = {
 
     if (!isNull _killer) then {
         if (!(_killer isKindof "CAManBase")) then {
-            _killerVehicle = getText (configfile >> "CfgVehicles" >> (typeOf _killer) >> "displayName");
+            _killerVehicle = getText (configOf vehicle _killer >> "displayName");
             _killer = effectiveCommander _killer;
         };
 
