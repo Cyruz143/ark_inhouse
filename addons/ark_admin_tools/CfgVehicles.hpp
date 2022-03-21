@@ -9,9 +9,18 @@ class CfgVehicles {
             icon = "\x\ark\addons\ark_main\resources\ark_star.paa";
             exceptions[] = {"isNotSwimming", "isNotInside", "isNotSitting", "isNotOnLadder", "isNotRefueling"};
 
+
+                class Group_Leader_Teleport {
+                    displayName = "Teleport (To Leader)";
+                    icon = "\a3\ui_f\data\igui\cfg\simpletasks\types\meet_ca.paa";
+                    condition = "ark_mapTeleportEnabled";
+                    statement = "call ark_admin_tools_fnc_tpToLeader";
+                    exceptions[] = {"isNotSwimming", "isNotInside", "isNotSitting", "isNotOnLadder", "isNotRefueling"};
+                };
+
                 class Map_Click_Teleport {
-                    displayName = "Click Map Teleport";
-                    icon = "\x\ark\addons\ark_main\resources\click.paa";
+                    displayName = "Teleport (Click Map)";
+                    icon = "\a3\ui_f\data\igui\cfg\simpletasks\types\move_ca.paa";
                     condition = "ark_mapTeleportEnabled";
                     statement = "player call ark_admin_tools_fnc_enableMapTeleport";
                     exceptions[] = {"isNotSwimming", "isNotInside", "isNotSitting", "isNotOnLadder", "isNotRefueling"};
@@ -66,7 +75,7 @@ class CfgVehicles {
                     };
 
                     class Enable_Click_Teleport {
-                        displayName = "Enable Global Click Teleport";
+                        displayName = "Enable Teleport";
                         condition = "!ark_mapTeleportEnabled";
                         statement = "true call ark_admin_tools_fnc_assignMapTeleport;";
                         icon = "\x\ark\addons\ark_main\resources\click_enable.paa";
@@ -74,7 +83,7 @@ class CfgVehicles {
                     };
 
                     class Disable_Click_Teleport {
-                        displayName = "Disable Global Click Teleport";
+                        displayName = "Disable Teleport";
                         condition = "ark_mapTeleportEnabled";
                         statement = "false call ark_admin_tools_fnc_assignMapTeleport;";
                         icon = "\x\ark\addons\ark_main\resources\click_disable.paa";
@@ -82,7 +91,7 @@ class CfgVehicles {
                     };
 
                     class Call_Attack_Helo {
-                        displayName = "Call Attack Helo";
+                        displayName = "Call AH";
                         condition = "call ark_main_fnc_isAdmiralEnabled && { !(call ark_main_fnc_isTownSweep) }";
                         statement = "[player,'ah'] remoteExecCall ['ark_admin_tools_fnc_callReinforcements',2]";
                         icon = "\A3\ui_f\data\map\vehicleicons\iconHelicopter_ca.paa";
