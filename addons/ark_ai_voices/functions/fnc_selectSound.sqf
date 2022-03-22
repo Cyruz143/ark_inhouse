@@ -55,7 +55,7 @@ ark_ai_voices_fnc_selectSound = {
     };
 
     private _speakerVoiceLine = _speaker + _voiceLine;
-    private _soundPathArr = ark_ai_voices_namespace getVariable _speakerVoiceLine;
+    private _soundPathArr = ark_ai_voices_namespace get _speakerVoiceLine;
 
     if (isNil "_soundPathArr") then {
         private _dirPath = (getArray (configFile >> "CfgVoice" >> _speaker >> "directories")) #0;
@@ -88,7 +88,7 @@ ark_ai_voices_fnc_selectSound = {
             _soundPathArr pushBack _soundPath;
         } forEach _protocolArr;
 
-        ark_ai_voices_namespace setVariable [_speakerVoiceLine, _soundPathArr];
+        ark_ai_voices_namespace set [_speakerVoiceLine, _soundPathArr];
     };
 
     if (isNil "_soundPathArr" || { _soundPathArr isEqualTo [] }) exitWith {

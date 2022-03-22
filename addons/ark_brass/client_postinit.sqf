@@ -1,6 +1,6 @@
 if (!hasInterface || !(ark_brass_enabled)) exitWith {};
 
-ark_brass_namespace = call CBA_fnc_createNamespace;
+ark_brass_namespace = createHashMap;
 ark_brass_caseArr = [];
 ["CAManBase", "FiredMan", {call ark_brass_fnc_createCase}] call CBA_fnc_addClassEventHandler;
 
@@ -9,7 +9,7 @@ ark_brass_fnc_createCase = {
 
     if (!isNull objectParent _unit || { _weapon in ["Throw","Put"] } ) exitWith {};
 
-    private _modelPath = ark_brass_namespace getVariable _ammo;
+    private _modelPath = ark_brass_namespace get _ammo;
 
     if (isNil "_modelPath") then {
         private _cartridge = getText (configFile >> "CfgAmmo" >> _ammo >> "cartridge");
@@ -23,7 +23,7 @@ ark_brass_fnc_createCase = {
             case "":                    { "" };
             default { "A3\Weapons_f\ammo\cartridge.p3d" };
         };
-        ark_brass_namespace setVariable [_ammo, _modelPath];
+        ark_brass_namespace set [_ammo, _modelPath];
     };
 
     if (_modelPath isEqualTo "") exitWith {};
