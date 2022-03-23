@@ -7,7 +7,7 @@ ark_brass_caseArr = [];
 ark_brass_fnc_createCase = {
     params ["_unit", "_weapon", "", "", "_ammo"];
 
-    if (!isNull objectParent _unit || { _weapon in ["Throw","Put"] } ) exitWith {};
+    if (!isNull objectParent _unit) exitWith {};
 
     private _modelPath = ark_brass_namespace get _ammo;
 
@@ -28,34 +28,28 @@ ark_brass_fnc_createCase = {
 
     if (_modelPath isEqualTo "") exitWith {};
 
-    private _unitPos = getposATL _unit;
+    private _unitPos = getposASL _unit;
     // Distant shooters don't produce as many cases
-    if ((positionCameraToWorld [0,0,0]) vectorDistance _unitPos > 100 && {random 1 < 0.9}) exitWith {};
+    if ((AGLToASL positionCameraToWorld [0,0,0]) vectorDistance _unitPos > 100 && {random 1 < 0.9}) exitWith {};
 
-    // This is all ACE magic math stuff
     private _weapDir = _unit weaponDirection currentWeapon _unit;
     private _ejectDir = _weapDir vectorCrossProduct [0, 0, 1];
-    private _pos = _unitPos vectorAdd
-                      (_weapDir vectorMultiply (-0.5 + random 1.0 + random 1.0)) vectorAdd
-                      (_ejectDir vectorMultiply (0.2 + random 1.0 + random 1.0));
-
-    _pos set [2, (_pos #2) + 0.005];
+    private _pos = _unitPos
+        vectorAdd (_weapDir vectorMultiply (-0.5 + random 1 + random 1))
+        vectorAdd (_ejectDir vectorMultiply (0.2 + random 1 + random 1))
+        vectorAdd [0, 0, 0.005];
 
     [
         {
-            params ["_modelPath","_pos"];
+            params ["_modelPath", "_pos"];
 
             private _casing = createSimpleObject [_modelPath, [0,0,0], true];
-            _casing setPosATL _pos;
+            _casing setPosASL _pos;
             _casing setDir (random 360);
-            ark_brass_caseArr pushBack _casing;
+            private _idx = ark_brass_caseArr pushBack _casing;
 
-            private _totalCasings = count ark_brass_caseArr;
-
-            if (_totalCasings > ark_brass_maxCases) then {
-                for "_i" from 0 to (_totalCasings - ark_brass_maxCases) do {
-                    deleteVehicle (ark_brass_caseArr deleteAt 0);
-                };
+            for "_" from 0 to (_idx - ark_brass_maxCases) do {
+                deleteVehicle (ark_brass_caseArr deleteAt 0);
             };
         },
         [_modelPath,_pos],
