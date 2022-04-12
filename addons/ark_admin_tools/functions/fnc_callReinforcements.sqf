@@ -43,7 +43,7 @@ ark_admin_tools_fnc_callReinforcements = {
     _vehicle allowCrewInImmobile true;
     _vehicle setUnloadInCombat [false, false];
 
-    [_grp, position _unit, 250, 6, "SAD", "AWARE", "RED", "FULL"] call CBA_fnc_taskPatrol;
+    [_grp, getPos _unit, 250, true] call CBA_fnc_taskAttack;
 };
 
 ark_admin_tools_fnc_findPos = {
