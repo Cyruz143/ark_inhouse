@@ -11,10 +11,12 @@ class CfgPatches {
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {
             "ark_main",
-            "CUP_Weapons_LoadOrder"
+            "CUP_Weapons_LoadOrder",
+            "gm_weapons_launchers_rpg7"
         };
         VERSION_CONFIG;
     };
 };
 
 #include "CfgAmmo.hpp"
+#include "CfgWeapons.hpp"
