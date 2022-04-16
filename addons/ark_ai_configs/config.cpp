@@ -9,10 +9,14 @@ class CfgPatches {
         units[] = {};
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
-        requiredAddons[] = {"ark_main"};
+        requiredAddons[] = {
+            "ark_main",
+            "CUP_Weapons_LoadOrder"
+        };
         VERSION_CONFIG;
     };
 };
 
 #include "CfgFSMs.hpp"
 #include "CfgVehicles.hpp"
+#include "CfgWeapons.hpp"
