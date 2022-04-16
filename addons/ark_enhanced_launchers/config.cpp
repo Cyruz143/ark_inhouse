@@ -12,6 +12,7 @@ class CfgPatches {
         requiredAddons[] = {
             "ark_main",
             "CUP_Weapons_LoadOrder",
+            "gm_weapons_ammo",
             "gm_weapons_launchers_rpg7"
         };
         VERSION_CONFIG;

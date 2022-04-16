@@ -41,6 +41,7 @@ class CfgWeapons {
             showToPlayer=0;
         };
     };
+
     class CUP_launch_RPG7V: Launcher_Base_F {
         modes[] = {"Single", "Single_AI"};
         class Single: Mode_SemiAuto {
@@ -60,6 +61,7 @@ class CfgWeapons {
             showToPlayer=0;
         };
     };
+
     class gm_rpg7_base: gm_launcher_base {
         modes[] = {"Single", "Single_AI"};
         class Single: gm_SemiAuto {

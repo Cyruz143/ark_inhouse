@@ -1,5 +1,6 @@
 class CfgAmmo {
     class RocketBase;
+    class gm_rocket_40mm_HEAT_base;
     class R_PG32V_F: RocketBase {
         ENHANCED_LAUNCHER
     };
@@ -52,6 +53,9 @@ class CfgAmmo {
         ENHANCED_LAUNCHER
     };
     class CUP_R_M72A6_AT: RocketBase {
+        ENHANCED_LAUNCHER
+    };
+    class gm_rocket_40mm_HEAT_pg7v: gm_rocket_40mm_HEAT_base {
         ENHANCED_LAUNCHER
     };
 };
