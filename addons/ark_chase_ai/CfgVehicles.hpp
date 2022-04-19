@@ -47,7 +47,7 @@ class CfgVehicles {
             };
             class Waypoint_Accuracy {
                 displayName = "Waypoint Accuracy";
-                description = "How close to the chosen target the AI will move in metres";
+                description = "How close to the chosen target the AI will move in metres (Minimum: 5!)";
                 typeName = "NUMBER";
                 defaultValue = 50;
             };
@@ -65,7 +65,7 @@ class CfgVehicles {
             };
             class Allow_BuildingSearch {
                 displayName = "Allow Building Search";
-                description = "Will POSSIBLY allow AI to enter Buildings. WILL OVERRIDE WP Accuracy to be 0!";
+                description = "Will POSSIBLY allow AI to enter buildings. WILL OVERRIDE WP Accuracy if target in a building";
                 typeName = "BOOL";
                 defaultValue = false;
             };
