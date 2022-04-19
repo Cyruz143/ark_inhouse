@@ -12,7 +12,8 @@ class CfgPatches {
         requiredAddons[] = {
             "ark_main",
             "ark_admin_tools",
-            "admiral"
+            "admiral",
+            "ace_common"
         };
         VERSION_CONFIG;
     };
