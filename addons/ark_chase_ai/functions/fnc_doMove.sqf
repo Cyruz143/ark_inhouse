@@ -25,7 +25,7 @@ ark_chase_ai_fnc_doMove = {
             };
 
             if (_unit distance2D _targetPos < (ark_chase_ai_var_maxDistance + 50)) then {
-                _unit setDestination [_targetPos, "LEADER PLANNED", false];
+                _unit setDestination [_targetPos, "LEADER PLANNED", true];
                 _unit doMove _targetPos;
             } else {
                 private _pos = call ark_chase_ai_fnc_findSpawnPos;
