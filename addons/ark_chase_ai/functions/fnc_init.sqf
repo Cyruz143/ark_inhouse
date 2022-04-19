@@ -49,5 +49,8 @@ ark_chase_ai_fnc_init = {
 
 [{triggerActivated ark_chase_ai_var_triggerArea}, {
     ark_chase_ai_var_spawning = true;
+    ark_chase_ai_grp = createGroup ark_chase_ai_var_side;
+    ark_chase_ai_grp deleteGroupWhenEmpty false;
+    ark_chase_ai_grp enableAttack false;
     call ark_chase_ai_fnc_unitSpawner;
 }] call CBA_fnc_waitUntilAndExecute;
