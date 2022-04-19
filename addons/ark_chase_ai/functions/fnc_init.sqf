@@ -44,13 +44,8 @@ ark_chase_ai_fnc_init = {
     ark_chase_ai_var_side = [ark_chase_ai_var_unitTemplate] call adm_common_fnc_getUnitTemplateSide;
     ark_chase_ai_var_skillArray = ["Camp"] call adm_common_fnc_getZoneTemplateSkillValues;
     ark_chase_ai_var_unitPool = [];
-    ark_chase_ai_var_spawning = false;
 };
 
 [{triggerActivated ark_chase_ai_var_triggerArea}, {
-    ark_chase_ai_var_spawning = true;
-    ark_chase_ai_grp = createGroup ark_chase_ai_var_side;
-    ark_chase_ai_grp deleteGroupWhenEmpty false;
-    ark_chase_ai_grp enableAttack false;
-    call ark_chase_ai_fnc_unitSpawner;
+    [true] call ark_chase_ai_fnc_enableSpawning
 }] call CBA_fnc_waitUntilAndExecute;
