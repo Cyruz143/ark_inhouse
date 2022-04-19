@@ -8,7 +8,7 @@ ark_chase_ai_fnc_enableSpawning = {
     ark_chase_ai_var_spawning = _enabled;
 
     if (_enabled) then {
-        if (ark_chase_ai_grp isEqualTo grpNull) then {
+        if (isNil "ark_chase_ai_grp") then {
             ark_chase_ai_grp = createGroup ark_chase_ai_var_side;
             ark_chase_ai_grp deleteGroupWhenEmpty true;
             ark_chase_ai_grp enableAttack false;
