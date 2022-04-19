@@ -18,7 +18,7 @@ ark_chase_ai_fnc_doMove = {
             };
 
             private "_targetPos";
-            if ([_target] call ace_common_fnc_isInBuilding || { ark_chase_ai_var_wpAccuracy isEqualTo 0 }) then {
+            if (ark_chase_ai_var_allowBS) then {
                 _targetPos = getPosATL _target;
             } else {
                 _targetPos = _target getPos [ark_chase_ai_var_wpAccuracy, random 360];

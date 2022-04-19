@@ -63,6 +63,12 @@ class CfgVehicles {
                 typeName = "BOOL";
                 defaultValue = true;
             };
+            class Allow_BuildingSearch {
+                displayName = "Allow Building Search";
+                description = "Will POSSIBLY allow AI to enter Buildings. WILL OVERRIDE WP Accuracy to be 0!";
+                typeName = "BOOL";
+                defaultValue = false;
+            };
         };
     };
 };
