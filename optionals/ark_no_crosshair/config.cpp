@@ -14,4 +14,4 @@ class CfgPatches {
     };
 };
 
-#include "CfgWeaponCursors.hpp.hpp"
+#include "CfgWeaponCursors.hpp"
