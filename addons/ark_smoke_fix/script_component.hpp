@@ -1,4 +1,4 @@
-#define COMPONENT ark_smoke_fix
+#define COMPONENT smoke_fix
 #define COMPONENT_BEAUTIFIED Smoke Fix
 
 #include "\x\ark\addons\ark_main\script_mod.hpp"
