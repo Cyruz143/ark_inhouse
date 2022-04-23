@@ -166,7 +166,7 @@ ts_spawn_fnc_createChaseTrg = {
     private _trg = createTrigger ["EmptyDetector", (getPos _obj), false];
     _trg setTriggerArea [35, 35, 0, false];
     _trg setTriggerActivation ["ANYPLAYER", "PRESENT", false];
-    _trg setTriggerStatements ["this", "[(getPos thisTrigger)] call ark_admin_tools_fnc_chaseAI", ""];
+    _trg setTriggerStatements ["this", "[(getPosATL thisTrigger)] call ark_admin_tools_fnc_chaseAI", ""];
 };
 
 ts_spawn_fnc_createFortifications = {
@@ -309,7 +309,7 @@ ts_spawn_fnc_objDestroyVeh = {
     _vehicle addEventHandler ["Killed", {
         params ["_unit"];
         ["task1","SUCCEEDED"] call BIS_fnc_taskSetState;
-        [getPos _unit] call ark_admin_tools_fnc_chaseAI;
+        [getPosATL _unit] call ark_admin_tools_fnc_chaseAI;
     }];
 };
 
