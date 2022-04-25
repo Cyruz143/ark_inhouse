@@ -1,7 +1,11 @@
 ark_ai_voices_fnc_eh_reloading = {
     params ["_unit","_gesture"];
 
-    if (_unit getVariable ["ark_ai_voices_var_isSpeaking", false] || { isPlayer _unit } || { !local _unit } || { isAgent teamMember _unit } || { _unit getVariable ["ark_ai_voices_var_disableVoice", false] } ) exitWith {};
+    if (_unit getVariable ["ark_ai_voices_var_isSpeaking", false] ||
+        { isPlayer _unit } ||
+        { !local _unit } ||
+        { isAgent teamMember _unit } ||
+        { _unit getVariable ["ark_ai_voices_var_disableVoice", false] } ) exitWith {};
 
     if (_gesture isEqualTo "") exitWith {};
 
