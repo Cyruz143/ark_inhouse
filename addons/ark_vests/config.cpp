@@ -17,7 +17,8 @@ class CfgPatches {
             "mnp_blufor",
             "mnp_indep",
             "mnp_opfor",
-            "gm_core_characters"
+            "gm_core_characters",
+            "acp_main"
         };
         VERSION_CONFIG;
     };
