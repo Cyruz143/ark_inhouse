@@ -25,6 +25,7 @@ class CfgWeapons {
     class launch_RPG7_F: Launcher_Base_F { HIDDEN };
 
     // Hide ACP unwanted uniforms
+    class U_O_V_Soldier_Viper_hex_F;
     class acp_Multicam_U_O_officer_Multicam_hex_F: U_O_V_Soldier_Viper_hex_F { HIDDEN };
     class acp_Multicam_Snow_U_O_officer_Multicam_Snow_hex_F: U_O_V_Soldier_Viper_hex_F { HIDDEN };
     class acp_POL_wz93_U_O_officer_POL_wz93_hex_F: U_O_V_Soldier_Viper_hex_F { HIDDEN };
@@ -72,6 +73,8 @@ class CfgWeapons {
     class acp_IL_IDF_U_O_officer_IL_IDF_hex_F: U_O_V_Soldier_Viper_hex_F { HIDDEN };
     class acp_JP_GSDF_U_O_officer_JP_GSDF_hex_F: U_O_V_Soldier_Viper_hex_F { HIDDEN };
     class acp_LU_Waldtarndruck_U_O_officer_LU_Waldtarndruck_hex_F: U_O_V_Soldier_Viper_hex_F { HIDDEN }
+
+    class U_O_CombatUniform_ocamo;
     class acp_Multicam_U_O_CombatUniform_Multicam: U_O_CombatUniform_ocamo { HIDDEN };
     class acp_Multicam_Snow_U_O_CombatUniform_Multicam_Snow: U_O_CombatUniform_ocamo { HIDDEN };
     class acp_POL_wz93_U_O_CombatUniform_POL_wz93: U_O_CombatUniform_ocamo { HIDDEN };
@@ -121,6 +124,7 @@ class CfgWeapons {
     class acp_LU_Waldtarndruck_U_O_CombatUniform_LU_Waldtarndruck: U_O_CombatUniform_ocamo { HIDDEN };
 
     // Hide ACP unwanted headGear
+    class H_HelmetSpecO_ocamo;
     class acp_Multicam_H_HelmetSpecO_Multicam: H_HelmetSpecO_ocamo { HIDDEN }
     class acp_Multicam_Snow_H_HelmetSpecO_Multicam_Snow: H_HelmetSpecO_ocamo { HIDDEN }
     class acp_POL_wz93_H_HelmetSpecO_POL_wz93: H_HelmetSpecO_ocamo { HIDDEN }
@@ -168,6 +172,8 @@ class CfgWeapons {
     class acp_IL_IDF_H_HelmetSpecO_IL_IDF: H_HelmetSpecO_ocamo { HIDDEN }
     class acp_JP_GSDF_H_HelmetSpecO_JP_GSDF: H_HelmetSpecO_ocamo { HIDDEN }
     class acp_LU_Waldtarndruck_H_HelmetSpecO_LU_Waldtarndruck : H_HelmetSpecO_ocamo { HIDDEN }
+
+    class H_HelmetLeaderO_ocamo;
     class acp_Multicam_H_HelmetLeaderO_Multicam: H_HelmetLeaderO_ocamo { HIDDEN };
     class acp_Multicam_Snow_H_HelmetLeaderO_Multicam_Snow: H_HelmetLeaderO_ocamo { HIDDEN };
     class acp_POL_wz93_H_HelmetLeaderO_POL_wz93: H_HelmetLeaderO_ocamo { HIDDEN };
@@ -262,6 +268,8 @@ class CfgWeapons {
     class acp_IL_IDF_H_HelmetO_IL_IDF: H_HelmetLeaderO_ocamo { HIDDEN };
     class acp_JP_GSDF_H_HelmetO_JP_GSDF: H_HelmetLeaderO_ocamo { HIDDEN };
     class acp_LU_Waldtarndruck_H_HelmetO_LU_Waldtarndruck: H_HelmetLeaderO_ocamo { HIDDEN };
+
+    class H_HelmetO_ViperSP_hex_F;
     class acp_Multicam_H_HelmetO_ViperSP_Multicam_F: H_HelmetO_ViperSP_hex_F { HIDDEN };
     class acp_Multicam_Snow_H_HelmetO_ViperSP_Multicam_Snow_F: H_HelmetO_ViperSP_hex_F { HIDDEN };
     class acp_POL_wz93_H_HelmetO_ViperSP_POL_wz93_F: H_HelmetO_ViperSP_hex_F { HIDDEN };
