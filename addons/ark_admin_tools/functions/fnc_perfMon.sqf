@@ -18,4 +18,6 @@ ark_admin_tools_fnc_perfMon = {
     diag_log  "[ARK] --- Ending perfmon dump";
 };
 
-[{call ark_admin_tools_fnc_perfMon}, 60] call CBA_fnc_addPerFrameHandler;
+if (isDedicated) then {
+    [{call ark_admin_tools_fnc_perfMon}, 60] call CBA_fnc_addPerFrameHandler;
+};
