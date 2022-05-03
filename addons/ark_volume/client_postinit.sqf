@@ -32,7 +32,7 @@ ark_volume_fnc_notify = {
 
     if (ark_volume_notification) then {
         private _str = format ["Volume set to %1%2", (_vol * 100),"%"];
-        [[_str], true] call CBA_fnc_notify;
+        [["\a3\ui_f\data\igui\cfg\simpletasks\types\listen_ca.paa", 2.0], [_str], true] call CBA_fnc_notify;
     };
 };
 

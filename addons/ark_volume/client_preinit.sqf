@@ -36,7 +36,7 @@
     "SLIDER",
     ["Air Vehicle Volume", "How loud the game volume is in air vehicles"],
     ["ARK Inhouse","ARK Vehicle Volume"],
-    0,
+    [0.2, 1, 1, 1],
     0,
     {},
     false
