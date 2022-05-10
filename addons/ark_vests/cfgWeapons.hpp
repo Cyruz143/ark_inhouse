@@ -350,34 +350,6 @@ class CfgWeapons {
         HIDDEN
         class ItemInfo;
     };
-    class gm_ge_vest_armor_90_crew_flk: gm_ge_vest_armor_90_base {
-        HIDDEN
-        class ItemInfo;
-    };
-    class gm_ge_vest_armor_90_leader_flk: gm_ge_vest_armor_90_base {
-        HIDDEN
-        class ItemInfo;
-    };
-    class gm_ge_vest_armor_90_machinegunner_flk: gm_ge_vest_armor_90_base {
-        HIDDEN
-        class ItemInfo;
-    };
-    class gm_ge_vest_armor_90_officer_flk: gm_ge_vest_armor_90_base {
-        HIDDEN
-        class ItemInfo;
-    };
-    class gm_ge_vest_armor_90_rifleman_flk: gm_ge_vest_armor_90_base {
-        HIDDEN
-        class ItemInfo;
-    };
-    class gm_ge_vest_armor_90_demolition_flk: gm_ge_vest_armor_90_base {
-        HIDDEN
-        class ItemInfo;
-    };
-    class gm_ge_vest_armor_90_medic_flk: gm_ge_vest_armor_90_base {
-        HIDDEN
-        class ItemInfo;
-    };
     class gm_ge_vest_90_crew_flk: gm_ge_vest_90_base {
         HIDDEN
         class ItemInfo;
@@ -6711,6 +6683,154 @@ class CfgWeapons {
         class ItemInfo;
     };
     class acp_LU_Waldtarndruck_V_TacVest_LU_Waldtarndruck: V_TacVest_blk {
+        HIDDEN
+        class ItemInfo;
+    };
+    class gm_ge_vest_armor_90_crew_flk: gm_ge_vest_armor_90_flk {
+        HIDDEN
+        class ItemInfo;
+    };
+    class gm_ge_vest_armor_90_leader_flk: gm_ge_vest_armor_90_flk {
+        HIDDEN
+        class ItemInfo;
+    };
+    class gm_ge_vest_armor_90_machinegunner_flk: gm_ge_vest_armor_90_flk {
+        HIDDEN
+        class ItemInfo;
+    };
+    class gm_ge_vest_armor_90_officer_flk: gm_ge_vest_armor_90_flk {
+        HIDDEN
+        class ItemInfo;
+    };
+    class gm_ge_vest_armor_90_rifleman_flk: gm_ge_vest_armor_90_flk {
+        HIDDEN
+        class ItemInfo;
+    };
+    class gm_ge_vest_armor_90_demolition_flk: gm_ge_vest_armor_90_flk {
+        HIDDEN
+        class ItemInfo;
+    };
+    class gm_ge_vest_armor_90_medic_flk: gm_ge_vest_armor_90_flk {
+        HIDDEN
+        class ItemInfo;
+    };
+    class gmx_cdf2022_army_vest_armor_90_digittsko: gm_ge_vest_armor_90_flk {
+        HIDDEN
+        class ItemInfo;
+    };
+    class gmx_cdf2022_army_vest_armor_90_crew_digittsko: gm_ge_vest_armor_90_crew_flk {
+        HIDDEN
+        class ItemInfo;
+    };
+    class gmx_cdf2022_army_vest_armor_90_leader_digittsko: gm_ge_vest_armor_90_leader_flk {
+        HIDDEN
+        class ItemInfo;
+    };
+    class gmx_cdf2022_army_vest_armor_90_machinegunner_digittsko: gm_ge_vest_armor_90_machinegunner_flk {
+        HIDDEN
+        class ItemInfo;
+    };
+    class gmx_cdf2022_army_vest_armor_90_officer_digittsko: gm_ge_vest_armor_90_officer_flk {
+        HIDDEN
+        class ItemInfo;
+    };
+    class gmx_cdf2022_army_vest_armor_90_rifleman_digittsko: gm_ge_vest_armor_90_rifleman_flk {
+        HIDDEN
+        class ItemInfo;
+    };
+    class gmx_cdf2022_army_vest_armor_90_demolition_digittsko: gm_ge_vest_armor_90_demolition_flk {
+        HIDDEN
+        class ItemInfo;
+    };
+    class gmx_cdf2022_army_vest_armor_90_medic_digittsko: gm_ge_vest_armor_90_medic_flk {
+        HIDDEN
+        class ItemInfo;
+    };
+    class gmx_cdf2022_army_vest_90_crew_digittsko: gm_ge_vest_90_crew_flk {
+        HIDDEN
+        class ItemInfo;
+    };
+    class gmx_cdf2022_army_vest_90_crew_oli: gm_ge_vest_90_crew_flk {
+        HIDDEN
+        class ItemInfo;
+    };
+    class gmx_cdf2022_army_vest_90_demolition_digittsko: gm_ge_vest_90_demolition_flk {
+        HIDDEN
+        class ItemInfo;
+    };
+    class gmx_cdf2022_army_vest_90_demolition_oli: gm_ge_vest_90_demolition_flk {
+        HIDDEN
+        class ItemInfo;
+    };
+    class gmx_cdf2022_army_vest_90_leader_digittsko: gm_ge_vest_90_leader_flk {
+        HIDDEN
+        class ItemInfo;
+    };
+    class gmx_cdf2022_army_vest_90_leader_oli: gm_ge_vest_90_leader_flk {
+        HIDDEN
+        class ItemInfo;
+    };
+    class gmx_cdf2022_army_vest_90_machinegunner_digittsko: gm_ge_vest_90_machinegunner_flk {
+        HIDDEN
+        class ItemInfo;
+    };
+    class gmx_cdf2022_army_vest_90_machinegunner_oli: gm_ge_vest_90_machinegunner_flk {
+        HIDDEN
+        class ItemInfo;
+    };
+    class gmx_cdf2022_army_vest_90_medic_digittsko: gm_ge_vest_90_medic_flk {
+        HIDDEN
+        class ItemInfo;
+    };
+    class gmx_cdf2022_army_vest_90_medic_oli: gm_ge_vest_90_medic_flk {
+        HIDDEN
+        class ItemInfo;
+    };
+    class gmx_cdf2022_army_vest_90_officer_digittsko: gm_ge_vest_90_officer_flk {
+        HIDDEN
+        class ItemInfo;
+    };
+    class gmx_cdf2022_army_vest_90_officer_oli: gm_ge_vest_90_officer_flk {
+        HIDDEN
+        class ItemInfo;
+    };
+    class gmx_cdf2022_army_vest_90_rifleman_digittsko: gm_ge_vest_90_rifleman_flk {
+        HIDDEN
+        class ItemInfo;
+    };
+    class gmx_cdf2022_army_vest_90_rifleman_oli: gm_ge_vest_90_rifleman_flk {
+        HIDDEN
+        class ItemInfo;
+    };
+    class gmx_cdf2022_army_vest_orel_blu: gm_ge_army_vest_pilot_oli {
+        HIDDEN
+        class ItemInfo;
+    };
+    class gmx_cdf2022_army_vest_pads_orel_blu: gm_ge_army_vest_pilot_pads_oli {
+        HIDDEN
+        class ItemInfo;
+    };
+    class gmx_cdf_army_vest_belt_ttsko: gm_gc_army_vest_80_belt_str {
+        HIDDEN
+        class ItemInfo;
+    };
+    class gmx_cdf_army_vest_rifleman_ttsko: gm_gc_army_vest_80_rifleman_str {
+        HIDDEN
+        class ItemInfo;
+    };
+    class gmx_cdf_army_vest_leader_ttsko: gm_gc_army_vest_80_leader_str {
+        HIDDEN
+        class ItemInfo;
+    };
+    class gmx_cdf_army_vest_marksman_ttsko: gm_gc_bgs_vest_80_border_str {
+        HIDDEN
+        class ItemInfo;
+    };
+    class gmx_cdf_army_vest_lmg_ttsko: gm_gc_army_vest_80_lmg_str {
+        HIDDEN
+        class ItemInfo;
+    };
+    class gmx_cdf_army_vest_at_ttsko: gm_gc_army_vest_80_at_str {
         HIDDEN
         class ItemInfo;
     };
@@ -35411,6 +35531,586 @@ class CfgWeapons {
                     hitpointName = "HitBody";
                     passThrough = 0.3;
                     explosionShielding = 0.1;
+                };
+            };
+        };
+    };
+    class gmx_cdf2022_army_vest_armor_90_digittsko_ARM: gmx_cdf2022_army_vest_armor_90_digittsko {
+        SHOWN
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Neck {
+                    hitpointName = "HitNeck";
+                    armor = 16;
+                    passThrough = 0.3;
+                    explosionShielding = 0.1;
+                };
+                class Chest {
+                    HitpointName = "HitChest";
+                    armor = 16;
+                    PassThrough = 0.3;
+                    explosionShielding = 0.1;
+                };
+                class Diaphragm {
+                    HitpointName = "HitDiaphragm";
+                    armor = 16;
+                    PassThrough = 0.3;
+                    explosionShielding = 0.1;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 16;
+                    passThrough = 0.3;
+                    explosionShielding = 0.1;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.3;
+                    explosionShielding = 0.1;
+                };
+            };
+        };
+    };
+    class gmx_cdf2022_army_vest_armor_90_crew_digittsko_ARM: gmx_cdf2022_army_vest_armor_90_crew_digittsko {
+        SHOWN
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Neck {
+                    hitpointName = "HitNeck";
+                    armor = 16;
+                    passThrough = 0.3;
+                    explosionShielding = 0.1;
+                };
+                class Chest {
+                    HitpointName = "HitChest";
+                    armor = 16;
+                    PassThrough = 0.3;
+                    explosionShielding = 0.1;
+                };
+                class Diaphragm {
+                    HitpointName = "HitDiaphragm";
+                    armor = 16;
+                    PassThrough = 0.3;
+                    explosionShielding = 0.1;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 16;
+                    passThrough = 0.3;
+                    explosionShielding = 0.1;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.3;
+                    explosionShielding = 0.1;
+                };
+            };
+        };
+    };
+    class gmx_cdf2022_army_vest_armor_90_leader_digittsko_ARM: gmx_cdf2022_army_vest_armor_90_leader_digittsko {
+        SHOWN
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Neck {
+                    hitpointName = "HitNeck";
+                    armor = 16;
+                    passThrough = 0.3;
+                    explosionShielding = 0.1;
+                };
+                class Chest {
+                    HitpointName = "HitChest";
+                    armor = 16;
+                    PassThrough = 0.3;
+                    explosionShielding = 0.1;
+                };
+                class Diaphragm {
+                    HitpointName = "HitDiaphragm";
+                    armor = 16;
+                    PassThrough = 0.3;
+                    explosionShielding = 0.1;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 16;
+                    passThrough = 0.3;
+                    explosionShielding = 0.1;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.3;
+                    explosionShielding = 0.1;
+                };
+            };
+        };
+    };
+    class gmx_cdf2022_army_vest_armor_90_machinegunner_digittsko_ARM: gmx_cdf2022_army_vest_armor_90_machinegunner_digittsko {
+        SHOWN
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Neck {
+                    hitpointName = "HitNeck";
+                    armor = 16;
+                    passThrough = 0.3;
+                    explosionShielding = 0.1;
+                };
+                class Chest {
+                    HitpointName = "HitChest";
+                    armor = 16;
+                    PassThrough = 0.3;
+                    explosionShielding = 0.1;
+                };
+                class Diaphragm {
+                    HitpointName = "HitDiaphragm";
+                    armor = 16;
+                    PassThrough = 0.3;
+                    explosionShielding = 0.1;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 16;
+                    passThrough = 0.3;
+                    explosionShielding = 0.1;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.3;
+                    explosionShielding = 0.1;
+                };
+            };
+        };
+    };
+    class gmx_cdf2022_army_vest_armor_90_officer_digittsko_ARM: gmx_cdf2022_army_vest_armor_90_officer_digittsko {
+        SHOWN
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Neck {
+                    hitpointName = "HitNeck";
+                    armor = 16;
+                    passThrough = 0.3;
+                    explosionShielding = 0.1;
+                };
+                class Chest {
+                    HitpointName = "HitChest";
+                    armor = 16;
+                    PassThrough = 0.3;
+                    explosionShielding = 0.1;
+                };
+                class Diaphragm {
+                    HitpointName = "HitDiaphragm";
+                    armor = 16;
+                    PassThrough = 0.3;
+                    explosionShielding = 0.1;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 16;
+                    passThrough = 0.3;
+                    explosionShielding = 0.1;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.3;
+                    explosionShielding = 0.1;
+                };
+            };
+        };
+    };
+    class gmx_cdf2022_army_vest_armor_90_rifleman_digittsko_ARM: gmx_cdf2022_army_vest_armor_90_rifleman_digittsko {
+        SHOWN
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Neck {
+                    hitpointName = "HitNeck";
+                    armor = 16;
+                    passThrough = 0.3;
+                    explosionShielding = 0.1;
+                };
+                class Chest {
+                    HitpointName = "HitChest";
+                    armor = 16;
+                    PassThrough = 0.3;
+                    explosionShielding = 0.1;
+                };
+                class Diaphragm {
+                    HitpointName = "HitDiaphragm";
+                    armor = 16;
+                    PassThrough = 0.3;
+                    explosionShielding = 0.1;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 16;
+                    passThrough = 0.3;
+                    explosionShielding = 0.1;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.3;
+                    explosionShielding = 0.1;
+                };
+            };
+        };
+    };
+    class gmx_cdf2022_army_vest_armor_90_demolition_digittsko_ARM: gmx_cdf2022_army_vest_armor_90_demolition_digittsko {
+        SHOWN
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Neck {
+                    hitpointName = "HitNeck";
+                    armor = 16;
+                    passThrough = 0.3;
+                    explosionShielding = 0.1;
+                };
+                class Chest {
+                    HitpointName = "HitChest";
+                    armor = 16;
+                    PassThrough = 0.3;
+                    explosionShielding = 0.1;
+                };
+                class Diaphragm {
+                    HitpointName = "HitDiaphragm";
+                    armor = 16;
+                    PassThrough = 0.3;
+                    explosionShielding = 0.1;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 16;
+                    passThrough = 0.3;
+                    explosionShielding = 0.1;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.3;
+                    explosionShielding = 0.1;
+                };
+            };
+        };
+    };
+    class gmx_cdf2022_army_vest_armor_90_medic_digittsko_ARM: gmx_cdf2022_army_vest_armor_90_medic_digittsko {
+        SHOWN
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Neck {
+                    hitpointName = "HitNeck";
+                    armor = 16;
+                    passThrough = 0.3;
+                    explosionShielding = 0.1;
+                };
+                class Chest {
+                    HitpointName = "HitChest";
+                    armor = 16;
+                    PassThrough = 0.3;
+                    explosionShielding = 0.1;
+                };
+                class Diaphragm {
+                    HitpointName = "HitDiaphragm";
+                    armor = 16;
+                    PassThrough = 0.3;
+                    explosionShielding = 0.1;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 16;
+                    passThrough = 0.3;
+                    explosionShielding = 0.1;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.3;
+                    explosionShielding = 0.1;
+                };
+            };
+        };
+    };
+    class gmx_cdf2022_army_vest_90_crew_digittsko_ARM: gmx_cdf2022_army_vest_90_crew_digittsko {
+        SHOWN
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Body {
+                    hitpointName = "HitBody";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+            };
+        };
+    };
+    class gmx_cdf2022_army_vest_90_crew_oli_ARM: gmx_cdf2022_army_vest_90_crew_oli {
+        SHOWN
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Body {
+                    hitpointName = "HitBody";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+            };
+        };
+    };
+    class gmx_cdf2022_army_vest_90_demolition_digittsko_ARM: gmx_cdf2022_army_vest_90_demolition_digittsko {
+        SHOWN
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Body {
+                    hitpointName = "HitBody";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+            };
+        };
+    };
+    class gmx_cdf2022_army_vest_90_demolition_oli_ARM: gmx_cdf2022_army_vest_90_demolition_oli {
+        SHOWN
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Body {
+                    hitpointName = "HitBody";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+            };
+        };
+    };
+    class gmx_cdf2022_army_vest_90_leader_digittsko_ARM: gmx_cdf2022_army_vest_90_leader_digittsko {
+        SHOWN
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Body {
+                    hitpointName = "HitBody";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+            };
+        };
+    };
+    class gmx_cdf2022_army_vest_90_leader_oli_ARM: gmx_cdf2022_army_vest_90_leader_oli {
+        SHOWN
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Body {
+                    hitpointName = "HitBody";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+            };
+        };
+    };
+    class gmx_cdf2022_army_vest_90_machinegunner_digittsko_ARM: gmx_cdf2022_army_vest_90_machinegunner_digittsko {
+        SHOWN
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Body {
+                    hitpointName = "HitBody";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+            };
+        };
+    };
+    class gmx_cdf2022_army_vest_90_machinegunner_oli_ARM: gmx_cdf2022_army_vest_90_machinegunner_oli {
+        SHOWN
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Body {
+                    hitpointName = "HitBody";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+            };
+        };
+    };
+    class gmx_cdf2022_army_vest_90_medic_digittsko_ARM: gmx_cdf2022_army_vest_90_medic_digittsko {
+        SHOWN
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Body {
+                    hitpointName = "HitBody";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+            };
+        };
+    };
+    class gmx_cdf2022_army_vest_90_medic_oli_ARM: gmx_cdf2022_army_vest_90_medic_oli {
+        SHOWN
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Body {
+                    hitpointName = "HitBody";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+            };
+        };
+    };
+    class gmx_cdf2022_army_vest_90_officer_digittsko_ARM: gmx_cdf2022_army_vest_90_officer_digittsko {
+        SHOWN
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Body {
+                    hitpointName = "HitBody";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+            };
+        };
+    };
+    class gmx_cdf2022_army_vest_90_officer_oli_ARM: gmx_cdf2022_army_vest_90_officer_oli {
+        SHOWN
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Body {
+                    hitpointName = "HitBody";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+            };
+        };
+    };
+    class gmx_cdf2022_army_vest_90_rifleman_digittsko_ARM: gmx_cdf2022_army_vest_90_rifleman_digittsko {
+        SHOWN
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Body {
+                    hitpointName = "HitBody";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+            };
+        };
+    };
+    class gmx_cdf2022_army_vest_90_rifleman_oli_ARM: gmx_cdf2022_army_vest_90_rifleman_oli {
+        SHOWN
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Body {
+                    hitpointName = "HitBody";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+            };
+        };
+    };
+    class gmx_cdf2022_army_vest_orel_blu_ARM: gmx_cdf2022_army_vest_orel_blu {
+        SHOWN
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Chest {
+                    HitpointName = "HitChest";
+                    armor = 16;
+                    PassThrough = 0.3;
+                };
+                class Diaphragm {
+                    HitpointName = "HitDiaphragm";
+                    armor = 16;
+                    PassThrough = 0.3;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.3;
+                };
+            };
+        };
+    };
+    class gmx_cdf2022_army_vest_pads_orel_blu_ARM: gmx_cdf2022_army_vest_pads_orel_blu {
+        SHOWN
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Chest {
+                    HitpointName = "HitChest";
+                    armor = 16;
+                    PassThrough = 0.3;
+                };
+                class Diaphragm {
+                    HitpointName = "HitDiaphragm";
+                    armor = 16;
+                    PassThrough = 0.3;
+                };
+                class Abdomen {
+                    hitpointName = "HitAbdomen";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+                class Body {
+                    hitpointName = "HitBody";
+                    passThrough = 0.3;
+                };
+            };
+        };
+    };
+    class gmx_cdf_army_vest_belt_ttsko_ARM: gmx_cdf_army_vest_belt_ttsko {
+        SHOWN
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Body {
+                    hitpointName = "HitBody";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+            };
+        };
+    };
+    class gmx_cdf_army_vest_rifleman_ttsko_ARM: gmx_cdf_army_vest_rifleman_ttsko {
+        SHOWN
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Body {
+                    hitpointName = "HitBody";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+            };
+        };
+    };
+    class gmx_cdf_army_vest_leader_ttsko_ARM: gmx_cdf_army_vest_leader_ttsko {
+        SHOWN
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Body {
+                    hitpointName = "HitBody";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+            };
+        };
+    };
+    class gmx_cdf_army_vest_marksman_ttsko_ARM: gmx_cdf_army_vest_marksman_ttsko {
+        SHOWN
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Body {
+                    hitpointName = "HitBody";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+            };
+        };
+    };
+    class gmx_cdf_army_vest_lmg_ttsko_ARM: gmx_cdf_army_vest_lmg_ttsko {
+        SHOWN
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Body {
+                    hitpointName = "HitBody";
+                    armor = 16;
+                    passThrough = 0.3;
+                };
+            };
+        };
+    };
+    class gmx_cdf_army_vest_at_ttsko_ARM: gmx_cdf_army_vest_at_ttsko {
+        SHOWN
+        class ItemInfo: ItemInfo {
+            class HitpointsProtectionInfo {
+                class Body {
+                    hitpointName = "HitBody";
+                    armor = 16;
+                    passThrough = 0.3;
                 };
             };
         };
