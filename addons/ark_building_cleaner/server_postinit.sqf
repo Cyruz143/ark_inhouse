@@ -6,7 +6,7 @@ ark_building_cleaner_fnc_doClean = {
     if (_isRuin) then {
         private _radius = (0 boundingBoxReal _buildingOld) #2;
         private _buildingPos = getPos _buildingOld;
-        private _entities = entities [["Man"], ["Logic"]] select {_x distance _buildingPos < _radius};
+        private _entities = entities [["CAManBase"], ["Logic"]] select {_x distance _buildingPos < _radius};
         private _objects = nearestObjects [_buildingPos, ["StaticWeapon","Strategic","NonStrategic","Thing"], _radius];
 
         // Dont try to delete the new or old ruin!
