@@ -15,7 +15,8 @@ class CfgPatches {
             "ace_common",
             "ace_medical_engine",
             "ace_medical_damage",
-            "ace_medical_treatment"
+            "ace_medical_treatment",
+            "ace_medical_gui"
         };
         VERSION_CONFIG;
     };
