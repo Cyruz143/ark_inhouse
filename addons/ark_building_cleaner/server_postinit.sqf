@@ -16,10 +16,10 @@ ark_building_cleaner_fnc_canClean = {
 
         private _xAxis = ((_p2 #0) - (_p1 #0)) / 2;
         private _yAxis = ((_p2 #1) - (_p1 #1)) / 2;
-        private _zAxis = ((_p2 #2) - (_p1 #2));
+        private _zAxis = ((_p2 #2) - (_p1 #2)) + 10;
 
         if (_nObjs isNotEqualTo []) then {
-            private _fObjs = _nObjs inAreaArray [_buildingPos, _xAxis, _yAxis, 0, true, (_zAxis + 10)];
+            private _fObjs = _nObjs inAreaArray [_buildingPos, _xAxis, _yAxis, 0, true, _zAxis];
             {_x call ark_building_cleaner_fnc_doClean} forEach _fObjs;
         };
 
