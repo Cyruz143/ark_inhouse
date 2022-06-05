@@ -29,5 +29,6 @@ class Extended_PostInit_EventHandlers {
     };
 };
 
+#include "ACE_Medical_Injuries.hpp"
 #include "ACE_Medical_Treatment.hpp"
 #include "CfgVehicles.hpp"
