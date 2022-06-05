@@ -163,14 +163,15 @@ ts_spawn_fnc_enableRotor = {
 ts_spawn_fnc_createChaseZone = {
     params ["_obj","_size"];
 
-    private _mkr = createMarkerLocal [(str _obj), (getPos _obj)];
+    private _pos = getPosATL _obj;
+    private _mkr = createMarkerLocal [(str _obj), _pos];
     _mkr setMarkerShapeLocal "ELLIPSE";
     _mkr setMarkerSizeLocal [35, 35];
     _mkr setMarkerAlphaLocal 0;
 
     [{(allPlayers inAreaArray _this #0) isNotEqualTo []}, {
         [_this #1,_this #2] call ark_admin_tools_fnc_chaseAI;
-    }, [_mkr,_obj,_size]] call CBA_fnc_waitUntilAndExecute;
+    }, [_mkr,_pos,_size]] call CBA_fnc_waitUntilAndExecute;
 };
 
 ts_spawn_fnc_createFortifications = {
