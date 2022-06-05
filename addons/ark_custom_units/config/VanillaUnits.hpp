@@ -263,8 +263,8 @@ class I_C_Soldier_Bandit_8_F_ARK: I_C_Soldier_Bandit_8_F {
     displayName = "Soldier (RPG-7)";
     weapons[] = {"CUP_arifle_AK47","CUP_launch_RPG7V","Throw","Put"};
     respawnWeapons[] = {"CUP_arifle_AK47","CUP_launch_RPG7V","Throw","Put"};
-    magazines[] = {"CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M"};
-    respawnMagazines[] = {"CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M"};
+    magazines[] = {"CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M","CUP_PG7V_M"};
+    respawnMagazines[] = {"CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M","CUP_PG7V_M"};
     backpack = "B_Kitbag_rgr_RPG7";
 };
 
