@@ -77,7 +77,7 @@ ts_spawn_fnc_activateLocation = {
     ts_spawn_availableMissions deleteAt (ts_spawn_availableMissions find _selectedMission);
 
     [
-        {count (allPlayers inAreaArray ts_spawn_selectedLocationMarkerName) > 0},
+        {(allPlayers inAreaArray ts_spawn_selectedLocationMarkerName) isNotEqualTo []},
         {
             [{(selectRandom ["paradrop","insert"]) call ts_spawn_fnc_enableRotor}, [], 240] call CBA_fnc_waitAndExecute;
         }
@@ -160,13 +160,17 @@ ts_spawn_fnc_enableRotor = {
     _spawnZone synchronizeObjectsAdd [_module,_jeff];
 };
 
-ts_spawn_fnc_createChaseTrg = {
-    params ["_obj"];
+ts_spawn_fnc_createChaseZone = {
+    params ["_obj","_size"];
 
-    private _trg = createTrigger ["EmptyDetector", (getPos _obj), false];
-    _trg setTriggerArea [35, 35, 0, false];
-    _trg setTriggerActivation ["ANYPLAYER", "PRESENT", false];
-    _trg setTriggerStatements ["this", "[(getPosATL thisTrigger)] call ark_admin_tools_fnc_chaseAI", ""];
+    private _mkr = createMarkerLocal [(str _obj), (getPos _obj)];
+    _mkr setMarkerShapeLocal "ELLIPSE";
+    _mkr setMarkerSizeLocal [35, 35];
+    _mkr setMarkerAlphaLocal 0;
+
+    [{(allPlayers inAreaArray _this #0) isNotEqualTo []}, {
+        [_this #1,_this #2] call ark_admin_tools_fnc_chaseAI;
+    }, [_mkr,_obj,_size]] call CBA_fnc_waitUntilAndExecute;
 };
 
 ts_spawn_fnc_createFortifications = {
@@ -253,7 +257,7 @@ ts_spawn_fnc_fillFortifications = {
 };
 
 ts_spawn_fnc_objDestroyVeh = {
-    ts_spawn_selectedLocation params ["_position"];
+    ts_spawn_selectedLocation params ["_position","_size"];
 
     private _grp = createGroup ts_enemy_side;
     _grp deleteGroupWhenEmpty true;
@@ -304,12 +308,12 @@ ts_spawn_fnc_objDestroyVeh = {
     _vehicle call ark_clear_cargo_fnc_doClearVehicle;
 
     [true, ["task1"], ["Locate and destroy the static armour in town", "Destroy Armour"], _position, "ASSIGNED", -1, true, "target"] call BIS_fnc_taskCreate;
-    _vehicle call ts_spawn_fnc_createChaseTrg;
+    [_vehicle,_size] call ts_spawn_fnc_createChaseZone;
 
     _vehicle addEventHandler ["Killed", {
         params ["_unit"];
         ["task1","SUCCEEDED"] call BIS_fnc_taskSetState;
-        [getPosATL _unit] call ark_admin_tools_fnc_chaseAI;
+        [getPosATL _unit,ts_spawn_selectedLocation #1] call ark_admin_tools_fnc_chaseAI;
     }];
 };
 
@@ -333,7 +337,7 @@ ts_spawn_fnc_objDestroyAmmo = {
     };
 
     [true, ["task2"], ["Locate and destroy the ammo cache hidden in town", "Destroy Cache"], _position, "ASSIGNED", -1, true, "destroy"] call BIS_fnc_taskCreate;
-    ts_spawn_var_ammoCrate call ts_spawn_fnc_createChaseTrg;
+    [ts_spawn_var_ammoCrate,_size] call ts_spawn_fnc_createChaseZone;
 
     ts_spawn_var_ammoCrate addEventHandler ["Killed", {
         params ["_unit"];
@@ -342,7 +346,7 @@ ts_spawn_fnc_objDestroyAmmo = {
 };
 
 ts_spawn_fnc_objRecoverIntel = {
-    ts_spawn_selectedLocation params ["_position"];
+    ts_spawn_selectedLocation params ["_position","_size"];
 
     private _nearRoad = selectRandom (_position nearRoads 100);
 
@@ -383,7 +387,7 @@ ts_spawn_fnc_objRecoverIntel = {
     _box addItemCargoGlobal ["ACE_Banana", 1];
 
     [true, ["task3"], ["Locate and secure the intel from the crash site", "Recover Intel"], _position, "ASSIGNED", -1, true, "intel"] call BIS_fnc_taskCreate;
-    _helo call ts_spawn_fnc_createChaseTrg;
+    [_helo,_size] call ts_spawn_fnc_createChaseZone;
 
     [
         {itemCargo _this isEqualTo []},
