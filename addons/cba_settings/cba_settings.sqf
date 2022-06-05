@@ -22,7 +22,6 @@ force ace_common_allowFadeMusic = true;
 force force ace_common_checkPBOsAction = 0;
 force force ace_common_checkPBOsCheckAll = false;
 force force ace_common_checkPBOsWhitelist = "[]";
-force force ace_noradio_enabled = true;
 
 // ACE Cook off
 force force ace_cookoff_ammoCookoffDuration = 0.3;
@@ -36,6 +35,7 @@ force force ace_cookoff_probabilityCoef = 1;
 force force ace_csw_ammoHandling = 1;
 force force ace_csw_defaultAssemblyMode = true;
 force force ace_csw_handleExtraMagazines = true;
+force force ace_csw_handleExtraMagazinesType = 0;
 force force ace_csw_progressBarTimeCoefficent = 0.5;
 ace_csw_dragAfterDeploy = true;
 
@@ -51,7 +51,7 @@ force force ace_explosives_punishNonSpecialists = true;
 force force ace_explosives_requireSpecialist = false;
 
 // ACE Fire
-force force ace_fire_dropWeapon = 1;
+force force ace_fire_dropWeapon = 0;
 force force ace_fire_enabled = true;
 force force ace_fire_enableFlare = false;
 force force ace_fire_enableScreams = true;
@@ -96,6 +96,7 @@ force force ace_repair_repairDamageThreshold_engineer = 0.4;
 force force ace_repair_wheelRepairRequiredItems = [];
 
 // ACE Magazine Repack
+force force ace_magazinerepack_repackAnimation = true;
 force force ace_magazinerepack_timePerAmmo = 1;
 force force ace_magazinerepack_timePerBeltLink = 4;
 force force ace_magazinerepack_timePerMagazine = 1.5;
@@ -142,6 +143,7 @@ force force ace_medical_fatalDamageSource = 1;
 force force ace_medical_fractureChance = 0.2;
 force force ace_medical_fractures = 1;
 force force ace_medical_gui_maxDistance = 3;
+force force ace_medical_gui_showBloodlossEntry = true;
 force force ace_medical_ivFlowRate = 2;
 force force ace_medical_limping = 1;
 force force ace_medical_painCoefficient = 1;
@@ -202,6 +204,7 @@ force force ace_nightvision_shutterEffects = true;
 // ACE Pointing
 force force ace_finger_enabled = true;
 force force ace_finger_maxRange = 4;
+force force ace_finger_proximityScaling = true;
 
 // ACE Pylons
 force force ace_pylons_enabledForZeus = false;
@@ -226,14 +229,24 @@ force force ace_spectator_maxFollowDistance = 25;
 force force ace_spectator_restrictModes = 0;
 force force ace_spectator_restrictVisions = 0;
 
+// ACE Trenches
+force ace_trenches_bigEnvelopeDigDuration = 20;
+force ace_trenches_bigEnvelopeRemoveDuration = 10;
+force ace_trenches_smallEnvelopeDigDuration = 10;
+force ace_trenches_smallEnvelopeRemoveDuration = 5;
+
 // ACE Uncategorized
 force force ace_fastroping_requireRopeItems = false;
 force force ace_gunbag_swapGunbagEnabled = true;
 force force ace_hitreactions_minDamageToTrigger = 0.25;
 force force ace_laser_dispersionCount = 2;
-force force ace_overpressure_distanceCoefficient = 1;
+force force ace_laser_showLaserOnMap = 3;
+force force ace_marker_flags_placeAnywhere = true;
+force force ace_noradio_enabled = true;
+force force ace_overpressure_distanceCoefficient = 0.75;
 force ace_parachute_failureChance = 0;
 force ace_parachute_hideAltimeter = false;
+force force ace_tagging_quickTag = 1;
 
 // ACE User Interface
 force force ace_ui_allowSelectiveUI = true;
@@ -246,12 +259,9 @@ force ace_vehiclelock_lockVehicleInventory = false;
 force ace_vehiclelock_vehicleStartingLockState = -1;
 
 // ACE Vehicles
-force force ace_vehicles_keepEngineRunning = false;
-
-// ACE Vehicles
 force force ace_vehicles_hideEjectAction = true;
 force force ace_vehicles_keepEngineRunning = false;
-ace_vehicles_speedLimiterStep = 5;
+force force ace_viewports_enabled = true;
 
 // ACE View Distance Limiter
 force force ace_viewdistance_enabled = true;
