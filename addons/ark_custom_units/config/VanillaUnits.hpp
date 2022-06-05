@@ -255,6 +255,19 @@ class I_C_Soldier_Bandit_7_F_ARK: I_C_Soldier_Bandit_7_F {
     respawnMagazines[] = {"CUP_75Rnd_TE4_LRT4_Green_Tracer_762x39_RPK_M","CUP_75Rnd_TE4_LRT4_Green_Tracer_762x39_RPK_M","CUP_75Rnd_TE4_LRT4_Green_Tracer_762x39_RPK_M","HandGrenade","HandGrenade"};
 };
 
+class I_C_Soldier_Bandit_8_F;
+class I_C_Soldier_Bandit_8_F_ARK: I_C_Soldier_Bandit_8_F {
+    scope = 2;
+    scopeArsenal = 2;
+    scopeCurator = 2;
+    displayName = "Soldier (RPG-7)";
+    weapons[] = {"CUP_arifle_AK47","CUP_launch_RPG7V","Throw","Put"};
+    respawnWeapons[] = {"CUP_arifle_AK47","CUP_launch_RPG7V","Throw","Put"};
+    magazines[] = {"CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M"};
+    respawnMagazines[] = {"CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M"};
+    backpack = "B_Kitbag_rgr_RPG7";
+};
+
 class I_C_Pilot_F;
 class I_C_Pilot_F_ARK: I_C_Pilot_F {
     scope = 2;
