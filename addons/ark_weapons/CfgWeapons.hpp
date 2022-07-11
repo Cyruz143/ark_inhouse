@@ -53,4 +53,22 @@ class CfgWeapons {
     class SMG_03C_hex: SMG_03C_black {
         displayName = $STR_ARK_P90_Hex_Name;
     };
+
+    // Tone down recoil on MMGs
+    class Rifle_Long_Base_F;
+    class CUP_lmg_MG3: Rifle_Long_Base_F {
+        dispersion = 0.0004;
+        recoil = "CUP_Mk48_recoil";
+        class manual: Mode_FullAuto {
+            dispersion = 0.0004;
+        };
+    };
+
+    class CUP_lmg_M240: Rifle_Long_Base_F {
+        dispersion = 0.0005;
+        recoil = "CUP_Mk48_recoil";
+        class manual: Mode_FullAuto {
+            dispersion = 0.0005;
+        };
+    };
 };
