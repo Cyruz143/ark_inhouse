@@ -1,4 +1,3 @@
-class Mode_SemiAuto;
 class Mode_FullAuto;
 
 class CfgWeapons {
@@ -54,21 +53,46 @@ class CfgWeapons {
         displayName = $STR_ARK_P90_Hex_Name;
     };
 
-    // Tone down recoil on MMGs
+    // Less recoil for MMGS + better when prone + tighten MOA
     class Rifle_Long_Base_F;
     class CUP_lmg_MG3: Rifle_Long_Base_F {
-        dispersion = 0.0004;
-        recoil = "CUP_Mk48_recoil";
+        MMG_RECOIL
+        MMG_RECOIL_PRONE
         class manual: Mode_FullAuto {
-            dispersion = 0.0004;
+            MMG_DISPERSION_TIGHT
         };
     };
 
     class CUP_lmg_M240: Rifle_Long_Base_F {
-        dispersion = 0.0005;
-        recoil = "CUP_Mk48_recoil";
+        MMG_RECOIL
+        MMG_RECOIL_PRONE
         class manual: Mode_FullAuto {
-            dispersion = 0.0005;
+            MMG_DISPERSION
+        };
+    };
+
+    class CUP_M60E4_base: Rifle_Long_Base_F {
+        MMG_RECOIL_PRONE
+    };
+
+    class CUP_lmg_UK59: Rifle_Long_Base_F {
+        MMG_RECOIL_PRONE
+        class manual: Mode_FullAuto {
+            MMG_DISPERSION
+        };
+    };
+
+    class CUP_lmg_Mk48_Base: Rifle_Long_Base_F {
+        MMG_RECOIL_PRONE
+        class manual: Mode_FullAuto {
+            MMG_DISPERSION
+        };
+    };
+
+    class CUP_lmg_PKM: Rifle_Long_Base_F {
+        MMG_RECOIL_PRONE
+        class manual: Mode_FullAuto {
+            MMG_DISPERSION
         };
     };
 };
