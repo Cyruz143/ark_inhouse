@@ -197,7 +197,7 @@ force force ace_medical_treatment_woundStitchTime = 5;
 force force ace_nightvision_aimDownSightsBlur = 0;
 force force ace_nightvision_disableNVGsWithSights = false;
 force force ace_nightvision_effectScaling = 0.5;
-force ace_nightvision_fogScaling = 0.5;
+force ace_nightvision_fogScaling = 0;
 force force ace_nightvision_noiseScaling = 0.5;
 force force ace_nightvision_shutterEffects = true;
 
