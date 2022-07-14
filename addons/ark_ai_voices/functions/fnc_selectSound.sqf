@@ -48,9 +48,9 @@ ark_ai_voices_fnc_selectSound = {
 
     _unit setVariable ["ark_ai_voices_var_lastLine", _voiceLine];
 
-    // Halloween testing, some units have "NoVoice" set
+    // Handle muted units, ww2 and sog
     private _speaker = speaker _unit;
-    if (toLower _speaker in ["", "novoice","ace_novoice","fow_mute"]) exitWith {
+    if (toLower _speaker in ["", "novoice", "ace_novoice", "fow_mute", "vie"]) exitWith {
         _unit setVariable ["ark_ai_voices_var_disableVoice", true];
     };
 
@@ -71,7 +71,7 @@ ark_ai_voices_fnc_selectSound = {
 
         private _protocolArr = getArray (configFile >> (getText (configFile >> "CfgVoice" >> _speaker >> "protocol")) >> "Words" >> "Combat" >> _voiceLine);
 
-        // Some mods/DLCS don't have combat words, fallbakc to "Normal"
+        // Some mods/DLCS don't have combat words, fallback to "Normal"
         if (_protocolArr isEqualTo []) then {
             _protocolArr = getArray (configFile >> (getText (configFile >> "CfgVoice" >> _speaker >> "protocol")) >> "Words" >> "Normal" >> _voiceLine);
         };
