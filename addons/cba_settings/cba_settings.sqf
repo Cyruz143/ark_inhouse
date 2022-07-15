@@ -281,10 +281,14 @@ force force ace_zeus_zeusAscension = false;
 force force ace_zeus_zeusBird = false;
 
 // ACRE2
-force force acre_sys_core_ignoreAntennaDirection = true;
+force force acre_sys_core_automaticAntennaDirection = true;
 force acre_sys_core_fullDuplex = false;
-force force acre_sys_core_interference = true;
+force force acre_sys_core_ignoreAntennaDirection = true;
+force force acre_sys_core_interference = false;
 force force acre_sys_core_revealToAI = 1;
+force force acre_sys_core_terrainLoss = 0;
+force force acre_sys_core_ts3ChannelName = "";
+force force acre_sys_core_ts3ChannelPassword = "";
 force force acre_sys_core_ts3ChannelSwitch = false;
 force force acre_sys_core_unmuteClients = true;
 force force acre_sys_signal_signalModel = 0;
