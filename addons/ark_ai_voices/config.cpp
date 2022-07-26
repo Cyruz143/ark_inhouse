@@ -31,4 +31,5 @@ class Extended_PostInit_EventHandlers {
     };
 };
 
+#include "CfgVehicles.hpp"
 #include "CfgVoice.hpp"
