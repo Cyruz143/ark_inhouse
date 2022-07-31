@@ -58,8 +58,8 @@ force force ace_fire_enableScreams = true;
 
 // ACE Fragmentation Simulation
 force force ace_frag_enabled = true;
-force force ace_frag_maxTrack = 10;
-force force ace_frag_maxTrackPerFrame = 10;
+force force ace_frag_maxTrack = 25;
+force force ace_frag_maxTrackPerFrame = 25;
 force force ace_frag_reflectionsEnabled = false;
 force force ace_frag_spallEnabled = false;
 
@@ -298,7 +298,7 @@ force force cba_disposable_dropUsedLauncher = 2;
 force force cba_disposable_replaceDisposableLauncher = true;
 
 // CBA Network
-force force cba_network_loadoutValidation = 0;
+force force cba_network_loadoutValidation = 2;
 
 // CUP
 force force CUP_CheckCfgPatches = false;
