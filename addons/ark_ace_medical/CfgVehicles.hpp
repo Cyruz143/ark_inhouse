@@ -24,7 +24,7 @@ class CfgVehicles {
         displayName = "ARK Medical Supply Crate";
         author = "ARK";
         class TransportItems {
-            MACRO_ADDITEM(ACE_fieldDressing,30);
+            MACRO_ADDITEM(ACE_fieldDressing,200);
             MACRO_ADDITEM(ACE_morphine,30);
             MACRO_ADDITEM(ACE_epinephrine,30);
             MACRO_ADDITEM(ACE_bloodIV_500,24);
