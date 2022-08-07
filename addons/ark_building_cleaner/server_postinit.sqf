@@ -9,7 +9,7 @@ ark_building_cleaner_fnc_canClean = {
         private _p1 = _bbr #0;
         private _p2 = _bbr #1;
         private _p3 = _bbr #2;
-        private _p3per = _p3 * 0.15;
+        private _p3per = _p3 * 0.5;
         private _nObjs = _buildingPos nearObjects (_p3 + _p3per);
 
         {_nObjs deleteAt (_nObjs find _x)} forEach [_buildingOld,_buildingNew];
