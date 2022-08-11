@@ -38,6 +38,7 @@ if (ark_camshake_enabled) then {
             }
         } else {
             player removeEventHandler ["Suppressed", ark_camshake_idx];
+            ark_camshake_idx = nil;
         };
     };
 }] call CBA_fnc_addEventHandler;
