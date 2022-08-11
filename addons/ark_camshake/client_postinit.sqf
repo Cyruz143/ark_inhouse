@@ -15,16 +15,19 @@ ark_camshake_fnc_explosionShake = {
     [{addCamShake [(1000 / _this) min 20, 1, 5]}, _dist, _dist / 343] call CBA_fnc_waitAndExecute;
 };
 
-player addEventHandler ["FiredNear", {
-    params ["_unit", "_firer", "_distance"];
-
-    if (!local _unit) exitWith {};
-
-    if ([side group _unit, side group _firer] call BIS_fnc_sideIsEnemy) then {
-        if (_distance == 0) then {
-            _distance = 1
-        };
+if (ark_camshake_enabled) then {
+    ark_camshake_idx = player addEventHandler ["Suppressed", {
+        params ["", "_distance"];
 
         addCamShake [(20 / _distance) min 0.75, 0.25, 10];
+    }];
+};
+
+
+["CBA_SettingChanged", {
+    params ["_setting"];
+
+    if (_setting isEqualTo "ark_camshake_enabled") then {
+        player removeEventHandler ["Suppressed", ark_camshake_idx];
     };
-}];
+}] call CBA_fnc_addEventHandler;
