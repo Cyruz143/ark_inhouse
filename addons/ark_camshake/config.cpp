@@ -16,7 +16,7 @@ class CfgPatches {
 
 class Extended_PreInit_EventHandlers {
     class ADDON {
-        clientinit = "call compileScript [x\ark\addons\ark_camshake\client_preinit.sqf'];";
+        clientinit = "call compileScript ['x\ark\addons\ark_camshake\client_preinit.sqf'];";
     };
 };
 
