@@ -15,7 +15,7 @@ ark_camshake_fnc_explosionShake = {
     [{addCamShake [(1000 / _this) min 20, 1, 5]}, _dist, _dist / 343] call CBA_fnc_waitAndExecute;
 };
 
-if (ark_camshake_enabled) then {
+ark_camshake_fnc_addEH = {
     ark_camshake_idx = player addEventHandler ["Suppressed", {
         params ["", "_distance"];
 
@@ -23,11 +23,21 @@ if (ark_camshake_enabled) then {
     }];
 };
 
+if (ark_camshake_enabled) then {
+    call ark_camshake_fnc_addEH;
+};
+
 
 ["CBA_SettingChanged", {
-    params ["_setting"];
+    params ["_setting", "_value"];
 
     if (_setting isEqualTo "ark_camshake_enabled") then {
-        player removeEventHandler ["Suppressed", ark_camshake_idx];
+        if (_value) then {
+            if (isNil "ark_camshake_idx") then {
+                call ark_camshake_fnc_addEH;
+            }
+        } else {
+            player removeEventHandler ["Suppressed", ark_camshake_idx];
+        };
     };
 }] call CBA_fnc_addEventHandler;
