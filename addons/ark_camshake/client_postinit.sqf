@@ -17,7 +17,10 @@ ark_camshake_fnc_explosionShake = {
 
 ark_camshake_fnc_addEH = {
     ark_camshake_idx = player addEventHandler ["Suppressed", {
-        params ["", "_distance"];
+        params ["_unit", "_distance"];
+
+        // Dont fuck with peoples aim, too annoying also don't care if they're in a vehicle
+        if (cameraView in acre_sys_gestures_disallowedViews || {!isNull objectParent _unit}) exitWith {};
 
         addCamShake [(20 / _distance) min 0.75, 0.25, 10];
     }];
