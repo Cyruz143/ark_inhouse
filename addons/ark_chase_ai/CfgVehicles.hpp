@@ -8,9 +8,6 @@ class CfgVehicles {
         icon = "\x\ark\addons\ark_chase_ai\resources\chase.paa";
         function = "ark_chase_ai_module_preinit";
         isTriggerActivated = 1;
-        isGlobal = 0;
-        isDisposable = 1;
-        is3DEN = 0;
         class ModuleDescription {
             description = "Spawns AI that hunt players";
         };

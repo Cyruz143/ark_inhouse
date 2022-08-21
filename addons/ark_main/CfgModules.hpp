@@ -12,7 +12,8 @@ class ARK_Module: Module_F {
     functionPriority = 1;
     isTriggerActivated = 0;
     isGlobal = 0;
-    isDisposable = 0;
+    isDisposable = 1;
+    is3DEN = 0;
     vehicleClass = "Modules";
     class ModuleDescription: ModuleDescription {
         description = "ARK Module";

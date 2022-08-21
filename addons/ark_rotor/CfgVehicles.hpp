@@ -20,7 +20,6 @@ class CfgVehicles {
         scope = 1;
         function = "ark_rotor_module_preinit";
         isTriggerActivated = 1;
-        isGlobal = 0;
     };
 
     class ARK_Rotor_Paradrop: ARK_Rotor_Base {
