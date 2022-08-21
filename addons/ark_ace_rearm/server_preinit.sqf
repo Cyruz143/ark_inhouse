@@ -13,4 +13,7 @@ ark_ace_rearm_fnc_enableRearm = {
     {
         _x call ark_ace_rearm_fnc_makeSource;
     } forEach _vehicles;
+
+    ["ACE Rearm","INFO","fnc_enableRearm","Deleted module",_logic] call ark_admin_tools_fnc_log;
+    deleteVehicle _logic;
 };

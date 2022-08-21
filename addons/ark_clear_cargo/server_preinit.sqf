@@ -17,4 +17,7 @@ ark_clear_cargo_fnc_clearVehicle = {
     {
         [_x] call ark_clear_cargo_fnc_doClearVehicle;
     } forEach _units;
+
+    ["Clear Cargo","INFO","fnc_clearVehicle","Deleting module",_logic] call ark_admin_tools_fnc_log;
+    deleteVehicle _logic;
 };

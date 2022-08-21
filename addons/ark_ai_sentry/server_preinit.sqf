@@ -46,4 +46,7 @@ ark_ai_sentry_fnc_makeSentry = {
     {
         [_x, _enabledNightvision] call ark_ai_sentry_fnc_make_sentry;
     } forEach _units;
+
+    ["AI Sentry", "INFO", "fnc_makeSentry"," Deleting module", _logic] call ark_admin_tools_fnc_log;
+    deleteVehicle _logic;
 };
