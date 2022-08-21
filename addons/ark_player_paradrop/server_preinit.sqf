@@ -6,6 +6,6 @@ ark_player_paradrop_fnc_init = {
     missionNamespace setVariable ["ark_player_paradrop_var_jumpGap", (_logic getVariable ["Jump_Gap", 1]), true];
 
     ["Player Paradrop","INFO","fnc_init","Player paradrop system enabled"] call ark_admin_tools_fnc_log;
-    ["Player Paradrop","INFO","fnc_init","Module deleted",_logic] call ark_admin_tools_fnc_log;
+    ["Player Paradrop","INFO","fnc_init","Deleting module",_logic] call ark_admin_tools_fnc_log;
     deleteVehicle _logic;
 };
