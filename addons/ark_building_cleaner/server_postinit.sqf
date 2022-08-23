@@ -3,7 +3,7 @@ addMissionEventHandler ["BuildingChanged", {call ark_building_cleaner_fnc_canCle
 ark_building_cleaner_fnc_canClean = {
     params ["_buildingOld", "_buildingNew", "_isRuin"];
 
-    if (_isRuin && {getDammage _buildingOld == 1}) then {
+    if (_isRuin) then {
         private _buildingPos = getPos _buildingOld;
         private _bbr = 0 boundingBoxReal _buildingOld;
         private _p1 = _bbr #0;
