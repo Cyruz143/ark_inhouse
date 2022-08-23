@@ -33,15 +33,8 @@ ark_building_cleaner_fnc_doClean = {
     if (_obj isKindOf "Logic") exitWith {};
 
     // Dont kill players and kill AI (they get stuck in ruins)
-    if (_obj isKindOf "CAManBase") exitWith {
-        if (!isPlayer _obj) then {
-            // Can remove deleteVehicle on 2.10 ref: T63050
-            if (alive _obj) then {
-                _obj setDamage 1;
-            } else {
-                deleteVehicle _obj;
-            };
-        };
+    if (_obj isKindOf "CAManBase" && {!isPlayer _obj && alive _obj}) exitWith {
+        _obj setDamage 1;
     };
 
     // simpleObjects & buildings float regardless so delete
