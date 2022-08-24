@@ -18,7 +18,8 @@ class CfgPatches {
             "mnp_indep",
             "mnp_opfor",
             "gm_core_characters",
-            "acp_main"
+            "acp_main",
+            "Characters_f_lxWS"
         };
         VERSION_CONFIG;
     };
