@@ -184,6 +184,12 @@ class CfgWeapons {
     class V_EOD_IDAP_blue_F: V_EOD_base_F {
         HIDDEN
     };
+    class V_lxWS_HarnessO_oli: Vest_NoCamo_Base {
+        HIDDEN
+    };
+    class V_lxWS_TacVestIR_oli: Vest_NoCamo_Base {
+        HIDDEN
+    };
     class V_CarrierRigKBT_01_EAF_F: V_CarrierRigKBT_01_base_F {
         HIDDEN
     };
@@ -2192,6 +2198,24 @@ class CfgWeapons {
         HIDDEN
     };
     class V_PlateCarrier2_rgr_noflag_F: V_PlateCarrier2_rgr {
+        HIDDEN
+    };
+    class V_lxWS_PlateCarrierGL_desert: V_PlateCarrierGL_rgr {
+        HIDDEN
+    };
+    class V_lxWS_PlateCarrier1_desert: V_PlateCarrier1_blk {
+        HIDDEN
+    };
+    class V_lxWS_PlateCarrier2_desert: V_PlateCarrier2_blk {
+        HIDDEN
+    };
+    class V_lxWS_PlateCarrierSpec_desert: V_PlateCarrierSpec_blk {
+        HIDDEN
+    };
+    class V_lxWS_UN_Vest_F: V_PlateCarrierIAGL_oli {
+        HIDDEN
+    };
+    class V_lxWS_UN_Vest_Lite_F: V_PlateCarrierIA1_dgtl {
         HIDDEN
     };
     class V_PlateCarrier1_wdl: V_PlateCarrier1_blk {
@@ -5936,6 +5960,30 @@ class CfgWeapons {
         ARMOUR
     };
     class V_EOD_IDAP_blue_F_ARM: V_EOD_IDAP_blue_F {
+        ARMOUR
+    };
+    class V_lxWS_PlateCarrierGL_desert_ARM: V_lxWS_PlateCarrierGL_desert {
+        ARMOUR
+    };
+    class V_lxWS_PlateCarrier1_desert_ARM: V_lxWS_PlateCarrier1_desert {
+        ARMOUR
+    };
+    class V_lxWS_PlateCarrier2_desert_ARM: V_lxWS_PlateCarrier2_desert {
+        ARMOUR
+    };
+    class V_lxWS_PlateCarrierSpec_desert_ARM: V_lxWS_PlateCarrierSpec_desert {
+        ARMOUR
+    };
+    class V_lxWS_HarnessO_oli_ARM: V_lxWS_HarnessO_oli {
+        ARMOUR
+    };
+    class V_lxWS_TacVestIR_oli_ARM: V_lxWS_TacVestIR_oli {
+        ARMOUR
+    };
+    class V_lxWS_UN_Vest_F_ARM: V_lxWS_UN_Vest_F {
+        ARMOUR
+    };
+    class V_lxWS_UN_Vest_Lite_F_ARM: V_lxWS_UN_Vest_Lite_F {
         ARMOUR
     };
     class V_CarrierRigKBT_01_EAF_F_ARM: V_CarrierRigKBT_01_EAF_F {
