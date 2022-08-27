@@ -1,6 +1,10 @@
 ark_ace_rearm_fnc_makeSource = {
     params ["_vehicle"];
-    [_vehicle, 9999] call ace_rearm_fnc_makeSource;
+
+    [{time > 0}, {
+        [_this, 9999] call ace_rearm_fnc_makeSource;
+        ["ACE Rearm","INFO","fnc_enableRearm","Rearm enabled for",_this] call ark_admin_tools_fnc_log;
+    }, _vehicle] call CBA_fnc_waitUntilAndExecute;
 };
 
 ark_ace_rearm_fnc_enableRearm = {
