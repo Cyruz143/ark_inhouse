@@ -18,9 +18,9 @@ class CfgPatches {
     };
 };
 
-class Extended_PostInit_EventHandlers {
+class Extended_PreInit_EventHandlers {
     class ADDON {
-        serverinit = "call compileScript ['x\ark\addons\ark_ace_rearm\server_postinit.sqf'];";
+        serverinit = "call compileScript ['x\ark\addons\ark_ace_rearm\server_preinit.sqf'];";
     };
 };
 
