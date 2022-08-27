@@ -8,7 +8,7 @@ ark_rotor_module_preinit = {
 
         _logic setVariable ["ark_rotor_var_moduleRan", _activated];
         [_logic] call ark_rotor_fnc_checkTrigger;
-    } else {
-        ["Rotor", "ERROR","module_preinit","Module not activated - Disabling"] call ark_admin_tools_fnc_log;
     };
+
+    true;
 };
