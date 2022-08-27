@@ -45,6 +45,7 @@ ark_chase_ai_fnc_init = {
     ark_chase_ai_var_skillArray = ["Camp"] call adm_common_fnc_getZoneTemplateSkillValues;
     ark_chase_ai_var_unitPool = [];
     ark_chase_ai_var_spawning = false;
+    deleteVehicle _logic;
 };
 
 [{triggerActivated ark_chase_ai_var_triggerArea}, {
