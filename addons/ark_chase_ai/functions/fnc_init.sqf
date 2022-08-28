@@ -46,7 +46,7 @@ ark_chase_ai_fnc_init = {
     ark_chase_ai_var_unitPool = [];
     ark_chase_ai_var_spawning = false;
 
-    ["Chase AI","ERROR","fnc_init","Deleting module", _logic] call ark_admin_tools_fnc_log;
+    ["Chase AI","INFO","fnc_init","Deleting module", _logic] call ark_admin_tools_fnc_log;
     deleteVehicle _logic;
 };
 
