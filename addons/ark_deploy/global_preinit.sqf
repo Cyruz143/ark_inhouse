@@ -25,6 +25,9 @@ ark_deploy_module_init = {
     publicVariable "ark_deploy_preDeployRequired";
     publicVariable "ark_deploy_pre_factions";
     publicVariable "ark_deploy_post_factions";
+
+    //Return true because spawnd from module
+    true;
 };
 
 ark_deploy_fnc_assignDeployClick = {

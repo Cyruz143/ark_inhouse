@@ -8,4 +8,7 @@ ark_player_paradrop_fnc_init = {
     ["Player Paradrop","INFO","fnc_init","Player paradrop system enabled"] call ark_admin_tools_fnc_log;
     ["Player Paradrop","INFO","fnc_init","Deleting module",_logic] call ark_admin_tools_fnc_log;
     deleteVehicle _logic;
+
+    //Return true because spawnd from module
+    true;
 };

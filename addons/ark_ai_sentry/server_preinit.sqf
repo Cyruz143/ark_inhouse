@@ -35,7 +35,7 @@ ark_ai_sentry_fnc_make_sentry = {
 };
 
 ark_ai_sentry_fnc_makeSentry = {
-    params ["_logic","_units"];
+    params ["_logic", "_units"];
 
     if (_units isEqualTo []) exitWith {
         ["AI Sentry", "ERROR", "fnc_makeSentry"," Module not syncd to any units", _logic] call ark_admin_tools_fnc_log;
@@ -49,4 +49,7 @@ ark_ai_sentry_fnc_makeSentry = {
 
     ["AI Sentry", "INFO", "fnc_makeSentry"," Deleting module", _logic] call ark_admin_tools_fnc_log;
     deleteVehicle _logic;
+
+    //Return true because spawnd from module
+    true;
 };

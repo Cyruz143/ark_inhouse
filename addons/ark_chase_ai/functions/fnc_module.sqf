@@ -10,5 +10,6 @@ ark_chase_ai_module_preinit = {
         [_logic] call ark_chase_ai_fnc_init;
     };
 
+    //Return true because spawnd from module
     true;
 };

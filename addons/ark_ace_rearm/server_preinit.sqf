@@ -1,10 +1,8 @@
 ark_ace_rearm_fnc_makeSource = {
     params ["_vehicle"];
 
-    [{time > 0}, {
-        [_this, 9999] call ace_rearm_fnc_makeSource;
-        ["ACE Rearm","INFO","fnc_enableRearm","Rearm enabled for",_this] call ark_admin_tools_fnc_log;
-    }, _vehicle] call CBA_fnc_waitUntilAndExecute;
+    [_vehicle, 9999] call ace_rearm_fnc_makeSource;
+    ["ACE Rearm","INFO","fnc_enableRearm","Rearm enabled for",_vehicle] call ark_admin_tools_fnc_log;
 };
 
 ark_ace_rearm_fnc_enableRearm = {
@@ -20,4 +18,7 @@ ark_ace_rearm_fnc_enableRearm = {
 
     ["ACE Rearm","INFO","fnc_enableRearm","Deleting module",_logic] call ark_admin_tools_fnc_log;
     deleteVehicle _logic;
+
+    //Return true because spawnd from module
+    true;
 };

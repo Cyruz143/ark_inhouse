@@ -20,4 +20,7 @@ ark_clear_cargo_fnc_clearVehicle = {
 
     ["Clear Cargo","INFO","fnc_clearVehicle","Deleting module",_logic] call ark_admin_tools_fnc_log;
     deleteVehicle _logic;
+
+    //Return true because spawnd from module
+    true;
 };

@@ -10,5 +10,6 @@ ark_rotor_module_preinit = {
         [_logic] call ark_rotor_fnc_checkTrigger;
     };
 
+    //Return true because spawnd from module
     true;
 };
