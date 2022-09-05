@@ -12,7 +12,8 @@ class CfgPatches {
         requiredAddons[] = {
             "ark_main",
             "CUP_Weapons_LoadOrder",
-            "CUP_Creatures_People_LoadOrder"
+            "CUP_Creatures_People_LoadOrder",
+            "Characters_f_lxWS"
         };
         VERSION_CONFIG;
     };
@@ -24,6 +25,7 @@ class CfgPatches {
 
 class CfgVehicles {
     #include "config\VanillaUnits.hpp"
+    #include "config\WSUnits.hpp"
     #include "config\CBRNUnits.hpp"
     #include "config\NVAUnits.hpp"
     #include "config\GendUnits.hpp"
