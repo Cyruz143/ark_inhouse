@@ -6,4 +6,9 @@ class CfgWeapons {
             mass = 1;
         };
     };
+    class ACE_EntrenchingTool: ACE_ItemCore {
+        class ItemInfo: CBA_MiscItem_ItemInfo {
+            mass = 1;
+        };
+    };
 };

@@ -12,6 +12,7 @@ class CfgPatches {
         requiredAddons[] = {
             "ark_main",
             "ace_logistics_wirecutter",
+            "arce_trenches",
             "us_military_units"
         };
         VERSION_CONFIG;
