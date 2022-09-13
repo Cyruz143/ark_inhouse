@@ -29,7 +29,7 @@ force ace_cookoff_destroyVehicleAfterCookoff = true;
 force force ace_cookoff_enable = 2;
 force force ace_cookoff_enableAmmobox = true;
 force force ace_cookoff_enableAmmoCookoff = true;
-force force ace_cookoff_enableFire = false;
+force force ace_cookoff_enableFire = true;
 force force ace_cookoff_probabilityCoef = 1;
 
 // ACE Crew Served Weapons
