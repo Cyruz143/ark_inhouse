@@ -12,15 +12,7 @@ ark_chase_ai_fnc_unitSpawner = {
                     };
                 };
 
-                private _nearEnemy = _unit call ark_chase_ai_fnc_nearEnemies;
-                if (isNil "_nearEnemy" || { _nearEnemy isEqualTo [] } ) exitWith {
-                    if (missionNamespace getVariable ["ark_chase_ai_var_allowLogging", true]) then {
-                        ["Chase AI", "INFO","fnc_unitSpawner","Unable to find a near enemy"] call ark_admin_tools_fnc_log;
-                        missionNamespace setVariable ["ark_chase_ai_var_allowLogging", false, false];
-                    };
-                };
-
-                [_unit,_nearEnemy] call ark_chase_ai_fnc_doMove;
+                [_unit] call ark_chase_ai_fnc_doMove;
                 missionNamespace setVariable ["ark_chase_ai_var_allowLogging", true, false];
             };
         },

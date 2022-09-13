@@ -1,17 +1,15 @@
 ark_chase_ai_fnc_doMove = {
-    params ["_unit","_target"];
+    params ["_unit"];
 
     [
         {
             params ["_args", "_id"];
-            _args params ["_unit","_target"];
+            _args params ["_unit"];
             if (isNil "_unit" || { !alive _unit } || { _unit getVariable ["ark_admin_tools_fnc_chaseAI_hunting", false] }) exitWith {
                 _id call CBA_fnc_removePerFrameHandler;
             };
 
-            if (!alive _target) then {
-                _target = _unit call ark_chase_ai_fnc_nearEnemies;
-            };
+            private _target = _unit call ark_chase_ai_fnc_nearEnemies;
 
             if (isNil "_target" || { _target isEqualTo [] } ) exitWith {
                 deleteVehicle _unit;
@@ -36,6 +34,6 @@ ark_chase_ai_fnc_doMove = {
             };
         },
         15,
-        [_unit,_target]
+        [_unit]
     ] call CBA_fnc_addPerFrameHandler;
 };
