@@ -13,6 +13,7 @@ class CfgPatches {
             "ark_main",
             "ark_admin_tools",
             "ace_common",
+            "ace_fire",
             "ace_medical_engine",
             "ace_medical_damage",
             "ace_medical_treatment",
@@ -31,5 +32,6 @@ class Extended_PostInit_EventHandlers {
 
 #include "ACE_Medical_Injuries.hpp"
 #include "ACE_Medical_Treatment.hpp"
+#include "ACE_Medical_Treatment_Actions.hpp"
 #include "CfgReplacementItems.hpp"
 #include "CfgVehicles.hpp"

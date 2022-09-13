@@ -54,3 +54,9 @@ ark_ace_medical_fnc_handleFallDamage = {
 
     [_unit, _copy, _typeOfDamage]
 };
+
+ark_ace_medical_fnc_putOutFire = {
+    params ["", "_patient"];
+
+    _patient setVariable ["ace_fire_intensity", 0, true];
+};
