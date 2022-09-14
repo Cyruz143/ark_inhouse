@@ -2,6 +2,9 @@ ark_chase_ai_fnc_createUnit = {
     private _pos = call ark_chase_ai_fnc_findSpawnPos;
     if (isNil "_pos" || { _pos isEqualTo [] }) exitWith {};
 
+    // If the grp is empty there is chance it'll be cleaned up, try and recreate to avoid issues!
+    call ark_chase_ai_fnc_createGroup;
+
     private _unit = [(ASLtoATL _pos), ark_chase_ai_grp, ark_chase_ai_var_classNames, ark_chase_ai_var_skillArray] call adm_common_fnc_placeMan;
     _unit setBehaviour "AWARE";
     _unit setSpeedMode "FULL";
