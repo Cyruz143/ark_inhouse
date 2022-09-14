@@ -8,7 +8,6 @@ ark_chase_ai_fnc_enableSpawning = {
     ark_chase_ai_var_spawning = _enabled;
 
     if (_enabled) then {
-        call ark_chase_ai_fnc_createGroup;
         call ark_chase_ai_fnc_unitSpawner;
     };
 };
