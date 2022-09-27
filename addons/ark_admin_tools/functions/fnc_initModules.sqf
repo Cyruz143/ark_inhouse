@@ -21,7 +21,7 @@ _sideLogic = sidelogic call bis_fnc_sideID;
     if (_side == _sideLogic) then {
         _groupVar = "bis_fnc_initModules_" + _category;
         _group = grpnull;
-        if (isserver) then {
+        if (isserver  && {isNull (missionnamespace getvariable [_groupVar, grpnull])}) then {
             _group = creategroup sidelogic;
             biModuleGrps pushBack _group;
             missionnamespace setvariable [_groupVar,_group];
@@ -37,7 +37,7 @@ _sideLogic = sidelogic call bis_fnc_sideID;
 //--- Sort modules by priorities. Modules with lower number gets executed first
 private ["_modules","_modulesSorted"];
 _modules = if (count _this > 0) then {_this} else {entities "Module_F"};
-diag_log format ["[ARK] Modules list: %1",_modules];
+diag_log format ["[ARK] Modules count: %1 list: %2",(count _modules), _modules];
 _modulesSorted = [[]];
 {
     private ["_priority","_priorityModules"];
