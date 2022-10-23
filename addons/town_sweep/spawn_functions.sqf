@@ -348,7 +348,8 @@ ts_spawn_fnc_objDestroyAmmo = {
                 "",
                 {
                     _target setVariable ["ark_ts_canDestroy", false, true];
-                    [_target] remoteExec ["ts_spawn_fnc_objDestroyCache", 2];
+                    remoteExec ["ts_spawn_fnc_objDestroyCache", 2];
+                    [["\A3\ui_f\data\map\mapcontrol\taskIconDone_ca.paa", 2.0], ["Charges set for 30 seconds!"]] call CBA_fnc_notify;
                 },
                 {
                     [["\A3\ui_f\data\map\mapcontrol\taskIconFailed_ca.paa", 2.0], ["Destruction aborted!"]] call CBA_fnc_notify;
