@@ -328,7 +328,6 @@ ts_spawn_fnc_objDestroyAmmo = {
 
     ts_spawn_var_ammoCrate = createVehicle ["CUP_BOX_GER_Wps_F", [0,0,0], [], 0, "CAN_COLLIDE"];
     ts_spawn_var_ammoCrate call ark_clear_cargo_fnc_doClearVehicle;
-    ts_spawn_var_ammoCrate addMagazineCargoGlobal ["SatchelCharge_Remote_Mag", 10];
 
     if (_buildingArr isEqualTo []) then {
         ts_spawn_var_ammoCrate setPos _position;
@@ -338,13 +337,56 @@ ts_spawn_fnc_objDestroyAmmo = {
         ts_spawn_var_ammoCrate setPos _buildingPos;
     };
 
+    private _action = [
+        "destroyCache",
+        "Destroy Cache",
+        "\a3\ui_f\data\igui\cfg\simpletasks\types\danger_ca.paa",
+        {
+            player playActionNow "PutDown";
+            [
+                5,
+                "",
+                {
+                    _target setVariable ["ark_ts_canDestroy", false, true];
+                    remoteExec ["ts_spawn_fnc_objDestroyCache", 2];
+                    [["\A3\ui_f\data\map\mapcontrol\taskIconDone_ca.paa", 2.0], ["Charges set for 30 seconds!"]] call CBA_fnc_notify;
+                },
+                {
+                    [["\A3\ui_f\data\map\mapcontrol\taskIconFailed_ca.paa", 2.0], ["Destruction aborted!"]] call CBA_fnc_notify;
+                },
+                "Placing charges..."
+            ] call ace_common_fnc_progressBar;
+        },
+        {_target getVariable ["ark_ts_canDestroy", true]}
+    ] call ace_interact_menu_fnc_createAction;
+
+    [ts_spawn_var_ammoCrate, 0, ["ACE_MainActions"], _action] call ace_interact_menu_fnc_addActionToObject;
+
     [true, ["task2"], ["Locate and destroy the ammo cache hidden in town", "Destroy Cache"], _position, "ASSIGNED", -1, true, "destroy"] call BIS_fnc_taskCreate;
     [ts_spawn_var_ammoCrate,_size] call ts_spawn_fnc_createChaseZone;
 
-    ts_spawn_var_ammoCrate addEventHandler ["Killed", {
-        params ["_unit"];
-        ["task2","SUCCEEDED"] call BIS_fnc_taskSetState;
-    }];
+    ts_spawn_var_ammoCrate addEventHandler ["Deleted", {["task2","SUCCEEDED"] call BIS_fnc_taskSetState}];
+};
+
+ts_spawn_fnc_objDestroyCache = {
+    ts_spawn_var_bombTimer = 30;
+    ts_spawn_var_bombFreq = 0.5;
+
+    private _pfh = [{
+        params ["", "_id"];
+
+        playSound3D ["a3\sounds_f\air\Heli_Light_01\warning.wss", ts_spawn_var_ammoCrate, true, (getPosASL ts_spawn_var_ammoCrate), 2.5, ts_spawn_var_bombFreq, 200];
+        ts_spawn_var_bombTimer = ts_spawn_var_bombTimer - 1;
+        ts_spawn_var_bombFreq = ts_spawn_var_bombFreq + 0.025;
+
+        if (ts_spawn_var_bombTimer isEqualTo 0) exitWith {
+            _id call CBA_fnc_removePerFrameHandler;
+            "Bo_GBU12_LGB" createVehicle (getPosATL ts_spawn_var_ammoCrate);
+            ts_spawn_var_bombTimer = nil;
+            ts_spawn_var_bombFreq = nil;
+            deleteVehicle ts_spawn_var_ammoCrate;
+        };
+    }, 1] call CBA_fnc_addPerFrameHandler;
 };
 
 ts_spawn_fnc_objRecoverIntel = {
