@@ -364,10 +364,7 @@ ts_spawn_fnc_objDestroyAmmo = {
     [true, ["task2"], ["Locate and destroy the ammo cache hidden in town", "Destroy Cache"], _position, "ASSIGNED", -1, true, "destroy"] call BIS_fnc_taskCreate;
     [ts_spawn_var_ammoCrate,_size] call ts_spawn_fnc_createChaseZone;
 
-    ts_spawn_var_ammoCrate addEventHandler ["Killed", {
-        params ["_unit"];
-        ["task2","SUCCEEDED"] call BIS_fnc_taskSetState;
-    }];
+    ts_spawn_var_ammoCrate addEventHandler ["Deleted", {["task2","SUCCEEDED"] call BIS_fnc_taskSetState}];
 };
 
 ts_spawn_fnc_objDestroyCache = {
@@ -379,7 +376,7 @@ ts_spawn_fnc_objDestroyCache = {
 
     private _pfh = [{
         params ["_args", "_id"];
-        _args params ["_pos"];
+        _args params ["_cache","_pos"];
 
         playSound3D ["a3\sounds_f\air\Heli_Light_01\warning.wss", objNull, true, _pos, 2.5, ts_spawn_var_bombFreq, 200];
         ts_spawn_var_bombTimer = ts_spawn_var_bombTimer - 1;
@@ -387,10 +384,12 @@ ts_spawn_fnc_objDestroyCache = {
 
         if (ts_spawn_var_bombTimer isEqualTo 0) exitWith {
             _id call CBA_fnc_removePerFrameHandler;
-             "Bo_GBU12_LGB" createVehicle _pos;
-             ts_spawn_var_bombTimer = nil;
+            "Bo_GBU12_LGB" createVehicle _pos;
+            ts_spawn_var_bombTimer = nil;
+            ts_spawn_var_bombFreq = nil;
+            deleteVehicle _cache;
         };
-    }, 1, _pos] call CBA_fnc_addPerFrameHandler;
+    }, 1, [_cache,_pos]] call CBA_fnc_addPerFrameHandler;
 };
 
 ts_spawn_fnc_objRecoverIntel = {
