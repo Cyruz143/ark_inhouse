@@ -342,12 +342,12 @@ ts_spawn_fnc_objDestroyAmmo = {
         "Destroy Cache",
         "\a3\ui_f\data\igui\cfg\simpletasks\types\danger_ca.paa",
         {
+            player playActionNow "PutDown";
             [
                 5,
                 "",
                 {
                     _target setVariable ["ark_ts_canDestroy", false, true];
-                    player playActionNow "PutDown";
                     [_target] remoteExec ["ts_spawn_fnc_objDestroyCache", 2];
                 },
                 {
@@ -368,28 +368,24 @@ ts_spawn_fnc_objDestroyAmmo = {
 };
 
 ts_spawn_fnc_objDestroyCache = {
-    params ["_cache"];
-
     ts_spawn_var_bombTimer = 30;
-    ts_spawn_var_bombFreq = 0.25;
-    private _pos = getPosASL _cache;
+    ts_spawn_var_bombFreq = 0.5;
 
     private _pfh = [{
-        params ["_args", "_id"];
-        _args params ["_cache","_pos"];
+        params ["", "_id"];
 
-        playSound3D ["a3\sounds_f\air\Heli_Light_01\warning.wss", objNull, true, _pos, 2.5, ts_spawn_var_bombFreq, 200];
+        playSound3D ["a3\sounds_f\air\Heli_Light_01\warning.wss", ts_spawn_var_ammoCrate, true, (getPosASL ts_spawn_var_ammoCrate), 2.5, ts_spawn_var_bombFreq, 200];
         ts_spawn_var_bombTimer = ts_spawn_var_bombTimer - 1;
-        ts_spawn_var_bombFreq = ts_spawn_var_bombFreq + 0.05;
+        ts_spawn_var_bombFreq = ts_spawn_var_bombFreq + 0.025;
 
         if (ts_spawn_var_bombTimer isEqualTo 0) exitWith {
             _id call CBA_fnc_removePerFrameHandler;
-            "Bo_GBU12_LGB" createVehicle _pos;
+            "Bo_GBU12_LGB" createVehicle (getPosATL ts_spawn_var_ammoCrate);
             ts_spawn_var_bombTimer = nil;
             ts_spawn_var_bombFreq = nil;
-            deleteVehicle _cache;
+            deleteVehicle ts_spawn_var_ammoCrate;
         };
-    }, 1, [_cache,_pos]] call CBA_fnc_addPerFrameHandler;
+    }, 1] call CBA_fnc_addPerFrameHandler;
 };
 
 ts_spawn_fnc_objRecoverIntel = {
