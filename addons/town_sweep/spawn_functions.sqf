@@ -328,7 +328,6 @@ ts_spawn_fnc_objDestroyAmmo = {
 
     ts_spawn_var_ammoCrate = createVehicle ["CUP_BOX_GER_Wps_F", [0,0,0], [], 0, "CAN_COLLIDE"];
     ts_spawn_var_ammoCrate call ark_clear_cargo_fnc_doClearVehicle;
-    ts_spawn_var_ammoCrate addMagazineCargoGlobal ["SatchelCharge_Remote_Mag", 10];
 
     if (_buildingArr isEqualTo []) then {
         ts_spawn_var_ammoCrate setPos _position;
@@ -338,6 +337,30 @@ ts_spawn_fnc_objDestroyAmmo = {
         ts_spawn_var_ammoCrate setPos _buildingPos;
     };
 
+    private _action = [
+        "destroyCache",
+        "Destroy Cache",
+        "\a3\ui_f\data\igui\cfg\simpletasks\types\danger_ca.paa",
+        {
+            [
+                5,
+                "",
+                {
+                    _target setVariable ["ark_ts_canDestroy", false, true];
+                    player playActionNow "PutDown";
+                    [_target] remoteExec ["ts_spawn_fnc_objDestroyCache", 2];
+                },
+                {
+                    [["\A3\ui_f\data\map\mapcontrol\taskIconFailed_ca.paa", 2.0], ["Destruction aborted!"]] call CBA_fnc_notify;
+                },
+                "Placing charges..."
+            ] call ace_common_fnc_progressBar;
+        },
+        {_target getVariable ["ark_ts_canDestroy", true]}
+    ] call ace_interact_menu_fnc_createAction;
+
+    [ts_spawn_var_ammoCrate, 0, ["ACE_MainActions"], _action] call ace_interact_menu_fnc_addActionToObject;
+
     [true, ["task2"], ["Locate and destroy the ammo cache hidden in town", "Destroy Cache"], _position, "ASSIGNED", -1, true, "destroy"] call BIS_fnc_taskCreate;
     [ts_spawn_var_ammoCrate,_size] call ts_spawn_fnc_createChaseZone;
 
@@ -345,6 +368,29 @@ ts_spawn_fnc_objDestroyAmmo = {
         params ["_unit"];
         ["task2","SUCCEEDED"] call BIS_fnc_taskSetState;
     }];
+};
+
+ts_spawn_fnc_objDestroyCache = {
+    params ["_cache"];
+
+    ts_spawn_var_bombTimer = 30;
+    ts_spawn_var_bombFreq = 0.25;
+    private _pos = getPosASL _cache;
+
+    private _pfh = [{
+        params ["_args", "_id"];
+        _args params ["_pos"];
+
+        playSound3D ["a3\sounds_f\air\Heli_Light_01\warning.wss", objNull, true, _pos, 2.5, ts_spawn_var_bombFreq, 200];
+        ts_spawn_var_bombTimer = ts_spawn_var_bombTimer - 1;
+        ts_spawn_var_bombFreq = ts_spawn_var_bombFreq + 0.05;
+
+        if (ts_spawn_var_bombTimer isEqualTo 0) exitWith {
+            _id call CBA_fnc_removePerFrameHandler;
+             "Bo_GBU12_LGB" createVehicle _pos;
+             ts_spawn_var_bombTimer = nil;
+        };
+    }, 1, _pos] call CBA_fnc_addPerFrameHandler;
 };
 
 ts_spawn_fnc_objRecoverIntel = {
