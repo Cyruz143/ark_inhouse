@@ -328,6 +328,8 @@ ts_spawn_fnc_objDestroyAmmo = {
 
     ts_spawn_var_ammoCrate = createVehicle ["CUP_BOX_GER_Wps_F", [0,0,0], [], 0, "CAN_COLLIDE"];
     ts_spawn_var_ammoCrate call ark_clear_cargo_fnc_doClearVehicle;
+    // Add the ACE action on the clients once it's created
+    remoteExec ["ts_spawn_fnc_objDestroyAction", -2];
 
     if (_buildingArr isEqualTo []) then {
         ts_spawn_var_ammoCrate setPos _position;
@@ -337,6 +339,13 @@ ts_spawn_fnc_objDestroyAmmo = {
         ts_spawn_var_ammoCrate setPos _buildingPos;
     };
 
+    [true, ["task2"], ["Locate and destroy the ammo cache hidden in town", "Destroy Cache"], _position, "ASSIGNED", -1, true, "destroy"] call BIS_fnc_taskCreate;
+    [ts_spawn_var_ammoCrate,_size] call ts_spawn_fnc_createChaseZone;
+
+    ts_spawn_var_ammoCrate addEventHandler ["Deleted", {["task2","SUCCEEDED"] call BIS_fnc_taskSetState}];
+};
+
+ts_spawn_fnc_objDestroyAction = {
     private _action = [
         "destroyCache",
         "Destroy Cache",
@@ -360,12 +369,7 @@ ts_spawn_fnc_objDestroyAmmo = {
         {_target getVariable ["ark_ts_canDestroy", true]}
     ] call ace_interact_menu_fnc_createAction;
 
-    [ts_spawn_var_ammoCrate, 0, ["ACE_MainActions"], _action] call ace_interact_menu_fnc_addActionToObject;
-
-    [true, ["task2"], ["Locate and destroy the ammo cache hidden in town", "Destroy Cache"], _position, "ASSIGNED", -1, true, "destroy"] call BIS_fnc_taskCreate;
-    [ts_spawn_var_ammoCrate,_size] call ts_spawn_fnc_createChaseZone;
-
-    ts_spawn_var_ammoCrate addEventHandler ["Deleted", {["task2","SUCCEEDED"] call BIS_fnc_taskSetState}];
+    ["CUP_BOX_GER_Wps_F", 0, ["ACE_MainActions"], _action] call ace_interact_menu_fnc_addActionToClass;
 };
 
 ts_spawn_fnc_objDestroyCache = {
