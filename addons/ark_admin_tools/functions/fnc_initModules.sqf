@@ -24,7 +24,7 @@ _sideLogic = sidelogic call bis_fnc_sideID;
             _group = creategroup sidelogic;
             missionnamespace setvariable [_groupVar,_group];
             publicvariable _groupVar;
-            diag_log format ["[ARK] (Admin Tools) - [INFO] - (fnc_initModules) -Created sideLogic group: %1 with groupName: %2",_group, _groupVar];
+            diag_log text format ["[ARK] (Admin Tools) - [INFO] - (fnc_initModules) - Created sideLogic group: %1 with groupName: %2",_group, _groupVar];
         } else {
             _group = missionnamespace getvariable [_groupVar,grpnull]
         };
@@ -35,7 +35,7 @@ _sideLogic = sidelogic call bis_fnc_sideID;
 //--- Sort modules by priorities. Modules with lower number gets executed first
 private ["_modules","_modulesSorted"];
 _modules = if (count _this > 0) then {_this} else {entities "Module_F"};
-diag_log format ["[ARK] (Admin Tools) - [INFO] - (fnc_initModules) -- Running modules! Count: %1 List: %2",(count _modules), _modules];
+diag_log format ["[ARK] (Admin Tools) - [INFO] - (fnc_initModules) - Running modules! Count: %1 List: %2",(count _modules), _modules];
 _modulesSorted = [[]];
 {
     private ["_priority","_priorityModules"];
@@ -61,7 +61,7 @@ waituntil {
     if !(isnil {_priorityModules}) then {
         {
             _x setvariable ["bis_fnc_initModules_activate",true];
-            diag_log format ["[ARK] (Admin Tools) - [INFO] - (fnc_initModules) - Activating module: %1",_x];
+            diag_log text format ["[ARK] (Admin Tools) - [INFO] - (fnc_initModules) - Activating module: %1",_x];
         } foreach _priorityModules;
 
         //--- Wait until they are initialized

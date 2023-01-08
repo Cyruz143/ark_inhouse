@@ -13,5 +13,5 @@ ark_admin_tools_fnc_log = {
         [_txt] remoteExec ["systemChat", 0];
     };
 
-    diag_log _txt;
+    diag_log (text _txt);
 };
