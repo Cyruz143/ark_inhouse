@@ -35,7 +35,7 @@ _sideLogic = sidelogic call bis_fnc_sideID;
 //--- Sort modules by priorities. Modules with lower number gets executed first
 private ["_modules","_modulesSorted"];
 _modules = if (count _this > 0) then {_this} else {entities "Module_F"};
-diag_log format ["[ARK] (Admin Tools) - [INFO] - (fnc_initModules) - Running modules! Count: %1 List: %2",(count _modules), _modules];
+diag_log text format ["[ARK] (Admin Tools) - [INFO] - (fnc_initModules) - Running modules! Count: %1 List: %2",(count _modules), _modules];
 _modulesSorted = [[]];
 {
     private ["_priority","_priorityModules"];
