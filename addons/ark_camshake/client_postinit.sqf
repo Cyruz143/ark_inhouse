@@ -20,7 +20,7 @@ ark_camshake_fnc_addEH = {
         params ["_unit", "_distance"];
 
         // Dont fuck with peoples aim, too annoying also don't care if they're in a vehicle
-        if (cameraView in acre_sys_gestures_disallowedViews || {!isNull objectParent _unit}) exitWith {};
+        if (cameraView in ["GUNNER", "GROUP"] || {!isNull objectParent _unit}) exitWith {};
 
         addCamShake [(20 / _distance) min 0.75, 0.25, 10];
     }];
