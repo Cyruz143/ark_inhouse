@@ -50,7 +50,7 @@ ark_ai_voices_fnc_selectSound = {
 
     // Handle muted units, ww2 and sog
     private _speaker = speaker _unit;
-    if (toLower _speaker in ["", "novoice", "ace_novoice", "fow_mute", "vie"]) exitWith {
+    if (toLower _speaker in ["", "novoice", "ace_novoice", "fow_mute", "vie", "mute"]) exitWith {
         _unit setVariable ["ark_ai_voices_var_disableVoice", true];
     };
 
