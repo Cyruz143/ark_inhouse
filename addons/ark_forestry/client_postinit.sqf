@@ -33,7 +33,7 @@ ark_forestry_fnc_doChop = {
         _obj,
         {
             params ["_obj"];
-            _obj setDamage 1;
+            _obj setDamage [1, true, player];
 
             [
                 {
