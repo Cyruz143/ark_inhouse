@@ -2,6 +2,11 @@ class CfgWeapons {
     class ItemCore;
     class Vest_NoCamo_Base;
     class Vest_Camo_Base;
+    class CUP_V_O_RUS_6B45_base;
+    class CUP_V_O_RUS_6B45_1_base;
+    class CUP_V_O_RUS_6B45_6Sh117_base;
+    class CUP_V_O_RUS_6B45_1_6Sh117_base;
+    class CUP_V_O_RUS_RPS_Smersh_base;
     class V_DeckCrew_base_F;
     class V_Plain_base_F;
     class V_Pocketed_base_F;
@@ -115,6 +120,309 @@ class CfgWeapons {
     class V_Press_F: Vest_Camo_Base {
         HIDDEN
     };
+    class CUP_V_O_RUS_6B45_Light_Summer: CUP_V_O_RUS_6B45_base {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_AK_Summer: CUP_V_O_RUS_6B45_base {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_AK_Med_Summer: CUP_V_O_RUS_6B45_base {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_AK_Light_Summer: CUP_V_O_RUS_6B45_base {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_AK_Med_Light_Summer: CUP_V_O_RUS_6B45_base {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_AK_Radio_Summer: CUP_V_O_RUS_6B45_base {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_AK_Med_Radio_Summer: CUP_V_O_RUS_6B45_base {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_VOG_Summer: CUP_V_O_RUS_6B45_base {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_VOG_Radio_Summer: CUP_V_O_RUS_6B45_base {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_SVD_Summer: CUP_V_O_RUS_6B45_base {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_PKP_Summer: CUP_V_O_RUS_6B45_base {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_SPP_AK_Summer: CUP_V_O_RUS_6B45_base {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_SPP_AK_Med_Summer: CUP_V_O_RUS_6B45_base {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_SPP_AK_Light_Summer: CUP_V_O_RUS_6B45_base {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_SPP_AK_Med_Light_Summer: CUP_V_O_RUS_6B45_base {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_SPP_AK_Radio_Summer: CUP_V_O_RUS_6B45_base {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_SPP_AK_Med_Radio_Summer: CUP_V_O_RUS_6B45_base {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_SPP_VOG_Summer: CUP_V_O_RUS_6B45_base {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_SPP_VOG_Radio_Summer: CUP_V_O_RUS_6B45_base {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_SPP_SVD_Summer: CUP_V_O_RUS_6B45_base {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_SPP_PKP_Summer: CUP_V_O_RUS_6B45_base {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_1_Light_Summer: CUP_V_O_RUS_6B45_1_base {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_1_AK_Summer: CUP_V_O_RUS_6B45_1_base {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_1_AK_Med_Summer: CUP_V_O_RUS_6B45_1_base {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_1_AK_Light_Summer: CUP_V_O_RUS_6B45_1_base {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_1_AK_Med_Light_Summer: CUP_V_O_RUS_6B45_1_base {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_1_AK_Radio_Summer: CUP_V_O_RUS_6B45_1_base {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_1_AK_Med_Radio_Summer: CUP_V_O_RUS_6B45_1_base {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_1_VOG_Summer: CUP_V_O_RUS_6B45_1_base {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_1_VOG_Radio_Summer: CUP_V_O_RUS_6B45_1_base {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_1_SVD_Summer: CUP_V_O_RUS_6B45_1_base {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_1_PKP_Summer: CUP_V_O_RUS_6B45_1_base {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_1_SPP_AK_Summer: CUP_V_O_RUS_6B45_1_base {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_1_SPP_AK_Med_Summer: CUP_V_O_RUS_6B45_1_base {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_1_SPP_AK_Light_Summer: CUP_V_O_RUS_6B45_1_base {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_1_SPP_AK_Med_Light_Summer: CUP_V_O_RUS_6B45_1_base {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_1_SPP_AK_Radio_Summer: CUP_V_O_RUS_6B45_1_base {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_1_SPP_AK_Med_Radio_Summer: CUP_V_O_RUS_6B45_1_base {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_1_SPP_VOG_Summer: CUP_V_O_RUS_6B45_1_base {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_1_SPP_VOG_Radio_Summer: CUP_V_O_RUS_6B45_1_base {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_1_SPP_SVD_Summer: CUP_V_O_RUS_6B45_1_base {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_1_SPP_PKP_Summer: CUP_V_O_RUS_6B45_1_base {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_6Sh117_AK_Summer: CUP_V_O_RUS_6B45_6Sh117_base {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_6Sh117_AK_Med_Summer: CUP_V_O_RUS_6B45_6Sh117_base {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_6Sh117_AK_Radio_Summer: CUP_V_O_RUS_6B45_6Sh117_base {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_6Sh117_AK_Med_Radio_Summer: CUP_V_O_RUS_6B45_6Sh117_base {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_6Sh117_VOG_Summer: CUP_V_O_RUS_6B45_6Sh117_base {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_6Sh117_VOG_Med_Summer: CUP_V_O_RUS_6B45_6Sh117_base {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_6Sh117_VOG_Radio_Light_Summer: CUP_V_O_RUS_6B45_6Sh117_base {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_6Sh117_VOG_Med_Radio_Light_Summer: CUP_V_O_RUS_6B45_6Sh117_base {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_6Sh117_VOG_Radio_Summer: CUP_V_O_RUS_6B45_6Sh117_base {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_6Sh117_PKP_Summer: CUP_V_O_RUS_6B45_6Sh117_base {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_6Sh117_PKP_Radio_Summer: CUP_V_O_RUS_6B45_6Sh117_base {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_6Sh117_SVD_1_Summer: CUP_V_O_RUS_6B45_6Sh117_base {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_6Sh117_SVD_2_Summer: CUP_V_O_RUS_6B45_6Sh117_base {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_6Sh117_SPP_AK_Summer: CUP_V_O_RUS_6B45_6Sh117_base {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_6Sh117_SPP_AK_Med_Summer: CUP_V_O_RUS_6B45_6Sh117_base {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_6Sh117_SPP_AK_Radio_Summer: CUP_V_O_RUS_6B45_6Sh117_base {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_6Sh117_SPP_AK_Med_Radio_Summer: CUP_V_O_RUS_6B45_6Sh117_base {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_6Sh117_SPP_VOG_Summer: CUP_V_O_RUS_6B45_6Sh117_base {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_6Sh117_SPP_VOG_Med_Summer: CUP_V_O_RUS_6B45_6Sh117_base {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_6Sh117_SPP_VOG_Radio_Light_Summer: CUP_V_O_RUS_6B45_6Sh117_base {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_6Sh117_SPP_VOG_Med_Radio_Light_Summer: CUP_V_O_RUS_6B45_6Sh117_base {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_6Sh117_SPP_VOG_Radio_Summer: CUP_V_O_RUS_6B45_6Sh117_base {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_6Sh117_SPP_PKP_Summer: CUP_V_O_RUS_6B45_6Sh117_base {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_6Sh117_SPP_PKP_Radio_Summer: CUP_V_O_RUS_6B45_6Sh117_base {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_6Sh117_SPP_SVD_1_Summer: CUP_V_O_RUS_6B45_6Sh117_base {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_6Sh117_SPP_SVD_2_Summer: CUP_V_O_RUS_6B45_6Sh117_base {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_1_6Sh117_AK_Summer: CUP_V_O_RUS_6B45_1_6Sh117_base {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_1_6Sh117_AK_Med_Summer: CUP_V_O_RUS_6B45_1_6Sh117_base {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_1_6Sh117_AK_Radio_Summer: CUP_V_O_RUS_6B45_1_6Sh117_base {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_1_6Sh117_AK_Med_Radio_Summer: CUP_V_O_RUS_6B45_1_6Sh117_base {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_1_6Sh117_VOG_Summer: CUP_V_O_RUS_6B45_1_6Sh117_base {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_1_6Sh117_VOG_Med_Summer: CUP_V_O_RUS_6B45_1_6Sh117_base {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_1_6Sh117_VOG_Radio_Light_Summer: CUP_V_O_RUS_6B45_1_6Sh117_base {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_1_6Sh117_VOG_Med_Radio_Light_Summer: CUP_V_O_RUS_6B45_1_6Sh117_base {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_1_6Sh117_VOG_Radio_Summer: CUP_V_O_RUS_6B45_1_6Sh117_base {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_1_6Sh117_PKP_Summer: CUP_V_O_RUS_6B45_1_6Sh117_base {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_1_6Sh117_PKP_Radio_Summer: CUP_V_O_RUS_6B45_1_6Sh117_base {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_1_6Sh117_SVD_1_Summer: CUP_V_O_RUS_6B45_1_6Sh117_base {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_1_6Sh117_SVD_2_Summer: CUP_V_O_RUS_6B45_1_6Sh117_base {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_1_6Sh117_SPP_AK_Summer: CUP_V_O_RUS_6B45_1_6Sh117_base {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_1_6Sh117_SPP_AK_Med_Summer: CUP_V_O_RUS_6B45_1_6Sh117_base {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_1_6Sh117_SPP_AK_Radio_Summer: CUP_V_O_RUS_6B45_1_6Sh117_base {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_1_6Sh117_SPP_AK_Med_Radio_Summer: CUP_V_O_RUS_6B45_1_6Sh117_base {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_1_6Sh117_SPP_VOG_Summer: CUP_V_O_RUS_6B45_1_6Sh117_base {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_1_6Sh117_SPP_VOG_Med_Summer: CUP_V_O_RUS_6B45_1_6Sh117_base {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_1_6Sh117_SPP_VOG_Radio_Light_Summer: CUP_V_O_RUS_6B45_1_6Sh117_base {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_1_6Sh117_SPP_VOG_Med_Radio_Light_Summer: CUP_V_O_RUS_6B45_1_6Sh117_base {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_1_6Sh117_SPP_VOG_Radio_Summer: CUP_V_O_RUS_6B45_1_6Sh117_base {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_1_6Sh117_SPP_PKP_Summer: CUP_V_O_RUS_6B45_1_6Sh117_base {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_1_6Sh117_SPP_PKP_Radio_Summer: CUP_V_O_RUS_6B45_1_6Sh117_base {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_1_6Sh117_SPP_SVD_1_Summer: CUP_V_O_RUS_6B45_1_6Sh117_base {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_1_6Sh117_SPP_SVD_2_Summer: CUP_V_O_RUS_6B45_1_6Sh117_base {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_RPS_Smersh_AK_ModernOlive: CUP_V_O_RUS_RPS_Smersh_base {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_RPS_Smersh_VOG_ModernOlive: CUP_V_O_RUS_RPS_Smersh_base {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_RPS_Smersh_VOG_SPP_ModernOlive: CUP_V_O_RUS_RPS_Smersh_base {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_RPS_Smersh_PKP_ModernOlive: CUP_V_O_RUS_RPS_Smersh_base {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_RPS_Smersh_PKP_Light_ModernOlive: CUP_V_O_RUS_RPS_Smersh_base {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_RPS_Smersh_PKP_SPP_ModernOlive: CUP_V_O_RUS_RPS_Smersh_base {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_RPS_Smersh_SVD_ModernOlive: CUP_V_O_RUS_RPS_Smersh_base {
+        HIDDEN
+    };
     class V_TacChestrig_grn_F: Vest_Camo_Base {
         HIDDEN
     };
@@ -185,9 +493,6 @@ class CfgWeapons {
         HIDDEN
     };
     class V_lxWS_HarnessO_oli: Vest_NoCamo_Base {
-        HIDDEN
-    };
-    class V_lxWS_TacVestIR_oli: Vest_NoCamo_Base {
         HIDDEN
     };
     class V_CarrierRigKBT_01_EAF_F: V_CarrierRigKBT_01_base_F {
@@ -2164,6 +2469,351 @@ class CfgWeapons {
     class V_I_G_resistanceLeader_F: V_TacVest_camo {
         HIDDEN
     };
+    class CUP_V_O_RUS_6B45_Light_Desert: CUP_V_O_RUS_6B45_Light_Summer {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_AK_Desert: CUP_V_O_RUS_6B45_AK_Summer {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_AK_Med_Desert: CUP_V_O_RUS_6B45_AK_Med_Summer {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_AK_Light_Desert: CUP_V_O_RUS_6B45_AK_Light_Summer {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_AK_Med_Light_Desert: CUP_V_O_RUS_6B45_AK_Med_Light_Summer {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_AK_Radio_Desert: CUP_V_O_RUS_6B45_AK_Radio_Summer {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_AK_Med_Radio_Desert: CUP_V_O_RUS_6B45_AK_Med_Radio_Summer {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_VOG_Desert: CUP_V_O_RUS_6B45_VOG_Summer {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_VOG_Radio_Desert: CUP_V_O_RUS_6B45_VOG_Radio_Summer {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_SVD_Desert: CUP_V_O_RUS_6B45_SVD_Summer {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_PKP_Desert: CUP_V_O_RUS_6B45_PKP_Summer {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_SPP_AK_Desert: CUP_V_O_RUS_6B45_SPP_AK_Summer {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_SPP_AK_Med_Desert: CUP_V_O_RUS_6B45_SPP_AK_Med_Summer {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_SPP_AK_Light_Desert: CUP_V_O_RUS_6B45_SPP_AK_Light_Summer {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_SPP_AK_Med_Light_Desert: CUP_V_O_RUS_6B45_SPP_AK_Med_Light_Summer {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_SPP_AK_Radio_Desert: CUP_V_O_RUS_6B45_SPP_AK_Radio_Summer {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_SPP_AK_Med_Radio_Desert: CUP_V_O_RUS_6B45_SPP_AK_Med_Radio_Summer {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_SPP_VOG_Desert: CUP_V_O_RUS_6B45_SPP_VOG_Summer {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_SPP_VOG_Radio_Desert: CUP_V_O_RUS_6B45_SPP_VOG_Radio_Summer {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_SPP_SVD_Desert: CUP_V_O_RUS_6B45_SPP_SVD_Summer {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_SPP_PKP_Desert: CUP_V_O_RUS_6B45_SPP_PKP_Summer {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_1_Light_Desert: CUP_V_O_RUS_6B45_1_Light_Summer {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_1_AK_Desert: CUP_V_O_RUS_6B45_1_AK_Summer {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_1_AK_Med_Desert: CUP_V_O_RUS_6B45_1_AK_Med_Summer {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_1_AK_Light_Desert: CUP_V_O_RUS_6B45_1_AK_Light_Summer {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_1_AK_Med_Light_Desert: CUP_V_O_RUS_6B45_1_AK_Med_Light_Summer {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_1_AK_Radio_Desert: CUP_V_O_RUS_6B45_1_AK_Radio_Summer {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_1_AK_Med_Radio_Desert: CUP_V_O_RUS_6B45_1_AK_Med_Radio_Summer {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_1_VOG_Desert: CUP_V_O_RUS_6B45_1_VOG_Summer {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_1_VOG_Radio_Desert: CUP_V_O_RUS_6B45_1_VOG_Radio_Summer {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_1_SVD_Desert: CUP_V_O_RUS_6B45_1_SVD_Summer {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_1_PKP_Desert: CUP_V_O_RUS_6B45_1_PKP_Summer {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_1_SPP_AK_Desert: CUP_V_O_RUS_6B45_1_SPP_AK_Summer {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_1_SPP_AK_Med_Desert: CUP_V_O_RUS_6B45_1_SPP_AK_Med_Summer {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_1_SPP_AK_Light_Desert: CUP_V_O_RUS_6B45_1_SPP_AK_Light_Summer {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_1_SPP_AK_Med_Light_Desert: CUP_V_O_RUS_6B45_1_SPP_AK_Med_Light_Summer {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_1_SPP_AK_Radio_Desert: CUP_V_O_RUS_6B45_1_SPP_AK_Radio_Summer {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_1_SPP_AK_Med_Radio_Desert: CUP_V_O_RUS_6B45_1_SPP_AK_Med_Radio_Summer {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_1_SPP_VOG_Desert: CUP_V_O_RUS_6B45_1_SPP_VOG_Summer {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_1_SPP_VOG_Radio_Desert: CUP_V_O_RUS_6B45_1_SPP_VOG_Radio_Summer {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_1_SPP_SVD_Desert: CUP_V_O_RUS_6B45_1_SPP_SVD_Summer {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_1_SPP_PKP_Desert: CUP_V_O_RUS_6B45_1_SPP_PKP_Summer {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_6Sh117_AK_Desert: CUP_V_O_RUS_6B45_6Sh117_AK_Summer {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_6Sh117_AK_Med_Desert: CUP_V_O_RUS_6B45_6Sh117_AK_Med_Summer {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_6Sh117_AK_Radio_Desert: CUP_V_O_RUS_6B45_6Sh117_AK_Radio_Summer {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_6Sh117_AK_Med_Radio_Desert: CUP_V_O_RUS_6B45_6Sh117_AK_Med_Radio_Summer {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_6Sh117_VOG_Desert: CUP_V_O_RUS_6B45_6Sh117_VOG_Summer {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_6Sh117_VOG_Med_Desert: CUP_V_O_RUS_6B45_6Sh117_VOG_Med_Summer {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_6Sh117_VOG_Radio_Light_Desert: CUP_V_O_RUS_6B45_6Sh117_VOG_Radio_Light_Summer {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_6Sh117_VOG_Med_Radio_Light_Desert: CUP_V_O_RUS_6B45_6Sh117_VOG_Med_Radio_Light_Summer {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_6Sh117_VOG_Radio_Desert: CUP_V_O_RUS_6B45_6Sh117_VOG_Radio_Summer {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_6Sh117_PKP_Desert: CUP_V_O_RUS_6B45_6Sh117_PKP_Summer {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_6Sh117_PKP_Radio_Desert: CUP_V_O_RUS_6B45_6Sh117_PKP_Radio_Summer {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_6Sh117_SVD_1_Desert: CUP_V_O_RUS_6B45_6Sh117_SVD_1_Summer {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_6Sh117_SVD_2_Desert: CUP_V_O_RUS_6B45_6Sh117_SVD_2_Summer {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_6Sh117_SPP_AK_Desert: CUP_V_O_RUS_6B45_6Sh117_SPP_AK_Summer {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_6Sh117_SPP_AK_Med_Desert: CUP_V_O_RUS_6B45_6Sh117_SPP_AK_Med_Summer {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_6Sh117_SPP_AK_Radio_Desert: CUP_V_O_RUS_6B45_6Sh117_SPP_AK_Radio_Summer {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_6Sh117_SPP_AK_Med_Radio_Desert: CUP_V_O_RUS_6B45_6Sh117_SPP_AK_Med_Radio_Summer {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_6Sh117_SPP_VOG_Desert: CUP_V_O_RUS_6B45_6Sh117_SPP_VOG_Summer {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_6Sh117_SPP_VOG_Med_Desert: CUP_V_O_RUS_6B45_6Sh117_SPP_VOG_Med_Summer {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_6Sh117_SPP_VOG_Radio_Light_Desert: CUP_V_O_RUS_6B45_6Sh117_SPP_VOG_Radio_Light_Summer {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_6Sh117_SPP_VOG_Med_Radio_Light_Desert: CUP_V_O_RUS_6B45_6Sh117_SPP_VOG_Med_Radio_Light_Summer {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_6Sh117_SPP_VOG_Radio_Desert: CUP_V_O_RUS_6B45_6Sh117_SPP_VOG_Radio_Summer {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_6Sh117_SPP_PKP_Desert: CUP_V_O_RUS_6B45_6Sh117_SPP_PKP_Summer {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_6Sh117_SPP_PKP_Radio_Desert: CUP_V_O_RUS_6B45_6Sh117_SPP_PKP_Radio_Summer {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_6Sh117_SPP_SVD_1_Desert: CUP_V_O_RUS_6B45_6Sh117_SPP_SVD_1_Summer {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_6Sh117_SPP_SVD_2_Desert: CUP_V_O_RUS_6B45_6Sh117_SPP_SVD_2_Summer {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_1_6Sh117_AK_Desert: CUP_V_O_RUS_6B45_1_6Sh117_AK_Summer {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_1_6Sh117_AK_Med_Desert: CUP_V_O_RUS_6B45_1_6Sh117_AK_Med_Summer {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_1_6Sh117_AK_Radio_Desert: CUP_V_O_RUS_6B45_1_6Sh117_AK_Radio_Summer {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_1_6Sh117_AK_Med_Radio_Desert: CUP_V_O_RUS_6B45_1_6Sh117_AK_Med_Radio_Summer {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_1_6Sh117_VOG_Desert: CUP_V_O_RUS_6B45_1_6Sh117_VOG_Summer {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_1_6Sh117_VOG_Med_Desert: CUP_V_O_RUS_6B45_1_6Sh117_VOG_Med_Summer {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_1_6Sh117_VOG_Radio_Light_Desert: CUP_V_O_RUS_6B45_1_6Sh117_VOG_Radio_Light_Summer {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_1_6Sh117_VOG_Med_Radio_Light_Desert: CUP_V_O_RUS_6B45_1_6Sh117_VOG_Med_Radio_Light_Summer {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_1_6Sh117_VOG_Radio_Desert: CUP_V_O_RUS_6B45_1_6Sh117_VOG_Radio_Summer {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_1_6Sh117_PKP_Desert: CUP_V_O_RUS_6B45_1_6Sh117_PKP_Summer {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_1_6Sh117_PKP_Radio_Desert: CUP_V_O_RUS_6B45_1_6Sh117_PKP_Radio_Summer {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_1_6Sh117_SVD_1_Desert: CUP_V_O_RUS_6B45_1_6Sh117_SVD_1_Summer {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_1_6Sh117_SVD_2_Desert: CUP_V_O_RUS_6B45_1_6Sh117_SVD_2_Summer {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_1_6Sh117_SPP_AK_Desert: CUP_V_O_RUS_6B45_1_6Sh117_SPP_AK_Summer {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_1_6Sh117_SPP_AK_Med_Desert: CUP_V_O_RUS_6B45_1_6Sh117_SPP_AK_Med_Summer {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_1_6Sh117_SPP_AK_Radio_Desert: CUP_V_O_RUS_6B45_1_6Sh117_SPP_AK_Radio_Summer {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_1_6Sh117_SPP_AK_Med_Radio_Desert: CUP_V_O_RUS_6B45_1_6Sh117_SPP_AK_Med_Radio_Summer {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_1_6Sh117_SPP_VOG_Desert: CUP_V_O_RUS_6B45_1_6Sh117_SPP_VOG_Summer {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_1_6Sh117_SPP_VOG_Med_Desert: CUP_V_O_RUS_6B45_1_6Sh117_SPP_VOG_Med_Summer {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_1_6Sh117_SPP_VOG_Radio_Light_Desert: CUP_V_O_RUS_6B45_1_6Sh117_SPP_VOG_Radio_Light_Summer {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_1_6Sh117_SPP_VOG_Med_Radio_Light_Desert: CUP_V_O_RUS_6B45_1_6Sh117_SPP_VOG_Med_Radio_Light_Summer {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_1_6Sh117_SPP_VOG_Radio_Desert: CUP_V_O_RUS_6B45_1_6Sh117_SPP_VOG_Radio_Summer {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_1_6Sh117_SPP_PKP_Desert: CUP_V_O_RUS_6B45_1_6Sh117_SPP_PKP_Summer {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_1_6Sh117_SPP_PKP_Radio_Desert: CUP_V_O_RUS_6B45_1_6Sh117_SPP_PKP_Radio_Summer {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_1_6Sh117_SPP_SVD_1_Desert: CUP_V_O_RUS_6B45_1_6Sh117_SPP_SVD_1_Summer {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_6B45_1_6Sh117_SPP_SVD_2_Desert: CUP_V_O_RUS_6B45_1_6Sh117_SPP_SVD_2_Summer {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_RPS_Smersh_AK_Green: CUP_V_O_RUS_RPS_Smersh_AK_ModernOlive {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_RPS_Smersh_VOG_Green: CUP_V_O_RUS_RPS_Smersh_VOG_ModernOlive {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_RPS_Smersh_VOG_SPP_Green: CUP_V_O_RUS_RPS_Smersh_VOG_SPP_ModernOlive {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_RPS_Smersh_PKP_Green: CUP_V_O_RUS_RPS_Smersh_PKP_ModernOlive {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_RPS_Smersh_PKP_Light_Green: CUP_V_O_RUS_RPS_Smersh_PKP_Light_ModernOlive {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_RPS_Smersh_PKP_SPP_Green: CUP_V_O_RUS_RPS_Smersh_PKP_SPP_ModernOlive {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_RPS_Smersh_SVD_Green: CUP_V_O_RUS_RPS_Smersh_SVD_ModernOlive {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_RPS_Smersh_AK_Coyote: CUP_V_O_RUS_RPS_Smersh_AK_ModernOlive {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_RPS_Smersh_VOG_Coyote: CUP_V_O_RUS_RPS_Smersh_VOG_ModernOlive {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_RPS_Smersh_VOG_SPP_Coyote: CUP_V_O_RUS_RPS_Smersh_VOG_SPP_ModernOlive {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_RPS_Smersh_PKP_Coyote: CUP_V_O_RUS_RPS_Smersh_PKP_ModernOlive {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_RPS_Smersh_PKP_Light_Coyote: CUP_V_O_RUS_RPS_Smersh_PKP_Light_ModernOlive {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_RPS_Smersh_PKP_SPP_Coyote: CUP_V_O_RUS_RPS_Smersh_PKP_SPP_ModernOlive {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_RPS_Smersh_SVD_Coyote: CUP_V_O_RUS_RPS_Smersh_SVD_ModernOlive {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_RPS_Smersh_AK_Brown: CUP_V_O_RUS_RPS_Smersh_AK_ModernOlive {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_RPS_Smersh_VOG_Brown: CUP_V_O_RUS_RPS_Smersh_VOG_ModernOlive {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_RPS_Smersh_VOG_SPP_Brown: CUP_V_O_RUS_RPS_Smersh_VOG_SPP_ModernOlive {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_RPS_Smersh_PKP_Brown: CUP_V_O_RUS_RPS_Smersh_PKP_ModernOlive {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_RPS_Smersh_PKP_Light_Brown: CUP_V_O_RUS_RPS_Smersh_PKP_Light_ModernOlive {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_RPS_Smersh_PKP_SPP_Brown: CUP_V_O_RUS_RPS_Smersh_PKP_SPP_ModernOlive {
+        HIDDEN
+    };
+    class CUP_V_O_RUS_RPS_Smersh_SVD_Brown: CUP_V_O_RUS_RPS_Smersh_SVD_ModernOlive {
+        HIDDEN
+    };
     class V_TacChestrig_oli_F: V_TacChestrig_grn_F {
         HIDDEN
     };
@@ -2212,6 +2862,9 @@ class CfgWeapons {
     class V_lxWS_PlateCarrierSpec_desert: V_PlateCarrierSpec_blk {
         HIDDEN
     };
+    class V_lxWS_TacVestIR_oli: V_TacVestIR_blk {
+        HIDDEN
+    };
     class V_lxWS_UN_Vest_F: V_PlateCarrierIAGL_oli {
         HIDDEN
     };
@@ -2228,6 +2881,9 @@ class CfgWeapons {
         HIDDEN
     };
     class V_PlateCarrierSpec_wdl: V_PlateCarrierSpec_rgr {
+        HIDDEN
+    };
+    class V_PlateCarrier_CTRG_lxWS: V_PlateCarrierL_CTRG {
         HIDDEN
     };
     class acp_Multicam_V_PlateCarrierSpec_Multicam: V_PlateCarrierSpec_blk {
@@ -5857,6 +6513,654 @@ class CfgWeapons {
     class V_Press_F_ARM: V_Press_F {
         ARMOUR
     };
+    class CUP_V_O_RUS_6B45_Light_Summer_ARM: CUP_V_O_RUS_6B45_Light_Summer {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_AK_Summer_ARM: CUP_V_O_RUS_6B45_AK_Summer {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_AK_Med_Summer_ARM: CUP_V_O_RUS_6B45_AK_Med_Summer {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_AK_Light_Summer_ARM: CUP_V_O_RUS_6B45_AK_Light_Summer {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_AK_Med_Light_Summer_ARM: CUP_V_O_RUS_6B45_AK_Med_Light_Summer {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_AK_Radio_Summer_ARM: CUP_V_O_RUS_6B45_AK_Radio_Summer {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_AK_Med_Radio_Summer_ARM: CUP_V_O_RUS_6B45_AK_Med_Radio_Summer {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_VOG_Summer_ARM: CUP_V_O_RUS_6B45_VOG_Summer {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_VOG_Radio_Summer_ARM: CUP_V_O_RUS_6B45_VOG_Radio_Summer {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_SVD_Summer_ARM: CUP_V_O_RUS_6B45_SVD_Summer {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_PKP_Summer_ARM: CUP_V_O_RUS_6B45_PKP_Summer {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_SPP_AK_Summer_ARM: CUP_V_O_RUS_6B45_SPP_AK_Summer {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_SPP_AK_Med_Summer_ARM: CUP_V_O_RUS_6B45_SPP_AK_Med_Summer {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_SPP_AK_Light_Summer_ARM: CUP_V_O_RUS_6B45_SPP_AK_Light_Summer {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_SPP_AK_Med_Light_Summer_ARM: CUP_V_O_RUS_6B45_SPP_AK_Med_Light_Summer {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_SPP_AK_Radio_Summer_ARM: CUP_V_O_RUS_6B45_SPP_AK_Radio_Summer {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_SPP_AK_Med_Radio_Summer_ARM: CUP_V_O_RUS_6B45_SPP_AK_Med_Radio_Summer {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_SPP_VOG_Summer_ARM: CUP_V_O_RUS_6B45_SPP_VOG_Summer {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_SPP_VOG_Radio_Summer_ARM: CUP_V_O_RUS_6B45_SPP_VOG_Radio_Summer {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_SPP_SVD_Summer_ARM: CUP_V_O_RUS_6B45_SPP_SVD_Summer {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_SPP_PKP_Summer_ARM: CUP_V_O_RUS_6B45_SPP_PKP_Summer {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_Light_Desert_ARM: CUP_V_O_RUS_6B45_Light_Desert {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_AK_Desert_ARM: CUP_V_O_RUS_6B45_AK_Desert {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_AK_Med_Desert_ARM: CUP_V_O_RUS_6B45_AK_Med_Desert {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_AK_Light_Desert_ARM: CUP_V_O_RUS_6B45_AK_Light_Desert {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_AK_Med_Light_Desert_ARM: CUP_V_O_RUS_6B45_AK_Med_Light_Desert {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_AK_Radio_Desert_ARM: CUP_V_O_RUS_6B45_AK_Radio_Desert {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_AK_Med_Radio_Desert_ARM: CUP_V_O_RUS_6B45_AK_Med_Radio_Desert {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_VOG_Desert_ARM: CUP_V_O_RUS_6B45_VOG_Desert {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_VOG_Radio_Desert_ARM: CUP_V_O_RUS_6B45_VOG_Radio_Desert {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_SVD_Desert_ARM: CUP_V_O_RUS_6B45_SVD_Desert {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_PKP_Desert_ARM: CUP_V_O_RUS_6B45_PKP_Desert {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_SPP_AK_Desert_ARM: CUP_V_O_RUS_6B45_SPP_AK_Desert {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_SPP_AK_Med_Desert_ARM: CUP_V_O_RUS_6B45_SPP_AK_Med_Desert {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_SPP_AK_Light_Desert_ARM: CUP_V_O_RUS_6B45_SPP_AK_Light_Desert {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_SPP_AK_Med_Light_Desert_ARM: CUP_V_O_RUS_6B45_SPP_AK_Med_Light_Desert {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_SPP_AK_Radio_Desert_ARM: CUP_V_O_RUS_6B45_SPP_AK_Radio_Desert {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_SPP_AK_Med_Radio_Desert_ARM: CUP_V_O_RUS_6B45_SPP_AK_Med_Radio_Desert {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_SPP_VOG_Desert_ARM: CUP_V_O_RUS_6B45_SPP_VOG_Desert {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_SPP_VOG_Radio_Desert_ARM: CUP_V_O_RUS_6B45_SPP_VOG_Radio_Desert {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_SPP_SVD_Desert_ARM: CUP_V_O_RUS_6B45_SPP_SVD_Desert {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_SPP_PKP_Desert_ARM: CUP_V_O_RUS_6B45_SPP_PKP_Desert {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_1_Light_Summer_ARM: CUP_V_O_RUS_6B45_1_Light_Summer {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_1_AK_Summer_ARM: CUP_V_O_RUS_6B45_1_AK_Summer {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_1_AK_Med_Summer_ARM: CUP_V_O_RUS_6B45_1_AK_Med_Summer {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_1_AK_Light_Summer_ARM: CUP_V_O_RUS_6B45_1_AK_Light_Summer {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_1_AK_Med_Light_Summer_ARM: CUP_V_O_RUS_6B45_1_AK_Med_Light_Summer {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_1_AK_Radio_Summer_ARM: CUP_V_O_RUS_6B45_1_AK_Radio_Summer {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_1_AK_Med_Radio_Summer_ARM: CUP_V_O_RUS_6B45_1_AK_Med_Radio_Summer {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_1_VOG_Summer_ARM: CUP_V_O_RUS_6B45_1_VOG_Summer {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_1_VOG_Radio_Summer_ARM: CUP_V_O_RUS_6B45_1_VOG_Radio_Summer {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_1_SVD_Summer_ARM: CUP_V_O_RUS_6B45_1_SVD_Summer {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_1_PKP_Summer_ARM: CUP_V_O_RUS_6B45_1_PKP_Summer {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_1_SPP_AK_Summer_ARM: CUP_V_O_RUS_6B45_1_SPP_AK_Summer {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_1_SPP_AK_Med_Summer_ARM: CUP_V_O_RUS_6B45_1_SPP_AK_Med_Summer {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_1_SPP_AK_Light_Summer_ARM: CUP_V_O_RUS_6B45_1_SPP_AK_Light_Summer {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_1_SPP_AK_Med_Light_Summer_ARM: CUP_V_O_RUS_6B45_1_SPP_AK_Med_Light_Summer {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_1_SPP_AK_Radio_Summer_ARM: CUP_V_O_RUS_6B45_1_SPP_AK_Radio_Summer {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_1_SPP_AK_Med_Radio_Summer_ARM: CUP_V_O_RUS_6B45_1_SPP_AK_Med_Radio_Summer {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_1_SPP_VOG_Summer_ARM: CUP_V_O_RUS_6B45_1_SPP_VOG_Summer {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_1_SPP_VOG_Radio_Summer_ARM: CUP_V_O_RUS_6B45_1_SPP_VOG_Radio_Summer {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_1_SPP_SVD_Summer_ARM: CUP_V_O_RUS_6B45_1_SPP_SVD_Summer {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_1_SPP_PKP_Summer_ARM: CUP_V_O_RUS_6B45_1_SPP_PKP_Summer {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_1_Light_Desert_ARM: CUP_V_O_RUS_6B45_1_Light_Desert {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_1_AK_Desert_ARM: CUP_V_O_RUS_6B45_1_AK_Desert {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_1_AK_Med_Desert_ARM: CUP_V_O_RUS_6B45_1_AK_Med_Desert {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_1_AK_Light_Desert_ARM: CUP_V_O_RUS_6B45_1_AK_Light_Desert {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_1_AK_Med_Light_Desert_ARM: CUP_V_O_RUS_6B45_1_AK_Med_Light_Desert {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_1_AK_Radio_Desert_ARM: CUP_V_O_RUS_6B45_1_AK_Radio_Desert {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_1_AK_Med_Radio_Desert_ARM: CUP_V_O_RUS_6B45_1_AK_Med_Radio_Desert {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_1_VOG_Desert_ARM: CUP_V_O_RUS_6B45_1_VOG_Desert {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_1_VOG_Radio_Desert_ARM: CUP_V_O_RUS_6B45_1_VOG_Radio_Desert {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_1_SVD_Desert_ARM: CUP_V_O_RUS_6B45_1_SVD_Desert {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_1_PKP_Desert_ARM: CUP_V_O_RUS_6B45_1_PKP_Desert {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_1_SPP_AK_Desert_ARM: CUP_V_O_RUS_6B45_1_SPP_AK_Desert {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_1_SPP_AK_Med_Desert_ARM: CUP_V_O_RUS_6B45_1_SPP_AK_Med_Desert {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_1_SPP_AK_Light_Desert_ARM: CUP_V_O_RUS_6B45_1_SPP_AK_Light_Desert {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_1_SPP_AK_Med_Light_Desert_ARM: CUP_V_O_RUS_6B45_1_SPP_AK_Med_Light_Desert {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_1_SPP_AK_Radio_Desert_ARM: CUP_V_O_RUS_6B45_1_SPP_AK_Radio_Desert {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_1_SPP_AK_Med_Radio_Desert_ARM: CUP_V_O_RUS_6B45_1_SPP_AK_Med_Radio_Desert {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_1_SPP_VOG_Desert_ARM: CUP_V_O_RUS_6B45_1_SPP_VOG_Desert {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_1_SPP_VOG_Radio_Desert_ARM: CUP_V_O_RUS_6B45_1_SPP_VOG_Radio_Desert {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_1_SPP_SVD_Desert_ARM: CUP_V_O_RUS_6B45_1_SPP_SVD_Desert {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_1_SPP_PKP_Desert_ARM: CUP_V_O_RUS_6B45_1_SPP_PKP_Desert {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_6Sh117_AK_Summer_ARM: CUP_V_O_RUS_6B45_6Sh117_AK_Summer {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_6Sh117_AK_Med_Summer_ARM: CUP_V_O_RUS_6B45_6Sh117_AK_Med_Summer {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_6Sh117_AK_Radio_Summer_ARM: CUP_V_O_RUS_6B45_6Sh117_AK_Radio_Summer {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_6Sh117_AK_Med_Radio_Summer_ARM: CUP_V_O_RUS_6B45_6Sh117_AK_Med_Radio_Summer {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_6Sh117_VOG_Summer_ARM: CUP_V_O_RUS_6B45_6Sh117_VOG_Summer {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_6Sh117_VOG_Med_Summer_ARM: CUP_V_O_RUS_6B45_6Sh117_VOG_Med_Summer {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_6Sh117_VOG_Radio_Light_Summer_ARM: CUP_V_O_RUS_6B45_6Sh117_VOG_Radio_Light_Summer {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_6Sh117_VOG_Med_Radio_Light_Summer_ARM: CUP_V_O_RUS_6B45_6Sh117_VOG_Med_Radio_Light_Summer {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_6Sh117_VOG_Radio_Summer_ARM: CUP_V_O_RUS_6B45_6Sh117_VOG_Radio_Summer {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_6Sh117_PKP_Summer_ARM: CUP_V_O_RUS_6B45_6Sh117_PKP_Summer {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_6Sh117_PKP_Radio_Summer_ARM: CUP_V_O_RUS_6B45_6Sh117_PKP_Radio_Summer {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_6Sh117_SVD_1_Summer_ARM: CUP_V_O_RUS_6B45_6Sh117_SVD_1_Summer {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_6Sh117_SVD_2_Summer_ARM: CUP_V_O_RUS_6B45_6Sh117_SVD_2_Summer {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_6Sh117_SPP_AK_Summer_ARM: CUP_V_O_RUS_6B45_6Sh117_SPP_AK_Summer {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_6Sh117_SPP_AK_Med_Summer_ARM: CUP_V_O_RUS_6B45_6Sh117_SPP_AK_Med_Summer {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_6Sh117_SPP_AK_Radio_Summer_ARM: CUP_V_O_RUS_6B45_6Sh117_SPP_AK_Radio_Summer {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_6Sh117_SPP_AK_Med_Radio_Summer_ARM: CUP_V_O_RUS_6B45_6Sh117_SPP_AK_Med_Radio_Summer {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_6Sh117_SPP_VOG_Summer_ARM: CUP_V_O_RUS_6B45_6Sh117_SPP_VOG_Summer {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_6Sh117_SPP_VOG_Med_Summer_ARM: CUP_V_O_RUS_6B45_6Sh117_SPP_VOG_Med_Summer {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_6Sh117_SPP_VOG_Radio_Light_Summer_ARM: CUP_V_O_RUS_6B45_6Sh117_SPP_VOG_Radio_Light_Summer {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_6Sh117_SPP_VOG_Med_Radio_Light_Summer_ARM: CUP_V_O_RUS_6B45_6Sh117_SPP_VOG_Med_Radio_Light_Summer {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_6Sh117_SPP_VOG_Radio_Summer_ARM: CUP_V_O_RUS_6B45_6Sh117_SPP_VOG_Radio_Summer {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_6Sh117_SPP_PKP_Summer_ARM: CUP_V_O_RUS_6B45_6Sh117_SPP_PKP_Summer {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_6Sh117_SPP_PKP_Radio_Summer_ARM: CUP_V_O_RUS_6B45_6Sh117_SPP_PKP_Radio_Summer {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_6Sh117_SPP_SVD_1_Summer_ARM: CUP_V_O_RUS_6B45_6Sh117_SPP_SVD_1_Summer {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_6Sh117_SPP_SVD_2_Summer_ARM: CUP_V_O_RUS_6B45_6Sh117_SPP_SVD_2_Summer {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_6Sh117_AK_Desert_ARM: CUP_V_O_RUS_6B45_6Sh117_AK_Desert {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_6Sh117_AK_Med_Desert_ARM: CUP_V_O_RUS_6B45_6Sh117_AK_Med_Desert {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_6Sh117_AK_Radio_Desert_ARM: CUP_V_O_RUS_6B45_6Sh117_AK_Radio_Desert {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_6Sh117_AK_Med_Radio_Desert_ARM: CUP_V_O_RUS_6B45_6Sh117_AK_Med_Radio_Desert {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_6Sh117_VOG_Desert_ARM: CUP_V_O_RUS_6B45_6Sh117_VOG_Desert {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_6Sh117_VOG_Med_Desert_ARM: CUP_V_O_RUS_6B45_6Sh117_VOG_Med_Desert {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_6Sh117_VOG_Radio_Light_Desert_ARM: CUP_V_O_RUS_6B45_6Sh117_VOG_Radio_Light_Desert {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_6Sh117_VOG_Med_Radio_Light_Desert_ARM: CUP_V_O_RUS_6B45_6Sh117_VOG_Med_Radio_Light_Desert {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_6Sh117_VOG_Radio_Desert_ARM: CUP_V_O_RUS_6B45_6Sh117_VOG_Radio_Desert {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_6Sh117_PKP_Desert_ARM: CUP_V_O_RUS_6B45_6Sh117_PKP_Desert {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_6Sh117_PKP_Radio_Desert_ARM: CUP_V_O_RUS_6B45_6Sh117_PKP_Radio_Desert {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_6Sh117_SVD_1_Desert_ARM: CUP_V_O_RUS_6B45_6Sh117_SVD_1_Desert {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_6Sh117_SVD_2_Desert_ARM: CUP_V_O_RUS_6B45_6Sh117_SVD_2_Desert {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_6Sh117_SPP_AK_Desert_ARM: CUP_V_O_RUS_6B45_6Sh117_SPP_AK_Desert {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_6Sh117_SPP_AK_Med_Desert_ARM: CUP_V_O_RUS_6B45_6Sh117_SPP_AK_Med_Desert {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_6Sh117_SPP_AK_Radio_Desert_ARM: CUP_V_O_RUS_6B45_6Sh117_SPP_AK_Radio_Desert {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_6Sh117_SPP_AK_Med_Radio_Desert_ARM: CUP_V_O_RUS_6B45_6Sh117_SPP_AK_Med_Radio_Desert {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_6Sh117_SPP_VOG_Desert_ARM: CUP_V_O_RUS_6B45_6Sh117_SPP_VOG_Desert {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_6Sh117_SPP_VOG_Med_Desert_ARM: CUP_V_O_RUS_6B45_6Sh117_SPP_VOG_Med_Desert {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_6Sh117_SPP_VOG_Radio_Light_Desert_ARM: CUP_V_O_RUS_6B45_6Sh117_SPP_VOG_Radio_Light_Desert {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_6Sh117_SPP_VOG_Med_Radio_Light_Desert_ARM: CUP_V_O_RUS_6B45_6Sh117_SPP_VOG_Med_Radio_Light_Desert {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_6Sh117_SPP_VOG_Radio_Desert_ARM: CUP_V_O_RUS_6B45_6Sh117_SPP_VOG_Radio_Desert {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_6Sh117_SPP_PKP_Desert_ARM: CUP_V_O_RUS_6B45_6Sh117_SPP_PKP_Desert {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_6Sh117_SPP_PKP_Radio_Desert_ARM: CUP_V_O_RUS_6B45_6Sh117_SPP_PKP_Radio_Desert {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_6Sh117_SPP_SVD_1_Desert_ARM: CUP_V_O_RUS_6B45_6Sh117_SPP_SVD_1_Desert {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_6Sh117_SPP_SVD_2_Desert_ARM: CUP_V_O_RUS_6B45_6Sh117_SPP_SVD_2_Desert {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_1_6Sh117_AK_Summer_ARM: CUP_V_O_RUS_6B45_1_6Sh117_AK_Summer {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_1_6Sh117_AK_Med_Summer_ARM: CUP_V_O_RUS_6B45_1_6Sh117_AK_Med_Summer {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_1_6Sh117_AK_Radio_Summer_ARM: CUP_V_O_RUS_6B45_1_6Sh117_AK_Radio_Summer {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_1_6Sh117_AK_Med_Radio_Summer_ARM: CUP_V_O_RUS_6B45_1_6Sh117_AK_Med_Radio_Summer {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_1_6Sh117_VOG_Summer_ARM: CUP_V_O_RUS_6B45_1_6Sh117_VOG_Summer {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_1_6Sh117_VOG_Med_Summer_ARM: CUP_V_O_RUS_6B45_1_6Sh117_VOG_Med_Summer {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_1_6Sh117_VOG_Radio_Light_Summer_ARM: CUP_V_O_RUS_6B45_1_6Sh117_VOG_Radio_Light_Summer {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_1_6Sh117_VOG_Med_Radio_Light_Summer_ARM: CUP_V_O_RUS_6B45_1_6Sh117_VOG_Med_Radio_Light_Summer {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_1_6Sh117_VOG_Radio_Summer_ARM: CUP_V_O_RUS_6B45_1_6Sh117_VOG_Radio_Summer {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_1_6Sh117_PKP_Summer_ARM: CUP_V_O_RUS_6B45_1_6Sh117_PKP_Summer {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_1_6Sh117_PKP_Radio_Summer_ARM: CUP_V_O_RUS_6B45_1_6Sh117_PKP_Radio_Summer {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_1_6Sh117_SVD_1_Summer_ARM: CUP_V_O_RUS_6B45_1_6Sh117_SVD_1_Summer {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_1_6Sh117_SVD_2_Summer_ARM: CUP_V_O_RUS_6B45_1_6Sh117_SVD_2_Summer {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_1_6Sh117_SPP_AK_Summer_ARM: CUP_V_O_RUS_6B45_1_6Sh117_SPP_AK_Summer {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_1_6Sh117_SPP_AK_Med_Summer_ARM: CUP_V_O_RUS_6B45_1_6Sh117_SPP_AK_Med_Summer {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_1_6Sh117_SPP_AK_Radio_Summer_ARM: CUP_V_O_RUS_6B45_1_6Sh117_SPP_AK_Radio_Summer {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_1_6Sh117_SPP_AK_Med_Radio_Summer_ARM: CUP_V_O_RUS_6B45_1_6Sh117_SPP_AK_Med_Radio_Summer {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_1_6Sh117_SPP_VOG_Summer_ARM: CUP_V_O_RUS_6B45_1_6Sh117_SPP_VOG_Summer {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_1_6Sh117_SPP_VOG_Med_Summer_ARM: CUP_V_O_RUS_6B45_1_6Sh117_SPP_VOG_Med_Summer {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_1_6Sh117_SPP_VOG_Radio_Light_Summer_ARM: CUP_V_O_RUS_6B45_1_6Sh117_SPP_VOG_Radio_Light_Summer {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_1_6Sh117_SPP_VOG_Med_Radio_Light_Summer_ARM: CUP_V_O_RUS_6B45_1_6Sh117_SPP_VOG_Med_Radio_Light_Summer {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_1_6Sh117_SPP_VOG_Radio_Summer_ARM: CUP_V_O_RUS_6B45_1_6Sh117_SPP_VOG_Radio_Summer {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_1_6Sh117_SPP_PKP_Summer_ARM: CUP_V_O_RUS_6B45_1_6Sh117_SPP_PKP_Summer {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_1_6Sh117_SPP_PKP_Radio_Summer_ARM: CUP_V_O_RUS_6B45_1_6Sh117_SPP_PKP_Radio_Summer {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_1_6Sh117_SPP_SVD_1_Summer_ARM: CUP_V_O_RUS_6B45_1_6Sh117_SPP_SVD_1_Summer {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_1_6Sh117_SPP_SVD_2_Summer_ARM: CUP_V_O_RUS_6B45_1_6Sh117_SPP_SVD_2_Summer {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_1_6Sh117_AK_Desert_ARM: CUP_V_O_RUS_6B45_1_6Sh117_AK_Desert {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_1_6Sh117_AK_Med_Desert_ARM: CUP_V_O_RUS_6B45_1_6Sh117_AK_Med_Desert {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_1_6Sh117_AK_Radio_Desert_ARM: CUP_V_O_RUS_6B45_1_6Sh117_AK_Radio_Desert {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_1_6Sh117_AK_Med_Radio_Desert_ARM: CUP_V_O_RUS_6B45_1_6Sh117_AK_Med_Radio_Desert {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_1_6Sh117_VOG_Desert_ARM: CUP_V_O_RUS_6B45_1_6Sh117_VOG_Desert {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_1_6Sh117_VOG_Med_Desert_ARM: CUP_V_O_RUS_6B45_1_6Sh117_VOG_Med_Desert {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_1_6Sh117_VOG_Radio_Light_Desert_ARM: CUP_V_O_RUS_6B45_1_6Sh117_VOG_Radio_Light_Desert {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_1_6Sh117_VOG_Med_Radio_Light_Desert_ARM: CUP_V_O_RUS_6B45_1_6Sh117_VOG_Med_Radio_Light_Desert {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_1_6Sh117_VOG_Radio_Desert_ARM: CUP_V_O_RUS_6B45_1_6Sh117_VOG_Radio_Desert {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_1_6Sh117_PKP_Desert_ARM: CUP_V_O_RUS_6B45_1_6Sh117_PKP_Desert {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_1_6Sh117_PKP_Radio_Desert_ARM: CUP_V_O_RUS_6B45_1_6Sh117_PKP_Radio_Desert {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_1_6Sh117_SVD_1_Desert_ARM: CUP_V_O_RUS_6B45_1_6Sh117_SVD_1_Desert {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_1_6Sh117_SVD_2_Desert_ARM: CUP_V_O_RUS_6B45_1_6Sh117_SVD_2_Desert {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_1_6Sh117_SPP_AK_Desert_ARM: CUP_V_O_RUS_6B45_1_6Sh117_SPP_AK_Desert {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_1_6Sh117_SPP_AK_Med_Desert_ARM: CUP_V_O_RUS_6B45_1_6Sh117_SPP_AK_Med_Desert {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_1_6Sh117_SPP_AK_Radio_Desert_ARM: CUP_V_O_RUS_6B45_1_6Sh117_SPP_AK_Radio_Desert {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_1_6Sh117_SPP_AK_Med_Radio_Desert_ARM: CUP_V_O_RUS_6B45_1_6Sh117_SPP_AK_Med_Radio_Desert {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_1_6Sh117_SPP_VOG_Desert_ARM: CUP_V_O_RUS_6B45_1_6Sh117_SPP_VOG_Desert {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_1_6Sh117_SPP_VOG_Med_Desert_ARM: CUP_V_O_RUS_6B45_1_6Sh117_SPP_VOG_Med_Desert {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_1_6Sh117_SPP_VOG_Radio_Light_Desert_ARM: CUP_V_O_RUS_6B45_1_6Sh117_SPP_VOG_Radio_Light_Desert {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_1_6Sh117_SPP_VOG_Med_Radio_Light_Desert_ARM: CUP_V_O_RUS_6B45_1_6Sh117_SPP_VOG_Med_Radio_Light_Desert {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_1_6Sh117_SPP_VOG_Radio_Desert_ARM: CUP_V_O_RUS_6B45_1_6Sh117_SPP_VOG_Radio_Desert {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_1_6Sh117_SPP_PKP_Desert_ARM: CUP_V_O_RUS_6B45_1_6Sh117_SPP_PKP_Desert {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_1_6Sh117_SPP_PKP_Radio_Desert_ARM: CUP_V_O_RUS_6B45_1_6Sh117_SPP_PKP_Radio_Desert {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_1_6Sh117_SPP_SVD_1_Desert_ARM: CUP_V_O_RUS_6B45_1_6Sh117_SPP_SVD_1_Desert {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_6B45_1_6Sh117_SPP_SVD_2_Desert_ARM: CUP_V_O_RUS_6B45_1_6Sh117_SPP_SVD_2_Desert {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_RPS_Smersh_AK_ModernOlive_ARM: CUP_V_O_RUS_RPS_Smersh_AK_ModernOlive {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_RPS_Smersh_VOG_ModernOlive_ARM: CUP_V_O_RUS_RPS_Smersh_VOG_ModernOlive {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_RPS_Smersh_VOG_SPP_ModernOlive_ARM: CUP_V_O_RUS_RPS_Smersh_VOG_SPP_ModernOlive {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_RPS_Smersh_PKP_ModernOlive_ARM: CUP_V_O_RUS_RPS_Smersh_PKP_ModernOlive {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_RPS_Smersh_PKP_Light_ModernOlive_ARM: CUP_V_O_RUS_RPS_Smersh_PKP_Light_ModernOlive {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_RPS_Smersh_PKP_SPP_ModernOlive_ARM: CUP_V_O_RUS_RPS_Smersh_PKP_SPP_ModernOlive {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_RPS_Smersh_SVD_ModernOlive_ARM: CUP_V_O_RUS_RPS_Smersh_SVD_ModernOlive {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_RPS_Smersh_AK_Green_ARM: CUP_V_O_RUS_RPS_Smersh_AK_Green {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_RPS_Smersh_VOG_Green_ARM: CUP_V_O_RUS_RPS_Smersh_VOG_Green {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_RPS_Smersh_VOG_SPP_Green_ARM: CUP_V_O_RUS_RPS_Smersh_VOG_SPP_Green {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_RPS_Smersh_PKP_Green_ARM: CUP_V_O_RUS_RPS_Smersh_PKP_Green {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_RPS_Smersh_PKP_Light_Green_ARM: CUP_V_O_RUS_RPS_Smersh_PKP_Light_Green {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_RPS_Smersh_PKP_SPP_Green_ARM: CUP_V_O_RUS_RPS_Smersh_PKP_SPP_Green {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_RPS_Smersh_SVD_Green_ARM: CUP_V_O_RUS_RPS_Smersh_SVD_Green {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_RPS_Smersh_AK_Coyote_ARM: CUP_V_O_RUS_RPS_Smersh_AK_Coyote {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_RPS_Smersh_VOG_Coyote_ARM: CUP_V_O_RUS_RPS_Smersh_VOG_Coyote {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_RPS_Smersh_VOG_SPP_Coyote_ARM: CUP_V_O_RUS_RPS_Smersh_VOG_SPP_Coyote {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_RPS_Smersh_PKP_Coyote_ARM: CUP_V_O_RUS_RPS_Smersh_PKP_Coyote {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_RPS_Smersh_PKP_Light_Coyote_ARM: CUP_V_O_RUS_RPS_Smersh_PKP_Light_Coyote {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_RPS_Smersh_PKP_SPP_Coyote_ARM: CUP_V_O_RUS_RPS_Smersh_PKP_SPP_Coyote {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_RPS_Smersh_SVD_Coyote_ARM: CUP_V_O_RUS_RPS_Smersh_SVD_Coyote {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_RPS_Smersh_AK_Brown_ARM: CUP_V_O_RUS_RPS_Smersh_AK_Brown {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_RPS_Smersh_VOG_Brown_ARM: CUP_V_O_RUS_RPS_Smersh_VOG_Brown {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_RPS_Smersh_VOG_SPP_Brown_ARM: CUP_V_O_RUS_RPS_Smersh_VOG_SPP_Brown {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_RPS_Smersh_PKP_Brown_ARM: CUP_V_O_RUS_RPS_Smersh_PKP_Brown {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_RPS_Smersh_PKP_Light_Brown_ARM: CUP_V_O_RUS_RPS_Smersh_PKP_Light_Brown {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_RPS_Smersh_PKP_SPP_Brown_ARM: CUP_V_O_RUS_RPS_Smersh_PKP_SPP_Brown {
+        ARMOUR
+    };
+    class CUP_V_O_RUS_RPS_Smersh_SVD_Brown_ARM: CUP_V_O_RUS_RPS_Smersh_SVD_Brown {
+        ARMOUR
+    };
     class V_TacChestrig_grn_F_ARM: V_TacChestrig_grn_F {
         ARMOUR
     };
@@ -6020,6 +7324,9 @@ class CfgWeapons {
         ARMOUR
     };
     class V_PlateCarrierSpec_wdl_ARM: V_PlateCarrierSpec_wdl {
+        ARMOUR
+    };
+    class V_PlateCarrier_CTRG_lxWS_ARM: V_PlateCarrier_CTRG_lxWS {
         ARMOUR
     };
     class acp_Multicam_V_PlateCarrierSpec_Multicam_ARM: acp_Multicam_V_PlateCarrierSpec_Multicam {
