@@ -9,7 +9,7 @@ ts_spawn_fnc_preinit = {
     ts_spawn_selectedLocation = [];
     ts_spawn_placedFortifications = [];
     ts_spawn_ai_multiplier = 2;
-    ts_spawn_cqc_percent = 0.3;
+    ts_spawn_cqc_percent = 0.6;
     ts_spawn_playerCount = 0;
     ts_spawn_aiCount = 0;
     ts_spawn_cqcCount = 0;
@@ -161,6 +161,29 @@ ts_spawn_fnc_enableRotor = {
     _spawnZone synchronizeObjectsAdd [_module,_jeff];
 };
 
+ts_spawn_fnc_enableChaseAI = {
+    params ["_pos","_size"];
+
+    if (isNil "ts_trg_chaseAI") then {
+        ts_trg_chaseAI = createTrigger ["EmptyDetector", _pos, false];
+        ts_trg_chaseAI setTriggerArea [_size, _size, 0, false];
+        ts_trg_chaseAI setTriggerActivation ["ANYPLAYER", "PRESENT", false];
+
+        private _module = "ark_chase_ai_module" createVehicleLocal [0,0,0];
+        _module setVariable ["Max_Distance", 350];
+        _module setVariable ["Min_Distance", 250];
+        _module setVariable ["Spawn_Time", 3];
+
+        ts_trg_chaseAI synchronizeObjectsAdd [_module];
+
+        [{[false] call ark_chase_ai_fnc_enableSpawning}, [], 300] call CBA_fnc_waitAndExecute;
+    } else {
+        ts_trg_chaseAI setPosASL _pos;
+        [true] call ark_chase_ai_fnc_enableSpawning;
+        [{[false] call ark_chase_ai_fnc_enableSpawning}, [], 300] call CBA_fnc_waitAndExecute;
+    };
+};
+
 ts_spawn_fnc_createChaseZone = {
     params ["_obj","_size"];
 
@@ -172,6 +195,7 @@ ts_spawn_fnc_createChaseZone = {
 
     [{(allPlayers inAreaArray _this #0) isNotEqualTo []}, {
         [_this #1,_this #2] call ark_admin_tools_fnc_chaseAI;
+        [_this #1, _this #2] call ts_spawn_fnc_enableChaseAI;
     }, [_mkr,_pos,_size]] call CBA_fnc_waitUntilAndExecute;
 };
 
