@@ -9,7 +9,7 @@ ts_spawn_fnc_preinit = {
     ts_spawn_selectedLocation = [];
     ts_spawn_placedFortifications = [];
     ts_spawn_ai_multiplier = 2;
-    ts_spawn_cqc_percent = 0.6;
+    ts_spawn_cqc_percent = 0.4;
     ts_spawn_playerCount = 0;
     ts_spawn_aiCount = 0;
     ts_spawn_cqcCount = 0;
@@ -62,7 +62,7 @@ ts_spawn_fnc_activateLocation = {
     private _fireTeamSize = ["ZoneTemplates", adm_patrol_defaultZoneTemplate, "infFireteamSize"] call adm_config_fnc_getNumber;
     private _patrolAiCount = ceil (ts_spawn_aiCount * (1 - ts_spawn_cqc_percent));
     ts_spawn_patrolInfGroupCount = ceil (_patrolAiCount / _fireTeamSize);
-    ts_spawn_patrolTechGroupCount = 1 + (floor (ts_spawn_playerCount / 10));
+    ts_spawn_patrolTechGroupCount = 2 + (floor (ts_spawn_playerCount / 10));
     ts_spawn_patrolArmourGroupCount = 1 + (floor (ts_spawn_playerCount / 25));
     call ts_spawn_fnc_createLocationZones;
     ts_spawn_selectedLocation set [2, true];
