@@ -16,7 +16,7 @@ ark_chase_ai_fnc_doMove = {
             };
 
             private "_targetPos";
-            if (ark_chase_ai_var_allowBS && { [_target] call ace_common_fnc_isInBuilding } ) then {
+            if (ark_chase_ai_var_allowBS && { insideBuilding _target == 1 } ) then {
                 _targetPos = getPosATL _target;
             } else {
                 _targetPos = _target getPos [ark_chase_ai_var_wpAccuracy, random 360];
@@ -25,6 +25,7 @@ ark_chase_ai_fnc_doMove = {
             if (_unit distance2D _targetPos < (ark_chase_ai_var_maxDistance + 50)) then {
                 _unit setDestination [_targetPos, "LEADER PLANNED", true];
                 _unit doMove _targetPos;
+                _unit lookAt _target;
             } else {
                 private _pos = call ark_chase_ai_fnc_findSpawnPos;
                 if (isNil "_pos" || { _pos isEqualTo [] }) exitWith {

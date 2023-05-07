@@ -9,7 +9,7 @@ ark_chase_ai_fnc_createUnit = {
     _unit setBehaviour "AWARE";
     _unit setSpeedMode "FULL";
     _unit setUnitPos "UP";
-    {_unit disableAI _x} forEach ["SUPPRESSION", "AUTOCOMBAT"];
+    {_unit disableAI _x} forEach ["SUPPRESSION", "AUTOCOMBAT", "COVER"];
     if (ark_chase_ai_var_allowNVGs) then {
         private _hmd = hmd _unit;
         if (_hmd isEqualTo "") then {

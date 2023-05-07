@@ -482,7 +482,7 @@ ts_spawn_fnc_ammoCrate = {
             _box allowDamage false;
             [_box, ["faction", player getVariable "hull3_faction"], ["gear", "Truck"]] call hull3_unit_fnc_init;
 
-            if !(player call ace_common_fnc_isInBuilding) then {
+            if (insideBuilding player != 1) then {
                 createSimpleObject ["Land_ClutterCutter_medium_F", _pos, false];
             };
         },
@@ -503,7 +503,7 @@ ts_spawn_fnc_medicalCrate = {
             private _box = createVehicle ["ARK_medicalSupplyCrate", _pos, [], 0, "CAN_COLLIDE"];
             _box allowDamage false;
 
-            if !(player call ace_common_fnc_isInBuilding) then {
+            if (insideBuilding player != 1) then {
                 createSimpleObject ["Land_ClutterCutter_medium_F", _pos, false];
             };
         },
