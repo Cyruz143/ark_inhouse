@@ -16,7 +16,7 @@ ark_blood_effects_fnc_createBlood = {
 
     private _pos = getPosASL _unit;
     private _lisPos = (lineIntersectsSurfaces [_pos, _pos vectorAdd [0,0,-1e11], objNull, objNull, true, 1, "ROADWAY", "FIRE"]) #0;
-    private _blood = createSimpleObject [(selectRandom ark_blood_effects_var_models), (_lisPos #0), true];
+    private _blood = createSimpleObject [(selectRandom ark_blood_effects_var_models), (_lisPos #0)];
     _blood setDir (random 360);
     _blood setVectorUp _lisPos #1;
 
