@@ -23,9 +23,15 @@ class CfgWeapons {
     class gm_ge_vest_80_base;
     class gm_ge_vest_80_02_base;
     class gm_ge_vest_80_mp_base;
+    class gm_ge_vest_80_brassard_base;
     class gm_ge_vest_armor_90_base;
     class gm_ge_vest_90_base;
     class gm_ge_vest_pilot_base;
+    class gm_ge_vest_type18_base;
+    class gm_ge_vest_type3_base;
+    class gm_ge_vest_type3a1_base;
+    class gm_ge_vest_sov_80_base;
+    class gm_ge_vest_sov_armor_80_base;
     class gm_pl_army_vest_80_base;
     class gm_dk_vest_54_base;
     class gm_dk_vest_m00_m84_base;
@@ -540,6 +546,9 @@ class CfgWeapons {
     class gm_gc_vest_combatvest3_str: gm_gc_vest_combatvest3_base {
         HIDDEN
     };
+    class gm_gc_vest_combatvest3_pol: gm_gc_vest_combatvest3_base {
+        HIDDEN
+    };
     class gm_ge_army_vest_80_belt: gm_ge_vest_80_base {
         HIDDEN
     };
@@ -582,6 +591,9 @@ class CfgWeapons {
     class gm_ge_pol_vest_80_wht: gm_ge_vest_80_mp_base {
         HIDDEN
     };
+    class gm_ge_army_vest_80_brassard_mp: gm_ge_vest_80_brassard_base {
+        HIDDEN
+    };
     class gm_ge_vest_armor_90_flk: gm_ge_vest_armor_90_base {
         HIDDEN
     };
@@ -610,6 +622,48 @@ class CfgWeapons {
         HIDDEN
     };
     class gm_ge_army_vest_pilot_pads_oli: gm_ge_vest_pilot_base {
+        HIDDEN
+    };
+    class gm_ge_army_vest_type18_dpm: gm_ge_vest_type18_base {
+        HIDDEN
+    };
+    class gm_ge_bgs_vest_type18_blk: gm_ge_vest_type18_base {
+        HIDDEN
+    };
+    class gm_ge_bgs_vest_type18_grn: gm_ge_vest_type18_base {
+        HIDDEN
+    };
+    class gm_ge_bgs_vest_type3_gry: gm_ge_vest_type3_base {
+        HIDDEN
+    };
+    class gm_ge_bgs_vest_type3_oli: gm_ge_vest_type3_base {
+        HIDDEN
+    };
+    class gm_ge_bgs_vest_type3_blu: gm_ge_vest_type3_base {
+        HIDDEN
+    };
+    class gm_ge_bgs_vest_type3a1_gry: gm_ge_vest_type3a1_base {
+        HIDDEN
+    };
+    class gm_ge_bgs_vest_type3a1_oli: gm_ge_vest_type3a1_base {
+        HIDDEN
+    };
+    class gm_ge_vest_sov_80_blk: gm_ge_vest_sov_80_base {
+        HIDDEN
+    };
+    class gm_ge_vest_sov_80_oli: gm_ge_vest_sov_80_base {
+        HIDDEN
+    };
+    class gm_ge_vest_sov_80_wdl: gm_ge_vest_sov_80_base {
+        HIDDEN
+    };
+    class gm_ge_vest_sov_armor_80_blk: gm_ge_vest_sov_armor_80_base {
+        HIDDEN
+    };
+    class gm_ge_vest_sov_armor_80_oli: gm_ge_vest_sov_armor_80_base {
+        HIDDEN
+    };
+    class gm_ge_vest_sov_armor_80_wdl: gm_ge_vest_sov_armor_80_base {
         HIDDEN
     };
     class gm_pl_army_vest_80_rig_gry: gm_pl_army_vest_80_base {
@@ -10170,6 +10224,9 @@ class CfgWeapons {
     class gm_gc_vest_combatvest3_str_ARM: gm_gc_vest_combatvest3_str {
         ARMOUR
     };
+    class gm_gc_vest_combatvest3_pol_ARM: gm_gc_vest_combatvest3_pol {
+        ARMOUR
+    };
     class gm_ge_army_vest_80_belt_ARM: gm_ge_army_vest_80_belt {
         ARMOUR
     };
@@ -10210,6 +10267,9 @@ class CfgWeapons {
         ARMOUR
     };
     class gm_ge_pol_vest_80_wht_ARM: gm_ge_pol_vest_80_wht {
+        ARMOUR
+    };
+    class gm_ge_army_vest_80_brassard_mp_ARM: gm_ge_army_vest_80_brassard_mp {
         ARMOUR
     };
     class gm_ge_vest_armor_90_flk_ARM: gm_ge_vest_armor_90_flk {
@@ -10261,6 +10321,48 @@ class CfgWeapons {
         ARMOUR
     };
     class gm_ge_army_vest_pilot_pads_oli_ARM: gm_ge_army_vest_pilot_pads_oli {
+        ARMOUR
+    };
+    class gm_ge_army_vest_type18_dpm_ARM: gm_ge_army_vest_type18_dpm {
+        ARMOUR
+    };
+    class gm_ge_bgs_vest_type18_blk_ARM: gm_ge_bgs_vest_type18_blk {
+        ARMOUR
+    };
+    class gm_ge_bgs_vest_type18_grn_ARM: gm_ge_bgs_vest_type18_grn {
+        ARMOUR
+    };
+    class gm_ge_bgs_vest_type3_gry_ARM: gm_ge_bgs_vest_type3_gry {
+        ARMOUR
+    };
+    class gm_ge_bgs_vest_type3_oli_ARM: gm_ge_bgs_vest_type3_oli {
+        ARMOUR
+    };
+    class gm_ge_bgs_vest_type3_blu_ARM: gm_ge_bgs_vest_type3_blu {
+        ARMOUR
+    };
+    class gm_ge_bgs_vest_type3a1_gry_ARM: gm_ge_bgs_vest_type3a1_gry {
+        ARMOUR
+    };
+    class gm_ge_bgs_vest_type3a1_oli_ARM: gm_ge_bgs_vest_type3a1_oli {
+        ARMOUR
+    };
+    class gm_ge_vest_sov_80_blk_ARM: gm_ge_vest_sov_80_blk {
+        ARMOUR
+    };
+    class gm_ge_vest_sov_80_oli_ARM: gm_ge_vest_sov_80_oli {
+        ARMOUR
+    };
+    class gm_ge_vest_sov_80_wdl_ARM: gm_ge_vest_sov_80_wdl {
+        ARMOUR
+    };
+    class gm_ge_vest_sov_armor_80_blk_ARM: gm_ge_vest_sov_armor_80_blk {
+        ARMOUR
+    };
+    class gm_ge_vest_sov_armor_80_oli_ARM: gm_ge_vest_sov_armor_80_oli {
+        ARMOUR
+    };
+    class gm_ge_vest_sov_armor_80_wdl_ARM: gm_ge_vest_sov_armor_80_wdl {
         ARMOUR
     };
     class gm_pl_army_vest_80_rig_gry_ARM: gm_pl_army_vest_80_rig_gry {
