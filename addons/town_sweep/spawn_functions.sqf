@@ -366,6 +366,16 @@ ts_spawn_fnc_objDestroyAmmo = {
     [true, ["task2"], ["Locate and destroy the ammo cache hidden in town", "Destroy Cache"], _position, "ASSIGNED", -1, true, "destroy"] call BIS_fnc_taskCreate;
     [ts_spawn_var_ammoCrate,_size] call ts_spawn_fnc_createChaseZone;
 
+    [{
+        params ["", "_id"];
+
+        playSound3D ["a3\sounds_f\sfx\beep_target.wss", ts_spawn_var_ammoCrate, true, (getPosASL ts_spawn_var_ammoCrate), 2, 1, 150];
+
+        if !(ts_spawn_var_ammoCrate getVariable ["ark_ts_canDestroy", true]) exitWith {
+            _id call CBA_fnc_removePerFrameHandler
+    ;    };
+    }, 1] call CBA_fnc_addPerFrameHandler;
+
     ts_spawn_var_ammoCrate addEventHandler ["Deleted", {["task2","SUCCEEDED"] call BIS_fnc_taskSetState}];
 };
 
@@ -378,8 +388,9 @@ ts_spawn_fnc_objDestroyAction = {
             player playActionNow "PutDown";
             [
                 5,
-                "",
+                _target,
                 {
+                    params ["_target"];
                     _target setVariable ["ark_ts_canDestroy", false, true];
                     remoteExec ["ts_spawn_fnc_objDestroyCache", 2];
                     [["\A3\ui_f\data\map\mapcontrol\taskIconDone_ca.paa", 2.0], ["Charges set for 30 seconds!"]] call CBA_fnc_notify;
