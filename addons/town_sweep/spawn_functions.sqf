@@ -369,11 +369,8 @@ ts_spawn_fnc_objDestroyAmmo = {
     [{
         params ["", "_id"];
 
+        if !(ts_spawn_var_ammoCrate getVariable ["ark_ts_canDestroy", true]) exitWith {_id call CBA_fnc_removePerFrameHandler};
         playSound3D ["a3\sounds_f\sfx\beep_target.wss", ts_spawn_var_ammoCrate, true, (getPosASL ts_spawn_var_ammoCrate), 2, 1, 150];
-
-        if !(ts_spawn_var_ammoCrate getVariable ["ark_ts_canDestroy", true]) exitWith {
-            _id call CBA_fnc_removePerFrameHandler
-    ;    };
     }, 1] call CBA_fnc_addPerFrameHandler;
 
     ts_spawn_var_ammoCrate addEventHandler ["Deleted", {["task2","SUCCEEDED"] call BIS_fnc_taskSetState}];

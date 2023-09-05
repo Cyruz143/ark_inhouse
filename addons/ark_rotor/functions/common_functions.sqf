@@ -65,7 +65,7 @@ ark_rotor_fnc_createVehicle = {
     _spawnPosition set [2, _flyHeight];
     _vehicle = createVehicle [_vehicleClassname, _spawnPosition, [], 0, "FLY"];
     _vehicle setPos _spawnPosition;
-    _vehicle flyInHeight _flyHeight;
+    _vehicle flyInHeight [_flyHeight, true];
 
     _vehicle;
 };

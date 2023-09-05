@@ -27,8 +27,8 @@ ark_rotor_fnc_insert = {
     ] call CBA_fnc_waitUntilAndExecute;
 
     [
-        {((getPos (_this #0)) #2) < 0.5},
-        {[(_this #0),(_this #1),(_this #2),(_this #4)] call ark_rotor_fnc_emtpyCargo;},
+        {((getPosATL (_this #0)) #2) < 1},
+        {[(_this #0),(_this #1),(_this #2),(_this #4)] call ark_rotor_fnc_emtpyCargo},
         [_vehicle,_landingPad,_pilot,_logic,_cargoGroup],
         600,
         {[(_this #0),(_this #3)] call ark_rotor_fnc_cleanUp;}
@@ -50,7 +50,7 @@ ark_rotor_fnc_emtpyCargo = {
     params ["_vehicle","_landingPad","_pilot","_cargoGroup"];
 
     _cargoGroup call ark_rotor_fnc_taskAttack;
-    _pilot disableAI "MOVE";
+    _vehicle flyInHeight [0, true];
 
     [
         {
@@ -80,10 +80,10 @@ ark_rotor_fnc_waitForCargo = {
     [
         {
             private _grp = group (_this #2);
-            (_this #2) enableAI "MOVE";
             _grp lockWP false;
             _grp setCurrentWaypoint [_grp, 2];
             (_this #0) land "NONE";
+            (_this #0) flyInHeight [50, true];
             deleteVehicle (_this #1);
         },
         [_vehicle,_landingPad,_pilot],
