@@ -13,7 +13,7 @@ class CfgVehicles {
                 class Group_Leader_Teleport {
                     displayName = "Teleport (To Leader)";
                     icon = "\a3\ui_f\data\igui\cfg\simpletasks\types\meet_ca.paa";
-                    condition = "ark_mapTeleportEnabled";
+                    condition = "missionNameSpace getVariable ['ark_admin_tools_mapTP', false]";
                     statement = "call ark_admin_tools_fnc_tpToLeader";
                     exceptions[] = {"isNotSwimming", "isNotInside", "isNotSitting", "isNotOnLadder", "isNotRefueling"};
                 };
@@ -21,7 +21,7 @@ class CfgVehicles {
                 class Map_Click_Teleport {
                     displayName = "Teleport (Click Map)";
                     icon = "\a3\ui_f\data\igui\cfg\simpletasks\types\move_ca.paa";
-                    condition = "ark_mapTeleportEnabled";
+                    condition = "missionNameSpace getVariable ['ark_admin_tools_mapTP', false]";
                     statement = "player call ark_admin_tools_fnc_enableMapTeleport";
                     exceptions[] = {"isNotSwimming", "isNotInside", "isNotSitting", "isNotOnLadder", "isNotRefueling"};
                 };
@@ -76,16 +76,16 @@ class CfgVehicles {
 
                     class Enable_Click_Teleport {
                         displayName = "Enable Teleport";
-                        condition = "!ark_mapTeleportEnabled";
-                        statement = "true call ark_admin_tools_fnc_assignMapTeleport;";
+                        condition = "!(missionNameSpace getVariable ['ark_admin_tools_mapTP', false])";
+                        statement = "missionNameSpace setVariable ['ark_admin_tools_mapTP', true, true]";
                         icon = "\x\ark\addons\ark_main\resources\click_enable.paa";
                         exceptions[] = {"isNotSwimming", "isNotInside", "isNotSitting", "isNotOnLadder", "isNotRefueling"};
                     };
 
                     class Disable_Click_Teleport {
                         displayName = "Disable Teleport";
-                        condition = "ark_mapTeleportEnabled";
-                        statement = "false call ark_admin_tools_fnc_assignMapTeleport;";
+                        condition = "missionNameSpace getVariable ['ark_admin_tools_mapTP', false]";
+                        statement = "missionNameSpace setVariable ['ark_admin_tools_mapTP', false, true]";
                         icon = "\x\ark\addons\ark_main\resources\click_disable.paa";
                         exceptions[] = {"isNotSwimming", "isNotInside", "isNotSitting", "isNotOnLadder", "isNotRefueling"};
                     };

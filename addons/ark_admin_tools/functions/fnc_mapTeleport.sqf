@@ -1,12 +1,3 @@
-ark_mapTeleportEnabled = false;
-
-ark_admin_tools_fnc_assignMapTeleport = {
-    params ["_teleportEnabled"];
-
-    ark_mapTeleportEnabled = _teleportEnabled;
-    publicVariable "ark_mapTeleportEnabled";
-};
-
 ark_admin_tools_fnc_enableMapTeleport = {
     params ["_unit"];
 
@@ -18,25 +9,18 @@ ark_admin_tools_fnc_enableMapTeleport = {
 };
 
 ark_admin_tools_fnc_teleportUnit = {
-    params ["_unit","_pos"];
+    params ["_unit", "_pos"];
 
-    if (surfaceIsWater _pos) then {
-        [
-            {
-                (_this #0) setposASL [(_this #1),(_this #2),0];
-                openMap [false, false];
-                onMapSingleClick "";
-            },
-            [_unit, _pos #0, _pos #1]
-        ] call CBA_fnc_execNextFrame;
-    } else {
-        [
-            {
-                (_this #0) setposATL [(_this #1),(_this #2),0];
-                openMap [false, false];
-                onMapSingleClick "";
-            },
-            [_unit, _pos #0, _pos #1]
-        ] call CBA_fnc_execNextFrame;
-    };
+    [
+        {
+            if (surfaceIsWater (_this #1)) then {
+                (_this #0) setposASL [(_this #1) #0, (_this #1) #1, 0];
+            } else {
+                (_this #0) setposATL [(_this #1) #0, (_this #1) #1, 0];
+            };
+            openMap [false, false];
+            onMapSingleClick "";
+        },
+        [_unit, _pos]
+    ] call CBA_fnc_execNextFrame;
 };
