@@ -12,7 +12,8 @@ class CfgPatches {
         requiredAddons[] = {
             "ark_main",
             "ark_admin_tools",
-            "CUP_Creatures_People_LoadOrder"
+            "CUP_Creatures_People_LoadOrder",
+            "ark_sfx_main"
         };
         VERSION_CONFIG;
     };
