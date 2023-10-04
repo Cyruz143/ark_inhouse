@@ -214,6 +214,8 @@ ts_spawn_fnc_createFortifications = {
             "Land_BagBunker_01_large_green_F",
             "Land_GuardTower_01_F",
             "Land_Bunker_02_double_F"
+            "Land_Cargo_HQ_V1_F"
+            "Land_Cargo_Patrol_V1_F"
         ];
     } else {
         _fortificationArr = [
@@ -224,7 +226,9 @@ ts_spawn_fnc_createFortifications = {
             "Land_PillboxBunker_01_hex_F",
             "Land_BagBunker_Large_F",
             "Land_GuardTower_01_F",
-            "WarfareBCamp"
+            "Land_Cargo_HQ_V3_F"
+            "Land_Cargo_Patrol_V3_F"
+            "WarfareBDepot"
         ];
     };
 
