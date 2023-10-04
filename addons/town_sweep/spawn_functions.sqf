@@ -179,6 +179,7 @@ ts_spawn_fnc_enableChaseAI = {
         [{[false] call ark_chase_ai_fnc_enableSpawning}, [], 300] call CBA_fnc_waitAndExecute;
     } else {
         ts_trg_chaseAI setPosASL _pos;
+        ark_chase_ai_var_maxAIUnits = ark_chase_ai_var_maxAIUnits + 5;
         [true] call ark_chase_ai_fnc_enableSpawning;
         [{[false] call ark_chase_ai_fnc_enableSpawning}, [], 300] call CBA_fnc_waitAndExecute;
     };
