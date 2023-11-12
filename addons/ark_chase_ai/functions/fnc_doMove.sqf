@@ -17,7 +17,8 @@ ark_chase_ai_fnc_doMove = {
 
             private "_targetPos";
             if (ark_chase_ai_var_allowBS && { insideBuilding _target == 1 } ) then {
-                _targetPos = getPosATL _target;
+                // Hack to stop AI getting stuck but keep the Z value for multistory buildings
+                _targetPos = [(_target getPos [1, random 360]) #0, (_target getPos [1, random 360]) #1, getPosATL _target #2];
             } else {
                 _targetPos = _target getPos [ark_chase_ai_var_wpAccuracy, random 360];
             };
