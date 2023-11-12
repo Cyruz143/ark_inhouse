@@ -173,6 +173,7 @@ ts_spawn_fnc_enableChaseAI = {
         _module setVariable ["Max_Distance", 350];
         _module setVariable ["Min_Distance", 250];
         _module setVariable ["Spawn_Time", 3];
+        _module setVariable ["Allow_BuildingSearch", true];
 
         ts_trg_chaseAI synchronizeObjectsAdd [_module];
 
