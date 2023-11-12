@@ -8,4 +8,6 @@ call compileScript ["x\ark\addons\ark_chase_ai\functions\fnc_unitSpawner.sqf"];
 call compileScript ["x\ark\addons\ark_chase_ai\functions\fnc_createUnit.sqf"];
 call compileScript ["x\ark\addons\ark_chase_ai\functions\fnc_findSpawnPos.sqf"];
 call compileScript ["x\ark\addons\ark_chase_ai\functions\fnc_nearEnemies.sqf"];
+call compileScript ["x\ark\addons\ark_chase_ai\functions\fnc_nearestBuildingPos.sqf"];
 call compileScript ["x\ark\addons\ark_chase_ai\functions\fnc_doMove.sqf"];
+
