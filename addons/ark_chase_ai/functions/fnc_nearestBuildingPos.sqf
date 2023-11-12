@@ -1,24 +1,14 @@
 ark_chase_ai_fnc_nearestBuildingPos = {
     params ["_unit"];
 
-    // Catch in doMove fnc as bad pos!
-    private _buildingPos = "outside";
+    private _nearBuildings = (getPosATL _unit) nearEntities [["House", "Building"], 50];
+    if (_nearBuildings isEqualTo []) exitWith {"outside"};
 
-    private _nearBuildings = (nearestObjects [_unit, ["House", "Building"], 50]);
-    if (_nearBuildings isEqualTo []) exitWith {_buildingPos};
+    private _buildingPositions = (_nearBuildings #0) buildingPos -1;
+    if (_buildingPositions isEqualTo []) exitWith {"outside"};
 
-    private _nearestBuilding = _nearBuildings #0;
-    private _buildingPositions = _nearestBuilding buildingPos -1;
-    if (_buildingPositions isEqualTo []) exitWith {_buildingPos};
+    _buildingPositions = _buildingPositions apply {[_unit distance _x, _x]}
+    _buildingPositions sort true;
 
-    private _buildingPosDistance = [];
-    {
-        private _distance = _unit distance _x;
-        _buildingPosDistance pushBack [_distance, _x];
-    } forEach _buildingPositions;
-
-    _buildingPosDistance sort true;
-
-    private _buildingPos = (_buildingPosDistance #0) #1;
-    _buildingPos //return
+    (_buildingPositions #0) #1 //return
 };
