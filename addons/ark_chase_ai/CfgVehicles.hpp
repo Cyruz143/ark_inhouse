@@ -44,7 +44,7 @@ class CfgVehicles {
             };
             class Waypoint_Accuracy {
                 displayName = "Waypoint Accuracy";
-                description = "How close to the chosen target the AI will move in metres (Minimum: 5!)";
+                description = "How close to the chosen target the AI will move in metres (Minimum: 10!)";
                 typeName = "NUMBER";
                 defaultValue = 50;
             };
