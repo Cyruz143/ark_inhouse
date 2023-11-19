@@ -21,3 +21,6 @@
     midRangeProbab = 0.01; \
     minRange = 0; \
     minRangeProbab = 0.01;
+
+#define FUSEDISTANCE \
+    fuseDistance = 5;

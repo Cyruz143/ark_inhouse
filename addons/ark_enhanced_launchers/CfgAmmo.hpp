@@ -1,6 +1,10 @@
 class CfgAmmo {
     class RocketBase;
     class gm_rocket_40mm_HEAT_base;
+    class M_SPG9_HEAT: RocketBase {
+        ENHANCED_LAUNCHER
+        FUSEDISTANCE
+    };
     class R_PG32V_F: RocketBase {
         ENHANCED_LAUNCHER
     };
@@ -24,9 +28,11 @@ class CfgAmmo {
     };
     class CUP_R_PG9_AT: RocketBase {
         ENHANCED_LAUNCHER
+        FUSEDISTANCE
     };
     class CUP_R_OG9_HE: CUP_R_PG9_AT {
         ENHANCED_LAUNCHER
+        FUSEDISTANCE
     };
     class CUP_R_SMAW_HEDP: RocketBase {
         ENHANCED_LAUNCHER
