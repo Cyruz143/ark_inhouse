@@ -24,12 +24,11 @@ ark_chase_ai_fnc_doMove = {
                 _unit setPosASL _pos;
             };
 
-            // if more than 50m sjust move to a safe pos
+            // if more than 50m just move to a near pos
             private _targetPos = [_target] call ark_chase_ai_fnc_findSafePos;
             if (_distanceToTarget > 50) exitWith {
                 _unit setDestination [_targetPos, "LEADER PLANNED", true];
                 _unit doMove _targetPos;
-                _unit lookAt _target;
             };
 
             // Try to handle stuck units who cant path to a buildingPos
