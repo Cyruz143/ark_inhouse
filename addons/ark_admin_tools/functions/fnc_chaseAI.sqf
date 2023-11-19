@@ -8,7 +8,8 @@ ark_admin_tools_fnc_chaseAI = {
     private _closeUnits = allUnits select {
         (side group _x) isEqualTo ([adm_camp_defaultUnitTemplate] call adm_common_fnc_getUnitTemplateSide) &&
         {isNull objectParent _x} &&
-        {((getPosATL _x) distance2D _pos) <= _dist}
+        {((getPosATL _x) distance2D _pos) <= _dist} &&
+        {!_unit getVariable ["ark_chase_ai_unit", false]}
     };
 
     {
@@ -22,8 +23,9 @@ ark_admin_tools_fnc_chaseAI = {
             };
             {_unit enableAI _x} forEach ["PATH","MOVE"];
             if (_tp) then {
-                private _building = (nearestObjects [_unit, ["House", "Building"], 50]) #0;
-                _unit setPos (_building buildingExit 0);
+                private _safePos = (getpos _unit) findEmptyPosition [0, 10, "CAManBase"];
+                if (_safePos isEqualTo []) exitWith {};
+                _unit setPos _safePos;
             };
         };
 
@@ -32,9 +34,14 @@ ark_admin_tools_fnc_chaseAI = {
         _unit setBehaviour "AWARE";
         _unit setSpeedMode "FULL";
         _unit allowFleeing 0;
-        _unit setDestination [_pos, "LEADER PLANNED", true];
-        _unit doMove _pos;
-        _unit setVariable ["ark_admin_tools_fnc_chaseAI_hunting", true, false];
+
+        private _targetPos = _pos findEmptyPosition [0, 10, "CAManBase"];
+        if (_targetPos isEqualTo []) then {
+            _targetPos = _pos;
+        };
+
+        _unit setDestination [_targetPos, "LEADER PLANNED", true];
+        _unit doMove _targetPos;
     } forEach _closeUnits;
 
     ["Admin Tools","INFO","fnc_chaseAI","Chase AI executed with args",_pos,_dist,_tp] call ark_admin_tools_fnc_log;

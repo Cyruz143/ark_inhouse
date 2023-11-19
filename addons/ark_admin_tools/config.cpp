@@ -32,16 +32,3 @@ class Extended_PostInit_EventHandlers {
 };
 
 #include "CfgVehicles.hpp"
-
-// Should be fixed by T167804 (2.12)
-/*
-class CfgFunctions {
-    class A3 {
-        class Modules {
-            class initModules {
-                file = "\x\ark\addons\ark_admin_tools\functions\fnc_initModules.sqf";
-            };
-        };
-    };
-};
-*/

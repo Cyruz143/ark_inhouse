@@ -6,6 +6,7 @@ ark_chase_ai_fnc_createUnit = {
     call ark_chase_ai_fnc_createGroup;
 
     private _unit = [(ASLtoATL _pos), ark_chase_ai_grp, ark_chase_ai_var_classNames, ark_chase_ai_var_skillArray] call adm_common_fnc_placeMan;
+    _unit setVariable ["ark_chase_ai_unit", true];
     _unit setBehaviour "AWARE";
     _unit setSpeedMode "FULL";
     _unit setUnitPos "UP";

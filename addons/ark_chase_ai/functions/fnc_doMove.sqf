@@ -5,7 +5,7 @@ ark_chase_ai_fnc_doMove = {
         {
             params ["_args", "_id"];
             _args params ["_unit"];
-            if (isNil "_unit" || { !alive _unit } || { _unit getVariable ["ark_admin_tools_fnc_chaseAI_hunting", false] }) exitWith {
+            if (isNil "_unit" || { !alive _unit }) exitWith {
                 [_id] call CBA_fnc_removePerFrameHandler;
             };
 
