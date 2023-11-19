@@ -9,7 +9,7 @@ ark_admin_tools_fnc_chaseAI = {
         (side group _x) isEqualTo ([adm_camp_defaultUnitTemplate] call adm_common_fnc_getUnitTemplateSide) &&
         {isNull objectParent _x} &&
         {((getPosATL _x) distance2D _pos) <= _dist} &&
-        {!_unit getVariable ["ark_chase_ai_unit", false]}
+        {!(_x getVariable ["ark_chase_ai_unit", false])}
     };
 
     {
