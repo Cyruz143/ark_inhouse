@@ -11,7 +11,10 @@ class CfgPatches {
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {
             "ark_main",
-            "CUP_Weapons_LoadOrder"
+            "CUP_Weapons_LoadOrder",
+            "gm_weapons_machineguns_mg3",
+            "gm_weapons_machineguns_pk",
+            "gm_weapons_machineguns_g8"
         };
         VERSION_CONFIG;
     };

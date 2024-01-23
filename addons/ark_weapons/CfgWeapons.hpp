@@ -1,4 +1,5 @@
 class Mode_FullAuto;
+class gm_FullAuto;
 
 class CfgWeapons {
     class SMG_03_TR_BASE;
@@ -92,6 +93,31 @@ class CfgWeapons {
     class CUP_lmg_PKM: Rifle_Long_Base_F {
         MMG_RECOIL_PRONE
         class manual: Mode_FullAuto {
+            MMG_DISPERSION
+        };
+    };
+
+    class gm_machineGun_base;
+    class gm_mg3_base: gm_machineGun_base {
+        MMG_RECOIL
+        MMG_RECOIL_PRONE
+        class FullAuto: gm_FullAuto {
+            MMG_DISPERSION_TIGHT
+        };
+    };
+
+    class gm_pk_base: gm_machineGun_base {
+        MMG_RECOIL_PRONE
+        class FullAuto: gm_FullAuto {
+            MMG_DISPERSION
+        };
+    };
+
+    class gm_g3_base;
+    class gm_g8_base: gm_g3_base {
+        MMG_RECOIL
+        MMG_RECOIL_PRONE
+        class FullAuto: gm_FullAuto {
             MMG_DISPERSION
         };
     };
