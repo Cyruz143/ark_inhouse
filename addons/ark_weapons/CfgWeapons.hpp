@@ -95,4 +95,45 @@ class CfgWeapons {
             MMG_DISPERSION
         };
     };
+
+//GM gatz
+
+    class gm_mg3_blk: Rifle_Long_Base_F {
+        MMG_RECOIL
+        MMG_RECOIL_PRONE
+        class manual: Mode_FullAuto {
+            MMG_DISPERSION_TIGHT
+        };
+    };
+
+    class gm_lmgm62_blk: Rifle_Long_Base_F {
+        MMG_RECOIL
+        MMG_RECOIL_PRONE
+        class manual: Mode_FullAuto {
+            MMG_DISPERSION_TIGHT
+        };
+    };
+
+    class gm_g8a1_blk: Rifle_Long_Base_F {
+        MMG_RECOIL
+        MMG_RECOIL_PRONE
+        class manual: Mode_FullAuto {
+            MMG_DISPERSION
+        };
+    };
+
+    class gm_g8a2_blk: Rifle_Long_Base_F {
+        MMG_RECOIL
+        MMG_RECOIL_PRONE
+        class manual: Mode_FullAuto {
+            MMG_DISPERSION
+        };
+    };
+
+    class gm_hmgpkm_prp: Rifle_Long_Base_F {
+        MMG_RECOIL_PRONE
+        class manual: Mode_FullAuto {
+            MMG_DISPERSION
+        };
+    };
 };
