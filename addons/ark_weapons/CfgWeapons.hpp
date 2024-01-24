@@ -113,8 +113,16 @@ class CfgWeapons {
         };
     };
 
-    class gm_g3_base;
-    class gm_g8_base: gm_g3_base {
+    class gm_g8_base;
+    class gm_g8a1_base: gm_g8_base {
+        MMG_RECOIL
+        MMG_RECOIL_PRONE
+        class FullAuto: gm_FullAuto {
+            MMG_DISPERSION
+        };
+    };
+
+    class gm_g8a2_base: gm_g8_base {
         MMG_RECOIL
         MMG_RECOIL_PRONE
         class FullAuto: gm_FullAuto {
