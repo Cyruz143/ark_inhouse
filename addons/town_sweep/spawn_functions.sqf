@@ -56,8 +56,8 @@ ts_spawn_fnc_changeLocationSize = {
 ts_spawn_fnc_activateLocation = {
     if !(call ts_spawn_fnc_canLocationBeActivated) exitWith {};
     call ts_spawn_fnc_activateLocationMarker;
-    // Minimum 50 AI as this doesn't scale well at low numbers
-    ts_spawn_aiCount = (ceil (ts_spawn_playerCount * ts_spawn_ai_multiplier)) max 50;
+    // Minimum 60 AI as this doesn't scale well at low numbers
+    ts_spawn_aiCount = (ceil (ts_spawn_playerCount * ts_spawn_ai_multiplier)) max 60;
     ts_spawn_cqcCount = ceil (ts_spawn_aiCount * ts_spawn_cqc_percent);
     private _fireTeamSize = ["ZoneTemplates", adm_patrol_defaultZoneTemplate, "infFireteamSize"] call adm_config_fnc_getNumber;
     private _patrolAiCount = ceil (ts_spawn_aiCount * (1 - ts_spawn_cqc_percent));
