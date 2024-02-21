@@ -64,11 +64,6 @@ ark_ai_voices_fnc_selectSound = {
             _unit setVariable ["ark_ai_voices_var_disableVoice", true];
         };
 
-        // Fucking config returns with a leading slash that breaks PS3D.... fucking bi
-        if ((_dirPath select [0,1]) isEqualTo "\") then {
-            _dirPath = _dirPath select [1];
-        };
-
         private _protocolArr = getArray (configFile >> (getText (configFile >> "CfgVoice" >> _speaker >> "protocol")) >> "Words" >> "Combat" >> _voiceLine);
 
         // Some mods/DLCS don't have combat words, fallback to "Normal"
