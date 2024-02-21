@@ -1,7 +1,7 @@
 ark_chase_ai_fnc_nearestBuildingPos = {
     params ["_unit"];
 
-    private _nearBuildings = nearestObjects [_unit, ["House", "Building"], 20];
+    private _nearBuildings = nearestObjects [_unit, ["House", "Ruins"], 20] select {(alive _x) && {!(isObjectHidden _x)}};
     if (_nearBuildings isEqualTo []) exitWith {"outside"};
 
     private _buildingPositions = (_nearBuildings #0) buildingPos -1;
