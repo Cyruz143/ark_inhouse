@@ -10,11 +10,11 @@ ark_rotor_module_preinit = {
                 };
             };
 
-            _logic setVariable ["ark_rotor_var_moduleRan", _activated];
-            [_logic] call ark_rotor_fnc_checkTrigger;
-
-            //Return true because spawnd from module
-            true;
+        _logic setVariable ["ark_rotor_var_moduleRan", _activated];
+        [_logic] call ark_rotor_fnc_checkTrigger;
         };
     };
+
+    //Return true because spawnd from module
+    true
 };
