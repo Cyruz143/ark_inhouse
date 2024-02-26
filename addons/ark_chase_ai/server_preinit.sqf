@@ -11,3 +11,4 @@ call compileScript ["x\ark\addons\ark_chase_ai\functions\fnc_findSafePos.sqf"];
 call compileScript ["x\ark\addons\ark_chase_ai\functions\fnc_nearEnemies.sqf"];
 call compileScript ["x\ark\addons\ark_chase_ai\functions\fnc_nearestBuildingPos.sqf"];
 call compileScript ["x\ark\addons\ark_chase_ai\functions\fnc_doMove.sqf"];
+call compileScript ["x\ark\addons\ark_chase_ai\functions\fnc_compatibleFlashlight.sqf"];

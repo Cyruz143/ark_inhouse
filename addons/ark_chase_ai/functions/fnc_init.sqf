@@ -46,6 +46,7 @@ ark_chase_ai_fnc_init = {
     ark_chase_ai_var_skillArray = ["Camp"] call adm_common_fnc_getZoneTemplateSkillValues;
     ark_chase_ai_var_unitPool = [];
     ark_chase_ai_var_spawning = false;
+    ark_chase_ai_var_compatFlashlights = createHashMap;
 
     ["Chase AI","INFO","fnc_init","Deleting module", _logic] call ark_admin_tools_fnc_log;
     deleteVehicle _logic;

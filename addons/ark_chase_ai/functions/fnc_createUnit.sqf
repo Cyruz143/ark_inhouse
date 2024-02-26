@@ -22,7 +22,8 @@ ark_chase_ai_fnc_createUnit = {
     };
 
     if (ark_chase_ai_var_forceFlashlights) then {
-        _unit addPrimaryWeaponItem "CUP_acc_Flashlight";
+        private _flashLight = _unit call ark_chase_ai_fnc_compatibleFlashlight;
+        _unit addPrimaryWeaponItem _flashLight;
         _unit enableGunLights "ForceOn";
     };
 
