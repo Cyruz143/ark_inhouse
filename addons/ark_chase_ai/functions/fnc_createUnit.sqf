@@ -11,8 +11,8 @@ ark_chase_ai_fnc_createUnit = {
     _unit setSpeedMode "FULL";
     _unit setUnitPos "UP";
     {_unit disableAI _x} forEach ["SUPPRESSION", "AUTOCOMBAT", "COVER"];
+    private _hmd = hmd _unit;
     if (ark_chase_ai_var_allowNVGs) then {
-        private _hmd = hmd _unit;
         if (_hmd isEqualTo "") then {
             _unit linkItem "NVGoggles_AI";
         };
