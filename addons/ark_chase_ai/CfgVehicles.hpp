@@ -66,6 +66,12 @@ class CfgVehicles {
                 typeName = "BOOL";
                 defaultValue = false;
             };
+            class Force_Flashlights {
+                displayName = "Force flashlights";
+                description = "Equip the chase units with flashlights and force them on";
+                typeName = "BOOL";
+                defaultValue = false;
+            };
         };
     };
 };

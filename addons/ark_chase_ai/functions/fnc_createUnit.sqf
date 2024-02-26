@@ -11,6 +11,7 @@ ark_chase_ai_fnc_createUnit = {
     _unit setSpeedMode "FULL";
     _unit setUnitPos "UP";
     {_unit disableAI _x} forEach ["SUPPRESSION", "AUTOCOMBAT", "COVER"];
+
     private _hmd = hmd _unit;
     if (ark_chase_ai_var_allowNVGs) then {
         if (_hmd isEqualTo "") then {
@@ -19,6 +20,12 @@ ark_chase_ai_fnc_createUnit = {
     } else {
         _unit unlinkItem _hmd;
     };
+
+    if (ark_chase_ai_var_forceFlashlights) then {
+        _unit addPrimaryWeaponItem "CUP_acc_Flashlight";
+        _unit enableGunLights "ForceOn";
+    };
+
     ark_chase_ai_var_unitPool pushBack _unit;
 
     _unit addEventHandler ["Killed", {
