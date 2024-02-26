@@ -1,7 +1,7 @@
 ark_ace_medical_fnc_getBandageTime = {
     params ["_medic", "_patient", "_bodypart", "_bandage"];
 
-    private _partIndex = ["head", "body", "leftarm", "rightarm", "leftleg", "rightleg"] find toLower _bodyPart;
+    private _partIndex = ["head", "body", "leftarm", "rightarm", "leftleg", "rightleg"] find toLowerANSI _bodyPart;
     if (_partIndex < 0) exitWith {0};
 
     private _targetWound = [_patient, _bandage, _partIndex] call  ace_medical_treatment_fnc_findMostEffectiveWound;

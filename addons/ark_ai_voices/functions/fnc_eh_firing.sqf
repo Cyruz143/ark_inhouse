@@ -9,7 +9,7 @@ ark_ai_voices_fnc_eh_firing = {
 
     _unit setVariable ["ark_ai_voices_var_isSpeaking", true];
 
-    if ((tolower _weapon) isEqualTo "throw") then {
+    if ((toLowerANSI _weapon) isEqualTo "throw") then {
        [_unit, "grenade"] call ark_ai_voices_fnc_selectSound;
     } else {
        [_unit, "firing"] call ark_ai_voices_fnc_selectSound;
