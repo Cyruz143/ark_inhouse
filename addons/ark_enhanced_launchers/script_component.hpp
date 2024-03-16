@@ -23,4 +23,4 @@
     minRangeProbab = 0.01;
 
 #define FUSEDISTANCE \
-    fuseDistance = 5;
+    fuseDistance = 2.5;

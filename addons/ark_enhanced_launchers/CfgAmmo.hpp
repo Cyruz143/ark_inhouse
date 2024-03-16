@@ -34,6 +34,10 @@ class CfgAmmo {
         ENHANCED_LAUNCHER
         FUSEDISTANCE
     };
+    class CUP_Sh_PG9_AT: RocketBase {
+        ENHANCED_LAUNCHER
+        FUSEDISTANCE
+    };
     class CUP_R_SMAW_HEDP: RocketBase {
         ENHANCED_LAUNCHER
     };
