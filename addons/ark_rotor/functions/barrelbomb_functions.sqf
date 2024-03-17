@@ -74,7 +74,7 @@ ark_rotor_fnc_createBomb = {
     private _barrel = createVehicle [_barrelClassname, (_vehicle modelToWorld [0,-15,-10]), [], 0, "FLY"];
     _barrel disableCollisionWith _vehicle;
     _barrel setVelocity (velocity _vehicle);
-    _barrel addForce [_barrel vectorModelToWorld [random 1000, random 1000, -1000], [1,1,1]];
+    _barrel addTorque (_vehicle vectorModelToWorld [0,-500, 0]);
     _barrel addEventHandler ["EpeContactStart", {call ark_rotor_fnc_bombContact}];
 };
 
