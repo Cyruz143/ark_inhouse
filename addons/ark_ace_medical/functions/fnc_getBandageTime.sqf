@@ -11,7 +11,7 @@ ark_ace_medical_fnc_getBandageTime = {
     if (_woundCount == 0) exitWith {0};
 
     // Base bandage time is based on wound size and remaining percentage
-    private _bandageTimesArray = [2, 4, 5];
+    private _bandageTimesArray = [2, 4, 6];
     private _bandageTime = 0;
 
     {
