@@ -1,20 +1,31 @@
 ark_ace_medical_fnc_getBandageTime = {
-    params ["_medic", "_patient", "_bodypart", "_bandage"];
+    params ["_medic", "_patient", "_bodyPart", "_bandage"];
 
     private _partIndex = ["head", "body", "leftarm", "rightarm", "leftleg", "rightleg"] find toLowerANSI _bodyPart;
-    if (_partIndex < 0) exitWith {0};
+    if (_partIndex < 0) exitWith { 0 };
 
-    private _targetWound = [_patient, _bandage, _partIndex] call  ace_medical_treatment_fnc_findMostEffectiveWound;
-    _targetWound params ["_wound", "_woundIndex", "_effectiveness"];
+    private _targetWounds = [_patient, _bandage, _bodyPart] call ace_medical_treatment_fnc_findMostEffectiveWounds;
 
+    private _woundCount = count _targetWounds;
     // Everything is patched up on this body part already
-    if (_wound isEqualTo [-1, -1, 0, 0, 0]) exitWith {0};
-
-    _wound params ["_classID", "", "_amountOf", "_bloodloss", "_damage"];
-    private _category = (_classID % 10);
+    if (_woundCount == 0) exitWith {0};
 
     // Base bandage time is based on wound size and remaining percentage
-    private _bandageTime = [2, 4, 6] select _category;
+    private _bandageTimesArray = [2, 4, 5];
+    private _bandageTime = 0;
+
+    {
+        private _wound = _x;
+        _wound params ["_classID", "", "_amountOf"];
+        _y params ["_effectiveness", "", "_impact"];
+        private _category = (_classID % 10);
+
+        // Base bandage time is based on wound size and remaining percentage
+        private _woundTime = _bandageTimesArray select _category;
+
+        // Scale bandage time based on amount left and effectiveness (less time if only a little wound left)
+        _bandageTime = _bandageTime + _woundTime;
+    } forEach _targetWounds;
 
     // Medics are more practised at applying bandages
     if ([_medic] call ace_medical_treatment_fnc_isMedic) then {
@@ -26,6 +37,11 @@ ark_ace_medical_fnc_getBandageTime = {
         _bandageTime = _bandageTime + 2;
     };
 
+    // Bandaging multiple injuries doesn't require opening a new bandage each time
+    if (_woundCount > 1) then {
+        _bandageTime = _bandageTime - (2 * _woundCount);
+    };
+
     // Nobody can bandage instantly
-    _bandageTime max 2.5
+    _bandageTime max 2.25
 };
