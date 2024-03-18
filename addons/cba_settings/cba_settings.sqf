@@ -11,6 +11,9 @@ force force ace_vehicle_damage_enableCarDamage = false;
 force force ace_vehicle_damage_enabled = true;
 force force ace_vehicle_damage_removeAmmoDuringCookoff = false;
 
+// ACE Advanced Vehicle Damage
+force ace_ai_assignNVG = true;
+
 // ACE Captives
 force ace_captives_allowHandcuffOwnSide = false;
 force ace_captives_allowSurrender = true;
@@ -42,7 +45,10 @@ force force ace_csw_progressBarTimeCoefficent = 0.5;
 ace_csw_dragAfterDeploy = true;
 
 // ACE Dragging
+force force ace_dragging_allowRunWithLightweight = true;
 force force ace_dragging_dragAndFire = true;
+force force ace_dragging_skipContainerWeight = true;
+force ace_dragging_weightCoefficient = 0;
 
 // ACE Explosives
 force ace_explosives_customTimerDefault = 60;
@@ -51,6 +57,9 @@ force ace_explosives_customTimerMin = 10;
 force force ace_explosives_explodeOnDefuse = false;
 force force ace_explosives_punishNonSpecialists = true;
 force force ace_explosives_requireSpecialist = false;
+
+// ACE Field Rations
+force acex_field_rations_enabled = false;
 
 // ACE Fire
 force force ace_fire_dropWeapon = 0;
@@ -75,30 +84,20 @@ force force ace_interaction_enableTeamManagement = true;
 force force ace_interaction_interactWithTerrainObjects = false;
 
 // ACE Logistics
+force force ace_cargo_carryAfterUnload = true;
 force force ace_cargo_enable = true;
-force ace_cargo_loadTimeCoefficient = 5;
+force ace_cargo_enableRename = false;
+force ace_cargo_loadTimeCoefficient = 2.5;
 force ace_cargo_paradropTimeCoefficent = 2.5;
 force ace_rearm_distance = 20;
+force ace_rearm_enabled = true;
 force force ace_rearm_level = 0;
 force force ace_rearm_supply = 0;
+force ace_refuel_cargoRate = 10;
 force ace_refuel_hoseLength = 12;
 force force ace_refuel_progressDuration = 2;
 force ace_refuel_rate = 1;
-force force ace_repair_addSpareParts = false;
-force force ace_repair_autoShutOffEngineWhenStartingRepair = true;
-force force ace_repair_consumeItem_toolKit = 0;
-force ace_repair_engineerSetting_fullRepair = 0;
-force ace_repair_engineerSetting_repair = 2;
-force ace_repair_engineerSetting_wheel = 2;
-force ace_repair_fullRepairLocation = 0;
-force force ace_repair_fullRepairRequiredItems = [];
-force force ace_repair_locationsBoostTraining = false;
-force force ace_repair_miscRepairRequiredItems = [];
-force force ace_repair_repairDamageThreshold = 0.6;
-force force ace_repair_repairDamageThreshold_engineer = 0.4;
-force force ace_repair_wheelRepairRequiredItems = [];
 force ace_towing_addRopeToVehicleInventory = true;
-
 
 // ACE Magazine Repack
 force force ace_magazinerepack_repackAnimation = true;
@@ -121,6 +120,9 @@ force force ace_markers_moveRestriction = 0;
 force force ace_markers_timestampEnabled = true;
 force force ace_markers_timestampFormat = "HH:MM";
 force force ace_markers_timestampHourFormat = 24;
+force force ace_markers_timestampTimezone = 0;
+force force ace_markers_TimestampUTCMinutesOffset = 0;
+force force ace_markers_timestampUTCOffset = 0;
 
 // ACE Map Gestures
 force force ace_map_gestures_allowCurator = false;
@@ -147,8 +149,6 @@ force force ace_medical_enableVehicleCrashes = false;
 force force ace_medical_fatalDamageSource = 1;
 force force ace_medical_fractureChance = 0.2;
 force force ace_medical_fractures = 1;
-force force ace_medical_gui_maxDistance = 3;
-force force ace_medical_gui_showBloodlossEntry = true;
 force force ace_medical_ivFlowRate = 2;
 force force ace_medical_limping = 1;
 force force ace_medical_painCoefficient = 0.6;
@@ -197,6 +197,19 @@ force force ace_medical_treatment_treatmentTimeSplint = 5;
 force force ace_medical_treatment_treatmentTimeTourniquet = 0.5;
 force force ace_medical_treatment_woundReopenChance = 0;
 force force ace_medical_treatment_woundStitchTime = 5;
+force force ace_medical_ai_requireItems = 0;
+force force ace_medical_dropWeaponUnconsciousChance = 0;
+force force ace_medical_engine_damagePassThroughEffect = 1;
+force force ace_medical_painUnconsciousThreshold = 0.5;
+force force ace_medical_treatment_allowGraveDigging = 1;
+force force ace_medical_treatment_bandageEffectiveness = 5;
+force force ace_medical_treatment_bandageRollover = true;
+force force ace_medical_treatment_graveDiggingMarker = true;
+force force ace_medical_treatment_treatmentTimeCoeffZeus = 1;
+force force ace_medical_treatment_treatmentTimeGrave = 30;
+force force ace_medical_gui_maxDistance = 3;
+force force ace_medical_gui_showBloodlossEntry = true;
+force force ace_medical_gui_tourniquetWarning = true;
 
 // ACE Nightvision
 force force ace_nightvision_aimDownSightsBlur = 0;
@@ -210,6 +223,7 @@ force force ace_nightvision_shutterEffects = true;
 force force ace_finger_enabled = true;
 force force ace_finger_maxRange = 4;
 force force ace_finger_proximityScaling = true;
+force force ace_finger_indicatorForSelf = true;
 
 // ACE Pylons
 force force ace_pylons_enabledForZeus = false;
@@ -224,6 +238,30 @@ force force ace_pylons_timePerPylon = 5;
 force force ace_quickmount_enabled = true;
 force force ace_quickmount_distance = 3;
 force force ace_quickmount_speed = 18;
+
+// ACE Repair
+force force ace_repair_addSpareParts = false;
+force force ace_repair_autoShutOffEngineWhenStartingRepair = true;
+force force ace_repair_consumeItem_toolKit = 0;
+force ace_repair_enabled = true;
+force ace_repair_engineerSetting_fullRepair = 0;
+force ace_repair_engineerSetting_repair = 2;
+force ace_repair_engineerSetting_wheel = 2;
+force ace_repair_fullRepairLocation = 0;
+force force ace_repair_fullRepairRequiredItems = [];
+force force ace_repair_locationsBoostTraining = false;
+force force ace_repair_miscRepairRequiredItems = [];
+force force ace_repair_miscRepairTime = 15;
+force force ace_repair_patchWheelEnabled = -1;
+force force ace_repair_patchWheelLocation = ["ground","vehicle"];
+force force ace_repair_patchWheelMaximumRepair = 0.3;
+force force ace_repair_patchWheelRequiredItems = [];
+force force ace_repair_patchWheelTime = 5;
+force force ace_repair_repairDamageThreshold = 0.6;
+force force ace_repair_repairDamageThreshold_engineer = 0.4;
+force force ace_repair_timeCoefficientFullRepair = 1;
+force force ace_repair_wheelChangeTime = 10;
+force force ace_repair_wheelRepairRequiredItems = [];
 
 // ACE Sitting
 force force acex_sitting_enable = true;
