@@ -2,7 +2,7 @@ private _action = [
     "claimVehicle",
     "Claim Vehicle",
     "\z\ace\addons\tagging\ui\icons\iconTaggingWhite.paa",
-    {[_target, (groupId group ace_player)] remoteExec ["ace_tagging_fnc_stencilVehicle", -2]},
+    {[_target, (groupId group ace_player)] remoteExec ["ace_tagging_fnc_stencilVehicle", 2]},
     {alive _target}
 ] call ace_interact_menu_fnc_createAction;
 
