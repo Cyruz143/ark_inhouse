@@ -44,6 +44,7 @@ ark_admin_tools_fnc_callReinforcements = {
     _vehicle setUnloadInCombat [false, false];
 
     [_grp, getPos _unit, 250, true] call CBA_fnc_taskAttack;
+    _grp reveal [_unit, 4];
 };
 
 ark_admin_tools_fnc_findPos = {
