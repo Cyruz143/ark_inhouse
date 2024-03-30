@@ -259,7 +259,7 @@ force force ace_repair_patchWheelRequiredItems = [];
 force force ace_repair_patchWheelTime = 5;
 force force ace_repair_repairDamageThreshold = 0.6;
 force force ace_repair_repairDamageThreshold_engineer = 0.4;
-force force ace_repair_timeCoefficientFullRepair = 0.25;
+force force ace_repair_timeCoefficientFullRepair = 0.1;
 force force ace_repair_wheelChangeTime = 10;
 force force ace_repair_wheelRepairRequiredItems = [];
 
