@@ -25,12 +25,6 @@ force ace_common_allowFadeMusic = true;
 force force ace_common_checkPBOsAction = 0;
 force force ace_common_checkPBOsCheckAll = false;
 force force ace_common_checkPBOsWhitelist = "[]";
-
-// ACE Common
-force ace_common_allowFadeMusic = true;
-force force ace_common_checkPBOsAction = 0;
-force force ace_common_checkPBOsCheckAll = false;
-force force ace_common_checkPBOsWhitelist = "[]";
 force force ace_common_enableSway = true;
 force force ace_common_swayFactor = 0.75;
 force force ace_common_deployedSwayFactor = 0.25;
