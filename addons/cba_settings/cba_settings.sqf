@@ -26,6 +26,16 @@ force force ace_common_checkPBOsAction = 0;
 force force ace_common_checkPBOsCheckAll = false;
 force force ace_common_checkPBOsWhitelist = "[]";
 
+// ACE Common
+force ace_common_allowFadeMusic = true;
+force force ace_common_checkPBOsAction = 0;
+force force ace_common_checkPBOsCheckAll = false;
+force force ace_common_checkPBOsWhitelist = "[]";
+force force ace_common_enableSway = true;
+force force ace_common_swayFactor = 0.75;
+force force ace_common_deployedSwayFactor = 0.25;
+force force ace_common_restedSwayFactor = 0.5;
+
 // ACE Cook off
 force force ace_cookoff_ammoCookoffDuration = 0.3;
 force ace_cookoff_destroyVehicleAfterCookoff = true;
@@ -83,9 +93,13 @@ force force ace_interaction_enableGroupRenaming = false;
 force force ace_interaction_enableTeamManagement = true;
 force force ace_interaction_interactWithTerrainObjects = false;
 
+// ACE Kill Tracker
+force force ace_killtracker_trackAI = true;
+
 // ACE Logistics
 force force ace_cargo_carryAfterUnload = true;
 force force ace_cargo_enable = true;
+force ace_cargo_enableDeploy = true;
 force ace_cargo_enableRename = false;
 force ace_cargo_loadTimeCoefficient = 2.5;
 force ace_cargo_paradropTimeCoefficent = 2.5;
@@ -210,6 +224,7 @@ force force ace_medical_treatment_treatmentTimeGrave = 30;
 force force ace_medical_gui_maxDistance = 3;
 force force ace_medical_gui_showBloodlossEntry = true;
 force force ace_medical_gui_tourniquetWarning = true;
+force force ace_medical_vitals_simulateSpO2 = false;
 
 // ACE Nightvision
 force force ace_nightvision_aimDownSightsBlur = 0;
