@@ -15,4 +15,4 @@ ark_ace_medical_fnc_vehKilled = {
     };
 };
 
-addMissionEventHandler ["EntityKilled",{call ark_ace_medical_fnc_vehKilled}];
+//addMissionEventHandler ["EntityKilled",{call ark_ace_medical_fnc_vehKilled}];
