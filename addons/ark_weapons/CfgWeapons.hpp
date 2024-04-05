@@ -73,10 +73,17 @@ class CfgWeapons {
     };
 
     class CUP_M60E4_base: Rifle_Long_Base_F {
+        MMG_RECOIL
+        MMG_RECOIL_PRONE
+    };
+
+    class CUP_lmg_M60: CUP_M60E4_base {
+        MMG_RECOIL
         MMG_RECOIL_PRONE
     };
 
     class CUP_lmg_UK59: Rifle_Long_Base_F {
+        MMG_RECOIL
         MMG_RECOIL_PRONE
         class manual: Mode_FullAuto {
             MMG_DISPERSION
@@ -84,6 +91,7 @@ class CfgWeapons {
     };
 
     class CUP_lmg_Mk48_Base: Rifle_Long_Base_F {
+        MMG_RECOIL
         MMG_RECOIL_PRONE
         class manual: Mode_FullAuto {
             MMG_DISPERSION
@@ -91,6 +99,7 @@ class CfgWeapons {
     };
 
     class CUP_lmg_PKM: Rifle_Long_Base_F {
+        MMG_RECOIL
         MMG_RECOIL_PRONE
         class manual: Mode_FullAuto {
             MMG_DISPERSION
@@ -107,6 +116,7 @@ class CfgWeapons {
     };
 
     class gm_pk_base: gm_machineGun_base {
+        MMG_RECOIL
         MMG_RECOIL_PRONE
         class FullAuto: gm_FullAuto {
             MMG_DISPERSION

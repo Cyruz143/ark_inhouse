@@ -20,4 +20,5 @@ class CfgPatches {
     };
 };
 
+#include "CfgRecoils.hpp"
 #include "CfgWeapons.hpp"
