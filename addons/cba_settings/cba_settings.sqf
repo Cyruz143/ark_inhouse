@@ -102,7 +102,7 @@ force ace_rearm_enabled = true;
 force force ace_rearm_level = 0;
 force force ace_rearm_supply = 0;
 force ace_refuel_cargoRate = 10;
-force ace_refuel_hoseLength = 12;
+force ace_refuel_hoseLength = 20;
 force force ace_refuel_progressDuration = 2;
 force ace_refuel_rate = 1;
 force ace_towing_addRopeToVehicleInventory = true;
@@ -268,7 +268,7 @@ force force ace_repair_patchWheelRequiredItems = [];
 force force ace_repair_patchWheelTime = 5;
 force force ace_repair_repairDamageThreshold = 0.6;
 force force ace_repair_repairDamageThreshold_engineer = 0.4;
-force force ace_repair_timeCoefficientFullRepair = 0.1;
+force force ace_repair_timeCoefficientFullRepair = 0.15;
 force force ace_repair_wheelChangeTime = 10;
 force force ace_repair_wheelRepairRequiredItems = [];
 
