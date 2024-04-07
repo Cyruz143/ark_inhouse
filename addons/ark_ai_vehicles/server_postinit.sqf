@@ -40,7 +40,7 @@ ark_ai_vehicles_fnc_doRepair = {
 
     private _driver = driver _vehicle;
 
-    if (!alive _driver || { !alive _vehicle }) exitWith {
+    if (!alive _driver || { !alive _vehicle } || { lifeState _driver == "INCAPACITATED" }) exitWith {
         {
             _vehicle setVariable [_x, nil];
         } forEach ["ark_ai_vehicles_awaiting_repair","ark_ai_vehicles_last_hit"];
@@ -68,7 +68,7 @@ ark_ai_vehicles_fnc_doRepair = {
         ["Acts_carFixingWheel", getPosASL _driver, 5, 100] call ace_common_fnc_playConfigSound3D;
         sleep 15;
 
-        if (!alive _driver || { !alive _vehicle }) exitWith {
+        if (!alive _driver || { !alive _vehicle } || { lifeState _driver == "INCAPACITATED" }) exitWith {
             {
                 _vehicle setVariable [_x, nil];
             } forEach ["ark_ai_vehicles_awaiting_repair","ark_ai_vehicles_last_hit"];
@@ -129,7 +129,7 @@ ark_ai_vehicles_fnc_replaceGunner = {
 
     [
         {
-            if (alive (_this #0) && isNull objectParent (_this #0)) then {
+            if (alive (_this #0) && || { lifeState (_this #0) != "INCAPACITATED" } && {isNull objectParent (_this #0)}) then {
                 [(_this #0),(_this #1)] call ark_ai_vehicles_fnc_moveInGunner;
             };
         },
