@@ -158,7 +158,7 @@ ark_rotor_fnc_taskAttack = {
     _nearEnemies sort true;
     private _target = _nearEnemies #0;
 
-    [_grp, getpos _target, 100, true] call CBA_fnc_taskAttack;
+    [_grp, getpos _target, 100] call CBA_fnc_taskPatrol;
     ["Rotor", "INFO","fnc_taskAttack","Units attacking player",_target] call ark_admin_tools_fnc_log;
 };
 
