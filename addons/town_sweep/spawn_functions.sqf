@@ -486,7 +486,7 @@ ts_spawn_fnc_objRecoverIntel = {
 
 ts_spawn_fnc_ammoCrate = {
 
-    if (player inArea ts_spawn_selectedLocationMarkerName) exitWith {
+    if (player inArea "ts_spawn_selectedLocation") exitWith {
             [["\A3\ui_f\data\map\mapcontrol\taskIconFailed_ca.paa", 2.0], ["You can only resupply outside of the active AO"]] call CBA_fnc_notify;
     };
 
