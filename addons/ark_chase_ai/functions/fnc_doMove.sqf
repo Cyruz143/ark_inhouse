@@ -9,6 +9,9 @@ ark_chase_ai_fnc_doMove = {
                 [_id] call CBA_fnc_removePerFrameHandler;
             };
 
+            // If unit uncon, just skip this cycle
+            if (lifeState _unit == "INCAPACITATED") exitWith {};
+
             private _target = [_unit] call ark_chase_ai_fnc_nearEnemies;
             if (isNil "_target" || { _target isEqualTo [] } ) exitWith {
                 deleteVehicle _unit;

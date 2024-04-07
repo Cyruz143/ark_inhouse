@@ -129,7 +129,7 @@ ark_ai_vehicles_fnc_replaceGunner = {
 
     [
         {
-            if (alive (_this #0) && || { lifeState (_this #0) != "INCAPACITATED" } && {isNull objectParent (_this #0)}) then {
+            if (alive (_this #0) && { lifeState (_this #0) != "INCAPACITATED" } && {isNull objectParent (_this #0)}) then {
                 [(_this #0),(_this #1)] call ark_ai_vehicles_fnc_moveInGunner;
             };
         },
