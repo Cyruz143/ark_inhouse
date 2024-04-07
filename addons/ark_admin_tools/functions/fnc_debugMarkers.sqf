@@ -49,16 +49,16 @@ ark_admin_tools_fnc_createDebugMarkers = {
 
                 {
                     private _unit = _x;
-                    private _simEnabled = simulationEnabled _x;
+                    private _simEnabled = simulationEnabled _unit;
                     private _uncon = lifeState _unit == "INCAPACITATED";
                     private _marker = _unit getVariable "ark_admin_unitMarker";
                     if (!isNil {_marker}) then {
                         _marker setMarkerPosLocal getPosATL _unit;
                         _marker setMarkerDirLocal getDir _unit;
-                        if (_simEnabled) then {
-                            _marker setMarkerAlphaLocal 1;
-                        } else {
+                        if (!_simEnabled || { _uncon }) then {
                             _marker setMarkerAlphaLocal 0.25;
+                        } else {
+                            _marker setMarkerAlphaLocal 1;
                         };
                     } else {
                         private _markerName = format ["ark_admin_unitMarker_%1", _unit];
@@ -70,13 +70,8 @@ ark_admin_tools_fnc_createDebugMarkers = {
                         };
                         createMarkerLocal [_markerName, getPosATL _unit];
                         _markerName setMarkerShapeLocal "ICON";
-                        if (_uncon)then {
-                            _markerName setMarkerTypeLocal "mil_box";
-                            _markerName setMarkerColorLocal "ColorBlack";
-                        } else {
-                            _markerName setMarkerTypeLocal "mil_triangle";
-                            _markerName setMarkerColorLocal _sideColor;
-                        };
+                        _markerName setMarkerTypeLocal "mil_triangle";
+                        _markerName setMarkerColorLocal _sideColor;
                         _markerName setMarkerTextLocal "";
                         _markerName setMarkerSizeLocal [0.5,0.75];
                         _markerName setMarkerDirLocal getDir _unit;
