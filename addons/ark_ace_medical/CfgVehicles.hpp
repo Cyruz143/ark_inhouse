@@ -31,5 +31,6 @@ class CfgVehicles {
             MACRO_ADDITEM(ACE_tourniquet,10);
             MACRO_ADDITEM(ACE_splint,12);
         };
+        class TransportMagazines {};
     };
 };
