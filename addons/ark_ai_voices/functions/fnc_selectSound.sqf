@@ -22,6 +22,9 @@ ark_ai_voices_fnc_selectSound = {
             case ("reloading"): {
                 _voiceLine = "ReloadingE";
             };
+            case ("wakeup"): {
+                _voiceLine = "ScreamingE";
+            };
         };
     } else {
         switch (_sndType) do {
@@ -42,6 +45,9 @@ ark_ai_voices_fnc_selectSound = {
             };
             case ("reloading"): {
                 _voiceLine = "ReloadingE";
+            };
+            case ("wakeup"): {
+                _voiceLine = "ScreamingE";
             };
         };
     };
