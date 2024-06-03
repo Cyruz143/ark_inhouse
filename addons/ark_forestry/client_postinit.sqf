@@ -61,4 +61,4 @@ ark_forestry_fnc_doFlatten = {
     ] call ace_common_fnc_progressBar;
 };
 
-
+[["ARK","Forestry"], "ark_forestry_id_1", ["Cut Down Tree", "Commit nature abuse"], "", {call ark_forestry_fnc_doChop}] call CBA_fnc_addKeybind;
