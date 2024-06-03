@@ -20,7 +20,3 @@ ark_admin_tools_fnc_countSpec = {
         [["\A3\ui_f\data\igui\cfg\simpleTasks\types\wait_ca.paa", 2.0], ["No dancing allowed zone!"]] call CBA_fnc_notify;
     };
 }, "all"] call CBA_fnc_registerChatCommand;
-
-["spec", {
-    [true, false] call ace_spectator_fnc_setSpectator;
-}, "all"] call CBA_fnc_registerChatCommand;

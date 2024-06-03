@@ -42,6 +42,14 @@ class CfgVehicles {
                     exceptions[] = {"isNotSwimming", "isNotInside", "isNotSitting", "isNotOnLadder", "isNotRefueling"};
                 };
 
+                class Enter_Spectator {
+                    displayName = "Enter Spectator (Emergency AFK)";
+                    icon = "\A3\ui_f\data\igui\cfg\simpleTasks\types\walk_ca.paa";
+                    condition = "['ark_co', briefingName] call BIS_fnc_inString";
+                    statement = "[true, false] call ace_spectator_fnc_setSpectator";
+                    exceptions[] = {"isNotSwimming", "isNotInside", "isNotSitting", "isNotOnLadder", "isNotRefueling"};
+                };
+
                 class Host_Menu {
                     displayName = "Host Menu";
                     condition = "((call ark_main_fnc_isHost) || { (isServer && hasInterface) })";
