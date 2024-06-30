@@ -49,8 +49,8 @@ ark_ace_spectator_fnc_initSpec = {
     [_killMessage] spawn {
         params ["_killMessage"];
             [false] call ace_common_fnc_setVolume;
-            cutText ["", "BLACK OUT", 5];
-            uiSleep 5;
+            cutText ["", "BLACK OUT", 3];
+            uiSleep 3;
 
             [_killMessage,-1,-1,5,1] spawn BIS_fnc_dynamicText;
 
