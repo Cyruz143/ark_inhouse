@@ -1,6 +1,7 @@
 class CfgAmmo {
     class BulletBase;
     class ShellBase;
+    class RocketBase;
 
     //Vanilla Classes
     class B_19mm_HE: BulletBase {
@@ -50,5 +51,9 @@ class CfgAmmo {
 
     class Sh_82mm_AMOS: Sh_155mm_AMOS {
         ALLOW_INF
+    };
+
+    class R_80mm_HE: RocketBase {
+        ALLOW_INF_COST
     };
 };
