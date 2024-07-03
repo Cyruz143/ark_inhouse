@@ -3,7 +3,6 @@ class CfgAmmo {
     class ShellBase;
     class RocketBase;
 
-    //Vanilla Classes
     class B_19mm_HE: BulletBase {
         ALLOW_INF
     };
