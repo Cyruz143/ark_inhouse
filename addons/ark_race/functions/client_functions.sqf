@@ -81,8 +81,8 @@ ark_race_fnc_goFast = {
 
     private _lastBoostTime = _veh getVariable ["ark_race_fnc_var_lastBoostTime", 0];
 
-    if (time - _lastBoostTime <= 30) exitWith {
-        systemChat "Please wait 30 seconds before trying to boost again";
+    if (time - _lastBoostTime <= 10) exitWith {
+        systemChat "Please wait 10 seconds before trying to boost again";
     };
 
     _veh setVelocityModelSpace [0,75,0];
