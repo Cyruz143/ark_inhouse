@@ -2,6 +2,9 @@ ark_race_fnc_clientInit = {
     ["Race","INFO","fnc_clientInit","Race mission detected"] call ark_admin_tools_fnc_log;
     //Disable damage for vehicles and units
     player addEventHandler ["GetInMan", {call ark_race_fnc_noDamage}];
+    player addEventHandler ["GetOutMan", {call ark_race_fnc_noDamage}];
+
+    //Cover starting in/out of vehicles
     player allowDamage false;
     (vehicle player) allowDamage false;
 
@@ -17,13 +20,17 @@ ark_race_fnc_addActions = {
 };
 
 ark_race_fnc_noDamage = {
-    params ["", "", "_vehicle"];
+    params ["_unit", "", "_vehicle"];
 
-    [
-        {local (_this #0)},
-        {(_this #0) allowDamage false},
-        [_vehicle]
-    ] call CBA_fnc_waitUntilAndExecute;
+    _unit allowDamage false;
+
+    if (!isNil "_vehicle") then {
+        [
+            {local (_this #0)},
+            {(_this #0) allowDamage false},
+            [_vehicle]
+        ] call CBA_fnc_waitUntilAndExecute;
+    };
 };
 
 ark_race_fnc_createUnitMarker = {
@@ -52,11 +59,6 @@ ark_race_fnc_createUnitMarker = {
 
 ark_race_fnc_flipCar = {
     params ["_veh"];
-    private _lastFlipTime = _veh getVariable ["ark_race_fnc_var_lastFlipTime", 0];
-
-    if (time - _lastFlipTime <= 10) exitWith {
-        systemChat "Please wait 10 seconds before trying to flip again";
-    };
 
     private _carPos = (getPosATL _veh);
     private _emptyPos = _carPos findEmptyPosition [0, 20, (typeOf _veh)];
@@ -68,8 +70,6 @@ ark_race_fnc_flipCar = {
         _veh setVectorUp surfaceNormal _emptyPos;
         _veh setPosATL _emptyPos;
     };
-
-    _veh setVariable ["ark_race_fnc_var_lastFlipTime", time, false];
 };
 
 ark_race_fnc_goFast = {
@@ -81,8 +81,9 @@ ark_race_fnc_goFast = {
 
     private _lastBoostTime = _veh getVariable ["ark_race_fnc_var_lastBoostTime", 0];
 
-    if (time - _lastBoostTime <= 10) exitWith {
-        systemChat "Please wait 10 seconds before trying to boost again";
+    private _timeLeft = time - _lastBoostTime;
+    if (_timeLeft <= 10) exitWith {
+        systemChat format ["Please wait %1 seconds before trying to boost again", (round _timeLeft)];
     };
 
     _veh setVelocityModelSpace [0,75,0];
