@@ -67,6 +67,12 @@ ark_rotor_fnc_createVehicle = {
     _vehicle setPos _spawnPosition;
     _vehicle flyInHeight [_flyHeight, true];
 
+    // Some modded planes don't spawn with velocity correctly with "FLY"
+    if (_vehicle isKindOf "Plane") then {
+        _vehicle engineOn true;
+        _vehicle setVelocityModelSpace [0, 150, 0];
+    };
+
     _vehicle;
 };
 
