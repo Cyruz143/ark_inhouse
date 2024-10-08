@@ -7,5 +7,4 @@ ark_ace_medical_fnc_vehicleDismount = {
     };
 };
 
-// Needs ACE 3.18
-//["LandVehicle", "init", {call ark_ace_medical_fnc_vehicleDismount}] call CBA_fnc_addClassEventHandler;
+["LandVehicle", "init", {call ark_ace_medical_fnc_vehicleDismount}] call CBA_fnc_addClassEventHandler;
