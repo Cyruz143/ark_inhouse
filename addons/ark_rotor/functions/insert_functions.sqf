@@ -18,10 +18,10 @@ ark_rotor_fnc_insert = {
     [
         {((_this #0) distance2D (getWPPos (_this #1))) < 500},
         {
-            (_this #0) land "GET OUT";
+            (_this #0) landAt [(_this #4), "GET OUT"];
             (group (_this #2)) lockWP true;
         },
-        [_vehicle,_landWP,_pilot,_logic],
+        [_vehicle,_landWP,_pilot,_logic,_landingPad],
         600,
         {[(_this #0),(_this #3)] call ark_rotor_fnc_cleanUp;}
     ] call CBA_fnc_waitUntilAndExecute;
@@ -50,7 +50,7 @@ ark_rotor_fnc_emtpyCargo = {
     params ["_vehicle","_landingPad","_pilot","_cargoGroup"];
 
     _cargoGroup call ark_rotor_fnc_taskAttack;
-    _vehicle flyInHeight [0, true];
+    _vehicle flyInHeight [1, true];
 
     [
         {
