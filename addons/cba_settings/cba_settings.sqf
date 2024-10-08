@@ -30,15 +30,15 @@ force force ace_common_swayFactor = 0.75;
 force force ace_common_deployedSwayFactor = 0.25;
 force force ace_common_restedSwayFactor = 0.5;
 
-// ACE Cook off
+// ACE Cook-off
 force force ace_cookoff_ammoCookoffDuration = 0.3;
-force ace_cookoff_destroyVehicleAfterCookoff = true;
-force force ace_cookoff_enable = 2;
+force force ace_cookoff_cookoffDuration = 1;
+force force ace_cookoff_destroyVehicleAfterCookoff = true;
 force force ace_cookoff_enableAmmobox = true;
 force force ace_cookoff_enableAmmoCookoff = true;
 force force ace_cookoff_enableFire = true;
 force force ace_cookoff_probabilityCoef = 1;
-force force ace_cookoff_removeFlares = true;
+force force ace_cookoff_removeAmmoDuringCookoff = true;
 
 // ACE Crew Served Weapons
 force force ace_csw_ammoHandling = 1;
@@ -73,10 +73,9 @@ force force ace_fire_enableScreams = true;
 
 // ACE Fragmentation Simulation
 force force ace_frag_enabled = true;
-force force ace_frag_maxTrack = 25;
-force force ace_frag_maxTrackPerFrame = 25;
-force force ace_frag_reflectionsEnabled = false;
-force force ace_frag_spallEnabled = false;
+force force ace_frag_reflectionsEnabled = true;
+force force ace_frag_spallEnabled = true;
+force force ace_frag_spallIntensity = 1;
 
 // ACE Grenades
 ace_grenades_convertExplosives = true;
@@ -88,6 +87,7 @@ force force ace_interaction_enableTeamManagement = true;
 force force ace_interaction_interactWithTerrainObjects = false;
 
 // ACE Kill Tracker
+force force ace_killtracker_showCrewKills = true;
 force force ace_killtracker_trackAI = true;
 
 // ACE Logistics
@@ -102,6 +102,7 @@ force ace_rearm_enabled = true;
 force force ace_rearm_level = 0;
 force force ace_rearm_supply = 0;
 force ace_refuel_cargoRate = 10;
+force force ace_refuel_enabled = true;
 force ace_refuel_hoseLength = 20;
 force force ace_refuel_progressDuration = 2;
 force ace_refuel_rate = 1;
