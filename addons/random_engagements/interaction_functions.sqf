@@ -1,5 +1,3 @@
-#include "\x\ark\addons\hull3\hull3_macros.h"
-
 re_interaction_fnc_preinit = {
     re_interaction_locationSizeChange = 50;
 
@@ -129,7 +127,7 @@ re_fnc_addBaseFortsToPlank = {
 };
 
 re_fnc_addTechnicalToPlank = {
-    private _techincalClassnameEntries = getArray (HULL3_CONFIG_FILE >> FACTION_CONFIG >> re_attacker_faction >> "vehicleClassnames") select { _x select 0 isEqualTo "Technical"};
+    private _techincalClassnameEntries = getArray (configFile >> "Hull3" >> "Faction" >> re_attacker_faction >> "vehicleClassnames") select { _x select 0 isEqualTo "Technical"};
     private _techincalClassname = _techincalClassnameEntries select 0 select 1;
     private _fortIndex = [player, _techincalClassname, format ["Technical (%1)", _techincalClassname]] call plank_api_fnc_addNewBoundingFortification;
     [player, _fortIndex, 1] call plank_api_fnc_addFortification;
