@@ -80,6 +80,11 @@ force force ace_frag_spallIntensity = 1;
 // ACE Grenades
 ace_grenades_convertExplosives = true;
 
+// ACE Goggles
+force force ace_goggles_effects = 0;
+force force ace_goggles_showClearGlasses = false;
+force force ace_goggles_showInThirdPerson = false;
+
 // ACE Interaction
 force force ace_interaction_disableNegativeRating = true;
 force force ace_interaction_enableGroupRenaming = false;
