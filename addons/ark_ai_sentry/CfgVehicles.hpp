@@ -12,7 +12,7 @@ class CfgVehicles {
                 displayName = "Enabled Nightvision";
                 description = "Enables or Disables nightvision for the sentry";
                 typeName = "BOOL";
-                defaultValue = true;
+                defaultValue = 1;
             };
         };
     };

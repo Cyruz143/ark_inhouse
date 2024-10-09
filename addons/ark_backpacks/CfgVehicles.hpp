@@ -47,7 +47,7 @@ class CfgVehicles {
         scopeCurator = 0;
         hiddenSelections[] = {"Camo"};
         maximumLoad = 320;
-    }
+    };
 
     class B_Kitbag_rgr_RPG7: B_Kitbag_rgr_ARK {
         scope = 2;

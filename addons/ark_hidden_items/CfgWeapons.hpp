@@ -72,7 +72,7 @@ class CfgWeapons {
     class acp_IDN_Kopassus_U_O_officer_IDN_Kopassus_hex_F: U_O_V_Soldier_Viper_hex_F { HIDDEN };
     class acp_IL_IDF_U_O_officer_IL_IDF_hex_F: U_O_V_Soldier_Viper_hex_F { HIDDEN };
     class acp_JP_GSDF_U_O_officer_JP_GSDF_hex_F: U_O_V_Soldier_Viper_hex_F { HIDDEN };
-    class acp_LU_Waldtarndruck_U_O_officer_LU_Waldtarndruck_hex_F: U_O_V_Soldier_Viper_hex_F { HIDDEN }
+    class acp_LU_Waldtarndruck_U_O_officer_LU_Waldtarndruck_hex_F: U_O_V_Soldier_Viper_hex_F { HIDDEN };
 
     class U_O_CombatUniform_ocamo;
     class acp_Multicam_U_O_CombatUniform_Multicam: U_O_CombatUniform_ocamo { HIDDEN };
@@ -125,53 +125,53 @@ class CfgWeapons {
 
     // Hide ACP unwanted headGear
     class H_HelmetSpecO_ocamo;
-    class acp_Multicam_H_HelmetSpecO_Multicam: H_HelmetSpecO_ocamo { HIDDEN }
-    class acp_Multicam_Snow_H_HelmetSpecO_Multicam_Snow: H_HelmetSpecO_ocamo { HIDDEN }
-    class acp_POL_wz93_H_HelmetSpecO_POL_wz93: H_HelmetSpecO_ocamo { HIDDEN }
-    class acp_POL_wz93_desert_H_HelmetSpecO_POL_wz93_desert: H_HelmetSpecO_ocamo { HIDDEN }
-    class acp_ROK_Granite_H_HelmetSpecO_ROK_Granite: H_HelmetSpecO_ocamo { HIDDEN }
-    class acp_ROK_Marine_Tigerstripe_H_HelmetSpecO_ROK_Marine_Tigerstripe: H_HelmetSpecO_ocamo { HIDDEN }
-    class acp_RUS_Flora_H_HelmetSpecO_RUS_Flora: H_HelmetSpecO_ocamo { HIDDEN }
-    class acp_SE_M90_H_HelmetSpecO_SE_M90: H_HelmetSpecO_ocamo { HIDDEN }
-    class acp_Solid_Black_H_HelmetSpecO_Solid_Black: H_HelmetSpecO_ocamo { HIDDEN }
-    class acp_Solid_CoyoteBrown_H_HelmetSpecO_Solid_CoyoteBrown: H_HelmetSpecO_ocamo { HIDDEN }
-    class acp_Solid_Navy_H_HelmetSpecO_Solid_Navy: H_HelmetSpecO_ocamo { HIDDEN }
-    class acp_Solid_Olive_H_HelmetSpecO_Solid_Olive: H_HelmetSpecO_ocamo { HIDDEN }
-    class acp_Solid_Ranger_Green_H_HelmetSpecO_Solid_Ranger_Green: H_HelmetSpecO_ocamo { HIDDEN }
-    class acp_Solid_Tan_H_HelmetSpecO_Solid_Tan: H_HelmetSpecO_ocamo { HIDDEN }
-    class acp_SU_KLMK_H_HelmetSpecO_SU_KLMK: H_HelmetSpecO_ocamo { HIDDEN }
-    class acp_SU_KLMK_Winter_H_HelmetSpecO_SU_KLMK_Winter: H_HelmetSpecO_ocamo { HIDDEN }
-    class acp_SU_TTsKO_H_HelmetSpecO_SU_TTsKO: H_HelmetSpecO_ocamo { HIDDEN }
-    class acp_SY_WDL_H_HelmetSpecO_SY_WDL: H_HelmetSpecO_ocamo { HIDDEN }
-    class acp_TH_ThaiArmy_H_HelmetSpecO_TH_ThaiArmy: H_HelmetSpecO_ocamo { HIDDEN }
-    class acp_TUN_GTS_H_HelmetSpecO_TUN_GTS: H_HelmetSpecO_ocamo { HIDDEN }
-    class acp_TUR_TLF_H_HelmetSpecO_TUR_TLF: H_HelmetSpecO_ocamo { HIDDEN }
-    class acp_UA_MM14_H_HelmetSpecO_UA_MM14: H_HelmetSpecO_ocamo { HIDDEN }
-    class acp_UA_MM14_Tan_H_HelmetSpecO_UA_MM14_Tan: H_HelmetSpecO_ocamo { HIDDEN }
-    class acp_US_MARPAT_H_HelmetSpecO_US_MARPAT: H_HelmetSpecO_ocamo { HIDDEN }
-    class acp_US_MARPAT_D_H_HelmetSpecO_US_MARPAT_D: H_HelmetSpecO_ocamo { HIDDEN }
-    class acp_YU_MD89_H_HelmetSpecO_YU_MD89: H_HelmetSpecO_ocamo { HIDDEN }
-    class acp_ATACS_H_HelmetSpecO_ATACS: H_HelmetSpecO_ocamo { HIDDEN }
-    class acp_AUS_AUSCAM_H_HelmetSpecO_AUS_AUSCAM: H_HelmetSpecO_ocamo { HIDDEN }
-    class acp_CA_CADPAT_H_HelmetSpecO_CA_CADPAT: H_HelmetSpecO_ocamo { HIDDEN }
-    class acp_CA_CADPAT_Arctic_H_HelmetSpecO_CA_CADPAT_Arctic: H_HelmetSpecO_ocamo { HIDDEN }
-    class acp_CN_Type_07_Universal_H_HelmetSpecO_CN_Type_07_Universal: H_HelmetSpecO_ocamo { HIDDEN }
-    class acp_CN_Type_07_Urban_H_HelmetSpecO_CN_Type_07_Urban: H_HelmetSpecO_ocamo { HIDDEN }
-    class acp_CZ_vz95_H_HelmetSpecO_CZ_vz95: H_HelmetSpecO_ocamo { HIDDEN }
-    class acp_CZ_vz95_Desert_H_HelmetSpecO_CZ_vz95_Desert: H_HelmetSpecO_ocamo { HIDDEN }
-    class acp_DE_Flecktarn_H_HelmetSpecO_DE_Flecktarn: H_HelmetSpecO_ocamo { HIDDEN }
-    class acp_DE_Multitarn_H_HelmetSpecO_DE_Multitarn: H_HelmetSpecO_ocamo { HIDDEN }
-    class acp_EG_Egg_H_HelmetSpecO_EG_Egg: H_HelmetSpecO_ocamo { HIDDEN }
-    class acp_FI_M05_Desert_H_HelmetSpecO_FI_M05_Desert: H_HelmetSpecO_ocamo { HIDDEN }
-    class acp_FI_M05_Relish_H_HelmetSpecO_FI_M05_Relish: H_HelmetSpecO_ocamo { HIDDEN }
-    class acp_FI_M05_Snow_H_HelmetSpecO_FI_M05_Snow: H_HelmetSpecO_ocamo { HIDDEN }
-    class acp_FR_CE_H_HelmetSpecO_FR_CE: H_HelmetSpecO_ocamo { HIDDEN }
-    class acp_FR_Daguet_H_HelmetSpecO_FR_Daguet: H_HelmetSpecO_ocamo { HIDDEN }
-    class acp_HR_CROPAT_H_HelmetSpecO_HR_CROPAT: H_HelmetSpecO_ocamo { HIDDEN }
-    class acp_IDN_Kopassus_H_HelmetSpecO_IDN_Kopassus: H_HelmetSpecO_ocamo { HIDDEN }
-    class acp_IL_IDF_H_HelmetSpecO_IL_IDF: H_HelmetSpecO_ocamo { HIDDEN }
-    class acp_JP_GSDF_H_HelmetSpecO_JP_GSDF: H_HelmetSpecO_ocamo { HIDDEN }
-    class acp_LU_Waldtarndruck_H_HelmetSpecO_LU_Waldtarndruck : H_HelmetSpecO_ocamo { HIDDEN }
+    class acp_Multicam_H_HelmetSpecO_Multicam: H_HelmetSpecO_ocamo { HIDDEN };
+    class acp_Multicam_Snow_H_HelmetSpecO_Multicam_Snow: H_HelmetSpecO_ocamo { HIDDEN };
+    class acp_POL_wz93_H_HelmetSpecO_POL_wz93: H_HelmetSpecO_ocamo { HIDDEN };
+    class acp_POL_wz93_desert_H_HelmetSpecO_POL_wz93_desert: H_HelmetSpecO_ocamo { HIDDEN };
+    class acp_ROK_Granite_H_HelmetSpecO_ROK_Granite: H_HelmetSpecO_ocamo { HIDDEN };
+    class acp_ROK_Marine_Tigerstripe_H_HelmetSpecO_ROK_Marine_Tigerstripe: H_HelmetSpecO_ocamo { HIDDEN };
+    class acp_RUS_Flora_H_HelmetSpecO_RUS_Flora: H_HelmetSpecO_ocamo { HIDDEN };
+    class acp_SE_M90_H_HelmetSpecO_SE_M90: H_HelmetSpecO_ocamo { HIDDEN };
+    class acp_Solid_Black_H_HelmetSpecO_Solid_Black: H_HelmetSpecO_ocamo { HIDDEN };
+    class acp_Solid_CoyoteBrown_H_HelmetSpecO_Solid_CoyoteBrown: H_HelmetSpecO_ocamo { HIDDEN };
+    class acp_Solid_Navy_H_HelmetSpecO_Solid_Navy: H_HelmetSpecO_ocamo { HIDDEN };
+    class acp_Solid_Olive_H_HelmetSpecO_Solid_Olive: H_HelmetSpecO_ocamo { HIDDEN };
+    class acp_Solid_Ranger_Green_H_HelmetSpecO_Solid_Ranger_Green: H_HelmetSpecO_ocamo { HIDDEN };
+    class acp_Solid_Tan_H_HelmetSpecO_Solid_Tan: H_HelmetSpecO_ocamo { HIDDEN };
+    class acp_SU_KLMK_H_HelmetSpecO_SU_KLMK: H_HelmetSpecO_ocamo { HIDDEN };
+    class acp_SU_KLMK_Winter_H_HelmetSpecO_SU_KLMK_Winter: H_HelmetSpecO_ocamo { HIDDEN };
+    class acp_SU_TTsKO_H_HelmetSpecO_SU_TTsKO: H_HelmetSpecO_ocamo { HIDDEN };
+    class acp_SY_WDL_H_HelmetSpecO_SY_WDL: H_HelmetSpecO_ocamo { HIDDEN };
+    class acp_TH_ThaiArmy_H_HelmetSpecO_TH_ThaiArmy: H_HelmetSpecO_ocamo { HIDDEN };
+    class acp_TUN_GTS_H_HelmetSpecO_TUN_GTS: H_HelmetSpecO_ocamo { HIDDEN };
+    class acp_TUR_TLF_H_HelmetSpecO_TUR_TLF: H_HelmetSpecO_ocamo { HIDDEN };
+    class acp_UA_MM14_H_HelmetSpecO_UA_MM14: H_HelmetSpecO_ocamo { HIDDEN };
+    class acp_UA_MM14_Tan_H_HelmetSpecO_UA_MM14_Tan: H_HelmetSpecO_ocamo { HIDDEN };
+    class acp_US_MARPAT_H_HelmetSpecO_US_MARPAT: H_HelmetSpecO_ocamo { HIDDEN };
+    class acp_US_MARPAT_D_H_HelmetSpecO_US_MARPAT_D: H_HelmetSpecO_ocamo { HIDDEN };
+    class acp_YU_MD89_H_HelmetSpecO_YU_MD89: H_HelmetSpecO_ocamo { HIDDEN };
+    class acp_ATACS_H_HelmetSpecO_ATACS: H_HelmetSpecO_ocamo { HIDDEN };
+    class acp_AUS_AUSCAM_H_HelmetSpecO_AUS_AUSCAM: H_HelmetSpecO_ocamo { HIDDEN };
+    class acp_CA_CADPAT_H_HelmetSpecO_CA_CADPAT: H_HelmetSpecO_ocamo { HIDDEN };
+    class acp_CA_CADPAT_Arctic_H_HelmetSpecO_CA_CADPAT_Arctic: H_HelmetSpecO_ocamo { HIDDEN };
+    class acp_CN_Type_07_Universal_H_HelmetSpecO_CN_Type_07_Universal: H_HelmetSpecO_ocamo { HIDDEN };
+    class acp_CN_Type_07_Urban_H_HelmetSpecO_CN_Type_07_Urban: H_HelmetSpecO_ocamo { HIDDEN };
+    class acp_CZ_vz95_H_HelmetSpecO_CZ_vz95: H_HelmetSpecO_ocamo { HIDDEN };
+    class acp_CZ_vz95_Desert_H_HelmetSpecO_CZ_vz95_Desert: H_HelmetSpecO_ocamo { HIDDEN };
+    class acp_DE_Flecktarn_H_HelmetSpecO_DE_Flecktarn: H_HelmetSpecO_ocamo { HIDDEN };
+    class acp_DE_Multitarn_H_HelmetSpecO_DE_Multitarn: H_HelmetSpecO_ocamo { HIDDEN };
+    class acp_EG_Egg_H_HelmetSpecO_EG_Egg: H_HelmetSpecO_ocamo { HIDDEN };
+    class acp_FI_M05_Desert_H_HelmetSpecO_FI_M05_Desert: H_HelmetSpecO_ocamo { HIDDEN };
+    class acp_FI_M05_Relish_H_HelmetSpecO_FI_M05_Relish: H_HelmetSpecO_ocamo { HIDDEN };
+    class acp_FI_M05_Snow_H_HelmetSpecO_FI_M05_Snow: H_HelmetSpecO_ocamo { HIDDEN };
+    class acp_FR_CE_H_HelmetSpecO_FR_CE: H_HelmetSpecO_ocamo { HIDDEN };
+    class acp_FR_Daguet_H_HelmetSpecO_FR_Daguet: H_HelmetSpecO_ocamo { HIDDEN };
+    class acp_HR_CROPAT_H_HelmetSpecO_HR_CROPAT: H_HelmetSpecO_ocamo { HIDDEN };
+    class acp_IDN_Kopassus_H_HelmetSpecO_IDN_Kopassus: H_HelmetSpecO_ocamo { HIDDEN };
+    class acp_IL_IDF_H_HelmetSpecO_IL_IDF: H_HelmetSpecO_ocamo { HIDDEN };
+    class acp_JP_GSDF_H_HelmetSpecO_JP_GSDF: H_HelmetSpecO_ocamo { HIDDEN };
+    class acp_LU_Waldtarndruck_H_HelmetSpecO_LU_Waldtarndruck : H_HelmetSpecO_ocamo { HIDDEN };
 
     class H_HelmetLeaderO_ocamo;
     class acp_Multicam_H_HelmetLeaderO_Multicam: H_HelmetLeaderO_ocamo { HIDDEN };

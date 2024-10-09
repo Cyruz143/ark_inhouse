@@ -58,19 +58,19 @@ class CfgVehicles {
                 displayName = "Allow NVGs";
                 description = "Will add/leave existing NVGs or remove";
                 typeName = "BOOL";
-                defaultValue = true;
+                defaultValue = 1;
             };
             class Allow_BuildingSearch {
                 displayName = "Allow Building Search";
                 description = "Will POSSIBLY allow AI to enter buildings. WILL OVERRIDE WP Accuracy if target in a building";
                 typeName = "BOOL";
-                defaultValue = false;
+                defaultValue = 0;
             };
             class Force_Flashlights {
                 displayName = "Force flashlights";
                 description = "Equip the chase units with flashlights and force them on";
                 typeName = "BOOL";
-                defaultValue = false;
+                defaultValue = 0;
             };
         };
     };
