@@ -5,7 +5,7 @@ ark_admin_tools_fnc_canUnflip = {
     if ((speed _vehicle) > 2) exitWith {false};
 
     private _pB = _vehicle call BIS_fnc_getPitchBank;
-    if ((_pB #0 < -60 || _pB #0 > 60) || (_pB #1 < -60 || _pB #1 > 60)) then {true} else {false};
+    [false, true] select ((((_pB # 0) < - 60) || ((_pB # 0) > 60)) || (((_pB # 1) < - 60) || ((_pB # 1) > 60)))
 };
 
 ark_admin_tools_fnc_unFlip = {
