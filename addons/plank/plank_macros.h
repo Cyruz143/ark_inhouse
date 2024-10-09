@@ -266,17 +266,6 @@
 #define FUN_ARGS_11(VAR1,VAR2,VAR3,VAR4,VAR5,VAR6,VAR7,VAR8,VAR9,VAR10,VAR11) \
     DECLARE_11(_this,VAR1,VAR2,VAR3,VAR4,VAR5,VAR6,VAR7,VAR8,VAR9,VAR10,VAR11)
 
-// Adds a value to the end of an array.
-// Example:
-//      GIVEN:
-//          _numbers = [1, 3, 5, 1];
-//          _number = 1;
-//      WHEN:
-//          PUSH(_numbers, _number);
-//      THEN:
-//          _numbers == [1, 3, 5, 1, 1];
-#define PUSH(ARRAY,VAL) (ARRAY) set [count (ARRAY), (VAL)]
-
 // Adds all values from one array to another.
 // Example:
 //      GIVEN:
@@ -323,26 +312,6 @@
 //      THEN:
 //          _random == 'AWARE' or _random == 'AWARE'
 #define SELECT_RAND(ARRAY) (ARRAY) select (floor (random (count (ARRAY))))
-
-// Adds 1 to the variable.
-// Example:
-//      GIVEN:
-//          _i = 0;
-//      WHEN:
-//          INC(_i);
-//      THEN:
-//          _i == 1;
-#define INC(VAR) VAR = VAR + 1
-
-// Subtracts 1 from the variable.
-// Example:
-//      GIVEN:
-//          _i = 3;
-//      WHEN:
-//          DEC(_i);
-//      THEN:
-//          _i == 2;
-#define DEC(VAR) VAR = VAR - 1
 
 // Creates an array from given arguments.
 // Example:

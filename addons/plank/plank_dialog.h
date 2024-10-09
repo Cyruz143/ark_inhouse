@@ -1,4 +1,5 @@
 #include "plank_macros.h"
+#include "\x\cba\addons\main\script_macros_common.hpp"
 
 // Static styles
 #define ST_POS            0x0F
@@ -72,7 +73,7 @@
 #define EXPORT_BACKGROUND_H                     RESET_BUTTON_H + DIALOG_PADDING_LEFT
 
 #define CANCEL_BUTTON_X                         CONTROL_RIGHT_X - CONFIRM_BUTTON_W
-#define CONFIRM_BUTTON_X                        CANCEL_BUTTON_X - TO_REAL_W(0.002) - CONFIRM_BUTTON_W
+#define CONFIRM_BUTTON_X                        QUOTE(CANCEL_BUTTON_X) - TO_REAL_W(0.002) - CONFIRM_BUTTON_W
 #define TITLE_X                                 CONTROL_X - TO_REAL_W(0.0035)
 #define SHORTCUT_TEXT_X                         TITLE_X + TITLE_BASE_W + TO_REAL_W(0.002)
 #define SHORTCUT_PICTURE_X                      SHORTCUT_TEXT_X + SHORTCUT_TEXT_W - TO_REAL_W(0.003)
@@ -85,7 +86,6 @@
 #define EXPORT_BUTTON_Y                         DIALOG_Y - RESET_BUTTON_H
 #define EXPORT_BACKGROUND_X                     safeZoneX + safeZoneW - EXPORT_BACKGROUND_W - DIALOG_MARGIN_RIGHT
 #define EXPORT_BACKGROUND_Y                     DIALOG_Y - EXPORT_BACKGROUND_H - DIALOG_PADDING_LEFT * 2
-#define EXPORT_BUTTON_Y                         DIALOG_Y - RESET_BUTTON_H
 #define LOCK_BUTTON_X                           CONTROL_X
 #define PICKUP_BUTTON_X                         CONTROL_X + LOCK_BUTTON_W + TO_REAL_W(0.002)
 #define MOVE_VALUE_X                            CONTROL_X + MOVE_TITLE_W + TO_REAL_W(0.0075)
@@ -102,48 +102,48 @@ class PlankSettingsDialog {
     onLoad = "uiNamespace setVariable ['plank_ui_settingsDialogIdd', _this select 0];";
     onUnload = "[] call plank_ui_fnc_dialogOnUnload;";
     controls[] = {
-        DialogBackground,
-        ExportBackground,
-        ExportButton,
-        FortCombo,
-        ConfirmButton,
-        CancelButton,
-        LockModeButton,
-        PickupButton,
-        HeightTitle,
-        HeightShortcutPicture,
-        VerticalModeCheckbox,
-        HeightSlider,
-        HeightResetButton,
-        HeightValue,
-        HorizontalOffsetTitle,
-        HorizontalOffsetShortcutPicture,
-        HorizontalOffsetSlider,
-        HorizontalOffsetResetButton,
-        HorizontalOffsetValue,
-        DistanceTitle,
-        DistanceShortcutPicture,
-        DistanceSlider,
-        DistanceValue,
-        DistanceResetButton,
-        PitchTitle,
-        PitchShortcutText,
-        PitchShortcutPicture,
-        PitchSlider,
-        PitchValue,
-        PitchResetButton,
-        BankTitle,
-        BankShortcutText,
-        BankShortcutPicture,
-        BankSlider,
-        BankValue,
-        BankResetButton,
-        DirectionTitle,
-        DirectionShortcutText,
-        DirectionShortcutPicture,
-        DirectionSlider,
-        DirectionResetButton,
-        DirectionValue
+       "DialogBackground",
+       "ExportBackground",
+       "ExportButton",
+       "FortCombo",
+       "ConfirmButton",
+       "CancelButton",
+       "LockModeButton",
+       "PickupButton",
+       "HeightTitle",
+       "HeightShortcutPicture",
+       "VerticalModeCheckbox",
+       "HeightSlider",
+       "HeightResetButton",
+       "HeightValue",
+       "HorizontalOffsetTitle",
+       "HorizontalOffsetShortcutPicture",
+       "HorizontalOffsetSlider",
+       "HorizontalOffsetResetButton",
+       "HorizontalOffsetValue",
+       "DistanceTitle",
+       "DistanceShortcutPicture",
+       "DistanceSlider",
+       "DistanceValue",
+       "DistanceResetButton",
+       "PitchTitle",
+       "PitchShortcutText",
+       "PitchShortcutPicture",
+       "PitchSlider",
+       "PitchValue",
+       "PitchResetButton",
+       "BankTitle",
+       "BankShortcutText",
+       "BankShortcutPicture",
+       "BankSlider",
+       "BankValue",
+       "BankResetButton",
+       "DirectionTitle",
+       "DirectionShortcutText",
+       "DirectionShortcutPicture",
+       "DirectionSlider",
+       "DirectionResetButton",
+       "DirectionValue"
     };
 
     class RscBase {
@@ -153,7 +153,7 @@ class PlankSettingsDialog {
         style = ST_LEFT;
 
         tooltip = "";
-        tooltipMaxWidth = TOOLTIP_MAX_WIDTH;
+        tooltipMaxWidth = QUOTE(TOOLTIP_MAX_WIDTH);
         tooltipColorShade[] = BUTTON_BG_COLOR;
         tooltipColorText[] = BUTTON_TEXT_COLOR;
         tooltipColorBox[] = {0, 0, 0, 0};
@@ -168,7 +168,7 @@ class PlankSettingsDialog {
 
         text = "";
         font = FONT_TYPE;
-        sizeEx = FONT_SIZE;
+        sizeEx = QUOTE(FONT_SIZE);
         fixedWidth = 0;
         shadow = 0;
         lineSpacing = 0;
@@ -177,8 +177,8 @@ class PlankSettingsDialog {
     class RscSliderBase : RscBase {
         type = 43;
         style = 1024;
-        w = SLIDER_BASE_W;
-        h = SLIDER_BASE_H;
+        w = QUOTE(SLIDER_BASE_W);
+        h = QUOTE(SLIDER_BASE_H);
         color[] = {1, 1, 1, 0.8};
         colorActive[] = {1, 1, 1, 1};
         arrowEmpty = "\a3\3DEN\Data\Controls\CtrlXSlider\arrowEmpty_ca.paa";
@@ -215,30 +215,30 @@ class PlankSettingsDialog {
     class TitleBase : RscBase {
         colorBackground[] = {0, 0, 0, 0};
 
-        x = TITLE_X;
-        w = TITLE_BASE_W;
-        h = TITLE_BASE_H;
+        x = QUOTE(TITLE_X);
+        w = QUOTE(TITLE_BASE_W);
+        h = QUOTE(TITLE_BASE_H);
     };
 
     class ShortcutText : RscBase {
         colorText[] = {0.9, 0.9, 0.9, 1};
         colorBackground[] = {0, 0, 0, 0};
 
-        x = SHORTCUT_TEXT_X;
-        w = SHORTCUT_TEXT_W;
-        h = ROW_BASE_H;
+        x = QUOTE(SHORTCUT_TEXT_X);
+        w = QUOTE(SHORTCUT_TEXT_W);
+        h = QUOTE(ROW_BASE_H);
 
         text = "Ctrl/Shift/Alt +";
-        sizeEx = FONT_SIZE * 0.9;
+        sizeEx = QUOTE(FONT_SIZE) * 0.9;
     };
 
     class ShortcutPicture : RscBase {
         style = ST_PICTURE;
         colorBackground[] = {0, 0, 0, 0};
 
-        x = SHORTCUT_PICTURE_X;
-        w = SHORTCUT_PICTURE_W;
-        h = SHORTCUT_PICTURE_H;
+        x = QUOTE(SHORTCUT_PICTURE_X);
+        w = QUOTE(SHORTCUT_PICTURE_W);
+        h = QUOTE(SHORTCUT_PICTURE_H);
 
         text = ADDON_PATH(resources\horizontal.paa);
     };
@@ -248,16 +248,16 @@ class PlankSettingsDialog {
 
         colorBackground[] = {0, 0, 0, 0};
 
-        x = SLIDER_VALUE_X;
-        w = VALUE_BASE_W;
-        h = VALUE_BASE_H;
+        x = QUOTE(SLIDER_VALUE_X);
+        w = QUOTE(VALUE_BASE_W);
+        h = QUOTE(VALUE_BASE_H);
         text = "-10.00001";
     };
 
     class ResetButtonBase : RscButton {
-        w = SLIDER_BASE_H;
-        h = SLIDER_BASE_H;
-        x = RESET_BUTTON_X;
+        w = QUOTE(SLIDER_BASE_H);
+        h = QUOTE(SLIDER_BASE_H);
+        x = QUOTE(RESET_BUTTON_X);
 
         tooltip = "Reset slider to default value.";
 
@@ -271,10 +271,10 @@ class PlankSettingsDialog {
         type = 4;
         style = 0;
 
-        w = COMBO_W;
-        h = TITLE_BASE_H;
+        w = QUOTE(COMBO_W);
+        h = QUOTE(TITLE_BASE_H);
 
-        wholeHeight = DIALOG_H * 0.75;
+        wholeHeight = QUOTE(DIALOG_H) * 0.75;
         maxHistoryDelay = 1;
 
         colorBackground[] = {0.05, 0.05, 0.05, 1};
@@ -365,19 +365,19 @@ class PlankSettingsDialog {
         colorDisabled[] = DISABLED_COLOR;
         colorBackgroundDisabled[] = DISABLED_COLOR;
 
-        x = EXPORT_BACKGROUND_X;
-        y = EXPORT_BACKGROUND_Y;
-        h = EXPORT_BACKGROUND_H;
-        w = EXPORT_BACKGROUND_W;
+        x = QUOTE(EXPORT_BACKGROUND_X);
+        y = QUOTE(EXPORT_BACKGROUND_Y);
+        h = QUOTE(EXPORT_BACKGROUND_H);
+        w = QUOTE(EXPORT_BACKGROUND_W);
     };
 
     class ExportButton : RscButton {
         idc = SETTINGS_EXPORT_BUTTON_IDC;
 
-        x = EXPORT_BUTTON_X;
-        y = EXPORT_BUTTON_Y;
-        w = EXPORT_BUTTON_W;
-        h = RESET_BUTTON_H;
+        x = QUOTE(EXPORT_BUTTON_X);
+        y = QUOTE(EXPORT_BUTTON_Y);
+        w = QUOTE(EXPORT_BUTTON_W);
+        h = QUOTE(RESET_BUTTON_H);
 
         text = "Export";
         action = "[] call plank_ui_fnc_exportButtonClick";
@@ -387,7 +387,7 @@ class PlankSettingsDialog {
     class FortCombo : RscCombo {
         idc = SETTINGS_FORT_COMBO_IDC;
 
-        x = CONTROL_X;
+        x = QUOTE(CONTROL_X);
         y = CONTROL_HALF_Y(FORT_LIST_ROW_INDEX);
 
         onLBSelChanged = "_this call plank_ui_fnc_selectionChanged;";
@@ -396,10 +396,10 @@ class PlankSettingsDialog {
     class ConfirmButton : RscButton {
         idc = SETTINGS_CONFIRM_BUTTON_IDC;
 
-        x = CONFIRM_BUTTON_X;
+        x = QUOTE(CONFIRM_BUTTON_X);
         y = CONTROL_HALF_Y(FORT_CONFIRM_LOCK_ROW_INDEX);
-        w = CONFIRM_BUTTON_W;
-        h = RESET_BUTTON_H;
+        w = QUOTE(CONFIRM_BUTTON_W);
+        h = QUOTE(RESET_BUTTON_H);
 
         tooltip = "Confirm object placement (R).";
         text = "Confirm";
@@ -409,10 +409,10 @@ class PlankSettingsDialog {
     class CancelButton : RscButton {
         idc = SETTINGS_CANCEL_BUTTON_IDC;
 
-        x = CANCEL_BUTTON_X;
+        x = QUOTE(CANCEL_BUTTON_X);
         y = CONTROL_HALF_Y(FORT_CONFIRM_LOCK_ROW_INDEX);
-        w = CONFIRM_BUTTON_W;
-        h = RESET_BUTTON_H;
+        w = QUOTE(CONFIRM_BUTTON_W);
+        h = QUOTE(RESET_BUTTON_H);
 
         tooltip = "Cancel object placement (Q).";
         text = "Cancel";
@@ -422,10 +422,10 @@ class PlankSettingsDialog {
     class LockModeButton : RscButton {
         idc = SETTINGS_LOCK_MODE_BUTTON_IDC;
 
-        x = LOCK_BUTTON_X;
+        x = QUOTE(LOCK_BUTTON_X);
         y = CONTROL_HALF_Y(FORT_CONFIRM_LOCK_ROW_INDEX);
-        w = LOCK_BUTTON_W;
-        h = RESET_BUTTON_H;
+        w = QUOTE(LOCK_BUTTON_W);
+        h = QUOTE(RESET_BUTTON_H);
 
         tooltip = "Locks placed object in place (F).";
         text = "Unlock";
@@ -435,10 +435,10 @@ class PlankSettingsDialog {
     class PickupButton : RscButton {
         idc = SETTINGS_PICKUP_BUTTON_IDC;
 
-        x = PICKUP_BUTTON_X;
+        x = QUOTE(PICKUP_BUTTON_X);
         y = CONTROL_HALF_Y(FORT_CONFIRM_LOCK_ROW_INDEX);
-        w = PICKUP_BUTTON_W;
-        h = RESET_BUTTON_H;
+        w = QUOTE(PICKUP_BUTTON_W)
+        h = QUOTE(RESET_BUTTON_H);
 
         tooltip = "Pick up your previously placed object (D).";
         text = "Pick up";

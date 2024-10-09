@@ -67,7 +67,7 @@ class MissionParams {
         0.2, // lumSunBack
         0.5, // refractCoef
         0.5, // refractSaturation
-        true, // snow
-        false // dropColorStrong
+        1, // snow
+        0 // dropColorStrong
     };
 };

@@ -1423,7 +1423,7 @@ class UnitTemplates {
         pilots[] = {"LIB_WP_Sierzant"};
         technicals[] = {"LIB_Kfz1_MG42", "LIB_SdKfz252", "LIB_Sdkfz251_FFV", "LIB_SdKfz222", "LIB_SdKfz234_1"};
         armour[] = {"LIB_PzKpfwIV_H", "LIB_StuG_III_G", "LIB_SdKfz124", "LIB_SdKfz234_2"};
-        th[] = {"LIB_Li2﻿"};
+        th[] = {"LIB_Li2"};
         ah[] = {"LIB_Ju87"};
     };
 
@@ -1495,7 +1495,7 @@ class UnitTemplates {
         pilots[] = {"fow_s_ija_pilot"};
         technicals[] = {"fow_v_type97_truck_open_ija", "fow_v_type97_truck_ija"};
         armour[] = {"fow_ija_type95_HaGo_1_ija", "fow_ija_type95_HaGo_2_ija", "fow_ija_type95_HaGo_3_ija"};
-        th[] = {"LIB_Li2﻿"};
+        th[] = {"LIB_Li2"};
         ah[] = {"LIB_RBAF_Ju87"};
     };
 
@@ -1507,7 +1507,7 @@ class UnitTemplates {
         pilots[] = {"fow_s_ija_pilot"};
         technicals[] = {"fow_v_type97_truck_open_ija", "fow_v_type97_truck_ija"};
         armour[] = {"fow_ija_type95_HaGo_1_ija", "fow_ija_type95_HaGo_2_ija", "fow_ija_type95_HaGo_3_ija"};
-        th[] = {"LIB_Li2﻿"};
+        th[] = {"LIB_Li2"};
         ah[] = {"LIB_RBAF_Ju87"};
     };
 
