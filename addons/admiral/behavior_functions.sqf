@@ -1,8 +1,5 @@
-#include "admiral_macros.h"
-
+#include "script_component.hpp"
 #include "\userconfig\admiral\log\behavior.h"
-#include "logbook.h"
-
 
 adm_behavior_fnc_changeAllGroupState = {
     [
@@ -182,7 +179,7 @@ adm_behavior_fnc_getReinforcementGroups = {
     if (_numberOfGroups > 0) then {
         private _closestGroups = [_groups, {leader _x distance _enemyPos > leader _y distance _enemyPos}] call adm_common_fnc_insertionSort;
         for "_i" from 0 to (_numberOfGroups min (count _closestGroups)) - 1 do {
-            PUSH(_reinforcementGroups, _closestGroups select _i);
+            PUSH(_reinforcementGroups,_closestGroups select _i);
         };
     };
 
@@ -198,18 +195,18 @@ adm_behavior_fnc_canReinforce = {
 
 adm_behavior_fnc_getAllGroups = {
     private _patrolGroups = [];
-    FILTER_PUSH_ALL(_patrolGroups, adm_patrol_infGroups, {!(_x getVariable AS_ARRAY_2("adm_patrol_hasTarget",false))});
-    FILTER_PUSH_ALL(_patrolGroups, adm_patrol_techGroups, {!(_x getVariable AS_ARRAY_2("adm_patrol_hasTarget",false))});
-    FILTER_PUSH_ALL(_patrolGroups, adm_patrol_armourGroups, {!(_x getVariable AS_ARRAY_2("adm_patrol_hasTarget",false))});
-    [[_patrolGroups, adm_camp_infGroups, adm_camp_techGroups, adm_camp_armourGroups]] call adm_common_fnc_getAliveGroups;
+    FILTER_PUSH_ALL(_patrolGroups,adm_patrol_infGroups,{!(_x getVariable AS_ARRAY_2("adm_patrol_hasTarget",false))});
+    FILTER_PUSH_ALL(_patrolGroups,adm_patrol_techGroups,{!(_x getVariable AS_ARRAY_2("adm_patrol_hasTarget",false))});
+    FILTER_PUSH_ALL(_patrolGroups,adm_patrol_armourGroups,{!(_x getVariable AS_ARRAY_2("adm_patrol_hasTarget",false))});
+    [[_patrolGroups,adm_camp_infGroups,adm_camp_techGroups,adm_camp_armourGroups]] call adm_common_fnc_getAliveGroups;
 };
 
 adm_behavior_fnc_getAvailableInfGroups = {
     params ["_side","_enemyPos"];
 
     private _groups = [];
-    FILTER_PUSH_ALL(_groups, adm_patrol_infGroups, adm_behavior_fnc_isAvailableGroup);
-    FILTER_PUSH_ALL(_groups, adm_camp_infGroups, adm_behavior_fnc_isAvailableGroup);
+    FILTER_PUSH_ALL(_groups,adm_patrol_infGroups,adm_behavior_fnc_isAvailableGroup);
+    FILTER_PUSH_ALL(_groups,adm_camp_infGroups,adm_behavior_fnc_isAvailableGroup);
     _groups;
 };
 
@@ -217,8 +214,8 @@ adm_behavior_fnc_getAvailableTechGroups = {
     params ["_side","_enemyPos"];
 
     private _groups = [];
-    FILTER_PUSH_ALL(_groups, adm_patrol_techGroups, adm_behavior_fnc_isAvailableGroup);
-    FILTER_PUSH_ALL(_groups, adm_camp_techGroups, adm_behavior_fnc_isAvailableGroup);
+    FILTER_PUSH_ALL(_groups,adm_patrol_techGroups,adm_behavior_fnc_isAvailableGroup);
+    FILTER_PUSH_ALL(_groups,adm_camp_techGroups,adm_behavior_fnc_isAvailableGroup);
     _groups;
 };
 
@@ -226,8 +223,8 @@ adm_behavior_fnc_getAvailableArmourGroups = {
     params ["_side","_enemyPos"];
 
     private _groups = [];
-    FILTER_PUSH_ALL(_groups, adm_patrol_armourGroups, adm_behavior_fnc_isAvailableGroup);
-    FILTER_PUSH_ALL(_groups, adm_camp_armourGroups, adm_behavior_fnc_isAvailableGroup);
+    FILTER_PUSH_ALL(_groups,adm_patrol_armourGroups,adm_behavior_fnc_isAvailableGroup);
+    FILTER_PUSH_ALL(_groups,adm_camp_armourGroups,adm_behavior_fnc_isAvailableGroup);
     _groups;
 };
 
@@ -242,7 +239,7 @@ adm_behavior_getEnemyUnits = {
     params ["_side"];
 
     private _units = [];
-    FILTER_PUSH_ALL(_units, ALL_UNITS, {!(AS_ARRAY_2(side _x, _side) call adm_common_fnc_isFriendlySide)});
+    FILTER_PUSH_ALL(_units,ALL_UNITS,{!(AS_ARRAY_2(side _x,_side) call adm_common_fnc_isFriendlySide)});
     _units;
 };
 
@@ -251,7 +248,7 @@ adm_behavior_fnc_addToFoundEnemyArray = {
 
     private _sideIndex = SIDE_ARRAY find _side;
     if (_sideIndex >= 0) then {
-        PUSH((adm_behavior_foundEnemies select _sideIndex), AS_ARRAY_2(time,_enemyPos));
+        PUSH((adm_behavior_foundEnemies select _sideIndex),AS_ARRAY_2(time,_enemyPos));
     };
 };
 

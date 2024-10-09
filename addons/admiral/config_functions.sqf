@@ -1,8 +1,5 @@
-#include "admiral_macros.h"
-
+#include "script_component.hpp"
 #include "\userconfig\admiral\log\config.h"
-#include "logbook.h"
-
 
 adm_config_fnc_getConfig = {
     DECLARE(_config) = ADMIRAL_MISSION_CONFIG_FILE;

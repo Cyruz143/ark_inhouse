@@ -1,8 +1,7 @@
-#include "admiral_macros.h"
+#include "script_component.hpp"
 
 //#define LOGGING_LEVEL_DEBUG
 //#define LOGGING_TO_RPT
-#include "logbook.h"
 
 #define ADDON_NS                        adm
 #define ADD_ADDON_NS_TO_ID(M,ID)        M##ID

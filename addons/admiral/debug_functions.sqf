@@ -1,8 +1,6 @@
+#include "script_component.hpp"
 #include "admiral_macros.h"
-
 #include "\userconfig\admiral\log\debug.h"
-#include "logbook.h"
-
 
 adm_debug_fnc_createMovingGroupMarkers = {
     params ["_group"];
@@ -255,7 +253,7 @@ adm_debug_fnc_createCampPathMarkers = {
         //DEBUG("admiral.debug",FMT_2("Created line marker between '%1' and '%2' path positions for camp path '%3'.",_fromPos,_toPos,_path));
     };
     _endTriggerMarker = [GET_PATH_END_TRIGGER(_path), "ColorOrange"] call adm_debug_fnc_createTriggerMarker;
-    SET_PATH_DEBUG_MARKERS(_path,AS_ARRAY_2([_lineMarkers, _endTriggerMarker]));
+    SET_PATH_DEBUG_MARKERS(_path,AS_ARRAY_2([_lineMarkers,_endTriggerMarker]));
     //DEBUG("admiral.debug",FMT_1("Created end trigger marker for camp path '%1'.",_path));
 };
 

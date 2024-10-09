@@ -1,8 +1,7 @@
+#include "script_component.hpp"
 #include "admiral_macros.h"
 #include "admiral_modules_macros.h"
-
 #include "\userconfig\admiral\log\zone.h"
-#include "logbook.h"
 
 adm_zone_fnc_init = {
     adm_zones = [];
@@ -86,7 +85,7 @@ adm_zone_fnc_initZoneName = {
     if (_zoneName != "") then {
         _zone call compile format ["%1 = _this;", _zoneName];
     };
-    
+
 };
 
 adm_zone_fnc_setZoneValueFromConfig = {

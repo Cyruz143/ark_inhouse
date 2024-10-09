@@ -1,8 +1,5 @@
-#include "admiral_macros.h"
-
+#include "script_component.hpp"
 #include "\userconfig\admiral\log\common.h"
-#include "logbook.h"
-
 
 adm_common_fnc_placeMan = {
     params ["_position","_group","_unitClassNames","_skillArray",["_posSpecial","NONE"]];
@@ -21,7 +18,7 @@ adm_common_fnc_placeMan = {
     private _unit = _group createUnit [_className, _position, [], 0, _posSpecial];
     if (isNull _unit) exitWith {
         private _errorMessage = format ["Failed to create unit '%1' at position '%2', in group '%3' with classname '%4' and classNameArguments '%5'!",_unit,_position,_group,_className,_classNameArguments];
-        ERROR("admiral.common.create",_errorMessage);
+        ERROR_1("admiral.common.create: %1",_errorMessage);
         if (hasInterface) then {
             systemChat ("[Admiral] " + _errorMessage);
         };
@@ -59,7 +56,7 @@ adm_common_fnc_placeVehicle = {
     clearWeaponCargoGlobal _vehicle;
     clearItemCargoGlobal _vehicle;
     clearBackpackCargoGlobal _vehicle;
-    DEBUG("admiral.common.create",FMT_4("Created vehicle '%1' at position '%2', with classname '%3' and '%4'.",_vehicle,_vehiclePosition,_className,_classNameArguments));
+    //DEBUG("admiral.common.create",FMT_4("Created vehicle '%1' at position '%2', with classname '%3' and '%4'.",_vehicle,_vehiclePosition,_className,_classNameArguments));
 
     _vehicle;
 };
@@ -82,7 +79,7 @@ adm_common_fnc_spawnCrew = {
             if (_canSpawnFfvCrew && {_personTurret}) exitWith { _turretsToFill pushBackUnique _turret };
         };
     } forEach fullCrew [_vehicle, "", true];
-    DEBUG("admiral.common.create",FMT_2("Creating crew for '%1' with turrents '%2'.",_vehicle,_turretsToFill));
+    //DEBUG("admiral.common.create",FMT_2("Creating crew for '%1' with turrents '%2'.",_vehicle,_turretsToFill));
     {
         private _crewman = [getPosATL _vehicle, _group, _crewClassNames, _skillArray] call adm_common_fnc_placeMan;
         //DEBUG("admiral.common.create",FMT_3("Created crew '%1' for turret '%2' in '%3'.",_crewman,_x,_vehicle));
@@ -238,7 +235,7 @@ adm_common_fnc_createWaypoint = {
     _waypoint setWaypointCombatMode _mode;
 
     private _groupType = _group getVariable ["adm_group_type", GROUP_TYPE_INF];
-    private _radius = if (_groupType isEqualTo GROUP_TYPE_INF) then { 50 } else { 250 };
+    private _radius = [250, 50] select (_groupType isEqualTo GROUP_TYPE_INF);
     _waypoint setWaypointCompletionRadius _radius;
 
     //DEBUG("admiral.common.create",FMT_6("Created waypoint '%1' at position '%2' for group '%3', with type '%4', behaviour '%5' and combat mode '%6'.",_waypoint,_wpArray,_group,_type,_behaviour,_mode));
@@ -406,7 +403,7 @@ adm_common_fnc_isPlayerNearTrigger = {
 
     private ["_width", "_height", "_longestAxis"];
     SELECT_2(triggerArea _trigger,_width,_height);
-    _longestAxis = if (_width > _height) then {_width} else {_height};
+    _longestAxis = [_height, _width] select (_width > _height);
 
     [_trigger, _longestAxis + _distance] call adm_common_fnc_isPlayersInRange;
 };

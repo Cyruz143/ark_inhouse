@@ -1,8 +1,5 @@
-#include "admiral_macros.h"
-
+#include "script_component.hpp"
 #include "\userconfig\admiral\log\hc.h"
-#include "logbook.h"
-
 
 adm_hc_fnc_executeIfHc = {
     FUN_ARGS_2(_arguments,_code);
@@ -75,10 +72,10 @@ adm_hc_fnc_init = {
             [] call adm_hc_initAdmiralGroupTransfer;
         };
         [] call compile preprocessFileLineNumbers ADDON_PATH(admiral_postinit_server.sqf);
-        //INFO("admiral.hc",FMT_1("Admiral version '%1' started successfully on server!",STR_ADMIRAL_VERSION));
+        INFO_1("Admiral HC: Admiral version %1 started successfully on server!",STR_ADMIRAL_VERSION);
     };
     if ([] call adm_hc_fnc_isHc) then {
         [] call compile preprocessFileLineNumbers ADDON_PATH(admiral_postinit_hc.sqf);
-        //INFO("admiral.hc",FMT_2("Admiral version '%1' started successfully on player '%2' as Headless Client!",STR_ADMIRAL_VERSION,adm_hc_unit));
+        INFO_2("Admiral HC: Admiral version %1 started successfully on player %2 as Headless Client!",STR_ADMIRAL_VERSION,adm_hc_unit);
     };
 };

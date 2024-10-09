@@ -1,8 +1,5 @@
-#include "admiral_macros.h"
-
+#include "script_component.hpp"
 #include "\userconfig\admiral\log\cqc.h"
-#include "logbook.h"
-
 
 adm_cqc_fnc_placeMan = {
     params ["_position","_group","_unitTemplate","_zoneTemplate","_unitType"];
@@ -80,7 +77,7 @@ adm_cqc_fnc_getBuildingCapacityPositions = {
     private _newPositions = [];
     for "_i" from 1 to _capacity do {
         private _randomPos = selectRandom _buildingPositions;
-        PUSH(_newPositions, _randomPos);
+        PUSH(_newPositions,_randomPos);
         _buildingPositions = _buildingPositions - [_randomPos];
     };
 
@@ -183,7 +180,7 @@ adm_cqc_fnc_spawnGarrison = {
         };
     } forEach _buildings;
     ["cqc.spawned.groups", [_spawnedGroups, _zone]] call adm_event_fnc_emitEvent;
-    //INFO("admiral.cqc",FMT_3("CQC Zone '%1' spawned '%2' unit(s) in '%3' group(s).",GET_ZONE_ID(_zone),_currentAmount,count _spawnedGroups));
+    INFO_3("Admiral CQC: CQC Zone %1 spawned %2 unit(s) in %3 group(s).",GET_ZONE_ID(_zone),_currentAmount,count _spawnedGroups);
 
     _spawnedGroups;
 };
@@ -299,7 +296,7 @@ adm_cqc_fnc_initZone = {
     private _spawnedGroups = [_zone] call adm_cqc_fnc_spawnGarrison;
     SET_ZONE_SPAWNED_GROUPS(_zone,_spawnedGroups);
     [_zone] call adm_cqc_fnc_forceFire;
-    //INFO("admiral.cqc",FMT_1("CQC Zone '%1' has been succesfully initialized.",GET_ZONE_ID(_zone)));
+    INFO_1("Admiral CQC: CQC Zone %1 has been succesfully initialized.",GET_ZONE_ID(_zone));
 };
 
 adm_cqc_fnc_getAliveGroups = {

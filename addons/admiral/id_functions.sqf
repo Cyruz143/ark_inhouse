@@ -1,8 +1,5 @@
-#include "admiral_macros.h"
-
+#include "script_component.hpp"
 #include "\userconfig\admiral\log\id.h"
-#include "logbook.h"
-
 
 adm_id_fnc_init = {
     adm_id_current = 0;

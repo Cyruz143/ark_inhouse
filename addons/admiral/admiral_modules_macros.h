@@ -24,8 +24,6 @@
 #define PATROL_SPAWN_CHANCE_ARG_CLASS       Admiral_PatrolSpawnChance
 #define ARMOUR_SPAWN_CHANCE_ARG_CLASS       Admiral_ArmourSpawnChance
 
-#define QUOTE(VAR) #VAR
-
 #define DEFAULT_ARGS [ \
     [QUOTE(ZONE_NAME_ARG_CLASS), "name"], \
     [QUOTE(UNIT_TEMPLATE_ARG_CLASS), "unitTemplate"], \

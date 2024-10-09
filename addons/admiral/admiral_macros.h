@@ -248,7 +248,7 @@
 // Example:
 //      GIVEN:
 //      WHEN:
-//          PVT_3(_unit,_group,_trigger); 
+//          PVT_3(_unit,_group,_trigger);
 //      THEN:
 //          private ["_unit","_group","_trigger"];
 #define PVT_1(VAR1) private #VAR1
@@ -267,7 +267,7 @@
 //      GIVEN:
 //          _strings = ["unit", "group", "trigger"];
 //      WHEN:
-//          SELECT_3(_strings,_unit,_group,_trigger); 
+//          SELECT_3(_strings,_unit,_group,_trigger);
 //      THEN:
 //          _unit == "unit";
 //          _group == "group";
@@ -368,17 +368,6 @@
 #define FUN_ARGS_9(VAR1,VAR2,VAR3,VAR4,VAR5,VAR6,VAR7,VAR8,VAR9) \
     DECLARE_9(_this,VAR1,VAR2,VAR3,VAR4,VAR5,VAR6,VAR7,VAR8,VAR9)
 
-// Adds a value to the end of an array.
-// Example:
-//      GIVEN:
-//          _numbers = [1, 3, 5, 1];
-//          _number = 1;
-//      WHEN:
-//          PUSH(_numbers, _number);
-//      THEN:
-//          _numbers == [1, 3, 5, 1, 1];
-#define PUSH(ARRAY,VAL) (ARRAY) set [count (ARRAY), (VAL)]
-
 // Adds all values from one array to another.
 // Example:
 //      GIVEN:
@@ -411,7 +400,7 @@
 //          _otherNumbers = [1, 2, 3, 6, 8];
 //          _condition = {_x % 2 == 0};
 //      WHEN:
-//          
+//
 //      THEN:
 //          FIND(_numbers,_condition) == 2;
 #define FIRST(FROM,COND) { if (call COND) exitWith {_x}; } forEach (FROM)
@@ -425,26 +414,6 @@
 //      THEN:
 //          _random == 'AWARE' or _random == 'AWARE'
 #define SELECT_RAND(ARRAY) selectRandom (ARRAY)
-
-// Adds 1 to the variable.
-// Example:
-//      GIVEN:
-//          _i = 0;
-//      WHEN:
-//          INC(_i);
-//      THEN:
-//          _i == 1;
-#define INC(VAR) VAR = VAR + 1
-
-// Subtracts 1 from the variable.
-// Example:
-//      GIVEN:
-//          _i = 3;
-//      WHEN:
-//          DEC(_i);
-//      THEN:
-//          _i == 2;
-#define DEC(VAR) VAR = VAR - 1
 
 // Creates an array from given arguments.
 // Example:

@@ -1,7 +1,6 @@
+#include "script_component.hpp"
 #include "admiral_macros.h"
-
 #include "\userconfig\admiral\log\patrol.h"
-#include "logbook.h"
 
 
 adm_patrol_fnc_placeMan = {
@@ -67,13 +66,13 @@ adm_patrol_fnc_moveZone = {
 
     [_zone, _position, _newArea] call adm_patrol_fnc_updateZonePositionAndArea;
     [_zone] call adm_patrol_fnc_moveUpdateAllGroupWaypoints;
-    //INFO("admiral.patrol.move",FMT_2("Patrol zone '%1' was moved to position '%2'.",GET_ZONE_ID(_zone),_position));
+    INFO_2("Admiral Patrol Move: Patrol zone %1 was moved to position %2.",GET_ZONE_ID(_zone),_position);
 };
 
 adm_patrol_fnc_followZone = {
     FUN_ARGS_4(_zone,_object,_delay,_newArea);
 
-    //INFO("admiral.patrol.follow",FMT_3("Patrol zone '%1' has started following object '%2' with update delay '%3'.",GET_ZONE_ID(_zone),_object,_delay));
+    INFO_3("Admiral Patrol Follow: Patrol zone %1 has started following object %2 with update delay %3.",GET_ZONE_ID(_zone),_object,_delay);
     SET_PATROL_FOLLOWING(_zone,true);
     [_zone, _object, _delay, _newArea] spawn {
         FUN_ARGS_4(_zone,_object,_delay,_newArea);
@@ -85,7 +84,7 @@ adm_patrol_fnc_followZone = {
             sleep _delay;
             !IS_PATROL_FOLLOWING(_zone);
         };
-        //INFO("admiral.patrol.follow",FMT_2("Patrol zone '%1' has stopped following object '%2'.",GET_ZONE_ID(_zone),_object));
+        INFO_2("Admiral Patrol Follow: Patrol zone %1 has stopped following object %2.",GET_ZONE_ID(_zone),_object);
     };
 };
 
@@ -96,7 +95,7 @@ adm_patrol_fnc_stopFollowZone = {
         SET_PATROL_FOLLOWING(_zone,false);
         [_zone] call adm_patrol_fnc_moveUpdateAllGroupWaypoints;
     };
-    //INFO("admiral.patrol.follow",FMT_1("Patrol zone '%1' has stopped following.",GET_ZONE_ID(_zone)));
+    INFO_1("Admiral Patrol Follow: Patrol zone %1 has stopped following.",GET_ZONE_ID(_zone));
 };
 
 adm_patrol_fnc_updateZonePositionAndArea = {
@@ -190,7 +189,7 @@ adm_patrol_fnc_spawnGroups = {
         adm_patrol_infGroups pushBack _group;
         _zoneInfGroups pushBack _group;
     };
-    //INFO("admiral.patrol",FMT_2("Patrol Zone '%1' spawned '%2' infantry group(s).",GET_ZONE_ID(_zone),count _spawnedGroups));
+    INFO_2("Admiral Patrol: Patrol Zone %1 spawned %2 infantry group(s).",GET_ZONE_ID(_zone),count _spawnedGroups);
 
     _spawnedGroups = [];
     for "_i" from 1 to (_pool select 1) do {
@@ -199,7 +198,7 @@ adm_patrol_fnc_spawnGroups = {
         adm_patrol_techGroups pushBack _group;
         _zoneTechGroups pushBack _group;
     };
-    //INFO("admiral.patrol",FMT_2("Patrol Zone '%1' spawned '%2' technical group(s).",GET_ZONE_ID(_zone),count _spawnedGroups));
+    INFO_2("Admiral Patrol: Patrol Zone %1 spawned %2 technical group(s).",GET_ZONE_ID(_zone),count _spawnedGroups);
 
     _spawnedGroups = [];
     for "_i" from 1 to (_pool select 2) do {
@@ -208,7 +207,8 @@ adm_patrol_fnc_spawnGroups = {
         adm_patrol_armourGroups pushBack _group;
         _zoneArmourGroups pushBack _group;
     };
-    //INFO("admiral.patrol",FMT_2("Patrol Zone '%1' spawned '%2' armour group(s).",GET_ZONE_ID(_zone),count _spawnedGroups));
+    INFO_2("Admiral Patrol: Patrol Zone %1 spawned %2 armour group(s).",GET_ZONE_ID(_zone),count _spawnedGroups);
+
     ["patrol.spawned.groups", [_zoneInfGroups, _zoneTechGroups, _zoneArmourGroups, _zone]] call adm_event_fnc_emitEvent;
 };
 
@@ -217,7 +217,7 @@ adm_patrol_fnc_initZone = {
 
     adm_patrol_zones pushBack _zone;
     [_zone] call adm_patrol_fnc_spawnGroups;
-    //INFO("admiral.patrol",FMT_1("Patrol Zone '%1' has been succesfully initialized.",GET_ZONE_ID(_zone)));
+    INFO_1("Admiral Patrol: Patrol Zone %1 has been succesfully initialized.",GET_ZONE_ID(_zone));
 };
 
 adm_patrol_fnc_getAliveInfGroups = {

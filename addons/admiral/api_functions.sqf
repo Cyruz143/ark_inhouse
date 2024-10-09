@@ -1,8 +1,5 @@
-#include "admiral_macros.h"
-
+#include "script_component.hpp"
 #include "\userconfig\admiral\log\api.h"
-#include "logbook.h"
-
 
 // HC
 
@@ -318,7 +315,7 @@ adm_api_fnc_getPatrolArmGroups = {
 
 /**
  * Returns all groups spawned by Patrol zones. This includes the infantry,
- * technical and armour groups. 
+ * technical and armour groups.
  * @return Array of groups
  */
 adm_api_fnc_getPatrolGroups = {
@@ -351,7 +348,7 @@ adm_api_fnc_getPatrolArmUnits = {
 
 /**
  * Returns all units spawned by Patrol zones. This includes the units of infantry,
- * technical and armour groups. 
+ * technical and armour groups.
  * @return Array of units
  */
 adm_api_fnc_getPatrolUnits = {
@@ -398,7 +395,7 @@ adm_api_fnc_getCampArmGroups = {
 
 /**
  * Returns all groups spawned by Camp zones. This includes the infantry,
- * technical and armour groups. 
+ * technical and armour groups.
  * @return Array of groups
  */
 adm_api_fnc_getCampGroups = {
@@ -431,7 +428,7 @@ adm_api_fnc_getCampArmUnits = {
 
 /**
  * Returns all units spawned by Camp zones. This includes the units of infantry,
- * technical and armour groups. 
+ * technical and armour groups.
  * @return Array of units
  */
 adm_api_fnc_getCampUnits = {
