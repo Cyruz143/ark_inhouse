@@ -386,7 +386,7 @@ class PlankSettingsDialog {
         idc = SETTINGS_FORT_COMBO_IDC;
 
         x = QUOTE(CONTROL_X);
-        y = CONTROL_HALF_Y(FORT_LIST_ROW_INDEX);
+        y = QUOTE(CONTROL_HALF_Y(FORT_LIST_ROW_INDEX));
 
         onLBSelChanged = "_this call plank_ui_fnc_selectionChanged;";
     };
@@ -395,7 +395,7 @@ class PlankSettingsDialog {
         idc = SETTINGS_CONFIRM_BUTTON_IDC;
 
         x = QUOTE(CONFIRM_BUTTON_X);
-        y = CONTROL_HALF_Y(FORT_CONFIRM_LOCK_ROW_INDEX);
+        y = QUOTE(CONTROL_HALF_Y(FORT_CONFIRM_LOCK_ROW_INDEX));
         w = QUOTE(CONFIRM_BUTTON_W);
         h = QUOTE(RESET_BUTTON_H);
 
@@ -408,7 +408,7 @@ class PlankSettingsDialog {
         idc = SETTINGS_CANCEL_BUTTON_IDC;
 
         x = QUOTE(CANCEL_BUTTON_X);
-        y = CONTROL_HALF_Y(FORT_CONFIRM_LOCK_ROW_INDEX);
+        y = QUOTE(CONTROL_HALF_Y(FORT_CONFIRM_LOCK_ROW_INDEX));
         w = QUOTE(CONFIRM_BUTTON_W);
         h = QUOTE(RESET_BUTTON_H);
 
@@ -421,7 +421,7 @@ class PlankSettingsDialog {
         idc = SETTINGS_LOCK_MODE_BUTTON_IDC;
 
         x = QUOTE(LOCK_BUTTON_X);
-        y = CONTROL_HALF_Y(FORT_CONFIRM_LOCK_ROW_INDEX);
+        y = QUOTE(CONTROL_HALF_Y(FORT_CONFIRM_LOCK_ROW_INDEX));
         w = QUOTE(LOCK_BUTTON_W);
         h = QUOTE(RESET_BUTTON_H);
 
@@ -434,8 +434,8 @@ class PlankSettingsDialog {
         idc = SETTINGS_PICKUP_BUTTON_IDC;
 
         x = QUOTE(PICKUP_BUTTON_X);
-        y = CONTROL_HALF_Y(FORT_CONFIRM_LOCK_ROW_INDEX);
-        w = QUOTE(PICKUP_BUTTON_W)
+        y = QUOTE(CONTROL_HALF_Y(FORT_CONFIRM_LOCK_ROW_INDEX));
+        w = QUOTE(PICKUP_BUTTON_W);
         h = QUOTE(RESET_BUTTON_H);
 
         tooltip = "Pick up your previously placed object (D).";
@@ -445,13 +445,13 @@ class PlankSettingsDialog {
 
     class HeightTitle : TitleBase {
         idc = SETTINGS_HEIGHT_TITLE_IDC;
-        y = CONTROL_Y(HEIGHT_ROW_INDEX);
+        y = QUOTE(CONTROL_Y(HEIGHT_ROW_INDEX));
         text = "Height";
     };
 
     class HeightShortcutPicture : ShortcutPicture {
         idc = SETTINGS_HEIGHT_SHORTCUT_PICTURE_IDC;
-        y = SHORTCUT_PICTURE_Y(HEIGHT_ROW_INDEX);
+        y = QUOTE(SHORTCUT_PICTURE_Y(HEIGHT_ROW_INDEX));
 
         tooltip = "Hold Left mouse button and move mouse up/down.";
         text = ADDON_PATH(resources\vertical.paa);
@@ -460,72 +460,72 @@ class PlankSettingsDialog {
     class VerticalModeCheckbox : VerticalModeCheckboxBase {
         idc = SETTINGS_VERTICAL_MODE_CHECKBOX_IDC;
 
-        x = VERTICAL_MODE_CHECKBOX_X;
-        y = VERTICAL_MODE_CHECKBOX_Y;
-        w = VERTICAL_MODE_CHECKBOX_W;
-        h = VERTICAL_MODE_CHECKBOX_H;
+        x = QUOTE(VERTICAL_MODE_CHECKBOX_X);
+        y = QUOTE(VERTICAL_MODE_CHECKBOX_Y);
+        w = QUOTE(VERTICAL_MODE_CHECKBOX_W);
+        h = QUOTE(VERTICAL_MODE_CHECKBOX_H);
 
         action = "[] call plank_ui_fnc_heightModeButtonClick";
     };
 
     class HeightSlider : RscSliderBase {
         idc = SETTINGS_HEIGHT_SLIDER_IDC;
-        x = CONTROL_X;
-        y = SLIDER_Y(HEIGHT_ROW_INDEX);
+        x = QUOTE(CONTROL_X);
+        y = QUOTE(SLIDER_Y(HEIGHT_ROW_INDEX));
         onSliderPosChanged = "[_this select 1] call plank_ui_fnc_updateHeightSliderValue";
     };
 
     class HeightValue : ValueBase {
         idc = SETTINGS_HEIGHT_VALUE_IDC;
-        y = SLIDER_Y(HEIGHT_ROW_INDEX);
+        y = QUOTE(SLIDER_Y(HEIGHT_ROW_INDEX));
     };
 
     class HeightResetButton : ResetButtonBase {
         idc = SETTINGS_HEIGHT_RESET_BUTTON_IDC;
-        y = SLIDER_Y(HEIGHT_ROW_INDEX);
+        y = QUOTE(SLIDER_Y(HEIGHT_ROW_INDEX));
         action = "[] call plank_ui_fnc_resetHeightSlider";
     };
 
     class HorizontalOffsetTitle : TitleBase {
         idc = SETTINGS_HORIZONTAL_OFFSET_TITLE_IDC;
-        y = CONTROL_Y(HORIZONTAL_OFFSET_ROW_INDEX);
+        y = QUOTE(CONTROL_Y(HORIZONTAL_OFFSET_ROW_INDEX));
         text = "Horizontal";
     };
 
     class HorizontalOffsetShortcutPicture : ShortcutPicture {
         idc = SETTINGS_HORIZONTAL_OFFSET_SHORTCUT_PICTURE_IDC;
-        y = SHORTCUT_PICTURE_Y(HORIZONTAL_OFFSET_ROW_INDEX);
+        y = QUOTE(SHORTCUT_PICTURE_Y(HORIZONTAL_OFFSET_ROW_INDEX));
 
         tooltip = "Hold Left mouse button and move mouse left/right.";
     };
 
     class HorizontalOffsetSlider : RscSliderBase {
         idc = SETTINGS_HORIZONTAL_OFFSET_SLIDER_IDC;
-        x = CONTROL_X;
-        y = SLIDER_Y(HORIZONTAL_OFFSET_ROW_INDEX);
+        x = QUOTE(CONTROL_X);
+        y = QUOTE(SLIDER_Y(HORIZONTAL_OFFSET_ROW_INDEX));
         onSliderPosChanged = "[_this select 1] call plank_ui_fnc_updateHorizontalOffsetSliderValue";
     };
 
     class HorizontalOffsetValue : ValueBase {
         idc = SETTINGS_HORIZONTAL_OFFSET_VALUE_IDC;
-        y = SLIDER_Y(HORIZONTAL_OFFSET_ROW_INDEX);
+        y = QUOTE(SLIDER_Y(HORIZONTAL_OFFSET_ROW_INDEX));
     };
 
     class HorizontalOffsetResetButton : ResetButtonBase {
         idc = SETTINGS_HORIZONTAL_OFFSET_RESET_BUTTON_IDC;
-        y = SLIDER_Y(HORIZONTAL_OFFSET_ROW_INDEX);
+        y = QUOTE(SLIDER_Y(HORIZONTAL_OFFSET_ROW_INDEX));
         action = "[] call plank_ui_fnc_resetHorizontalOffsetSlider";
     };
 
     class DistanceTitle : TitleBase {
         idc = SETTINGS_DISTANCE_TITLE_IDC;
-        y = CONTROL_Y(DISTANCE_ROW_INDEX);
+        y = QUOTE(CONTROL_Y(DISTANCE_ROW_INDEX));
         text = "Distance";
     };
 
     class DistanceShortcutPicture : ShortcutPicture {
         idc = SETTINGS_DISTANCE_SHORTCUT_PICTURE_IDC;
-        y = SHORTCUT_PICTURE_Y(DISTANCE_ROW_INDEX);
+        y = QUOTE(SHORTCUT_PICTURE_Y(DISTANCE_ROW_INDEX));
 
         tooltip = "Use mouse scroll wheel.";
         text = ADDON_PATH(resources\scroll.paa);
@@ -533,36 +533,36 @@ class PlankSettingsDialog {
 
     class DistanceSlider : RscSliderBase {
         idc = SETTINGS_DISTANCE_SLIDER_IDC;
-        x = CONTROL_X;
-        y = SLIDER_Y(DISTANCE_ROW_INDEX);
+        x = QUOTE(CONTROL_X);
+        y = QUOTE(SLIDER_Y(DISTANCE_ROW_INDEX));
         onSliderPosChanged = "[_this select 1] call plank_ui_fnc_updateDistanceSliderValue";
     };
 
     class DistanceValue : ValueBase {
         idc = SETTINGS_DISTANCE_VALUE_IDC;
-        y = SLIDER_Y(DISTANCE_ROW_INDEX);
+        y = QUOTE(SLIDER_Y(DISTANCE_ROW_INDEX));
     };
 
     class DistanceResetButton : ResetButtonBase {
         idc = SETTINGS_DISTANCE_RESET_BUTTON_IDC;
-        y = SLIDER_Y(DISTANCE_ROW_INDEX);
+        y = QUOTE(SLIDER_Y(DISTANCE_ROW_INDEX));
         action = "[] call plank_ui_fnc_resetDistanceSlider";
     };
 
     class PitchTitle : TitleBase {
         idc = SETTINGS_PITCH_TITLE_IDC;
-        y = CONTROL_Y(PITCH_ROW_INDEX);
+        y = QUOTE(CONTROL_Y(PITCH_ROW_INDEX));
         text = "Pitch";
     };
 
     class PitchShortcutText : ShortcutText {
         idc = SETTINGS_PITCH_SHORTCUT_TEXT_IDC;
-        y = CONTROL_Y(PITCH_ROW_INDEX);
+        y = QUOTE(CONTROL_Y(PITCH_ROW_INDEX));
     };
 
     class PitchShortcutPicture : ShortcutPicture {
         idc = SETTINGS_PITCH_SHORTCUT_PICTURE_IDC;
-        y = SHORTCUT_PICTURE_Y(PITCH_ROW_INDEX);
+        y = QUOTE(SHORTCUT_PICTURE_Y(PITCH_ROW_INDEX));
 
         tooltip = "Hold Shift/Ctrl/Alt and Left mouse button and move mouse up/down.";
         text = ADDON_PATH(resources\vertical.paa);
@@ -570,72 +570,72 @@ class PlankSettingsDialog {
 
     class PitchSlider : RscSliderBase {
         idc = SETTINGS_PITCH_SLIDER_IDC;
-        x = CONTROL_X;
-        y = SLIDER_Y(PITCH_ROW_INDEX);
+        x = QUOTE(CONTROL_X);
+        y = QUOTE(SLIDER_Y(PITCH_ROW_INDEX));
         onSliderPosChanged = "[_this select 1] call plank_ui_fnc_updatePitchSliderValue";
     };
 
     class PitchValue : ValueBase {
         idc = SETTINGS_PITCH_VALUE_IDC;
-        y = SLIDER_Y(PITCH_ROW_INDEX);
+        y = QUOTE(SLIDER_Y(PITCH_ROW_INDEX));
     };
 
     class PitchResetButton : ResetButtonBase {
         idc = SETTINGS_PITCH_RESET_BUTTON_IDC;
-        y = SLIDER_Y(PITCH_ROW_INDEX);
+        y = QUOTE(SLIDER_Y(PITCH_ROW_INDEX));
         action = "[] call plank_ui_fnc_resetPitchSlider";
     };
 
     class BankTitle : TitleBase {
         idc = SETTINGS_BANK_TITLE_IDC;
-        y = CONTROL_Y(BANK_ROW_INDEX);
+        y = QUOTE(CONTROL_Y(BANK_ROW_INDEX));
         text = "Bank";
     };
 
     class BankShortcutText : ShortcutText {
         idc = SETTINGS_BANK_SHORTCUT_TEXT_IDC;
-        y = CONTROL_Y(BANK_ROW_INDEX);
+        y = QUOTE(CONTROL_Y(BANK_ROW_INDEX));
     };
 
     class BankShortcutPicture : ShortcutPicture {
         idc = SETTINGS_BANK_SHORTCUT_PICTURE_IDC;
-        y = SHORTCUT_PICTURE_Y(BANK_ROW_INDEX);
+        y = QUOTE(SHORTCUT_PICTURE_Y(BANK_ROW_INDEX));
 
         tooltip = "Hold Shift/Ctrl/Alt and Left mouse button and move mouse left/right.";
     };
 
     class BankSlider : RscSliderBase {
         idc = SETTINGS_BANK_SLIDER_IDC;
-        x = CONTROL_X;
-        y = SLIDER_Y(BANK_ROW_INDEX);
+        x = QUOTE(CONTROL_X);
+        y = QUOTE(SLIDER_Y(BANK_ROW_INDEX));
         onSliderPosChanged = "[_this select 1] call plank_ui_fnc_updateBankSliderValue";
     };
 
     class BankValue : ValueBase {
         idc = SETTINGS_BANK_VALUE_IDC;
-        y = SLIDER_Y(BANK_ROW_INDEX);
+        y = QUOTE(SLIDER_Y(BANK_ROW_INDEX));
     };
 
     class BankResetButton : ResetButtonBase {
         idc = SETTINGS_BANK_RESET_BUTTON_IDC;
-        y = SLIDER_Y(BANK_ROW_INDEX);
+        y = QUOTE(SLIDER_Y(BANK_ROW_INDEX));
         action = "[] call plank_ui_fnc_resetBankSlider";
     };
 
     class DirectionTitle : TitleBase {
         idc = SETTINGS_DIRECTION_TITLE_IDC;
-        y = CONTROL_Y(DIRECTION_ROW_INDEX);
+        y = QUOTE(CONTROL_Y(DIRECTION_ROW_INDEX));
         text = "Direction";
     };
 
     class DirectionShortcutText : ShortcutText {
         idc = SETTINGS_DIRECTION_SHORTCUT_TEXT_IDC;
-        y = CONTROL_Y(DIRECTION_ROW_INDEX);
+        y = QUOTE(CONTROL_Y(DIRECTION_ROW_INDEX));
     };
 
     class DirectionShortcutPicture : ShortcutPicture {
         idc = SETTINGS_DIRECTION_SHORTCUT_PICTURE_IDC;
-        y = SHORTCUT_PICTURE_Y(DIRECTION_ROW_INDEX);
+        y = QUOTE(SHORTCUT_PICTURE_Y(DIRECTION_ROW_INDEX));
 
         tooltip = "Hold Shift/Ctrl/Alt and use mouse scroll wheel.";
         text = ADDON_PATH(resources\scroll.paa);
@@ -643,19 +643,19 @@ class PlankSettingsDialog {
 
     class DirectionSlider : RscSliderBase {
         idc = SETTINGS_DIRECTION_SLIDER_IDC;
-        x = CONTROL_X;
-        y = SLIDER_Y(DIRECTION_ROW_INDEX);
+        x = QUOTE(CONTROL_X);
+        y = QUOTE(SLIDER_Y(DIRECTION_ROW_INDEX));
         onSliderPosChanged = "[_this select 1] call plank_ui_fnc_updateDirectiontSliderValue";
     };
 
     class DirectionValue : ValueBase {
         idc = SETTINGS_DIRECTION_VALUE_IDC;
-        y = SLIDER_Y(DIRECTION_ROW_INDEX);
+        y = QUOTE(SLIDER_Y(DIRECTION_ROW_INDEX));
     };
 
     class DirectionResetButton : ResetButtonBase {
         idc = SETTINGS_DIRECTION_RESET_BUTTON_IDC;
-        y = SLIDER_Y(DIRECTION_ROW_INDEX);
+        y = QUOTE(SLIDER_Y(DIRECTION_ROW_INDEX));
         action = "[] call plank_ui_fnc_resetDirectionSlider";
     };
 
@@ -665,9 +665,9 @@ class PlankSettingsDialog {
         colorBackground[] = DIALOG_BG_COLOR;
         colorText[] = {0, 0, 0, 0};
 
-        x = DIALOG_X;
-        y = DIALOG_Y;
-        h = DIALOG_H;
-        w = DIALOG_W;
+        x = QUOTE(DIALOG_X);
+        y = QUOTE(DIALOG_Y);
+        h = QUOTE(DIALOG_H);
+        w = QUOTE(DIALOG_W);
     };
 };
