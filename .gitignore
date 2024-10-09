@@ -1,1 +1,16 @@
-/addons/*.pbo
+# Arma
+*.pbo
+texHeaders.bin
+*.biprivatekey
+keys/*
+
+# Releases
+releases/*
+hemtt
+hemtt.exe
+.hemttout
+symbols/*
+.hemtt/local
+*.sqfc
+ArmaScriptCompiler.exe
+*.zip

@@ -1,9 +1,11 @@
 #define MAINPREFIX x
 #define PREFIX ark
 
-#define MAJOR 2
-#define MINOR 8
-#define PATCH 0
+#include "script_version.hpp"
+
+#define VERSION MAJOR.MINOR.PATCH
+#define VERSION_AR MAJOR,MINOR,PATCH
+#define VERSION_CONFIG version = VERSION; versionStr = QUOTE(VERSION); versionAr[] = {VERSION_AR}
 
 #define REQUIRED_VERSION 2.10
 
