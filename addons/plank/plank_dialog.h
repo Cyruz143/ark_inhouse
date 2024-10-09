@@ -73,7 +73,7 @@
 #define EXPORT_BACKGROUND_H                     RESET_BUTTON_H + DIALOG_PADDING_LEFT
 
 #define CANCEL_BUTTON_X                         CONTROL_RIGHT_X - CONFIRM_BUTTON_W
-#define CONFIRM_BUTTON_X                        QUOTE(CANCEL_BUTTON_X) - TO_REAL_W(0.002) - CONFIRM_BUTTON_W
+#define CONFIRM_BUTTON_X                       CANCEL_BUTTON_X - TO_REAL_W(0.002) - CONFIRM_BUTTON_W
 #define TITLE_X                                 CONTROL_X - TO_REAL_W(0.0035)
 #define SHORTCUT_TEXT_X                         TITLE_X + TITLE_BASE_W + TO_REAL_W(0.002)
 #define SHORTCUT_PICTURE_X                      SHORTCUT_TEXT_X + SHORTCUT_TEXT_W - TO_REAL_W(0.003)
@@ -145,7 +145,6 @@ class PlankSettingsDialog {
        "DirectionResetButton",
        "DirectionValue"
     };
-
     class RscBase {
         idc = -1;
         access = 0;
@@ -229,7 +228,7 @@ class PlankSettingsDialog {
         h = QUOTE(ROW_BASE_H);
 
         text = "Ctrl/Shift/Alt +";
-        sizeEx = QUOTE(FONT_SIZE) * 0.9;
+        sizeEx = QUOTE(FONT_SIZE * 0.9);
     };
 
     class ShortcutPicture : RscBase {
@@ -253,7 +252,6 @@ class PlankSettingsDialog {
         h = QUOTE(VALUE_BASE_H);
         text = "-10.00001";
     };
-
     class ResetButtonBase : RscButton {
         w = QUOTE(SLIDER_BASE_H);
         h = QUOTE(SLIDER_BASE_H);
@@ -274,7 +272,7 @@ class PlankSettingsDialog {
         w = QUOTE(COMBO_W);
         h = QUOTE(TITLE_BASE_H);
 
-        wholeHeight = QUOTE(DIALOG_H) * 0.75;
+        wholeHeight = QUOTE(DIALOG_H * 0.75);
         maxHistoryDelay = 1;
 
         colorBackground[] = {0.05, 0.05, 0.05, 1};
@@ -324,7 +322,7 @@ class PlankSettingsDialog {
     class VerticalModeCheckboxBase : RscBase {
         type = 77;
 
-        tooltip = "Toggle vertical mode (V)"; 
+        tooltip = "Toggle vertical mode (V)";
 
         checked = 1;
 
@@ -356,7 +354,7 @@ class PlankSettingsDialog {
         soundPush[] = {"", 0.09, 1};
         soundEscape[] = {"", 0.09, 1};
     };
-//--------------------------
+
     class ExportBackground : RscBase {
         idc = SETTINGS_EXPORT_BACKGROUND_IDC;
 
@@ -383,7 +381,7 @@ class PlankSettingsDialog {
         action = "[] call plank_ui_fnc_exportButtonClick";
         tooltip = "Exports player placed objects as SQF script to clipboard. Only works in SP.";
     };
-//--------------------------
+
     class FortCombo : RscCombo {
         idc = SETTINGS_FORT_COMBO_IDC;
 
@@ -392,7 +390,7 @@ class PlankSettingsDialog {
 
         onLBSelChanged = "_this call plank_ui_fnc_selectionChanged;";
     };
-//--------------------------
+
     class ConfirmButton : RscButton {
         idc = SETTINGS_CONFIRM_BUTTON_IDC;
 
@@ -444,7 +442,7 @@ class PlankSettingsDialog {
         text = "Pick up";
         action = "[] call plank_ui_fnc_pickupButtonClick";
     };
-//--------------------------
+
     class HeightTitle : TitleBase {
         idc = SETTINGS_HEIGHT_TITLE_IDC;
         y = CONTROL_Y(HEIGHT_ROW_INDEX);
@@ -476,7 +474,7 @@ class PlankSettingsDialog {
         y = SLIDER_Y(HEIGHT_ROW_INDEX);
         onSliderPosChanged = "[_this select 1] call plank_ui_fnc_updateHeightSliderValue";
     };
-    
+
     class HeightValue : ValueBase {
         idc = SETTINGS_HEIGHT_VALUE_IDC;
         y = SLIDER_Y(HEIGHT_ROW_INDEX);
@@ -487,7 +485,7 @@ class PlankSettingsDialog {
         y = SLIDER_Y(HEIGHT_ROW_INDEX);
         action = "[] call plank_ui_fnc_resetHeightSlider";
     };
-//--------------------------
+
     class HorizontalOffsetTitle : TitleBase {
         idc = SETTINGS_HORIZONTAL_OFFSET_TITLE_IDC;
         y = CONTROL_Y(HORIZONTAL_OFFSET_ROW_INDEX);
@@ -518,7 +516,7 @@ class PlankSettingsDialog {
         y = SLIDER_Y(HORIZONTAL_OFFSET_ROW_INDEX);
         action = "[] call plank_ui_fnc_resetHorizontalOffsetSlider";
     };
-//--------------------------
+
     class DistanceTitle : TitleBase {
         idc = SETTINGS_DISTANCE_TITLE_IDC;
         y = CONTROL_Y(DISTANCE_ROW_INDEX);
@@ -550,7 +548,7 @@ class PlankSettingsDialog {
         y = SLIDER_Y(DISTANCE_ROW_INDEX);
         action = "[] call plank_ui_fnc_resetDistanceSlider";
     };
-//--------------------------
+
     class PitchTitle : TitleBase {
         idc = SETTINGS_PITCH_TITLE_IDC;
         y = CONTROL_Y(PITCH_ROW_INDEX);
@@ -587,7 +585,7 @@ class PlankSettingsDialog {
         y = SLIDER_Y(PITCH_ROW_INDEX);
         action = "[] call plank_ui_fnc_resetPitchSlider";
     };
-//--------------------------
+
     class BankTitle : TitleBase {
         idc = SETTINGS_BANK_TITLE_IDC;
         y = CONTROL_Y(BANK_ROW_INDEX);
@@ -623,7 +621,7 @@ class PlankSettingsDialog {
         y = SLIDER_Y(BANK_ROW_INDEX);
         action = "[] call plank_ui_fnc_resetBankSlider";
     };
-//--------------------------
+
     class DirectionTitle : TitleBase {
         idc = SETTINGS_DIRECTION_TITLE_IDC;
         y = CONTROL_Y(DIRECTION_ROW_INDEX);
@@ -660,7 +658,7 @@ class PlankSettingsDialog {
         y = SLIDER_Y(DIRECTION_ROW_INDEX);
         action = "[] call plank_ui_fnc_resetDirectionSlider";
     };
-//--------------------------
+
     class DialogBackground : RscBase {
         idc = SETTINGS_BACKGROUND_IDC;
 
