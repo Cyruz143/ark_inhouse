@@ -52,7 +52,7 @@ re_interaction_fnc_addInteractions = {
             , _condition
             ] call ace_interact_menu_fnc_createAction;
         [player, 1, ["ACE_SelfActions", "Random Engagements"], _action] call ace_interact_menu_fnc_addActionToObject;
-    } foreach _actions;
+    } forEach _actions;
 
     _action =
         [ "Location Size"
@@ -79,7 +79,7 @@ re_interaction_fnc_addInteractions = {
             , [_x select 1]
             ] call ace_interact_menu_fnc_createAction;
         [player, 1, ["ACE_SelfActions", "Random Engagements", "Location Size"], _action] call ace_interact_menu_fnc_addActionToObject;
-    } foreach _sizes;
+    } forEach _sizes;
 };
 
 re_interaction_fnc_selectLocation = {
@@ -108,7 +108,7 @@ re_fnc_enablePlank = {
                 private _fortIndices = player getVariable ["re_plank_fortIndices", []];
                 {
                     [_unit, _x, _fortCount select _forEachIndex] call plank_api_fnc_addFortification;
-                } foreach _fortIndices;
+                } forEach _fortIndices;
             };
             _unit setVariable ["re_areFortsAssigned", true, true];
         };

@@ -68,7 +68,7 @@ re_fnc_randomizeFactions = {
 };
 
 re_fnc_createLocationMarker = {
-    private _marker = createmarker [re_selectedLocationMarkerName, [0, 0, 0]];
+    private _marker = createMarker [re_selectedLocationMarkerName, [0, 0, 0]];
     _marker setMarkerSize [1, 1];
     _marker setMarkerAlpha 0.5;
     _marker setMarkerShape "ELLIPSE";

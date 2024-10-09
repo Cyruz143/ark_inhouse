@@ -82,7 +82,7 @@ ts_spawn_fnc_activateLocation = {
 };
 
 ts_spawn_fnc_createLocationMarker = {
-    private _marker = createmarker [ts_spawn_selectedLocationMarkerName, [0, 0, 0]];
+    private _marker = createMarker [ts_spawn_selectedLocationMarkerName, [0, 0, 0]];
     _marker setMarkerSize [1, 1];
     _marker setMarkerAlpha 0.5;
     _marker setMarkerShape "ELLIPSE";
@@ -250,7 +250,7 @@ ts_spawn_fnc_createFortifications = {
         _fortificationPosArr deleteAt (_fortificationPosArr find _selectedLocation);
 
         private _fortification = createVehicle [_selectedFortification, _selectedLocation, [], 0, "NONE"];
-        _fortification setVectorDir (getpos _fortification vectorFromTo _position);
+        _fortification setVectorDir (getPos _fortification vectorFromTo _position);
         _fortification setVectorUp surfaceNormal position _fortification;
         _fortification call ts_spawn_fnc_fillFortifications;
         ts_spawn_placedFortifications pushBack _fortification;
@@ -492,7 +492,7 @@ ts_spawn_fnc_ammoCrate = {
         5,
         [],
         {
-            private _pos = ASLtoATL (player modelToWorldVisualWorld [0,1,0]);
+            private _pos = ASLToATL (player modelToWorldVisualWorld [0,1,0]);
             private _box = createVehicle ["gm_AmmoBox_wood_03_empty", _pos, [], 0, "CAN_COLLIDE"];
             _box allowDamage false;
             [_box, ["faction", player getVariable "hull3_faction"], ["gear", "Truck"]] call hull3_unit_fnc_init;
@@ -514,7 +514,7 @@ ts_spawn_fnc_medicalCrate = {
         5,
         [],
         {
-            private _pos = ASLtoATL (player modelToWorldVisualWorld [0,1,0]);
+            private _pos = ASLToATL (player modelToWorldVisualWorld [0,1,0]);
             private _box = createVehicle ["ARK_medicalSupplyCrate", _pos, [], 0, "CAN_COLLIDE"];
             _box allowDamage false;
 

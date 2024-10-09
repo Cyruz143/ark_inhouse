@@ -24,7 +24,7 @@ ark_admin_tools_fnc_chaseAI = {
             };
             {_unit enableAI _x} forEach ["PATH","MOVE"];
             if (_tp) then {
-                private _safePos = (getpos _unit) findEmptyPosition [0, 10, "CAManBase"];
+                private _safePos = (getPos _unit) findEmptyPosition [0, 10, "CAManBase"];
                 if (_safePos isEqualTo []) exitWith {};
                 _unit setPos _safePos;
             };

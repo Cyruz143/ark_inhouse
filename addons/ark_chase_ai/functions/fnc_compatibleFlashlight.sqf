@@ -9,8 +9,8 @@ ark_chase_ai_fnc_compatibleFlashlight = {
         private _pointers = [_wep, "pointer"] call CBA_fnc_compatibleItems;
 
         {
-            if (getNumber (configfile >> "CfgWeapons" >> _x >> "ItemInfo" >> "FlashLight" >> "useFlare") == 1) then {
-                _flashLights pushback _x;
+            if (getNumber (configFile >> "CfgWeapons" >> _x >> "ItemInfo" >> "FlashLight" >> "useFlare") == 1) then {
+                _flashLights pushBack _x;
             };
         } forEach _pointers;
 

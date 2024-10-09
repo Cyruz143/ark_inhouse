@@ -10,15 +10,15 @@ class CfgVehicles {
         class Arguments {
             class Pre_Safety {
                 displayName = "Pre Safety Deploy Factions";
-                description = "The factions which will deploy before safety is off. (WEST, EAST, RESISTANCE, CIVILIAN). Pass as an array of sides, not strings.";
+                description = "The factions which will deploy before safety is off. (west, east, resistance, civilian). Pass as an array of sides, not strings.";
                 typeName = "STRING";
-                defaultValue = "[WEST]";
+                defaultValue = "[west]";
             };
             class Post_Safety {
                 displayName = "Post Safety Deploy Factions";
-                description = "The factions which will deploy after safety is off. (WEST, EAST, RESISTANCE, CIVILIAN). Pass as an array of sides, not strings.";
+                description = "The factions which will deploy after safety is off. (west, east, resistance, civilian). Pass as an array of sides, not strings.";
                 typeName = "STRING";
-                defaultValue = "[EAST]";
+                defaultValue = "[east]";
             };
         };
     };

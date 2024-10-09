@@ -54,7 +54,7 @@ ark_chase_ai_fnc_doMove = {
             _unit setDestination [_targetPos, "LEADER PLANNED", true];
             _unit doMove _targetPos;
             _unit lookAt _target;
-            _unit setVariable ["ark_chase_ai_lastPos", (getposASL _unit)];
+            _unit setVariable ["ark_chase_ai_lastPos", (getPosASL _unit)];
         },
         15,
         [_unit]

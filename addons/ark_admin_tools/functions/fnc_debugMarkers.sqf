@@ -6,7 +6,7 @@ ark_admin_tools_fnc_createDebugMarkers = {
     if (_enabled && {isNil {ark_admin_canUpdateMarkers} || {!ark_admin_canUpdateMarkers}}) then {
         ark_admin_canUpdateMarkers = true;
         ark_admin_sideCountMarkers = [];
-        private _sides = [EAST, WEST, RESISTANCE, CIVILIAN];
+        private _sides = [east, west, resistance, civilian];
         private _sideColors = ["ColorRed", "ColorBlue", "ColorGreen", "ColorPink"];
         for "_i" from 0 to (count _sides) - 1 do {
             private _side = _sides select _i;
@@ -33,7 +33,7 @@ ark_admin_tools_fnc_createDebugMarkers = {
                     if (!isNil {_marker}) then {
                         deleteMarkerLocal _marker;
                     }
-                } foreach allDead;
+                } forEach allDead;
             },
             10
         ] call CBA_fnc_addPerFrameHandler;
@@ -79,13 +79,13 @@ ark_admin_tools_fnc_createDebugMarkers = {
                             _markerName setMarkerTextLocal "*";
                         };
                     };
-                } foreach allUnits;
+                } forEach allUnits;
 
                 {
                     private "_markerName";
                     _side = _x;
                     (format ["ark_admin_sideCountMarker_%1", _side]) setMarkerTextLocal format ["%1: %2 (%3)", _side, count (allUnits select {side _x isEqualTo _side && {simulationEnabled _x} }), count (allUnits select {side _x isEqualTo _side})];
-                } foreach ark_admin_sideCountMarkers;
+                } forEach ark_admin_sideCountMarkers;
             },
             3,
             [_sides]
@@ -100,17 +100,17 @@ ark_admin_tools_fnc_createDebugMarkers = {
                 _x setVariable ["ark_admin_unitMarker", nil, false];
                 deleteMarkerLocal _marker;
             }
-        } foreach allUnits;
+        } forEach allUnits;
         {
             private _marker = _x getVariable "ark_admin_unitMarker";
             if (!isNil {_marker}) then {
                 _x setVariable ["ark_admin_unitMarker", nil, false];
                 deleteMarkerLocal _marker;
             }
-        } foreach allDead;
+        } forEach allDead;
         {
             deleteMarkerLocal (format ["ark_admin_sideCountMarker_%1", _x]);
-        } foreach ark_admin_sideCountMarkers;
+        } forEach ark_admin_sideCountMarkers;
         ark_admin_sideCountMarkers = nil;
     };
 };

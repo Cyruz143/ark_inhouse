@@ -14,9 +14,9 @@ ark_admin_tools_fnc_teleportUnit = {
     [
         {
             if (surfaceIsWater (_this #1)) then {
-                (_this #0) setposASL [(_this #1) #0, (_this #1) #1, 0];
+                (_this #0) setPosASL [(_this #1) #0, (_this #1) #1, 0];
             } else {
-                (_this #0) setposATL [(_this #1) #0, (_this #1) #1, 0];
+                (_this #0) setPosATL [(_this #1) #0, (_this #1) #1, 0];
             };
             openMap [false, false];
             onMapSingleClick "";

@@ -33,7 +33,7 @@ ark_pm_fnc_addMarker = {
 };
 
 ark_pm_fnc_removeMarker = {
-    if !(isnil "ark_pm_eh_ID") then {
+    if !(isNil "ark_pm_eh_ID") then {
         removeMissionEventHandler ["Draw3D", ark_pm_eh_ID];
         ark_pm_eh_ID = nil;
     };

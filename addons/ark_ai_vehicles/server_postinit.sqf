@@ -63,7 +63,7 @@ ark_ai_vehicles_fnc_doRepair = {
         doGetOut _driver;
         sleep 2;
 
-        _driver setVectorDir (getpos _driver vectorFromTo getpos _vehicle);
+        _driver setVectorDir (getPos _driver vectorFromTo getPos _vehicle);
         _driver playMoveNow "Acts_carFixingWheel";
         ["Acts_carFixingWheel", getPosASL _driver, 5, 100] call ace_common_fnc_playConfigSound3D;
         sleep 15;
