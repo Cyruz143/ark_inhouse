@@ -8,7 +8,6 @@ include = [
 ]
 
 [version]
-path = "addons/ark_main/script_version.hpp"
 git_hash = 0
 
 [hemtt.config]
