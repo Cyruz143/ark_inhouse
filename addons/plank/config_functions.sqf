@@ -1,8 +1,5 @@
-#include "plank_macros.h"
-
+#include "script_component.hpp"
 #include "\userconfig\plank\log\config.h"
-#include "logbook.h"
-
 
 plank_config_fnc_getConfig = {
     DECLARE(_config) = PLANK_MISSION_CONFIG_FILE;

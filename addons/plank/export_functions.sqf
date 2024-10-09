@@ -1,10 +1,7 @@
-#include "plank_macros.h"
-
+#include "script_component.hpp"
 #include "\userconfig\plank\log\export.h"
-#include "logbook.h"
 
 #define NEW_LINE                toString [13, 10]
-
 
 plank_export_fnc_preInit = {
     plank_export_deployedForts = [];

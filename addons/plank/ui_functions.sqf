@@ -1,7 +1,5 @@
-#include "plank_macros.h"
-
+#include "script_component.hpp"
 #include "\userconfig\plank\log\ui.h"
-#include "logbook.h"
 
 #define LOCK_SHORTCUT_KEY_CODE                  33 // F
 #define PICKUP_SHORTCUT_KEY_CODE                32 // D

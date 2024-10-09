@@ -1,4 +1,4 @@
-#include "plank_macros.h"
+#include "script_component.hpp"
 
 #define ADDON_NS                        plank
 #define ADD_ADDON_NS_TO_ID(M,ID)        M##ID

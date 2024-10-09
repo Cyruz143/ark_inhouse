@@ -1,3 +1,4 @@
+/*
 #ifndef LOGBOOK_H
 #define LOGBOOK_H
 
@@ -16,7 +17,6 @@
 
 #define TRACE(CTX,MESSG)
 #define DEBUG(CTX,MESSG)
-#define INFO(CTX,MESSG)
 #define WARN(CTX,MESSG)
 #define ERROR(CTX,MESSG)
 
@@ -71,7 +71,6 @@
     #include "logbook_common.h"
     #define TRACE(CTX,MESSG)                    LB_LOG(CTX,TRACE_LVL_STR,TRACE_LVL,(MESSG))
     #define DEBUG(CTX,MESSG)                    LB_LOG(CTX,DEBUG_LVL_STR,DEBUG_LVL,(MESSG))
-    #define INFO(CTX,MESSG)                     LB_LOG(CTX,INFO_LVL_STR,INFO_LVL,(MESSG))
     #define WARN(CTX,MESSG)                     LB_LOG(CTX,WARN_LVL_STR,WARN_LVL,(MESSG))
     #define ERROR(CTX,MESSG)                    LB_LOG(CTX,ERROR_LVL_STR,ERROR_LVL,(MESSG))
 #endif //LOGGING_LEVEL_TRACE
@@ -79,7 +78,6 @@
     #include "logbook_common.h"
     #define TRACE(CTX,MESSG)
     #define DEBUG(CTX,MESSG)                    LB_LOG(CTX,DEBUG_LVL_STR,DEBUG_LVL,(MESSG))
-    #define INFO(CTX,MESSG)                     LB_LOG(CTX,INFO_LVL_STR,INFO_LVL,(MESSG))
     #define WARN(CTX,MESSG)                     LB_LOG(CTX,WARN_LVL_STR,WARN_LVL,(MESSG))
     #define ERROR(CTX,MESSG)                    LB_LOG(CTX,ERROR_LVL_STR,ERROR_LVL,(MESSG))
 #endif //LOGGING_LEVEL_DEBUG
@@ -87,7 +85,6 @@
     #include "logbook_common.h"
     #define TRACE(CTX,MESSG)
     #define DEBUG(CTX,MESSG)
-    #define INFO(CTX,MESSG)                     LB_LOG(CTX,INFO_LVL_STR,INFO_LVL,(MESSG))
     #define WARN(CTX,MESSG)                     LB_LOG(CTX,WARN_LVL_STR,WARN_LVL,(MESSG))
     #define ERROR(CTX,MESSG)                    LB_LOG(CTX,ERROR_LVL_STR,ERROR_LVL,(MESSG))
 #endif //LOGGING_LEVEL_INFO
@@ -95,7 +92,6 @@
     #include "logbook_common.h"
     #define TRACE(CTX,MESSG)
     #define DEBUG(CTX,MESSG)
-    #define INFO(CTX,MESSG)
     #define WARN(CTX,MESSG)                     LB_LOG(CTX,WARN_LVL_STR,WARN_LVL,(MESSG))
     #define ERROR(CTX,MESSG)                    LB_LOG(CTX,ERROR_LVL_STR,ERROR_LVL,(MESSG))
 #endif //LOGGING_LEVEL_WARN
@@ -103,7 +99,6 @@
     #include "logbook_common.h"
     #define TRACE(CTX,MESSG)
     #define DEBUG(CTX,MESSG)
-    #define INFO(CTX,MESSG)
     #define WARN(CTX,MESSG)
     #define ERROR(CTX,MESSG)                    LB_LOG(CTX,ERROR_LVL_STR,ERROR_LVL,(MESSG))
 #endif //LOGGING_LEVEL_ERROR
@@ -131,7 +126,6 @@
 
     #define TRACE(CTX,MESSG)                    LB_LOG(CTX,TRACE_LVL_STR,TRACE_LVL,(MESSG))
     #define DEBUG(CTX,MESSG)                    LB_LOG(CTX,DEBUG_LVL_STR,DEBUG_LVL,(MESSG))
-    #define INFO(CTX,MESSG)                     LB_LOG(CTX,INFO_LVL_STR,INFO_LVL,(MESSG))
     #define WARN(CTX,MESSG)                     LB_LOG(CTX,WARN_LVL_STR,WARN_LVL,(MESSG))
     #define ERROR(CTX,MESSG)                    LB_LOG(CTX,ERROR_LVL_STR,ERROR_LVL,(MESSG))
 
@@ -197,3 +191,4 @@ if (isNil {LB_FNC_RIGHT_PAD}) then {
 };
 
 #endif //LOGBOOK_H
+*/

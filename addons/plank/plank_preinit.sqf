@@ -1,8 +1,5 @@
-#include "plank_macros.h"
-
+#include "script_component.hpp"
 #include "\userconfig\plank\log\preinit.h"
-#include "logbook.h"
-
 
 plank_isInitialized = false;
 
@@ -23,7 +20,7 @@ if (plank_isEnabled && {!isDedicated}) then {
 
     plank_isInitialized = true;
     ["plank.initialized", []] call plank_event_fnc_emitEvent;
-    //INFO("plank",FMT_1("Plank version '%1' has been successfully initialized.",STR_PLANK_VERSION));
+    INFO_1("Plank: Plank version %1 has been successfully initialized.",STR_PLANK_VERSION);
 } else {
-    //INFO("plank",FMT_1("Plank version '%1' was disabled.",STR_PLANK_VERSION));
+    INFO_1("Plank: Plank version %1 was disabled.",STR_PLANK_VERSION);
 };

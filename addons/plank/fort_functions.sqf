@@ -1,7 +1,5 @@
-#include "plank_macros.h"
-
+#include "script_component.hpp"
 #include "\userconfig\plank\log\fort.h"
-#include "logbook.h"
 
 
 plank_fort_fnc_getDirectionOrDefault = {
