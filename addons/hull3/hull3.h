@@ -356,9 +356,9 @@ class Hull3 {
     class ACRE {
         class Babel {
             languages[] = {
-                {"west", "WEST"},
-                {"east", "EAST"},
-                {"resistance", "RESISTANCE"},
+                {"west", "west"},
+                {"east", "east"},
+                {"resistance", "resistance"},
                 {"civ", "CIV"}
             };
         };

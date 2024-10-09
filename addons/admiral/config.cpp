@@ -1,25 +1,28 @@
-#include "admiral_macros.h"
+#include "script_component.hpp"
 
 class CfgPatches {
-    class Admiral {
+    class ADDON {
+        name = COMPONENT_NAME;
+        author = "Kami";
+        authors[] = {"ARK"};
+        url = "https://github.com/kami-";
         units[] = {};
         weapons[] = {};
-        requiredVersion = 1.0;
-        requiredAddons[] = {"CBA_MAIN", "A3_Characters_F_Common", "A3_Characters_F"};
-        author = "Kami";
-        authorUrl = "https://github.com/kami-";
+        requiredVersion = REQUIRED_VERSION;
+        requiredAddons[] = {"ark_main"};
+        VERSION_CONFIG;
     };
 };
 
 class Extended_PreInit_EventHandlers {
     class Admiral {
-        init = "[] call compile preProcessFileLineNumbers 'x\ark\addons\admiral\admiral_preinit.sqf';";
+        init = "[] call compile preprocessFileLineNumbers 'x\ark\addons\admiral\admiral_preinit.sqf';";
     };
 };
 
 class Extended_PostInit_EventHandlers {
     class Admiral {
-        init = "[] call compile preProcessFileLineNumbers 'x\ark\addons\admiral\admiral_postinit.sqf';";
+        init = "[] call compile preprocessFileLineNumbers 'x\ark\addons\admiral\admiral_postinit.sqf';";
     };
 };
 

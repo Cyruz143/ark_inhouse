@@ -8,12 +8,12 @@ adm_config_fnc_getConfig = {
     DECLARE(_config) = ADMIRAL_MISSION_CONFIG_FILE;
     {
         _config = _config >> _x;
-    } foreach _this;
+    } forEach _this;
     if (configName _config == "") then {
         _config = ADMIRAL_CONFIG_FILE;
         {
             _config = _config >> _x;
-        } foreach _this;
+        } forEach _this;
     };
 
     _config;
@@ -24,13 +24,13 @@ adm_config_fnc_getBothArray = {
     _config = ADMIRAL_MISSION_CONFIG_FILE;
     {
         _config = _config >> _x;
-    } foreach _this;
+    } forEach _this;
     _values = getArray _config;
 
     _config = ADMIRAL_CONFIG_FILE;
     {
         _config = _config >> _x;
-    } foreach _this;
+    } forEach _this;
     PUSH_ALL(_values,getArray _config);
 
     _values;

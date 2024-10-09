@@ -45,38 +45,38 @@ hull3_mission_fnc_evaluateParams = {
             _name = configName ((missionConfigFile >> "Params") select _forEachIndex);
             _code = getText (missionConfigFile >> "Params" >> _name >> "code");
             call compile format [_code, _x];
-        } foreach paramsArray;
-        TRACE("hull3.mission.params",FMT_1("ParamsArray '%1' have been evaluated.",paramsArray));
+        } forEach paramsArray;
+        //TRACE("hull3.mission.params",FMT_1("ParamsArray '%1' have been evaluated.",paramsArray));
     };
 };
 
 hull3_mission_fnc_readMissionParamValues = {
     if (!isNil {hull3_mission_date}) then {
         hull3_mission_date = (["MissionParams", "date"] call hull3_config_fnc_getArray) select hull3_mission_date;
-        TRACE("hull3.mission.params",FMT_1("Mission param 'hull3_mission_date' was set to '%1'.",hull3_mission_date));
+        //TRACE("hull3.mission.params",FMT_1("Mission param 'hull3_mission_date' was set to '%1'.",hull3_mission_date));
     };
     if (!isNil {hull3_mission_timeOfDay}) then {
         hull3_mission_timeOfDay = (["MissionParams", "time"] call hull3_config_fnc_getArray) select hull3_mission_timeOfDay;
-        TRACE("hull3.mission.params",FMT_1("Mission param 'hull3_mission_timeOfDay' was set to '%1'.",hull3_mission_timeOfDay));
+        //TRACE("hull3.mission.params",FMT_1("Mission param 'hull3_mission_timeOfDay' was set to '%1'.",hull3_mission_timeOfDay));
     };
     if (!isNil {hull3_mission_fog}) then {
         hull3_mission_fog = (["MissionParams", "fog"] call hull3_config_fnc_getArray) select hull3_mission_fog;
-        TRACE("hull3.mission.params",FMT_1("Mission param 'hull3_mission_fog' was set to '%1'.",hull3_mission_fog));
+        //TRACE("hull3.mission.params",FMT_1("Mission param 'hull3_mission_fog' was set to '%1'.",hull3_mission_fog));
     };
     if (!isNil {hull3_mission_weather}) then {
         hull3_mission_weather = (["MissionParams", "weather"] call hull3_config_fnc_getArray) select hull3_mission_weather;
-        TRACE("hull3.mission.params",FMT_1("Mission param 'hull3_mission_weather' was set to '%1'.",hull3_mission_weather));
+        //TRACE("hull3.mission.params",FMT_1("Mission param 'hull3_mission_weather' was set to '%1'.",hull3_mission_weather));
     };
 };
 
 hull3_mission_fnc_getDateTime = {
     if (isNil {hull3_mission_date}) then {
         hull3_mission_date = [2035, 6, 12];
-        TRACE("hull3.mission.datetime",FMT_1("Mission param 'hull3_mission_date' was not set, using default '%1'.",hull3_mission_date));
+        //TRACE("hull3.mission.datetime",FMT_1("Mission param 'hull3_mission_date' was not set, using default '%1'.",hull3_mission_date));
     };
     if (isNil {hull3_mission_timeOfDay}) then {
         hull3_mission_timeOfDay = DEFAULT_TIME_OF_DAY;
-        TRACE("hull3.mission.datetime",FMT_1("Mission param 'hull3_mission_timeOfDay' was not set, using default '%1'.",hull3_mission_timeOfDay));
+        //TRACE("hull3.mission.datetime",FMT_1("Mission param 'hull3_mission_timeOfDay' was not set, using default '%1'.",hull3_mission_timeOfDay));
     };
 
     [hull3_mission_date #0, hull3_mission_date #1, hull3_mission_date #2, hull3_mission_timeOfDay #0, hull3_mission_timeOfDay #1];
@@ -92,7 +92,7 @@ hull3_mission_fnc_getTimeOfDay = {
 hull3_mission_fnc_getFog = {
     if (isNil {hull3_mission_fog}) then {
         hull3_mission_fog = [0, 0, 0];
-        TRACE("hull3.mission.fog",FMT_1("Mission param 'hull3_mission_fog' was not set, using default '%1'.",hull3_mission_fog));
+        //TRACE("hull3.mission.fog",FMT_1("Mission param 'hull3_mission_fog' was not set, using default '%1'.",hull3_mission_fog));
     };
 
     hull3_mission_fog;
@@ -101,16 +101,16 @@ hull3_mission_fnc_getFog = {
 hull3_mission_fnc_getWeather = {
     if (isNil {hull3_mission_weather}) then {
         hull3_mission_weather = [0, 0, 0, 0, 0, 0, 0, 0];
-        TRACE("hull3.mission.weather",FMT_1("Mission param 'hull3_mission_weather' was not set, using default '%1'.",hull3_mission_weather));
+        //TRACE("hull3.mission.weather",FMT_1("Mission param 'hull3_mission_weather' was not set, using default '%1'.",hull3_mission_weather));
     };
     if (hull3_mission_weather #0 == -1 && {isServer}) then {
         DECLARE(_weathers) = ["MissionParams", "weather"] call hull3_config_fnc_getArray;
         hull3_mission_weather = _weathers select ((floor random ((count _weathers) - 1)) + 1);
-        TRACE("hull3.mission.weather",FMT_1("Random weather was selected. Generated random weather '%1' for server.",hull3_mission_weather));
+        //TRACE("hull3.mission.weather",FMT_1("Random weather was selected. Generated random weather '%1' for server.",hull3_mission_weather));
     } else {
         if (!isDedicated && !isServer) then {
             hull3_mission_weather = [0, 0, 0, 0, 0, 0, 0, 0];
-            TRACE("hull3.mission.weather",FMT_1("Random weather was selected. Using default weather '%1' for client.",hull3_mission_weather));
+            //TRACE("hull3.mission.weather",FMT_1("Random weather was selected. Using default weather '%1' for client.",hull3_mission_weather));
         };
     };
 
@@ -134,7 +134,7 @@ hull3_mission_fnc_setWeather = {
         _snowData set [15, (_snowData #15) isEqualTo "true"];
         _snowData set [16, (_snowData #16) isEqualTo "true"];
         _snowData call BIS_fnc_setRain;
-        DEBUG("hull3.mission.weather",FMT_2("Snow weather set to '%1' with snowData set to '%2'.",_snow,_snowData));
+        //DEBUG("hull3.mission.weather",FMT_2("Snow weather set to '%1' with snowData set to '%2'.",_snow,_snowData));
     };
 };
 
@@ -142,7 +142,7 @@ hull3_mission_fnc_setEnviroment = {
     [([] call hull3_mission_fnc_getDateTime),true] call BIS_fnc_setDate;
     [0, [] call hull3_mission_fnc_getWeather] call hull3_mission_fnc_setWeather;
     ([] call hull3_mission_fnc_getFog) remoteExec ["bis_fnc_setFog",0];
-    DEBUG("hull3.mission.weather",FMT_3("Environment was set. Date to '%1', fog to '%2' and weather to '%3'.",[] call hull3_mission_fnc_getDateTime,[] call hull3_mission_fnc_getFog,[] call hull3_mission_fnc_getWeather));
+    //DEBUG("hull3.mission.weather",FMT_3("Environment was set. Date to '%1', fog to '%2' and weather to '%3'.",[] call hull3_mission_fnc_getDateTime,[] call hull3_mission_fnc_getFog,[] call hull3_mission_fnc_getWeather));
 };
 
 hull3_mission_fnc_addPlayerEHs = {
@@ -154,7 +154,7 @@ hull3_mission_fnc_addPlayerEHs = {
     "hull3_mission_safetyTimer" addPublicVariableEventHandler {
         (_this #1) call hull3_mission_fnc_handleSafetyTimeChange;
     };
-    DEBUG("hull3.mission.ehs","Player event handlers were added.");
+    //DEBUG("hull3.mission.ehs","Player event handlers were added.");
 };
 
 hull3_mission_fnc_addServerEHs = {
@@ -166,17 +166,17 @@ hull3_mission_fnc_addServerEHs = {
     "hull3_mission_safetyTimerAbort" addPublicVariableEventHandler {
         [_this #1] spawn hull3_mission_fnc_serverSafetyTimerCountDown;
     };
-    DEBUG("hull3.mission.ehs","Server event handlers were added.");
+    //DEBUG("hull3.mission.ehs","Server event handlers were added.");
 };
 
 hull3_mission_fnc_serverSafetyTimerLoop = {
     if (!isNil {hull3_mission_safetyTimerEnd} && {hull3_mission_safetyTimerEnd > 0}) then {
         hull3_mission_safetyTimer = [false, -1];
-        DEBUG("hull3.mission.safetytimer",FMT_1("Safety timer has been initialized with value '%1'.",hull3_mission_safetyTimer));
+        //DEBUG("hull3.mission.safetytimer",FMT_1("Safety timer has been initialized with value '%1'.",hull3_mission_safetyTimer));
         while {(hull3_mission_safetyTimer #1) < hull3_mission_safetyTimerEnd && {!hull3_mission_safetyTimerAbort}} do {
             hull3_mission_safetyTimer set [1, (hull3_mission_safetyTimer #1) + 1];
             publicVariable "hull3_mission_safetyTimer";
-            DEBUG("hull3.mission.safetytimer",FMT_1("Safety timer has been published to clients with value '%1'.",hull3_mission_safetyTimer));
+            //DEBUG("hull3.mission.safetytimer",FMT_1("Safety timer has been published to clients with value '%1'.",hull3_mission_safetyTimer));
             if (!isDedicated) then {
                 hull3_mission_safetyTimer call hull3_mission_fnc_handleSafetyTimeChange;
             };
@@ -194,11 +194,11 @@ hull3_mission_fnc_serverSafetyTimerCountDown = {
     if (_isAborted) then {
         DECLARE(_countDownLength) = if (isMultiplayer) then {10} else {0};
         hull3_mission_safetyTimer = [true, _countDownLength];
-        DEBUG("hull3.mission.safetytimer",FMT_1("Safety timer has been aborted. Starting countdown from '%1' seconds.",hull3_mission_safetyTimer #1));
+        //DEBUG("hull3.mission.safetytimer",FMT_1("Safety timer has been aborted. Starting countdown from '%1' seconds.",hull3_mission_safetyTimer #1));
         for "_i" from _countDownLength to 0 step -1 do {
             hull3_mission_safetyTimer set [1, _i];
             publicVariable "hull3_mission_safetyTimer";
-            TRACE("hull3.mission.safetytimer",FMT_1("Safety timer has been published to clients with countdown time at '%1' seconds.",hull3_mission_safetyTimer #1));
+            //TRACE("hull3.mission.safetytimer",FMT_1("Safety timer has been published to clients with countdown time at '%1' seconds.",hull3_mission_safetyTimer #1));
             if (!isDedicated) then {
                 hull3_mission_safetyTimer call hull3_mission_fnc_handleSafetyTimeChange;
             };
@@ -213,7 +213,7 @@ hull3_mission_fnc_clientSafetyTimerLoop = {
         [] call hull3_mission_fnc_addHostSafetyTimerStopAction;
         [player] call hull3_unit_fnc_addFiredEHs;
 
-        DEBUG("hull3.mission.safetytimer","Starting safety timer loop.");
+        //DEBUG("hull3.mission.safetytimer","Starting safety timer loop.");
         [{
             params ["_args", "_id"];
             {[ACE_player, _x, true, false] call ace_safemode_fnc_setWeaponSafety} forEach (weapons player);
@@ -231,7 +231,7 @@ hull3_mission_fnc_clientSafetyTimerLoop = {
 hull3_mission_fnc_handleSafetyTimeChange = {
     params ["_isCountDown","_timeValue"];
 
-    DEBUG("hull3.mission.safetytimer",FMT_1("Safety timer has been changed. Received value '%1'.",AS_ARRAY_2(_isCountDown,_timeValue)));
+    //DEBUG("hull3.mission.safetytimer",FMT_1("Safety timer has been changed. Received value '%1'.",AS_ARRAY_2(_isCountDown,_timeValue)));
     DECLARE(_message) = "Game is not live. Waiting for host to start it. (%1 minutes)";
     if (_isCountDown) then {
         call {
@@ -272,7 +272,7 @@ hull3_mission_fnc_addHostSafetyTimerStopAction = {
             DEBUG("hull.mission.safetytimer","Added safety timer abort action to player.");
         };
     } else {
-        DEBUG("hull.mission.safetytimer","Safety timer abort action not added to player, using ACE Self Interaction instead.");
+        //DEBUG("hull.mission.safetytimer","Safety timer abort action not added to player, using ACE Self Interaction instead.");
     };
 };
 
@@ -289,13 +289,13 @@ hull3_mission_fnc_removeSafetyTimerActions = {
             player removeAction _x;
             hull3_mission_safetyTimerActionIds set [_forEachIndex, -1];
         };
-    } foreach hull3_mission_safetyTimerActionIds;
+    } forEach hull3_mission_safetyTimerActionIds;
 };
 
 hull3_mission_fnc_getJipSync = {
     if (hull3_mission_isJip) then {
         hull3_mission_jipPacket = [player];
-        DEBUG("hull3.mission.jip",FMT_2("Sending JIP state request for server from client '%1' with time '%2'.",player,time));
+        //DEBUG("hull3.mission.jip",FMT_2("Sending JIP state request for server from client '%1' with time '%2'.",player,time));
         publicVariableServer "hull3_mission_jipPacket";
     };
 };
@@ -307,14 +307,14 @@ hull3_mission_fnc_sendJipSync = {
     PUSH(hull3_mission_jipPacket,hull3_mission_safetyTimerAbort);
     DECLARE(_customArguments) = ["mission_jip_sending", [_client]] call hull3_common_fnc_getEventFileResult;
     PUSH(hull3_mission_jipPacket,_customArguments);
-    DEBUG("hull3.mission.jip",FMT_2("Sending JIP sync for client '%1' with packet '%2'.",_client,hull3_mission_jipPacket));
+    //DEBUG("hull3.mission.jip",FMT_2("Sending JIP sync for client '%1' with packet '%2'.",_client,hull3_mission_jipPacket));
     (owner _client) publicVariableClient "hull3_mission_jipPacket";
 };
 
 hull3_mission_fnc_receiveJipSync = {
     params ["_safetyTimer","_safetyTimerAbort","_customArguments"];
 
-    DEBUG("hull3.mission.jip",FMT_2("Received JIP sync '%1' from server for client '%2'.",owner player,_this));
+    //DEBUG("hull3.mission.jip",FMT_2("Received JIP sync '%1' from server for client '%2'.",owner player,_this));
     hull3_mission_safetyTimer = _safetyTimer;
     hull3_mission_safetyTimerAbort = _safetyTimerAbort;
     ["mission.jip.received", _customArguments] call hull3_event_fnc_emitEvent;

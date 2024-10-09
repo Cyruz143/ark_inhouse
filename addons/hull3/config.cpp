@@ -1,13 +1,16 @@
-#include "hull3_macros.h"
+#include "script_component.hpp"
 
 class CfgPatches {
-    class Hull3 {
+    class ADDON {
+        name = COMPONENT_NAME;
+        author = "Kami";
+        authors[] = {"ARK"};
+        url = "https://github.com/kami-";
         units[] = {};
         weapons[] = {};
-        requiredVersion = 1.0;
-        requiredAddons[] = {"CBA_MAIN"};
-        author = "Kami";
-        authorUrl = "https://github.com/kami-";
+        requiredVersion = REQUIRED_VERSION;
+        requiredAddons[] = {"ark_main"};
+        VERSION_CONFIG;
     };
 };
 

@@ -6,8 +6,8 @@
 
 [] call adm_fnc_compile;
 
-[] call adm_settings_fnc_init; DEBUG("admiral.settings","Init function 'adm_settings_fnc_init' called.");
-[] call adm_cqc_fnc_init; DEBUG("admiral.cqc","Init function 'adm_cqc_fnc_init' called.");
+[] call adm_settings_fnc_init; //DEBUG("admiral.settings","Init function 'adm_settings_fnc_init' called.");
+[] call adm_cqc_fnc_init; //DEBUG("admiral.cqc","Init function 'adm_cqc_fnc_init' called.");
 [] call adm_cqc_fnc_globalForceFire;
 
 /*
@@ -17,4 +17,4 @@ if (adm_isBehaviorEnabled) then {
 };
 */
 
-INFO("admiral",FMT_1("Admiral version '%1' has been successfully initialized on HC.",STR_ADMIRAL_VERSION));
+//INFO("admiral",FMT_1("Admiral version '%1' has been successfully initialized on HC.",STR_ADMIRAL_VERSION));

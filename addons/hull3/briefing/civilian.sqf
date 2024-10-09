@@ -1,4 +1,4 @@
-// CIVILIAN Notes
+// civilian Notes
 
 // Credits
 player createDiaryRecord ["Diary", ["Credits", "

@@ -52,7 +52,7 @@ FNC_EMIT_EVENT = {
     if (_eventIndex != -1) then {
         {
             _arguments call _x;
-        } foreach (EVENTS_ARRAY select _eventIndex select 2);
+        } forEach (EVENTS_ARRAY select _eventIndex select 2);
         [EVENTS_ARRAY select _eventIndex select 1, _arguments] call hull3_common_fnc_callEventFile;
     };
 };
@@ -63,7 +63,7 @@ FNC_FIND_EVENT = {
     DECLARE(_eventIndex) = -1;
     {
         if (_x select 0 == _eventName) exitWith {_eventIndex = _forEachIndex};
-    } foreach EVENTS_ARRAY;
+    } forEach EVENTS_ARRAY;
 
     _eventIndex;
 };

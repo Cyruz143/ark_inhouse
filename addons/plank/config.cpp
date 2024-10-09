@@ -1,25 +1,28 @@
-#include "plank_macros.h"
+#include "script_component.hpp"
 
 class CfgPatches {
-    class Plank {
+    class ADDON {
+        name = COMPONENT_NAME;
+        author = "Kami";
+        authors[] = {"ARK"};
+        url = "https://github.com/kami-";
         units[] = {};
         weapons[] = {};
-        requiredVersion = 1.0;
-        requiredAddons[] = {"CBA_MAIN"};
-        author = "Kami";
-        authorUrl = "https://github.com/kami-";
+        requiredVersion = REQUIRED_VERSION;
+        requiredAddons[] = {"ark_main"};
+        VERSION_CONFIG;
     };
 };
 
 class Extended_PreInit_EventHandlers {
     class Plank {
-        init = "[] call compile preProcessFileLineNumbers 'x\ark\addons\plank\plank_preinit.sqf';";
+        init = "[] call compile preprocessFileLineNumbers 'x\ark\addons\plank\plank_preinit.sqf';";
     };
 };
 
 class Extended_PostInit_EventHandlers {
     class Plank {
-        init = "[] call compile preProcessFileLineNumbers 'x\ark\addons\plank\plank_postinit.sqf';";
+        init = "[] call compile preprocessFileLineNumbers 'x\ark\addons\plank\plank_postinit.sqf';";
     };
 };
 

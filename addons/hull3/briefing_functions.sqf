@@ -6,7 +6,7 @@
 
 hull3_briefing_fnc_preInit = {
     [] call hull3_briefing_fnc_addEventHandlers;
-    DEBUG("hull3.briefing","Briefing functions preInit finished.");
+    //DEBUG("hull3.briefing","Briefing functions preInit finished.");
 };
 
 hull3_briefing_fnc_addEventHandlers = {
@@ -15,7 +15,7 @@ hull3_briefing_fnc_addEventHandlers = {
 
 hull3_briefing_fnc_addNotes = {
     [] call compile preprocessFile ADDON_PATH(briefing\hull3.sqf);
-    DEBUG("hull3.briefing","Added Hull to briefing notes.");
+    //DEBUG("hull3.briefing","Added Hull to briefing notes.");
     [] call hull_briefing_fnc_addAcreAdmin;
     [] call hull3_briefing_fnc_addOrbat;
     [] call hull3_briefing_fnc_addSideNotes;
@@ -35,21 +35,21 @@ hull3_briefing_fnc_addOrbat = {
             };
             _orbat = _orbat + '<br/>'
         };
-    } foreach hull3_marker_groups;
+    } forEach hull3_marker_groups;
     player createDiaryRecord ["Diary", ["ORBAT", _orbat]];
-    DEBUG("hull3.briefing","Added ORBAT to briefing notes.");
+    //DEBUG("hull3.briefing","Added ORBAT to briefing notes.");
 };
 
 hull3_briefing_fnc_addSideNotes = {
     private "_briefingFile";
     call {
-        if (side player == WEST) exitWith {_briefingFile = ["Briefing", "blufor"] call hull3_config_fnc_getText};
-        if (side player == EAST) exitWith {_briefingFile = ["Briefing", "opfor"] call hull3_config_fnc_getText};
-        if (side player == RESISTANCE) exitWith {_briefingFile = ["Briefing", "indfor"] call hull3_config_fnc_getText};
+        if (side player == west) exitWith {_briefingFile = ["Briefing", "blufor"] call hull3_config_fnc_getText};
+        if (side player == east) exitWith {_briefingFile = ["Briefing", "opfor"] call hull3_config_fnc_getText};
+        if (side player == resistance) exitWith {_briefingFile = ["Briefing", "indfor"] call hull3_config_fnc_getText};
         _briefingFile = ["Briefing", "civilian"] call hull3_config_fnc_getText;
     };
     [] call compile preprocessFile _briefingFile;
-    DEBUG("hull3.briefing","Added Side notes to briefing notes.");
+    //DEBUG("hull3.briefing","Added Side notes to briefing notes.");
 };
 
 hull_briefing_fnc_addAcreAdmin = {

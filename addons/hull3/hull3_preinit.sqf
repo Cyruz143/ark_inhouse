@@ -37,8 +37,8 @@ if (hull3_isEnabled) then {
     [] call hull3_gc_fnc_preInit;
 } else {
     if (isClass (missionConfigFile >> "Hull_Script_Version")) then {
-        INFO("hull3",FMT_1("Older script version of Hull was detected. Addonized Hull version '%1' was disabled.",HULL3_VERSION));
+        //INFO("hull3",FMT_1("Older script version of Hull was detected. Addonized Hull version '%1' was disabled.",HULL3_VERSION));
     } else {
-        INFO("hull3",FMT_1("Hull version '%1' was disabled.",HULL3_VERSION));
+        //INFO("hull3",FMT_1("Hull version '%1' was disabled.",HULL3_VERSION));
     };
 };

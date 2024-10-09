@@ -21,10 +21,10 @@
 
 #define ZONE_SKILLS                         ["aimingAccuracy", "aimingShake", "aimingSpeed", "spotDistance", "spotTime", "courage", "reloadSpeed", "commanding", "general"]
 
-#define SIDE_ARRAY                          [EAST, WEST, RESISTANCE, CIVILIAN]
-#define SIDE_TEXT_ARRAY                     ["EAST", "WEST", "RESISTANCE", "CIVILIAN"]
-#define SIDE_EAST                           0
-#define SIDE_WEST                           1
+#define SIDE_ARRAY                          [east, west, resistance, civilian]
+#define SIDE_TEXT_ARRAY                     ["east", "west", "resistance", "civilian"]
+#define SIDE_east                           0
+#define SIDE_west                           1
 #define SIDE_IND                            2
 #define SIDE_CIV                            3
 
@@ -388,7 +388,7 @@
 //          PUSH_ALL(_numbers, _otherNumbers);
 //      THEN:
 //          _numbers == [5, 9, 6, 1, 3, 8];
-#define PUSH_ALL(TO,FROM) { PUSH(TO,_x); } foreach (FROM)
+#define PUSH_ALL(TO,FROM) { PUSH(TO,_x); } forEach (FROM)
 
 // Filters the FROM array with a condition and adds the values that return true to the TO array.
 // The values from the FROM array can be referenced by variable "_x".
@@ -401,7 +401,7 @@
 //          FILTER_PUSH_ALL(_numbers, _otherNumbers, _condition);
 //      THEN:
 //          _numbers == [2, 6, 8];
-#define FILTER_PUSH_ALL(TO,FROM,COND) { if (call COND) then { PUSH(TO,_x); }; } foreach (FROM)
+#define FILTER_PUSH_ALL(TO,FROM,COND) { if (call COND) then { PUSH(TO,_x); }; } forEach (FROM)
 
 // Finds the first element in FROM array that returns true for the COND condition. Returns nil otherwise.
 // The values from the FROM array can be referenced by variable "_x".
@@ -414,7 +414,7 @@
 //          
 //      THEN:
 //          FIND(_numbers,_condition) == 2;
-#define FIRST(FROM,COND) { if (call COND) exitWith {_x}; } foreach (FROM)
+#define FIRST(FROM,COND) { if (call COND) exitWith {_x}; } forEach (FROM)
 
 // Selects a random value from an array.
 // Example:

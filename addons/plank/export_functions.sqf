@@ -30,7 +30,7 @@ plank_export_fnc_export = {
     };
     {
         _exportCode = _exportCode + ([_x] call plank_export_fnc_getFortCode);
-    } foreach plank_export_deployedForts;
+    } forEach plank_export_deployedForts;
 
     copyToClipboard _exportCode;
 };

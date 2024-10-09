@@ -45,12 +45,12 @@ hull3_unit_fnc_playerInit = {
     ] call CBA_fnc_waitUntilAndExecute;
 };
 
-hull3_unit_fnc_foreachNonPlayerUnits = {
+hull3_unit_fnc_forEachNonPlayerUnits = {
     {
         if (!isPlayer _x) then {
             doStop _x;
         };
-    } foreach (playableUnits + switchableUnits);
+    } forEach (playableUnits + switchableUnits);
 };
 
 hull3_unit_fnc_addEHs = {
@@ -110,7 +110,7 @@ hull3_unit_fnc_getAssignedTeam = {
     DECLARE(_team) = "";
     {
         if (_gearClass == _x select 0) exitWith {_team = _x select 1};
-    } foreach (["Group", "assignedTeams"] call hull3_config_fnc_getArray);
+    } forEach (["Group", "assignedTeams"] call hull3_config_fnc_getArray);
 
     _team;
 };
@@ -121,5 +121,5 @@ hull3_unit_fnc_setFireTeamColors = {
         if (_assignedTeam != "") then {
             _x assignTeam _assignedTeam;
         };
-    } foreach units group player;
+    } forEach units group player;
 };

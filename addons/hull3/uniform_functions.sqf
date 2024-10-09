@@ -58,7 +58,7 @@ hull3_uniform_fnc_assignObjectTemplate = {
         _x params ["_field", "_configType", "_assignFunc"];
         private _configValue = [_gearTemplate, _uniformTemplate, _gearClass, _field, _configType] call hull3_uniform_fnc_getConfigValue;
         [_object, _configValue] call _assignFunc;
-    } foreach _assignables;
+    } forEach _assignables;
 };
 
 hull3_uniform_fnc_getConfigValue = {

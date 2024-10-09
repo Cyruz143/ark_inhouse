@@ -47,5 +47,5 @@
     DECLARE(_groupTypeConfig) = [0, 0, 0]; \
     { \
         _groupTypeConfig set [_forEachIndex, MODULE getVariable _x]; \
-    } foreach MODULEVARS; \
+    } forEach MODULEVARS; \
     CONFIGS pushBack [CFGNAME, _groupTypeConfig]

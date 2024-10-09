@@ -12,16 +12,16 @@ hull3_marker_fnc_preInit = {
     hull3_marker_fireTeam = [];
     hull3_marker_custom = [];
     hull3_marker_defaultDelay = ["Marker", "defaultDelay"] call hull3_config_fnc_getNumber;
-    DEBUG("hull3.marker","Marker functions preInit finished.");
+    //DEBUG("hull3.marker","Marker functions preInit finished.");
 };
 
 hull3_marker_fnc_postInit = {
     if (isDedicated) then {
         {
             _x params ["_unit", "_gearClass", "_markerText"];
-            DEBUG("hull3.marker.group",FMT_2("Setting Group ID on server for group '%1' to '%2'.",group _unit,_markerText));
+            //DEBUG("hull3.marker.group",FMT_2("Setting Group ID on server for group '%1' to '%2'.",group _unit,_markerText));
             (group _unit) setGroupId [_markerText];
-        } foreach hull3_marker_rawGroupMarkers;
+        } forEach hull3_marker_rawGroupMarkers;
     } else {
         call hull3_marker_fnc_cacheColours;
         allGroups apply {
@@ -56,7 +56,7 @@ hull3_marker_fnc_addGroupAndUnitMarkers = {
         if (side player == side (_x select 0)) then {
             _x call hull3_marker_fnc_addGroupAndUnitMarker;
         };
-    } foreach hull3_marker_rawGroupMarkers;
+    } forEach hull3_marker_rawGroupMarkers;
     if (hull3_marker_isGroupEnabled) then {
         PUSH(hull3_marker_updatableMarkers,AS_ARRAY_2(hull3_marker_groups,hull3_marker_fnc_updateGroupMarkers));
         PUSH(hull3_marker_updatableMarkers,AS_ARRAY_2(hull3_marker_units,hull3_marker_fnc_updateUnitMarkers));
@@ -122,7 +122,7 @@ hull3_marker_fnc_updateAllMarkers = {
         {
             {
                 [_x select 0] call (_x select 1);
-            } foreach hull3_marker_updatableMarkers;
+            } forEach hull3_marker_updatableMarkers;
         },
         hull3_marker_defaultDelay
     ] call CBA_fnc_addPerFrameHandler;
@@ -133,7 +133,7 @@ hull3_marker_fnc_updateCustomMarkers = {
         {
             {
                 _x call hull3_marker_fnc_updateCustomMarker;
-            } foreach hull3_marker_custom;
+            } forEach hull3_marker_custom;
         },
         1
     ] call CBA_fnc_addPerFrameHandler;
@@ -148,7 +148,7 @@ hull3_marker_fnc_updateGroupMarkers = {
         if ({alive _x} count units _group > 0) then {
             _markerName setMarkerPosLocal getPosASL leader _group;
         }
-    } foreach _groups;
+    } forEach _groups;
 };
 
 hull3_marker_fnc_updateUnitMarkers = {
@@ -160,7 +160,7 @@ hull3_marker_fnc_updateUnitMarkers = {
         if (alive _unit) then {
             _markerName setMarkerPosLocal getPosASL _unit;
         }
-    } foreach _units;
+    } forEach _units;
 };
 
 hull3_marker_fnc_updateFireTeamMarkers = {
@@ -174,7 +174,7 @@ hull3_marker_fnc_updateFireTeamMarkers = {
             _markerName setMarkerDirLocal getDir _unit;
             _markerName setMarkerColorLocal (hull3_marker_colours getOrDefault [assignedTeam _unit, "ColorWhite"]);
         }
-    } foreach _fireTeam;
+    } forEach _fireTeam;
 };
 
 hull3_marker_fnc_updateCustomMarker = {
@@ -191,7 +191,7 @@ hull3_marker_fnc_addFireTeamMarkers = {
 
     {
         [_x] call hull3_marker_fnc_addFireTeamMarker;
-    } foreach (units group _unit);
+    } forEach (units group _unit);
     PUSH(hull3_marker_updatableMarkers,AS_ARRAY_2(hull3_marker_fireTeam,hull3_marker_fnc_updateFireTeamMarkers));
 };
 
@@ -243,7 +243,7 @@ hull3_marker_fnc_joinFireTeamMarker = {
             {group (_this#1) == (_this#0)},
             {
                 private _filteredGroup = units (_this#0) select {_x != (_this#1)};
-                {[_x] call hull3_marker_fnc_addFireTeamMarker} foreach _filteredGroup;
+                {[_x] call hull3_marker_fnc_addFireTeamMarker} forEach _filteredGroup;
             },
             [_group, _unit]
         ] call CBA_fnc_waitUntilAndExecute;

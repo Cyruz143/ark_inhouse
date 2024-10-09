@@ -30,7 +30,7 @@ adm_common_fnc_placeMan = {
     };
     [_unit] joinSilent _group;
     _unit setVariable ["adm_classNameArguments", _classNameArguments, false];
-    DEBUG("admiral.common.create",FMT_5("Created unit '%1' at position '%2', in group '%3' with classname '%4' and classNameArguments '%5'.",_unit,_position,_group,_className,_classNameArguments));
+    //DEBUG("admiral.common.create",FMT_5("Created unit '%1' at position '%2', in group '%3' with classname '%4' and classNameArguments '%5'.",_unit,_position,_group,_className,_classNameArguments));
     [_unit, _skillArray] call adm_common_fnc_initUnit;
 
     _unit;
@@ -81,14 +81,14 @@ adm_common_fnc_spawnCrew = {
             if (_type == "commander" || {_type == "gunner"}) exitWith { _turretsToFill pushBackUnique _turret };
             if (_canSpawnFfvCrew && {_personTurret}) exitWith { _turretsToFill pushBackUnique _turret };
         };
-    } foreach fullCrew [_vehicle, "", true];
+    } forEach fullCrew [_vehicle, "", true];
     DEBUG("admiral.common.create",FMT_2("Creating crew for '%1' with turrents '%2'.",_vehicle,_turretsToFill));
     {
         private _crewman = [getPosATL _vehicle, _group, _crewClassNames, _skillArray] call adm_common_fnc_placeMan;
-        DEBUG("admiral.common.create",FMT_3("Created crew '%1' for turret '%2' in '%3'.",_crewman,_x,_vehicle));
+        //DEBUG("admiral.common.create",FMT_3("Created crew '%1' for turret '%2' in '%3'.",_crewman,_x,_vehicle));
         _crewman assignAsTurret [_vehicle, _x];
         _crewman moveInTurret [_vehicle, _x];
-    } foreach _turretsToFill;
+    } forEach _turretsToFill;
     _leader = call {
         if (!isNull (commander _vehicle)) exitWith { commander _vehicle };
         if (!isNull (gunner _vehicle)) exitWith { gunner _vehicle };
@@ -96,7 +96,7 @@ adm_common_fnc_spawnCrew = {
         driver _vehicle;
     };
     _group selectLeader _leader;
-    DEBUG("admiral.common.create",FMT_4("Created crew '%1' with FFV '%2' for vehicle '%3' in group '%4'.",crew _vehicle,_canSpawnFfvCrew,_vehicle,_group));
+    //DEBUG("admiral.common.create",FMT_4("Created crew '%1' with FFV '%2' for vehicle '%3' in group '%4'.",crew _vehicle,_canSpawnFfvCrew,_vehicle,_group));
 
     crew _vehicle;
 };
@@ -106,13 +106,13 @@ adm_common_fnc_delayGroupSpawn = {
 
     if (canSuspend) then {
         while { time < adm_lastGroupSpawnTime + adm_groupSpawnDelay } do {
-            TRACE("admiral.common.delay",FMT_2("Waiting for group delay time '%1s' at current time '%2s'.",adm_lastGroupSpawnTime + adm_groupSpawnDelay,time));
+            //TRACE("admiral.common.delay",FMT_2("Waiting for group delay time '%1s' at current time '%2s'.",adm_lastGroupSpawnTime + adm_groupSpawnDelay,time));
             sleep adm_groupSpawnDelay;
         };
         adm_lastGroupSpawnTime = time;
     };
     private _group = _args call _func;
-    DEBUG("admiral.common.delay",FMT_1("Spawning delayed group '%1'.",_group));
+    //DEBUG("admiral.common.delay",FMT_1("Spawning delayed group '%1'.",_group));
 
     _group;
 };
@@ -122,8 +122,8 @@ adm_common_fnc_initUnit = {
 
     {
         _unit setSkill _x;
-        TRACE("admiral.common.create",FMT_3("Set unit '%1' skill '%2' to '%3'.",_unit,_x select 0,_x select 1));
-    } foreach _skillArray;
+        //TRACE("admiral.common.create",FMT_3("Set unit '%1' skill '%2' to '%3'.",_unit,_x select 0,_x select 1));
+    } forEach _skillArray;
     _unit allowFleeing 0;
     [_unit] call adm_common_fnc_setGear;
 };
@@ -176,15 +176,15 @@ adm_common_fnc_useTracers = {
     private _newMag = adm_compatTracers get _wep;
 
     if (isNil "_newMag") then {
-        private _roundCount = getNumber (configfile >> "CfgMagazines" >> _currentMag >> "count");
+        private _roundCount = getNumber (configFile >> "CfgMagazines" >> _currentMag >> "count");
         private _tracerMags = [];
         private _mags = [_wep] call CBA_fnc_compatibleMagazines;
 
         {
-            if (getNumber (configfile >> "CfgMagazines" >> _x >> "tracersEvery") == 1 && { getNumber (configfile >> "CfgMagazines" >> _x >> "count") == _roundCount }) then {
-                private _ammo = getText (configfile >> "CfgMagazines" >> _x >> "ammo");
-                if (getNumber (configfile >> "CfgAmmo" >> _ammo >> "tracerStartTime") != -1) then {
-                    _tracerMags pushback _x;
+            if (getNumber (configFile >> "CfgMagazines" >> _x >> "tracersEvery") == 1 && { getNumber (configFile >> "CfgMagazines" >> _x >> "count") == _roundCount }) then {
+                private _ammo = getText (configFile >> "CfgMagazines" >> _x >> "ammo");
+                if (getNumber (configFile >> "CfgAmmo" >> _ammo >> "tracerStartTime") != -1) then {
+                    _tracerMags pushBack _x;
                 };
             };
         } forEach _mags;
@@ -212,7 +212,7 @@ adm_common_fnc_getZoneTemplateSkillValues = {
     {
         private _value = ["ZoneTemplates", _zoneTemplate, _x] call adm_config_fnc_getNumber;
         PUSH(_skills,AS_ARRAY_2(_x,_value));
-    } foreach ZONE_SKILLS;
+    } forEach ZONE_SKILLS;
 
     _skills;
 };
@@ -241,7 +241,7 @@ adm_common_fnc_createWaypoint = {
     private _radius = if (_groupType isEqualTo GROUP_TYPE_INF) then { 50 } else { 250 };
     _waypoint setWaypointCompletionRadius _radius;
 
-    DEBUG("admiral.common.create",FMT_6("Created waypoint '%1' at position '%2' for group '%3', with type '%4', behaviour '%5' and combat mode '%6'.",_waypoint,_wpArray,_group,_type,_behaviour,_mode));
+    //DEBUG("admiral.common.create",FMT_6("Created waypoint '%1' at position '%2' for group '%3', with type '%4', behaviour '%5' and combat mode '%6'.",_waypoint,_wpArray,_group,_type,_behaviour,_mode));
 
     _waypoint;
 };
@@ -253,7 +253,7 @@ adm_common_fnc_getAliveGroups = {
     {
         private _groups = _x;
         FILTER_PUSH_ALL(_aliveGroups,_groups,{IS_GROUP_ALIVE(_x)});
-    } foreach _groupsArray;
+    } forEach _groupsArray;
 
     _aliveGroups;
 };
@@ -265,7 +265,7 @@ adm_common_fnc_getAliveSideGroups = {
     {
         private _groups = _x;
         FILTER_PUSH_ALL(_aliveGroups,_groups,{IS_GROUP_ALIVE(_x) && {side _x == _side}});
-    } foreach _groupsArray;
+    } forEach _groupsArray;
 
     _aliveGroups;
 };
@@ -279,8 +279,8 @@ adm_common_fnc_getAliveUnits = {
         {
             private _groupUnits = units _x;
             FILTER_PUSH_ALL(_aliveUnits,_groupUnits,{alive _x});
-        } foreach _groups;
-    } foreach _groupsArray;
+        } forEach _groups;
+    } forEach _groupsArray;
 
     _aliveUnits;
 };
@@ -294,8 +294,8 @@ adm_common_fnc_getAliveSideUnits = {
         {
             private _groupUnits = units _x;
             FILTER_PUSH_ALL(_aliveSideUnits,_groupUnits,{alive _x && {side _x == _side}});
-        } foreach _groups;
-    } foreach _groupsArray;
+        } forEach _groups;
+    } forEach _groupsArray;
 
     _aliveSideUnits;
 };
@@ -322,7 +322,7 @@ adm_common_fnc_createLocalMarker = {
     } else {
         _size = [1, 1];
     };
-    DEBUG("admiral.common.create",FMT_6("Created local marker '%1' at position '%2' with shape '%3', type '%4', color '%5' and size '%6'.",_marker,_position,_shape,_type,_color,if (!isNil "_size") then {"<no size>"} else {_size}));
+    //DEBUG("admiral.common.create",FMT_6("Created local marker '%1' at position '%2' with shape '%3', type '%4', color '%5' and size '%6'.",_marker,_position,_shape,_type,_color,if (!isNil "_size") then {"<no size>"} else {_size}));
 
     _name;
 };
@@ -420,7 +420,7 @@ adm_common_fnc_isPlayersInRange = {
     {
         _inRange = _position distance _x <= _distance;
         if (_inRange) exitWith {};
-    } foreach _players;
+    } forEach _players;
 
     _inRange;
 };
@@ -471,7 +471,7 @@ adm_common_fnc_filterFirst = {
     private _result = [];
     {
         if (call _filterFunc) exitWith { _result = [_x] };
-    } foreach _array;
+    } forEach _array;
 
     _result;
 };

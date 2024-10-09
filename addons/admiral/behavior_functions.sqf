@@ -8,9 +8,9 @@ adm_behavior_fnc_changeAllGroupState = {
     [
         {
             {
-                TRACE("admiral.behavior",FMT_2("Group '%1' is in '%2' state.",_x,STATE_TEXT_ARRAY select (_x getVariable AS_ARRAY_2("adm_behavior_state", STATE_INIT))));
+                //TRACE("admiral.behavior",FMT_2("Group '%1' is in '%2' state.",_x,STATE_TEXT_ARRAY select (_x getVariable AS_ARRAY_2("adm_behavior_state", STATE_INIT))));
                 [_x] call (adm_behavior_states select (_x getVariable ["adm_behavior_state", STATE_INIT]));
-            } foreach ([] call adm_behavior_fnc_getAllGroups);
+            } forEach ([] call adm_behavior_fnc_getAllGroups);
         },
         1
     ] call CBA_fnc_addPerFrameHandler;
@@ -32,7 +32,7 @@ adm_behavior_fnc_stateMoving = {
     if (!isNull _enemy && {!((vehicle _enemy) isKindOf "Air")}) then {
         _nextState = STATE_ENEMYFOUND;
         _group setVariable ["adm_behavior_enemyPos", getPosATL _enemy, false];
-        DEBUG("admiral.behavior",FMT_2("Group '%1' found enemy '%2'!",_group,_enemy));
+        //DEBUG("admiral.behavior",FMT_2("Group '%1' found enemy '%2'!",_group,_enemy));
         ["behavior.state.change", [_group, _nextState, _enemy]] call adm_event_fnc_emitEvent;
     };
     _group setVariable ["adm_behavior_state", _nextState, false];
@@ -65,7 +65,7 @@ adm_behavior_fnc_stateSeekAndDestroyEnemy = {
         _x setDestination [_enemyPos, "LEADER PLANNED", true];
         _x doMove _enemyPos;
     } forEach units _group;
-    DEBUG("admiral.behavior",FMT_1("SAD waypoint was assigned to group '%1'.",_group));
+    //DEBUG("admiral.behavior",FMT_1("SAD waypoint was assigned to group '%1'.",_group));
 };
 
 adm_behavior_fnc_stateCombat = {
@@ -75,14 +75,14 @@ adm_behavior_fnc_stateCombat = {
     if (!isNil {_reinfGroup}) then {
         private _enemyPos = _group getVariable "adm_behavior_enemyPos";
         if (!IS_GROUP_ALIVE(_reinfGroup)) then {
-            DEBUG("admiral.behavior",FMT_2("Group '%1' tries to call additinal reinforcement, becasue reinforced group '%2' died.",_group,_reinfGroup));
+            //DEBUG("admiral.behavior",FMT_2("Group '%1' tries to call additinal reinforcement, becasue reinforced group '%2' died.",_group,_reinfGroup));
             private _enemyNumbers = [side _group, _enemyPos] call adm_behavior_fnc_getEnemyNumbers;
             _group setVariable ["adm_behavior_reinfGroup", nil];
             [_group, _enemyPos, [ceil random (_enemyNumbers select 0), floor random (_enemyNumbers select 1), floor random (_enemyNumbers select 2)]] call adm_behavior_fnc_callReinforcement;
         } else {
             if (_reinfGroup getVariable "adm_behavior_state" == STATE_MOVING && {leader _group distance _enemyPos > BEHAVIOR_REINF_TURNAROUND_DIST}) then {
                 [_group] call adm_behavior_fnc_continueMoving;
-                DEBUG("admiral.behavior",FMT_2("Group '%1' returns patrolling, becasue reinforced group '%2' is not in combat.",_group,_reinfGroup));
+                //DEBUG("admiral.behavior",FMT_2("Group '%1' returns patrolling, becasue reinforced group '%2' is not in combat.",_group,_reinfGroup));
             };
         };
     };
@@ -91,7 +91,7 @@ adm_behavior_fnc_stateCombat = {
 adm_behavior_fnc_continueMoving = {
     params ["_group"];
 
-    DEBUG("admiral.behavior",FMT_2("Group '%1' is in '%2' state.",_group,STATE_TEXT_ARRAY select (_group getVariable "adm_behavior_state")));
+    //DEBUG("admiral.behavior",FMT_2("Group '%1' is in '%2' state.",_group,STATE_TEXT_ARRAY select (_group getVariable "adm_behavior_state")));
     _group setVariable ["adm_behavior_state", STATE_CONTINUEMOVING, false];
     ["behavior.state.change", [_group, STATE_CONTINUEMOVING]] call adm_event_fnc_emitEvent;
 };
@@ -106,7 +106,7 @@ adm_behavior_fnc_updateWaypointsAndMoving = {
         _group setVariable ["adm_behavior_enemyPos", nil, false];
         _group setVariable ["adm_behavior_reinfGroup", nil, false];
         deleteWaypoint [_group, (count waypoints _group) - 1];
-        DEBUG("admiral.behavior",FMT_1("Group '%1' returns patrolling.",_group));
+        //DEBUG("admiral.behavior",FMT_1("Group '%1' returns patrolling.",_group));
     };
 };
 
@@ -126,7 +126,7 @@ adm_behavior_fnc_getEnemyNumbers = {
                 };
             };
         };
-    } foreach _enemyUnits;
+    } forEach _enemyUnits;
 
     _enemyNumbers;
 };
@@ -139,7 +139,7 @@ adm_behavior_fnc_canCallReinforcement = {
         if ((_x select 0) + BEHAVIOR_REINF_COOLDOWN > time || {(_x select 1) distance _enemyPos < BEHAVIOR_ENEMY_CHECK_RADIUS}) exitWith {
             _canCall = false;
         };
-    } foreach ([_side] call adm_behavior_fnc_getFoundEnemyArray);
+    } forEach ([_side] call adm_behavior_fnc_getFoundEnemyArray);
 
     _canCall || {floor random 100 < BEHAVIOR_CANCALL_PERCENT_CHANCE};
 };
@@ -148,7 +148,7 @@ adm_behavior_fnc_callReinforcement = {
     params ["_group","_enemyPos","_enemyNumbers"];
 
     private _callNumbers = [BEHAVIOR_REINF_NUM(_enemyNumbers,1,1,1) + 1, BEHAVIOR_REINF_NUM(_enemyNumbers,3,1,1), BEHAVIOR_REINF_NUM(_enemyNumbers,4,2,1)];
-    DEBUG("admiral.behavior",FMT_4("Group '%1' found '%2' number of enemies and tries to call '%3' number of reinforcements at position '%4'.",_group,_enemyNumbers,_callNumbers,_enemyPos));
+    //DEBUG("admiral.behavior",FMT_4("Group '%1' found '%2' number of enemies and tries to call '%3' number of reinforcements at position '%4'.",_group,_enemyNumbers,_callNumbers,_enemyPos));
     private _infantryGroups = [_group, _enemyPos, _callNumbers select 0, adm_behavior_fnc_getAvailableInfGroups] call adm_behavior_fnc_callReinforcementGroups;
     private _technicalGroups = [_group, _enemyPos, _callNumbers select 1, adm_behavior_fnc_getAvailableTechGroups] call adm_behavior_fnc_callReinforcementGroups;
     private _armourGroups = [_group, _enemyPos, _callNumbers select 2, adm_behavior_fnc_getAvailableArmourGroups] call adm_behavior_fnc_callReinforcementGroups;
@@ -169,7 +169,7 @@ adm_behavior_fnc_callReinforcementGroups = {
                 _x setVariable ["adm_behavior_state", STATE_SADENEMY, false];
                 PUSH(_reinforcementGroups,_x);
             };
-        } foreach _groups;
+        } forEach _groups;
     };
 
     _reinforcementGroups;
@@ -271,7 +271,7 @@ adm_behavior_fnc_initFoundEnemies = {
     adm_behavior_foundEnemies = [];
     {
         PUSH(adm_behavior_foundEnemies,[]);
-    } foreach SIDE_ARRAY;
+    } forEach SIDE_ARRAY;
 };
 
 adm_behavior_fnc_init = {

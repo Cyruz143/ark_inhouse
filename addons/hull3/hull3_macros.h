@@ -182,7 +182,7 @@
 //          PUSH_ALL(_numbers, _otherNumbers);
 //      THEN:
 //          _numbers == [5, 9, 6, 1, 3, 8];
-#define PUSH_ALL(TO,FROM) { PUSH(TO,_x); } foreach (FROM)
+#define PUSH_ALL(TO,FROM) { PUSH(TO,_x); } forEach (FROM)
 
 // Filters the FROM array with a condition and adds the values that return true to the TO array.
 // The values from the FROM array can be referenced by variable "_x".
@@ -195,7 +195,7 @@
 //          FILTER_PUSH_ALL(_numbers, _otherNumbers, _condition);
 //      THEN:
 //          _numbers == [2, 6, 8];
-#define FILTER_PUSH_ALL(TO,FROM,COND) { if (call COND) then { PUSH(TO,_x); }; } foreach (FROM)
+#define FILTER_PUSH_ALL(TO,FROM,COND) { if (call COND) then { PUSH(TO,_x); }; } forEach (FROM)
 
 // Selects a random value from an array.
 // Example:

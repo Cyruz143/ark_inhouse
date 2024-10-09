@@ -16,7 +16,7 @@ plank_deploy_fnc_expandFortCounts = {
     DECLARE(_shifted) = [1];
     {
         PUSH(_shifted,_x);
-    } foreach FORTS_DATA;
+    } forEach FORTS_DATA;
 };
 
 plank_deploy_fnc_getNonZeroFortIndexes = {
@@ -27,7 +27,7 @@ plank_deploy_fnc_getNonZeroFortIndexes = {
     _fortCounts = _unit getVariable ["plank_deploy_fortCounts", [1]];
     {
         if (_x > 0) then { PUSH(_fortIndexes,_forEachIndex); };
-    } foreach _fortCounts;
+    } forEach _fortCounts;
 
     _fortIndexes;
 };
@@ -274,7 +274,7 @@ plank_deploy_fnc_shiftFortifications = {
     DECLARE(_shifted) = [1];
     {
         PUSH(_shifted,_x);
-    } foreach _fortifications;
+    } forEach _fortifications;
 
     _shifted;
 };

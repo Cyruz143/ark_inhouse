@@ -258,7 +258,7 @@ plank_ui_fnc_addFortificationLabels = {
     _fortCounts = player getVariable ["plank_deploy_fortCounts", []];
     {
         [_x, _fortCounts select _x] call plank_ui_fnc_addFortificationLabel;
-    } foreach _fortIndexes;
+    } forEach _fortIndexes;
 };
 
 plank_ui_fnc_selectionChanged = {

@@ -145,7 +145,7 @@
             _context = [];
             {
                 if (_contextName == _x select 0) exitWith {_context = _x};
-            } foreach (LB_CONTEXTS);
+            } forEach (LB_CONTEXTS);
 
             _context;
         };

@@ -1519,7 +1519,7 @@ class UnitTemplates {
         pilots[] = {"LIB_SOV_pilot"};
         technicals[] = {"LIB_Scout_M3", "LIB_Scout_M3_FFV", "LIB_SOV_M3_Halftrack", "LIB_SdKfz251_captured", "LIB_Sdkfz2_FFV"};
         armour[] = {"LIB_JS2_43", "LIB_M4A2_SOV", "LIB_SU85", "LIB_T34_76", "LIB_T34_85", "LIB_T34_85"};
-        th[] = {"LIB_Li2﻿"};
+        th[] = {"LIB_Li2"};
         ah[] = {"LIB_Pe2"};
     };
 
@@ -1531,7 +1531,7 @@ class UnitTemplates {
         pilots[] = {"LIB_SOV_pilot"};
         technicals[] = {"LIB_Scout_M3", "LIB_Scout_M3_FFV", "LIB_SOV_M3_Halftrack", "LIB_SdKfz251_captured", "LIB_Sdkfz2_FFV"};
         armour[] = {"LIB_JS2_43", "LIB_M4A2_SOV", "LIB_SU85", "LIB_T34_76", "LIB_T34_85", "LIB_T34_85"};
-        th[] = {"LIB_Li2﻿"};
+        th[] = {"LIB_Li2"};
         ah[] = {"LIB_Pe2"};
     };
 
@@ -1543,7 +1543,7 @@ class UnitTemplates {
         pilots[] = {"LIB_SOV_pilot"};
         technicals[] = {"LIB_Scout_M3_w", "LIB_Scout_M3_FFV_w", "LIB_SOV_M3_Halftrack_w"};
         armour[] = {"LIB_JS2_43_w", "LIB_M4A2_SOV_w", "LIB_SU85_w", "LIB_T34_76_w", "LIB_T34_85_w", "LIB_T34_85_w"};
-        th[] = {"LIB_Li2﻿"};
+        th[] = {"LIB_Li2"};
         ah[] = {"LIB_Pe2_w"};
     };
 

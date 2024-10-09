@@ -54,14 +54,14 @@ FNC_EMIT_EVENT = {
     FUN_ARGS_2(_eventName,_arguments);
 
     DECLARE(_eventIndex) = [_eventName] call FNC_FIND_EVENT;
-    DEBUG("admiral.event.emit",FMT_2("Emiting event '%1' with found index '%2'.",_eventName,_eventIndex));
-    TRACE("admiral.event.emit",FMT_3("Emiting event '%1' with arguments '%2' and found index '%3'.",_eventName,_arguments,_eventIndex));
+    //DEBUG("admiral.event.emit",FMT_2("Emiting event '%1' with found index '%2'.",_eventName,_eventIndex));
+    //TRACE("admiral.event.emit",FMT_3("Emiting event '%1' with arguments '%2' and found index '%3'.",_eventName,_arguments,_eventIndex));
     if (_eventIndex != -1) then {
         {
             _arguments call _x;
-        } foreach (EVENTS_ARRAY select _eventIndex select 2);
+        } forEach (EVENTS_ARRAY select _eventIndex select 2);
         [EVENTS_ARRAY select _eventIndex select 1, _arguments] call adm_common_fnc_callEventFile;
-        TRACE("admiral.event.emit",FMT_2("Emitted event '%1' with arguments '%2'.",_eventName,_arguments));
+        //TRACE("admiral.event.emit",FMT_2("Emitted event '%1' with arguments '%2'.",_eventName,_arguments));
     };
 };
 
@@ -71,7 +71,7 @@ FNC_FIND_EVENT = {
     DECLARE(_eventIndex) = -1;
     {
         if (_x select 0 == _eventName) exitWith {_eventIndex = _forEachIndex};
-    } foreach EVENTS_ARRAY;
+    } forEach EVENTS_ARRAY;
 
     _eventIndex;
 };

@@ -8,12 +8,12 @@ hull3_config_fnc_getConfig = {
     DECLARE(_config) = HULL3_MISSION_CONFIG_FILE;
     {
         _config = _config >> _x;
-    } foreach _this;
+    } forEach _this;
     if (configName _config == "") then {
         _config = HULL3_CONFIG_FILE;
         {
             _config = _config >> _x;
-        } foreach _this;
+        } forEach _this;
     };
 
     _config;
@@ -24,13 +24,13 @@ hull3_config_fnc_getBothArray = {
     _config = HULL3_MISSION_CONFIG_FILE;
     {
         _config = _config >> _x;
-    } foreach _this;
+    } forEach _this;
     _values = getArray _config;
 
     _config = HULL3_CONFIG_FILE;
     {
         _config = _config >> _x;
-    } foreach _this;
+    } forEach _this;
     PUSH_ALL(_values,getArray _config);
 
     _values;
@@ -116,7 +116,7 @@ hull3_config_fnc_getEntryWithName = {
     DECLARE(_entry) = [];
     {
         if (_x select 0 == _name) exitWith { _entry = _x; };
-    } foreach _entries;
+    } forEach _entries;
 
     _entry;
 };
