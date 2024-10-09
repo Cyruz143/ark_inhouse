@@ -23,8 +23,8 @@
 
 #define SIDE_ARRAY                          [east, west, resistance, civilian]
 #define SIDE_TEXT_ARRAY                     ["east", "west", "resistance", "civilian"]
-#define SIDE_east                           0
-#define SIDE_west                           1
+#define SIDE_EAST                           0
+#define SIDE_WEST                           1
 #define SIDE_IND                            2
 #define SIDE_CIV                            3
 
