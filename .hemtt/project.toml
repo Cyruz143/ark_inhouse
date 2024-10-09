@@ -1,0 +1,17 @@
+name = "Ark Inhouse"
+prefix = "ark"
+author = "ARK"
+
+[files]
+include = [
+    "README.md"
+]
+
+[version]
+git_hash = 0
+
+[hemtt.config]
+preset = "Hemtt"
+
+[hemtt.release]
+folder = "ark_inhouse"

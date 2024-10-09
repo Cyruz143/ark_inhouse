@@ -1,5 +1,3 @@
-#include "\x\ark\addons\hull3\hull3_macros.h"
-
 re_interaction_fnc_preinit = {
     re_interaction_locationSizeChange = 50;
 
@@ -54,7 +52,7 @@ re_interaction_fnc_addInteractions = {
             , _condition
             ] call ace_interact_menu_fnc_createAction;
         [player, 1, ["ACE_SelfActions", "Random Engagements"], _action] call ace_interact_menu_fnc_addActionToObject;
-    } foreach _actions;
+    } forEach _actions;
 
     _action =
         [ "Location Size"
@@ -81,7 +79,7 @@ re_interaction_fnc_addInteractions = {
             , [_x select 1]
             ] call ace_interact_menu_fnc_createAction;
         [player, 1, ["ACE_SelfActions", "Random Engagements", "Location Size"], _action] call ace_interact_menu_fnc_addActionToObject;
-    } foreach _sizes;
+    } forEach _sizes;
 };
 
 re_interaction_fnc_selectLocation = {
@@ -110,7 +108,7 @@ re_fnc_enablePlank = {
                 private _fortIndices = player getVariable ["re_plank_fortIndices", []];
                 {
                     [_unit, _x, _fortCount select _forEachIndex] call plank_api_fnc_addFortification;
-                } foreach _fortIndices;
+                } forEach _fortIndices;
             };
             _unit setVariable ["re_areFortsAssigned", true, true];
         };
@@ -129,7 +127,7 @@ re_fnc_addBaseFortsToPlank = {
 };
 
 re_fnc_addTechnicalToPlank = {
-    private _techincalClassnameEntries = getArray (HULL3_CONFIG_FILE >> FACTION_CONFIG >> re_attacker_faction >> "vehicleClassnames") select { _x select 0 isEqualTo "Technical"};
+    private _techincalClassnameEntries = getArray (configFile >> "Hull3" >> "Faction" >> re_attacker_faction >> "vehicleClassnames") select { _x select 0 isEqualTo "Technical"};
     private _techincalClassname = _techincalClassnameEntries select 0 select 1;
     private _fortIndex = [player, _techincalClassname, format ["Technical (%1)", _techincalClassname]] call plank_api_fnc_addNewBoundingFortification;
     [player, _fortIndex, 1] call plank_api_fnc_addFortification;

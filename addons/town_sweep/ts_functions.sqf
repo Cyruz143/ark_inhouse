@@ -1,7 +1,3 @@
-#include "\x\ark\addons\hull3\hull3_macros.h"
-
-
-
 ts_fnc_preinit = {
     ts_camouflage = ["woodland", "desert", "snow"] select (["TownSweep_Camouflage", 0] call BIS_fnc_getParamValue);
     ts_player_faction = "Default";
@@ -24,7 +20,7 @@ ts_fnc_preinit = {
 
 ts_fnc_selectRandomFaction = {
     private ["_factionConfigs", "_factionConfig"];
-    _factionConfigs = "ts_camouflage in getArray (_x >> 'camouflage') && {getText (_x >> 'name') isNotEqualTo 'Default'}" configClasses (HULL3_CONFIG_FILE >> FACTION_CONFIG);
+    _factionConfigs = "ts_camouflage in getArray (_x >> 'camouflage') && {getText (_x >> 'name') isNotEqualTo 'Default'}" configClasses (configFile >> "Hull3" >> "Faction");
     _factionConfig = _factionConfigs select floor random count _factionConfigs;
     ts_player_faction = configName _factionConfig;
     ts_player_factionRawSide = getText (_factionConfig >> "side");

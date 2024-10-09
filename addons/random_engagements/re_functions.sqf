@@ -1,5 +1,3 @@
-#include "\x\ark\addons\hull3\hull3_macros.h"
-
 re_attacker_side = west;
 re_defender_side = east;
 
@@ -46,7 +44,7 @@ re_fnc_preinit = {
 };
 
 re_fnc_randomizeFactions = {
-    private _factionConfigs = "re_camouflage in getArray (_x >> 'camouflage') && {getText (_x >> 'name') isNotEqualTo 'Default'}" configClasses (HULL3_CONFIG_FILE >> FACTION_CONFIG);
+    private _factionConfigs = "re_camouflage in getArray (_x >> 'camouflage') && {getText (_x >> 'name') isNotEqualTo 'Default'}" configClasses (configFile >> "Hull3" >> "Faction");
     private _attackerFactionConfig = _factionConfigs select floor random count _factionConfigs;
     re_attacker_faction = configName _attackerFactionConfig;
     publicVariable "re_attacker_faction";
@@ -70,7 +68,7 @@ re_fnc_randomizeFactions = {
 };
 
 re_fnc_createLocationMarker = {
-    private _marker = createmarker [re_selectedLocationMarkerName, [0, 0, 0]];
+    private _marker = createMarker [re_selectedLocationMarkerName, [0, 0, 0]];
     _marker setMarkerSize [1, 1];
     _marker setMarkerAlpha 0.5;
     _marker setMarkerShape "ELLIPSE";

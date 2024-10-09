@@ -36,7 +36,7 @@ ts_interaction_fnc_addInteractions = {
             , _condition
             ] call ace_interact_menu_fnc_createAction;
         [player, 1, ["ACE_SelfActions", "Town Sweep"], _action] call ace_interact_menu_fnc_addActionToObject;
-    } foreach _actions;
+    } forEach _actions;
 
     _action =
         [ "Difficulty"
@@ -62,7 +62,7 @@ ts_interaction_fnc_addInteractions = {
             , [_x select 1]
             ] call ace_interact_menu_fnc_createAction;
         [player, 1, ["ACE_SelfActions", "Town Sweep", "Difficulty"], _action] call ace_interact_menu_fnc_addActionToObject;
-    } foreach _difficulties;
+    } forEach _difficulties;
 
     _action =
         [ "Town Size"
@@ -89,5 +89,5 @@ ts_interaction_fnc_addInteractions = {
             , [_x select 1]
             ] call ace_interact_menu_fnc_createAction;
         [player, 1, ["ACE_SelfActions", "Town Sweep", "Town Size"], _action] call ace_interact_menu_fnc_addActionToObject;
-    } foreach _sizes;
+    } forEach _sizes;
 };
