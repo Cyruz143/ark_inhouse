@@ -1,10 +1,7 @@
-#include "hull3_macros.h"
+#include "script_component.hpp"
 #include "\userconfig\hull3\log\acre.h"
-#include "logbook.h"
 
-#define ACRE_SIDES                                  [west, east, resistance, civilian]
-
-
+#define ACRE_SIDES [west, east, resistance, civilian]
 
 hull3_acre_fnc_preInit = {
     call hull3_acre_fnc_addEventHandlers;
@@ -272,7 +269,7 @@ hull3_acre_fnc_adminAssignRadio = {
             params ["_unit", "_name", "_radio"];
 
             private _message = format ["Player '%1' in unit '%2' has requested radio '%3'!", _name, _unit, _radio];
-            diag_log LOGGING_FORMAT("hull3.acre.admin","WARN",_message);
+            //diag_log LOGGING_FORMAT("hull3.acre.admin","WARN",_message);
         }] remoteExec ["bis_fnc_call", 2];
     } else {
         systemChat format ["[Hull3] Requested radio '%1' cannot be added to uniform. Make sure you have enough space!", _radio];

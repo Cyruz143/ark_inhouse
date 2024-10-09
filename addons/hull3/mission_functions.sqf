@@ -1,15 +1,12 @@
-#include "hull3_macros.h"
-
+#include "script_component.hpp"
 #include "\userconfig\hull3\log\mission.h"
-#include "logbook.h"
 
 #define DEFAULT_TIME_OF_DAY [12, 0]
-
 
 hull3_mission_fnc_preInit = {
     hull3_mission_isJip = false;
     [] call hull3_mission_fnc_addEventHandlers;
-    DEBUG("hull3.mission","Mission functions preInit finished.");
+    //DEBUG("hull3.mission","Mission functions preInit finished.");
 };
 
 hull3_mission_fnc_addEventHandlers = {
@@ -26,7 +23,7 @@ hull3_mission_fnc_serverInit = {
     [] call hull3_mission_fnc_readMissionParamValues;
     [] call hull3_mission_fnc_setEnviroment;
     [] spawn hull3_mission_fnc_serverSafetyTimerLoop;
-    DEBUG("hull3.mission","Server init finished.");
+    //DEBUG("hull3.mission","Server init finished.");
 };
 
 hull3_mission_fnc_clientInit = {
@@ -35,7 +32,7 @@ hull3_mission_fnc_clientInit = {
     if (hull3_mission_isJip) then {
         [] call hull3_mission_fnc_getJipSync;
     };
-    DEBUG("hull3.mission","Client init finished.");
+    //DEBUG("hull3.mission","Client init finished.");
 };
 
 hull3_mission_fnc_evaluateParams = {
@@ -192,7 +189,7 @@ hull3_mission_fnc_serverSafetyTimerCountDown = {
     params ["_isAborted"];
 
     if (_isAborted) then {
-        DECLARE(_countDownLength) = if (isMultiplayer) then {10} else {0};
+        DECLARE(_countDownLength) = [0, 10] select (isMultiplayer);
         hull3_mission_safetyTimer = [true, _countDownLength];
         //DEBUG("hull3.mission.safetytimer",FMT_1("Safety timer has been aborted. Starting countdown from '%1' seconds.",hull3_mission_safetyTimer #1));
         for "_i" from _countDownLength to 0 step -1 do {
@@ -222,7 +219,7 @@ hull3_mission_fnc_clientSafetyTimerLoop = {
                 [_this #1] call CBA_fnc_removePerFrameHandler;
                 ["ace_firedPlayer", (player getVariable "hull3_eh_fired")] call CBA_fnc_removeEventHandler;
                 {[ACE_player, _x, false, false] call ace_safemode_fnc_setWeaponSafety} forEach (weapons player);
-                DEBUG("hull3.mission.safetytimer","Safety timer has ended. Removed fired EH.");
+                //DEBUG("hull3.mission.safetytimer","Safety timer has ended. Removed fired EH.");
             };
         } ] call CBA_fnc_addPerFrameHandler;
     };
@@ -269,7 +266,7 @@ hull3_mission_fnc_addHostSafetyTimerStopAction = {
         if (serverCommandAvailable "#kick" || {!isMultiplayer}) then {
             DECLARE(_actionId) = player addAction ['<t color="#428CE0">Disable weapon safety</t>', ADDON_PATH(mission_host_safetytimer_stop.sqf), ["activated"], 3, false, false, "", "driver _target == _this && {!(hull3_mission_safetyTimer #0)} && {(hull3_mission_safetyTimer #1) < hull3_mission_safetyTimerEnd}"];
             hull3_mission_safetyTimerActionIds set [0, _actionId];
-            DEBUG("hull.mission.safetytimer","Added safety timer abort action to player.");
+            //DEBUG("hull.mission.safetytimer","Added safety timer abort action to player.");
         };
     } else {
         //DEBUG("hull.mission.safetytimer","Safety timer abort action not added to player, using ACE Self Interaction instead.");

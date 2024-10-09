@@ -1,7 +1,5 @@
-#include "hull3_macros.h"
-
+#include "script_component.hpp"
 #include "\userconfig\hull3\log\gc.h"
-#include "logbook.h"
 
 hull3_gc_fnc_preInit = {
     hull3_gc_isEnabled = ["GarbageCollector", "isEnabled"] call hull3_config_fnc_getBool;

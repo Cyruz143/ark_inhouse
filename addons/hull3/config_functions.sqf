@@ -1,8 +1,5 @@
-#include "hull3_macros.h"
-
+#include "script_component.hpp"
 #include "\userconfig\hull3\log\config.h"
-#include "logbook.h"
-
 
 hull3_config_fnc_getConfig = {
     DECLARE(_config) = HULL3_MISSION_CONFIG_FILE;

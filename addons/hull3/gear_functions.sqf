@@ -1,7 +1,5 @@
-#include "hull3_macros.h"
-
+#include "script_component.hpp"
 #include "\userconfig\hull3\log\gear.h"
-#include "logbook.h"
 
 
 #define INFIX_FUNC(FUNC)                        {(_this select 0) FUNC (_this select 1)}
@@ -122,7 +120,7 @@ hull3_gear_fnc_validateFaction = {
     params ["_unit", "_factionEntry"];
 
     if (count _factionEntry > 0 && {!isClass ([FACTION_CONFIG, _factionEntry select 0] call hull3_config_fnc_getConfig)}) then {
-        WARN("hull3.gear.assign",FMT_2("No faction found with name '%1' for unit '%2'!",_factionEntry select 0,_unit));
+        //WARN("hull3.gear.assign",FMT_2("No faction found with name '%1' for unit '%2'!",_factionEntry select 0,_unit));
     };
 };
 
@@ -145,7 +143,7 @@ hull3_gear_fnc_getClass = {
         if (isClass ([TYPE_CLASS_GEAR, _gearTemplate, _gearEntry select 0] call hull3_config_fnc_getConfig)) then {
             _gearClass = _gearEntry select 0;
         } else {
-            WARN("hull3.gear.assign",FMT_3("No gear class found with name '%1' in gear template '%2' for unit '%3'!",_gearEntry select 1,_gearTemplate,_unit));
+            //WARN("hull3.gear.assign",FMT_3("No gear class found with name '%1' in gear template '%2' for unit '%3'!",_gearEntry select 1,_gearTemplate,_unit));
         };
     };
 
@@ -160,7 +158,7 @@ hull3_gear_fnc_getTemplate = {
         if (isClass ([TYPE_CLASS_GEAR, _gearEntry select 1] call hull3_config_fnc_getConfig)) then {
             _gearTemplate = _gearEntry select 1;
         } else {
-            WARN("hull3.gear.assign",FMT_2("No gear template found with name '%1' for unit '%2'!",_gearEntry select 1,_unit));
+            //WARN("hull3.gear.assign",FMT_2("No gear template found with name '%1' for unit '%2'!",_gearEntry select 1,_unit));
         };
     } else {
         DECLARE(_faction) = if (count _factionEntry > 0) then { _factionEntry select 0 } else { faction _unit };
@@ -258,7 +256,7 @@ hull3_gear_fnc_assignItems = {
         INC(_i);
     };
     if (_assignedAmount < _amount) then {
-        WARN("hull3.gear.assign",FMT_8("Failed to assign %1x'%2' (of %3) from '%4' to the %5 of unit '%6' from template '%7' and class '%8'.",_amount - _assignedAmount,_item,_amount,_fieldName,_container,_unit,_template,_class));
+        //WARN("hull3.gear.assign",FMT_8("Failed to assign %1x'%2' (of %3) from '%4' to the %5 of unit '%6' from template '%7' and class '%8'.",_amount - _assignedAmount,_item,_amount,_fieldName,_container,_unit,_template,_class));
     } else {
         //TRACE("hull3.gear.assign",FMT_5("Assigned %1x'%2' from '%3' to the %4 of unit '%5'.",_amount,_item,_fieldName,_container,_unit));
     };

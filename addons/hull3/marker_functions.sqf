@@ -1,7 +1,5 @@
-#include "hull3_macros.h"
-
+#include "script_component.hpp"
 #include "\userconfig\hull3\log\marker.h"
-#include "logbook.h"
 
 
 hull3_marker_fnc_preInit = {
@@ -42,7 +40,7 @@ hull3_marker_fnc_disableFireTeamMarkers = {
 hull3_marker_fnc_initMarker = {
     params ["_unit", "_markerText", "_markerColor"];
 
-    PUSH(hull3_marker_rawGroupMarkers, AS_ARRAY_4(_unit,_unit getVariable "hull3_gear_class",_markerText,_markerColor));
+    PUSH(hull3_marker_rawGroupMarkers,AS_ARRAY_4(_unit,_unit getVariable "hull3_gear_class",_markerText,_markerColor));
 };
 
 hull3_marker_fnc_addMarkers = {

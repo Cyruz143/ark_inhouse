@@ -1,7 +1,5 @@
-#include "hull3_macros.h"
-
+#include "script_component.hpp"
 #include "\userconfig\hull3\log\unit.h"
-#include "logbook.h"
 
 hull3_unit_fnc_init = {
     params ["_unit"];
@@ -24,7 +22,7 @@ hull3_unit_fnc_init = {
 };
 
 hull3_unit_fnc_onPlayerRespawn = {
-    DEBUG("hull3.player.respawned",FMT_1("Player has respawned with '%1'",_this));
+    //DEBUG("hull3.player.respawned",FMT_1("Player has respawned with '%1'",_this));
     ["player.respawned", _this] call hull3_event_fnc_emitEvent;
 };
 
@@ -33,7 +31,7 @@ hull3_unit_fnc_playerInit = {
         {getClientStateNumber >= 9 || { (call bis_fnc_getNetMode) isEqualTo "SinglePlayer" }},
         {
             ["player.initialized", [player]] call hull3_event_fnc_emitEvent;
-            DEBUG("hull3.unit.player","Player is initialized.");
+            //DEBUG("hull3.unit.player","Player is initialized.");
 
             call hull3_marker_fnc_addMarkers;
             call hull3_marker_fnc_updateAllMarkers;
@@ -83,7 +81,7 @@ hull3_unit_fnc_friendlyFireEH = {
     params ["_unit","_selectionName","_damage","_source","_projectile"];
 
     if (_selectionName == "" && {_unit != _source} && {side _unit == side _source}) then {
-        DECLARE(_message) = LOGGING_FORMAT("hull.unit.friendlyFire","WARN",FMT_4("'%1' dealt '%2' damage with '%3' to '%4'!",_source,_damage,_projectile,_unit));
+        //DECLARE(_message) = LOGGING_FORMAT("hull.unit.friendlyFire","WARN",FMT_4("'%1' dealt '%2' damage with '%3' to '%4'!",_source,_damage,_projectile,_unit));
         [_message] call hull3_common_fnc_logOnServer;
     };
 
@@ -94,7 +92,7 @@ hull3_unit_fnc_killedEH = {
     params ["_unit","_killer"];
 
     if (_unit != _killer && {side _unit == side _killer}) then {
-        DECLARE(_message) = LOGGING_FORMAT("hull.unit.friendlyFire","WARN",FMT_2("'%1' killed '%2'!",_killer,_unit));
+        //DECLARE(_message) = LOGGING_FORMAT("hull.unit.friendlyFire","WARN",FMT_2("'%1' killed '%2'!",_killer,_unit));
         [_message] call hull3_common_fnc_logOnServer;
     };
 

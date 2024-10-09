@@ -1,8 +1,5 @@
-#include "hull3_macros.h"
-
+#include "script_component.hpp"
 #include "\userconfig\hull3\log\postinit.h"
-#include "logbook.h"
-
 
 if (hull3_isEnabled) then {
     [] call hull3_settings_fnc_init;

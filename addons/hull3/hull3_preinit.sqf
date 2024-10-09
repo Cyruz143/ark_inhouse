@@ -1,8 +1,5 @@
-#include "hull3_macros.h"
-
+#include "script_component.hpp"
 #include "\userconfig\hull3\log\preinit.h"
-#include "logbook.h"
-
 
 hull3_isInitialized = false;
 
@@ -26,7 +23,7 @@ if (hull3_isEnabled) then {
 
     hull3_isInitialized = true;
     ["hull3.initialized", []] call hull3_event_fnc_emitEvent;
-    INFO("hull3",FMT_1("Hull version '%1' has been successfully initialized.",HULL3_VERSION));
+    INFO_1("Hull3: Hull version %1 has been successfully initialized.",HULL3_VERSION);
 
     [] call hull3_mission_fnc_preInit;
     [] call hull3_marker_fnc_preInit;
@@ -37,8 +34,8 @@ if (hull3_isEnabled) then {
     [] call hull3_gc_fnc_preInit;
 } else {
     if (isClass (missionConfigFile >> "Hull_Script_Version")) then {
-        //INFO("hull3",FMT_1("Older script version of Hull was detected. Addonized Hull version '%1' was disabled.",HULL3_VERSION));
+        INFO_1("Hull3: Older script version of Hull was detected. Addonized Hull version %1 was disabled.",HULL3_VERSION);
     } else {
-        //INFO("hull3",FMT_1("Hull version '%1' was disabled.",HULL3_VERSION));
+        INFO_1("Hull3: Hull version %1 was disabled.",HULL3_VERSION);
     };
 };

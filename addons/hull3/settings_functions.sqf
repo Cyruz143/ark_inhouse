@@ -1,8 +1,5 @@
-#include "hull3_macros.h"
-
+#include "script_component.hpp"
 #include "\userconfig\hull3\log\settings.h"
-#include "logbook.h"
-
 
 hull3_settings_fnc_init = {
     [] call hull3_settings_fnc_setNonStandardGeneralSettings;
