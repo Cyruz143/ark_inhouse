@@ -3,7 +3,7 @@
 
 hull3_uniform_fnc_preInit = {
     hull3_uniform_unitBaseClass = [TYPE_CLASS_UNIFORM, "unitBaseClass"] call hull3_config_fnc_getText;
-    //DEBUG("hull3.uniform","Uniform functions preInit finished.");
+    DEBUG("hull3.uniform","Uniform functions preInit finished.");
 };
 
 hull3_uniform_fnc_assignUniformInit = {
@@ -11,7 +11,7 @@ hull3_uniform_fnc_assignUniformInit = {
 
     _unit setUnitLoadout (configFile >> 'EmptyLoadout');
     _unit setVariable ["hull3_uniform_template", _template, true];
-    //DEBUG("hull3.uniform.assign",FMT_1("Initialized unit '%1' uniform.",_unit));
+    DEBUG_1("hull3.uniform.assign: Initialized unit '%1' uniform.",_unit));
 };
 
 hull3_uniform_fnc_getTemplate = {
@@ -22,7 +22,7 @@ hull3_uniform_fnc_getTemplate = {
         if (isClass ([TYPE_CLASS_UNIFORM, _uniformEntry select 0] call hull3_config_fnc_getConfig)) then {
             _uniformTemplate = _uniformEntry select 0;
         } else {
-            //WARN("hull3.uniform.assign",FMT_2("No uniform template found with name '%1' for unit '%2'!",_uniformEntry select 1,_unit));
+            WARN_2("hull3.uniform.assign: No uniform template found with name '%1' for unit '%2'!",_uniformEntry select 1,_unit));
         };
     } else {
         private _faction = if (count _factionEntry > 0) then { _factionEntry select 0 } else { faction _unit };
@@ -44,7 +44,7 @@ hull3_uniform_fnc_assignUniformTemplate = {
         ["insignia",                CONFIG_TYPE_TEXT,   hull3_uniform_fnc_assignInsignia]
     ];
     [_unit, _gearTemplate, _uniformTemplate, _gearClass, _assignables] call hull3_uniform_fnc_assignObjectTemplate;
-    //DEBUG("hull3.uniform.assign",FMT_3("Assigned uniform class '%1' from template '%2' to unit '%3'.",_gearClass,_uniformTemplate,_unit));
+    DEBUG_3("hull3.uniform.assign: Assigned uniform class '%1' from template '%2' to unit '%3'.",_gearClass,_uniformTemplate,_unit));
 };
 
 hull3_uniform_fnc_assignObjectTemplate = {
@@ -74,7 +74,7 @@ hull3_uniform_fnc_assignHeadGear = {
 
     if (_headGear != "") then {
         _unit addHeadgear _headGear;
-        //TRACE("hull3.uniform.assign",FMT_2("Assigned head gear '%1' to unit '%2'.",_headGear,_unit));
+        TRACE_2("hull3.uniform.assign: Assigned head gear '%1' to unit '%2'.",_headGear,_unit));
     };
 };
 
@@ -83,7 +83,7 @@ hull3_uniform_fnc_assignGoggles = {
 
     if (_goggles != "") then {
         _unit addGoggles _goggles;
-        //TRACE("hull3.uniform.assign",FMT_2("Assigned goggles '%1' to unit '%2'.",_goggles,_unit));
+        TRACE_2("hull3.uniform.assign: Assigned goggles '%1' to unit '%2'.",_goggles,_unit));
     };
 };
 
@@ -92,7 +92,7 @@ hull3_uniform_fnc_assignUniform = {
 
     if (_uniform != "") then {
         _unit forceAddUniform _uniform;
-        //TRACE("hull3.uniform.assign",FMT_2("Assigned uniform '%1' to unit '%2'.",_uniform,_unit));
+        TRACE_2("hull3.uniform.assign: Assigned uniform '%1' to unit '%2'.",_uniform,_unit));
     };
 };
 
@@ -101,7 +101,7 @@ hull3_uniform_fnc_assignVest = {
 
     if (_vest != "") then {
         _unit addVest _vest;
-        //TRACE("hull3.uniform.assign",FMT_2("Assigned vest '%1' to unit '%2'.",_vest,_unit));
+        TRACE_2("hull3.uniform.assign: Assigned vest '%1' to unit '%2'.",_vest,_unit));
     };
 };
 
@@ -110,7 +110,7 @@ hull3_uniform_fnc_assignBackpack = {
 
     if (_backpack != "") then {
         _unit addBackpack _backpack;
-        //TRACE("hull3.uniform.assign",FMT_2("Assigned backpack '%1' to unit '%2'.",_backpack,_unit));
+        TRACE_2("hull3.uniform.assign: Assigned backpack '%1' to unit '%2'.",_backpack,_unit));
     };
 };
 
@@ -120,6 +120,6 @@ hull3_uniform_fnc_assignInsignia = {
     if (_insignia != "") then {
         // Wait 1 frame as cmd uses setObjectTextureGlobal which needs to be in postInit to work
         [{[_this #0, _this #1] call BIS_fnc_setUnitInsignia}, [_unit, _insignia]] call CBA_fnc_execNextFrame;
-        //TRACE("hull3.uniform.assign",FMT_2("Assigned insignia '%1' to unit '%2'.",_insignia,_unit));
+        TRACE_2("hull3.uniform.assign: Assigned insignia '%1' to unit '%2'.",_insignia,_unit));
     };
 };

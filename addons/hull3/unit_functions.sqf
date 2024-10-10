@@ -22,7 +22,7 @@ hull3_unit_fnc_init = {
 };
 
 hull3_unit_fnc_onPlayerRespawn = {
-    //DEBUG("hull3.player.respawned",FMT_1("Player has respawned with '%1'",_this));
+    DEBUG_1("hull3.player.respawned: Player has respawned with '%1'",_this));
     ["player.respawned", _this] call hull3_event_fnc_emitEvent;
 };
 
@@ -31,7 +31,7 @@ hull3_unit_fnc_playerInit = {
         {getClientStateNumber >= 9 || { (call bis_fnc_getNetMode) isEqualTo "SinglePlayer" }},
         {
             ["player.initialized", [player]] call hull3_event_fnc_emitEvent;
-            //DEBUG("hull3.unit.player","Player is initialized.");
+            DEBUG("hull3.unit.player","Player is initialized.");
 
             call hull3_marker_fnc_addMarkers;
             call hull3_marker_fnc_updateAllMarkers;
