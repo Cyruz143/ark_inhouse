@@ -16,10 +16,10 @@ adm_zone_fnc_addEventHandlers = {
 adm_zone_fnc_tryInitZone = {
     private _id = [] call adm_id_fnc_nextId;
     if (adm_isInitialized) then {
-        //DEBUG("admiral.zone.tryinit",FMT_2("Admiral is initialized. Initializing zone with ID '%1' and configs '%2'.",_id,_this));
+        DEBUG_2("admiral.zone.tryinit: Admiral is initialized. Initializing zone with ID '%1' and configs '%2'.",_id,_this));
         [_id, _this] call adm_zone_fnc_initZone;
     } else {
-        //DEBUG("admiral.zone.tryinit",FMT_2("Admiral is not initialized. Adding zone with ID '%1' and configs '%2' to uninitialized zones.",_id,_this));
+        DEBUG_2("admiral.zone.tryinit: Admiral is not initialized. Adding zone with ID '%1' and configs '%2' to uninitialized zones.",_id,_this));
         PUSH(adm_uninitializedZones,AS_ARRAY_2(_id,_this));
     };
 
@@ -30,10 +30,10 @@ adm_zone_fnc_initZone = {
     params ["_id", "_configs"];
 
     private _zone = if (typeName (_configs select 0) == "OBJECT") then {
-        //DEBUG("admiral.zone.init",FMT_3("Initializing zone from trigger '%1' with ID '%2' and configs '%3'.",_configs select 0,_id,_configs select 1));
+        DEBUG_3("admiral.zone.init: Initializing zone from trigger '%1' with ID '%2' and configs '%3'.",_configs select 0,_id,_configs select 1));
         [_id, _configs select 0, _configs select 1] call adm_zone_fnc_createTriggerZone;
     } else {
-        //DEBUG("admiral.zone.init",FMT_2("Initializing zone with ID '%1' and configs '%2'.",_id,_configs));
+        DEBUG_2("admiral.zone.init: Initializing zone with ID '%1' and configs '%2'.",_id,_configs));
         [_id, _configs] call adm_zone_fnc_createZone;
     };
     ["zone.initialized", [_zone]] call adm_event_fnc_emitEvent;
@@ -73,7 +73,7 @@ adm_zone_fnc_createZone = {
     } forEach _configs;
     [_zone] call adm_zone_fnc_initZoneName;
     PUSH(adm_zones,_zone);
-    //DEBUG("admiral.zone.create",FMT_2("Created zone with ID '%1' and configs '%2'.",_id,_configs));
+    DEBUG_2("admiral.zone.create: Created zone with ID '%1' and configs '%2'.",_id,_configs));
 
     _zone;
 };
@@ -120,7 +120,7 @@ adm_zone_initZoneFromModule = {
     params ["_module", "_activated", "_configFunc"];
 
     if (!_activated) exitWith {
-        //DEBUG("admiral.module.init",FMT_1("NOT initializing zone from module '%1', it was deactivated.",_module));
+        DEBUG_1("admiral.module.init: NOT initializing zone from module '%1', it was deactivated.",_module));
     };
     private ["_moduleConfigs", "_defaultConfigs", "_triggers"];
     _moduleConfigs = [_module] call _configFunc;
@@ -133,14 +133,14 @@ adm_zone_initZoneFromModule = {
         _configs pushBack ["area", [_module] call adm_zone_getModuleArea];
         _configs pushBack ["position", getPosATL _module];
         _configs call adm_zone_fnc_tryInitZone;
-        //DEBUG("admiral.module.init",FMT_2("Initialized zone from module '%1' with configs '%2'.",_module,_configs));
+        DEBUG_2("admiral.module.init: Initialized zone from module '%1' with configs '%2'.",_module,_configs));
     } else {
         {
             private _configs = +_moduleConfigs;
             _configs pushBack ["area", triggerArea _x];
             _configs pushBack ["position", getPosATL _x];
             [_x, _configs] call adm_zone_fnc_tryInitZone;
-            //DEBUG("admiral.module.init",FMT_3("Initialized zone from module '%1' using trigger '%2' with configs '%3'.",_module,_x,_configs));
+            DEBUG_3("admiral.module.init: Initialized zone from module '%1' using trigger '%2' with configs '%3'.",_module,_x,_configs));
         } forEach _triggers;
     };
 };

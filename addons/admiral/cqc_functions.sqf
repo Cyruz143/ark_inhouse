@@ -13,7 +13,7 @@ adm_cqc_fnc_placeMan = {
     ] call adm_common_fnc_placeMan;
     _unit setPosASL (AGLToASL _position);
     [_unit, _group] call adm_cqc_fnc_initMan;
-    //DEBUG("admiral.cqc.create",FMT_4("Created unit '%1' at position '%2', in group '%3' with classname '%4'.",_unit,_position,_group,typeOf _unit));
+    DEBUG_4("admiral.cqc.create: Created unit '%1' at position '%2', in group '%3' with classname '%4'.",_unit,_position,_group,typeOf _unit));
 
     _unit;
 };
@@ -117,7 +117,7 @@ adm_cqc_fnc_spawnGarrisonGroupUnits = {
         ["cqc.spawned.unit", [_unit, _building, _position, UNIT_TYPE_ARRAY select UNIT_TYPE_INF, _zone]] call adm_event_fnc_emitEvent;
         ["zone.spawned.unit", [_unit, UNIT_TYPE_ARRAY select UNIT_TYPE_INF, _zone]] call adm_event_fnc_emitEvent;
     };
-    //DEBUG("admiral.cqc.create",FMT_3("Created '%1' CQC unit(s) for group '%2' in building '%3'.",_numOfUnits,_group,_building));
+    DEBUG_3("admiral.cqc.create: Created '%1' CQC unit(s) for group '%2' in building '%3'.",_numOfUnits,_group,_building));
 };
 
 adm_cqc_fnc_spawnGarrisonGroup = {
@@ -159,7 +159,7 @@ adm_cqc_fnc_spawnGarrison = {
     params ["_zone"];
 
     private _buildings = [_zone] call adm_cqc_fnc_getZoneBuildings;
-    //DEBUG("admiral.cqc",FMT_2("CQC Zone '%1' found '%2' suitable building(s).",GET_ZONE_ID(_zone),count _buildings));
+    DEBUG_2("admiral.cqc: CQC Zone '%1' found '%2' suitable building(s).",GET_ZONE_ID(_zone),count _buildings));
     private _maxAmount = GET_ZONE_POOL(_zone);
     private _currentAmount = 0;
     private _spawnedGroups = [];
@@ -206,7 +206,7 @@ adm_cqc_fnc_forceFire = {
     params ["_zone"];
 
     if (call adm_hc_fnc_isHcPresent) exitWith {
-        //DEBUG("admiral.cqc.forcefire",FMT_1("Headless Client detected. ForceFire has been disabled for CQC Zone '%1'.",GET_ZONE_ID(_zone)));
+        DEBUG_1("admiral.cqc.forcefire: Headless Client detected. ForceFire has been disabled for CQC Zone '%1'.",GET_ZONE_ID(_zone)));
     };
 
     SET_CQC_FORCE_FIRE_RUNNING(_zone,true);
@@ -227,7 +227,7 @@ adm_cqc_fnc_forceFire = {
                             _enemy = _enemy select 0;
                             _unit lookAt _enemy;
                             _unit doFire _enemy;
-                            //TRACE("admiral.cqc.forcefire",FMT_4("CQC unit '%1' in group '%2', in CQC Zone '%3' has found an enemy '%4' and is being forced to fire at it.",_unit,_group,GET_ZONE_ID(_zone),_enemy));
+                            TRACE_4("admiral.cqc.forcefire: CQC unit '%1' in group '%2', in CQC Zone '%3' has found an enemy '%4' and is being forced to fire at it.",_unit,_group,GET_ZONE_ID(_zone),_enemy));
                         };
                         _aliveGroupLeft = true;
                     };
@@ -236,7 +236,7 @@ adm_cqc_fnc_forceFire = {
 
             if (!IS_CQC_FORCE_FIRE_ENABLED(_zone) || { !_aliveGroupLeft } ) exitWith {
                 SET_CQC_FORCE_FIRE_RUNNING(_zone,false);
-                //DEBUG("admiral.cqc.forcefire",FMT_1("ForceFire has been disabled for CQC Zone '%1'.",GET_ZONE_ID(_zone)));
+                DEBUG_1("admiral.cqc.forcefire: ForceFire has been disabled for CQC Zone '%1'.",GET_ZONE_ID(_zone)));
                 _id call CBA_fnc_removePerFrameHandler;
             };
         },
@@ -246,7 +246,7 @@ adm_cqc_fnc_forceFire = {
 };
 
 adm_cqc_fnc_globalForceFire = {
-    //DEBUG("admiral.cqc.forcefire","Starting global force fire loop.");
+    DEBUG("admiral.cqc.forcefire","Starting global force fire loop.");
 
     [
         {
@@ -261,7 +261,7 @@ adm_cqc_fnc_globalForceFire = {
                                 _enemy = _enemy select 0;
                                 _unit lookAt _enemy;
                                 _unit doFire _enemy;
-                                //TRACE("admiral.cqc.forcefire",FMT_3("CQC unit '%1' in group '%2' has found an enemy '%3' and is being forced to fire at it.",_unit,_group,_enemy));
+                                TRACE_3("admiral.cqc.forcefire: CQC unit '%1' in group '%2' has found an enemy '%3' and is being forced to fire at it.",_unit,_group,_enemy));
                             };
                         };
                     } forEach units _group;

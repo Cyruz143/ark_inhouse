@@ -10,7 +10,7 @@ adm_camp_fnc_placeMan = {
         [_unitTemplate, _unitType] call adm_common_fnc_getUnitTemplateArray,
         [_zoneTemplate] call adm_common_fnc_getZoneTemplateSkillValues
     ] call adm_common_fnc_placeMan;
-    //DEBUG("admiral.camp.create",FMT_5("Spawned unit '%1' at position '%2', in group '%3' with type '%4' and classname '%5'.",_unit,_position,_group,_unitType,typeOf _unit));
+    DEBUG_5("admiral.camp.create: Spawned unit '%1' at position '%2', in group '%3' with type '%4' and classname '%5'.",_unit,_position,_group,_unitType,typeOf _unit));
 
     _unit;
 };
@@ -25,7 +25,7 @@ adm_camp_fnc_spawnCrew = {
         ["Vehicles"] call adm_common_fnc_getZoneTemplateSkillValues,
         ["ZoneTemplates", _zoneTemplate, "canSpawnFfvCrew"] call adm_config_fnc_getBool
     ] call adm_common_fnc_spawnCrew;
-    //DEBUG("admiral.camp.create",FMT_4("Spawned crew '%1' for vehicle '%2', in group '%3' with type '%4'.",_crew,_vehicle,_group,_unitType));
+    DEBUG_4("admiral.camp.create: Spawned crew '%1' for vehicle '%2', in group '%3' with type '%4'.",_crew,_vehicle,_group,_unitType));
 
     _crew;
 };
@@ -73,7 +73,7 @@ adm_camp_fnc_tryAddPaths = {
         if ([_pathPositions select 0, GET_ZONE_AREA(_zone), GET_ZONE_POSITION(_zone)] call adm_common_fnc_isPositionInArea) then {
             private _zonePaths = GET_CAMP_PATHS(_zone);
             PUSH(_zonePaths,_x);
-            //DEBUG("admiral.camp.create",FMT_2("Path '%1' is inside Camp Zone '%2'. Adding it to zone paths.",_x,GET_ZONE_ID(_zone)));
+            DEBUG_2("admiral.camp.create: Path '%1' is inside Camp Zone '%2'. Adding it to zone paths.",_x,GET_ZONE_ID(_zone)));
         };
     } forEach _paths;
 };
@@ -92,7 +92,7 @@ adm_camp_fnc_getLogicEndTrigger = {
         _trigger = createTrigger ["EmptyDetector", _wpPos];
         _trigger setTriggerArea CAMP_DEFAULT_ENDTRIGGER_AREA;
         _trigger setTriggerActivation["NONE", "PRESENT", false];
-        //DEBUG("admiral.camp.create",FMT_2("No end trigger was found. Created new end trigger '%1' at position '%2'.",_trigger,_wpPos));
+        DEBUG_2("admiral.camp.create: No end trigger was found. Created new end trigger '%1' at position '%2'.",_trigger,_wpPos));
     } else {
         _trigger = _trigger select 0;
     };
@@ -111,7 +111,7 @@ adm_camp_fnc_createPatrolWaypoints = {
         [_group, [[_area, _areaPosition, _unitType] call adm_common_fnc_getRandomEmptyPositionInArea, 0], 'MOVE', selectRandom _waypointBehaviours, 'RED'] call adm_common_fnc_createWaypoint;
     };
     [_group, (count waypoints _group) - 1] setWaypointStatements ["true", format["(group this) setCurrentWaypoint [group this, %1]", _initialWaypointIndex]];
-    //DEBUG("admiral.camp.create",FMT_2("Created '%1' patrol waypoint(s) for group '%2'.",_noOfWaypoints,_group));
+    DEBUG_2("admiral.camp.create: Created '%1' patrol waypoint(s) for group '%2'.",_noOfWaypoints,_group));
 };
 
 adm_camp_fnc_createCampWaypoints = {
@@ -124,7 +124,7 @@ adm_camp_fnc_createCampWaypoints = {
     } forEach _pathPositions;
     private _endTrigger = GET_PATH_END_TRIGGER(_path);
     [_group, _unitType, triggerArea _endTrigger, getPosATL _endTrigger, _waypointBehaviours, _noOfWaypoints] call adm_camp_fnc_createPatrolWaypoints;
-    //DEBUG("admiral.camp.create",FMT_3("Created '%1' path waypoint(s) for group '%2' using path '%3'.",count _pathPositions,_group,_path));
+    DEBUG_3("admiral.camp.create: Created '%1' path waypoint(s) for group '%2' using path '%3'.",count _pathPositions,_group,_path));
 };
 
 adm_camp_fnc_isPoolEmpty = {
@@ -157,7 +157,7 @@ adm_camp_fnc_spawnInfGroup = {
         [format ["%1.spawned.unit", GET_ZONE_TYPE(_zone)], [_unit, UNIT_TYPE_ARRAY select _unitType, _zone]] call adm_event_fnc_emitEvent;
         ["zone.spawned.unit", [_unit, UNIT_TYPE_ARRAY select _unitType, _zone]] call adm_event_fnc_emitEvent;
     };
-    //DEBUG("admiral.camp.create",FMT_4("Spawned '%1' unit(s) for group '%2' of type '%3' in Zone '%4'.",_groupSize,_group,GROUP_TYPE_ARRAY select _groupType,GET_ZONE_ID(_zone)));
+    DEBUG_4("admiral.camp.create: Spawned '%1' unit(s) for group '%2' of type '%3' in Zone '%4'.",_groupSize,_group,GROUP_TYPE_ARRAY select _groupType,GET_ZONE_ID(_zone)));
     _group setVariable ["adm_zone_parent", _zone];
     _group setVariable ["adm_group_type", _groupType, false];
     [format ["%1.spawned.group", GET_ZONE_TYPE(_zone)], [_group, GROUP_TYPE_ARRAY select _groupType, _zone]] call adm_event_fnc_emitEvent;
@@ -180,7 +180,7 @@ adm_camp_fnc_spawnVehicleGroup = {
     private _crew = [_vehicle, _group, _unitTemplate, _zoneTemplate, UNIT_TYPE_ARRAY select _unitType] call adm_camp_fnc_spawnCrew;
     [format ["%1.spawned.crew", GET_ZONE_TYPE(_zone)], [_crew, UNIT_TYPE_ARRAY select _unitType, GROUP_TYPE_ARRAY select _groupType, _zone]] call adm_event_fnc_emitEvent;
     ["zone.spawned.crew", [_crew, UNIT_TYPE_ARRAY select _unitType, GROUP_TYPE_ARRAY select _groupType, _zone]] call adm_event_fnc_emitEvent;
-    //DEBUG("admiral.camp.create",FMT_4("Spawned crew for vehicle '%1' for group '%2' of type '%3' in Zone '%4'.",_vehicle,_group,GROUP_TYPE_ARRAY select _groupType,GET_ZONE_ID(_zone)));
+    DEBUG_4("admiral.camp.create: Spawned crew for vehicle '%1' for group '%2' of type '%3' in Zone '%4'.",_vehicle,_group,GROUP_TYPE_ARRAY select _groupType,GET_ZONE_ID(_zone)));
     [format ["%1.spawned.group", GET_ZONE_TYPE(_zone)], [_group, GROUP_TYPE_ARRAY select _groupType, _zone]] call adm_event_fnc_emitEvent;
     ["zone.spawned.group", [_group, GROUP_TYPE_ARRAY select _groupType, _zone]] call adm_event_fnc_emitEvent;
 
@@ -517,7 +517,7 @@ adm_camp_setGroupDelay = {
     for "_i" from 0 to (count _groupDelay) - 1 do {
         _groupDelay set [_i, (_groupDelay select _i) * _campDelay];
     };
-    //DEBUG("admiral.camp",FMT_1("Multiplied variable 'adm_camp_groupDelay' with variable 'adm_camp_campDelay' in Camp Zone '%1'.",GET_ZONE_ID(_zone)));
+    DEBUG_1("admiral.camp: Multiplied variable 'adm_camp_groupDelay' with variable 'adm_camp_campDelay' in Camp Zone '%1'.",GET_ZONE_ID(_zone)));
 };
 
 adm_camp_fnc_initZone = {

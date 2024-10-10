@@ -4,18 +4,18 @@
 [] call adm_fnc_compile;
 
 [] call adm_settings_fnc_init;
-//DEBUG("admiral.settings","Init function 'adm_settings_fnc_init' called.");
+DEBUG("admiral.settings","Init function 'adm_settings_fnc_init' called.");
 [] call adm_cqc_fnc_init;
-//DEBUG("admiral.cqc","Init function 'adm_cqc_fnc_init' called.");
+DEBUG("admiral.cqc","Init function 'adm_cqc_fnc_init' called.");
 [] call adm_camp_fnc_init;
-//DEBUG("admiral.camp","Init function 'adm_camp_fnc_init' called.");
+DEBUG("admiral.camp","Init function 'adm_camp_fnc_init' called.");
 [] call adm_patrol_fnc_init;
-//DEBUG("admiral.patrol","Init function 'adm_patrol_fnc_init' called.");
+DEBUG("admiral.patrol","Init function 'adm_patrol_fnc_init' called.");
 
 if (adm_isBehaviorEnabled) then {
     INFO("admiral.behavior: Admiral Behavior system is enabled.");
     [] call adm_behavior_fnc_init;
-    //DEBUG("admiral.behavior","Init function 'adm_behavior_fnc_init' called.");
+    DEBUG("admiral.behavior","Init function 'adm_behavior_fnc_init' called.");
 };
 
 // Makes no sense to run it on dedicated or without an interface
@@ -24,7 +24,7 @@ if (isDedicated || {!hasInterface}) then {
 };
 if (adm_isDebuggingEnabled) then {
     [] call adm_debug_fnc_init;
-    //DEBUG("admiral.debug","Init function 'adm_debug_fnc_init' called.");
+    DEBUG("admiral.debug","Init function 'adm_debug_fnc_init' called.");
 };
 
 adm_isInitialized = true;

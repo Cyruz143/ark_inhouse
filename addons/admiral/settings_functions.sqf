@@ -8,7 +8,7 @@ adm_settings_fnc_initSideRelations = {
     {
         adm_sideRelations set [_forEachIndex, []];
     } forEach SIDE_ARRAY;
-    //DEBUG("admiral.settings.siderelation","Initialized side relations.");
+    DEBUG("admiral.settings.siderelation","Initialized side relations.");
 };
 
 adm_settings_fnc_setSideRelations = {
@@ -22,7 +22,7 @@ adm_settings_fnc_setSideRelations = {
             [_oneSide, _otherSide] call adm_settings_fnc_setFriend;
         };
     } forEach _sideRelations;
-    //DEBUG("admiral.settings.siderelation","Set side relations.");
+    DEBUG("admiral.settings.siderelation","Set side relations.");
 };
 
 adm_settings_fnc_setEnemy = {
@@ -32,7 +32,7 @@ adm_settings_fnc_setEnemy = {
     if (!(_enemySide in _sideEnemies)) then {
         PUSH(_sideEnemies,_enemySide);
         (SIDE_ARRAY select _side) setFriend [(SIDE_ARRAY select _enemySide), 0];
-        //DEBUG("admiral.settings.siderelation",FMT_2("Side '%1' is hostile towards side '%2'.",SIDE_TEXT_ARRAY select _side,SIDE_TEXT_ARRAY select _enemySide));
+        DEBUG_2("admiral.settings.siderelation: Side '%1' is hostile towards side '%2'.",SIDE_TEXT_ARRAY select _side,SIDE_TEXT_ARRAY select _enemySide));
     };
 };
 
@@ -46,7 +46,7 @@ adm_settings_fnc_setFriend = {
         adm_sideRelations set [_side, _sideEnemies - [_friendlySide]];
     };
     (SIDE_ARRAY select _side) setFriend [(SIDE_ARRAY select _friendlySide), 1];
-    //DEBUG("admiral.settings.siderelation",FMT_2("Side '%1' is friendly towards side '%2'.",SIDE_TEXT_ARRAY select _side,SIDE_TEXT_ARRAY select _friendlySide));
+    DEBUG_2("admiral.settings.siderelation: Side '%1' is friendly towards side '%2'.",SIDE_TEXT_ARRAY select _side,SIDE_TEXT_ARRAY select _friendlySide));
 };
 
 adm_settings_fnc_init = {
