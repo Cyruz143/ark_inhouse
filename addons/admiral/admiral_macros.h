@@ -231,8 +231,6 @@
 #define DEFAULT_PATROL_VALUES                       [-1,"","patrol",[0,0,0],[0,0,0,false],true,"",adm_patrol_defaultUnitTemplate,[[],[],[]],[0,0,0],adm_patrol_defaultZoneTemplate,[false],adm_patrol_fnc_initZone]
 #define DEFAULT_CQC_VALUES                          [-1,"","cqc",[0,0,0],[0,0,0,false],true,"",adm_cqc_defaultUnitTemplate,[],0,adm_cqc_defaultZoneTemplate,[0,adm_cqc_forceFireEnabled,false],adm_cqc_fnc_initZone]
 
-
-
 // WARNING
 // Macros are sensitive for "," (comma), "(", ")" (parenthese) and " " (space).
 // Provide only the asked numbers of arguments, without additional commas and without spaces beetween commas.
@@ -243,44 +241,6 @@
 //      This won't work, as the macro identifies 100 as a third parameter.
 //      Use AS_ARRAY_* instead of passing actual arrays.
 //      PUSH_ALL(_units, AS_ARRAY_2(_unit, 100) call getPlayersAroundUnit);
-
-// Creates private declaritions for arguments.
-// Example:
-//      GIVEN:
-//      WHEN:
-//          PVT_3(_unit,_group,_trigger);
-//      THEN:
-//          private ["_unit","_group","_trigger"];
-#define PVT_1(VAR1) private #VAR1
-#define PVT_2(VAR1,VAR2) private [#VAR1,#VAR2]
-#define PVT_3(VAR1,VAR2,VAR3) private [#VAR1,#VAR2,#VAR3]
-#define PVT_4(VAR1,VAR2,VAR3,VAR4) private [#VAR1,#VAR2,#VAR3,#VAR4]
-#define PVT_5(VAR1,VAR2,VAR3,VAR4,VAR5) private [#VAR1,#VAR2,#VAR3,#VAR4,#VAR5]
-#define PVT_6(VAR1,VAR2,VAR3,VAR4,VAR5,VAR6) private [#VAR1,#VAR2,#VAR3,#VAR4,#VAR5,#VAR6]
-#define PVT_7(VAR1,VAR2,VAR3,VAR4,VAR5,VAR6,VAR7) private [#VAR1,#VAR2,#VAR3,#VAR4,#VAR5,#VAR6,#VAR7]
-#define PVT_8(VAR1,VAR2,VAR3,VAR4,VAR5,VAR6,VAR7,VAR8) private [#VAR1,#VAR2,#VAR3,#VAR4,#VAR5,#VAR6,#VAR7,#VAR8]
-#define PVT_9(VAR1,VAR2,VAR3,VAR4,VAR5,VAR6,VAR7,VAR8,VAR9) private [#VAR1,#VAR2,#VAR3,#VAR4,#VAR5,#VAR6,#VAR7,#VAR8,#VAR9]
-
-
-// Creates array selection for arguments. Only works if the array is a variable!
-// Example:
-//      GIVEN:
-//          _strings = ["unit", "group", "trigger"];
-//      WHEN:
-//          SELECT_3(_strings,_unit,_group,_trigger);
-//      THEN:
-//          _unit == "unit";
-//          _group == "group";
-//          _trigger == "trigger";
-#define SELECT_1(ARRAY,VAR1) VAR1 = (ARRAY) select 0
-#define SELECT_2(ARRAY,VAR1,VAR2) SELECT_1(ARRAY,VAR1); VAR2 = (ARRAY) select 1
-#define SELECT_3(ARRAY,VAR1,VAR2,VAR3) SELECT_2(ARRAY,VAR1,VAR2); VAR3 = (ARRAY) select 2
-#define SELECT_4(ARRAY,VAR1,VAR2,VAR3,VAR4) SELECT_3(ARRAY,VAR1,VAR2,VAR3); VAR4 = (ARRAY) select 3
-#define SELECT_5(ARRAY,VAR1,VAR2,VAR3,VAR4,VAR5) SELECT_4(ARRAY,VAR1,VAR2,VAR3,VAR4); VAR5 = (ARRAY) select 4
-#define SELECT_6(ARRAY,VAR1,VAR2,VAR3,VAR4,VAR5,VAR6) SELECT_5(ARRAY,VAR1,VAR2,VAR3,VAR4,VAR5); VAR6 = (ARRAY) select 5
-#define SELECT_7(ARRAY,VAR1,VAR2,VAR3,VAR4,VAR5,VAR6,VAR7) SELECT_6(ARRAY,VAR1,VAR2,VAR3,VAR4,VAR5,VAR6); VAR7 = (ARRAY) select 6
-#define SELECT_8(ARRAY,VAR1,VAR2,VAR3,VAR4,VAR5,VAR6,VAR7,VAR8) SELECT_7(ARRAY,VAR1,VAR2,VAR3,VAR4,VAR5,VAR6,VAR7); VAR8 = (ARRAY) select 7
-#define SELECT_9(ARRAY,VAR1,VAR2,VAR3,VAR4,VAR5,VAR6,VAR7,VAR8,VAR9) SELECT_8(ARRAY,VAR1,VAR2,VAR3,VAR4,VAR5,VAR6,VAR7,VAR8); VAR9 = (ARRAY) select 8
 
 // Adds all values from one array to another.
 // Example:
@@ -318,16 +278,6 @@
 //      THEN:
 //          FIND(_numbers,_condition) == 2;
 #define FIRST(FROM,COND) { if (call COND) exitWith {_x}; } forEach (FROM)
-
-// Selects a random value from an array.
-// Example:
-//      GIVEN:
-//          _behaviours = ['AWARE', 'SAFE'];
-//      WHEN:
-//          _random = SELECT_RAND(_behaviours);
-//      THEN:
-//          _random == 'AWARE' or _random == 'AWARE'
-#define SELECT_RAND(ARRAY) selectRandom (ARRAY)
 
 // Creates an array from given arguments.
 // Example:

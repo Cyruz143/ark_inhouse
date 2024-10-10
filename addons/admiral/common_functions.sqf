@@ -401,9 +401,9 @@ adm_common_fnc_getRandomPositionInEllipse = {
 adm_common_fnc_isPlayerNearTrigger = {
     params ["_trigger","_distance"];
 
-    private ["_width", "_height", "_longestAxis"];
-    SELECT_2(triggerArea _trigger,_width,_height);
-    _longestAxis = [_height, _width] select (_width > _height);
+    private _width = (triggerArea _trigger) #0;
+    private _height = (triggerArea _trigger) #1;
+    private _longestAxis = [_height, _width] select (_width > _height);
 
     [_trigger, _longestAxis + _distance] call adm_common_fnc_isPlayersInRange;
 };
