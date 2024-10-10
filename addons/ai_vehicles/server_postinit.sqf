@@ -1,3 +1,5 @@
+#include "script_component.hpp"
+
 ark_ai_vehicles_var_wheelArray = ["hitlfwheel", "hitlbwheel", "hitlmwheel", "hitlf2wheel", "hitrfwheel", "hitrbwheel", "hitrmwheel", "hitrf2wheel"];
 
 ark_ai_vehicles_fnc_vehicleDamaged = {
@@ -16,7 +18,7 @@ ark_ai_vehicles_fnc_canRepair = {
     params ["_vehicle"];
 
     if (_vehicle getVariable ["ark_ai_vehicles_gunner_dead", false]) exitWith {
-        ["AI Vehicles","INFO","fnc_canRepair","Aborting repair due to gunner death"] call ark_admin_tools_fnc_log;
+        INFO_1("[ARK] %1 - fnc_canRepair, Aborting repair due to the gunners death.",COMPONENT);
     };
 
     _vehicle setVariable ["ark_ai_vehicles_awaiting_repair", true];
