@@ -266,7 +266,7 @@ plank_ui_fnc_selectionChanged = {
 };
 
 plank_ui_fnc_updateValueAndSlider = {
-    params ["_value","_minValue","_maxValue","_varName","_sliderIdc","_valueIdc");
+    params ["_value","_minValue","_maxValue","_varName","_sliderIdc","_valueIdc"];
 
     if (player getVariable ["plank_deploy_lockMode", LOCK_MODE_UNLOCKED] == LOCK_MODE_UNLOCKED) then {
         private _newValue = (player getVariable _varName) + _value;
