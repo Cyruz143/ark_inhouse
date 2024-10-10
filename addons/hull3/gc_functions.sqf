@@ -101,33 +101,33 @@ hull3_gc_fnc_sortDead = {
 
 hull3_gc_fnc_monitorDead = {
     if (hull3_gc_canRemoveCorpses) then {
-        DEBUG("hull3.gc: Starting next corpse GC check.");
+        LOG("hull3.gc: Starting next corpse GC check.");
         private _removedCount = 0;
         private _deadAmount = count hull3_gc_deadUnits;
         private _limitReached = _deadAmount > hull3_gc_currentCorpseLimit;
         if (_limitReached) then {
-            TRACE_2("hull3.gc: Limit '%1' of '%2' reached, removing corpses.",_deadAmount,hull3_gc_currentCorpseLimit));
+            LOG_2("hull3.gc: Limit %1 of %2 reached, removing corpses.",_deadAmount,hull3_gc_currentCorpseLimit);
             for "_i" from 0 to (_deadAmount - hull3_gc_currentCorpseLimit) do {
                 (hull3_gc_deadUnits deleteAt 0) call hull3_gc_fnc_cleanDead;
                 _removedCount = _removedCount + 1;
             };
         };
-        DEBUG_1("hull3.gc: Removed '%1' units.",_removedCount));
+        LOG_1("hull3.gc: Removed %1 units.",_removedCount);
     };
 
     if (hull3_gc_canRemoveWrecks) then {
-        DEBUG("hull3.gc: Starting next wreck GC check.");
+        LOG("hull3.gc: Starting next wreck GC check.");
         private _removedCount = 0;
         private _wreckAmount = count hull3_gc_deadVehicles;
         private _limitReached = _wreckAmount > hull3_gc_currentWreckLimit;
         if (_limitReached) then {
-            TRACE_2("hull3.gc: Limit '%1' of '%2' reached, removing wrecks.",_wreckAmount,hull3_gc_currentWreckLimit));
+            LOG_2("hull3.gc: Limit %1 of %2 reached, removing wrecks.",_wreckAmount,hull3_gc_currentWreckLimit);
             for "_i" from 0 to (_wreckAmount - hull3_gc_currentWreckLimit) do {
                 (hull3_gc_deadVehicles deleteAt 0) call hull3_gc_fnc_cleanDead;
                 _removedCount = _removedCount + 1;
             };
         };
-        DEBUG_1("hull3.gc: Removed '%1' wrecks.",_removedCount));
+        LOG_1("hull3.gc: Removed %1 wrecks.",_removedCount);
     };
 
     // Engine should take care of this but it can't hurt to manually run every loop to do extra clean up

@@ -10,14 +10,14 @@ hull3_marker_fnc_preInit = {
     hull3_marker_fireTeam = [];
     hull3_marker_custom = [];
     hull3_marker_defaultDelay = ["Marker", "defaultDelay"] call hull3_config_fnc_getNumber;
-    DEBUG("hull3.marker","Marker functions preInit finished.");
+    LOG("hull3.marker: Marker functions preInit finished.");
 };
 
 hull3_marker_fnc_postInit = {
     if (isDedicated) then {
         {
             _x params ["_unit", "_gearClass", "_markerText"];
-            DEBUG_2("hull3.marker.group: Setting Group ID on server for group '%1' to '%2'.",group _unit,_markerText));
+            LOG_2("hull3.marker.group: Setting Group ID on server for group %1 to %2.",group _unit,_markerText);
             (group _unit) setGroupId [_markerText];
         } forEach hull3_marker_rawGroupMarkers;
     } else {

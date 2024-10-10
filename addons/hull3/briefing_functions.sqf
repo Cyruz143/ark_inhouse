@@ -3,7 +3,7 @@
 
 hull3_briefing_fnc_preInit = {
     [] call hull3_briefing_fnc_addEventHandlers;
-    DEBUG("hull3.briefing: Briefing functions preInit finished.");
+    LOG("hull3.briefing: Briefing functions preInit finished.");
 };
 
 hull3_briefing_fnc_addEventHandlers = {
@@ -12,7 +12,7 @@ hull3_briefing_fnc_addEventHandlers = {
 
 hull3_briefing_fnc_addNotes = {
     [] call compile preprocessFile ADDON_PATH(briefing\hull3.sqf);
-    DEBUG("hull3.briefing: Added Hull to briefing notes.");
+    LOG("hull3.briefing: Added Hull to briefing notes.");
     [] call hull_briefing_fnc_addAcreAdmin;
     [] call hull3_briefing_fnc_addOrbat;
     [] call hull3_briefing_fnc_addSideNotes;
@@ -34,7 +34,7 @@ hull3_briefing_fnc_addOrbat = {
         };
     } forEach hull3_marker_groups;
     player createDiaryRecord ["Diary", ["ORBAT", _orbat]];
-    DEBUG("hull3.briefing: Added ORBAT to briefing notes.");
+    LOG("hull3.briefing: Added ORBAT to briefing notes.");
 };
 
 hull3_briefing_fnc_addSideNotes = {
@@ -46,7 +46,7 @@ hull3_briefing_fnc_addSideNotes = {
         _briefingFile = ["Briefing", "civilian"] call hull3_config_fnc_getText;
     };
     [] call compile preprocessFile _briefingFile;
-    DEBUG("hull3.briefing: Added Side notes to briefing notes.");
+    LOG("hull3.briefing: Added Side notes to briefing notes.");
 };
 
 hull_briefing_fnc_addAcreAdmin = {

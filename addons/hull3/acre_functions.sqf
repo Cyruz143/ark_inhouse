@@ -6,7 +6,7 @@
 hull3_acre_fnc_preInit = {
     call hull3_acre_fnc_addEventHandlers;
     hull3_acre_isInitialized = false;
-    DEBUG("hull3.acre: ACRE functions preInit finished.");
+    LOG("hull3.acre: ACRE functions preInit finished.");
 };
 
 hull3_acre_fnc_addEventHandlers = {
@@ -22,26 +22,26 @@ hull3_acre_fnc_postInit = {
 };
 
 hull3_acre_fnc_acreInit = {
-    DEBUG("hull3.acre.init: ACRE player init called.");
+    LOG("hull3.acre.init: ACRE player init called.");
     if (!hasInterface) exitWith {
-        DEBUG("hull3.acre.init: Player is an HC, ACRE check ommited.");
+        LOG("hull3.acre.init: Player is an HC, ACRE check ommited.");
     };
 
     [
         {call acre_api_fnc_isInitialized},
         {
-            DEBUG("hull.acre.init","ACRE initialized.");
+            LOG("hull.acre.init: ACRE initialized.");
             if (!alive player) exitWith {
-                DEBUG("hull.acre.init: Player is dead, setting ACRE spectator to 'true'.");
+                LOG("hull.acre.init: Player is dead, setting ACRE spectator to 'true'.");
                 true call acre_api_fnc_setSpectator;
             };
-            DEBUG("hull.acre.init: Player is alive, starting ACRE init check.");
+            LOG("hull.acre.init: Player is alive, starting ACRE init check.");
             player call hull3_gear_fnc_tryAssignRadios;
-            DEBUG_1("hull.acre.init: Radios assigned to '%1'.",player));
+            LOG_1("hull.acre.init: Radios assigned to %1.",player);
             hull3_acre_isInitialized = true;
             ["acre.initialized", [player]] call hull3_event_fnc_emitEvent;
             player call hull3_acre_fnc_setRadioChannels;
-            DEBUG("hull.acre.init: Hull3 ACRE init finished.");
+            LOG("hull.acre.init: Hull3 ACRE init finished.");
         }
     ] call CBA_fnc_waitUntilAndExecute;
 };
@@ -50,7 +50,7 @@ hull3_acre_fnc_addLanguages = {
     private _languages = ["ACRE", "Babel", "languages"] call hull3_config_fnc_getArray;
     {
         _x call acre_api_fnc_babelAddLanguageType;
-        DEBUG_2("hull3.acre.babel: Added language with ID '%1' and name '%2'.",_x select 0,_x select 1));
+        LOG_2("hull3.acre.babel: Added language with ID %1 and name %2.",_x select 0,_x select 1);
     } forEach _languages;
 };
 
@@ -71,11 +71,11 @@ hull3_acre_fnc_setSpokenLanguages = {
 
     if (_spokenLanguages isEqualTo []) then {
         {_spokenLanguages pushBack (_x select 0)} forEach (["ACRE", "Babel", "languages"] call hull3_config_fnc_getArray);
-        WARN_1("hull3.acre.babel: Undefined langauges in unit template! Assigning all available languages for '%1'.",_unit));
+        WARNING_1("hull3.acre.babel: Undefined langauges in unit template! Assigning all available languages for %1.",_unit);
     };
 
     _spokenLanguages call acre_api_fnc_babelSetSpokenLanguages;
-    DEBUG_2("hull3.acre.babel: Set spoken languages of unit '%1' to '%2'.",_unit,_spokenLanguages));
+    LOG_2("hull3.acre.babel: Set spoken languages of unit %1 to %2.",_unit,_spokenLanguages);
 };
 
 hull3_acre_fnc_setupPresets = {
@@ -138,9 +138,9 @@ hull3_acre_fnc_setRadioPresetFrequencies = {
         private _frequency = _baseFrequency + _i * _channelStep + _sideStep;
         private _channelIndex = _i + 1;
         [_radio, _presetName, _channelIndex, "frequencyTX", _frequency] call acre_api_fnc_setPresetChannelField;
-        TRACE_4("hull3.acre.radio.preset: Set 'frequencyTX' field to '%1' of channel '%2' in preset '%3' of radio '%4'.",_frequency,_channelIndex,_presetName,_radio));
+        LOG_4("hull3.acre.radio.preset: Set 'frequencyTX' field to %1 of channel %2 in preset %3 of radio %4.",_frequency,_channelIndex,_presetName,_radio);
         [_radio, _presetName, _channelIndex, "frequencyRX", _frequency] call acre_api_fnc_setPresetChannelField;
-        TRACE_4("hull3.acre.radio.preset: Set 'frequencyRX' field to '%1' of channel '%2' in preset '%3' of radio '%4'.",_frequency,_channelIndex,_presetName,_radio));
+        LOG_4("hull3.acre.radio.preset: Set 'frequencyRX' field to %1 of channel %2 in preset %3 of radio %4.",_frequency,_channelIndex,_presetName,_radio);
         private _newFieldFuncArgs = +_fieldFuncArgs;
         PUSH(_newFieldFuncArgs,_i);
         _newFieldFuncArgs call _fieldFunc;
@@ -159,9 +159,9 @@ hull3_acre_fnc_setLongRangeRadioFields = {
     private _power = ["ACRE", "Radio", _x, "power"] call hull3_config_fnc_getNumber;
     private _channelIndex = _channelArrayIndex + 1;
     [_radio, _presetName, _channelIndex, _channelNameField, _channelName] call acre_api_fnc_setPresetChannelField;
-    TRACE_5("hull3.acre.radio.preset: Set '%1' field to '%2' of channel '%3' in preset '%4' of radio '%5'.",_channelNameField,_channelName,_channelIndex,_presetName,_radio));
+    LOG_5("hull3.acre.radio.preset: Set %1 field to %2 of channel %3 in preset %4 of radio %5.",_channelNameField,_channelName,_channelIndex,_presetName,_radio);
     [_radio, _presetName, _channelIndex, "power", _power] call acre_api_fnc_setPresetChannelField;
-    TRACE_4("hull3.acre.radio.preset: Set 'power' field to '%1' of channel '%2' in preset '%3' of radio '%4'.",_power,_channelIndex,_presetName,_radio));
+    LOG_4("hull3.acre.radio.preset: Set 'power' field to %1 of channel %2 in preset %3 of radio %4.",_power,_channelIndex,_presetName,_radio);
 };
 
 hull3_acre_fnc_getSideStep = {
@@ -187,7 +187,7 @@ hull3_acre_fnc_setRadioChannels = {
             private _shortRangeRadios = ["ACRE", "ShortRange", "radios"] call hull3_config_fnc_getArray;
             private _defaultLongRangeChannel = ["ACRE", "LongRange", "defaultChannel"] call hull3_config_fnc_getNumber;
             private _longRangeChannelAssignments = ["ACRE", "LongRange", "channels"] call hull3_config_fnc_getBothArray;
-            TRACE_2("hull3.acre.radio.assigned: Unit '%1' has '%2' radios assigned, attempting to set channels now.",_unit,call acre_api_fnc_getCurrentRadioList));
+            LOG_2("hull3.acre.radio.assigned: Unit %1 has %2 radios assigned, attempting to set channels now.",_unit,call acre_api_fnc_getCurrentRadioList);
 
             private ["_channelAssignments", "_defaultChannel"];
             {
@@ -212,10 +212,10 @@ hull3_acre_fnc_setRadioChannels = {
 hull3_acre_fnc_getRadioChannelFromGroupId = {
     params ["_unit","_channelAssignments","_defaultChannel"];
 
-    TRACE_3("hull3.acre.radio.channel: Getting channel for unit '%1' with assingments '%2' and default chanel '%3'.",_unit,_channelAssignments,_defaultChannel));
+    LOG_3("hull3.acre.radio.channel: Getting channel for unit %1 with assingments %2 and default chanel %3.",_unit,_channelAssignments,_defaultChannel);
     private _groupId = groupId group _unit;
     private _channels = _channelAssignments select { _x select 0 == _groupId };
-    TRACE_2("hull3.acre.radio.channel: Found channels are '%1' for groupId '%2'.",_channels,_groupId));
+    LOG_2("hull3.acre.radio.channel: Found channels are %1 for groupId %2.",_channels,_groupId);
 
     call {
         if (count _channels > 0) exitWith { _channels select 0 select 1 };
@@ -226,7 +226,7 @@ hull3_acre_fnc_getRadioChannelFromGroupId = {
         // For SLs and FTs we user the first character of the _groupId to find the channel.
         private _firstCharChannels = _channelAssignments select { _x select 0 == toString [_groupIdArray select 0] };
         private _groupIdWithoutFirstChar = toString (_groupIdArray select [1, count _groupIdArray - 1]);
-        TRACE_4("hull3.acre.radio.channel: _firstCharChannels is '%1', _groupIdWithoutFirstChar is '%2', parsed number is '%3' for groupId '%4'.",_firstCharChannels,_groupIdWithoutFirstChar,parseNumber _groupIdWithoutFirstChar,_groupId));
+        LOG_4("hull3.acre.radio.channel: _firstCharChannels is %1, _groupIdWithoutFirstChar is %2, parsed number is %3 for groupId %4.",_firstCharChannels,_groupIdWithoutFirstChar,parseNumber _groupIdWithoutFirstChar,_groupId);
         // FTs have a number as a second character.
         if (count _firstCharChannels > 0 && {count _groupIdArray >= 2} && {parseNumber _groupIdWithoutFirstChar >= 1}) exitWith { _firstCharChannels select 0 select 1 };
         // SLs have "S" and "L" as second and third characters.
@@ -239,7 +239,7 @@ hull3_acre_fnc_getRadioChannelFromGroupId = {
             _groupIdFirstNChars = toString (_groupIdArray select [0, _n]);
             _nCharsChannels = _channelAssignments select { _x select 0 == _groupIdFirstNChars };
             _groupIdWithoutFirstNChars = toString (_groupIdArray select [_n, count _groupIdArray - 1]);
-            TRACE_6("hull3.acre.radio.channel: _n is '%1', _groupIdFirstNChars is '%2', _nCharsChannels is '%3', _groupIdWithoutFirstNChars is '%4', parsed number is '%5' for groupId '%6'.",_n,_groupIdFirstNChars,_nCharsChannels,_groupIdWithoutFirstNChars,parseNumber _groupIdWithoutFirstNChars,_groupId));
+            LOG_6("hull3.acre.radio.channel: _n is %1, _groupIdFirstNChars is %2, _nCharsChannels is %3, _groupIdWithoutFirstNChars is %4, parsed number is %5 for groupId %6.",_n,_groupIdFirstNChars,_nCharsChannels,_groupIdWithoutFirstNChars,parseNumber _groupIdWithoutFirstNChars,_groupId);
             if (count _nCharsChannels > 0 && {count _groupIdArray >= _n} && {parseNumber _groupIdWithoutFirstNChars >= 1}) exitWith { _nCharsChannels select 0 select 1 };
         };
 
@@ -264,8 +264,8 @@ hull3_acre_fnc_adminAssignRadio = {
 
     if (player canAddItemToUniform _radio) then {
         player addItemToUniform _radio;
-        systemChat format ["[Hull3] Requested radio '%1' has been added to uniform.", _radio];
+        systemChat format ["[Hull3] Requested radio %1 has been added to uniform.", _radio];
     } else {
-        systemChat format ["[Hull3] Requested radio '%1' cannot be added to uniform. Make sure you have enough space!", _radio];
+        systemChat format ["[Hull3] Requested radio %1 cannot be added to uniform. Make sure you have enough space!", _radio];
     };
 };
