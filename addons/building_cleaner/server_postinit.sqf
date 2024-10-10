@@ -1,3 +1,5 @@
+#include "script_component.hpp"
+
 addMissionEventHandler ["BuildingChanged", {call ark_building_cleaner_fnc_canClean}];
 
 ark_building_cleaner_fnc_canClean = {
@@ -23,7 +25,7 @@ ark_building_cleaner_fnc_canClean = {
             {_x call ark_building_cleaner_fnc_doClean} forEach _fObjs;
         };
 
-        ["Building Cleaner","INFO","fnc_canClean","Running for", _buildingOld] call ark_admin_tools_fnc_log;
+        INFO_2("[ARK] %1 - fnc_canClean, Running for %2",COMPONENT,_buildingOld);
     };
 };
 

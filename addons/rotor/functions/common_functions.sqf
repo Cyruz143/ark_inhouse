@@ -1,13 +1,15 @@
+#include "..\script_component.hpp"
+
 ark_rotor_fnc_checkTrigger = {
     params ["_logic"];
 
     private _syncdTrg = synchronizedObjects _logic;
     if (_syncdTrg isEqualTo []) exitWith {
-        ["Rotor", "ERROR","fnc_checkTrigger","Trigger not syncd to the module"] call ark_admin_tools_fnc_log;
+        ERROR_1("[ARK] %1 - fnc_checkTrigger, Trigger not sync'd to the module",COMPONENT);
     };
 
     if (count _syncdTrg > 1) then {
-        ["Rotor", "WARNING","fnc_checkTrigger","Only sync one trigger to the module"] call ark_admin_tools_fnc_log;
+        WARNING_1("[ARK] %1 - fnc_checkTrigger, Only sync one trigger to the module",COMPONENT);
     };
 
     private _trigger = _syncdTrg #0;
@@ -20,36 +22,37 @@ ark_rotor_fnc_checkTrigger = {
     } forEach synchronizedObjects _trigger;
 
     if (count _syncUnits > 1) then {
-       ["Rotor", "WARNING","fnc_checkTrigger","Only sync one VR entity to the trigger"] call ark_admin_tools_fnc_log;
+       WARNING_1("[ARK] %1 - fnc_checkTrigger, Only sync one VR entity to the trigger",COMPONENT);
     };
 
     private _vrUnit = _syncUnits #0;
 
     if (isNil "_vrUnit") exitWith {
-        ["Rotor", "ERROR","fnc_checkTrigger","No VR entity syncd with trigger",_trigger] call ark_admin_tools_fnc_log;
+        ERROR_2("[ARK] %1 - fnc_checkTrigger, No VR Entity sync'd with trigger (%2)",COMPONENT,_trigger);
     };
 
     private _waypoints = waypoints (group _vrUnit);
     if (count _waypoints < 3) exitWith {
-        ["Rotor", "ERROR","fnc_checkTrigger","VR entity needs minimum 2 waypoints",_vrUnit] call ark_admin_tools_fnc_log;
+
+        ERROR_2("[ARK] %1 - fnc_checkTrigger, VR Entity (%2) needs minimum of 2 waypoints",COMPONENT,_vrUnit);
     };
 
     deleteVehicle _vrUnit;
-    ["Rotor", "INFO","fnc_checkTrigger","VR entity deleted",_vrUnit] call ark_admin_tools_fnc_log;
+    INFO_2("[ARK] %1 - fnc_checkTrigger, VR Entity Deleted (%2)",COMPONENT,_vrUnit);
     private _unitTemplate = adm_camp_defaultUnitTemplate;
     private _vehicleClassname = _logic getVariable ["Vehicle_ClassName", "Default"];
 
     if (_vehicleClassname isEqualTo "Default") then {
         private _heloArray = [_unitTemplate, "th"] call adm_common_fnc_getUnitTemplateArray;
         if (isNil "_heloArray" || { _heloArray isEqualTo [] }) exitWith {
-            ["Rotor", "ERROR","fnc_checkTrigger","No helo defined in Admiral template"] call ark_admin_tools_fnc_log;
+            ERROR_1("[ARK] %1 - fnc_checkTrigger, No Helicopter defined in Admiral Template",COMPONENT);
         };
         _vehicleClassname = selectRandom _heloArray;
     };
 
     private _routineFunction = _logic getVariable ["Routine_Function", {ark_rotor_fnc_paradrop}];
 
-    ["Rotor", "INFO","fnc_checkTrigger","Compiled Rotor routine",[_logic, _trigger, _vehicleClassname, _unitTemplate, _waypoints, _routineFunction]] call ark_admin_tools_fnc_log;
+    INFO_7("[ARK] %1 - fnc_checkTrigger, Compiled Rotor routine: %2, %3, %4, %5, %6, %7",COMPONENT,_logic,_trigger,_vehicleClassname,_unitTemplate,_waypoints,_routineFunction);
     [_logic, _trigger, _vehicleClassname, _unitTemplate, _waypoints] call (call compile _routineFunction);
 };
 
@@ -57,7 +60,7 @@ ark_rotor_fnc_createVehicle = {
     params ["_vehicleClassname", "_trigger", "_logic"];
 
     if (isNil "_trigger") exitWith {
-        ["Rotor", "ERROR","fnc_createVehicle","No trigger was provided to try and spawn the vehicle with classname",_vehicleClassname] call ark_admin_tools_fnc_log;
+        ERROR_2("[ARK] %1 - fnc_createVehicle, No trigger was provided to try and spawn the vehicle with classname %2",COMPONENT,_vehicleClassname);
     };
 
     private _flyHeight = _logic getVariable ["Fly_Height", 200];
@@ -107,12 +110,12 @@ ark_rotor_fnc_createCargo = {
             _args params ["_vehicle","_adjSeats","_grp","_cargoClassnames","_skillArray","_parachute"];
 
             if (isNil "_vehicle" || { !alive _vehicle }) exitWith {
-                ["Rotor", "ERROR","fnc_createCargo","Vehicle is dead or has incorrect classname"] call ark_admin_tools_fnc_log;
+                ERROR_1("[ARK] %1 - fnc_createCargo, Vehicle is dead or has incorrect classname",COMPONENT);
                 _id call CBA_fnc_removePerFrameHandler;
             };
 
             if (count (crew _vehicle) >= _adjSeats) exitWith {
-                ["Rotor", "INFO","fnc_createCargo","Delayed spawning completed. Spawned total units",_adjSeats] call ark_admin_tools_fnc_log;
+                INFO_2("[ARK] %1 - fnc_createCargo, Delayed spawning completed. Spawned total units (%2)",COMPONENT,_adjSeats);
                 _id call CBA_fnc_removePerFrameHandler;
             };
 
@@ -157,7 +160,7 @@ ark_rotor_fnc_taskAttack = {
     } forEach ((playableUnits + switchableUnits) select {isPlayer _x && {!(_x isKindOf "HeadlessClient_F")}});
 
     if (_nearEnemies isEqualTo []) exitWith {
-        ["Rotor", "INFO","fnc_taskAttack","No players to attack"] call ark_admin_tools_fnc_log;
+        INFO_1("[ARK] %1 - fnc_taskAttack, No players to attack",COMPONENT);
         {deleteVehicle _x} forEach units _grp;
     };
 
@@ -165,7 +168,7 @@ ark_rotor_fnc_taskAttack = {
     private _target = _nearEnemies #0;
 
     [_grp, getPos _target, 100] call CBA_fnc_taskPatrol;
-    ["Rotor", "INFO","fnc_taskAttack","Units attacking player",_target] call ark_admin_tools_fnc_log;
+    INFO_2("[ARK] %1 - fnc_taskAttack, Units attacking player (%2)",COMPONENT,_target);
 };
 
 ark_rotor_fnc_cleanUp = {
@@ -176,9 +179,9 @@ ark_rotor_fnc_cleanUp = {
     if ((_crew select {isPlayer _x}) isEqualTo []) then {
         deleteVehicleCrew _vehicle;
         {deleteVehicle _x} forEach [_vehicle,_logic];
-        ["Rotor", "INFO","fnc_cleanUp","Cleaned up vehicle",_vehicle] call ark_admin_tools_fnc_log;
+        INFO_2("[ARK] %1 - fnc_cleanUp, Cleaned up Vehicle (%2)",COMPONENT,_vehicle);
     } else {
         deleteVehicle _logic;
-        ["Rotor", "INFO","fnc_cleanUp","Not removing vehicle as player crew detected"] call ark_admin_tools_fnc_log;
+        INFO_1("[ARK] %1 - fnc_cleanUp, Not removing vehicle as player crew was detected",COMPONENT);
     };
 };

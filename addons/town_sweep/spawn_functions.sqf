@@ -1,3 +1,5 @@
+#include "script_component.hpp"
+
 ts_spawn_location_sizeChange = 100;
 
 ts_spawn_fnc_preinit = {
@@ -317,12 +319,12 @@ ts_spawn_fnc_objDestroyVeh = {
 
     if (!(_vehicle inArea ts_spawn_selectedLocationMarkerName)) exitWith {
         deleteVehicle _vehicle;
-        ["Town Sweep","ERROR","fnc_objDestroyVeh","Cannot find position for armour in selected town"] call ark_admin_tools_fnc_log;
+        ERROR_1("[ARK] %1 - fnc_objDestroyVeh, Cannot find position for armour in selected town",COMPONENT);
     };
 
     {
         if (_vehicle lockedTurret _x) exitWith {
-            ["Town Sweep","INFO","fnc_objDestroyVeh","Locked turret in vehicle, skipping crewman spawn", typeOf _vehicle] call ark_admin_tools_fnc_log;
+            INFO_2("[ARK] %1 - fnc_objDestroyVeh, Locked turret in vehicle (%2), skipping crewman spawn.",COMPONENT,typeOf _vehicle);
         };
 
         private _unit = [[0,0,0], _grp, _crewmanClassnames, _skillArray] call adm_common_fnc_placeMan;
@@ -450,7 +452,7 @@ ts_spawn_fnc_objRecoverIntel = {
 
     if (!(_helo inArea ts_spawn_selectedLocationMarkerName)) exitWith {
         deleteVehicle _helo;
-        ["Town Sweep","ERROR","ts_spawn_fnc_objRecoverIntel","Cannot find position for helo in selected area"] call ark_admin_tools_fnc_log;
+        ERROR_1("[ARK] %1 - ts_spawn_fnc_objRecoverIntel, Cannot find position for helicopter in the selected area",COMPONENT);
     };
 
     private _smoke = createVehicle ["test_EmptyObjectForSmoke", [0,0,0], [], 0, "CAN_COLLIDE"];

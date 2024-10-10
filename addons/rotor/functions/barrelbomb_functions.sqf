@@ -1,3 +1,5 @@
+#include "..\script_component.hpp"
+
 ark_rotor_fnc_barrelbomb = {
     params ["_logic", "_trigger", "_vehicleClassname", "_unitTemplate", "_waypoints"];
 
@@ -52,7 +54,7 @@ ark_rotor_fnc_dropBombs = {
             _args params ["_vehicle","_pilot"];
 
             if (_vehicle getVariable ["ark_rotor_var_bombAmount", 0] < 1 || {!alive _pilot} || {!alive _vehicle}) exitWith {
-                ["Rotor", "INFO","fnc_dropBombs","All bombs dropped"] call ark_admin_tools_fnc_log;
+                INFO_1("[ARK] %1 - fnc_dropBombs, All Bombs Dropped",COMPONENT);
                 _vehicle forceSpeed -1;
                 (group _pilot) setCurrentWaypoint [(group _pilot), 3];
                  _vehicle setVariable ["ark_rotor_var_bombAmount", nil];

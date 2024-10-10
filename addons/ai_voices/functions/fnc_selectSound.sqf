@@ -1,6 +1,7 @@
 /*
  * Big thanks to @diwako for helping with this, it's a straight nightmare
 */
+#include "..\script_component.hpp"
 
 ark_ai_voices_fnc_selectSound = {
     params ["_unit","_sndType"];
@@ -66,7 +67,7 @@ ark_ai_voices_fnc_selectSound = {
     if (isNil "_soundPathArr") then {
         private _dirPath = (getArray (configFile >> "CfgVoice" >> _speaker >> "directories")) #0;
         if (_dirPath isEqualTo "") exitWith {
-            ["AI Voices", "ERROR", "fnc_selectSound", "No directory path for sounds found for", _speaker] call ark_admin_tools_fnc_log;
+            ERROR_2("[ARK] %1 - fnc_selectSound, No directory path for sounds for %2",COMPONENT,_speaker);
             _unit setVariable ["ark_ai_voices_var_disableVoice", true];
         };
 
@@ -79,7 +80,7 @@ ark_ai_voices_fnc_selectSound = {
 
         // If it's still empty, unit has fucked config
         if (_protocolArr isEqualTo []) exitWith {
-            ["AI Voices", "ERROR", "fnc_selectSound", "No protocol path sound files available for", [_speaker, _voiceLine]] call ark_admin_tools_fnc_log;
+            ERROR_3("[ARK] %1 - fnc_selectSound, No protocol path sound files available for %2, %3",COMPONENT,_speaker,_voiceline);
             _unit setVariable ["ark_ai_voices_var_disableVoice", true];
         };
 
@@ -93,7 +94,7 @@ ark_ai_voices_fnc_selectSound = {
     };
 
     if (isNil "_soundPathArr" || { _soundPathArr isEqualTo [] }) exitWith {
-        ["AI Voices", "ERROR", "fnc_selectSound", "No sound file to play for unit", _unit] call ark_admin_tools_fnc_log;
+        ERROR_2("[ARK] %1 - fnc_selectSound, No sound file to play for unit (%2)",COMPONENT,_unit);
         _unit setVariable ["ark_ai_voices_var_disableVoice", true];
     };
 

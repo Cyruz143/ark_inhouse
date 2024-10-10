@@ -1,5 +1,7 @@
+#include "..\script_component.hpp"
+
 ark_race_fnc_clientInit = {
-    ["Race","INFO","fnc_clientInit","Race mission detected"] call ark_admin_tools_fnc_log;
+    INFO_1("[ARK] %1 - fnc_clientInit, Race Mission Detected",COMPONENT);
     //Disable damage for vehicles and units
     player addEventHandler ["GetInMan", {call ark_race_fnc_noDamage}];
     player addEventHandler ["GetOutMan", {call ark_race_fnc_noDamage}];

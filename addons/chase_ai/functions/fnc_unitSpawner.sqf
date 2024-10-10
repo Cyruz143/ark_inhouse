@@ -1,3 +1,5 @@
+#include "..\script_component.hpp"
+
 ark_chase_ai_fnc_unitSpawner = {
     [
         {
@@ -7,7 +9,7 @@ ark_chase_ai_fnc_unitSpawner = {
                 private _unit = call ark_chase_ai_fnc_createUnit;
                 if (isNil "_unit") exitWith {
                     if (missionNamespace getVariable ["ark_chase_ai_var_allowLogging", true]) then {
-                        ["Chase AI", "INFO","fnc_unitSpawner","No players available alive or in AO"] call ark_admin_tools_fnc_log;
+                        INFO_1("[ARK] %1 - fnc_unitSpawner, No players available alive or in the AO",COMPONENT);
                         missionNamespace setVariable ["ark_chase_ai_var_allowLogging", false, false];
                     };
                 };

@@ -1,8 +1,10 @@
+#include "..\script_component.hpp"
+
 ark_admin_tools_fnc_chaseAI = {
     params [["_pos",[0,0,0]],["_dist",250],["_tp",false]];
 
     if (_pos isEqualTo [0,0,0]) exitWith {
-        ["Admin Tools","INFO","fnc_chaseAI","Invalid/No position passed"] call ark_admin_tools_fnc_log;
+        INFO_1("[ARK] %1 - fnc_chaseAI, Invalid or No position passed.",COMPONENT);
     };
 
     private _closeUnits = allUnits select {
@@ -45,5 +47,5 @@ ark_admin_tools_fnc_chaseAI = {
         _unit doMove _targetPos;
     } forEach _closeUnits;
 
-    ["Admin Tools","INFO","fnc_chaseAI","Chase AI executed with args",_pos,_dist,_tp] call ark_admin_tools_fnc_log;
+    INFO_4("[ARK] %1 - fnc_chaseAI, Chase AI executed with Args: %2, %3, %4",COMPONENT,_pos,_dist,_tp);
 };

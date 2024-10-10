@@ -1,3 +1,5 @@
+#include "..\script_component.hpp"
+
 ark_ace_medical_fnc_tvtVestSwitch = {
     params ["_unit"];
 
@@ -9,9 +11,9 @@ ark_ace_medical_fnc_tvtVestSwitch = {
     if (isClass (configFile >> "CfgWeapons" >> _newClass)) then {
         [_loadout, [4,0], _newClass] call BIS_fnc_setNestedElement;
         _unit setUnitLoadout _loadout;
-        ["ACE Medical", "INFO", "fnc_tvtVestSwitch", "Players vest replaced with", _newClass] call ark_admin_tools_fnc_log;
+        LOG_2("[ARK] %1 - fnc_tvtVestSwitch, Players vest replaced with %2",COMPONENT,_newClass);
     } else {
-        ["ACE Medical", "ERROR", "fnc_tvtVestSwitch", "Invalid classname was returned", _newClass] call ark_admin_tools_fnc_log;
+        ERROR_2("[ARK] %1 - fnc_tvtVestSwitch, Invalid classname (%2) was returned",COMPONENT,_newClass);
     };
 };
 

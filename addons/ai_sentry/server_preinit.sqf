@@ -1,3 +1,5 @@
+#include "script_component.hpp"
+
 ark_ai_sentry_fnc_make_sentry = {
     params ["_unit", "_enabledNightvision"];
 
@@ -38,7 +40,7 @@ ark_ai_sentry_fnc_makeSentry = {
     params ["_logic", "_units"];
 
     if (_units isEqualTo []) exitWith {
-        ["AI Sentry", "ERROR", "fnc_makeSentry"," Module not syncd to any units", _logic] call ark_admin_tools_fnc_log;
+        ERROR_2("[ARK] %1 - fnc_makeSentry, Module (%2) is not sync'd to any units.",COMPONENT,_logic);
     };
 
     private _enabledNightvision = _logic getVariable ["Enabled_Nightvision", true];
@@ -47,7 +49,7 @@ ark_ai_sentry_fnc_makeSentry = {
         [_x, _enabledNightvision] call ark_ai_sentry_fnc_make_sentry;
     } forEach _units;
 
-    ["AI Sentry", "INFO", "fnc_makeSentry"," Deleting module", _logic] call ark_admin_tools_fnc_log;
+    INFO_2("[ARK] %1 - fnc_makeSentry, Deleting Module (%2)",COMPONENT,_logic);
     deleteVehicle _logic;
 
     //Return true because spawnd from module

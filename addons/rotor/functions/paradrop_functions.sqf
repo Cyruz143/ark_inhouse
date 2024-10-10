@@ -1,3 +1,5 @@
+#include "..\script_component.hpp"
+
 ark_rotor_fnc_paradrop = {
     params ["_logic", "_trigger", "_vehicleClassname", "_unitTemplate", "_waypoints"];
 
@@ -44,7 +46,7 @@ ark_rotor_fnc_jumpController = {
             private _crewArr = crew _vehicle - [driver _vehicle];
 
             if (isNil "_crewArr" || { _crewArr isEqualTo [] }) exitWith {
-                ["Rotor", "INFO","fnc_jumpController","All cargo ejected"] call ark_admin_tools_fnc_log;
+                INFO_1("[ARK] %1 - fnc_jumpController, All Cargo Ejected",COMPONENT);
                 _id call CBA_fnc_removePerFrameHandler;
             };
 

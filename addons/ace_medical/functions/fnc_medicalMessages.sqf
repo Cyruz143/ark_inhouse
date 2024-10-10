@@ -1,12 +1,14 @@
+#include "..\script_component.hpp"
+
 ["ace_treatmentSucceded",{
     params ["_caller", "_target", "", "_className"];
 
     if (!alive _target) exitWith {
         if (group _target isEqualTo grpNull) then {
-            ["ACE Medical","INFO","ace_treatmentSucceded","Unit had no group",_target] call ark_admin_tools_fnc_log;
+            LOG_2("[ARK] %1 - ace_treatmentSucceded, Unit (%2) had no group",COMPONENT,_target);
         } else {
             [_target] joinSilent grpNull;
-            ["ACE Medical","INFO","ace_treatmentSucceded","Removed unit from group",_target, group _target] call ark_admin_tools_fnc_log;
+            LOG_3("[ARK] %1 -  ace_treatmentSucceded, Removed unit (%2) from group (%3)",COMPONENT,_target,group _target);
         };
     };
 
