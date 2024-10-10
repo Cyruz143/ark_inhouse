@@ -1,3 +1,0 @@
-//#define GLOBAL_LOGGING
-//#define LOGGING_LEVEL_TRACE
-//#define LOGGING_TO_RPT
