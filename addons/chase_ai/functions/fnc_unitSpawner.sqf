@@ -9,7 +9,7 @@ ark_chase_ai_fnc_unitSpawner = {
                 private _unit = call ark_chase_ai_fnc_createUnit;
                 if (isNil "_unit") exitWith {
                     if (missionNamespace getVariable ["ark_chase_ai_var_allowLogging", true]) then {
-                        INFO_1("[ARK] %1 - fnc_unitSpawner, No players available alive or in the AO",COMPONENT);
+                        INFO("fnc_unitSpawner, No players available alive or in the AO");
                         missionNamespace setVariable ["ark_chase_ai_var_allowLogging", false, false];
                     };
                 };

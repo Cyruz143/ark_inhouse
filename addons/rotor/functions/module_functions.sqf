@@ -7,7 +7,7 @@ ark_rotor_module_preinit = {
         if (_activated) then {
             if (_logic getVariable ["ark_rotor_var_moduleRan", false]) exitWith {
                 if (missionNamespace getVariable ["ark_rotor_var_allowLogging", true]) then {
-                    ERROR_2("[ARK] %1 - module_preInit, Module (%2) tried to execute multiple times.",COMPONENT,_logic);
+                    ERROR_1("module_preInit, Module (%1) tried to execute multiple times.",_logic);
                     missionNamespace setVariable ["ark_rotor_var_allowLogging", false, false];
                 };
             };

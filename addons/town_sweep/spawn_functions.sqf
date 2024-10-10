@@ -319,12 +319,12 @@ ts_spawn_fnc_objDestroyVeh = {
 
     if (!(_vehicle inArea ts_spawn_selectedLocationMarkerName)) exitWith {
         deleteVehicle _vehicle;
-        ERROR_1("[ARK] %1 - fnc_objDestroyVeh, Cannot find position for armour in selected town",COMPONENT);
+        ERROR("fnc_objDestroyVeh, Cannot find position for armour in selected town");
     };
 
     {
         if (_vehicle lockedTurret _x) exitWith {
-            INFO_2("[ARK] %1 - fnc_objDestroyVeh, Locked turret in vehicle (%2), skipping crewman spawn.",COMPONENT,typeOf _vehicle);
+            INFO_1("fnc_objDestroyVeh, Locked turret in vehicle (%1), skipping crewman spawn.",typeOf _vehicle);
         };
 
         private _unit = [[0,0,0], _grp, _crewmanClassnames, _skillArray] call adm_common_fnc_placeMan;
@@ -452,7 +452,7 @@ ts_spawn_fnc_objRecoverIntel = {
 
     if (!(_helo inArea ts_spawn_selectedLocationMarkerName)) exitWith {
         deleteVehicle _helo;
-        ERROR_1("[ARK] %1 - ts_spawn_fnc_objRecoverIntel, Cannot find position for helicopter in the selected area",COMPONENT);
+        ERROR("ts_spawn_fnc_objRecoverIntel, Cannot find position for helicopter in the selected area");
     };
 
     private _smoke = createVehicle ["test_EmptyObjectForSmoke", [0,0,0], [], 0, "CAN_COLLIDE"];

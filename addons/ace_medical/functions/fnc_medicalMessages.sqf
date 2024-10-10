@@ -5,10 +5,10 @@
 
     if (!alive _target) exitWith {
         if (group _target isEqualTo grpNull) then {
-            LOG_2("[ARK] %1 - ace_treatmentSucceded, Unit (%2) had no group",COMPONENT,_target);
+            LOG_1("ace_treatmentSucceded, Unit (%1) had no group",_target);
         } else {
             [_target] joinSilent grpNull;
-            LOG_3("[ARK] %1 -  ace_treatmentSucceded, Removed unit (%2) from group (%3)",COMPONENT,_target,group _target);
+            LOG_2(" ace_treatmentSucceded, Removed unit (%1) from group (%2)",_target,group _target);
         };
     };
 

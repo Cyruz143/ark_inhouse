@@ -18,7 +18,7 @@ ark_ai_vehicles_fnc_canRepair = {
     params ["_vehicle"];
 
     if (_vehicle getVariable ["ark_ai_vehicles_gunner_dead", false]) exitWith {
-        INFO_1("[ARK] %1 - fnc_canRepair, Aborting repair due to the gunners death.",COMPONENT);
+        INFO("fnc_canRepair, Aborting repair due to the gunners death.");
     };
 
     _vehicle setVariable ["ark_ai_vehicles_awaiting_repair", true];

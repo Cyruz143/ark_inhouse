@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 
 ark_race_fnc_serverInit = {
-    INFO_1("[ARK] %1 - fnc_serverInit, Race Mission Detected",COMPONENT);
+    INFO("fnc_serverInit, Race Mission Detected");
     [{
         [nil, nil, nil, ['confirm']] call compileScript ['x\ark\addons\hull3\mission_host_safetytimer_stop.sqf'];
     }, [], 30] call CBA_fnc_waitAndExecute;
