@@ -15,3 +15,8 @@ preset = "Hemtt"
 
 [hemtt.release]
 folder = "ark_inhouse"
+
+[lints.sqf.banned_commands]
+options.ignore = [
+    "addPublicVariableEventHandler",
+]
