@@ -246,7 +246,7 @@ adm_cqc_fnc_forceFire = {
 };
 
 adm_cqc_fnc_globalForceFire = {
-    DEBUG("admiral.cqc.forcefire","Starting global force fire loop.");
+    DEBUG("admiral.cqc.forcefire: Starting global force fire loop.");
 
     [
         {

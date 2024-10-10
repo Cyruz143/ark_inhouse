@@ -6,7 +6,7 @@
 hull3_acre_fnc_preInit = {
     call hull3_acre_fnc_addEventHandlers;
     hull3_acre_isInitialized = false;
-    DEBUG("hull3.acre","ACRE functions preInit finished.");
+    DEBUG("hull3.acre: ACRE functions preInit finished.");
 };
 
 hull3_acre_fnc_addEventHandlers = {
@@ -22,9 +22,9 @@ hull3_acre_fnc_postInit = {
 };
 
 hull3_acre_fnc_acreInit = {
-    DEBUG("hull3.acre.init","ACRE player init called.");
+    DEBUG("hull3.acre.init: ACRE player init called.");
     if (!hasInterface) exitWith {
-        DEBUG("hull3.acre.init","Player is an HC, ACRE check ommited.");
+        DEBUG("hull3.acre.init: Player is an HC, ACRE check ommited.");
     };
 
     [
@@ -32,16 +32,16 @@ hull3_acre_fnc_acreInit = {
         {
             DEBUG("hull.acre.init","ACRE initialized.");
             if (!alive player) exitWith {
-                DEBUG("hull.acre.init","Player is dead, setting ACRE spectator to 'true'.");
+                DEBUG("hull.acre.init: Player is dead, setting ACRE spectator to 'true'.");
                 true call acre_api_fnc_setSpectator;
             };
-            DEBUG("hull.acre.init","Player is alive, starting ACRE init check.");
+            DEBUG("hull.acre.init: Player is alive, starting ACRE init check.");
             player call hull3_gear_fnc_tryAssignRadios;
             DEBUG_1("hull.acre.init: Radios assigned to '%1'.",player));
             hull3_acre_isInitialized = true;
             ["acre.initialized", [player]] call hull3_event_fnc_emitEvent;
             player call hull3_acre_fnc_setRadioChannels;
-            DEBUG("hull.acre.init","Hull3 ACRE init finished.");
+            DEBUG("hull.acre.init: Hull3 ACRE init finished.");
         }
     ] call CBA_fnc_waitUntilAndExecute;
 };

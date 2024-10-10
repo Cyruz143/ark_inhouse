@@ -3,7 +3,7 @@
 
 hull3_uniform_fnc_preInit = {
     hull3_uniform_unitBaseClass = [TYPE_CLASS_UNIFORM, "unitBaseClass"] call hull3_config_fnc_getText;
-    DEBUG("hull3.uniform","Uniform functions preInit finished.");
+    DEBUG("hull3.uniform: Uniform functions preInit finished.");
 };
 
 hull3_uniform_fnc_assignUniformInit = {

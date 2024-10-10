@@ -31,7 +31,7 @@ hull3_unit_fnc_playerInit = {
         {getClientStateNumber >= 9 || { (call bis_fnc_getNetMode) isEqualTo "SinglePlayer" }},
         {
             ["player.initialized", [player]] call hull3_event_fnc_emitEvent;
-            DEBUG("hull3.unit.player","Player is initialized.");
+            DEBUG("hull3.unit.player: Player is initialized.");
 
             call hull3_marker_fnc_addMarkers;
             call hull3_marker_fnc_updateAllMarkers;

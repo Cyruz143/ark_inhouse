@@ -204,7 +204,7 @@ adm_debug_fnc_createZoneMarker = {
     _debugMarker setMarkerDirLocal (GET_ZONE_AREA(_zone) select 2);
     _debugMarker setMarkerBrushLocal "Border";
     SET_ZONE_DEBUG_MARKER(_zone,_debugMarker);
-    DEBUG_6("admiral.debug: Created marker '%1' for zone '%2' at position '%3' with shape '%4', color '%4', size '%5' and direction '%6'.",_debugMarker,GET_ZONE_ID(_zone),GET_ZONE_POSITION(_zone),_shape,_color,AS_ARRAY_2(GET_ZONE_AREA(_zone) select 0, GET_ZONE_AREA(_zone) select 1),GET_ZONE_AREA(_zone) select 2));
+    DEBUG_6("admiral.debug: Created marker '%1' for zone '%2' at position '%3' with shape '%4', color '%4', size '%5' and direction '%6'.",_debugMarker,GET_ZONE_ID(_zone),GET_ZONE_POSITION(_zone),_shape,_color,AS_ARRAY_2(GET_ZONE_AREA(_zone) select 0,GET_ZONE_AREA(_zone) select 1),GET_ZONE_AREA(_zone) select 2));
 
     _debugMarker;
 };
@@ -222,7 +222,7 @@ adm_debug_fnc_createTriggerMarker = {
     _debugMarker setMarkerSizeLocal [(triggerArea _trigger) select 0, (triggerArea _trigger) select 1];
     _debugMarker setMarkerDirLocal ((triggerArea _trigger) select 2);
     _debugMarker setMarkerBrushLocal "Border";
-    DEBUG_6("admiral.debug: Created marker '%1' for trigger '%2' at position '%3' with shape '%4', color '%4', size '%5' and direction '%6'.",_debugMarker,_trigger,getPosATL _trigger,_shape,_color,AS_ARRAY_2((triggerArea _trigger) select 0, (triggerArea _trigger) select 1),(triggerArea _trigger) select 2));
+    DEBUG_6("admiral.debug: Created marker '%1' for trigger '%2' at position '%3' with shape '%4', color '%4', size '%5' and direction '%6'.",_debugMarker,_trigger,getPosATL _trigger,_shape,_color,AS_ARRAY_2((triggerArea _trigger) select 0,(triggerArea _trigger) select 1),(triggerArea _trigger) select 2));
 
     _debugMarker;
 };
@@ -374,7 +374,7 @@ adm_debug_fnc_debugMonitor = {
     waitUntil {
         [] call adm_debug_fnc_debugGroups;
         [] call adm_debug_fnc_debugZones;
-        DEBUG("admiral.debug","Updated debug markers.");
+        DEBUG("admiral.debug: Updated debug markers.");
         sleep 2;
         !adm_isDebuggingEnabled;
     };

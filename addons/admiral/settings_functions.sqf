@@ -8,7 +8,7 @@ adm_settings_fnc_initSideRelations = {
     {
         adm_sideRelations set [_forEachIndex, []];
     } forEach SIDE_ARRAY;
-    DEBUG("admiral.settings.siderelation","Initialized side relations.");
+    DEBUG("admiral.settings.siderelation: Initialized side relations.");
 };
 
 adm_settings_fnc_setSideRelations = {
@@ -22,7 +22,7 @@ adm_settings_fnc_setSideRelations = {
             [_oneSide, _otherSide] call adm_settings_fnc_setFriend;
         };
     } forEach _sideRelations;
-    DEBUG("admiral.settings.siderelation","Set side relations.");
+    DEBUG("admiral.settings.siderelation: Set side relations.");
 };
 
 adm_settings_fnc_setEnemy = {

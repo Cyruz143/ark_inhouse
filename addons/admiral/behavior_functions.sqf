@@ -5,7 +5,7 @@ adm_behavior_fnc_changeAllGroupState = {
     [
         {
             {
-                TRACE_2("admiral.behavior: Group '%1' is in '%2' state.",_x,STATE_TEXT_ARRAY select (_x getVariable AS_ARRAY_2("adm_behavior_state", STATE_INIT))));
+                TRACE_2("admiral.behavior: Group '%1' is in '%2' state.",_x,STATE_TEXT_ARRAY select (_x getVariable AS_ARRAY_2("adm_behavior_state",STATE_INIT))));
                 [_x] call (adm_behavior_states select (_x getVariable ["adm_behavior_state", STATE_INIT]));
             } forEach ([] call adm_behavior_fnc_getAllGroups);
         },

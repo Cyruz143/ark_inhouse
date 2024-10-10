@@ -30,7 +30,7 @@ hull3_gear_fnc_preInit = {
     hull3_gear_unitBaseClass = [TYPE_CLASS_GEAR, "unitBaseClass"] call hull3_config_fnc_getText;
     hull3_gear_vehicleBaseClass = [TYPE_CLASS_GEAR, "vehicleBaseClass"] call hull3_config_fnc_getText;
     [] call hull3_gear_fnc_addEventHandlers;
-    DEBUG("hull3.gear","Gear functions preInit finished.");
+    DEBUG("hull3.gear: Gear functions preInit finished.");
 };
 
 hull3_gear_fnc_addEventHandlers = {

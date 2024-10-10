@@ -6,7 +6,7 @@
 hull3_mission_fnc_preInit = {
     hull3_mission_isJip = false;
     [] call hull3_mission_fnc_addEventHandlers;
-    DEBUG("hull3.mission","Mission functions preInit finished.");
+    DEBUG("hull3.mission: Mission functions preInit finished.");
 };
 
 hull3_mission_fnc_addEventHandlers = {
@@ -23,7 +23,7 @@ hull3_mission_fnc_serverInit = {
     [] call hull3_mission_fnc_readMissionParamValues;
     [] call hull3_mission_fnc_setEnviroment;
     [] spawn hull3_mission_fnc_serverSafetyTimerLoop;
-    DEBUG("hull3.mission","Server init finished.");
+    DEBUG("hull3.mission: Server init finished.");
 };
 
 hull3_mission_fnc_clientInit = {
@@ -32,7 +32,7 @@ hull3_mission_fnc_clientInit = {
     if (hull3_mission_isJip) then {
         [] call hull3_mission_fnc_getJipSync;
     };
-    DEBUG("hull3.mission","Client init finished.");
+    DEBUG("hull3.mission: Client init finished.");
 };
 
 hull3_mission_fnc_evaluateParams = {
@@ -151,7 +151,7 @@ hull3_mission_fnc_addPlayerEHs = {
     "hull3_mission_safetyTimer" addPublicVariableEventHandler {
         (_this #1) call hull3_mission_fnc_handleSafetyTimeChange;
     };
-    DEBUG("hull3.mission.ehs","Player event handlers were added.");
+    DEBUG("hull3.mission.ehs: Player event handlers were added.");
 };
 
 hull3_mission_fnc_addServerEHs = {
@@ -163,7 +163,7 @@ hull3_mission_fnc_addServerEHs = {
     "hull3_mission_safetyTimerAbort" addPublicVariableEventHandler {
         [_this #1] spawn hull3_mission_fnc_serverSafetyTimerCountDown;
     };
-    DEBUG("hull3.mission.ehs","Server event handlers were added.");
+    DEBUG("hull3.mission.ehs: Server event handlers were added.");
 };
 
 hull3_mission_fnc_serverSafetyTimerLoop = {
@@ -195,7 +195,7 @@ hull3_mission_fnc_serverSafetyTimerCountDown = {
         for "_i" from _countDownLength to 0 step -1 do {
             hull3_mission_safetyTimer set [1, _i];
             publicVariable "hull3_mission_safetyTimer";
-            TRACE_1"hull3.mission.safetytimer: Safety timer has been published to clients with countdown time at '%1' seconds.",hull3_mission_safetyTimer #1));
+            TRACE_1("hull3.mission.safetytimer: Safety timer has been published to clients with countdown time at '%1' seconds.",hull3_mission_safetyTimer #1));
             if (!isDedicated) then {
                 hull3_mission_safetyTimer call hull3_mission_fnc_handleSafetyTimeChange;
             };
@@ -210,7 +210,7 @@ hull3_mission_fnc_clientSafetyTimerLoop = {
         [] call hull3_mission_fnc_addHostSafetyTimerStopAction;
         [player] call hull3_unit_fnc_addFiredEHs;
 
-        DEBUG("hull3.mission.safetytimer","Starting safety timer loop.");
+        DEBUG("hull3.mission.safetytimer: Starting safety timer loop.");
         [{
             params ["_args", "_id"];
             {[ACE_player, _x, true, false] call ace_safemode_fnc_setWeaponSafety} forEach (weapons player);
@@ -219,7 +219,7 @@ hull3_mission_fnc_clientSafetyTimerLoop = {
                 [_this #1] call CBA_fnc_removePerFrameHandler;
                 ["ace_firedPlayer", (player getVariable "hull3_eh_fired")] call CBA_fnc_removeEventHandler;
                 {[ACE_player, _x, false, false] call ace_safemode_fnc_setWeaponSafety} forEach (weapons player);
-                DEBUG("hull3.mission.safetytimer","Safety timer has ended. Removed fired EH.");
+                DEBUG("hull3.mission.safetytimer: Safety timer has ended. Removed fired EH.");
             };
         } ] call CBA_fnc_addPerFrameHandler;
     };
@@ -266,10 +266,10 @@ hull3_mission_fnc_addHostSafetyTimerStopAction = {
         if (serverCommandAvailable "#kick" || {!isMultiplayer}) then {
             DECLARE(_actionId) = player addAction ['<t color="#428CE0">Disable weapon safety</t>', ADDON_PATH(mission_host_safetytimer_stop.sqf), ["activated"], 3, false, false, "", "driver _target == _this && {!(hull3_mission_safetyTimer #0)} && {(hull3_mission_safetyTimer #1) < hull3_mission_safetyTimerEnd}"];
             hull3_mission_safetyTimerActionIds set [0, _actionId];
-            DEBUG("hull.mission.safetytimer","Added safety timer abort action to player.");
+            DEBUG("hull.mission.safetytimer: Added safety timer abort action to player.");
         };
     } else {
-        DEBUG("hull.mission.safetytimer","Safety timer abort action not added to player, using ACE Self Interaction instead.");
+        DEBUG("hull.mission.safetytimer: Safety timer abort action not added to player, using ACE Self Interaction instead.");
     };
 };
 

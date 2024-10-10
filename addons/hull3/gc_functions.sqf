@@ -101,7 +101,7 @@ hull3_gc_fnc_sortDead = {
 
 hull3_gc_fnc_monitorDead = {
     if (hull3_gc_canRemoveCorpses) then {
-        DEBUG("hull3.gc","Starting next corpse GC check.");
+        DEBUG("hull3.gc: Starting next corpse GC check.");
         private _removedCount = 0;
         private _deadAmount = count hull3_gc_deadUnits;
         private _limitReached = _deadAmount > hull3_gc_currentCorpseLimit;
@@ -116,7 +116,7 @@ hull3_gc_fnc_monitorDead = {
     };
 
     if (hull3_gc_canRemoveWrecks) then {
-        DEBUG("hull3.gc","Starting next wreck GC check.");
+        DEBUG("hull3.gc: Starting next wreck GC check.");
         private _removedCount = 0;
         private _wreckAmount = count hull3_gc_deadVehicles;
         private _limitReached = _wreckAmount > hull3_gc_currentWreckLimit;
