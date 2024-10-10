@@ -42,7 +42,7 @@
 #define RANDOM_SPAWN_CHANCE_MODULE_VARS     [QUOTE(INFANTRY_SPAWN_CHANCE_ARG_CLASS), QUOTE(PATROL_SPAWN_CHANCE_ARG_CLASS), QUOTE(ARMOUR_SPAWN_CHANCE_ARG_CLASS)]
 
 #define PUSH_GROUP_TYPE_CONFIG(CFGNAME,MODULE,MODULEVARS,CONFIGS) \
-    DECLARE(_groupTypeConfig) = [0, 0, 0]; \
+    private _groupTypeConfig = [0, 0, 0]; \
     { \
         _groupTypeConfig set [_forEachIndex, MODULE getVariable _x]; \
     } forEach MODULEVARS; \

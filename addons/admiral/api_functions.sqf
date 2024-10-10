@@ -9,7 +9,7 @@
  * @param _code The code to be executed
  */
 adm_api_fnc_executeIfHc = {
-    FUN_ARGS_2(_arguments,_code);
+    params ["_arguments","_code"];
 
     [_arguments, _code] call adm_hc_fnc_adm_api_fnc_executeIfHc;
 };
@@ -60,7 +60,7 @@ adm_api_fnc_initZone = {
  * @return ID (number) that uniquely identifies the zone
  */
 adm_api_fnc_getZoneId = {
-    FUN_ARGS_1(_zone);
+    params ["_zone"];
 
     GET_ZONE_ID(_zone);
 };
@@ -72,7 +72,7 @@ adm_api_fnc_getZoneId = {
  * @return Zone or nil if not found
  */
 adm_api_fnc_getZoneById = {
-    FUN_ARGS_1(_id);
+    params ["_id"];
 
     [_id] call adm_zone_fnc_getZoneById
 };
@@ -83,7 +83,7 @@ adm_api_fnc_getZoneById = {
  * @return Name of the zone, name of global variable in missionNamespace that equals with the zone
  */
 adm_api_fnc_getZoneName = {
-    FUN_ARGS_1(_zone);
+    params ["_zone"];
 
     GET_ZONE_NAME(_zone);
 };
@@ -94,7 +94,7 @@ adm_api_fnc_getZoneName = {
  * @return Type of the zone
  */
 adm_api_fnc_getZoneType = {
-    FUN_ARGS_1(_zone);
+    params ["_zone"];
 
     GET_ZONE_TYPE(_zone);
 };
@@ -105,7 +105,7 @@ adm_api_fnc_getZoneType = {
  * @return Position array
  */
 adm_api_fnc_getZonePosition = {
-    FUN_ARGS_1(_zone);
+    params ["_zone"];
 
     GET_ZONE_POSITION(_zone);
 };
@@ -116,7 +116,7 @@ adm_api_fnc_getZonePosition = {
  * @return Trigger area array
  */
 adm_api_fnc_getZoneArea = {
-    FUN_ARGS_1(_zone);
+    params ["_zone"];
 
     GET_ZONE_AREA(_zone);
 };
@@ -127,7 +127,7 @@ adm_api_fnc_getZoneArea = {
  * @return Wether the zone is enabled or not
  */
 adm_api_fnc_isZoneEnabled = {
-    FUN_ARGS_1(_zone);
+    params ["_zone"];
 
     IS_ZONE_ENABLED(_zone);
 };
@@ -138,7 +138,7 @@ adm_api_fnc_isZoneEnabled = {
  * @return Unit template class name
  */
 adm_api_fnc_getZoneUnitTemplate = {
-    FUN_ARGS_1(_zone);
+    params ["_zone"];
 
     GET_ZONE_UNIT_TEMPLATE(_zone);
 };
@@ -150,7 +150,7 @@ adm_api_fnc_getZoneUnitTemplate = {
  * @return Unit template class name
  */
 adm_api_fnc_getZoneSpawnedGroups = {
-    FUN_ARGS_1(_zone);
+    params ["_zone"];
 
     GET_ZONE_SPAWNED_GROUPS(_zone);
 };
@@ -161,7 +161,7 @@ adm_api_fnc_getZoneSpawnedGroups = {
  * @return Zone template class name
  */
 adm_api_fnc_getZoneTemplate = {
-    FUN_ARGS_1(_zone);
+    params ["_zone"];
 
     GET_ZONE_TEMPLATE(_zone);
 };
@@ -176,7 +176,7 @@ adm_api_fnc_getZoneTemplate = {
  * @param _enemySide The side that will be the enemy
  */
 adm_api_fnc_setEnemy = {
-    FUN_ARGS_2(_side,_enemySide);
+    params ["_side","_enemySide"];
 
     [_side, _enemySide] call adm_settings_fnc_setEnemy;
 };
@@ -187,7 +187,7 @@ adm_api_fnc_setEnemy = {
  * @param _enemySide The side that will be the friend
  */
 adm_api_fnc_setFriend = {
-    FUN_ARGS_2(_side,_friendlySide);
+    params ["_side","_friendlySide"];
 
     [_side, _friendlySide] call adm_settings_fnc_setFriend;
 };
@@ -218,7 +218,7 @@ adm_api_fnc_disableDebugging = {
  * Disables force fire of a CQC zone.
  */
 adm_api_fnc_disableForceFire = {
-    FUN_ARGS_1(_trigger);
+    params ["_trigger"];
 
     [_trigger] call adm_cqc_fnc_disableForceFire;
 };
@@ -227,7 +227,7 @@ adm_api_fnc_disableForceFire = {
  * Enables force fire of a CQC zone.
  */
 adm_api_fnc_enableForceFire = {
-    FUN_ARGS_1(_trigger);
+    params ["_trigger"];
 
     [_trigger] call adm_cqc_fnc_enableForceFire;
 };
@@ -260,7 +260,7 @@ adm_api_fnc_getCqcUnits = {
  * @param _triggerArea (optional) TriggerArea array containing the new size and shape of the zone
  */
 adm_api_fnc_moveZone = {
-    FUN_ARGS_3(_trigger,_position,_triggerArea);
+    params ["_trigger","_position","_triggerArea"];
 
     [_trigger, _position, _triggerArea] call adm_patrol_fnc_moveZone;
 };
@@ -274,7 +274,7 @@ adm_api_fnc_moveZone = {
  * @param _triggerArea (optional) TriggerArea array containing the new size and shape of the zone
  */
 adm_api_fnc_followZone = {
-    FUN_ARGS_4(_trigger,_object,_delay,_triggerArea);
+    params ["_trigger","_object","_delay","_triggerArea"];
 
     [_trigger, _object, _delay, _triggerArea] call adm_patrol_fnc_followZone;
 };
@@ -284,7 +284,7 @@ adm_api_fnc_followZone = {
  * @param _trigger Trigger object representing a Patrol zone
  */
 adm_api_fnc_stopFollowZone = {
-    FUN_ARGS_1(_trigger);
+    params ["_trigger"];
 
     [_trigger] call adm_patrol_fnc_stopFollowZone;
 };
@@ -364,7 +364,7 @@ adm_api_fnc_getPatrolUnits = {
  * @param _trigger Trigger object representing a Camp zone
  */
 adm_api_fnc_disableCamp = {
-    FUN_ARGS_1(_trigger);
+    params ["_trigger"];
 
     [_trigger] call adm_camp_fnc_disableCamp;
 };
@@ -448,7 +448,7 @@ adm_api_fnc_getCampUnits = {
  * @return A random position array from the given area
  */
 adm_api_fnc_getRandomPositionInArea = {
-    FUN_ARGS_3(_area,_areaPosition,_canBeWater);
+    params ["_area","_areaPosition","_canBeWater"];
 
     [_area, _areaPosition, _canBeWater] call adm_common_fnc_getRandomPositionInArea;
 };
@@ -461,7 +461,7 @@ adm_api_fnc_getRandomPositionInArea = {
  * @return Wheter the position is in the area
  */
 adm_api_fnc_isPositionInArea = {
-    FUN_ARGS_3(_position,_area,_areaPosition);
+    params ["_position","_area","_areaPosition"];
 
     [_position, _area, _areaPosition] call adm_common_fnc_isPositionInArea;
 };
@@ -474,7 +474,7 @@ adm_api_fnc_isPositionInArea = {
  * @return Wether a player is close enough to the trigger or not
  */
 adm_api_fnc_isPlayerNearTrigger = {
-    FUN_ARGS_2(_trigger,_distance);
+    params ["_trigger","_distance"];
 
     [_trigger, _distance] call adm_common_fnc_isPlayerNearZone;
 };
@@ -488,7 +488,7 @@ adm_api_fnc_isPlayerNearTrigger = {
  * @return Sorted array
  */
 adm_api_fnc_insertionSort = {
-    FUN_ARGS_2(_array,_compareFunc);
+    params ["_array","_compareFunc"];
 
     [_array, _compareFunc] call adm_common_fnc_insertionSort;
 };
@@ -500,7 +500,7 @@ adm_api_fnc_insertionSort = {
  * @return Shuffled array
  */
 adm_api_fnc_shuffle = {
-    FUN_ARGS_1(_array);
+    params ["_array"];
 
     [_array] call adm_common_fnc_shuffle;
 };

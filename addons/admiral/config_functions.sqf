@@ -2,7 +2,7 @@
 #include "\userconfig\admiral\log\config.h"
 
 adm_config_fnc_getConfig = {
-    DECLARE(_config) = ADMIRAL_MISSION_CONFIG_FILE;
+    private _config = ADMIRAL_MISSION_CONFIG_FILE;
     {
         _config = _config >> _x;
     } forEach _this;
@@ -50,7 +50,7 @@ adm_config_fnc_getBool = {
 };
 
 adm_common_fnc_getEventFileResult = {
-    FUN_ARGS_2(_fileName,_arguments);
+    params ["_fileName","_arguments"];
 
     private ["_file", "_result"];
     _file = ["Events", _fileName] call adm_config_fnc_getText;
@@ -63,16 +63,16 @@ adm_common_fnc_getEventFileResult = {
 };
 
 adm_common_fnc_callEventFile = {
-    FUN_ARGS_2(_fileName,_arguments);
+    params ["_fileName","_arguments"];
 
-    DECLARE(_file) = ["Events", _fileName] call adm_config_fnc_getText;
+    private _file = ["Events", _fileName] call adm_config_fnc_getText;
     if (_file != "") then {
         _arguments call compile preprocessFileLineNumbers _file;
     };
 };
 
 adm_config_fnc_getCustomConfig = {
-    DECLARE(_config) = _this select 0;
+    private _config = _this select 0;
     for "_i" from 1 to (count _this) - 1 do {
         _config = _config >> (_this select _i);
     };

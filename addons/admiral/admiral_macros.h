@@ -329,45 +329,6 @@
     PVT_9(VAR1,VAR2,VAR3,VAR4,VAR5,VAR6,VAR7,VAR8,VAR9); \
     SELECT_9(ARRAY,VAR1,VAR2,VAR3,VAR4,VAR5,VAR6,VAR7,VAR8,VAR9)
 
-// Creates private declarations and selection from _this array for arguments.
-// Recommended for function/script argument processing.
-// Example:
-//      GIVEN:
-//          _this = ["unit", "group", "trigger"];
-//      WHEN:
-//          FUN_ARGS_3(_unit,_group,_trigger);
-//      THEN:
-//          private ["_unit","_group","_trigger"];
-//          _unit == "unit";
-//          _group == "group";
-//          _trigger == "trigger";
-#define FUN_ARGS_1(VAR1) \
-    DECLARE_1(_this,VAR1);
-
-#define FUN_ARGS_2(VAR1,VAR2) \
-    DECLARE_2(_this,VAR1,VAR2)
-
-#define FUN_ARGS_3(VAR1,VAR2,VAR3) \
-    DECLARE_3(_this,VAR1,VAR2,VAR3)
-
-#define FUN_ARGS_4(VAR1,VAR2,VAR3,VAR4) \
-    DECLARE_4(_this,VAR1,VAR2,VAR3,VAR4)
-
-#define FUN_ARGS_5(VAR1,VAR2,VAR3,VAR4,VAR5) \
-    DECLARE_5(_this,VAR1,VAR2,VAR3,VAR4,VAR5)
-
-#define FUN_ARGS_6(VAR1,VAR2,VAR3,VAR4,VAR5,VAR6) \
-    DECLARE_6(_this,VAR1,VAR2,VAR3,VAR4,VAR5,VAR6)
-
-#define FUN_ARGS_7(VAR1,VAR2,VAR3,VAR4,VAR5,VAR6,VAR7) \
-    DECLARE_7(_this,VAR1,VAR2,VAR3,VAR4,VAR5,VAR6,VAR7)
-
-#define FUN_ARGS_8(VAR1,VAR2,VAR3,VAR4,VAR5,VAR6,VAR7,VAR8) \
-    DECLARE_8(_this,VAR1,VAR2,VAR3,VAR4,VAR5,VAR6,VAR7,VAR8)
-
-#define FUN_ARGS_9(VAR1,VAR2,VAR3,VAR4,VAR5,VAR6,VAR7,VAR8,VAR9) \
-    DECLARE_9(_this,VAR1,VAR2,VAR3,VAR4,VAR5,VAR6,VAR7,VAR8,VAR9)
-
 // Adds all values from one array to another.
 // Example:
 //      GIVEN:
@@ -438,14 +399,5 @@
 //      THEN:
 //          _longestAxis == 400;
 #define LONGEST_AXIS(TRG) (if ((triggerArea (TRG)) select 0 > (triggerArea (TRG)) select 1) then {(triggerArea (TRG)) select 0} else {(triggerArea (TRG)) select 1})
-
-// Creates a private declaration for a variable and enables instant assigment.
-// Example:
-//      GIVEN:
-//      WHEN:
-//          DECLARE(_group) = _x;
-//      THEN:
-//          private "_group"; _group = _x;
-#define DECLARE(VAR) private #VAR; VAR
 
 #endif //ADMIRAL_MACROS_H

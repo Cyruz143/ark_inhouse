@@ -2,7 +2,7 @@
 #include "\userconfig\admiral\log\hc.h"
 
 adm_hc_fnc_executeIfHc = {
-    FUN_ARGS_2(_arguments,_code);
+    params ["_arguments","_code"];
 
     if ([] call adm_hc_fnc_isHc) then {
         _arguments call _code;

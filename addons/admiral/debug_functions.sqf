@@ -24,7 +24,7 @@ adm_debug_fnc_createMovingGroupMarkers = {
 adm_debug_fnc_updateMovingGroupMarkers = {
     params ["_group"];
 
-    DECLARE(_debugMarkers) = _group getVariable "adm_group_debugMarkers";
+    private _debugMarkers = _group getVariable "adm_group_debugMarkers";
     if (IS_GROUP_ALIVE(_group)) then {
         if (!isNil {_debugMarkers}) then {
             [_group, _debugMarkers] call adm_debug_fnc_updateMovingGroupWaypointMarkers;
@@ -51,7 +51,7 @@ adm_debug_fnc_updateMovingGroupWaypointMarkers = {
 adm_debug_fnc_updateMovingGroupsStateMarkers = {
    params ["_group","_lineMarker"];
 
-    DECLARE(_state) = _group getVariable ["adm_behavior_state", STATE_INIT];
+    private _state = _group getVariable ["adm_behavior_state", STATE_INIT];
     call {
         if (_state in [STATE_INIT, STATE_MOVING]) exitWith {
             _lineMarker setMarkerAlphaLocal 0;
@@ -96,7 +96,7 @@ adm_debug_fnc_deleteMovingGroupMarkers = {
 adm_debug_fnc_createCqcUnitMarker = {
    params ["_unit","_group"];
 
-    DECLARE(_debugMarker) = [format ["adm_unit_cqc_%1", _unit], getPosATL _unit, "ICON", CQC_DEBUG_MARKER, [side _group] call adm_debug_fnc_getSideColor, CQC_DEBUG_MARKER_SIZE] call adm_common_fnc_createLocalMarker;
+    private _debugMarker = [format ["adm_unit_cqc_%1", _unit], getPosATL _unit, "ICON", CQC_DEBUG_MARKER, [side _group] call adm_debug_fnc_getSideColor, CQC_DEBUG_MARKER_SIZE] call adm_common_fnc_createLocalMarker;
     _unit setVariable ["adm_unit_debugMarker", _debugMarker, false];
     DEBUG_3("admiral.debug: Created CQC unit marker '%1' for unit '%2' in group '%3'.",_debugMarker,_unit,_group));
 
@@ -115,7 +115,7 @@ adm_debug_fnc_updateCqcGroupMarkers = {
     params ["_group"];
 
     {
-        DECLARE(_debugMarker) = _x getVariable "adm_unit_debugMarker";
+        private _debugMarker = _x getVariable "adm_unit_debugMarker";
         if (!isNil {_debugMarker}) then {
             if (alive _x) then {
                 _debugMarker setMarkerPosLocal (getPosATL _x);
@@ -152,7 +152,7 @@ adm_debug_fnc_deleteAllCqcGroupMarkers = {
 adm_debug_fnc_updateZoneMarkers = {
     params ["_zone"];
 
-    DECLARE(_debugMarker) = GET_ZONE_DEBUG_MARKER(_zone);
+    private _debugMarker = GET_ZONE_DEBUG_MARKER(_zone);
     if (_debugMarker != "") then {
 
     } else {
@@ -166,7 +166,7 @@ adm_debug_fnc_updateZoneMarkers = {
 adm_debug_fnc_deleteZoneMarkers = {
     params ["_zone"];
 
-    DECLARE(_debugMarker) = GET_ZONE_DEBUG_MARKER(_zone);
+    private _debugMarker = GET_ZONE_DEBUG_MARKER(_zone);
     if (_debugMarker != "") then {
         deleteMarkerLocal _debugMarker;
         if (GET_ZONE_TYPE(_zone) == "camp") then {
@@ -180,7 +180,7 @@ adm_debug_fnc_deleteZoneMarkers = {
 
 adm_debug_fnc_deleteAllZoneMarkers = {
     {
-        DECLARE(_zones) = _x;
+        private _zones = _x;
         {
             [_x] call adm_debug_fnc_deleteZoneMarkers;
         } forEach _zones;
@@ -230,7 +230,7 @@ adm_debug_fnc_createTriggerMarker = {
 adm_debug_fnc_createAllCampPathMarkers = {
     params ["_zone"];
 
-    DECLARE(_paths) = GET_CAMP_PATHS(_zone);
+    private _paths = GET_CAMP_PATHS(_zone);
     {
         if (isNil {GET_PATH_DEBUG_MARKERS(_x)}) then {
             [_x] call adm_debug_fnc_createCampPathMarkers;
@@ -260,7 +260,7 @@ adm_debug_fnc_createCampPathMarkers = {
 adm_debug_fnc_deleteCampPathMarkers = {
     params ["_path"];
 
-    DECLARE(_debugMarkers) = GET_PATH_DEBUG_MARKERS(_path);
+    private _debugMarkers = GET_PATH_DEBUG_MARKERS(_path);
     if (!isNil {_debugMarkers}) then {
         {
             deleteMarkerLocal _x;
@@ -317,7 +317,7 @@ adm_debug_fnc_createDebugFactionCounterMarkers = {
 };
 
 adm_debug_fnc_createAllDebugCounterMarkers = {
-    DECLARE(_xPos) = COUNTER_DEBUG_MARKER_X_POS;
+    private _xPos = COUNTER_DEBUG_MARKER_X_POS;
     {
         [_x, _xPos] call adm_debug_fnc_createDebugFactionCounterMarkers;
         _xPos = _xPos + (4 * COUNTER_DEBUG_MARKER_X_INCREMENT);
@@ -334,7 +334,7 @@ adm_debug_fnc_updateDebugCounterMarkers = {
         [[adm_patrol_armourGroups, adm_camp_armourGroups], adm_common_fnc_getAliveSideGroups]
     ];
     {
-        DECLARE(_count) = [_groupTypeCountArray select _forEachIndex select 0, _side] call (_groupTypeCountArray select _forEachIndex select 1);
+        private _count = [_groupTypeCountArray select _forEachIndex select 0, _side] call (_groupTypeCountArray select _forEachIndex select 1);
         (format ["adm_counter_%1_%2", _side, _x]) setMarkerTextLocal str count _count;
     } forEach GROUP_TYPE_DEBUG_MARKERS;
     (format ["adm_counter_%1_total", _side]) setMarkerTextLocal format ["%1 (%2)", count (([_side] call adm_common_fnc_getAllAliveSideUnits) select {simulationEnabled _x}), count ([_side] call adm_common_fnc_getAllAliveSideUnits)];
@@ -349,7 +349,7 @@ adm_debug_fnc_updateAllDebugCounterMarkers = {
 
 adm_debug_fnc_deleteAllDebugCounterMarkers = {
     {
-        DECLARE(_side) = _x;
+        private _side = _x;
         {
             deleteMarkerLocal format ["adm_counter_%1_%2", _side, _x];
         } forEach GROUP_TYPE_DEBUG_MARKERS;
@@ -360,7 +360,7 @@ adm_debug_fnc_deleteAllDebugCounterMarkers = {
 adm_debug_fnc_getSideColor = {
     params ["_side"];
 
-    DECLARE(_index) = SIDE_ARRAY find _side;
+    private _index = SIDE_ARRAY find _side;
     if (_index >= 0) then {
         SIDE_DEBUG_MARKER_COLORS select _index;
     } else {
@@ -401,7 +401,7 @@ adm_debug_fnc_debugGroups = {
 
 adm_debug_fnc_debugZones = {
     {
-        DECLARE(_zones) = _x;
+        private _zones = _x;
         {
             [_x] call adm_debug_fnc_updateZoneMarkers;
         } forEach _zones;

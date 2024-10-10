@@ -12,7 +12,7 @@ adm_settings_fnc_initSideRelations = {
 };
 
 adm_settings_fnc_setSideRelations = {
-    DECLARE(_sideRelations) = ["sideRelations"] call adm_config_fnc_getArray;
+    private _sideRelations = ["sideRelations"] call adm_config_fnc_getArray;
     {
         private _oneSide = [call compile (_x select 0)] call adm_common_fnc_getAdmiralSide;
         private _otherSide = [call compile (_x select 1)] call adm_common_fnc_getAdmiralSide;
@@ -26,9 +26,9 @@ adm_settings_fnc_setSideRelations = {
 };
 
 adm_settings_fnc_setEnemy = {
-    FUN_ARGS_2(_side,_enemySide);
+    params ["_side","_enemySide"];
 
-    DECLARE(_sideEnemies) = adm_sideRelations select _side;
+    private _sideEnemies = adm_sideRelations select _side;
     if (!(_enemySide in _sideEnemies)) then {
         PUSH(_sideEnemies,_enemySide);
         (SIDE_ARRAY select _side) setFriend [(SIDE_ARRAY select _enemySide), 0];
@@ -37,7 +37,7 @@ adm_settings_fnc_setEnemy = {
 };
 
 adm_settings_fnc_setFriend = {
-    FUN_ARGS_2(_side,_friendlySide);
+    params ["_side","_friendlySide"];
 
     private ["_sideEnemies", "_enemySideIndex"];
     _sideEnemies = adm_sideRelations select _side;

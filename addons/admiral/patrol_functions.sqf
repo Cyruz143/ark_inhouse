@@ -4,9 +4,9 @@
 
 
 adm_patrol_fnc_placeMan = {
-    FUN_ARGS_5(_position,_group,_unitTemplate,_zoneTemplate,_unitType);
+    params ["_position","_group","_unitTemplate","_zoneTemplate","_unitType"];
 
-    DECLARE(_unit) = [
+    private _unit = [
         _position,
         _group,
         [_unitTemplate, _unitType] call adm_common_fnc_getUnitTemplateArray,
@@ -18,7 +18,7 @@ adm_patrol_fnc_placeMan = {
 };
 
 adm_patrol_fnc_createWaypoints = {
-    FUN_ARGS_4(_group,_unitType,_zone,_noOfWaypoints);
+    params ["_group","_unitType","_zone","_noOfWaypoints"];
 
     private ["_waypointBehaviours", "_defaultWp"];
     _waypointBehaviours = ["ZoneTemplates", GET_ZONE_TEMPLATE(_zone), "waypointBehaviours"] call adm_config_fnc_getArray;
@@ -32,9 +32,9 @@ adm_patrol_fnc_createWaypoints = {
 };
 
 adm_patrol_fnc_spawnInfGroup = {
-    FUN_ARGS_1(_zone);
+    params ["_zone"];
 
-    DECLARE(_group) = [_zone, GROUP_TYPE_INF, UNIT_TYPE_INF, adm_patrol_fnc_placeMan] call adm_camp_fnc_spawnInfGroup;
+    private _group = [_zone, GROUP_TYPE_INF, UNIT_TYPE_INF, adm_patrol_fnc_placeMan] call adm_camp_fnc_spawnInfGroup;
     [_group, "SoldierWB", _zone, ["ZoneTemplates", GET_ZONE_TEMPLATE(_zone), "infWaypointAmount"] call adm_config_fnc_getNumber] call adm_patrol_fnc_createWaypoints;
     DEBUG_3("admiral.patrol.create: Created group '%1' of type '%2' in Patrol Zone '%3'.",_group,GROUP_TYPE_ARRAY select GROUP_TYPE_INF,GET_ZONE_ID(_zone)));
 
@@ -42,9 +42,9 @@ adm_patrol_fnc_spawnInfGroup = {
 };
 
 adm_patrol_fnc_spawnTechGroup = {
-    FUN_ARGS_1(_zone);
+    params ["_zone"];
 
-    DECLARE(_group) = [_zone, GROUP_TYPE_TECH, UNIT_TYPE_INF, adm_patrol_fnc_placeMan] call adm_camp_fnc_spawnVehicleGroup;
+    private _group = [_zone, GROUP_TYPE_TECH, UNIT_TYPE_INF, adm_patrol_fnc_placeMan] call adm_camp_fnc_spawnVehicleGroup;
     [_group, typeOf vehicle leader _group, _zone, ["ZoneTemplates", GET_ZONE_TEMPLATE(_zone), "techWaypointAmount"] call adm_config_fnc_getNumber] call adm_patrol_fnc_createWaypoints;
     DEBUG_4("admiral.patrol.create: Created crew for vehicle type of '%1' for group '%2' of type '%3' in Patrol Zone '%4'.",typeOf vehicle leader _group,_group,GROUP_TYPE_ARRAY select GROUP_TYPE_TECH,GET_ZONE_ID(_zone)));
 
@@ -52,9 +52,9 @@ adm_patrol_fnc_spawnTechGroup = {
 };
 
 adm_patrol_fnc_spawnArmorGroup = {
-    FUN_ARGS_1(_zone);
+    params ["_zone"];
 
-    DECLARE(_group) = [_zone, GROUP_TYPE_ARMOUR, UNIT_TYPE_CREW, adm_patrol_fnc_placeMan] call adm_camp_fnc_spawnVehicleGroup;
+    private _group = [_zone, GROUP_TYPE_ARMOUR, UNIT_TYPE_CREW, adm_patrol_fnc_placeMan] call adm_camp_fnc_spawnVehicleGroup;
     [_group, typeOf vehicle leader _group, _zone, ["ZoneTemplates", GET_ZONE_TEMPLATE(_zone), "armourWaypointAmount"] call adm_config_fnc_getNumber] call adm_patrol_fnc_createWaypoints;
     DEBUG_4("admiral.patrol.create: Created crew for vehicle type of '%1' for group '%2' of type '%3' in Patrol Zone '%4'.",typeOf vehicle leader _group,_group,GROUP_TYPE_ARRAY select GROUP_TYPE_ARMOUR,GET_ZONE_ID(_zone)));
 
@@ -62,7 +62,7 @@ adm_patrol_fnc_spawnArmorGroup = {
 };
 
 adm_patrol_fnc_moveZone = {
-    FUN_ARGS_3(_zone,_position,_newArea);
+    params ["_zone","_position","_newArea"];
 
     [_zone, _position, _newArea] call adm_patrol_fnc_updateZonePositionAndArea;
     [_zone] call adm_patrol_fnc_moveUpdateAllGroupWaypoints;
@@ -70,12 +70,12 @@ adm_patrol_fnc_moveZone = {
 };
 
 adm_patrol_fnc_followZone = {
-    FUN_ARGS_4(_zone,_object,_delay,_newArea);
+    params ["_zone","_object","_delay","_newArea"];
 
     INFO_3("Admiral Patrol Follow: Patrol zone %1 has started following object %2 with update delay %3.",GET_ZONE_ID(_zone),_object,_delay);
     SET_PATROL_FOLLOWING(_zone,true);
     [_zone, _object, _delay, _newArea] spawn {
-        FUN_ARGS_4(_zone,_object,_delay,_newArea);
+        params ["_zone","_object","_delay","_newArea"];
 
         waitUntil {
             [_zone, getPosATL _object, _newArea] call adm_patrol_fnc_updateZonePositionAndArea;
@@ -89,7 +89,7 @@ adm_patrol_fnc_followZone = {
 };
 
 adm_patrol_fnc_stopFollowZone = {
-    FUN_ARGS_1(_zone);
+    params ["_zone"];
 
     if (IS_PATROL_FOLLOWING(_zone)) then {
         SET_PATROL_FOLLOWING(_zone,false);
@@ -99,7 +99,7 @@ adm_patrol_fnc_stopFollowZone = {
 };
 
 adm_patrol_fnc_updateZonePositionAndArea = {
-    FUN_ARGS_3(_zone,_position,_newArea);
+    params ["_zone","_position","_newArea"];
 
     if (!isNil "_newArea") then {
         SET_ZONE_AREA(_zone,_newArea);
@@ -109,7 +109,7 @@ adm_patrol_fnc_updateZonePositionAndArea = {
 };
 
 adm_patrol_fnc_moveUpdateAllGroupWaypoints = {
-    FUN_ARGS_1(_zone);
+    params ["_zone"];
 
     {
         [_zone, _x, "SoldierWB", ["ZoneTemplates", GET_ZONE_TEMPLATE(_zone), "infWaypointAmount"] call adm_config_fnc_getNumber] call adm_patrol_fnc_moveUpdateGroupWaypoints;
@@ -125,7 +125,7 @@ adm_patrol_fnc_moveUpdateAllGroupWaypoints = {
 };
 
 adm_patrol_fnc_followUpdateAllGroupWaypoints = {
-    FUN_ARGS_2(_zone,_position);
+    params ["_zone","_position"];
 
     {
         [_x, _position] call adm_patrol_fnc_followUpdateGroupWaypoints;
@@ -141,7 +141,7 @@ adm_patrol_fnc_followUpdateAllGroupWaypoints = {
 };
 
 adm_patrol_fnc_moveUpdateGroupWaypoints = {
-    FUN_ARGS_4(_zone,_group,_unitType,_noOfWaypoints);
+    params ["_zone","_group","_unitType","_noOfWaypoints"];
 
     [_group] call adm_patrol_fnc_deleteGroupWaypoints;
     [_group, _unitType, _zone, _noOfWaypoints] call adm_patrol_fnc_createWaypoints;
@@ -149,14 +149,14 @@ adm_patrol_fnc_moveUpdateGroupWaypoints = {
 };
 
 adm_patrol_fnc_followUpdateGroupWaypoints = {
-    FUN_ARGS_2(_group,_position);
+    params ["_group","_position"];
 
     [_group] call adm_patrol_fnc_deleteGroupWaypoints;
     [_group, _position] call adm_patrol_fnc_updateDefaultWaypoint;
 };
 
 adm_patrol_fnc_deleteGroupWaypoints = {
-    FUN_ARGS_1(_group);
+    params ["_group"];
 
     while {count (waypoints _group) > 1} do {
         deleteWaypoint ((waypoints _group) select 0);
@@ -164,9 +164,9 @@ adm_patrol_fnc_deleteGroupWaypoints = {
 };
 
 adm_patrol_fnc_updateDefaultWaypoint = {
-    FUN_ARGS_2(_group,_position);
+    params ["_group","_position"];
 
-    DECLARE(_defultWp) = (waypoints _group) select 0;
+    private _defultWp = (waypoints _group) select 0;
     _defultWp setWaypointPosition [_position, 0];
     _group setCurrentWaypoint _defultWp;
     _defultWp setWaypointStatements ["true", "(group this) setVariable ['adm_patrol_hasTarget', false, false];"];
@@ -175,7 +175,7 @@ adm_patrol_fnc_updateDefaultWaypoint = {
 
 
 adm_patrol_fnc_spawnGroups = {
-    FUN_ARGS_1(_zone);
+    params ["_zone"];
 
     private _zoneInfGroups = GET_ZONE_SPAWNED_GROUPS(_zone) select 0;
     private _zoneTechGroups = GET_ZONE_SPAWNED_GROUPS(_zone) select 1;
@@ -213,7 +213,7 @@ adm_patrol_fnc_spawnGroups = {
 };
 
 adm_patrol_fnc_initZone = {
-    FUN_ARGS_1(_zone);
+    params ["_zone"];
 
     adm_patrol_zones pushBack _zone;
     [_zone] call adm_patrol_fnc_spawnGroups;
