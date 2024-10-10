@@ -2,7 +2,7 @@
 #include "\userconfig\plank\log\config.h"
 
 plank_config_fnc_getConfig = {
-    DECLARE(_config) = PLANK_MISSION_CONFIG_FILE;
+    private _config = PLANK_MISSION_CONFIG_FILE;
     {
         _config = _config >> _x;
     } forEach _this;
@@ -50,7 +50,7 @@ plank_config_fnc_getBool = {
 };
 
 plank_common_fnc_getEventFileResult = {
-    FUN_ARGS_2(_fileName,_arguments);
+    params ["_fileName","_arguments"];
 
     private ["_file", "_result"];
     _file = ["Events", _fileName] call plank_config_fnc_getText;
@@ -63,16 +63,16 @@ plank_common_fnc_getEventFileResult = {
 };
 
 plank_common_fnc_callEventFile = {
-    FUN_ARGS_2(_fileName,_arguments);
+    params ["_fileName","_arguments"];
 
-    DECLARE(_file) = ["Events", _fileName] call plank_config_fnc_getText;
+    private _file = ["Events", _fileName] call plank_config_fnc_getText;
     if (_file != "") then {
         _arguments call compile preprocessFileLineNumbers _file;
     };
 };
 
 plank_config_fnc_getCustomConfig = {
-    DECLARE(_config) = _this select 0;
+    private _config = _this select 0;
     for "_i" from 1 to (count _this) - 1 do {
         _config = _config >> (_this select _i);
     };
@@ -97,9 +97,9 @@ plank_config_fnc_getCustomBool = {
 };
 
 plank_config_fnc_getInitEntries = {
-    FUN_ARGS_1(_initArray);
+    params ["_initArray"];
 
-    DECLARE(_initEntires) = [];
+    private _initEntires = [];
     for "_i" from 1 to (count _initArray) - 1 do {
         PUSH(_initEntires,_initArray select _i);
     };
@@ -108,9 +108,9 @@ plank_config_fnc_getInitEntries = {
 };
 
 plank_config_fnc_getEntryWithName = {
-    FUN_ARGS_2(_entries,_name);
+    params ["_entries","_name"];
 
-    DECLARE(_entry) = [];
+    private _entry = [];
     {
         if (_x select 0 == _name) exitWith { _entry = _x; };
     } forEach _entries;
@@ -119,7 +119,7 @@ plank_config_fnc_getEntryWithName = {
 };
 
 plank_config_fnc_getEntry = {
-    FUN_ARGS_2(_entries,_name);
+    params ["_entries","_name"];
 
     private ["_entryWithName", "_entry"];
     _entryWithName = [_entries, _name] call plank_config_fnc_getEntryWithName;

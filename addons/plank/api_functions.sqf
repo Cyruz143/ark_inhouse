@@ -6,7 +6,7 @@
  * @param _unit The unit to remove the fortifications from
  */
 plank_api_fnc_forceRemoveAllFortifications = {
-    FUN_ARGS_1(_unit);
+    params ["_unit"];
 
     [_unit] call plank_delpoy_fnc_forceRemoveAllFortifications;
 };
@@ -18,7 +18,7 @@ plank_api_fnc_forceRemoveAllFortifications = {
  *              Fortifications are found in plank\armaX_fortifications.sqf
  */
 plank_api_fnc_forceAddFortifications = {
-    FUN_ARGS_2(_unit,_fortifications);
+    params ["_unit","_fortifications"];
 
     [_unit, _fortifications] call plank_deploy_fnc_forceAddFortifications;
 };
@@ -39,7 +39,7 @@ plank_api_fnc_getFortifications = {
  * @return The index of the newly added fortification
  */
 plank_api_fnc_addNewFortification = {
-    FUN_ARGS_2(_unit,_forData);
+    params ["_unit","_forData"];
 
     [_unit, _forData] call plank_deploy_fnc_addNewFortification;
 };
@@ -53,7 +53,7 @@ plank_api_fnc_addNewFortification = {
  * @return The index of the newly added fortification
  */
 plank_api_fnc_addNewDefaultFortification = {
-    FUN_ARGS_3(_unit,_className,_displayName);
+    params ["_unit","_className","_displayName"];
 
     [_unit, _className, _displayName] call plank_deploy_fnc_addNewDefaultFortification;
 };
@@ -67,7 +67,7 @@ plank_api_fnc_addNewDefaultFortification = {
  * @return The index of the newly added fortification
  */
 plank_api_fnc_addNewBoundingFortification = {
-    FUN_ARGS_3(_unit,_className,_displayName);
+    params ["_unit","_className","_displayName"];
 
     [_unit, _className, _displayName] call plank_deploy_fnc_addNewBoundingFortification;
 };
@@ -80,7 +80,7 @@ plank_api_fnc_addNewBoundingFortification = {
  * @param _count Number of fortifications to add
  */
 plank_api_fnc_addFortification = {
-    FUN_ARGS_3(_unit,_fortIndex,_count);
+    params ["_unit","_fortIndex","_count"];
 
     [_unit, _fortIndex, _count] call plank_deploy_fnc_addFortification;
 };
@@ -93,7 +93,7 @@ plank_api_fnc_addFortification = {
  * @param _count Number of fortifications to remove
  */
 plank_api_fnc_removeFortification = {
-    FUN_ARGS_3(_unit,_fortIndex,_count);
+    params ["_unit","_fortIndex","_count"];
 
     [_unit, _fortIndex, _count] call plank_deploy_fnc_removeFortification;
 };

@@ -3,7 +3,7 @@
 
 
 plank_fort_fnc_getDirectionOrDefault = {
-    FUN_ARGS_2(_fortIndex,_dataIndex);
+    params ["_fortIndex","_dataIndex"];
 
     (FORTS_DATA) select _fortIndex select (IDX)
 };
