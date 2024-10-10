@@ -124,26 +124,6 @@
 //      Use AS_ARRAY_* instead of passing actual arrays.
 //      PUSH_ALL(_units, AS_ARRAY_2(_unit, 100) call getPlayersAroundUnit);
 
-// Creates private declaritions for arguments.
-// Example:
-//      GIVEN:
-//      WHEN:
-//          PVT_3(_unit,_group,_trigger); 
-//      THEN:
-//          private ["_unit","_group","_trigger"];
-#define PVT_1(VAR1) private #VAR1
-#define PVT_2(VAR1,VAR2) private [#VAR1,#VAR2]
-#define PVT_3(VAR1,VAR2,VAR3) private [#VAR1,#VAR2,#VAR3]
-#define PVT_4(VAR1,VAR2,VAR3,VAR4) private [#VAR1,#VAR2,#VAR3,#VAR4]
-#define PVT_5(VAR1,VAR2,VAR3,VAR4,VAR5) private [#VAR1,#VAR2,#VAR3,#VAR4,#VAR5]
-#define PVT_6(VAR1,VAR2,VAR3,VAR4,VAR5,VAR6) private [#VAR1,#VAR2,#VAR3,#VAR4,#VAR5,#VAR6]
-#define PVT_7(VAR1,VAR2,VAR3,VAR4,VAR5,VAR6,VAR7) private [#VAR1,#VAR2,#VAR3,#VAR4,#VAR5,#VAR6,#VAR7]
-#define PVT_8(VAR1,VAR2,VAR3,VAR4,VAR5,VAR6,VAR7,VAR8) private [#VAR1,#VAR2,#VAR3,#VAR4,#VAR5,#VAR6,#VAR7,#VAR8]
-#define PVT_9(VAR1,VAR2,VAR3,VAR4,VAR5,VAR6,VAR7,VAR8,VAR9) private [#VAR1,#VAR2,#VAR3,#VAR4,#VAR5,#VAR6,#VAR7,#VAR8,#VAR9]
-#define PVT_10(VAR1,VAR2,VAR3,VAR4,VAR5,VAR6,VAR7,VAR8,VAR9,VAR10) private [#VAR1,#VAR2,#VAR3,#VAR4,#VAR5,#VAR6,#VAR7,#VAR8,#VAR9,#VAR10]
-#define PVT_11(VAR1,VAR2,VAR3,VAR4,VAR5,VAR6,VAR7,VAR8,VAR9,VAR10,VAR11) private [#VAR1,#VAR2,#VAR3,#VAR4,#VAR5,#VAR6,#VAR7,#VAR8,#VAR9,#VAR10,#VAR11]
-
-
 // Creates array selection for arguments. Only works if the array is a variable!
 // Example:
 //      GIVEN:
@@ -165,106 +145,6 @@
 #define SELECT_9(ARRAY,VAR1,VAR2,VAR3,VAR4,VAR5,VAR6,VAR7,VAR8,VAR9) SELECT_8(ARRAY,VAR1,VAR2,VAR3,VAR4,VAR5,VAR6,VAR7,VAR8); VAR9 = (ARRAY) select 8
 #define SELECT_10(ARRAY,VAR1,VAR2,VAR3,VAR4,VAR5,VAR6,VAR7,VAR8,VAR9,VAR10) SELECT_9(ARRAY,VAR1,VAR2,VAR3,VAR4,VAR5,VAR6,VAR7,VAR8,VAR9); VAR10 = (ARRAY) select 9
 #define SELECT_11(ARRAY,VAR1,VAR2,VAR3,VAR4,VAR5,VAR6,VAR7,VAR8,VAR9,VAR10,VAR11) SELECT_10(ARRAY,VAR1,VAR2,VAR3,VAR4,VAR5,VAR6,VAR7,VAR8,VAR9,VAR10); VAR11 = (ARRAY) select 10
-
-// Creates private declarations and selection from given array for local variables.
-// Example:
-//      GIVEN:
-//          _array = ["unit", "group", "trigger"];
-//      WHEN:
-//          DECLARE_3(_array,_unit,_group,_trigger);
-//      THEN:
-//          private ["_unit","_group","_trigger"];
-//          _unit == "unit";
-//          _group == "group";
-//          _trigger == "trigger";
-#define DECLARE_1(ARRAY,VAR1) \
-    PVT_1(VAR1); \
-    SELECT_1(ARRAY,VAR1)
-
-#define DECLARE_2(ARRAY,VAR1,VAR2) \
-    PVT_2(VAR1,VAR2); \
-    SELECT_2(ARRAY,VAR1,VAR2)
-
-#define DECLARE_3(ARRAY,VAR1,VAR2,VAR3) \
-    PVT_3(VAR1,VAR2,VAR3); \
-    SELECT_3(ARRAY,VAR1,VAR2,VAR3)
-
-#define DECLARE_4(ARRAY,VAR1,VAR2,VAR3,VAR4) \
-    PVT_4(VAR1,VAR2,VAR3,VAR4); \
-    SELECT_4(ARRAY,VAR1,VAR2,VAR3,VAR4)
-
-#define DECLARE_5(ARRAY,VAR1,VAR2,VAR3,VAR4,VAR5) \
-    PVT_5(VAR1,VAR2,VAR3,VAR4,VAR5); \
-    SELECT_5(ARRAY,VAR1,VAR2,VAR3,VAR4,VAR5)
-
-#define DECLARE_6(ARRAY,VAR1,VAR2,VAR3,VAR4,VAR5,VAR6) \
-    PVT_6(VAR1,VAR2,VAR3,VAR4,VAR5,VAR6); \
-    SELECT_6(ARRAY,VAR1,VAR2,VAR3,VAR4,VAR5,VAR6)
-
-#define DECLARE_7(ARRAY,VAR1,VAR2,VAR3,VAR4,VAR5,VAR6,VAR7) \
-    PVT_7(VAR1,VAR2,VAR3,VAR4,VAR5,VAR6,VAR7); \
-    SELECT_7(ARRAY,VAR1,VAR2,VAR3,VAR4,VAR5,VAR6,VAR7)
-
-#define DECLARE_8(ARRAY,VAR1,VAR2,VAR3,VAR4,VAR5,VAR6,VAR7,VAR8) \
-    PVT_8(VAR1,VAR2,VAR3,VAR4,VAR5,VAR6,VAR7,VAR8); \
-    SELECT_8(ARRAY,VAR1,VAR2,VAR3,VAR4,VAR5,VAR6,VAR7,VAR8)
-
-#define DECLARE_9(ARRAY,VAR1,VAR2,VAR3,VAR4,VAR5,VAR6,VAR7,VAR8,VAR9) \
-    PVT_9(VAR1,VAR2,VAR3,VAR4,VAR5,VAR6,VAR7,VAR8,VAR9); \
-    SELECT_9(ARRAY,VAR1,VAR2,VAR3,VAR4,VAR5,VAR6,VAR7,VAR8,VAR9)
-
-#define DECLARE_10(ARRAY,VAR1,VAR2,VAR3,VAR4,VAR5,VAR6,VAR7,VAR8,VAR9,VAR10) \
-    PVT_10(VAR1,VAR2,VAR3,VAR4,VAR5,VAR6,VAR7,VAR8,VAR9,VAR10); \
-    SELECT_10(ARRAY,VAR1,VAR2,VAR3,VAR4,VAR5,VAR6,VAR7,VAR8,VAR9,VAR10)
-
-#define DECLARE_11(ARRAY,VAR1,VAR2,VAR3,VAR4,VAR5,VAR6,VAR7,VAR8,VAR9,VAR10,VAR11) \
-    PVT_11(VAR1,VAR2,VAR3,VAR4,VAR5,VAR6,VAR7,VAR8,VAR9,VAR10,VAR11); \
-    SELECT_11(ARRAY,VAR1,VAR2,VAR3,VAR4,VAR5,VAR6,VAR7,VAR8,VAR9,VAR10,VAR11)
-
-// Creates private declarations and selection from _this array for arguments.
-// Recommended for function/script argument processing.
-// Example:
-//      GIVEN:
-//          _this = ["unit", "group", "trigger"];
-//      WHEN:
-//          FUN_ARGS_3(_unit,_group,_trigger);
-//      THEN:
-//          private ["_unit","_group","_trigger"];
-//          _unit == "unit";
-//          _group == "group";
-//          _trigger == "trigger";
-#define FUN_ARGS_1(VAR1) \
-    DECLARE_1(_this,VAR1);
-
-#define FUN_ARGS_2(VAR1,VAR2) \
-    DECLARE_2(_this,VAR1,VAR2)
-
-#define FUN_ARGS_3(VAR1,VAR2,VAR3) \
-    DECLARE_3(_this,VAR1,VAR2,VAR3)
-
-#define FUN_ARGS_4(VAR1,VAR2,VAR3,VAR4) \
-    DECLARE_4(_this,VAR1,VAR2,VAR3,VAR4)
-
-#define FUN_ARGS_5(VAR1,VAR2,VAR3,VAR4,VAR5) \
-    DECLARE_5(_this,VAR1,VAR2,VAR3,VAR4,VAR5)
-
-#define FUN_ARGS_6(VAR1,VAR2,VAR3,VAR4,VAR5,VAR6) \
-    DECLARE_6(_this,VAR1,VAR2,VAR3,VAR4,VAR5,VAR6)
-
-#define FUN_ARGS_7(VAR1,VAR2,VAR3,VAR4,VAR5,VAR6,VAR7) \
-    DECLARE_7(_this,VAR1,VAR2,VAR3,VAR4,VAR5,VAR6,VAR7)
-
-#define FUN_ARGS_8(VAR1,VAR2,VAR3,VAR4,VAR5,VAR6,VAR7,VAR8) \
-    DECLARE_8(_this,VAR1,VAR2,VAR3,VAR4,VAR5,VAR6,VAR7,VAR8)
-
-#define FUN_ARGS_9(VAR1,VAR2,VAR3,VAR4,VAR5,VAR6,VAR7,VAR8,VAR9) \
-    DECLARE_9(_this,VAR1,VAR2,VAR3,VAR4,VAR5,VAR6,VAR7,VAR8,VAR9)
-
-#define FUN_ARGS_10(VAR1,VAR2,VAR3,VAR4,VAR5,VAR6,VAR7,VAR8,VAR9,VAR10) \
-    DECLARE_10(_this,VAR1,VAR2,VAR3,VAR4,VAR5,VAR6,VAR7,VAR8,VAR9,VAR10)
-
-#define FUN_ARGS_11(VAR1,VAR2,VAR3,VAR4,VAR5,VAR6,VAR7,VAR8,VAR9,VAR10,VAR11) \
-    DECLARE_11(_this,VAR1,VAR2,VAR3,VAR4,VAR5,VAR6,VAR7,VAR8,VAR9,VAR10,VAR11)
 
 // Adds all values from one array to another.
 // Example:
@@ -325,14 +205,5 @@
 #define AS_ARRAY_3(VAL1,VAL2,VAL3) [VAL1,VAL2,VAL3]
 #define AS_ARRAY_4(VAL1,VAL2,VAL3,VAL4) [VAL1,VAL2,VAL3,VAL4]
 #define AS_ARRAY_5(VAL1,VAL2,VAL3,VAL4,VAL5) [VAL1,VAL2,VAL3,VAL4,VAL5]
-
-// Creates a private declaration for a variable and enables instant assigment.
-// Example:
-//      GIVEN:
-//      WHEN:
-//          DECLARE(_group) = _x;
-//      THEN:
-//          private "_group"; _group = _x;
-#define DECLARE(VAR) private #VAR; VAR
 
 #endif //PLANK_MACROS_H
