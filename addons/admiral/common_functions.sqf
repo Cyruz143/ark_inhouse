@@ -354,7 +354,7 @@ adm_common_fnc_getRandomPositionInArea = {
     params ["_area","_areaPosition","_canBeWater"];
 
     private ["_randomPosition", "_shapeFunc"];
-    DECLARE_4(_area,_width,_height,_angle,_isRectangle);
+    _area params ["_width","_height","_angle","_isRectangle"];
     _angle = 180 - _angle;
 
     if (_isRectangle) then {
@@ -425,7 +425,7 @@ adm_common_fnc_isPlayersInRange = {
 adm_common_fnc_isPositionInArea = {
     params ["_position","_area","_areaPosition"];
 
-    DECLARE_4(_area,_width,_height,_angle,_isRectangle);
+    _area params ["_width","_height","_angle","_isRectangle"];
     _angle = 180 - _angle;
 
     private "_shapeFunc";
@@ -435,11 +435,10 @@ adm_common_fnc_isPositionInArea = {
         _shapeFunc = adm_common_fnc_isPositionInEllipse;
     };
 
-    DECLARE_2(_position,_px,_py);
-    DECLARE_2(_areaPosition,_ax,_ay);
-    private ["_rotatedPx", "_rotatedPy"];
-    _rotatedPx = (_px - _ax) * cos (_angle) + (_py - _ay) * sin (_angle) + _ax;
-    _rotatedPy = (_py - _ay) * cos (_angle) - (_px - _ax) * sin (_angle) + _ay;
+    _position params ["_px","_py"];
+    _areaPosition params ["_ax","_ay"];
+    private _rotatedPx = (_px - _ax) * cos (_angle) + (_py - _ay) * sin (_angle) + _ax;
+    private _rotatedPy = (_py - _ay) * cos (_angle) - (_px - _ax) * sin (_angle) + _ay;
 
     [_width, _height, _rotatedPx, _rotatedPy, _ax, _ay] call _shapeFunc;
 };
