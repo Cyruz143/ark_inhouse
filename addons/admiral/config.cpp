@@ -1,7 +1,7 @@
 #include "script_component.hpp"
 
 class CfgPatches {
-    class ADDON {
+    class Admiral {
         name = COMPONENT_NAME;
         author = "Kami";
         authors[] = {"ARK"};
