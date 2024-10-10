@@ -8,7 +8,7 @@ plank_export_fnc_preInit = {
 };
 
 plank_export_fnc_addFort = {
-    parmas ["_unit","_fort"];
+    params ["_unit","_fort"];
 
     private _exportData = [
         typeOf _fort,
