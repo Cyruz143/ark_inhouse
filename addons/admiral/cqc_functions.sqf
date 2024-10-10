@@ -1,5 +1,4 @@
 #include "script_component.hpp"
-#include "\userconfig\admiral\log\cqc.h"
 
 adm_cqc_fnc_placeMan = {
     params ["_position","_group","_unitTemplate","_zoneTemplate","_unitType"];

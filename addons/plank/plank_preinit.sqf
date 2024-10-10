@@ -1,5 +1,4 @@
 #include "script_component.hpp"
-#include "\userconfig\plank\log\preinit.h"
 
 plank_isInitialized = false;
 

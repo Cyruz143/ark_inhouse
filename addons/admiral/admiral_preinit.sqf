@@ -1,6 +1,4 @@
 #include "script_component.hpp"
-#include "\userconfig\admiral\log\preinit.h"
-
 
 adm_isInitialized = false;
 

@@ -1,6 +1,4 @@
 #include "script_component.hpp"
-#include "\userconfig\hull3\log\gear.h"
-
 
 #define INFIX_FUNC(FUNC)                        {(_this select 0) FUNC (_this select 1)}
 #define ASSIGN_UNIFORM_ITEM_FUNC                INFIX_FUNC(addItemToUniform)

@@ -1,5 +1,4 @@
 #include "script_component.hpp"
-#include "\userconfig\hull3\log\acre.h"
 
 #define ACRE_SIDES [west, east, resistance, civilian]
 

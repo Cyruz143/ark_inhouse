@@ -1,5 +1,4 @@
 #include "script_component.hpp"
-#include "\userconfig\hull3\log\preinit.h"
 
 hull3_isInitialized = false;
 

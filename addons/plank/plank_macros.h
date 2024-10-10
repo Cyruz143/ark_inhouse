@@ -1,9 +1,6 @@
 #ifndef PLANK_MACROS_H
 #define PLANK_MACROS_H
 
-#include "\userconfig\plank\setting.h"
-#include "\userconfig\plank\log\global.h"
-
 #define PLANK_VERSION                           2.0.0
 #define STR_PLANK_VERSION                       "2.0.0"
 
@@ -112,6 +109,11 @@
 #define DIRECTION_ROW_INDEX                             7
 
 #define FORT_COMBO_NONE_NAME                            "None"
+
+#define PLANK_HEIGHT_SENSITIVITY        15
+#define PLANK_HORIZONTAL_SENSITIVITY    25
+#define PLANK_PITCH_SENSITIVITY         8
+#define PLANK_BANK_SENSITIVITY          8
 
 // WARNING
 // Macros are sensitive for "," (comma), "(", ")" (parenthese) and " " (space).

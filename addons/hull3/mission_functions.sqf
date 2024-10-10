@@ -1,5 +1,4 @@
 #include "script_component.hpp"
-#include "\userconfig\hull3\log\mission.h"
 
 #define DEFAULT_TIME_OF_DAY [12, 0]
 

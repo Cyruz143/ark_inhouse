@@ -1,5 +1,4 @@
 #include "script_component.hpp"
-#include "\userconfig\admiral\log\camp.h"
 
 adm_camp_fnc_placeMan = {
     params ["_position","_group","_unitTemplate","_zoneTemplate","_unitType"];

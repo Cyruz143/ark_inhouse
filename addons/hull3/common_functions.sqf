@@ -1,5 +1,4 @@
 #include "script_component.hpp"
-#include "\userconfig\hull3\log\common.h"
 
 hull3_common_fnc_logOnServer = {
     params ["_message"];

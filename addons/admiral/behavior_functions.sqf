@@ -1,5 +1,4 @@
 #include "script_component.hpp"
-#include "\userconfig\admiral\log\behavior.h"
 
 adm_behavior_fnc_changeAllGroupState = {
     [

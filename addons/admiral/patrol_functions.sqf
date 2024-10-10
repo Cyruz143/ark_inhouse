@@ -1,6 +1,5 @@
 #include "script_component.hpp"
 #include "admiral_macros.h"
-#include "\userconfig\admiral\log\patrol.h"
 
 
 adm_patrol_fnc_placeMan = {

@@ -1,7 +1,5 @@
 #include "script_component.hpp"
 #include "admiral_macros.h"
-#include "\userconfig\admiral\log\settings.h"
-
 
 adm_settings_fnc_initSideRelations = {
     adm_sideRelations = [];

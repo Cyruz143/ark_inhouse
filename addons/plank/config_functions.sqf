@@ -1,5 +1,4 @@
 #include "script_component.hpp"
-#include "\userconfig\plank\log\config.h"
 
 plank_config_fnc_getConfig = {
     private _config = PLANK_MISSION_CONFIG_FILE;

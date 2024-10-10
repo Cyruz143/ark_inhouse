@@ -1,5 +1,4 @@
 #include "script_component.hpp"
-#include "\userconfig\plank\log\export.h"
 
 #define NEW_LINE                toString [13, 10]
 

@@ -1,6 +1,5 @@
 #include "script_component.hpp"
 #include "admiral_macros.h"
-#include "\userconfig\admiral\log\debug.h"
 
 adm_debug_fnc_createMovingGroupMarkers = {
     params ["_group"];

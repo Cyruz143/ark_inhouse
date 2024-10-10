@@ -1,5 +1,4 @@
 #include "script_component.hpp"
-#include "\userconfig\admiral\log\common.h"
 
 adm_common_fnc_placeMan = {
     params ["_position","_group","_unitClassNames","_skillArray",["_posSpecial","NONE"]];

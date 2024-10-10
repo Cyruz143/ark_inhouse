@@ -1,5 +1,4 @@
 #include "script_component.hpp"
-#include "\userconfig\plank\log\deploy.h"
 
 plank_deploy_fnc_preInit = {
     FORTS_DATA = [[FORT_COMBO_NONE_NAME, "", 0, 0, 0, ""]];

@@ -1,5 +1,4 @@
 #include "script_component.hpp"
-#include "\userconfig\admiral\log\id.h"
 
 adm_id_fnc_init = {
     adm_id_current = 0;

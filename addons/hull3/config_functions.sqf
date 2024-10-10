@@ -1,5 +1,4 @@
 #include "script_component.hpp"
-#include "\userconfig\hull3\log\config.h"
 
 hull3_config_fnc_getConfig = {
     private _config = HULL3_MISSION_CONFIG_FILE;

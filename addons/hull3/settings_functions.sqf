@@ -1,5 +1,4 @@
 #include "script_component.hpp"
-#include "\userconfig\hull3\log\settings.h"
 
 hull3_settings_fnc_init = {
     [] call hull3_settings_fnc_setNonStandardGeneralSettings;

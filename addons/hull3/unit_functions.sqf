@@ -1,5 +1,4 @@
 #include "script_component.hpp"
-#include "\userconfig\hull3\log\unit.h"
 
 hull3_unit_fnc_init = {
     params ["_unit"];

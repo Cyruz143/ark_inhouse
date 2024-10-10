@@ -1,6 +1,4 @@
 #include "script_component.hpp"
-#include "\userconfig\hull3\log\marker.h"
-
 
 hull3_marker_fnc_preInit = {
     hull3_marker_rawGroupMarkers = [];

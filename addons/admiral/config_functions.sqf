@@ -1,5 +1,4 @@
 #include "script_component.hpp"
-#include "\userconfig\admiral\log\config.h"
 
 adm_config_fnc_getConfig = {
     private _config = ADMIRAL_MISSION_CONFIG_FILE;

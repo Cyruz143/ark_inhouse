@@ -1,8 +1,6 @@
 #ifndef ADMIRAL_MACROS_H
 #define ADMIRAL_MACROS_H
 
-#include "\userconfig\admiral\log\global.h"
-
 #define ADMIRAL_VERSION                     0.8.0
 #define STR_ADMIRAL_VERSION                 "0.8.0"
 

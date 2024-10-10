@@ -1,5 +1,4 @@
 #include "script_component.hpp"
-#include "\userconfig\admiral\log\hc.h"
 
 adm_hc_fnc_executeIfHc = {
     params ["_arguments","_code"];

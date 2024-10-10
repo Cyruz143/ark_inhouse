@@ -1,5 +1,4 @@
 #include "script_component.hpp"
-#include "\userconfig\admiral\log\postinit.h"
 
 [] call adm_fnc_compile;
 
