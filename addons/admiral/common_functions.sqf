@@ -17,7 +17,7 @@ adm_common_fnc_placeMan = {
     };
     private _unit = _group createUnit [_className, _position, [], 0, _posSpecial];
     if (isNull _unit) exitWith {
-        private _errorMessage = format ["Failed to create unit '%1' at position '%2', in group '%3' with classname '%4' and classNameArguments '%5'!",_unit,_position,_group,_className,_classNameArguments];
+        private _errorMessage = format ["Failed to create unit %1 at position %2, in group %3 with classname %4 and classNameArguments %5!",_unit,_position,_group,_className,_classNameArguments];
         ERROR_1("admiral.common.create: %1",_errorMessage);
         if (hasInterface) then {
             systemChat ("[Admiral] " + _errorMessage);
@@ -27,7 +27,7 @@ adm_common_fnc_placeMan = {
     };
     [_unit] joinSilent _group;
     _unit setVariable ["adm_classNameArguments", _classNameArguments, false];
-    DEBUG_5("admiral.common.create: Created unit '%1' at position '%2', in group '%3' with classname '%4' and classNameArguments '%5'.",_unit,_position,_group,_className,_classNameArguments));
+    LOG_5("admiral.common.create: Created unit %1 at position %2, in group %3 with classname %4 and classNameArguments %5.",_unit,_position,_group,_className,_classNameArguments);
     [_unit, _skillArray] call adm_common_fnc_initUnit;
 
     _unit;
@@ -56,7 +56,7 @@ adm_common_fnc_placeVehicle = {
     clearWeaponCargoGlobal _vehicle;
     clearItemCargoGlobal _vehicle;
     clearBackpackCargoGlobal _vehicle;
-    DEBUG_4("admiral.common.create: Created vehicle '%1' at position '%2', with classname '%3' and '%4'.",_vehicle,_vehiclePosition,_className,_classNameArguments));
+    LOG_4("admiral.common.create: Created vehicle %1 at position %2, with classname %3 and %4.",_vehicle,_vehiclePosition,_className,_classNameArguments);
 
     _vehicle;
 };
@@ -79,10 +79,10 @@ adm_common_fnc_spawnCrew = {
             if (_canSpawnFfvCrew && {_personTurret}) exitWith { _turretsToFill pushBackUnique _turret };
         };
     } forEach fullCrew [_vehicle, "", true];
-    DEBUG_2("admiral.common.create: Creating crew for '%1' with turrents '%2'.",_vehicle,_turretsToFill));
+    LOG_2("admiral.common.create: Creating crew for %1 with turrents %2.",_vehicle,_turretsToFill);
     {
         private _crewman = [getPosATL _vehicle, _group, _crewClassNames, _skillArray] call adm_common_fnc_placeMan;
-        DEBUG_3("admiral.common.create: Created crew '%1' for turret '%2' in '%3'.",_crewman,_x,_vehicle));
+        LOG_3("admiral.common.create: Created crew %1 for turret %2 in %3.",_crewman,_x,_vehicle);
         _crewman assignAsTurret [_vehicle, _x];
         _crewman moveInTurret [_vehicle, _x];
     } forEach _turretsToFill;
@@ -93,7 +93,7 @@ adm_common_fnc_spawnCrew = {
         driver _vehicle;
     };
     _group selectLeader _leader;
-    DEBUG_4("admiral.common.create: Created crew '%1' with FFV '%2' for vehicle '%3' in group '%4'.",crew _vehicle,_canSpawnFfvCrew,_vehicle,_group));
+    LOG_4("admiral.common.create: Created crew %1 with FFV %2 for vehicle %3 in group %4.",crew _vehicle,_canSpawnFfvCrew,_vehicle,_group);
 
     crew _vehicle;
 };
@@ -103,13 +103,13 @@ adm_common_fnc_delayGroupSpawn = {
 
     if (canSuspend) then {
         while { time < adm_lastGroupSpawnTime + adm_groupSpawnDelay } do {
-            TRACE_2("admiral.common.delay: Waiting for group delay time '%1s' at current time '%2s'.",adm_lastGroupSpawnTime + adm_groupSpawnDelay,time));
+            LOG_2("admiral.common.delay: Waiting for group delay time '%1s' at current time '%2s'.",adm_lastGroupSpawnTime + adm_groupSpawnDelay,time);
             sleep adm_groupSpawnDelay;
         };
         adm_lastGroupSpawnTime = time;
     };
     private _group = _args call _func;
-    DEBUG_1("admiral.common.delay: Spawning delayed group '%1'.",_group));
+    LOG_1("admiral.common.delay: Spawning delayed group %1.",_group);
 
     _group;
 };
@@ -119,7 +119,7 @@ adm_common_fnc_initUnit = {
 
     {
         _unit setSkill _x;
-        TRACE_3("admiral.common.create: Set unit '%1' skill '%2' to '%3'.",_unit,_x select 0,_x select 1));
+        LOG_3("admiral.common.create: Set unit %1 skill %2 to %3.",_unit,_x select 0,_x select 1);
     } forEach _skillArray;
     _unit allowFleeing 0;
     [_unit] call adm_common_fnc_setGear;
@@ -238,7 +238,7 @@ adm_common_fnc_createWaypoint = {
     private _radius = [250, 50] select (_groupType isEqualTo GROUP_TYPE_INF);
     _waypoint setWaypointCompletionRadius _radius;
 
-    DEBUG_6("admiral.common.create: Created waypoint '%1' at position '%2' for group '%3', with type '%4', behaviour '%5' and combat mode '%6'.",_waypoint,_wpArray,_group,_type,_behaviour,_mode));
+    LOG_6("admiral.common.create: Created waypoint %1 at position %2 for group %3, with type %4, behaviour %5 and combat mode %6.",_waypoint,_wpArray,_group,_type,_behaviour,_mode);
 
     _waypoint;
 };
@@ -319,7 +319,7 @@ adm_common_fnc_createLocalMarker = {
     } else {
         _size = [1, 1];
     };
-    DEBUG_6("admiral.common.create: Created local marker '%1' at position '%2' with shape '%3', type '%4', color '%5' and size '%6'.",_marker,_position,_shape,_type,_color,if (!isNil "_size") then {"<no size>"} else {_size}));
+    LOG_6("admiral.common.create: Created local marker %1 at position %2 with shape %3, type %4, color %5 and size %6.",_marker,_position,_shape,_type,_color,if (!isNil "_size") then {"<no size>"} else {_size});
 
     _name;
 };

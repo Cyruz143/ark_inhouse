@@ -103,14 +103,14 @@
 #define DEF_ASSERT_BETWEEN(MINVAL,MAXVAL)           ASSERT_BETWEEN(CC_VAR,MINVAL,MAXVAL,DEF_BETWEEN_MSG)
 #define DEF_ASSERT_BOUNDARY                         ASSERT_BOUNDARY(CC_VAR,DEF_BOUNDARY)
 
-#define DEF_NOTNIL_MSG                              {format ["Variable '%1' can not be nil!", _variableName]}
-#define DEF_TYPE_MSG                                {format ["Variable '%1' is not type of %2!", _variableName, (TYPE)]}
-#define DEF_NOTEMPTY_MSG                            {format ["Array '%1' can not be empty!", _variableName]}
-#define DEF_ARRAYSIZE_MSG                           {format ["Array '%1' size must be %2!", _variableName, (SIZE)]}
-#define DEF_MIN_MSG                                 {format ["Variable '%1' can not be less, than %2!", _variableName, (MINVAL)]}
-#define DEF_MAX_MSG                                 {format ["Variable '%1' can not be greater, than %2!", _variableName, (MAXVAL)]}
-#define DEF_BETWEEN_MSG                             {format ["Variable '%1' must be between values %2 and %3!", _variableName, (MINVAL), (MAXVAL)]}
-#define DEF_BOUNDARY                                {format ["Variable '%1's first value '%2' must be less, than the second value '%3'!", _variableName, CC_VAR select 0, CC_VAR select 1]}
+#define DEF_NOTNIL_MSG                              {format ["Variable %1 can not be nil!", _variableName]}
+#define DEF_TYPE_MSG                                {format ["Variable %1 is not type of %2!", _variableName, (TYPE)]}
+#define DEF_NOTEMPTY_MSG                            {format ["Array %1 can not be empty!", _variableName]}
+#define DEF_ARRAYSIZE_MSG                           {format ["Array %1 size must be %2!", _variableName, (SIZE)]}
+#define DEF_MIN_MSG                                 {format ["Variable %1 can not be less, than %2!", _variableName, (MINVAL)]}
+#define DEF_MAX_MSG                                 {format ["Variable %1 can not be greater, than %2!", _variableName, (MAXVAL)]}
+#define DEF_BETWEEN_MSG                             {format ["Variable %1 must be between values %2 and %3!", _variableName, (MINVAL), (MAXVAL)]}
+#define DEF_BOUNDARY                                {format ["Variable %1s first value %2 must be less, than the second value %3!", _variableName, CC_VAR select 0, CC_VAR select 1]}
 
 #define IS_GROUP_ALIVE(GROUP)                       ({alive _x} count units GROUP > 0)
 #define MOVING_GROUPS                               [adm_patrol_infGroups, adm_patrol_techGroups, adm_patrol_armourGroups, adm_camp_infGroups, adm_camp_techGroups, adm_camp_armourGroups]

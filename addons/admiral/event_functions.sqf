@@ -53,14 +53,14 @@ FNC_EMIT_EVENT = {
     params ["_eventName","_arguments"];
 
     private _eventIndex = [_eventName] call FNC_FIND_EVENT;
-    DEBUG_2("admiral.event.emit: Emiting event '%1' with found index '%2'.",_eventName,_eventIndex));
-    TRACE_3("admiral.event.emit: Emiting event '%1' with arguments '%2' and found index '%3'.",_eventName,_arguments,_eventIndex));
+    LOG_2("admiral.event.emit: Emiting event %1 with found index %2.",_eventName,_eventIndex);
+    LOG_3("admiral.event.emit: Emiting event %1 with arguments %2 and found index %3.",_eventName,_arguments,_eventIndex);
     if (_eventIndex != -1) then {
         {
             _arguments call _x;
         } forEach (EVENTS_ARRAY select _eventIndex select 2);
         [EVENTS_ARRAY select _eventIndex select 1, _arguments] call adm_common_fnc_callEventFile;
-        TRACE_2("admiral.event.emit: Emitted event '%1' with arguments '%2'.",_eventName,_arguments));
+        LOG_2("admiral.event.emit: Emitted event %1 with arguments %2.",_eventName,_arguments);
     };
 };
 

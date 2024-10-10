@@ -12,7 +12,7 @@ adm_patrol_fnc_placeMan = {
         [_unitTemplate, _unitType] call adm_common_fnc_getUnitTemplateArray,
         [_zoneTemplate] call adm_common_fnc_getZoneTemplateSkillValues
     ] call adm_common_fnc_placeMan;
-    DEBUG_5("admiral.patrol.create: Created unit '%1' at position '%2', in group '%3' with type '%4' and classname '%5'.",_unit,_position,_group,_unitType,typeOf _unit));
+    LOG_5("admiral.patrol.create: Created unit %1 at position %2, in group %3 with type %4 and classname %5.",_unit,_position,_group,_unitType,typeOf _unit);
 
     _unit;
 };
@@ -28,7 +28,7 @@ adm_patrol_fnc_createWaypoints = {
     _defaultWp setWaypointType 'MOVE';
     _defaultWp setWaypointBehaviour (selectRandom _waypointBehaviours);
     _defaultWp setWaypointCombatMode 'RED';
-    DEBUG_3("admiral.patrol.create: Created '%1' patrol waypoint(s) for group '%2' in Camp Zone '%3'.",_noOfWaypoints,_group,GET_ZONE_ID(_zone)));
+    LOG_3("admiral.patrol.create: Created %1 patrol waypoint(s) for group %2 in Camp Zone %3.",_noOfWaypoints,_group,GET_ZONE_ID(_zone));
 };
 
 adm_patrol_fnc_spawnInfGroup = {
@@ -36,7 +36,7 @@ adm_patrol_fnc_spawnInfGroup = {
 
     private _group = [_zone, GROUP_TYPE_INF, UNIT_TYPE_INF, adm_patrol_fnc_placeMan] call adm_camp_fnc_spawnInfGroup;
     [_group, "SoldierWB", _zone, ["ZoneTemplates", GET_ZONE_TEMPLATE(_zone), "infWaypointAmount"] call adm_config_fnc_getNumber] call adm_patrol_fnc_createWaypoints;
-    DEBUG_3("admiral.patrol.create: Created group '%1' of type '%2' in Patrol Zone '%3'.",_group,GROUP_TYPE_ARRAY select GROUP_TYPE_INF,GET_ZONE_ID(_zone)));
+    LOG_3("admiral.patrol.create: Created group %1 of type %2 in Patrol Zone %3.",_group,GROUP_TYPE_ARRAY select GROUP_TYPE_INF,GET_ZONE_ID(_zone));
 
     _group;
 };
@@ -46,7 +46,7 @@ adm_patrol_fnc_spawnTechGroup = {
 
     private _group = [_zone, GROUP_TYPE_TECH, UNIT_TYPE_INF, adm_patrol_fnc_placeMan] call adm_camp_fnc_spawnVehicleGroup;
     [_group, typeOf vehicle leader _group, _zone, ["ZoneTemplates", GET_ZONE_TEMPLATE(_zone), "techWaypointAmount"] call adm_config_fnc_getNumber] call adm_patrol_fnc_createWaypoints;
-    DEBUG_4("admiral.patrol.create: Created crew for vehicle type of '%1' for group '%2' of type '%3' in Patrol Zone '%4'.",typeOf vehicle leader _group,_group,GROUP_TYPE_ARRAY select GROUP_TYPE_TECH,GET_ZONE_ID(_zone)));
+    LOG_4("admiral.patrol.create: Created crew for vehicle type of %1 for group %2 of type %3 in Patrol Zone %4.",typeOf vehicle leader _group,_group,GROUP_TYPE_ARRAY select GROUP_TYPE_TECH,GET_ZONE_ID(_zone));
 
     _group;
 };
@@ -56,7 +56,7 @@ adm_patrol_fnc_spawnArmorGroup = {
 
     private _group = [_zone, GROUP_TYPE_ARMOUR, UNIT_TYPE_CREW, adm_patrol_fnc_placeMan] call adm_camp_fnc_spawnVehicleGroup;
     [_group, typeOf vehicle leader _group, _zone, ["ZoneTemplates", GET_ZONE_TEMPLATE(_zone), "armourWaypointAmount"] call adm_config_fnc_getNumber] call adm_patrol_fnc_createWaypoints;
-    DEBUG_4("admiral.patrol.create: Created crew for vehicle type of '%1' for group '%2' of type '%3' in Patrol Zone '%4'.",typeOf vehicle leader _group,_group,GROUP_TYPE_ARRAY select GROUP_TYPE_ARMOUR,GET_ZONE_ID(_zone)));
+    LOG_4("admiral.patrol.create: Created crew for vehicle type of %1 for group %2 of type %3 in Patrol Zone %4.",typeOf vehicle leader _group,_group,GROUP_TYPE_ARRAY select GROUP_TYPE_ARMOUR,GET_ZONE_ID(_zone));
 
     _group;
 };
@@ -80,7 +80,7 @@ adm_patrol_fnc_followZone = {
         waitUntil {
             [_zone, getPosATL _object, _newArea] call adm_patrol_fnc_updateZonePositionAndArea;
             [_zone, getPosATL _object] call adm_patrol_fnc_followUpdateAllGroupWaypoints;
-            DEBUG_3("admiral.patrol.follow: Updated follow position for Patrol zone '%1' on object '%2' with position '%3'.",GET_ZONE_ID(_zone),_object,getPosATL _object));
+            LOG_3("admiral.patrol.follow: Updated follow position for Patrol zone %1 on object %2 with position %3.",GET_ZONE_ID(_zone),_object,getPosATL _object);
             sleep _delay;
             !IS_PATROL_FOLLOWING(_zone);
         };
@@ -105,7 +105,7 @@ adm_patrol_fnc_updateZonePositionAndArea = {
         SET_ZONE_AREA(_zone,_newArea);
     };
     SET_ZONE_POSITION(_zone,_position);
-    DEBUG_3("admiral.patrol.move: Patrol Zone '%1' updated with position '%2' and with area '%3'.",GET_ZONE_ID(_zone),_position,_newArea));
+    LOG_3("admiral.patrol.move: Patrol Zone %1 updated with position %2 and with area %3.",GET_ZONE_ID(_zone),_position,_newArea);
 };
 
 adm_patrol_fnc_moveUpdateAllGroupWaypoints = {
