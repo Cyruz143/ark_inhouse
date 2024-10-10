@@ -105,7 +105,7 @@ hull3_marker_fnc_addGroupMarker = {
 };
 
 hull3_marker_fnc_addUnitMarker = {
-    FUN_ARGS_5(_unit,_markerType,_markerText,_markerColor,_markerSize);
+    params ["_unit","_markerType","_markerText","_markerColor","_markerSize"];
 
     _markerName = format ["hull3_marker_unit_%1_%2", _markerText, _unit];
     if (hull3_marker_isGroupEnabled) then {
@@ -256,7 +256,7 @@ hull3_marker_fnc_addCustomSideMarker = {
     params ["_object", "_side"];
 
     if (side player == _side) then {
-        DECLARE(_arguments) = [_object];
+        private _arguments = [_object];
         for "_i" from 2 to (count _this) - 1 do {
             PUSH(_arguments,_this select _i);
         };
@@ -302,7 +302,7 @@ hull3_marker_fnc_deleteCustomMarker = {
     params ["_markerIndex"];
 
     if (count hull3_marker_custom > _markerIndex) then {
-        DECLARE(_markerData) = hull3_marker_custom select _markerIndex;
+        private _markerData = hull3_marker_custom select _markerIndex;
         deleteMarkerLocal  (_markerData select 0);
         _markerData set [1, false];
     };

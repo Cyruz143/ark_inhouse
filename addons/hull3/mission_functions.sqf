@@ -101,7 +101,7 @@ hull3_mission_fnc_getWeather = {
         TRACE_1("hull3.mission.weather: Mission param 'hull3_mission_weather' was not set, using default '%1'.",hull3_mission_weather));
     };
     if (hull3_mission_weather #0 == -1 && {isServer}) then {
-        DECLARE(_weathers) = ["MissionParams", "weather"] call hull3_config_fnc_getArray;
+        private _weathers = ["MissionParams", "weather"] call hull3_config_fnc_getArray;
         hull3_mission_weather = _weathers select ((floor random ((count _weathers) - 1)) + 1);
         TRACE_1("hull3.mission.weather: Random weather was selected. Generated random weather '%1' for server.",hull3_mission_weather));
     } else {
@@ -189,7 +189,7 @@ hull3_mission_fnc_serverSafetyTimerCountDown = {
     params ["_isAborted"];
 
     if (_isAborted) then {
-        DECLARE(_countDownLength) = [0, 10] select (isMultiplayer);
+        private _countDownLength = [0, 10] select (isMultiplayer);
         hull3_mission_safetyTimer = [true, _countDownLength];
         DEBUG_1("hull3.mission.safetytimer: Safety timer has been aborted. Starting countdown from '%1' seconds.",hull3_mission_safetyTimer #1));
         for "_i" from _countDownLength to 0 step -1 do {
@@ -229,7 +229,7 @@ hull3_mission_fnc_handleSafetyTimeChange = {
     params ["_isCountDown","_timeValue"];
 
     DEBUG_1("hull3.mission.safetytimer: Safety timer has been changed. Received value '%1'.",AS_ARRAY_2(_isCountDown,_timeValue)));
-    DECLARE(_message) = "Game is not live. Waiting for host to start it. (%1 minutes)";
+    private _message = "Game is not live. Waiting for host to start it. (%1 minutes)";
     if (_isCountDown) then {
         call {
             if (_timeValue == 0) exitWith {
@@ -264,7 +264,7 @@ hull3_mission_fnc_addHostSafetyTimerStopAction = {
     _isAceInteractAvailable = [configFile, "ARK", "Inhouse", "isEnabled"] call hull3_config_fnc_getCustomBool;
     if (!_isAceInteractAvailable) then {
         if (serverCommandAvailable "#kick" || {!isMultiplayer}) then {
-            DECLARE(_actionId) = player addAction ['<t color="#428CE0">Disable weapon safety</t>', ADDON_PATH(mission_host_safetytimer_stop.sqf), ["activated"], 3, false, false, "", "driver _target == _this && {!(hull3_mission_safetyTimer #0)} && {(hull3_mission_safetyTimer #1) < hull3_mission_safetyTimerEnd}"];
+            private _actionId = player addAction ['<t color="#428CE0">Disable weapon safety</t>', ADDON_PATH(mission_host_safetytimer_stop.sqf), ["activated"], 3, false, false, "", "driver _target == _this && {!(hull3_mission_safetyTimer #0)} && {(hull3_mission_safetyTimer #1) < hull3_mission_safetyTimerEnd}"];
             hull3_mission_safetyTimerActionIds set [0, _actionId];
             DEBUG("hull.mission.safetytimer: Added safety timer abort action to player.");
         };
@@ -274,7 +274,7 @@ hull3_mission_fnc_addHostSafetyTimerStopAction = {
 };
 
 hull3_mission_fnc_addSafetyTimerConfirmActions = {
-    DECLARE(_actionId) = player addAction ['<t color="#00FF00">Confirm weapon safety disabling</t>', ADDON_PATH(mission_host_safetytimer_stop.sqf), ["confirm"], 3, false, false, "", "driver _target == _this && {!(hull3_mission_safetyTimer #0)} && {(hull3_mission_safetyTimer #1) < hull3_mission_safetyTimerEnd}"];
+    private _actionId = player addAction ['<t color="#00FF00">Confirm weapon safety disabling</t>', ADDON_PATH(mission_host_safetytimer_stop.sqf), ["confirm"], 3, false, false, "", "driver _target == _this && {!(hull3_mission_safetyTimer #0)} && {(hull3_mission_safetyTimer #1) < hull3_mission_safetyTimerEnd}"];
     hull3_mission_safetyTimerActionIds set [1, _actionId];
     _actionId = player addAction ['<t color="#FF0000">Cancel weapon safety disabling</t>', ADDON_PATH(mission_host_safetytimer_stop.sqf), ["cancel"], 3, false, false, "", "driver _target == _this && {!(hull3_mission_safetyTimer #0)} && {(hull3_mission_safetyTimer #1) < hull3_mission_safetyTimerEnd}"];
     hull3_mission_safetyTimerActionIds set [2, _actionId];
@@ -302,7 +302,7 @@ hull3_mission_fnc_sendJipSync = {
 
     hull3_mission_jipPacket = [hull3_mission_safetyTimer];
     PUSH(hull3_mission_jipPacket,hull3_mission_safetyTimerAbort);
-    DECLARE(_customArguments) = ["mission_jip_sending", [_client]] call hull3_common_fnc_getEventFileResult;
+    private _customArguments = ["mission_jip_sending", [_client]] call hull3_common_fnc_getEventFileResult;
     PUSH(hull3_mission_jipPacket,_customArguments);
     DEBUG_2("hull3.mission.jip: Sending JIP sync for client '%1' with packet '%2'.",_client,hull3_mission_jipPacket));
     (owner _client) publicVariableClient "hull3_mission_jipPacket";

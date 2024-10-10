@@ -105,7 +105,7 @@ hull3_unit_fnc_killedEH = {
 hull3_unit_fnc_getAssignedTeam = {
     params ["_gearClass"];
 
-    DECLARE(_team) = "";
+    private _team = "";
     {
         if (_gearClass == _x select 0) exitWith {_team = _x select 1};
     } forEach (["Group", "assignedTeams"] call hull3_config_fnc_getArray);
@@ -115,7 +115,7 @@ hull3_unit_fnc_getAssignedTeam = {
 
 hull3_unit_fnc_setFireTeamColors = {
     {
-        DECLARE(_assignedTeam) = [_x getVariable ["hull3_gear_class", ""]] call hull3_unit_fnc_getAssignedTeam;
+        private _assignedTeam = [_x getVariable ["hull3_gear_class", ""]] call hull3_unit_fnc_getAssignedTeam;
         if (_assignedTeam != "") then {
             _x assignTeam _assignedTeam;
         };

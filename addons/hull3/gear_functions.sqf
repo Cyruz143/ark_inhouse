@@ -161,7 +161,7 @@ hull3_gear_fnc_getTemplate = {
             WARN_2("hull3.gear.assign: No gear template found with name '%1' for unit '%2'!",_gearEntry select 1,_unit));
         };
     } else {
-        DECLARE(_faction) = if (count _factionEntry > 0) then { _factionEntry select 0 } else { faction _unit };
+        private _faction = if (count _factionEntry > 0) then { _factionEntry select 0 } else { faction _unit };
         _gearTemplate = [FACTION_CONFIG, _faction, TYPE_FIELD_GEAR] call hull3_config_fnc_getText;
     };
 
@@ -214,7 +214,7 @@ hull3_gear_fnc_assignVehicleTemplate = {
         ["medicalItems",    CONFIG_TYPE_ARRAY,      hull3_gear_fnc_assignVehicleItems]
     ];
     {
-        DECLARE(_configValue) = [TYPE_CLASS_GEAR, _template, _class, _x select 0] call (CONFIG_TYPE_FUNCTIONS select (_x select 1));
+        private _configValue = [TYPE_CLASS_GEAR, _template, _class, _x select 0] call (CONFIG_TYPE_FUNCTIONS select (_x select 1));
         [_vehicle, _configValue] call (_x select 2);
     } forEach _assignables;
     [_vehicle, _class, _template] call compile ([TYPE_CLASS_GEAR, _template, _class, "code"] call hull3_config_fnc_getText);
