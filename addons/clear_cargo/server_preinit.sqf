@@ -13,14 +13,14 @@ ark_clear_cargo_fnc_clearVehicle = {
     params ["_logic","_units"];
 
     if (_units isEqualTo []) exitWith {
-        ERROR_2("[ARK] %1 - fnc_clearVehicle, Module (%2) not sync'd to any vehicle",COMPONENT,_logic);
+        ERROR_1("fnc_clearVehicle, Module (%1) not sync'd to any vehicle",_logic);
     };
 
     {
         [_x] call ark_clear_cargo_fnc_doClearVehicle;
     } forEach _units;
 
-    INFO_2("[ARK] %1 - fnc_clearVehicle, Deleting Module (%2)",COMPONENT,_logic);
+    INFO_1("fnc_clearVehicle, Deleting Module (%1)",_logic);
     deleteVehicle _logic;
 
     //Return true because spawnd from module

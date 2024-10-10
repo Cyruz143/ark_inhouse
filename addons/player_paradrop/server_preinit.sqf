@@ -7,8 +7,8 @@ ark_player_paradrop_fnc_init = {
     missionNamespace setVariable ["ark_player_paradrop_var_jumpHeight", (_logic getVariable ["Chute_Height", 200]), true];
     missionNamespace setVariable ["ark_player_paradrop_var_jumpGap", (_logic getVariable ["Jump_Gap", 1]), true];
 
-    INFO_1("[ARK] %1 - fnc_init, Player paradrop system is enabled",COMPONENT);
-    INFO_2("[ARK] %1 - fnc_init, Deleting Module (%2)",COMPONENT,_logic);
+    INFO("fnc_init, Player paradrop system is enabled");
+    INFO_1("fnc_init, Deleting Module (%1)",_logic);
     deleteVehicle _logic;
 
     //Return true because spawnd from module
