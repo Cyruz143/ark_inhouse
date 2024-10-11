@@ -5,7 +5,7 @@ ark_chase_ai_fnc_init = {
 
     private _syncdTrg = synchronizedObjects _logic;
     if (_syncdTrg isEqualTo []) exitWith {
-        ERROR("fnc_init, Trigger not sync'd to the module.");
+        ERROR_MSG("fnc_init, Trigger not sync'd to the module.");
     };
 
     if (count _syncdTrg > 1) then {
@@ -14,7 +14,7 @@ ark_chase_ai_fnc_init = {
 
     private _unitTemplate = _logic getVariable ["Unit_Template", "ADMIRAL"];
     if (_unitTemplate isEqualTo "") exitWith {
-        ERROR("fnc_init, Blank unit template provided!");
+        ERROR_MSG("fnc_init, Blank unit template provided!");
     };
     if (_unitTemplate isEqualTo "ADMIRAL") then {
         _unitTemplate = adm_camp_defaultUnitTemplate;
@@ -28,7 +28,7 @@ ark_chase_ai_fnc_init = {
     } else {
         _unitClassNames = call compile (_unitClassNames);
         if (!((typeName _unitClassNames) isEqualTo "ARRAY")) exitWith {
-            ["Chase AI","ERROR","fnc_init","Improper classname formatting provided, must be an ARRAY!",_unitClassNames] call ark_chase_ai_fnc_log;
+            ERROR_MSG_1("fnc_init, Improper classname formatting provided (%1), must be an ARRAY!",_unitClassNames);
         };
         INFO_1("fnc_init, Using custom unit classnames (%1)",_unitClassNames);
     };

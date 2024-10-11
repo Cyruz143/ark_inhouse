@@ -5,7 +5,7 @@ ark_rotor_fnc_checkTrigger = {
 
     private _syncdTrg = synchronizedObjects _logic;
     if (_syncdTrg isEqualTo []) exitWith {
-        ERROR("fnc_checkTrigger, Trigger not sync'd to the module");
+        ERROR_MSG("fnc_checkTrigger, Trigger not sync'd to the module");
     };
 
     if (count _syncdTrg > 1) then {
@@ -28,13 +28,13 @@ ark_rotor_fnc_checkTrigger = {
     private _vrUnit = _syncUnits #0;
 
     if (isNil "_vrUnit") exitWith {
-        ERROR_1("fnc_checkTrigger, No VR Entity sync'd with trigger (%1)",_trigger);
+        ERROR_MSG_1("fnc_checkTrigger, No VR Entity sync'd with trigger (%1)",_trigger);
     };
 
     private _waypoints = waypoints (group _vrUnit);
     if (count _waypoints < 3) exitWith {
 
-        ERROR_1("fnc_checkTrigger, VR Entity (%1) needs minimum of 2 waypoints",_vrUnit);
+        ERROR_MSG_1("fnc_checkTrigger, VR Entity (%1) needs minimum of 2 waypoints",_vrUnit);
     };
 
     deleteVehicle _vrUnit;
@@ -45,7 +45,7 @@ ark_rotor_fnc_checkTrigger = {
     if (_vehicleClassname isEqualTo "Default") then {
         private _heloArray = [_unitTemplate, "th"] call adm_common_fnc_getUnitTemplateArray;
         if (isNil "_heloArray" || { _heloArray isEqualTo [] }) exitWith {
-            ERROR("fnc_checkTrigger, No Helicopter defined in Admiral Template");
+            ERROR_MSG("fnc_checkTrigger, No Helicopter defined in Admiral Template");
         };
         _vehicleClassname = selectRandom _heloArray;
     };
@@ -60,7 +60,7 @@ ark_rotor_fnc_createVehicle = {
     params ["_vehicleClassname", "_trigger", "_logic"];
 
     if (isNil "_trigger") exitWith {
-        ERROR_1("fnc_createVehicle, No trigger was provided to try and spawn the vehicle with classname %1",_vehicleClassname);
+        ERROR_MSG_1("fnc_createVehicle, No trigger was provided to try and spawn the vehicle with classname %1",_vehicleClassname);
     };
 
     private _flyHeight = _logic getVariable ["Fly_Height", 200];
@@ -110,7 +110,7 @@ ark_rotor_fnc_createCargo = {
             _args params ["_vehicle","_adjSeats","_grp","_cargoClassnames","_skillArray","_parachute"];
 
             if (isNil "_vehicle" || { !alive _vehicle }) exitWith {
-                ERROR("fnc_createCargo, Vehicle is dead or has incorrect classname");
+                ERROR_MSG("fnc_createCargo, Vehicle is dead or has incorrect classname");
                 _id call CBA_fnc_removePerFrameHandler;
             };
 

@@ -13,7 +13,7 @@ ark_clear_cargo_fnc_clearVehicle = {
     params ["_logic","_units"];
 
     if (_units isEqualTo []) exitWith {
-        ERROR_1("fnc_clearVehicle, Module (%1) not sync'd to any vehicle",_logic);
+        ERROR_MSG_1("fnc_clearVehicle, Module (%1) not sync'd to any vehicle",_logic);
     };
 
     {

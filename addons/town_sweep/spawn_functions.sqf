@@ -319,7 +319,7 @@ ts_spawn_fnc_objDestroyVeh = {
 
     if (!(_vehicle inArea ts_spawn_selectedLocationMarkerName)) exitWith {
         deleteVehicle _vehicle;
-        ERROR("fnc_objDestroyVeh, Cannot find position for armour in selected town");
+        ERROR_MSG("fnc_objDestroyVeh, Cannot find position for armour in selected town");
     };
 
     {
@@ -452,7 +452,7 @@ ts_spawn_fnc_objRecoverIntel = {
 
     if (!(_helo inArea ts_spawn_selectedLocationMarkerName)) exitWith {
         deleteVehicle _helo;
-        ERROR("ts_spawn_fnc_objRecoverIntel, Cannot find position for helicopter in the selected area");
+        ERROR_MSG("ts_spawn_fnc_objRecoverIntel, Cannot find position for helicopter in the selected area");
     };
 
     private _smoke = createVehicle ["test_EmptyObjectForSmoke", [0,0,0], [], 0, "CAN_COLLIDE"];

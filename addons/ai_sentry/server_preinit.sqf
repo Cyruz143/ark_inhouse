@@ -40,7 +40,7 @@ ark_ai_sentry_fnc_makeSentry = {
     params ["_logic", "_units"];
 
     if (_units isEqualTo []) exitWith {
-        ERROR_1("fnc_makeSentry, Module (%1) is not sync'd to any units.",_logic);
+        ERROR_MSG_1("fnc_makeSentry, Module (%1) is not sync'd to any units.",_logic);
     };
 
     private _enabledNightvision = _logic getVariable ["Enabled_Nightvision", true];

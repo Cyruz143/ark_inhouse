@@ -118,7 +118,7 @@ hull3_gear_fnc_validateFaction = {
     params ["_unit", "_factionEntry"];
 
     if (count _factionEntry > 0 && {!isClass ([FACTION_CONFIG, _factionEntry select 0] call hull3_config_fnc_getConfig)}) then {
-        WARNING_2("hull3.gear.assign: No faction found with name %1 for unit %2!",_factionEntry select 0,_unit);
+        ERROR_MSG_2("hull3.gear.assign: No faction found with name %1 for unit %2!",_factionEntry select 0,_unit);
     };
 };
 
@@ -141,7 +141,7 @@ hull3_gear_fnc_getClass = {
         if (isClass ([TYPE_CLASS_GEAR, _gearTemplate, _gearEntry select 0] call hull3_config_fnc_getConfig)) then {
             _gearClass = _gearEntry select 0;
         } else {
-            WARNING_3("hull3.gear.assign: No gear class found with name %1 in gear template %2 for unit %3!",_gearEntry select 1,_gearTemplate,_unit);
+            ERROR_MSG_3("hull3.gear.assign: No gear class found with name %1 in gear template %2 for unit %3!",_gearEntry select 1,_gearTemplate,_unit);
         };
     };
 
@@ -156,7 +156,7 @@ hull3_gear_fnc_getTemplate = {
         if (isClass ([TYPE_CLASS_GEAR, _gearEntry select 1] call hull3_config_fnc_getConfig)) then {
             _gearTemplate = _gearEntry select 1;
         } else {
-            WARNING_2("hull3.gear.assign: No gear template found with name %1 for unit %2!",_gearEntry select 1,_unit);
+            ERROR_MSG_2("hull3.gear.assign: No gear template found with name %1 for unit %2!",_gearEntry select 1,_unit);
         };
     } else {
         private _faction = if (count _factionEntry > 0) then { _factionEntry select 0 } else { faction _unit };

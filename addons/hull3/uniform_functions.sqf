@@ -21,7 +21,7 @@ hull3_uniform_fnc_getTemplate = {
         if (isClass ([TYPE_CLASS_UNIFORM, _uniformEntry select 0] call hull3_config_fnc_getConfig)) then {
             _uniformTemplate = _uniformEntry select 0;
         } else {
-            WARNING_2("hull3.uniform.assign: No uniform template found with name %1 for unit %2!",_uniformEntry select 1,_unit);
+            ERROR_MSG_2("hull3.uniform.assign: No uniform template found with name %1 for unit %2!",_uniformEntry select 1,_unit);
         };
     } else {
         private _faction = if (count _factionEntry > 0) then { _factionEntry select 0 } else { faction _unit };
