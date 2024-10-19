@@ -73,7 +73,7 @@ force force ace_fire_enableScreams = true;
 
 // ACE Fragmentation Simulation
 force force ace_frag_enabled = true;
-force force ace_frag_reflectionsEnabled = true;
+force force ace_frag_reflectionsEnabled = false;
 force force ace_frag_spallEnabled = true;
 force force ace_frag_spallIntensity = 1;
 
