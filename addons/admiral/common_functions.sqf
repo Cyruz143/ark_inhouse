@@ -45,6 +45,12 @@ adm_common_fnc_placeVehicle = {
     };
     private _vehiclePosition = [_area, _position, _className] call adm_common_fnc_getRandomEmptyPositionInArea;
     private _vehicle = createVehicle [_className, _vehiclePosition, [], 0, "NONE"];
+    if (isNull _vehicle) exitWith {
+        private _errorMessage = format ["Failed to create unit %1 at position %2, with classname %3 and classNameArguments %4!",_vehicle,_position,_className,_classNameArguments];
+        ERROR_MSG_1("admiral.common.create: %1",_errorMessage);
+
+        _vehicle;
+    };
     _vehicle setVariable ["adm_classNameArguments", _classNameArguments, false];
     _vehicle allowCrewInImmobile [adm_allowCrewInImmobile, false];
     _vehicle setUnloadInCombat [adm_cargoUnloadInCombat, false];
