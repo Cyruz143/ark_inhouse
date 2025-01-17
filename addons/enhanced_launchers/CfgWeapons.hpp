@@ -18,7 +18,7 @@ class CfgWeapons {
             midRangeProbab = 0.9;
             minRange = 5;
             minRangeProbab = 0.56;
-            dispersion = DISPERSION
+            dispersion = DISPERSION;
             showToPlayer=0;
         };
     };
@@ -37,7 +37,7 @@ class CfgWeapons {
             midRangeProbab = 0.85;
             minRange = 10;
             minRangeProbab = 0.3;
-            dispersion = DISPERSION
+            dispersion = DISPERSION;
             showToPlayer=0;
         };
     };
@@ -57,7 +57,7 @@ class CfgWeapons {
             midRangeProbab = 0.9;
             minRange = 5;
             minRangeProbab = 0.56;
-            dispersion = DISPERSION
+            dispersion = DISPERSION;
             showToPlayer=0;
         };
     };
@@ -77,7 +77,7 @@ class CfgWeapons {
             midRangeProbab = 0.9;
             minRange = 5;
             minRangeProbab = 0.56;
-            dispersion = DISPERSION
+            dispersion = DISPERSION;
             showToPlayer=0;
         };
     };

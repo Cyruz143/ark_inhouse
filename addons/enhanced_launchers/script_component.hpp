@@ -4,7 +4,7 @@
 #include "\x\ark\addons\ark_main\script_mod.hpp"
 #include "\x\ark\addons\ark_main\script_macros.hpp"
 
-#define DISPERSION 0.0333;
+#define DISPERSION 0.0333
 
 #define ENHANCED_LAUNCHER \
     airLock = 1; \

@@ -1,261 +1,261 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="ARK_Replacer">
     <Package name="weapon_names">
-        <Key ID="STR_ARK_P90_TR_Black_Name">
-            <English>P90 TR (Black)</English>
-            <Czech>P90 TR (Černá)</Czech>
-            <French>P90 TR (Noir)</French>
-            <Spanish>P90 TR (Negro)</Spanish>
-            <Russian>P90 TR (Чёрный)</Russian>
-            <Polish>P90 TR (czarny)</Polish>
-            <German>P90 TR (Schwarz)</German>
-            <Italian>P90 TR (Nero)</Italian>
-            <Hungarian>P90 TR (Fekete)</Hungarian>
-            <Portuguese>P90 TR (Preto)</Portuguese>
-            <Japanese>P90 TR (ブラック)</Japanese>
-            <Chinese>P90 TR (黑色)</Chinese>
-            <Chinesesimp>P90 TR (黑色)</Chinesesimp>
-            <Korean>P90 TR (Black)</Korean>
-        </Key>
-        <Key ID="STR_ARK_P90_TR_Khaki_Name">
-            <English>P90 TR (Khaki)</English>
-            <Czech>P90 TR (Khaki)</Czech>
-            <French>P90 TR (Kaki)</French>
-            <Spanish>P90 TR (Caqui)</Spanish>
-            <Russian>P90 TR (Хаки)</Russian>
-            <Polish>P90 TR (khaki)</Polish>
-            <German>P90 TR (Khaki)</German>
-            <Italian>P90 TR (Khaki)</Italian>
-            <Hungarian>P90 TR (Khaki)</Hungarian>
-            <Portuguese>P90 TR (Caqui)</Portuguese>
-            <Japanese>P90 TR (カーキ)</Japanese>
-            <Chinese>P90 TR (沙色)</Chinese>
-            <Chinesesimp>P90 TR (沙色)</Chinesesimp>
-            <Korean>P90 TR (Khaki)</Korean>
-        </Key>
-        <Key ID="STR_ARK_P90_TR_Camo_Name">
-            <English>P90 TR (Camo)</English>
-            <Czech>P90 TR (Kamufláž)</Czech>
-            <French>P90 TR (Camo)</French>
-            <Spanish>P90 TR (Camuflaje)</Spanish>
-            <Russian>P90 TR (Камо)</Russian>
-            <Polish>P90 TR (kamuflaż)</Polish>
-            <German>P90 TR (Camo)</German>
-            <Italian>P90 TR (Camo)</Italian>
-            <Hungarian>P90 TR (Terepmintás)</Hungarian>
-            <Portuguese>P90 TR (Camuflagem)</Portuguese>
-            <Japanese>P90 TR (カモフラージュ)</Japanese>
-            <Chinese>P90 TR (迷彩)</Chinese>
-            <Chinesesimp>P90 TR (迷彩)</Chinesesimp>
-            <Korean>P90 TR (Camo)</Korean>
-        </Key>
-        <Key ID="STR_ARK_P90_TR_Hex_Name">
-            <English>P90 TR (Hex)</English>
-            <Czech>P90 TR (Hex)</Czech>
-            <French>P90 TR (Hex)</French>
-            <Spanish>P90 TR (Hex)</Spanish>
-            <Russian>P90 TR (Гекс)</Russian>
-            <German>P90 TR (Hex)</German>
-            <Polish>P90 TR (hex)</Polish>
-            <Italian>P90 TR (Hex)</Italian>
-            <Hungarian>P90 TR (Hex)</Hungarian>
-            <Portuguese>P90 TR (Hex)</Portuguese>
-            <Japanese>P90 TR (ヘックス)</Japanese>
-            <Chinese>P90 TR (數位蜂巢迷彩)</Chinese>
-            <Chinesesimp>P90 TR (数位蜂巢迷彩)</Chinesesimp>
-            <Korean>P90 TR (Hex)</Korean>
-        </Key>
         <Key ID="STR_ARK_P90_Black_Name">
             <English>P90 (Black)</English>
             <Czech>P90 (Černá)</Czech>
             <French>P90 (Noir)</French>
             <Spanish>P90 (Negro)</Spanish>
-            <Russian>P90 (Чёрный)</Russian>
-            <Polish>P90 (czarny)</Polish>
-            <German>P90 (Schwarz)</German>
             <Italian>P90 (Nero)</Italian>
-            <Hungarian>P90 (Fekete)</Hungarian>
+            <Polish>P90 (czarny)</Polish>
             <Portuguese>P90 (Preto)</Portuguese>
+            <Russian>P90 (Чёрный)</Russian>
+            <German>P90 (Schwarz)</German>
+            <Korean>P90 (Black)</Korean>
             <Japanese>P90 (ブラック)</Japanese>
             <Chinese>P90 (黑色)</Chinese>
             <Chinesesimp>P90 (黑色)</Chinesesimp>
-            <Korean>P90 (Black)</Korean>
-        </Key>
-        <Key ID="STR_ARK_P90_Khaki_Name">
-            <English>P90 (Khaki)</English>
-            <Czech>P90 (Khaki)</Czech>
-            <French>P90 (Kaki)</French>
-            <Spanish>P90 (Caqui)</Spanish>
-            <Russian>P90 (Хаки)</Russian>
-            <Polish>P90 (khaki)</Polish>
-            <German>P90 (Khaki)</German>
-            <Italian>P90 (Khaki)</Italian>
-            <Hungarian>P90 (Khaki)</Hungarian>
-            <Portuguese>P90 (Caqui)</Portuguese>
-            <Japanese>P90 (カーキ)</Japanese>
-            <Chinese>P90 (沙色)</Chinese>
-            <Chinesesimp>P90 (沙色)</Chinesesimp>
-            <Korean>P90 (Khaki)</Korean>
+            <Hungarian>P90 (Fekete)</Hungarian>
         </Key>
         <Key ID="STR_ARK_P90_Camo_Name">
             <English>P90 (Camo)</English>
             <Czech>P90 (Kamufláž)</Czech>
             <French>P90 (Camo)</French>
             <Spanish>P90 (Camuflaje)</Spanish>
-            <Russian>P90 (Камо)</Russian>
-            <Polish>P90 (kamuflaż)</Polish>
-            <German>P90 (Camo)</German>
             <Italian>P90 (Camo)</Italian>
-            <Hungarian>P90 (Terepmintás)</Hungarian>
+            <Polish>P90 (kamuflaż)</Polish>
             <Portuguese>P90 (Camuflagem)</Portuguese>
+            <Russian>P90 (Камо)</Russian>
+            <German>P90 (Camo)</German>
+            <Korean>P90 (Camo)</Korean>
             <Japanese>P90 (カモフラージュ)</Japanese>
             <Chinese>P90 (迷彩)</Chinese>
             <Chinesesimp>P90 (迷彩)</Chinesesimp>
-            <Korean>P90 (Camo)</Korean>
+            <Hungarian>P90 (Terepmintás)</Hungarian>
         </Key>
         <Key ID="STR_ARK_P90_Hex_Name">
             <English>P90 (Hex)</English>
             <Czech>P90 (Hex)</Czech>
             <French>P90 (Hex)</French>
             <Spanish>P90 (Hex)</Spanish>
+            <Italian>P90 (Hex)</Italian>
+            <Polish>P90 (hex)</Polish>
+            <Portuguese>P90 (Hex)</Portuguese>
             <Russian>P90 (Гекс)</Russian>
             <German>P90 (Hex)</German>
-            <Polish>P90 (hex)</Polish>
-            <Italian>P90 (Hex)</Italian>
-            <Hungarian>P90 (Hex)</Hungarian>
-            <Portuguese>P90 (Hex)</Portuguese>
+            <Korean>P90 (Hex)</Korean>
             <Japanese>P90 (ヘックス)</Japanese>
             <Chinese>P90 (數位蜂巢迷彩)</Chinese>
             <Chinesesimp>P90 (数位蜂巢迷彩)</Chinesesimp>
-            <Korean>P90 (Hex)</Korean>
+            <Hungarian>P90 (Hex)</Hungarian>
         </Key>
-        <Key ID="STR_ARK_PS90_TR_Black_Name">
-            <English>PS90 TR (Black)</English>
-            <Czech>PS90 TR (Černá)</Czech>
-            <French>PS90 TR (Noir)</French>
-            <Spanish>PS90 TR (Negro)</Spanish>
-            <Russian>PS90 TR (Чёрный)</Russian>
-            <Polish>PS90 TR (czarny)</Polish>
-            <German>PS90 TR (Schwarz)</German>
-            <Italian>PS90 TR (Nero)</Italian>
-            <Hungarian>PS90 TR (Fekete)</Hungarian>
-            <Portuguese>PS90 TR (Preto)</Portuguese>
-            <Japanese>PS90 TR (ブラック)</Japanese>
-            <Chinese>PS90 TR (黑色)</Chinese>
-            <Chinesesimp>PS90 TR (黑色)</Chinesesimp>
-            <Korean>PS90 TR (Black)</Korean>
+        <Key ID="STR_ARK_P90_Khaki_Name">
+            <English>P90 (Khaki)</English>
+            <Czech>P90 (Khaki)</Czech>
+            <French>P90 (Kaki)</French>
+            <Spanish>P90 (Caqui)</Spanish>
+            <Italian>P90 (Khaki)</Italian>
+            <Polish>P90 (khaki)</Polish>
+            <Portuguese>P90 (Caqui)</Portuguese>
+            <Russian>P90 (Хаки)</Russian>
+            <German>P90 (Khaki)</German>
+            <Korean>P90 (Khaki)</Korean>
+            <Japanese>P90 (カーキ)</Japanese>
+            <Chinese>P90 (沙色)</Chinese>
+            <Chinesesimp>P90 (沙色)</Chinesesimp>
+            <Hungarian>P90 (Khaki)</Hungarian>
         </Key>
-        <Key ID="STR_ARK_PS90_TR_Khaki_Name">
-            <English>PS90 TR (Khaki)</English>
-            <Czech>PS90 TR (Khaki)</Czech>
-            <French>PS90 TR (Kaki)</French>
-            <Spanish>PS90 TR (Caqui)</Spanish>
-            <Russian>PS90 TR (Хаки)</Russian>
-            <Polish>PS90 TR (khaki)</Polish>
-            <German>PS90 TR (Khaki)</German>
-            <Italian>PS90 TR (Khaki)</Italian>
-            <Hungarian>PS90 TR (Khaki)</Hungarian>
-            <Portuguese>PS90 TR (Caqui)</Portuguese>
-            <Japanese>PS90 TR (カーキ)</Japanese>
-            <Chinese>PS90 TR (沙色)</Chinese>
-            <Chinesesimp>PS90 TR (沙色)</Chinesesimp>
-            <Korean>PS90 TR (Khaki)</Korean>
+        <Key ID="STR_ARK_P90_TR_Black_Name">
+            <English>P90 TR (Black)</English>
+            <Czech>P90 TR (Černá)</Czech>
+            <French>P90 TR (Noir)</French>
+            <Spanish>P90 TR (Negro)</Spanish>
+            <Italian>P90 TR (Nero)</Italian>
+            <Polish>P90 TR (czarny)</Polish>
+            <Portuguese>P90 TR (Preto)</Portuguese>
+            <Russian>P90 TR (Чёрный)</Russian>
+            <German>P90 TR (Schwarz)</German>
+            <Korean>P90 TR (Black)</Korean>
+            <Japanese>P90 TR (ブラック)</Japanese>
+            <Chinese>P90 TR (黑色)</Chinese>
+            <Chinesesimp>P90 TR (黑色)</Chinesesimp>
+            <Hungarian>P90 TR (Fekete)</Hungarian>
         </Key>
-        <Key ID="STR_ARK_PS90_TR_Camo_Name">
-            <English>PS90 TR (Camo)</English>
-            <Czech>PS90 TR (Kamufláž)</Czech>
-            <French>PS90 TR (Camo)</French>
-            <Spanish>PS90 TR (Camuflaje)</Spanish>
-            <Russian>PS90 TR (Камо)</Russian>
-            <Polish>PS90 TR (kamuflaż)</Polish>
-            <German>PS90 TR (Camo)</German>
-            <Italian>PS90 TR (Camo)</Italian>
-            <Hungarian>PS90 TR (Terepmintás)</Hungarian>
-            <Portuguese>PS90 TR (Camuflagem)</Portuguese>
-            <Japanese>PS90 TR (カモフラージュ)</Japanese>
-            <Chinese>PS90 TR (迷彩)</Chinese>
-            <Chinesesimp>PS90 TR (迷彩)</Chinesesimp>
-            <Korean>PS90 TR (Camo)</Korean>
+        <Key ID="STR_ARK_P90_TR_Camo_Name">
+            <English>P90 TR (Camo)</English>
+            <Czech>P90 TR (Kamufláž)</Czech>
+            <French>P90 TR (Camo)</French>
+            <Spanish>P90 TR (Camuflaje)</Spanish>
+            <Italian>P90 TR (Camo)</Italian>
+            <Polish>P90 TR (kamuflaż)</Polish>
+            <Portuguese>P90 TR (Camuflagem)</Portuguese>
+            <Russian>P90 TR (Камо)</Russian>
+            <German>P90 TR (Camo)</German>
+            <Korean>P90 TR (Camo)</Korean>
+            <Japanese>P90 TR (カモフラージュ)</Japanese>
+            <Chinese>P90 TR (迷彩)</Chinese>
+            <Chinesesimp>P90 TR (迷彩)</Chinesesimp>
+            <Hungarian>P90 TR (Terepmintás)</Hungarian>
         </Key>
-        <Key ID="STR_ARK_PS90_TR_Hex_Name">
-            <English>PS90 TR (Hex)</English>
-            <Czech>PS90 TR (Hex)</Czech>
-            <French>PS90 TR (Hex)</French>
-            <Spanish>PS90 TR (Hex)</Spanish>
-            <Russian>PS90 TR (Гекс)</Russian>
-            <German>PS90 TR (Hex)</German>
-            <Polish>PS90 TR (hex)</Polish>
-            <Italian>PS90 TR (Hex)</Italian>
-            <Hungarian>PS90 TR (Hex)</Hungarian>
-            <Portuguese>PS90 TR (Hex)</Portuguese>
-            <Japanese>PS90 TR (ヘックス)</Japanese>
-            <Chinese>PS90 TR (數位蜂巢迷彩)</Chinese>
-            <Chinesesimp>PS90 TR (数位蜂巢迷彩)</Chinesesimp>
-            <Korean>PS90 TR (Hex)</Korean>
+        <Key ID="STR_ARK_P90_TR_Hex_Name">
+            <English>P90 TR (Hex)</English>
+            <Czech>P90 TR (Hex)</Czech>
+            <French>P90 TR (Hex)</French>
+            <Spanish>P90 TR (Hex)</Spanish>
+            <Italian>P90 TR (Hex)</Italian>
+            <Polish>P90 TR (hex)</Polish>
+            <Portuguese>P90 TR (Hex)</Portuguese>
+            <Russian>P90 TR (Гекс)</Russian>
+            <German>P90 TR (Hex)</German>
+            <Korean>P90 TR (Hex)</Korean>
+            <Japanese>P90 TR (ヘックス)</Japanese>
+            <Chinese>P90 TR (數位蜂巢迷彩)</Chinese>
+            <Chinesesimp>P90 TR (数位蜂巢迷彩)</Chinesesimp>
+            <Hungarian>P90 TR (Hex)</Hungarian>
+        </Key>
+        <Key ID="STR_ARK_P90_TR_Khaki_Name">
+            <English>P90 TR (Khaki)</English>
+            <Czech>P90 TR (Khaki)</Czech>
+            <French>P90 TR (Kaki)</French>
+            <Spanish>P90 TR (Caqui)</Spanish>
+            <Italian>P90 TR (Khaki)</Italian>
+            <Polish>P90 TR (khaki)</Polish>
+            <Portuguese>P90 TR (Caqui)</Portuguese>
+            <Russian>P90 TR (Хаки)</Russian>
+            <German>P90 TR (Khaki)</German>
+            <Korean>P90 TR (Khaki)</Korean>
+            <Japanese>P90 TR (カーキ)</Japanese>
+            <Chinese>P90 TR (沙色)</Chinese>
+            <Chinesesimp>P90 TR (沙色)</Chinesesimp>
+            <Hungarian>P90 TR (Khaki)</Hungarian>
         </Key>
         <Key ID="STR_ARK_PS90_Black_Name">
             <English>PS90 (Black)</English>
             <Czech>PS90 (Černá)</Czech>
             <French>PS90 (Noir)</French>
             <Spanish>PS90 (Negro)</Spanish>
-            <Russian>PS90 (Чёрный)</Russian>
-            <Polish>PS90 (czarny)</Polish>
-            <German>PS90 (Schwarz)</German>
             <Italian>PS90 (Nero)</Italian>
-            <Hungarian>PS90 (Fekete)</Hungarian>
+            <Polish>PS90 (czarny)</Polish>
             <Portuguese>PS90 (Preto)</Portuguese>
+            <Russian>PS90 (Чёрный)</Russian>
+            <German>PS90 (Schwarz)</German>
+            <Korean>PS90 (Black)</Korean>
             <Japanese>PS90 (ブラック)</Japanese>
             <Chinese>PS90 (黑色)</Chinese>
             <Chinesesimp>PS90 (黑色)</Chinesesimp>
-            <Korean>PS90 (Black)</Korean>
-        </Key>
-        <Key ID="STR_ARK_PS90_Khaki_Name">
-            <English>PS90 (Khaki)</English>
-            <Czech>PS90 (Khaki)</Czech>
-            <French>PS90 (Kaki)</French>
-            <Spanish>PS90 (Caqui)</Spanish>
-            <Russian>PS90 (Хаки)</Russian>
-            <Polish>PS90 (khaki)</Polish>
-            <German>PS90 (Khaki)</German>
-            <Italian>PS90 (Khaki)</Italian>
-            <Hungarian>PS90 (Khaki)</Hungarian>
-            <Portuguese>PS90 (Caqui)</Portuguese>
-            <Japanese>PS90 (カーキ)</Japanese>
-            <Chinese>PS90 (沙色)</Chinese>
-            <Chinesesimp>PS90 (沙色)</Chinesesimp>
-            <Korean>PS90 (Khaki)</Korean>
+            <Hungarian>PS90 (Fekete)</Hungarian>
         </Key>
         <Key ID="STR_ARK_PS90_Camo_Name">
             <English>PS90 (Camo)</English>
             <Czech>PS90 (Kamufláž)</Czech>
             <French>PS90 (Camo)</French>
             <Spanish>PS90 (Camuflaje)</Spanish>
-            <Russian>PS90 (Камо)</Russian>
-            <Polish>PS90 (kamuflaż)</Polish>
-            <German>PS90 (Camo)</German>
             <Italian>PS90 (Camo)</Italian>
-            <Hungarian>PS90 (Terepmintás)</Hungarian>
+            <Polish>PS90 (kamuflaż)</Polish>
             <Portuguese>PS90 (Camuflagem)</Portuguese>
+            <Russian>PS90 (Камо)</Russian>
+            <German>PS90 (Camo)</German>
+            <Korean>PS90 (Camo)</Korean>
             <Japanese>PS90 (カモフラージュ)</Japanese>
             <Chinese>PS90 (迷彩)</Chinese>
             <Chinesesimp>PS90 (迷彩)</Chinesesimp>
-            <Korean>PS90 (Camo)</Korean>
+            <Hungarian>PS90 (Terepmintás)</Hungarian>
         </Key>
         <Key ID="STR_ARK_PS90_Hex_Name">
             <English>PS90 (Hex)</English>
             <Czech>PS90 (Hex)</Czech>
             <French>PS90 (Hex)</French>
             <Spanish>PS90 (Hex)</Spanish>
+            <Italian>PS90 (Hex)</Italian>
+            <Polish>PS90 (hex)</Polish>
+            <Portuguese>PS90 (Hex)</Portuguese>
             <Russian>PS90 (Гекс)</Russian>
             <German>PS90 (Hex)</German>
-            <Polish>PS90 (hex)</Polish>
-            <Italian>PS90 (Hex)</Italian>
-            <Hungarian>PS90 (Hex)</Hungarian>
-            <Portuguese>PS90 (Hex)</Portuguese>
+            <Korean>PS90 (Hex)</Korean>
             <Japanese>PS90 (ヘックス)</Japanese>
             <Chinese>PS90 (數位蜂巢迷彩)</Chinese>
             <Chinesesimp>PS90 (数位蜂巢迷彩)</Chinesesimp>
-            <Korean>PS90 (Hex)</Korean>
+            <Hungarian>PS90 (Hex)</Hungarian>
+        </Key>
+        <Key ID="STR_ARK_PS90_Khaki_Name">
+            <English>PS90 (Khaki)</English>
+            <Czech>PS90 (Khaki)</Czech>
+            <French>PS90 (Kaki)</French>
+            <Spanish>PS90 (Caqui)</Spanish>
+            <Italian>PS90 (Khaki)</Italian>
+            <Polish>PS90 (khaki)</Polish>
+            <Portuguese>PS90 (Caqui)</Portuguese>
+            <Russian>PS90 (Хаки)</Russian>
+            <German>PS90 (Khaki)</German>
+            <Korean>PS90 (Khaki)</Korean>
+            <Japanese>PS90 (カーキ)</Japanese>
+            <Chinese>PS90 (沙色)</Chinese>
+            <Chinesesimp>PS90 (沙色)</Chinesesimp>
+            <Hungarian>PS90 (Khaki)</Hungarian>
+        </Key>
+        <Key ID="STR_ARK_PS90_TR_Black_Name">
+            <English>PS90 TR (Black)</English>
+            <Czech>PS90 TR (Černá)</Czech>
+            <French>PS90 TR (Noir)</French>
+            <Spanish>PS90 TR (Negro)</Spanish>
+            <Italian>PS90 TR (Nero)</Italian>
+            <Polish>PS90 TR (czarny)</Polish>
+            <Portuguese>PS90 TR (Preto)</Portuguese>
+            <Russian>PS90 TR (Чёрный)</Russian>
+            <German>PS90 TR (Schwarz)</German>
+            <Korean>PS90 TR (Black)</Korean>
+            <Japanese>PS90 TR (ブラック)</Japanese>
+            <Chinese>PS90 TR (黑色)</Chinese>
+            <Chinesesimp>PS90 TR (黑色)</Chinesesimp>
+            <Hungarian>PS90 TR (Fekete)</Hungarian>
+        </Key>
+        <Key ID="STR_ARK_PS90_TR_Camo_Name">
+            <English>PS90 TR (Camo)</English>
+            <Czech>PS90 TR (Kamufláž)</Czech>
+            <French>PS90 TR (Camo)</French>
+            <Spanish>PS90 TR (Camuflaje)</Spanish>
+            <Italian>PS90 TR (Camo)</Italian>
+            <Polish>PS90 TR (kamuflaż)</Polish>
+            <Portuguese>PS90 TR (Camuflagem)</Portuguese>
+            <Russian>PS90 TR (Камо)</Russian>
+            <German>PS90 TR (Camo)</German>
+            <Korean>PS90 TR (Camo)</Korean>
+            <Japanese>PS90 TR (カモフラージュ)</Japanese>
+            <Chinese>PS90 TR (迷彩)</Chinese>
+            <Chinesesimp>PS90 TR (迷彩)</Chinesesimp>
+            <Hungarian>PS90 TR (Terepmintás)</Hungarian>
+        </Key>
+        <Key ID="STR_ARK_PS90_TR_Hex_Name">
+            <English>PS90 TR (Hex)</English>
+            <Czech>PS90 TR (Hex)</Czech>
+            <French>PS90 TR (Hex)</French>
+            <Spanish>PS90 TR (Hex)</Spanish>
+            <Italian>PS90 TR (Hex)</Italian>
+            <Polish>PS90 TR (hex)</Polish>
+            <Portuguese>PS90 TR (Hex)</Portuguese>
+            <Russian>PS90 TR (Гекс)</Russian>
+            <German>PS90 TR (Hex)</German>
+            <Korean>PS90 TR (Hex)</Korean>
+            <Japanese>PS90 TR (ヘックス)</Japanese>
+            <Chinese>PS90 TR (數位蜂巢迷彩)</Chinese>
+            <Chinesesimp>PS90 TR (数位蜂巢迷彩)</Chinesesimp>
+            <Hungarian>PS90 TR (Hex)</Hungarian>
+        </Key>
+        <Key ID="STR_ARK_PS90_TR_Khaki_Name">
+            <English>PS90 TR (Khaki)</English>
+            <Czech>PS90 TR (Khaki)</Czech>
+            <French>PS90 TR (Kaki)</French>
+            <Spanish>PS90 TR (Caqui)</Spanish>
+            <Italian>PS90 TR (Khaki)</Italian>
+            <Polish>PS90 TR (khaki)</Polish>
+            <Portuguese>PS90 TR (Caqui)</Portuguese>
+            <Russian>PS90 TR (Хаки)</Russian>
+            <German>PS90 TR (Khaki)</German>
+            <Korean>PS90 TR (Khaki)</Korean>
+            <Japanese>PS90 TR (カーキ)</Japanese>
+            <Chinese>PS90 TR (沙色)</Chinese>
+            <Chinesesimp>PS90 TR (沙色)</Chinesesimp>
+            <Hungarian>PS90 TR (Khaki)</Hungarian>
         </Key>
     </Package>
 </Project>
