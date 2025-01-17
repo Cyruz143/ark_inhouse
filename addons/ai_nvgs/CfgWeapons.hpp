@@ -5,7 +5,7 @@ class CfgWeapons {
         descriptionShort = "Night Vision Goggles (Hidden)";
         displayName = "NV Goggles (Hidden)";
         model = "\A3\Weapons_F\empty.p3d";
-        modelOptics = "\A3\weapons_f\reticle\optics_night";
+        modelOptics = "\A3\weapons_f\reticle\optics_night.p3d";
         picture = "\A3\Weapons_F\Data\UI\gear_nvg_CA.paa";
         scope = 1;
             class ItemInfo {
@@ -21,7 +21,7 @@ class CfgWeapons {
         descriptionShort = "Thermal Vision Goggles (Hidden)";
         displayName = "TI Goggles (Hidden)";
         model = "\A3\Weapons_F\empty.p3d";
-        modelOptics = "\A3\weapons_f\reticle\optics_night";
+        modelOptics = "\A3\weapons_f\reticle\optics_night.p3d";
         picture = "\A3\Weapons_F\Data\UI\gear_nvg_CA.paa";
         scope = 1;
         thermalMode[]={0,1,2,3,4,5};

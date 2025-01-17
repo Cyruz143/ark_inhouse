@@ -33,7 +33,7 @@ adm_cqc_fnc_getBuildingPositions = {
     private _buildingPositions = [];
     if (!((typeOf _building) in adm_cqc_buildingBlacklist)) then {
         private _i = 0;
-        while {!(_building buildingPos _i isEqualTo [0,0,0])} do {
+        while {_building buildingPos _i isNotEqualTo [0,0,0]} do {
             if([_building buildingPos _i] call adm_cqc_fnc_isPositionInBuilding) then {
                 _buildingPositions pushBack _i;
             };

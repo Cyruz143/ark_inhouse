@@ -40,8 +40,8 @@ ark_race_fnc_createUnitMarker = {
     player addEventHandler ["Killed", {str player setMarkerColor "ColorBlack"}];
 
     private _mkr = createMarker [str player, (getPos player)];
-    _mkr setMarkerShape "ICON";
-    _mkr setMarkerType "mil_dot";
+    _mkr setMarkerShapeLocal "ICON";
+    _mkr setMarkerTypeLocal "mil_dot";
     _mkr setMarkerColor "ColorYellow";
 
     [

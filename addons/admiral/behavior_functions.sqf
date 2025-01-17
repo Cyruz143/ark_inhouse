@@ -115,7 +115,7 @@ adm_behavior_fnc_getEnemyNumbers = {
     {
         if (_x distance _enemyPos <= BEHAVIOR_ENEMY_CHECK_RADIUS && {alive _x}) then {
             _enemyNumbers set [0, (_enemyNumbers select 0) + 1];
-            if (vehicle _x != _x) then {
+            if (!isNull objectParent _x) then {
                 call {
                     if ((vehicle _x) isKindOf "Car") exitWith {_enemyNumbers set [1, (_enemyNumbers select 1) + 1];};
                     if ((vehicle _x) isKindOf "Air") exitWith {_enemyNumbers set [2, (_enemyNumbers select 2) + 1];};

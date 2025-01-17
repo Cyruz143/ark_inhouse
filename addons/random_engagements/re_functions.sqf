@@ -69,10 +69,10 @@ re_fnc_randomizeFactions = {
 
 re_fnc_createLocationMarker = {
     private _marker = createMarker [re_selectedLocationMarkerName, [0, 0, 0]];
-    _marker setMarkerSize [1, 1];
-    _marker setMarkerAlpha 0.5;
-    _marker setMarkerShape "ELLIPSE";
-    _marker setMarkerBrush "Solid";
+    _marker setMarkerSizeLocal [1, 1];
+    _marker setMarkerAlphaLocal 0.5;
+    _marker setMarkerShapeLocal "ELLIPSE";
+    _marker setMarkerBrushLocal "Solid";
     _marker setMarkerColor "ColorRed";
 };
 
@@ -88,7 +88,7 @@ re_fnc_moveLocationMarker = {
     params ["_position"];
 
     re_selectedLocation = [_position, re_selectedLocationMarkerSize];
-    re_selectedLocationMarkerName setMarkerPos _position;
+    re_selectedLocationMarkerName setMarkerPosLocal _position;
     re_selectedLocationMarkerName setMarkerSize [re_selectedLocationMarkerSize, re_selectedLocationMarkerSize];
     [-1, { player globalChat "A new attack location has been selected by the host!" }, []] call CBA_fnc_globalExecute;
 };

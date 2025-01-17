@@ -27,7 +27,7 @@ ark_chase_ai_fnc_init = {
         INFO_1("fnc_init, Using default unit classnames (%1)",_unitClassNames);
     } else {
         _unitClassNames = call compile (_unitClassNames);
-        if (!((typeName _unitClassNames) isEqualTo "ARRAY")) exitWith {
+        if ((typeName _unitClassNames) isNotEqualTo "ARRAY") exitWith {
             ERROR_MSG_1("fnc_init, Improper classname formatting provided (%1), must be an ARRAY!",_unitClassNames);
         };
         INFO_1("fnc_init, Using custom unit classnames (%1)",_unitClassNames);

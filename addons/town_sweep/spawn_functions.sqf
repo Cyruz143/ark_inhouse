@@ -85,25 +85,25 @@ ts_spawn_fnc_activateLocation = {
 
 ts_spawn_fnc_createLocationMarker = {
     private _marker = createMarker [ts_spawn_selectedLocationMarkerName, [0, 0, 0]];
-    _marker setMarkerSize [1, 1];
-    _marker setMarkerAlpha 0.5;
-    _marker setMarkerShape "ELLIPSE";
-    _marker setMarkerBrush "Solid";
+    _marker setMarkerSizeLocal [1, 1];
+    _marker setMarkerAlphaLocal 0.5;
+    _marker setMarkerShapeLocal "ELLIPSE";
+    _marker setMarkerBrushLocal "Solid";
     _marker setMarkerColor "ColorRed";
 };
 
 ts_spawn_fnc_moveLocationMarker = {
     params ["_position", "_size"];
-    ts_spawn_selectedLocationMarkerName setMarkerPos _position;
-    ts_spawn_selectedLocationMarkerName setMarkerSize [_size, _size];
-    ts_spawn_selectedLocationMarkerName setMarkerAlpha 0.5;
-    ts_spawn_selectedLocationMarkerName setMarkerBrush "Solid";
+    ts_spawn_selectedLocationMarkerName setMarkerPosLocal _position;
+    ts_spawn_selectedLocationMarkerName setMarkerSizeLocal [_size, _size];
+    ts_spawn_selectedLocationMarkerName setMarkerAlphaLocal 0.5;
+    ts_spawn_selectedLocationMarkerName setMarkerBrushLocal "Solid";
     ts_spawn_selectedLocationMarkerName setMarkerColor "ColorRed";
 };
 
 ts_spawn_fnc_activateLocationMarker = {
-    ts_spawn_selectedLocationMarkerName setMarkerAlpha 0.4;
-    ts_spawn_selectedLocationMarkerName setMarkerBrush "Solid";
+    ts_spawn_selectedLocationMarkerName setMarkerAlphaLocal 0.4;
+    ts_spawn_selectedLocationMarkerName setMarkerBrushLocal "Solid";
     ts_spawn_selectedLocationMarkerName setMarkerColor "ColorRed";
 };
 
@@ -310,7 +310,7 @@ ts_spawn_fnc_objDestroyVeh = {
         _vehicle = createVehicle [(selectRandom _armourArray), (getPos _nearRoad), [], 0, "NONE"];
         private _dir = random 360;
         private _roadConnectedTo = roadsConnectedTo _nearRoad;
-        if !(_roadConnectedTo isEqualTo []) then {
+        if (_roadConnectedTo isNotEqualTo []) then {
             _dir = _nearRoad getDir _roadConnectedTo #0;
         };
         _vehicle setDir _dir;
@@ -443,7 +443,7 @@ ts_spawn_fnc_objRecoverIntel = {
         _helo = createVehicle ["cup_mh47e_wreck2", (getPos _nearRoad), [], 0, "NONE"];
         private _dir = random 360;
         private _roadConnectedTo = roadsConnectedTo _nearRoad;
-        if !(_roadConnectedTo isEqualTo []) then {
+        if (_roadConnectedTo isNotEqualTo []) then {
             _dir = _nearRoad getDir _roadConnectedTo #0;
         };
         _helo setDir _dir;
