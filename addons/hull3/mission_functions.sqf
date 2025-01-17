@@ -3,7 +3,6 @@
 #define DEFAULT_TIME_OF_DAY [12, 0]
 
 hull3_mission_fnc_preInit = {
-    hull3_mission_isJip = false;
     [] call hull3_mission_fnc_addEventHandlers;
     LOG("hull3.mission: Mission functions preInit finished.");
 };
@@ -27,8 +26,7 @@ hull3_mission_fnc_serverInit = {
 
 hull3_mission_fnc_clientInit = {
     hull3_mission_safetyTimerActionIds = [-1, -1, -1];
-    hull3_mission_isJip = SLX_XEH_MACHINE #1;
-    if (hull3_mission_isJip) then {
+    if (didJIP) then {
         [] call hull3_mission_fnc_getJipSync;
     };
     LOG("hull3.mission: Client init finished.");
@@ -142,7 +140,7 @@ hull3_mission_fnc_setEnviroment = {
 };
 
 hull3_mission_fnc_addPlayerEHs = {
-    if (hull3_mission_isJip) then {
+    if (didJIP) then {
         "hull3_mission_jipPacket" addPublicVariableEventHandler {
             (_this #1) call hull3_mission_fnc_receiveJipSync;
         };
@@ -289,7 +287,7 @@ hull3_mission_fnc_removeSafetyTimerActions = {
 };
 
 hull3_mission_fnc_getJipSync = {
-    if (hull3_mission_isJip) then {
+    if (didJIP) then {
         hull3_mission_jipPacket = [player];
         LOG_2("hull3.mission.jip: Sending JIP state request for server from client %1 with time %2.",player,time);
         publicVariableServer "hull3_mission_jipPacket";
