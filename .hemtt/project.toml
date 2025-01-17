@@ -20,3 +20,6 @@ folder = "ark_inhouse"
 options.ignore = [
     "addPublicVariableEventHandler",
 ]
+
+[lints.config.file_type]
+options.allow_no_extension = true
