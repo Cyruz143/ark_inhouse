@@ -251,7 +251,7 @@ adm_common_fnc_getAliveGroups = {
     private _aliveGroups = [];
     {
         private _groups = _x;
-        FILTER_PUSH_ALL(_aliveGroups,_groups,{IS_GROUP_ALIVE(_x)});
+        FILTER_PUSH_ALL(_aliveGroups,_groups,{IS_GROUP_ALIVE(_x) > -1});
     } forEach _groupsArray;
 
     _aliveGroups;
@@ -263,7 +263,7 @@ adm_common_fnc_getAliveSideGroups = {
     private _aliveGroups = [];
     {
         private _groups = _x;
-        FILTER_PUSH_ALL(_aliveGroups,_groups,{IS_GROUP_ALIVE(_x) && {side _x == _side}});
+        FILTER_PUSH_ALL(_aliveGroups,_groups,{IS_GROUP_ALIVE(_x) > -1 && {side _x == _side}});
     } forEach _groupsArray;
 
     _aliveGroups;

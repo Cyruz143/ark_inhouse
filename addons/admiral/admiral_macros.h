@@ -110,7 +110,7 @@
 #define DEF_BETWEEN_MSG                             {format ["Variable %1 must be between values %2 and %3!", _variableName, (MINVAL), (MAXVAL)]}
 #define DEF_BOUNDARY                                {format ["Variable %1s first value %2 must be less, than the second value %3!", _variableName, CC_VAR select 0, CC_VAR select 1]}
 
-#define IS_GROUP_ALIVE(GROUP)                       ({alive _x} count units GROUP > 0)
+#define IS_GROUP_ALIVE(GROUP)                       units GROUP findIf {alive _x}
 #define MOVING_GROUPS                               [adm_patrol_infGroups, adm_patrol_techGroups, adm_patrol_armourGroups, adm_camp_infGroups, adm_camp_techGroups, adm_camp_armourGroups]
 
 

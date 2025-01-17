@@ -24,7 +24,7 @@ adm_debug_fnc_updateMovingGroupMarkers = {
     params ["_group"];
 
     private _debugMarkers = _group getVariable "adm_group_debugMarkers";
-    if (IS_GROUP_ALIVE(_group)) then {
+    if (IS_GROUP_ALIVE(_group) > -1) then {
         if (!isNil {_debugMarkers}) then {
             [_group, _debugMarkers] call adm_debug_fnc_updateMovingGroupWaypointMarkers;
             [_group, _debugMarkers select 3] call adm_debug_fnc_updateMovingGroupsStateMarkers;
