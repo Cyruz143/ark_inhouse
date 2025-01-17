@@ -7,7 +7,7 @@ class CfgWeapons {
     class Launch_RPG7_F: Launcher_Base_F {
         modes[] = {"Single", "Single_AI"};
         class Single: Mode_SemiAuto {
-            NO_AI_FIREMODE
+            NO_AI_FIREMODE;
         };
         class Single_AI: Single {
             aiRateOfFireDispersion = 7;
@@ -25,7 +25,7 @@ class CfgWeapons {
     class launch_RPG32_F: Launcher_Base_F {
         modes[] = {"Single", "Single_AI"};
         class Single: Mode_SemiAuto {
-            NO_AI_FIREMODE
+            NO_AI_FIREMODE;
         };
         class Single_AI: Single {
             aiRateOfFire = 7;
@@ -45,7 +45,7 @@ class CfgWeapons {
     class CUP_launch_RPG7V: Launcher_Base_F {
         modes[] = {"Single", "Single_AI"};
         class Single: Mode_SemiAuto {
-            NO_AI_FIREMODE
+            NO_AI_FIREMODE;
         };
         class Single_AI: Single {
             aiRateOfFire = 7;
@@ -65,7 +65,7 @@ class CfgWeapons {
     class gm_rpg7_base: gm_launcher_base {
         modes[] = {"Single", "Single_AI"};
         class Single: gm_SemiAuto {
-            NO_AI_FIREMODE
+            NO_AI_FIREMODE;
         };
         class Single_AI: Single {
             aiRateOfFire = 7;

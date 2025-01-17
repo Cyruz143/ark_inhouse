@@ -12,7 +12,7 @@
     aiAmmoUsageFlags = "64 + 128 + 256 + 512"; \
     cost = 30; \
     soundFly[] = {"A3\Sounds_F\weapons\Rockets\rocket_fly_1",6,0.85,500}; \
-    whistleDist = 32;
+    whistleDist = 32
 
 #define NO_AI_FIREMODE \
     maxRange = 2; \
@@ -20,7 +20,7 @@
     midRange = 1; \
     midRangeProbab = 0.01; \
     minRange = 0; \
-    minRangeProbab = 0.01;
+    minRangeProbab = 0.01
 
 #define FUSEDISTANCE \
-    fuseDistance = 2.5;
+    fuseDistance = 2.5
