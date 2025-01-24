@@ -654,7 +654,7 @@ class UnitTemplates {
         crewmen[] = {"gmx_tak_army_crew_mpiaks74nk_oli"};
         pilots[] = {"gmx_tak_army_pilot_p1_oli"};
         technicals[] = {"gmx_tak_army_uaz469_dshkm_des", "gmx_tak_army_uaz469_dshkm_des", "gmx_tak_army_uaz469_spg9_des"};
-        armour[] = {"gmx_tak_army_brdm2_des", "gmx_tak_army_bmp1sp2_des", "gmx_tak_army_btr60pb_des", "gmx_tak_armyM113a1g_apc_des", "gmx_tak_army_m113a1g_apc_milan_des", "gmx_tak_army_ot64a_des", "gmx_tak_army_pt76b_des", "gmx_tak_army_t55_des", "gmx_tak_army_t55a_des", "gmx_tak_army_t55ak_des", "gmx_tak_army_t55am2_des", "gmx_tak_army_t55am2b_des"};
+        armour[] = {"gmx_tak_army_brdm2_des", "gmx_tak_army_bmp1sp2_des", "gmx_tak_army_btr60pb_des", "gmx_tak_army_m113a1g_apc_des" "gmx_tak_army_ot64a_des", "gmx_tak_army_pt76b_des", "gmx_tak_army_t55_des", "gmx_tak_army_t55a_des", "gmx_tak_army_t55ak_des", "gmx_tak_army_t55am2_des", "gmx_tak_army_t55am2b_des"};
         th[] = {"gmx_tak_army_mi2t_des"};
         ah[] = {"gmx_tak_army_mi2urn_des"};
     };
