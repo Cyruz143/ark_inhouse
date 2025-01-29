@@ -164,6 +164,7 @@ force force ace_medical_fatalDamageSource = 1;
 force force ace_medical_fractureChance = 0.2;
 force force ace_medical_fractures = 1;
 force force ace_medical_ivFlowRate = 2;
+force force ace_medical_limbDamageThreshold = 5;
 force force ace_medical_limping = 1;
 force force ace_medical_painCoefficient = 0.6;
 force force ace_medical_painUnconsciousChance = 0.75;
@@ -224,6 +225,7 @@ force force ace_medical_treatment_treatmentTimeGrave = 30;
 force force ace_medical_gui_maxDistance = 3;
 force force ace_medical_gui_showBloodlossEntry = true;
 force force ace_medical_gui_tourniquetWarning = true;
+force force ace_medical_useLimbDamage = 1;
 force force ace_medical_vitals_simulateSpO2 = false;
 
 // ACE Nightvision
