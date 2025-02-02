@@ -330,7 +330,13 @@ adm_camp_fnc_periodicSpawn = {
             _spawnedArmourGroups = [_zone, GROUP_TYPE_ARMOUR, adm_camp_fnc_periodicCanSpawnGroups, adm_camp_fnc_periodicSpawnArmourGroups] call adm_camp_fnc_trySpawnGroups;
             _zoneArmourGroups append _spawnedArmourGroups;
 
-            INFO_4("Admiral Camp: Periodic Camp Zone %1 spawned %2 infantry group(s) - spawned %3 technical group(s) - spawned %4 armour group(s).",GET_ZONE_ID(_zone),count _spawnedInfGroups,count _spawnedTechGroups,count _spawnedArmourGroups);
+            private _allGroups = (count _spawnedInfGroups) + (count _spawnedTechGroups) + (count _spawnedArmourGroups);
+
+            if (_allGroups > 0) then {
+                INFO_4("Admiral Camp: Periodic Camp Zone %1 spawned %2 infantry group(s) - spawned %3 technical group(s) - spawned %4 armour group(s).",GET_ZONE_ID(_zone),count _spawnedInfGroups,count _spawnedTechGroups,count _spawnedArmourGroups);
+            } else {
+                INFO_1("Admiral Camp: Periodic Camp Zone %1 not required to spawn.",GET_ZONE_ID(_zone));
+            };
 
             ["camp.spawned.groups", [_zoneInfGroups, _zoneTechGroups, _zoneArmourGroups, _zone]] call adm_event_fnc_emitEvent;
 
@@ -411,7 +417,13 @@ adm_camp_fnc_onDemandSpawn = {
             _spawnedArmourGroups = [_zone, GROUP_TYPE_ARMOUR, adm_camp_fnc_onDemandCanSpawnGroups, adm_camp_fnc_onDemandSpawnArmourGroups] call adm_camp_fnc_trySpawnGroups;
             _zoneArmourGroups append _spawnedArmourGroups;
 
-            INFO_4("Admiral Camp: On-demand Camp Zone %1 spawned %2 infantry group(s) - spawned %3 technical group(s) - spawned %4 armour group(s).",GET_ZONE_ID(_zone),count _spawnedInfGroups,count _spawnedTechGroups,count _spawnedArmourGroups);
+            private _allGroups = (count _spawnedInfGroups) + (count _spawnedTechGroups) + (count _spawnedArmourGroups);
+
+            if (_allGroups > 0) then {
+                INFO_4("Admiral Camp: On-demand Camp Zone %1 spawned %2 infantry group(s) - spawned %3 technical group(s) - spawned %4 armour group(s).",GET_ZONE_ID(_zone),count _spawnedInfGroups,count _spawnedTechGroups,count _spawnedArmourGroups);
+            } else {
+                INFO_1("Admiral Camp: On-demand Camp Zone %1 not required to spawn.",GET_ZONE_ID(_zone));
+            };
 
             ["camp.spawned.groups", [_zoneInfGroups, _zoneTechGroups, _zoneArmourGroups, _zone]] call adm_event_fnc_emitEvent;
 
@@ -491,7 +503,13 @@ adm_camp_fnc_randomSpawn = {
             _spawnedArmourGroups = [_zone, GROUP_TYPE_ARMOUR, adm_camp_fnc_randomCanSpawnGroups, adm_camp_fnc_randomSpawnArmourGroups] call adm_camp_fnc_trySpawnGroups;
             _zoneArmourGroups append _spawnedArmourGroups;
 
-            INFO_4("Admiral Camp: Random Camp Zone %1 spawned %2 infantry group(s) - spawned %3 technical group(s) - spawned %4 armour group(s).",GET_ZONE_ID(_zone),count _spawnedInfGroups,count _spawnedTechGroups,count _spawnedArmourGroups);
+            private _allGroups = (count _spawnedInfGroups) + (count _spawnedTechGroups) + (count _spawnedArmourGroups);
+
+            if (_allGroups > 0) then {
+                INFO_4("Admiral Camp: Random Camp Zone %1 spawned %2 infantry group(s) - spawned %3 technical group(s) - spawned %4 armour group(s).",GET_ZONE_ID(_zone),count _spawnedInfGroups,count _spawnedTechGroups,count _spawnedArmourGroups);
+            } else {
+                INFO_1("Admiral Camp: Random Camp Zone %1 not required to spawn.",GET_ZONE_ID(_zone));
+            };
 
             ["camp.spawned.groups", [_zoneInfGroups, _zoneTechGroups, _zoneArmourGroups, _zone]] call adm_event_fnc_emitEvent;
 
