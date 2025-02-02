@@ -318,20 +318,19 @@ adm_camp_fnc_periodicSpawn = {
             params ["_args", "_id"];
             _args params ["_zone","_zoneInfGroups","_zoneTechGroups","_zoneArmourGroups"];
 
-            private _spawnedGroups = [];
-            _spawnedGroups = [_zone, GROUP_TYPE_INF, adm_camp_fnc_periodicCanSpawnGroups, adm_camp_fnc_periodicSpawnInfGroups] call adm_camp_fnc_trySpawnGroups;
-            _zoneInfGroups append _spawnedGroups;
-            INFO_2("Admiral Camp: Periodic Camp Zone %1 spawned %2 infantry group(s).",GET_ZONE_ID(_zone),count _spawnedGroups);
+            private _spawnedInfGroups = [];
+            _spawnedInfGroups = [_zone, GROUP_TYPE_INF, adm_camp_fnc_periodicCanSpawnGroups, adm_camp_fnc_periodicSpawnInfGroups] call adm_camp_fnc_trySpawnGroups;
+            _zoneInfGroups append _spawnedInfGroups;
 
-            _spawnedGroups = [];
-            _spawnedGroups = [_zone, GROUP_TYPE_TECH, adm_camp_fnc_periodicCanSpawnGroups, adm_camp_fnc_periodicSpawnTechGroups] call adm_camp_fnc_trySpawnGroups;
-            _zoneTechGroups append _spawnedGroups;
-            INFO_2("Admiral Camp: Periodic Camp Zone %1 spawned %2 technical group(s).",GET_ZONE_ID(_zone),count _spawnedGroups);
+            private _spawnedTechGroups = [];
+            _spawnedTechGroups = [_zone, GROUP_TYPE_TECH, adm_camp_fnc_periodicCanSpawnGroups, adm_camp_fnc_periodicSpawnTechGroups] call adm_camp_fnc_trySpawnGroups;
+            _zoneTechGroups append _spawnedTechGroups;
 
-            _spawnedGroups = [];
-            _spawnedGroups = [_zone, GROUP_TYPE_ARMOUR, adm_camp_fnc_periodicCanSpawnGroups, adm_camp_fnc_periodicSpawnArmourGroups] call adm_camp_fnc_trySpawnGroups;
-            _zoneArmourGroups append _spawnedGroups;
-            INFO_2("Admiral Camp: Periodic Camp Zone %1 spawned %2 armour group(s).",GET_ZONE_ID(_zone),count _spawnedGroups);
+            private _spawnedArmourGroups = [];
+            _spawnedArmourGroups = [_zone, GROUP_TYPE_ARMOUR, adm_camp_fnc_periodicCanSpawnGroups, adm_camp_fnc_periodicSpawnArmourGroups] call adm_camp_fnc_trySpawnGroups;
+            _zoneArmourGroups append _spawnedArmourGroups;
+
+            INFO_4("Admiral Camp: Periodic Camp Zone %1 spawned %2 infantry group(s), spawned %3 technical group(s), spawned %4 armour group(s).",GET_ZONE_ID(_zone),count _spawnedInfGroups,count _spawnedTechGroups,count _spawnedArmourGroups);
 
             ["camp.spawned.groups", [_zoneInfGroups, _zoneTechGroups, _zoneArmourGroups, _zone]] call adm_event_fnc_emitEvent;
 
@@ -400,20 +399,19 @@ adm_camp_fnc_onDemandSpawn = {
             params ["_args", "_id"];
             _args params ["_zone","_zoneInfGroups","_zoneTechGroups","_zoneArmourGroups"];
 
-            private _spawnedGroups = [];
-            _spawnedGroups = [_zone, GROUP_TYPE_INF, adm_camp_fnc_onDemandCanSpawnGroups, adm_camp_fnc_onDemandSpawnInfGroups] call adm_camp_fnc_trySpawnGroups;
-            _zoneInfGroups append _spawnedGroups;
-            INFO_2("Admiral Camp: On-demand Camp Zone %1 spawned %2 infantry group(s).",GET_ZONE_ID(_zone),count _spawnedGroups);
+            private _spawnedInfGroups = [];
+            _spawnedInfGroups = [_zone, GROUP_TYPE_INF, adm_camp_fnc_onDemandCanSpawnGroups, adm_camp_fnc_onDemandSpawnInfGroups] call adm_camp_fnc_trySpawnGroups;
+            _zoneInfGroups append _spawnedInfGroups;
 
-            _spawnedGroups = [];
-            _spawnedGroups = [_zone, GROUP_TYPE_TECH, adm_camp_fnc_onDemandCanSpawnGroups, adm_camp_fnc_onDemandSpawnTechGroups] call adm_camp_fnc_trySpawnGroups;
-            _zoneTechGroups append _spawnedGroups;
-            INFO_2("Admiral Camp: On-demand Camp Zone %1 spawned %2 technical group(s).",GET_ZONE_ID(_zone),count _spawnedGroups);
+            private _spawnedTechGroups = [];
+            _spawnedTechGroups = [_zone, GROUP_TYPE_TECH, adm_camp_fnc_onDemandCanSpawnGroups, adm_camp_fnc_onDemandSpawnTechGroups] call adm_camp_fnc_trySpawnGroups;
+            _zoneTechGroups append _spawnedTechGroups;
 
-            _spawnedGroups = [];
-            _spawnedGroups = [_zone, GROUP_TYPE_ARMOUR, adm_camp_fnc_onDemandCanSpawnGroups, adm_camp_fnc_onDemandSpawnArmourGroups] call adm_camp_fnc_trySpawnGroups;
-            _zoneArmourGroups append _spawnedGroups;
-            INFO_2("Admiral Camp: On-demand Camp Zone %1 spawned %2 armour group(s).",GET_ZONE_ID(_zone),count _spawnedGroups);
+            private _spawnedArmourGroups = [];
+            _spawnedArmourGroups = [_zone, GROUP_TYPE_ARMOUR, adm_camp_fnc_onDemandCanSpawnGroups, adm_camp_fnc_onDemandSpawnArmourGroups] call adm_camp_fnc_trySpawnGroups;
+            _zoneArmourGroups append _spawnedArmourGroups;
+
+            INFO_4("Admiral Camp: On-demand Camp Zone %1 spawned %2 infantry group(s), spawned %3 technical group(s), spawned %4 armour group(s).",GET_ZONE_ID(_zone),count _spawnedInfGroups,count _spawnedTechGroups,count _spawnedArmourGroups);
 
             ["camp.spawned.groups", [_zoneInfGroups, _zoneTechGroups, _zoneArmourGroups, _zone]] call adm_event_fnc_emitEvent;
 
@@ -481,20 +479,19 @@ adm_camp_fnc_randomSpawn = {
             params ["_args", "_id"];
             _args params ["_zone","_zoneInfGroups","_zoneTechGroups","_zoneArmourGroups"];
 
-            private _spawnedGroups = [];
-            _spawnedGroups = [_zone, GROUP_TYPE_INF, adm_camp_fnc_randomCanSpawnGroups, adm_camp_fnc_randomSpawnInfGroups] call adm_camp_fnc_trySpawnGroups;
-            _zoneInfGroups append _spawnedGroups;
-            INFO_2("Admiral Camp: Random Camp Zone %1 spawned %2 infantry group(s).",GET_ZONE_ID(_zone),count _spawnedGroups);
+            private _spawnedInfGroups = [];
+            _spawnedInfGroups = [_zone, GROUP_TYPE_INF, adm_camp_fnc_randomCanSpawnGroups, adm_camp_fnc_randomSpawnInfGroups] call adm_camp_fnc_trySpawnGroups;
+            _zoneInfGroups append _spawnedInfGroups;
 
-            _spawnedGroups = [];
-            _spawnedGroups = [_zone, GROUP_TYPE_TECH, adm_camp_fnc_randomCanSpawnGroups, adm_camp_fnc_randomSpawnTechGroups] call adm_camp_fnc_trySpawnGroups;
-            _zoneTechGroups append _spawnedGroups;
-            INFO_2("Admiral Camp: Random Camp Zone %1 spawned %2 technical group(s).",GET_ZONE_ID(_zone),count _spawnedGroups);
+            private _spawnedTechGroups = [];
+            _spawnedTechGroups = [_zone, GROUP_TYPE_TECH, adm_camp_fnc_randomCanSpawnGroups, adm_camp_fnc_randomSpawnTechGroups] call adm_camp_fnc_trySpawnGroups;
+            _zoneTechGroups append _spawnedTechGroups;
 
-            _spawnedGroups = [];
-            _spawnedGroups = [_zone, GROUP_TYPE_ARMOUR, adm_camp_fnc_randomCanSpawnGroups, adm_camp_fnc_randomSpawnArmourGroups] call adm_camp_fnc_trySpawnGroups;
-            _zoneArmourGroups append _spawnedGroups;
-            INFO_2("Admiral Camp: Random Camp Zone %1 spawned %2 armour group(s).",GET_ZONE_ID(_zone),count _spawnedGroups);
+            private _spawnedArmourGroups = [];
+            _spawnedArmourGroups = [_zone, GROUP_TYPE_ARMOUR, adm_camp_fnc_randomCanSpawnGroups, adm_camp_fnc_randomSpawnArmourGroups] call adm_camp_fnc_trySpawnGroups;
+            _zoneArmourGroups append _spawnedArmourGroups;
+
+            INFO_4("Admiral Camp: Random Camp Zone %1 spawned %2 infantry group(s), spawned %3 technical group(s), spawned %4 armour group(s).",GET_ZONE_ID(_zone),count _spawnedInfGroups,count _spawnedTechGroups,count _spawnedArmourGroups);
 
             ["camp.spawned.groups", [_zoneInfGroups, _zoneTechGroups, _zoneArmourGroups, _zone]] call adm_event_fnc_emitEvent;
 
