@@ -147,6 +147,7 @@ adm_zone_initZoneFromModule = {
 adm_zone_initCqcZoneFromModule = {
     params ["_module", "", "_activated"];
 
+    LOG_2("admiral.zone.initCqcZoneFromModule: Module %1 activated %2.",_module,_activated);
     [_module, _activated, adm_zone_getCqcModuleConfigs] call adm_zone_initZoneFromModule;
 
     true;
@@ -155,6 +156,7 @@ adm_zone_initCqcZoneFromModule = {
 adm_zone_initPatrolZoneFromModule = {
     params ["_module", "", "_activated"];
 
+    LOG_2("admiral.zone.initPatrolZoneFromModule: Module %1 activated %2.",_module,_activated);
     [_module, _activated, adm_zone_getPatrolModuleConfigs] call adm_zone_initZoneFromModule;
 
     true;
@@ -163,6 +165,7 @@ adm_zone_initPatrolZoneFromModule = {
 adm_zone_initPeriodicCampZoneFromModule = {
     params ["_module", "", "_activated"];
 
+    LOG_2("admiral.zone.initPeriodicCampZoneFromModule: Module %1 activated %2.",_module,_activated);
     [_module, _activated, adm_zone_getPeriodicCampModuleConfigs] call adm_zone_initZoneFromModule;
 
     true;
@@ -171,6 +174,7 @@ adm_zone_initPeriodicCampZoneFromModule = {
 adm_zone_initOndemandCampZoneFromModule = {
     params ["_module", "", "_activated"];
 
+    LOG_2("admiral.zone.initOndemandCampZoneFromModule: Module %1 activated %2.",_module,_activated);
     [_module, _activated, adm_zone_getOndemandCampModuleConfigs] call adm_zone_initZoneFromModule;
 
     true;
@@ -179,6 +183,7 @@ adm_zone_initOndemandCampZoneFromModule = {
 adm_zone_initRandomCampZoneFromModule = {
     params ["_module", "", "_activated"];
 
+    LOG_2("admiral.zone.initRandomCampZoneFromModule: Module %1 activated %2.",_module,_activated);
     [_module, _activated, adm_zone_getRandomCampModuleConfigs] call adm_zone_initZoneFromModule;
 
     true;
