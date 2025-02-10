@@ -16,7 +16,7 @@ adm_common_fnc_placeMan = {
     };
     private _unit = _group createUnit [_className, _position, [], 0, _posSpecial];
     if (isNull _unit) exitWith {
-        ERROR_MSG_4("admiral.common.create: Failed to create unit %1 at position %2, in group %3 with classname %4 and classNameArguments %5!",_unit,_position,_group,_className,_classNameArguments);
+        ERROR_MSG_5("admiral.common.create: Failed to create unit %1 at position %2, in group %3 with classname %4 and classNameArguments %5!",_unit,_position,_group,_className,_classNameArguments);
 
         _unit;
     };
