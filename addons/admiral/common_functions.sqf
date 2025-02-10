@@ -16,7 +16,7 @@ adm_common_fnc_placeMan = {
     };
     private _unit = _group createUnit [_className, _position, [], 0, _posSpecial];
     if (isNull _unit) exitWith {
-        ERROR_MSG_1("admiral.common.create: Failed to create unit %1 at position %2, in group %3 with classname %4 and classNameArguments %5!",_unit,_position,_group,_className,_classNameArguments);
+        ERROR_MSG_5("admiral.common.create: Failed to create unit %1 at position %2, in group %3 with classname %4 and classNameArguments %5!",_unit,_position,_group,_className,_classNameArguments);
 
         _unit;
     };
@@ -45,7 +45,7 @@ adm_common_fnc_placeVehicle = {
     private _vehiclePosition = [_area, _position, _className] call adm_common_fnc_getRandomEmptyPositionInArea;
     private _vehicle = createVehicle [_className, _vehiclePosition, [], 0, "NONE"];
     if (isNull _vehicle) exitWith {
-        ERROR_MSG_1("admiral.common.create: Failed to create vehicle %1 at position %2, with classname %3 and classNameArguments %4!",_vehicle,_position,_className,_classNameArguments);
+        ERROR_MSG_5("admiral.common.create: Failed to create vehicle %1 at position %2, with classname %3 and classNameArguments %4!",_vehicle,_position,_className,_classNameArguments);
 
         _vehicle;
     };
