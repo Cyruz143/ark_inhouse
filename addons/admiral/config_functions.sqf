@@ -33,19 +33,19 @@ adm_config_fnc_getBothArray = {
 };
 
 adm_config_fnc_getArray = {
-    getArray (_this call adm_config_fnc_getConfig);
+    getArray (call adm_config_fnc_getConfig);
 };
 
 adm_config_fnc_getText = {
-    getText (_this call adm_config_fnc_getConfig);
+    getText (call adm_config_fnc_getConfig);
 };
 
 adm_config_fnc_getNumber = {
-    getNumber (_this call adm_config_fnc_getConfig);
+    getNumber (call adm_config_fnc_getConfig);
 };
 
 adm_config_fnc_getBool = {
-    getNumber (_this call adm_config_fnc_getConfig) == 1;
+    getNumber (call adm_config_fnc_getConfig) == 1;
 };
 
 adm_common_fnc_getEventFileResult = {
@@ -80,17 +80,17 @@ adm_config_fnc_getCustomConfig = {
 };
 
 adm_config_fnc_getCustomArray = {
-    getArray (_this call adm_config_fnc_getCustomConfig);
+    getArray (call adm_config_fnc_getCustomConfig);
 };
 
 adm_config_fnc_getCustomText = {
-    getText (_this call adm_config_fnc_getCustomConfig);
+    getText (call adm_config_fnc_getCustomConfig);
 };
 
 adm_config_fnc_getCustomNumber = {
-    getNumber (_this call adm_config_fnc_getCustomConfig);
+    getNumber (call adm_config_fnc_getCustomConfig);
 };
 
 adm_config_fnc_getCustomBool = {
-    getNumber (_this call adm_config_fnc_getCustomConfig) == 1;
+    getNumber (call adm_config_fnc_getCustomConfig) == 1;
 };

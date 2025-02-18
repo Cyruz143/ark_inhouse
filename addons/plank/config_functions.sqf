@@ -33,19 +33,19 @@ plank_config_fnc_getBothArray = {
 };
 
 plank_config_fnc_getArray = {
-    getArray (_this call plank_config_fnc_getConfig);
+    getArray (call plank_config_fnc_getConfig);
 };
 
 plank_config_fnc_getText = {
-    getText (_this call plank_config_fnc_getConfig);
+    getText (call plank_config_fnc_getConfig);
 };
 
 plank_config_fnc_getNumber = {
-    getNumber (_this call plank_config_fnc_getConfig);
+    getNumber (call plank_config_fnc_getConfig);
 };
 
 plank_config_fnc_getBool = {
-    getNumber (_this call plank_config_fnc_getConfig) == 1;
+    getNumber (call plank_config_fnc_getConfig) == 1;
 };
 
 plank_common_fnc_getEventFileResult = {
@@ -80,19 +80,19 @@ plank_config_fnc_getCustomConfig = {
 };
 
 plank_config_fnc_getCustomArray = {
-    getArray (_this call plank_config_fnc_getCustomConfig);
+    getArray (call plank_config_fnc_getCustomConfig);
 };
 
 plank_config_fnc_getCustomText = {
-    getText (_this call plank_config_fnc_getCustomConfig);
+    getText (call plank_config_fnc_getCustomConfig);
 };
 
 plank_config_fnc_getCustomNumber = {
-    getNumber (_this call plank_config_fnc_getCustomConfig);
+    getNumber (call plank_config_fnc_getCustomConfig);
 };
 
 plank_config_fnc_getCustomBool = {
-    getNumber (_this call plank_config_fnc_getCustomConfig) == 1;
+    getNumber (call plank_config_fnc_getCustomConfig) == 1;
 };
 
 plank_config_fnc_getInitEntries = {

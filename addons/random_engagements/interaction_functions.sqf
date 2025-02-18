@@ -73,7 +73,7 @@ re_interaction_fnc_addInteractions = {
             [ _x select 0
             , format ["%1 (%2m)", _x select 0, _x select 1]
             , "\x\ark\addons\ark_main\resources\ark_star.paa"
-            , { [0, { _this call re_fnc_changeLocationSize; }, [_this select 2 select 0]] call CBA_fnc_globalExecute; }
+            , { [0, { call re_fnc_changeLocationSize; }, [_this select 2 select 0]] call CBA_fnc_globalExecute; }
             , _condition
             , {}
             , [_x select 1]
@@ -85,7 +85,7 @@ re_interaction_fnc_addInteractions = {
 re_interaction_fnc_selectLocation = {
     [["\x\ark\addons\ark_main\resources\click.paa", 2.0], ["Click on map to select attack location"]] call CBA_fnc_notify;
     ["re_mapClick", "onMapSingleClick", {
-        [0, { _this call re_fnc_moveLocationMarker }, [_pos]] call CBA_fnc_globalExecute;
+        [0, { call re_fnc_moveLocationMarker }, [_pos]] call CBA_fnc_globalExecute;
         ["re_mapClick", "onMapSingleClick"] call BIS_fnc_removeStackedEventHandler;
     }] call BIS_fnc_addStackedEventHandler;
 };

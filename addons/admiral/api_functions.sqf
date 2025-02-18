@@ -50,7 +50,7 @@ adm_api_fnc_isHc = {
  * @param _configEntries Array of config entries
  */
 adm_api_fnc_initZone = {
-    _this call adm_zone_fnc_tryInitZone;
+    call adm_zone_fnc_tryInitZone;
 };
 
 /**

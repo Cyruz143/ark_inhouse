@@ -33,19 +33,19 @@ hull3_config_fnc_getBothArray = {
 };
 
 hull3_config_fnc_getArray = {
-    getArray (_this call hull3_config_fnc_getConfig);
+    getArray (call hull3_config_fnc_getConfig);
 };
 
 hull3_config_fnc_getText = {
-    getText (_this call hull3_config_fnc_getConfig);
+    getText (call hull3_config_fnc_getConfig);
 };
 
 hull3_config_fnc_getNumber = {
-    getNumber (_this call hull3_config_fnc_getConfig);
+    getNumber (call hull3_config_fnc_getConfig);
 };
 
 hull3_config_fnc_getBool = {
-    getNumber (_this call hull3_config_fnc_getConfig) == 1;
+    getNumber (call hull3_config_fnc_getConfig) == 1;
 };
 
 hull3_common_fnc_getEventFileResult = {
@@ -80,19 +80,19 @@ hull3_config_fnc_getCustomConfig = {
 };
 
 hull3_config_fnc_getCustomArray = {
-    getArray (_this call hull3_config_fnc_getCustomConfig);
+    getArray (call hull3_config_fnc_getCustomConfig);
 };
 
 hull3_config_fnc_getCustomText = {
-    getText (_this call hull3_config_fnc_getCustomConfig);
+    getText (call hull3_config_fnc_getCustomConfig);
 };
 
 hull3_config_fnc_getCustomNumber = {
-    getNumber (_this call hull3_config_fnc_getCustomConfig);
+    getNumber (call hull3_config_fnc_getCustomConfig);
 };
 
 hull3_config_fnc_getCustomBool = {
-    getNumber (_this call hull3_config_fnc_getCustomConfig) == 1;
+    getNumber (call hull3_config_fnc_getCustomConfig) == 1;
 };
 
 hull3_config_fnc_getInitEntries = {

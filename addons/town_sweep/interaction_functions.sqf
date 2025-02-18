@@ -83,7 +83,7 @@ ts_interaction_fnc_addInteractions = {
             [ _x select 0
             , format ["%1 (%2m)", _x select 0, _x select 1]
             , ""
-            , { [0, { _this call ts_spawn_fnc_changeLocationSize; }, [_this select 2 select 0]] call CBA_fnc_globalExecute; }
+            , { [0, { call ts_spawn_fnc_changeLocationSize; }, [_this select 2 select 0]] call CBA_fnc_globalExecute; }
             , _condition
             , {}
             , [_x select 1]

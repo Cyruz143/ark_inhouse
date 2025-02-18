@@ -55,9 +55,9 @@ hull3_unit_fnc_addEHs = {
 
     if (_unit isKindOf "CAManBase") then {
         private "_ehId";
-        _ehId = _unit addEventHandler ["HandleDamage", {_this call hull3_unit_fnc_friendlyFireEH;}];
+        _ehId = _unit addEventHandler ["HandleDamage", {call hull3_unit_fnc_friendlyFireEH;}];
         _unit setVariable ["hull3_eh_friendlyFire", _ehId];
-        _ehId = _unit addEventHandler ["Killed", {_this call hull3_unit_fnc_killedEH;}];
+        _ehId = _unit addEventHandler ["Killed", {call hull3_unit_fnc_killedEH;}];
         _unit setVariable ["hull3_eh_killed", _ehId];
     };
 };

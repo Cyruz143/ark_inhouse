@@ -61,7 +61,7 @@ hull3_gear_fnc_assignUnit = {
     [_unit, _gearTemplate, _gearClass] call hull3_gear_fnc_assignUnitTemplate;
 
     // Wait to make sure client has time syncd back from server for light value
-    [{time > 10}, {_this call hull3_gear_fnc_tryRemoveNightGear}, [_unit]] call CBA_fnc_waitUntilAndExecute;
+    [{time > 10}, {call hull3_gear_fnc_tryRemoveNightGear}, [_unit]] call CBA_fnc_waitUntilAndExecute;
 };
 
 hull3_gear_fnc_assignVehicle = {
