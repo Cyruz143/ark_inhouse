@@ -388,6 +388,9 @@ force force acre_sys_core_ts3ChannelSwitch = false;
 force force acre_sys_core_unmuteClients = true;
 force force acre_sys_signal_signalModel = 0;
 
+// ACRE2 UI
+force force acre_sys_list_LanguageHintPersist = false;
+
 // ARK Inhouse
 force ark_ai_voices_enabled = true;
 
