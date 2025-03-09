@@ -1020,7 +1020,7 @@ class Faction {
         description = "Snow CSAT Uniforms and Katiba";
         languages[] = {{"east", 100}};
         side = "east";
-        camouflage[] = {"snow"};
+        camouflage[] = {};
         rolePrefix = "CSAT";
         vehicleClassnames[] = {
             {"CO", "CUP_O_UAZ_Unarmed_CSAT"},
@@ -4218,7 +4218,7 @@ class Faction {
         description = "IDF with M16A2 and M4";
         languages[] = {{"west", 100}};
         side = "west";
-        camouflage[] = {"woodland", "desert"};
+        camouflage[] = {};
         rolePrefix = "IDF";
         vehicleClassnames[] = {
             {"CO", "CUP_B_HMMWV_Transport_NATO_T"},
@@ -4244,7 +4244,7 @@ class Faction {
         description = "IDF with Tavors";
         languages[] = {{"west", 100}};
         side = "west";
-        camouflage[] = {"woodland", "desert"};
+        camouflage[] = {};
         rolePrefix = "IDF";
         vehicleClassnames[] = {
             {"CO", "CUP_B_HMMWV_Transport_NATO_T"},
