@@ -35,9 +35,8 @@ hull3_mission_fnc_clientInit = {
 hull3_mission_fnc_evaluateParams = {
     if (!isNil {paramsArray}) then {
         {
-            private ["_name", "_code"];
-            _name = configName ((missionConfigFile >> "Params") select _forEachIndex);
-            _code = getText (missionConfigFile >> "Params" >> _name >> "code");
+            private _name = configName ((missionConfigFile >> "Params") select _forEachIndex);
+            private _code = getText (missionConfigFile >> "Params" >> _name >> "code");
             call compile format [_code, _x];
         } forEach paramsArray;
         LOG_1("hull3.mission.params: ParamsArray %1 have been evaluated.",paramsArray);
@@ -225,7 +224,7 @@ hull3_mission_fnc_clientSafetyTimerLoop = {
 hull3_mission_fnc_handleSafetyTimeChange = {
     params ["_isCountDown","_timeValue"];
 
-    LOG_1("hull3.mission.safetytimer: Safety timer has been changed. Received value %1.",AS_ARRAY_2(_isCountDown,_timeValue));
+    LOG_2("hull3.mission.safetytimer: Safety timer has been changed. Received value %1-%2.",_isCountDown,_timeValue);
     private _message = "Game is not live. Waiting for host to start it. (%1 minutes)";
     if (_isCountDown) then {
         call {
@@ -298,9 +297,9 @@ hull3_mission_fnc_sendJipSync = {
     params ["_client"];
 
     hull3_mission_jipPacket = [hull3_mission_safetyTimer];
-    PUSH(hull3_mission_jipPacket,hull3_mission_safetyTimerAbort);
+    hull3_mission_jipPacket pushBack hull3_mission_safetyTimerAbort;
     private _customArguments = ["mission_jip_sending", [_client]] call hull3_common_fnc_getEventFileResult;
-    PUSH(hull3_mission_jipPacket,_customArguments);
+    hull3_mission_jipPacket pushBack _customArguments;
     LOG_2("hull3.mission.jip: Sending JIP sync for client %1 with packet %2.",_client,hull3_mission_jipPacket);
     (owner _client) publicVariableClient "hull3_mission_jipPacket";
 };
