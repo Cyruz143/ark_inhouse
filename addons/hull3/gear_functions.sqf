@@ -1,32 +1,8 @@
 #include "script_component.hpp"
 
-#define INFIX_FUNC(FUNC)                        {(_this select 0) FUNC (_this select 1)}
-#define ASSIGN_UNIFORM_ITEM_FUNC                INFIX_FUNC(addItemToUniform)
-#define ASSIGN_VEST_ITEM_FUNC                   INFIX_FUNC(addItemToVest)
-#define ASSIGN_BACKPACK_ITEM_FUNC               INFIX_FUNC(addItemToBackpack)
-#define ASSIGN_PRIMARY_WEAPON_FUNC              INFIX_FUNC(addWeapon)
-#define ASSIGN_PRIMARY_WEAPON_ITEM_FUNC         INFIX_FUNC(addPrimaryWeaponItem)
-#define ASSIGN_SECONDARY_WEAPON_FUNC            INFIX_FUNC(addWeapon)
-#define ASSIGN_SECONDARY_WEAPON_ITEM_FUNC       INFIX_FUNC(addSecondaryWeaponItem)
-#define ASSIGN_HANDGUN_WEAPON_FUNC              INFIX_FUNC(addWeapon)
-#define ASSIGN_HANDGUN_ITEM_FUNC                INFIX_FUNC(addHandgunItem)
-#define ASSIGN_LINK_ITEM_FUNC                   INFIX_FUNC(linkItem)
-#define CAN_ASSIGN_UNIFORM_ITEM_FUNC            INFIX_FUNC(canAddItemToUniform)
-#define CAN_ASSIGN_VEST_ITEM_FUNC               INFIX_FUNC(canAddItemToVest)
-#define CAN_ASSIGN_BACKPACK_ITEM_FUNC           INFIX_FUNC(canAddItemToBackpack)
-#define CAN_ASSIGN_PRIMARY_WEAPON_FUNC          {primaryWeapon (_this select 0) == ""}
-#define CAN_ASSIGN_PRIMARY_WEAPON_ITEM_FUNC     {!((_this select 1) in primaryWeaponItems (_this select 0))}
-#define CAN_ASSIGN_SECONDARY_WEAPON_FUNC        {secondaryWeapon (_this select 0) == ""}
-#define CAN_ASSIGN_SECONDARY_WEAPON_ITEM_FUNC   {!((_this select 1) in secondaryWeaponItems (_this select 0))}
-#define CAN_ASSIGN_HANDGUN_WEAPON_FUNC          {handgunWeapon (_this select 0) == ""}
-#define CAN_ASSIGN_HANDGUN_ITEM_FUNC            {!((_this select 1) in handgunItems (_this select 0))}
-#define CAN_LINK_ITEM_FUNC                      {true}
-
-
-
 hull3_gear_fnc_preInit = {
-    hull3_gear_unitBaseClass = [TYPE_CLASS_GEAR, "unitBaseClass"] call hull3_config_fnc_getText;
-    hull3_gear_vehicleBaseClass = [TYPE_CLASS_GEAR, "vehicleBaseClass"] call hull3_config_fnc_getText;
+    hull3_gear_unitBaseClass = ["Gear", "unitBaseClass"] call hull3_config_fnc_getText;
+    hull3_gear_vehicleBaseClass = ["Gear", "vehicleBaseClass"] call hull3_config_fnc_getText;
     [] call hull3_gear_fnc_addEventHandlers;
     LOG("hull3.gear: Gear functions preInit finished.");
 };
@@ -117,7 +93,7 @@ hull3_gear_fnc_assignVehicleCrates = {
 hull3_gear_fnc_validateFaction = {
     params ["_unit", "_factionEntry"];
 
-    if (count _factionEntry > 0 && {!isClass ([FACTION_CONFIG, _factionEntry select 0] call hull3_config_fnc_getConfig)}) then {
+    if (count _factionEntry > 0 && {!isClass (["Faction", _factionEntry select 0] call hull3_config_fnc_getConfig)}) then {
         ERROR_MSG_2("hull3.gear.assign: No faction found with name %1 for unit %2!",_factionEntry select 0,_unit);
     };
 };
@@ -125,8 +101,8 @@ hull3_gear_fnc_validateFaction = {
 hull3_gear_fnc_getFaction = {
     params ["_unit", "_factionEntry"];
 
-    private _faction = DEFAULT_FACTION_NAME;
-    if (count _factionEntry > 0 && {isClass ([FACTION_CONFIG, _factionEntry select 0] call hull3_config_fnc_getConfig)}) then {
+    private _faction = "Default";
+    if (count _factionEntry > 0 && {isClass (["Faction", _factionEntry select 0] call hull3_config_fnc_getConfig)}) then {
         _faction = _factionEntry select 0;
     };
 
@@ -138,7 +114,7 @@ hull3_gear_fnc_getClass = {
 
     private _gearClass = hull3_gear_unitBaseClass;
     if (count _gearEntry > 0) then {
-        if (isClass ([TYPE_CLASS_GEAR, _gearTemplate, _gearEntry select 0] call hull3_config_fnc_getConfig)) then {
+        if (isClass (["Gear", _gearTemplate, _gearEntry select 0] call hull3_config_fnc_getConfig)) then {
             _gearClass = _gearEntry select 0;
         } else {
             ERROR_MSG_3("hull3.gear.assign: No gear class found with name %1 in gear template %2 for unit %3!",_gearEntry select 1,_gearTemplate,_unit);
@@ -151,16 +127,16 @@ hull3_gear_fnc_getClass = {
 hull3_gear_fnc_getTemplate = {
     params ["_unit", "_factionEntry", "_gearEntry"];
 
-    private _gearTemplate = DEFAULT_TEMPLATE_NAME;
+    private _gearTemplate = "Default";
     if (count _gearEntry > 1) then {
-        if (isClass ([TYPE_CLASS_GEAR, _gearEntry select 1] call hull3_config_fnc_getConfig)) then {
+        if (isClass (["Gear", _gearEntry select 1] call hull3_config_fnc_getConfig)) then {
             _gearTemplate = _gearEntry select 1;
         } else {
             ERROR_MSG_2("hull3.gear.assign: No gear template found with name %1 for unit %2!",_gearEntry select 1,_unit);
         };
     } else {
         private _faction = if (count _factionEntry > 0) then { _factionEntry select 0 } else { faction _unit };
-        _gearTemplate = [FACTION_CONFIG, _faction, TYPE_FIELD_GEAR] call hull3_config_fnc_getText;
+        _gearTemplate = ["Faction", _faction, "gear"] call hull3_config_fnc_getText;
     };
 
     _gearTemplate;
@@ -170,33 +146,180 @@ hull3_gear_fnc_assignUnitTemplate = {
     params ["_unit", "_template", "_class"];
 
     private _assignables = [
-        ["primaryWeapon",           CONFIG_TYPE_TEXT,       "primary weapon",           ASSIGN_PRIMARY_WEAPON_FUNC,         CAN_ASSIGN_PRIMARY_WEAPON_FUNC,         hull3_gear_fnc_assignSingleItem],
-        ["primaryWeaponItems",      CONFIG_TYPE_ARRAY,      "primary weapon items",     ASSIGN_PRIMARY_WEAPON_ITEM_FUNC,    CAN_ASSIGN_PRIMARY_WEAPON_ITEM_FUNC,    hull3_gear_fnc_assignSingleItemArray],
-        ["secondaryWeapon",         CONFIG_TYPE_TEXT,       "secondary weapon",         ASSIGN_SECONDARY_WEAPON_FUNC,       CAN_ASSIGN_SECONDARY_WEAPON_FUNC,       hull3_gear_fnc_assignSingleItem],
-        ["secondaryWeaponItems",    CONFIG_TYPE_ARRAY,      "secondary weapon items",   ASSIGN_SECONDARY_WEAPON_ITEM_FUNC,  CAN_ASSIGN_SECONDARY_WEAPON_ITEM_FUNC,  hull3_gear_fnc_assignSingleItemArray],
-        ["handgunWeapon",           CONFIG_TYPE_TEXT,       "handgun weapon",           ASSIGN_HANDGUN_WEAPON_FUNC,         CAN_ASSIGN_HANDGUN_WEAPON_FUNC,         hull3_gear_fnc_assignSingleItem],
-        ["handgunItems",            CONFIG_TYPE_ARRAY,      "handgun items",            ASSIGN_HANDGUN_ITEM_FUNC,           CAN_ASSIGN_HANDGUN_ITEM_FUNC,           hull3_gear_fnc_assignSingleItemArray],
-        ["uniformMagazines",        CONFIG_TYPE_ARRAY,      "uniform",                  ASSIGN_UNIFORM_ITEM_FUNC,           CAN_ASSIGN_UNIFORM_ITEM_FUNC,           hull3_gear_fnc_assignMultiItemArray],
-        ["vestMagazines",           CONFIG_TYPE_ARRAY,      "vest",                     ASSIGN_VEST_ITEM_FUNC,              CAN_ASSIGN_VEST_ITEM_FUNC,              hull3_gear_fnc_assignMultiItemArray],
-        ["backpackMagazines",       CONFIG_TYPE_ARRAY,      "backpack",                 ASSIGN_BACKPACK_ITEM_FUNC,          CAN_ASSIGN_BACKPACK_ITEM_FUNC,          hull3_gear_fnc_assignMultiItemArray],
-        ["uniformWeapons",          CONFIG_TYPE_ARRAY,      "uniform",                  ASSIGN_UNIFORM_ITEM_FUNC,           CAN_ASSIGN_UNIFORM_ITEM_FUNC,           hull3_gear_fnc_assignSingleItemArray],
-        ["vestWeapons",             CONFIG_TYPE_ARRAY,      "vest",                     ASSIGN_VEST_ITEM_FUNC,              CAN_ASSIGN_VEST_ITEM_FUNC,              hull3_gear_fnc_assignSingleItemArray],
-        ["backpackWeapons",         CONFIG_TYPE_ARRAY,      "backpack",                 ASSIGN_BACKPACK_ITEM_FUNC,          CAN_ASSIGN_BACKPACK_ITEM_FUNC,          hull3_gear_fnc_assignSingleItemArray],
-        ["basicAssignItems",        CONFIG_TYPE_ARRAY,      "items",                    ASSIGN_LINK_ITEM_FUNC,              CAN_LINK_ITEM_FUNC,                     hull3_gear_fnc_assignSingleItemArray],
-        ["assignItems",             CONFIG_TYPE_ARRAY,      "items",                    ASSIGN_LINK_ITEM_FUNC,              CAN_LINK_ITEM_FUNC,                     hull3_gear_fnc_assignSingleItemArray],
-        ["binocular",               CONFIG_TYPE_TEXT,       "binocular",                ASSIGN_PRIMARY_WEAPON_FUNC,         CAN_LINK_ITEM_FUNC,                     hull3_gear_fnc_assignSingleItem],
-        ["uniformItems",            CONFIG_TYPE_ARRAY,      "uniform",                  ASSIGN_UNIFORM_ITEM_FUNC,           CAN_ASSIGN_UNIFORM_ITEM_FUNC,           hull3_gear_fnc_assignMultiItemArray],
-        ["vestItems",               CONFIG_TYPE_ARRAY,      "vest",                     ASSIGN_VEST_ITEM_FUNC,              CAN_ASSIGN_VEST_ITEM_FUNC,              hull3_gear_fnc_assignMultiItemArray],
-        ["backpackItems",           CONFIG_TYPE_ARRAY,      "backpack",                 ASSIGN_BACKPACK_ITEM_FUNC,          CAN_ASSIGN_BACKPACK_ITEM_FUNC,          hull3_gear_fnc_assignMultiItemArray],
-        ["uniformMedicalItems",     CONFIG_TYPE_ARRAY,      "uniform",                  ASSIGN_UNIFORM_ITEM_FUNC,           CAN_ASSIGN_UNIFORM_ITEM_FUNC,           hull3_gear_fnc_assignMultiItemArray],
-        ["vestMedicalItems",        CONFIG_TYPE_ARRAY,      "vest",                     ASSIGN_VEST_ITEM_FUNC,              CAN_ASSIGN_VEST_ITEM_FUNC,              hull3_gear_fnc_assignMultiItemArray],
-        ["backpackMedicalItems",    CONFIG_TYPE_ARRAY,      "backpack",                 ASSIGN_BACKPACK_ITEM_FUNC,          CAN_ASSIGN_BACKPACK_ITEM_FUNC,          hull3_gear_fnc_assignMultiItemArray]
+        [
+            "primaryWeapon",
+            2,
+            "primary weapon",
+            {_unit addWeapon _template},
+            {primaryWeapon _unit == ""},
+            hull3_gear_fnc_assignSingleItem
+        ],
+        [
+            "primaryWeaponItems",
+            3,
+            "primary weapon items",
+            {_unit addPrimaryWeaponItem _template},
+            {!(_template in primaryWeaponItems _unit)},
+            hull3_gear_fnc_assignSingleItemArray
+        ],
+        [
+            "secondaryWeapon",
+            2,
+            "secondary weapon",
+            {_unit addWeapon _template},
+            {secondaryWeapon _unit == ""},
+            hull3_gear_fnc_assignSingleItem
+        ],
+        [
+            "secondaryWeaponItems",
+            3,
+            "secondary weapon items",
+            {_unit addSecondaryWeaponItem _template},
+            {!(_template in secondaryWeaponItems _unit)},
+            hull3_gear_fnc_assignSingleItemArray
+        ],
+        [
+            "handgunWeapon",
+            2,
+            "handgun weapon",
+            {_unit addWeapon _template},
+            {handgunWeapon _unit == ""},
+            hull3_gear_fnc_assignSingleItem
+        ],
+        [
+            "handgunItems",
+            3,
+            "handgun items",
+            {_unit addHandgunItem _template},
+            {!(_template in handgunItems _unit)},
+            hull3_gear_fnc_assignSingleItemArray
+        ],
+        [
+            "uniformMagazines",
+            3,
+            "uniform",
+            {_unit addItemToUniform _template},
+            {_unit canAddItemToUniform _template},
+            hull3_gear_fnc_assignMultiItemArray
+        ],
+        [
+            "vestMagazines",
+            3,
+            "vest",
+            {_unit addItemToVest _template},
+            {_unit canAddItemToVest _template},
+            hull3_gear_fnc_assignMultiItemArray
+        ],
+        [
+            "backpackMagazines",
+            3,
+            "backpack",
+            {_unit addItemToBackpack _template},
+            {_unit canAddItemToBackpack _template},
+            hull3_gear_fnc_assignMultiItemArray
+        ],
+        [
+            "uniformWeapons",
+            3,
+            "uniform",
+            {_unit addItemToUniform _template},
+            {_unit canAddItemToUniform _template},
+            hull3_gear_fnc_assignSingleItemArray
+        ],
+        [
+            "vestWeapons",
+            3,
+            "vest",
+            {_unit addItemToVest _template},
+            {_unit canAddItemToVest _template},
+            hull3_gear_fnc_assignSingleItemArray
+        ],
+        [
+            "backpackWeapons",
+            3,
+            "backpack",
+            {_unit addItemToBackpack _template},
+            {_unit canAddItemToBackpack _template},
+            hull3_gear_fnc_assignSingleItemArray
+        ],
+        [
+            "basicAssignItems",
+            3,
+            "items",
+            {_unit linkItem _template},
+            {true},
+            hull3_gear_fnc_assignSingleItemArray
+        ],
+        [
+            "assignItems",
+            3,
+            "items",
+            {_unit linkItem _template},
+            {true},
+            hull3_gear_fnc_assignSingleItemArray
+        ],
+        [
+            "binocular",
+            2,
+            "binocular",
+            {_unit addWeapon _template},
+            {true},
+            hull3_gear_fnc_assignSingleItem
+        ],
+        [
+            "uniformItems",
+            3,
+            "uniform",
+            {_unit addItemToUniform _template},
+            {_unit canAddItemToUniform _template},
+            hull3_gear_fnc_assignMultiItemArray
+        ],
+        [
+            "vestItems",
+            3,
+            "vest",
+            {_unit addItemToVest _template},
+            {_unit canAddItemToVest _template},
+            hull3_gear_fnc_assignMultiItemArray
+        ],
+        [
+            "backpackItems",
+            3,
+            "backpack",
+            {_unit addItemToBackpack _template},
+            {_unit canAddItemToBackpack _template},
+            hull3_gear_fnc_assignMultiItemArray
+        ],
+        [
+            "uniformMedicalItems",
+            3,
+            "uniform",
+            {_unit addItemToUniform _template},
+            {_unit canAddItemToUniform _template},
+            hull3_gear_fnc_assignMultiItemArray
+        ],
+        [
+            "vestMedicalItems",
+            3,
+            "vest",
+            {_unit addItemToVest _template},
+            {_unit canAddItemToVest _template},
+            hull3_gear_fnc_assignMultiItemArray
+        ],
+        [
+            "backpackMedicalItems",
+            3,
+            "backpack",
+            {_unit addItemToBackpack _template},
+            {_unit canAddItemToBackpack _template},
+            hull3_gear_fnc_assignMultiItemArray
+        ]
     ];
     {
-        private _configValue = [TYPE_CLASS_GEAR, _template, _class, _x select 0] call (CONFIG_TYPE_FUNCTIONS select (_x select 1));
+        private _configValue = ["Gear", _template, _class, _x select 0] call (CONFIG_TYPE_FUNCTIONS select (_x select 1));
         [_x select 0, _unit, _configValue, _x select 2, _x select 3, _x select 4, _template, _class] call (_x select 5);
     } forEach _assignables;
-    [_unit, _class, _template] call compile ([TYPE_CLASS_GEAR, _template, _class, "code"] call hull3_config_fnc_getText);
+    [_unit, _class, _template] call compile (["Gear", _template, _class, "code"] call hull3_config_fnc_getText);
     _unit selectWeapon primaryWeapon _unit;
     LOG_3("hull3.gear.assign: Assigned gear class %1 from template %2 to unit %3.",_class,_template,_unit);
 };
@@ -205,17 +328,17 @@ hull3_gear_fnc_assignVehicleTemplate = {
     params ["_vehicle", "_template", "_class"];
 
     private _assignables = [
-        ["magazines",       CONFIG_TYPE_ARRAY,      hull3_gear_fnc_assignVehicleMagazines],
-        ["weapons",         CONFIG_TYPE_ARRAY,      hull3_gear_fnc_assignVehicleWeapons],
-        ["items",           CONFIG_TYPE_ARRAY,      hull3_gear_fnc_assignVehicleItems],
-        ["radios",          CONFIG_TYPE_ARRAY,      hull3_gear_fnc_assignVehicleItems],
-        ["medicalItems",    CONFIG_TYPE_ARRAY,      hull3_gear_fnc_assignVehicleItems]
+        ["magazines",       3,      hull3_gear_fnc_assignVehicleMagazines],
+        ["weapons",         3,      hull3_gear_fnc_assignVehicleWeapons],
+        ["items",           3,      hull3_gear_fnc_assignVehicleItems],
+        ["radios",          3,      hull3_gear_fnc_assignVehicleItems],
+        ["medicalItems",    3,      hull3_gear_fnc_assignVehicleItems]
     ];
     {
-        private _configValue = [TYPE_CLASS_GEAR, _template, _class, _x select 0] call (CONFIG_TYPE_FUNCTIONS select (_x select 1));
+        private _configValue = ["Gear", _template, _class, _x select 0] call (CONFIG_TYPE_FUNCTIONS select (_x select 1));
         [_vehicle, _configValue] call (_x select 2);
     } forEach _assignables;
-    [_vehicle, _class, _template] call compile ([TYPE_CLASS_GEAR, _template, _class, "code"] call hull3_config_fnc_getText);
+    [_vehicle, _class, _template] call compile (["Gear", _template, _class, "code"] call hull3_config_fnc_getText);
     LOG_3("hull3.gear.assign: Assigned gear class %1 from template %2 to vehicle %3.",_class,_template,_vehicle);
 };
 
@@ -289,19 +412,40 @@ hull3_gear_fnc_assignVehicleItems = {
 
 hull3_gear_fnc_tryAssignRadios = {
     params ["_unit"];
-
+    LOG_1("hull3.tryAssignRadios: Wtf is _this %1",_this);
     if (_unit getVariable ["hull3_gear_radiosAssigned", false]) exitWith {};
 
-    private _gearTemplate = _unit getVariable ["hull3_gear_template", DEFAULT_TEMPLATE_NAME];
+    private _gearTemplate = _unit getVariable ["hull3_gear_template", "Default"];
     private _gearClass = _unit getVariable ["hull3_gear_class", hull3_gear_unitBaseClass];
     [_unit] call hull3_gear_fnc_removeRadios;
     private _assignables = [
-        ["uniformRadios",           CONFIG_TYPE_ARRAY,      "uniform",                  ASSIGN_UNIFORM_ITEM_FUNC,           CAN_ASSIGN_UNIFORM_ITEM_FUNC,           hull3_gear_fnc_assignSingleItemArray],
-        ["vestRadios",              CONFIG_TYPE_ARRAY,      "vest",                     ASSIGN_VEST_ITEM_FUNC,              CAN_ASSIGN_VEST_ITEM_FUNC,              hull3_gear_fnc_assignSingleItemArray],
-        ["backpackRadios",          CONFIG_TYPE_ARRAY,      "backpack",                 ASSIGN_BACKPACK_ITEM_FUNC,          CAN_ASSIGN_BACKPACK_ITEM_FUNC,          hull3_gear_fnc_assignSingleItemArray]
+        [
+            "uniformRadios",
+            3,
+            "uniform",
+            {_unit addItemToUniform _this select 1},
+            {_unit canAddItemToUniform _this select 1},
+            hull3_gear_fnc_assignSingleItemArray
+        ],
+        [
+            "vestRadios",
+            3,
+            "vest",
+            {_unit addItemToVest _this select 1},
+            {_unit canAddItemToVest _this select 1},
+            hull3_gear_fnc_assignSingleItemArray
+        ],
+        [
+            "backpackRadios",
+            3,
+            "backpack",
+            {_unit addItemToBackpack _this select 1},
+            {_unit canAddItemToBackpack _this select 1},
+            hull3_gear_fnc_assignSingleItemArray
+        ]
     ];
     {
-        private _configValue = [TYPE_CLASS_GEAR, _gearTemplate, _gearClass, _x select 0] call (CONFIG_TYPE_FUNCTIONS select (_x select 1));
+        private _configValue = ["Gear", _gearTemplate, _gearClass, _x select 0] call (CONFIG_TYPE_FUNCTIONS select (_x select 1));
         // ADD ACRE2 preset stuff here?
         [_x select 0, _unit, _configValue, _x select 2, _x select 3, _x select 4, _gearTemplate, _gearClass] call (_x select 5);
     } forEach _assignables;

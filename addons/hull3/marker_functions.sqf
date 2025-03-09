@@ -37,8 +37,7 @@ hull3_marker_fnc_disableFireTeamMarkers = {
 
 hull3_marker_fnc_initMarker = {
     params ["_unit", "_markerText", "_markerColor"];
-
-    PUSH(hull3_marker_rawGroupMarkers,AS_ARRAY_4(_unit,_unit getVariable "hull3_gear_class",_markerText,_markerColor));
+    hull3_marker_rawGroupMarkers pushBack [_unit, _unit getVariable ["hull3_gear_class", hull3_gear_unitBaseClass], _markerText, _markerColor];
 };
 
 hull3_marker_fnc_addMarkers = {
@@ -54,8 +53,8 @@ hull3_marker_fnc_addGroupAndUnitMarkers = {
         };
     } forEach hull3_marker_rawGroupMarkers;
     if (hull3_marker_isGroupEnabled) then {
-        PUSH(hull3_marker_updatableMarkers,AS_ARRAY_2(hull3_marker_groups,hull3_marker_fnc_updateGroupMarkers));
-        PUSH(hull3_marker_updatableMarkers,AS_ARRAY_2(hull3_marker_units,hull3_marker_fnc_updateUnitMarkers));
+        hull3_marker_updatableMarkers pushBack [hull3_marker_groups, hull3_marker_fnc_updateGroupMarkers];
+        hull3_marker_updatableMarkers pushBack [hull3_marker_units, hull3_marker_fnc_updateUnitMarkers];
     };
     hull3_marker_rawGroupMarkers = nil;
 };
@@ -99,7 +98,7 @@ hull3_marker_fnc_addGroupMarker = {
         [_markerName, getPosATL _unit, "ICON", _markerType, _markerColor, _markerText] call hull3_marker_fnc_createMarker;
         (group _unit) setVariable ["hull3_marker_group", _markerName, false];
     };
-    PUSH(hull3_marker_groups,group _unit);
+    hull3_marker_groups pushBack group _unit;
 };
 
 hull3_marker_fnc_addUnitMarker = {
@@ -110,7 +109,7 @@ hull3_marker_fnc_addUnitMarker = {
         [_markerName, getPosATL _unit, "ICON", _markerType, _markerColor, _markerText, _markerSize] call hull3_marker_fnc_createMarker;
         _unit setVariable ["hull3_marker_unit", _markerName, false];
     };
-    PUSH(hull3_marker_units,_unit);
+    hull3_marker_units pushBack _unit;
 };
 
 hull3_marker_fnc_updateAllMarkers = {
@@ -188,7 +187,7 @@ hull3_marker_fnc_addFireTeamMarkers = {
     {
         [_x] call hull3_marker_fnc_addFireTeamMarker;
     } forEach (units group _unit);
-    PUSH(hull3_marker_updatableMarkers,AS_ARRAY_2(hull3_marker_fireTeam,hull3_marker_fnc_updateFireTeamMarkers));
+    hull3_marker_updatableMarkers pushBack [hull3_marker_fireTeam, hull3_marker_fnc_updateFireTeamMarkers];
 };
 
 hull3_marker_fnc_addFireTeamMarker = {
@@ -207,7 +206,7 @@ hull3_marker_fnc_addFireTeamMarker = {
         ["Marker", "FireTeamMemberMarker", "alpha"] call hull3_config_fnc_getNumber
     ] call hull3_marker_fnc_createMarker;
     _unit setVariable ["hull3_marker_fireTeam", _markerName];
-    PUSH(hull3_marker_fireTeam,_unit);
+    hull3_marker_fireTeam pushBack _unit;
 };
 
 hull3_marker_fnc_removeFireTeamMarker = {
@@ -256,7 +255,7 @@ hull3_marker_fnc_addCustomSideMarker = {
     if (side player == _side) then {
         private _arguments = [_object];
         for "_i" from 2 to (count _this) - 1 do {
-            PUSH(_arguments,_this select _i);
+            _arguments pushBack (_this select _i);
         };
         _arguments call hull3_marker_fnc_addCustomMarker;
     };
@@ -265,17 +264,17 @@ hull3_marker_fnc_addCustomSideMarker = {
 hull3_marker_fnc_addCustomMarker = {
     params ["_object"];
 
-    private ["_delay", "_shape", "_type", "_color", "_size", "_text", "_markerIndex", "_markerName"];
+    private ["_delay", "_shape", "_type", "_color", "_size", "_text"];
     if (count _this < 7) then {_text = ["Marker", "DefaultCustomMarker", "text"] call hull3_config_fnc_getText}      else {_text  = _this select 6};
     if (count _this < 6) then {_size = ["Marker", "DefaultCustomMarker", "size"] call hull3_config_fnc_getArray}     else {_size  = _this select 5};
     if (count _this < 5) then {_color = ["Marker", "DefaultCustomMarker", "color"] call hull3_config_fnc_getText}    else {_color = _this select 4};
     if (count _this < 4) then {_type = ["Marker", "DefaultCustomMarker", "type"] call hull3_config_fnc_getText}      else {_type  = _this select 3};
     if (count _this < 3) then {_shape = ["Marker", "DefaultCustomMarker", "shape"] call hull3_config_fnc_getText}    else {_shape = _this select 2};
     if (count _this < 2) then {_delay = hull3_marker_defaultDelay}                                                   else {_delay = _this select 1};
-    _markerIndex = count hull3_marker_custom;
-    _markerName = format ["hull3_marker_custom_%1", _markerIndex];
+    private _markerIndex = count hull3_marker_custom;
+    private _markerName = format ["hull3_marker_custom_%1", _markerIndex];
     [_markerName, getPosATL _object, _shape, _type, _color, _text, _size] call hull3_marker_fnc_createMarker;
-    PUSH(hull3_marker_custom,AS_ARRAY_5(_markerName,true,time,_object,_delay));
+    hull3_marker_custom pushBack [_markerName, true, time, _object, _delay];
 
     _markerIndex;
 };

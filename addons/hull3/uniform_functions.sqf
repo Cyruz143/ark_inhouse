@@ -1,7 +1,7 @@
 #include "script_component.hpp"
 
 hull3_uniform_fnc_preInit = {
-    hull3_uniform_unitBaseClass = [TYPE_CLASS_UNIFORM, "unitBaseClass"] call hull3_config_fnc_getText;
+    hull3_uniform_unitBaseClass = ["Uniform", "unitBaseClass"] call hull3_config_fnc_getText;
     LOG("hull3.uniform: Uniform functions preInit finished.");
 };
 
@@ -16,16 +16,16 @@ hull3_uniform_fnc_assignUniformInit = {
 hull3_uniform_fnc_getTemplate = {
     params ["_unit", "_factionEntry", "_uniformEntry"];
 
-    private _uniformTemplate = DEFAULT_TEMPLATE_NAME;
+    private _uniformTemplate = "Default";
     if (count _uniformEntry > 0) then {
-        if (isClass ([TYPE_CLASS_UNIFORM, _uniformEntry select 0] call hull3_config_fnc_getConfig)) then {
+        if (isClass (["Uniform", _uniformEntry select 0] call hull3_config_fnc_getConfig)) then {
             _uniformTemplate = _uniformEntry select 0;
         } else {
             ERROR_MSG_2("hull3.uniform.assign: No uniform template found with name %1 for unit %2!",_uniformEntry select 1,_unit);
         };
     } else {
-        private _faction = if (count _factionEntry > 0) then { _factionEntry select 0 } else { faction _unit };
-        _uniformTemplate = [FACTION_CONFIG, _faction, TYPE_FIELD_UNIFORM] call hull3_config_fnc_getText;
+        private _faction = [faction _unit, _factionEntry select 0] select (count _factionEntry >0);
+        _uniformTemplate = ["Faction", _faction, "uniform"] call hull3_config_fnc_getText;
     };
 
     _uniformTemplate;
@@ -35,12 +35,36 @@ hull3_uniform_fnc_assignUniformTemplate = {
     params ["_unit", "_gearTemplate", "_uniformTemplate", "_gearClass"];
 
     private _assignables = [
-        ["headGear",                CONFIG_TYPE_TEXT,   hull3_uniform_fnc_assignHeadGear],
-        ["goggles",                 CONFIG_TYPE_TEXT,   hull3_uniform_fnc_assignGoggles],
-        ["uniform",                 CONFIG_TYPE_TEXT,   hull3_uniform_fnc_assignUniform],
-        ["vest",                    CONFIG_TYPE_TEXT,   hull3_uniform_fnc_assignVest],
-        ["backpack",                CONFIG_TYPE_TEXT,   hull3_uniform_fnc_assignBackpack],
-        ["insignia",                CONFIG_TYPE_TEXT,   hull3_uniform_fnc_assignInsignia]
+        [
+            "headGear",
+            2,
+            hull3_uniform_fnc_assignHeadGear
+        ],
+        [
+            "goggles",
+            2,
+            hull3_uniform_fnc_assignGoggles
+        ],
+        [
+            "uniform",
+            2,
+            hull3_uniform_fnc_assignUniform
+        ],
+        [
+            "vest",
+            2,
+            hull3_uniform_fnc_assignVest
+        ],
+        [
+            "backpack",
+            2,
+            hull3_uniform_fnc_assignBackpack
+            ],
+        [
+            "insignia",
+            2,
+            hull3_uniform_fnc_assignInsignia
+        ]
     ];
     [_unit, _gearTemplate, _uniformTemplate, _gearClass, _assignables] call hull3_uniform_fnc_assignObjectTemplate;
     LOG_3("hull3.uniform.assign: Assigned uniform class %1 from template %2 to unit %3.",_gearClass,_uniformTemplate,_unit);
@@ -60,9 +84,9 @@ hull3_uniform_fnc_getConfigValue = {
     params ["_gearTemplate", "_uniformTemplate", "_gearClass", "_field", "_configType"];
 
     private _configFunc = CONFIG_TYPE_FUNCTIONS select _configType;
-    private _configValue = [TYPE_CLASS_GEAR, _gearTemplate, _gearClass, _field] call _configFunc;
+    private _configValue = ["Gear", _gearTemplate, _gearClass, _field] call _configFunc;
     if (_configValue == "") then {
-        _configValue = [TYPE_CLASS_UNIFORM, _uniformTemplate, _gearClass, _field] call _configFunc;
+        _configValue = ["Uniform", _uniformTemplate, _gearClass, _field] call _configFunc;
     };
 
     _configValue;
@@ -118,7 +142,10 @@ hull3_uniform_fnc_assignInsignia = {
 
     if (_insignia != "") then {
         // Wait 1 frame as cmd uses setObjectTextureGlobal which needs to be in postInit to work
-        [{[_this #0, _this #1] call BIS_fnc_setUnitInsignia}, [_unit, _insignia]] call CBA_fnc_execNextFrame;
+        [{
+            params ["_unit", "_insignia"];
+            [_unit, _insignia] call BIS_fnc_setUnitInsignia;
+        }, [_unit, _insignia]] call CBA_fnc_execNextFrame;
         LOG_2("hull3.uniform.assign: Assigned insignia %1 to unit %2.",_insignia,_unit);
     };
 };

@@ -1,7 +1,5 @@
 #include "script_component.hpp"
 
-#define ACRE_SIDES [west, east, resistance, civilian]
-
 hull3_acre_fnc_preInit = {
     call hull3_acre_fnc_addEventHandlers;
     hull3_acre_isInitialized = false;
@@ -56,20 +54,23 @@ hull3_acre_fnc_addLanguages = {
 hull3_acre_fnc_setSpokenLanguages = {
     params ["_unit"];
 
-    private _factionLanguages = [FACTION_CONFIG, _unit getVariable ["hull3_faction", DEFAULT_FACTION_NAME], "languages"] call hull3_config_fnc_getBothArray;
+    private _factionLanguages = ["Faction", _unit getVariable ["hull3_faction", "Default"], "languages"] call hull3_config_fnc_getBothArray;
     private _unitLanguages = [_unit getVariable ["hull3_init_entries", []], "languages"] call hull3_config_fnc_getEntry;
     private _languages = [];
-    PUSH_ALL(_languages,_factionLanguages);
-    PUSH_ALL(_languages,_unitLanguages);
+    _languages append _factionLanguages;
+    _languages append _unitLanguages;
     private _spokenLanguages = [];
     {
         if ((floor random 100) + 1 <= _x select 1) then {
-            PUSH(_spokenLanguages,_x select 0);
+            _spokenLanguages pushBack _x select 0;
         };
     } forEach _languages;
 
     if (_spokenLanguages isEqualTo []) then {
         {_spokenLanguages pushBack (_x select 0)} forEach (["ACRE", "Babel", "languages"] call hull3_config_fnc_getArray);
+        {
+            _spokenLanguages pushBack (_x select 0)
+        } forEach (["ACRE", "Babel", "languages"] call hull3_config_fnc_getArray);
         WARNING_1("hull3.acre.babel: Undefined langauges in unit template! Assigning all available languages for %1.",_unit);
     };
 
@@ -86,15 +87,15 @@ hull3_acre_fnc_setupSidePresets = {
     {
         [_x] call hull3_acre_fnc_setupSideShortRangePreset;
         [_x] call hull3_acre_fnc_setupSideLongRangePreset;
-    } forEach ACRE_SIDES;
+    } forEach [west, east, resistance, civilian];
 };
 
 hull3_acre_fnc_setupUserPresets = {
     private _shortRangeRadios = ["ACRE", "ShortRange", "radios"] call hull3_config_fnc_getArray;
     private _longRangeRadios = ["ACRE", "LongRange", "radios"] call hull3_config_fnc_getArray;
     private _radios = [];
-    PUSH_ALL(_radios,_shortRangeRadios);
-    PUSH_ALL(_radios,_longRangeRadios);
+    _radios pushBack _shortRangeRadios;
+    _radios pushBack _longRangeRadios;
     private _presetName = toLower str side player;
     {
         [_x, _presetName] call acre_api_fnc_setPreset;
@@ -141,7 +142,7 @@ hull3_acre_fnc_setRadioPresetFrequencies = {
         [_radio, _presetName, _channelIndex, "frequencyRX", _frequency] call acre_api_fnc_setPresetChannelField;
         LOG_4("hull3.acre.radio.preset: Set 'frequencyRX' field to %1 of channel %2 in preset %3 of radio %4.",_frequency,_channelIndex,_presetName,_radio);
         private _newFieldFuncArgs = +_fieldFuncArgs;
-        PUSH(_newFieldFuncArgs,_i);
+        _newFieldFuncArgs pushBack _i;
         _newFieldFuncArgs call _fieldFunc;
     };
 };

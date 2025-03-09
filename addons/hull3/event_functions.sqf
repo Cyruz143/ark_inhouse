@@ -19,7 +19,7 @@ FNC_ADD_EVENT_HANDLER = {
     if (_eventIndex != -1) then {
         private _handlerArray = EVENTS_ARRAY select _eventIndex select 2;
         _handlerId = count _handlerArray;
-        PUSH(_handlerArray,_code);
+        _handlerArray pushBack _code;
     };
 
     _handlerId;
@@ -39,7 +39,7 @@ FNC_ADD_EVENT = {
     params ["_eventName","_eventConfigName"];
 
     if ([_eventName] call FNC_FIND_EVENT == -1) then {
-        PUSH(EVENTS_ARRAY,AS_ARRAY_3(_eventName,_eventConfigName,[]));
+        EVENTS_ARRAY pushBack [_eventName, _eventConfigName, []];
     };
 };
 

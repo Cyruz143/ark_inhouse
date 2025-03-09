@@ -48,7 +48,7 @@ class CfgVehicles {
     class Hull3_DisableGroupMarkers_Module : Module_F {
         scope = 2;
         displayName = "Disable Group Markers";
-        icon = ADDON_PATH(resources\hull3_module.paa);
+        icon = QPATHTOF(resources\hull3_module.paa);
         category = "Hull3";
         function = "hull3_marker_fnc_disableGroupMarkers";
         functionPriority = 1;
@@ -67,7 +67,7 @@ class CfgVehicles {
     class Hull3_DisableFireTeamMarkers_Module : Module_F {
         scope = 2;
         displayName = "Disable Fire Team Member Markers";
-        icon = ADDON_PATH(resources\hull3_module.paa);
+        icon = QPATHTOF(resources\hull3_module.paa);
         category = "Hull3";
         function = "hull3_marker_fnc_disableFireTeamMarkers";
         functionPriority = 1;
@@ -104,7 +104,7 @@ class CfgMarkers {
     class Flag;
     class Hull3_UnitMarker : Flag {
         name = "Unit Icon";
-        icon = ADDON_PATH(resources\hull3_unit_marker.paa);
+        icon = QPATHTOF(resources\hull3_unit_marker.paa);
         color[] = {1, 0, 0, 1};
         shadow = 0;
         scope = 1;

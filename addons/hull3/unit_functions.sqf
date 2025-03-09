@@ -3,18 +3,16 @@
 hull3_unit_fnc_init = {
     params ["_unit"];
 
-    private ["_initEntries", "_markerEntry"];
-    _initEntries = [_this] call hull3_config_fnc_getInitEntries;
+    private _initEntries = [_this] call hull3_config_fnc_getInitEntries;
     if (local _unit) then {
-        private ["_factionEntry", "_gearEntry", "_uniformEntry"];
         _unit setVariable ["hull3_init_entries", _initEntries, true];
-        _factionEntry = [_initEntries, "faction"] call hull3_config_fnc_getEntry;
-        _gearEntry = [_initEntries, "gear"] call hull3_config_fnc_getEntry;
-        _uniformEntry = [_initEntries, "uniform"] call hull3_config_fnc_getEntry;
+        private _factionEntry = [_initEntries, "faction"] call hull3_config_fnc_getEntry;
+        private _gearEntry = [_initEntries, "gear"] call hull3_config_fnc_getEntry;
+        private _uniformEntry = [_initEntries, "uniform"] call hull3_config_fnc_getEntry;
         [_unit, _factionEntry, _gearEntry, _uniformEntry] call hull3_gear_fnc_assign;
         [_unit] call hull3_unit_fnc_addEHs;
     };
-    _markerEntry = [_initEntries, "marker"] call hull3_config_fnc_getEntry;
+    private _markerEntry = [_initEntries, "marker"] call hull3_config_fnc_getEntry;
     if (count _markerEntry > 0) then {
         [_unit, _markerEntry select 0, _markerEntry select 1] call hull3_marker_fnc_initMarker;
     };
