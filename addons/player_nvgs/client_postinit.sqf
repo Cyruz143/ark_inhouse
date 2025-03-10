@@ -34,6 +34,10 @@ ark_player_nvgs_fnc_enableOverlay = {
         openMap false;
         [["\A3\ui_f\data\map\MapControl\taskicondone_ca.paa", 2.0], ["Colour blind overlay enabled"]] call CBA_fnc_notify;
     };
+
+    if (currentVisionMode player == 1) then {
+        ark_player_nvgs_ppHandle ppEffectEnable true;
+    };
 };
 
 ark_player_nvgs_fnc_disableOverlay = {
