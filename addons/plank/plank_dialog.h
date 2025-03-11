@@ -250,7 +250,7 @@ class PlankSettingsDialog {
         x = QUOTE(SLIDER_VALUE_X);
         w = QUOTE(VALUE_BASE_W);
         h = QUOTE(VALUE_BASE_H);
-        text = "-10.00001";
+        text = "";
     };
     class ResetButtonBase : RscButton {
         w = QUOTE(SLIDER_BASE_H);

@@ -6,9 +6,9 @@
 
 #define ALLOW_INF \
     allowAgainstInfantry = 1; \
-    aiAmmoUsageFlags = "64 + 128 + 256 + 512";
+    aiAmmoUsageFlags = 960;
 
 #define ALLOW_INF_COST \
     allowAgainstInfantry = 1; \
-    aiAmmoUsageFlags = "64 + 128 + 256 + 512"; \
+    aiAmmoUsageFlags = 960; \
     cost = 100;
