@@ -36,10 +36,10 @@ hull3_settings_fnc_setNonStandardGeneralSettings = {
 hull3_settings_fnc_setModuleVariables = {
     if (isNil {hull3_marker_isGroupEnabled}) then {
         hull3_marker_isGroupEnabled = ["Marker", "isGroupEnabled"] call hull3_config_fnc_getBool;
-        LOG_1("hull3.settings.marker: Group marker module was not found. Setting Group Marker enabled from config to %1.",AS_ARRAY_2("Marker","isGroupEnabled") call hull3_config_fnc_getBool);
+        LOG_1("hull3.settings.marker: Group marker module was not found. Setting Group Marker enabled from config to %1.",hull3_marker_isGroupEnabled);
     };
     if (isNil {hull3_marker_isFireTeamEnabled}) then {
         hull3_marker_isFireTeamEnabled = ["Marker", "isFireTeamEnabled"] call hull3_config_fnc_getBool;
-        LOG_1("hull3.settings.marker: Fire Team Member marker module was not found. Setting Fire Team Member marker enabled from config to %1.",AS_ARRAY_2("Marker","isFireTeamEnabled") call hull3_config_fnc_getBool);
+        LOG_1("hull3.settings.marker: Fire Team Member marker module was not found. Setting Fire Team Member marker enabled from config to %1.",hull3_marker_isFireTeamEnabled);
     };
 };

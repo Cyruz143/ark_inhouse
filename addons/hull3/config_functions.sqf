@@ -1,12 +1,12 @@
 #include "script_component.hpp"
 
 hull3_config_fnc_getConfig = {
-    private _config = HULL3_MISSION_CONFIG_FILE;
+    private _config = missionConfigFile >> "Hull3";
     {
         _config = _config >> _x;
     } forEach _this;
     if (configName _config == "") then {
-        _config = HULL3_CONFIG_FILE;
+        _config = configFile >> "Hull3";
         {
             _config = _config >> _x;
         } forEach _this;
@@ -16,18 +16,17 @@ hull3_config_fnc_getConfig = {
 };
 
 hull3_config_fnc_getBothArray = {
-    private ["_config", "_values"];
-    _config = HULL3_MISSION_CONFIG_FILE;
+    private _config = missionConfigFile >> "Hull3";
     {
         _config = _config >> _x;
     } forEach _this;
-    _values = getArray _config;
+    private _values = getArray _config;
 
-    _config = HULL3_CONFIG_FILE;
+    _config = configFile >> "Hull3";
     {
         _config = _config >> _x;
     } forEach _this;
-    PUSH_ALL(_values,getArray _config);
+    _values append (getArray _config);
 
     _values;
 };
@@ -51,9 +50,8 @@ hull3_config_fnc_getBool = {
 hull3_common_fnc_getEventFileResult = {
     params ["_fileName","_arguments"];
 
-    private ["_file", "_result"];
-    _file = ["Events", _fileName] call hull3_config_fnc_getText;
-    _result = [];
+    private _file = ["Events", _fileName] call hull3_config_fnc_getText;
+    private _result = [];
     if (_file != "") then {
         _result = _arguments call compileScript [_file];
     };
@@ -98,12 +96,12 @@ hull3_config_fnc_getCustomBool = {
 hull3_config_fnc_getInitEntries = {
     params ["_initArray"];
 
-    private _initEntires = [];
+    private _initEntries = [];
     for "_i" from 1 to (count _initArray) - 1 do {
-        PUSH(_initEntires,_initArray select _i);
+        _initEntries pushBack (_initArray select _i);
     };
 
-    _initEntires;
+    _initEntries;
 };
 
 hull3_config_fnc_getEntryWithName = {
@@ -124,7 +122,7 @@ hull3_config_fnc_getEntry = {
     private _entry = [];
     if (count _entryWithName > 1) then {
         for "_i" from 1 to (count _entryWithName) - 1 do {
-            PUSH(_entry,_entryWithName select _i);
+            _entry pushBack (_entryWithName select _i);
         };
     };
 
