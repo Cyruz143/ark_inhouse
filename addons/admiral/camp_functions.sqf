@@ -67,7 +67,7 @@ adm_camp_fnc_tryAddPaths = {
 
     {
         private _pathPositions = GET_PATH_POSITIONS(_x);
-        private _pathEndTrigger = [_pathPositions select (count _pathPositions - 1)] call adm_camp_fnc_getLogicEndTrigger;
+        private _pathEndTrigger = [_pathPositions select -1] call adm_camp_fnc_getLogicEndTrigger;
         SET_PATH_END_TRIGGER(_x,_pathEndTrigger);
         if ([_pathPositions select 0, GET_ZONE_AREA(_zone), GET_ZONE_POSITION(_zone)] call adm_common_fnc_isPositionInArea) then {
             private _zonePaths = GET_CAMP_PATHS(_zone);
