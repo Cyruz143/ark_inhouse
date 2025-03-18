@@ -99,6 +99,7 @@ force ace_interaction_remoteTeamManagement = true;
 // ACE Kill Tracker
 force force ace_killtracker_showCrewKills = true;
 force force ace_killtracker_trackAI = true;
+force force ace_killtracker_showMedicalWounds = 2;
 
 // ACE Logistics
 force force ace_cargo_carryAfterUnload = true;
