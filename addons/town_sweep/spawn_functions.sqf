@@ -298,53 +298,59 @@ ts_spawn_fnc_objDestroyVeh = {
 
     private _nearRoad = selectRandom (_position nearRoads 100);
 
-    private ["_vehicle"];
     if (isNil "_nearRoad") then {
         private _pos = [_position, 0, 100, 5, 0, 20, 0] call BIS_fnc_findSafePos;
         // BIS_fnc_findSafePos returns X and Y with success and  X Y Z on failure... fucking BI
         if (count _pos isEqualTo 3) exitWith {};
-        _vehicle = createVehicle [(selectRandom _armourArray), _pos, [], 0, "NONE"];
-        _vehicle setDir (random 360);
-        _vehicle setVectorUp surfaceNormal position _vehicle;
+        ts_objVeh = createVehicle [(selectRandom _armourArray), _pos, [], 0, "NONE"];
+        ts_objVeh setDir (random 360);
+        ts_objVeh setVectorUp surfaceNormal position ts_objVeh;
     } else {
-        _vehicle = createVehicle [(selectRandom _armourArray), (getPos _nearRoad), [], 0, "NONE"];
+        ts_objVeh = createVehicle [(selectRandom _armourArray), (getPos _nearRoad), [], 0, "NONE"];
         private _dir = random 360;
         private _roadConnectedTo = roadsConnectedTo _nearRoad;
         if (_roadConnectedTo isNotEqualTo []) then {
             _dir = _nearRoad getDir _roadConnectedTo #0;
         };
-        _vehicle setDir _dir;
-        _vehicle setVectorUp surfaceNormal position _vehicle;
+        ts_objVeh setDir _dir;
+        ts_objVeh setVectorUp surfaceNormal position ts_objVeh;
     };
 
-    if (!(_vehicle inArea ts_spawn_selectedLocationMarkerName)) exitWith {
-        deleteVehicle _vehicle;
+    if (!(ts_objVeh inArea ts_spawn_selectedLocationMarkerName)) exitWith {
+        deleteVehicle ts_objVeh;
         ERROR_MSG("fnc_objDestroyVeh, Cannot find position for armour in selected town");
     };
 
     {
-        if (_vehicle lockedTurret _x) exitWith {
-            INFO_1("fnc_objDestroyVeh, Locked turret in vehicle (%1), skipping crewman spawn.",typeOf _vehicle);
+        if (ts_objVeh lockedTurret _x) exitWith {
+            INFO_1("fnc_objDestroyVeh, Locked turret in vehicle (%1), skipping crewman spawn.",typeOf ts_objVeh);
         };
 
         private _unit = [[0,0,0], _grp, _crewmanClassnames, _skillArray] call adm_common_fnc_placeMan;
-        _unit assignAsTurret [_vehicle, _x];
-        _unit moveInTurret [_vehicle, _x];
-    } forEach allTurrets _vehicle;
+        _unit assignAsTurret [ts_objVeh, _x];
+        _unit moveInTurret [ts_objVeh, _x];
+    } forEach allTurrets ts_objVeh;
 
-    _vehicle allowCrewInImmobile true;
-    _vehicle setUnloadInCombat [false, false];
-    _vehicle setFuel 0;
-    _vehicle call ark_clear_cargo_fnc_doClearVehicle;
+    ts_objVeh allowCrewInImmobile true;
+    ts_objVeh setUnloadInCombat [false, false];
+    ts_objVeh setFuel 0;
+    ts_objVeh call ark_clear_cargo_fnc_doClearVehicle;
 
     [true, ["task1"], ["Locate and destroy the static armour in town", "Destroy Armour"], _position, "ASSIGNED", -1, true, "target"] call BIS_fnc_taskCreate;
-    [_vehicle,_size] call ts_spawn_fnc_createChaseZone;
+    [ts_objVeh,_size] call ts_spawn_fnc_createChaseZone;
 
-    _vehicle addEventHandler ["Killed", {
-        params ["_unit"];
-        ["task1","SUCCEEDED"] call BIS_fnc_taskSetState;
-        [getPosATL _unit,ts_spawn_selectedLocation #1] call ark_admin_tools_fnc_chaseAI;
-    }];
+    [(typeOf ts_objVeh), "ace_cookoff_cookOff", {call ts_spawn_fnc_vehicleDestroyed}] call CBA_fnc_addClassEventHandler;
+    ts_objVeh addEventHandler ["Killed", {call ts_spawn_fnc_vehicleDestroyed}];
+};
+
+ts_spawn_fnc_vehicleDestroyed = {
+    params ["_vehicle"];
+
+    if (_vehicle isEqualTo ts_objVeh && {!_vehicle getVariable ["ark_ts_vehDestroyed", false]}) then {
+        _vehicle setVariable ["ark_ts_vehDestroyed", true, false];
+        ["task1", "SUCCEEDED"] call BIS_fnc_taskSetState;
+        [getPosATL _vehicle,ts_spawn_selectedLocation #1] call ark_admin_tools_fnc_chaseAI;
+    };
 };
 
 ts_spawn_fnc_objDestroyAmmo = {
