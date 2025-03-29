@@ -338,9 +338,12 @@ ts_spawn_fnc_objDestroyVeh = {
 
     [true, ["task1"], ["Locate and destroy the static armour in town", "Destroy Armour"], _position, "ASSIGNED", -1, true, "target"] call BIS_fnc_taskCreate;
     [ts_objVeh,_size] call ts_spawn_fnc_createChaseZone;
-
-    [(typeOf ts_objVeh), "ace_cookoff_cookOff", {call ts_spawn_fnc_vehicleDestroyed}] call CBA_fnc_addClassEventHandler;
     ts_objVeh addEventHandler ["Killed", {call ts_spawn_fnc_vehicleDestroyed}];
+
+    ["ace_cookoff_cookoff", {
+        params ["_vehicle"];
+            _vehicle call ts_spawn_fnc_vehicleDestroyed;
+    }] call CBA_fnc_addEventHandler;
 };
 
 ts_spawn_fnc_vehicleDestroyed = {
