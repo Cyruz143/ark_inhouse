@@ -150,10 +150,11 @@ adm_common_fnc_assignNVG = {
 adm_common_fnc_removeHandgun = {
     params ["_unit"];
 
-    private _handgun = handgunWeapon _unit;
+    // GM uses handgun slot for primary weapons on some factions
+    private _isGM = (typeOf _unit) select [0,2] == "GM";
 
-    if (adm_removeHandguns) then {
-        if (_handgun isNotEqualTo "") then {
+    if (adm_removeHandguns && { !_isGM }) then {
+        if (handgunWeapon _unit isNotEqualTo "") then {
             _unit removeWeapon _handgun;
         };
     };
