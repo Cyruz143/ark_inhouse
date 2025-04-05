@@ -61,6 +61,7 @@ adm_behavior_fnc_stateSeekAndDestroyEnemy = {
         _x setDestination [_enemyPos, "LEADER PLANNED", true];
         _x doMove _enemyPos;
     } forEach units _group;
+    _group setCombatMode "RED";
     LOG_1("admiral.behavior: SAD waypoint was assigned to group %1.",_group);
 };
 
