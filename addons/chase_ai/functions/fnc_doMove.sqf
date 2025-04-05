@@ -46,14 +46,12 @@ ark_chase_ai_fnc_doMove = {
             if (ark_chase_ai_var_allowBS && { insideBuilding _target == 1 } ) then {
                 _targetPos = [_target] call ark_chase_ai_fnc_nearestBuildingPos;
                 if (_targetPos isEqualTo "outside" || { _notMoving }) then {
-                    _unit setBehaviour "CARELESS";
                     _unit doSuppressiveFire _target;
                     _targetPos = [_target] call ark_chase_ai_fnc_findSafePos;
                 };
             };
 
             _unit setDestination [_targetPos, "LEADER PLANNED", true];
-            _unit setBehaviour "AWARE";
             _unit doMove _targetPos;
             _unit lookAt _target;
             _unit setVariable ["ark_chase_ai_lastPos", (getPosASL _unit)];
