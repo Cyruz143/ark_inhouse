@@ -19,6 +19,7 @@ ark_admin_tools_fnc_chaseAI = {
         private _unit = _x;
         private _grp = group _unit;
         [_grp] call CBA_fnc_clearWaypoints;
+        _grp setCombatBehaviour "RED";
 
         if !(_unit checkAIFeature "PATH") then {
             if !(simulationEnabled _unit) then {

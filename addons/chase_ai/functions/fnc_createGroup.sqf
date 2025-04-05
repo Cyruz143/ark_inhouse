@@ -3,5 +3,6 @@ ark_chase_ai_fnc_createGroup = {
         ark_chase_ai_grp = createGroup ark_chase_ai_var_side;
         ark_chase_ai_grp deleteGroupWhenEmpty true;
         ark_chase_ai_grp enableAttack false;
+        ark_chase_ai_grp setCombatMode "RED";
     };
 };
