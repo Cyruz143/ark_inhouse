@@ -349,7 +349,7 @@ ts_spawn_fnc_objDestroyVeh = {
 ts_spawn_fnc_vehicleDestroyed = {
     params ["_vehicle"];
 
-    if (_vehicle isEqualTo ts_objVeh && {!_vehicle getVariable ["ark_ts_vehDestroyed", false]}) then {
+    if (_vehicle isEqualTo ts_objVeh && { !(_vehicle getVariable ["ark_ts_vehDestroyed", false]) }) then {
         _vehicle setVariable ["ark_ts_vehDestroyed", true, false];
         ["task1", "SUCCEEDED"] call BIS_fnc_taskSetState;
         [getPosATL _vehicle,ts_spawn_selectedLocation #1] call ark_admin_tools_fnc_chaseAI;
