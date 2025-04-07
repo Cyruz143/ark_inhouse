@@ -154,7 +154,8 @@ adm_common_fnc_removeHandgun = {
     private _isGM = (typeOf _unit) select [0,2] == "GM";
 
     if (adm_removeHandguns && { !_isGM }) then {
-        if (handgunWeapon _unit isNotEqualTo "") then {
+        private _handgun = handgunWeapon _unit;
+        if (_handgun isNotEqualTo "") then {
             _unit removeWeapon _handgun;
         };
     };
