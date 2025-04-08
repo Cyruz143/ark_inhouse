@@ -15,7 +15,7 @@
 
 params ["_volume"];
 
-if (ark_volume_notification) then {
+if (GVAR(notification)) then {
     private _str = format ["Volume set to %1%2", round (_volume * 100),"%"];
     [["\a3\ui_f\data\igui\cfg\simpletasks\types\listen_ca.paa", 2.0], [_str], true] call CBA_fnc_notify;
 };
