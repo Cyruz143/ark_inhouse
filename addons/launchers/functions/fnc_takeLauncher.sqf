@@ -58,7 +58,6 @@ if (secondaryWeapon _player isNotEqualTo "") exitWith {
         private _targetName = [_target] call ace_common_fnc_getName;
         ["ace_common_displayTextStructured", [["%1 took your %2 off your back", _playerName, _displayName], 1.5, _target], _target] call CBA_fnc_targetEvent;
         ["ace_common_displayTextStructured", [["You took %1's %2", _targetName, _displayName], 1.5, _player], _player] call CBA_fnc_targetEvent;
-        [_player, _target, 0] call ace_interaction_fnc_tapShoulder;
     },
     {},
     "Taking Launcher"
