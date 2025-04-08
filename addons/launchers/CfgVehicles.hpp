@@ -9,6 +9,7 @@ class CfgVehicles {
                     statement = QUOTE([ARR_3(_player,_target,(secondaryWeapon _target))] call FUNC(takeLauncher));
                     exceptions[] = {"isNotSwimming"};
                     showDisabled = 0;
+                    icon = "\a3\structures_f_bootcamp\vr\helpers\data\vr_symbol_launchers_ca.paa";
                 };
             };
         };
