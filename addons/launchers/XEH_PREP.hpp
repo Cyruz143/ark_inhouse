@@ -1,0 +1,2 @@
+PREP(canTakeLauncher);
+PREP(takeLauncher);
