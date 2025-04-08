@@ -58,78 +58,78 @@ class CfgWeapons {
     // Less recoil for MMGS + better when prone + tighten MOA
     class Rifle_Long_Base_F;
     class CUP_lmg_MG3: Rifle_Long_Base_F {
-        MMG_RECOIL
-        MMG_RECOIL_PRONE
+        MMG_RECOIL;
+        MMG_RECOIL_PRONE;
         class manual: Mode_FullAuto {
-            MMG_DISPERSION_TIGHT
+            MMG_DISPERSION_TIGHT;
         };
     };
 
     class CUP_lmg_M240: Rifle_Long_Base_F {
-        MMG_RECOIL
-        MMG_RECOIL_PRONE
+        MMG_RECOIL;
+        MMG_RECOIL_PRONE;
         class manual: Mode_FullAuto {
-            MMG_DISPERSION
+            MMG_DISPERSION;
         };
     };
 
     class CUP_M60E4_base: Rifle_Long_Base_F {
-        MMG_RECOIL
-        MMG_RECOIL_PRONE
+        MMG_RECOIL;
+        MMG_RECOIL_PRONE;
     };
 
     class CUP_lmg_M60: CUP_M60E4_base {
-        MMG_RECOIL
-        MMG_RECOIL_PRONE
+        MMG_RECOIL;
+        MMG_RECOIL_PRONE;
     };
 
     class CUP_lmg_UK59: Rifle_Long_Base_F {
-        MMG_RECOIL
-        MMG_RECOIL_PRONE
+        MMG_RECOIL;
+        MMG_RECOIL_PRONE;
         class manual: Mode_FullAuto {
-            MMG_DISPERSION
+            MMG_DISPERSION;
         };
     };
 
     class CUP_lmg_Mk48_Base: Rifle_Long_Base_F {
-        MMG_RECOIL
-        MMG_RECOIL_PRONE
+        MMG_RECOIL;
+        MMG_RECOIL_PRONE;
         class manual: Mode_FullAuto {
-            MMG_DISPERSION
+            MMG_DISPERSION;
         };
     };
 
     class CUP_lmg_PKM: Rifle_Long_Base_F {
-        MMG_RECOIL
-        MMG_RECOIL_PRONE
+        MMG_RECOIL;
+        MMG_RECOIL_PRONE;
         class manual: Mode_FullAuto {
-            MMG_DISPERSION
+            MMG_DISPERSION;
         };
     };
 
     class gm_machineGun_base;
     class gm_mg3_base: gm_machineGun_base {
-        MMG_RECOIL
-        MMG_RECOIL_PRONE
+        MMG_RECOIL;
+        MMG_RECOIL_PRONE;
         class FullAuto: gm_FullAuto {
-            MMG_DISPERSION_TIGHT
+            MMG_DISPERSION_TIGHT;
         };
     };
 
     class gm_pk_base: gm_machineGun_base {
-        MMG_RECOIL
-        MMG_RECOIL_PRONE
+        MMG_RECOIL;
+        MMG_RECOIL_PRONE;
         class FullAuto: gm_FullAuto {
-            MMG_DISPERSION
+            MMG_DISPERSION;
         };
     };
 
     class gm_g3_base;
     class gm_g8_base: gm_g3_base {
-        MMG_RECOIL
-        MMG_RECOIL_PRONE
+        MMG_RECOIL;
+        MMG_RECOIL_PRONE;
         class FullAuto: FullAuto {
-            MMG_DISPERSION
+            MMG_DISPERSION;
         };
     };
 };

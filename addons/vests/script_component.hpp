@@ -8,7 +8,7 @@
     scope = 1; \
     scopeArsenal = 0; \
     scopeCurator = 0; \
-    class ItemInfo;
+    class ItemInfo
 
 #define ARMOUR \
     scope = 2; \
@@ -46,4 +46,4 @@
                 passThrough = 0.2; \
             }; \
         }; \
-    };
+    }
