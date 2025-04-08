@@ -14,14 +14,4 @@ class CfgPatches {
     };
 };
 
-class Extended_PreInit_EventHandlers {
-    class ADDON {
-        clientinit = "call compileScript ['x\ark\addons\ark_camshake\client_preinit.sqf'];";
-    };
-};
-
-class Extended_PostInit_EventHandlers {
-    class ADDON {
-        clientInit = "call compileScript ['x\ark\addons\ark_camshake\client_postinit.sqf'];";
-    };
-};
+#include "CfgEventHandlers.hpp"
