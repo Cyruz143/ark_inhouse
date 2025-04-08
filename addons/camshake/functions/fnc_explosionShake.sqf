@@ -10,7 +10,7 @@
  * None
  *
  * Example:
- * [_unit] call ark_camshake_explosionShake
+ * [_unit] call ark_camshake_fnc_explosionShake
  */
 
 params ["_unit"];
