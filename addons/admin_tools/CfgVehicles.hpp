@@ -30,7 +30,7 @@ class CfgVehicles {
                     displayName = "Count Spectators";
                     icon = "\z\ace\addons\spectator\data\Icon_Module_Spectator_ca.paa";
                     condition = "['ark_co', briefingName] call BIS_fnc_inString";
-                    statement = QUOTE(FUNC(countSpec));
+                    statement = QUOTE(call FUNC(countSpec));
                     exceptions[] = {"isNotSwimming", "isNotInside", "isNotSitting", "isNotOnLadder", "isNotRefueling"};
                 };
 
