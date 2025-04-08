@@ -14,7 +14,7 @@ class CfgVehicles {
                     displayName = "Teleport (To Leader)";
                     icon = "\a3\ui_f\data\igui\cfg\simpletasks\types\meet_ca.paa";
                     condition = "missionNameSpace getVariable ['ark_admin_tools_mapTP', false]";
-                    statement = "call ark_admin_tools_fnc_tpToLeader";
+                    statement = QUOTE(call FUNC(tpToLeader));
                     exceptions[] = {"isNotSwimming", "isNotInside", "isNotSitting", "isNotOnLadder", "isNotRefueling"};
                 };
 
@@ -22,15 +22,7 @@ class CfgVehicles {
                     displayName = "Teleport (Click Map)";
                     icon = "\a3\ui_f\data\igui\cfg\simpletasks\types\move_ca.paa";
                     condition = "missionNameSpace getVariable ['ark_admin_tools_mapTP', false]";
-                    statement = "player call ark_admin_tools_fnc_enableMapTeleport";
-                    exceptions[] = {"isNotSwimming", "isNotInside", "isNotSitting", "isNotOnLadder", "isNotRefueling"};
-                };
-
-                class Unflip_Vehicle {
-                    displayName = "Unflip Vehicle";
-                    icon = "\A3\ui_f\data\Map\VehicleIcons\pictureRepair_ca.paa";
-                    condition = "objectParent player call ark_admin_tools_fnc_canUnflip";
-                    statement = "call ark_admin_tools_fnc_unFlip";
+                    statement = QUOTE(player call FUNC(enableMapTeleport));
                     exceptions[] = {"isNotSwimming", "isNotInside", "isNotSitting", "isNotOnLadder", "isNotRefueling"};
                 };
 
@@ -38,7 +30,7 @@ class CfgVehicles {
                     displayName = "Count Spectators";
                     icon = "\z\ace\addons\spectator\data\Icon_Module_Spectator_ca.paa";
                     condition = "['ark_co', briefingName] call BIS_fnc_inString";
-                    statement = "call ark_admin_tools_fnc_countSpec";
+                    statement = QUOTE(FUNC(countSpec));
                     exceptions[] = {"isNotSwimming", "isNotInside", "isNotSitting", "isNotOnLadder", "isNotRefueling"};
                 };
 
@@ -69,7 +61,7 @@ class CfgVehicles {
                     class Enable_AI_Debug {
                         displayName = "Enable AI Debug";
                         condition = "!ark_aiDebugEnabled";
-                        statement = "true call ark_admin_tools_fnc_aiDebug;";
+                        statement = QUOTE(true call FUNC(aiDebug));
                         icon = "\x\ark\addons\ark_main\resources\ai_enable.paa";
                         exceptions[] = {"isNotSwimming", "isNotInside", "isNotSitting", "isNotOnLadder", "isNotRefueling"};
                     };
@@ -77,7 +69,7 @@ class CfgVehicles {
                     class Disable_AI_Debug {
                         displayName = "Disable AI Debug";
                         condition = "ark_aiDebugEnabled";
-                        statement = "false call ark_admin_tools_fnc_aiDebug;";
+                        statement = QUOTE(false call FUNC(aiDebug));
                         icon = "\x\ark\addons\ark_main\resources\ai_disable.paa";
                         exceptions[] = {"isNotSwimming", "isNotInside", "isNotSitting", "isNotOnLadder", "isNotRefueling"};
                     };
@@ -101,7 +93,7 @@ class CfgVehicles {
                     class Call_Attack_Helo {
                         displayName = "Call AH";
                         condition = "call ark_main_fnc_isAdmiralEnabled && { !(call ark_main_fnc_isTownSweep) }";
-                        statement = "[player,'ah'] remoteExecCall ['ark_admin_tools_fnc_callReinforcements',2]";
+                        statement = QUOTE([ARR_2(player,'ah')] call FUNC(callReinforcementsLocal));
                         icon = "\A3\ui_f\data\map\vehicleicons\iconHelicopter_ca.paa";
                         exceptions[] = {"isNotInside", "isNotSitting", "isNotOnLadder", "isNotRefueling"};
                     };
@@ -109,7 +101,7 @@ class CfgVehicles {
                     class Call_Armour {
                         displayName = "Call Armour";
                         condition = "call ark_main_fnc_isAdmiralEnabled && { !(call ark_main_fnc_isTownSweep) }";
-                        statement = "[player,'armour'] remoteExecCall ['ark_admin_tools_fnc_callReinforcements',2]";
+                        statement = QUOTE([ARR_2(player,'armour')] call FUNC(callReinforcementsLocal));
                         icon = "\A3\ui_f\data\map\vehicleicons\iconTank_ca.paa";
                         exceptions[] = {"isNotInside", "isNotSitting", "isNotOnLadder", "isNotRefueling"};
                     };
@@ -117,7 +109,7 @@ class CfgVehicles {
                     class Call_Technical {
                         displayName = "Call Technical";
                         condition = "call ark_main_fnc_isAdmiralEnabled && { !(call ark_main_fnc_isTownSweep) }";
-                        statement = "[player,'technicals'] remoteExecCall ['ark_admin_tools_fnc_callReinforcements',2]";
+                        statement = QUOTE([ARR_2(player,'technicals')] call FUNC(callReinforcementsLocal));
                         icon = "\A3\ui_f\data\map\vehicleicons\iconAPC_ca.paa";
                         exceptions[] = {"isNotInside", "isNotSitting", "isNotOnLadder", "isNotRefueling"};
                     };
