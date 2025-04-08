@@ -5,10 +5,10 @@
 #include "\x\ark\addons\ark_main\script_macros.hpp"
 
 #define MAXLOAD180 \
-    maximumLoad = 180;
+    maximumLoad = 180
 
 #define MAXLOAD280 \
-    maximumLoad = 280;
+    maximumLoad = 280
 
 #define MAXLOAD320 \
-    maximumLoad = 320;
+    maximumLoad = 320

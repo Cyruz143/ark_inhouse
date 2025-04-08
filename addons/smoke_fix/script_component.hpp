@@ -6,4 +6,4 @@
 
 #define SMOKE_FIX \
     simulation = "shotSmoke"; \
-    deflectionSlowDown = 0.2;
+    deflectionSlowDown = 0.2
