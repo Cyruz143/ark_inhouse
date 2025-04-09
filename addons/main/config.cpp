@@ -26,11 +26,7 @@ class cfgPatches {
     class ark_replacer_vests: ark_scripts {};
 };
 
-class Extended_PreInit_EventHandlers {
-    class ADDON {
-        clientInit = "call compileScript ['x\ark\addons\ark_main\client_preinit.sqf'];";
-    };
-};
+#include "CfgEventHandlers.hpp"
 
 #include "ARK.hpp"
 #include "CfgFactionClasses.hpp"
