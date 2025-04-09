@@ -6,7 +6,7 @@ class CfgVehicles {
                 displayName = "ARK";
                 condition = "true";
                 statement = "";
-                icon = "\x\ark\addons\ark_main\resources\ark_star.paa";
+                icon = "\x\ark\addons\main\resources\ark_star.paa";
                 exceptions[] = {"isNotSwimming", "isNotInside", "isNotSitting", "isNotOnLadder", "isNotRefueling"};
 
                 class Ammo_Crate {

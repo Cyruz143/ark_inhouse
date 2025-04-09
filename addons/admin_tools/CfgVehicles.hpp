@@ -6,7 +6,7 @@ class CfgVehicles {
             displayName = "ARK";
             condition = "true";
             statement = "";
-            icon = "\x\ark\addons\ark_main\resources\ark_star.paa";
+            icon = "\x\ark\addons\main\resources\ark_star.paa";
             exceptions[] = {"isNotSwimming", "isNotInside", "isNotSitting", "isNotOnLadder", "isNotRefueling"};
 
 
@@ -54,7 +54,7 @@ class CfgVehicles {
                     displayName = "Host Menu";
                     condition = "((call ark_main_fnc_isHost) || { (isServer && hasInterface) })";
                     statement = "";
-                    icon = "\x\ark\addons\ark_main\resources\ark_star.paa";
+                    icon = "\x\ark\addons\main\resources\ark_star.paa";
                     exceptions[] = {"isNotSwimming", "isNotInside", "isNotSitting", "isNotOnLadder", "isNotRefueling"};
 
                     class Safety_Off {
@@ -62,7 +62,7 @@ class CfgVehicles {
                         condition = "!(call hull3_mission_fnc_hasSafetyTimerEnded)";
                         showDisabled = 1;
                         statement = "[nil, nil, nil, ['confirm']] call compileScript ['x\ark\addons\hull3\mission_host_safetytimer_stop.sqf'];";
-                        icon = "\x\ark\addons\ark_main\resources\hull_disable.paa";
+                        icon = "\x\ark\addons\main\resources\hull_disable.paa";
                         exceptions[] = {"isNotSwimming", "isNotInside", "isNotSitting", "isNotOnLadder", "isNotRefueling"};
                     };
 
@@ -70,7 +70,7 @@ class CfgVehicles {
                         displayName = "Enable AI Debug";
                         condition = "!ark_aiDebugEnabled";
                         statement = "true call ark_admin_tools_fnc_aiDebug;";
-                        icon = "\x\ark\addons\ark_main\resources\ai_enable.paa";
+                        icon = "\x\ark\addons\main\resources\ai_enable.paa";
                         exceptions[] = {"isNotSwimming", "isNotInside", "isNotSitting", "isNotOnLadder", "isNotRefueling"};
                     };
 
@@ -78,7 +78,7 @@ class CfgVehicles {
                         displayName = "Disable AI Debug";
                         condition = "ark_aiDebugEnabled";
                         statement = "false call ark_admin_tools_fnc_aiDebug;";
-                        icon = "\x\ark\addons\ark_main\resources\ai_disable.paa";
+                        icon = "\x\ark\addons\main\resources\ai_disable.paa";
                         exceptions[] = {"isNotSwimming", "isNotInside", "isNotSitting", "isNotOnLadder", "isNotRefueling"};
                     };
 
@@ -86,7 +86,7 @@ class CfgVehicles {
                         displayName = "Enable Teleport";
                         condition = "!(missionNameSpace getVariable ['ark_admin_tools_mapTP', false])";
                         statement = "missionNameSpace setVariable ['ark_admin_tools_mapTP', true, true]";
-                        icon = "\x\ark\addons\ark_main\resources\click_enable.paa";
+                        icon = "\x\ark\addons\main\resources\click_enable.paa";
                         exceptions[] = {"isNotSwimming", "isNotInside", "isNotSitting", "isNotOnLadder", "isNotRefueling"};
                     };
 
@@ -94,7 +94,7 @@ class CfgVehicles {
                         displayName = "Disable Teleport";
                         condition = "missionNameSpace getVariable ['ark_admin_tools_mapTP', false]";
                         statement = "missionNameSpace setVariable ['ark_admin_tools_mapTP', false, true]";
-                        icon = "\x\ark\addons\ark_main\resources\click_disable.paa";
+                        icon = "\x\ark\addons\main\resources\click_disable.paa";
                         exceptions[] = {"isNotSwimming", "isNotInside", "isNotSitting", "isNotOnLadder", "isNotRefueling"};
                     };
 
