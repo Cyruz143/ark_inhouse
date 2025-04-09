@@ -1,5 +1,5 @@
 #include "script_component.hpp"
 
-if (isServer) then {
-    [] call FUNC(postInitServer);
-};
+["ace_killed", {
+    call FUNC(initSpec);
+}] call CBA_fnc_addEventHandler;

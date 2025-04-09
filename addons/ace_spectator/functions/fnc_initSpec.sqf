@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 /*
  * Author: Cyruz
- * Initialises spectator
+ * Initialises spectator, displays message showing who killed you and from what distance
  *
  * Arguments:
  * 0: Unit <OBJECT>
