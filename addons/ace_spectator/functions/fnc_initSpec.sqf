@@ -65,14 +65,14 @@ if (!isNull _killer) then {
 
 [_killMessage] spawn {
     params ["_killMessage"];
-        [false] call ace_common_fnc_setVolume;
-        cutText ["", "BLACK OUT", 3];
-        uiSleep 3;
+    [false] call ace_common_fnc_setVolume;
+    cutText ["", "BLACK OUT", 3];
+    uiSleep 3;
 
-        [_killMessage,-1,-1,5,1] spawn BIS_fnc_dynamicText;
+    [_killMessage,-1,-1,5,1] spawn BIS_fnc_dynamicText;
 
-        uiSleep 5;
-        cutText ["", "PLAIN", 2];
-        [true] call ace_common_fnc_setVolume;
-        [true] call ace_spectator_fnc_setSpectator;
+    uiSleep 5;
+    cutText ["", "PLAIN", 2];
+    [true] call ace_common_fnc_setVolume;
+    [true] call ace_spectator_fnc_setSpectator;
 };
