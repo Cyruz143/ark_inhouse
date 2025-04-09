@@ -11,17 +11,17 @@ class CfgVehicles {
 
                 class Chop_Tree {
                     displayName = "Chop down tree";
-                    icon = "\x\ark\addons\ark_forestry\resources\tree.paa";
-                    condition = "call ark_forestry_fnc_canChop";
-                    statement = "call ark_forestry_fnc_doChop";
+                    icon = QPATHTOF(resources\tree.paa);
+                    condition = QUOTE(call FUNC(canChop));
+                    statement = QUOTE(call FUNC(doChop));
                     exceptions[] = {};
                 };
 
                 class Flatten_Grass  {
                     displayName = "Flatten Grass";
-                    icon = "\x\ark\addons\ark_forestry\resources\grass.paa";
+                    icon = QPATHTOF(resources\grass.paa);
                     condition = "insideBuilding player != 1";
-                    statement = "call ark_forestry_fnc_doFlatten";
+                    statement = QUOTE(call FUNC(doFlatten));
                     exceptions[] = {};
                 };
             };
