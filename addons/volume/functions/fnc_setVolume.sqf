@@ -20,16 +20,16 @@ params ["_unit", "", "_vehicle"];
 if (isNull _vehicle) exitWith {};
 
 if (_vehicle isKindOf "Car" || { _vehicle isKindOf "Truck" } || { _vehicle isKindOf "Tank" }) then {
-    1 fadeSound QGVAR(ground);
-    QGVAR(ground) call FUNC(notify);
+    1 fadeSound GVAR(ground);
+    GVAR(ground) call FUNC(notify);
 };
 
 if (_vehicle isKindOf "Ship") then {
-    1 fadeSound QGVAR(water);
-    QGVAR(water) call FUNC(notify);
+    1 fadeSound GVAR(water);
+    GVAR(water) call FUNC(notify);
 };
 
 if (_vehicle isKindOf "Air") then {
-    1 fadeSound QGVAR(air);
-    QGVAR(air) call FUNC(notify);
+    1 fadeSound GVAR(air);
+    GVAR(air) call FUNC(notify);
 };

@@ -24,8 +24,8 @@ ts_interaction_fnc_addInteractions = {
     [player, 1, ["ACE_SelfActions"], _action] call ace_interact_menu_fnc_addActionToObject;
     private _actions =
         [ ["Select Location", "\a3\ui_f\data\igui\cfg\simpletasks\types\interact_ca.paa", { call ts_spawn_fnc_selectLocation }]
-        , ["Activate Zone", "\x\ark\addons\ark_main\resources\ai_enable.paa", { [0, { [] call ts_spawn_fnc_activateLocation }, []] call CBA_fnc_globalExecute; }]
-        , ["Enable Group Deploy", "\x\ark\addons\ark_main\resources\click_enable.paa", { [0, { [] call ts_fnc_enableGroupDeploy }, []] call CBA_fnc_globalExecute; }]
+        , ["Activate Zone", "\x\ark\addons\main\resources\ai_enable.paa", { [0, { [] call ts_spawn_fnc_activateLocation }, []] call CBA_fnc_globalExecute; }]
+        , ["Enable Group Deploy", "\x\ark\addons\main\resources\click_enable.paa", { [0, { [] call ts_fnc_enableGroupDeploy }, []] call CBA_fnc_globalExecute; }]
         ];
     {
         _action =
