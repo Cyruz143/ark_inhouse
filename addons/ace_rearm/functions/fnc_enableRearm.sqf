@@ -11,7 +11,7 @@
  * true
  *
  * Example:
- * [] call ark_ace_rearm_enableRearm
+ * [] call ark_ace_rearm_fnc_enableRearm
  */
 
 params ["_logic","_vehicles"];

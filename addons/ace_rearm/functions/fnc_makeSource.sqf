@@ -10,7 +10,7 @@
  * None
  *
  * Example:
- * [] call ark_ace_rearm_makeSource
+ * [] call ark_ace_rearm_fnc_makeSource
  */
 
 params ["_vehicle"];
