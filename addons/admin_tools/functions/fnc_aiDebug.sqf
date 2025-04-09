@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 /*
  * Author: Cyruz
- * ..Something?
+ * Toggles debug mode on/off
  *
  * Arguments:
  * 0: Enabled <BOOL>

@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 /*
  * Author: Cyruz
- * Chase AI
+ * Grabs all AI within a radius of the position and gives them a position to attack.
  *
  * Arguments:
  * 0: Position <POSITION> (default: [0, 0, 0])

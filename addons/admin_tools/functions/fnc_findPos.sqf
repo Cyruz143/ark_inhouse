@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 /*
  * Author: Cyruz
- * Finds a position
+ * Tries to find a position on, or near a road. Falls back to general position if not found.
  *
  * Arguments:
  * 0: Unit <OBJECT>

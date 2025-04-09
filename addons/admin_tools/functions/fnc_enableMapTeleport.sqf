@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 /*
  * Author: Cyruz
- * Partially heals a unit
+ * Enables map click teleport on a unit.
  *
  * Arguments:
  * 0: Unit <OBJECT>
