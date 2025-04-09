@@ -11,7 +11,7 @@
  * None
  *
  * Example:
- * [_unit, [0, 0, 0]] call ark_admin_tools_fnc_healUnit
+ * [_unit, [0, 0, 0]] call ark_admin_tools_fnc_teleportUnit
  */
 
 params ["_unit", "_pos"];
