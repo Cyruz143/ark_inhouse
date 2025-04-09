@@ -60,5 +60,22 @@ _driver moveInDriver _vehicle;
 _vehicle allowCrewInImmobile true;
 _vehicle setUnloadInCombat [false, false];
 
+/* Old method
 [_group, getPos _unit, 250, true] call CBA_fnc_taskAttack;
 _group reveal [_unit, 4];
+*/
+
+private _waypointPosition = position _unit;
+
+// Skip helicopters getting move waypoint as they don't get stuck.
+if (_type isNotEqualTo 'ah') then {
+    private _moveWaypoint = _group addWaypoint [_waypointPosition, 250];
+    _moveWaypoint setWaypointType "MOVE";
+    _moveWaypoint setWaypointBehaviour "AWARE";
+    _moveWaypoint setWaypointCompletionRadius 100; // bit further out so more likely for SAD waypoint.
+};
+
+private _sadWaypoint = _group addWaypoint [_waypointPosition, 250];
+_sadWaypoint setWaypointBehaviour "COMBAT";
+_sadWaypoint setWaypointCombatMode "RED";
+_sadWaypoint setWaypointType "SAD";
