@@ -5,7 +5,7 @@ ark_aiDebugEnabled = false;
 if (hasInterface) then {
     // Chat Commands
     ["endmission", {
-        //[QGVAR(endMission), ["end1", true]] call CBA_fnc_globalEvent;
+        //[QGVAR(endMission), ["end1"]] call CBA_fnc_globalEvent;
         [QGVAR(endMission), ["EveryoneWon"]] call CBA_fnc_serverEvent;
     }, "adminLogged"] call CBA_fnc_registerChatCommand;
 
@@ -34,7 +34,7 @@ if (isServer) then {
 
 // Global events
 [QGVAR(endMission), {
-    params ["_endType", "_isVictory"];
+    params ["_endType", ["_isVictory", true]];
 
     //[_endType, _isVictory] call BIS_fnc_endMission;
     _endType call BIS_fnc_endMissionServer;
