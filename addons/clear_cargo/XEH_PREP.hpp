@@ -1,1 +1,2 @@
 PREP(clearVehicle);
+PREP(doClearVehicle);

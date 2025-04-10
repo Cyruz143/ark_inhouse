@@ -23,10 +23,7 @@ if (_units isEqualTo []) exitWith {
 };
 
 {
-    clearMagazineCargoGlobal _x;
-    clearWeaponCargoGlobal _x;
-    clearItemCargoGlobal _x;
-    clearBackpackCargoGlobal _x;
+    _x call FUNC(doClearVehicle);
 } forEach _units;
 
 INFO_1("fnc_clearVehicle, Deleting Module (%1)",_logic);
