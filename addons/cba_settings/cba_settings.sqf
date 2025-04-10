@@ -472,3 +472,11 @@ force force diwako_dui_radar_vehicleCompassEnabled = true;
 // NIArms
 force force niarms_gripSwitch = false;
 force force niarms_magSwitch = false;
+
+// VET_Unflipping
+force force vet_unflipping_require_serviceVehicle = false;
+force force vet_unflipping_require_toolkit = false;
+force force vet_unflipping_time = 3;
+force force vet_unflipping_unit_man_limit = 1;
+force force vet_unflipping_unit_mass_limit = 100000;
+force force vet_unflipping_vehicle_mass_limit = 100000;
