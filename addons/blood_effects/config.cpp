@@ -17,11 +17,6 @@ class CfgPatches {
     };
 };
 
-class Extended_PostInit_EventHandlers {
-    class ADDON {
-        serverInit = "call compileScript ['x\ark\addons\ark_blood_effects\server_postinit.sqf'];";
-    };
-};
-
+#include "CfgEventHandlers.hpp"
 #include "CfgCloudlets.hpp"
 #include "ImpactEffectsBlood.hpp"
