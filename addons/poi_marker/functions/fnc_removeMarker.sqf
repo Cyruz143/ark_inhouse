@@ -10,7 +10,7 @@
  * None
  *
  * Example:
- * [] call ark_poi_marker_removeMarker
+ * [] call ark_poi_marker_fnc_removeMarker
  */
 
 if !(isNil QGVAR(drawID)) then {

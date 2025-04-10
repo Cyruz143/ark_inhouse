@@ -10,7 +10,7 @@
  * None
  *
  * Example:
- * [] call ark_poi_marker_canAddMarker
+ * [] call ark_poi_marker_fnc_canAddMarker
  */
 
 params ["","_pos","_alt","_shift"];

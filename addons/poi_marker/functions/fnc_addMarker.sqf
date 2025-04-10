@@ -10,7 +10,7 @@
  * None
  *
  * Example:
- * [] call ark_poi_marker_addMarker
+ * [] call ark_poi_marker_fnc_addMarker
  */
 
 private _pos = player getVariable [QGVAR(POI), [0,0,0]];
