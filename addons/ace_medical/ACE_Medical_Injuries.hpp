@@ -3,7 +3,7 @@ class ACE_Medical_Injuries {
         class woundHandlers;
         class falling {
             class woundHandlers: woundHandlers {
-                ADDON = "{call ark_ace_medical_fnc_handleFallDamage}";
+                ADDON = QUOTE(call FUNC(handleFallDamage));
             };
         };
     };
