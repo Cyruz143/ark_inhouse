@@ -1,5 +1,5 @@
 [
-    "ark_ai_voices_enabled",
+    QGVAR(enabled),
     "CHECKBOX",
     ["Enabled", "Enable AI voices"],
     ["ARK Inhouse","ARK AI Voices"],
