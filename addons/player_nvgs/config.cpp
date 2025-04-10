@@ -14,10 +14,5 @@ class CfgPatches {
     };
 };
 
-class Extended_PostInit_EventHandlers {
-    class ADDON {
-        clientInit = "call compileScript ['x\ark\addons\ark_player_nvgs\client_postinit.sqf'];";
-    };
-};
-
+#include "CfgEventHandlers.hpp"
 #include "CfgSounds.hpp"
