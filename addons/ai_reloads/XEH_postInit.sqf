@@ -1,3 +1,7 @@
+#include "script_component.hpp"
+
+if (hasInterface) exitWith {};
+
 ["CAManBase", "Reloaded", {
     params ["_unit", "_weapon", "_muzzle", "_newMagazine"];
 
