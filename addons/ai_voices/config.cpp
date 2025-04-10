@@ -18,18 +18,6 @@ class CfgPatches {
     };
 };
 
-class Extended_PreInit_EventHandlers {
-    class ADDON {
-        init = "call compileScript ['x\ark\addons\ark_ai_voices\global_preinit.sqf'];";
-    };
-};
-
-class Extended_PostInit_EventHandlers {
-    class ADDON {
-        clientInit = "call compileScript ['x\ark\addons\ark_ai_voices\client_postinit.sqf'];";
-        serverInit = "call compileScript ['x\ark\addons\ark_ai_voices\server_postinit.sqf'];";
-    };
-};
-
+#include "CfgEventHandlers.hpp"
 #include "CfgVehicles.hpp"
 #include "CfgVoice.hpp"
