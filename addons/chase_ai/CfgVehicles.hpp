@@ -5,8 +5,8 @@ class CfgVehicles {
     class ark_chase_ai_module: ARK_Module {
         scope = 2;
         displayName = "Chase AI - Module";
-        icon = "\x\ark\addons\ark_chase_ai\resources\chase.paa";
-        function = "ark_chase_ai_module_preinit";
+        icon = QPATHTOF(resources\chase.paa);
+        function = QUOTE(FUNC(module));
         isTriggerActivated = 1;
         class ModuleDescription {
             description = "Spawns AI that hunt players";

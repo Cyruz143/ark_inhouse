@@ -19,10 +19,5 @@ class CfgPatches {
     };
 };
 
-class Extended_PreInit_EventHandlers {
-    class ADDON {
-        serverinit = "call compileScript ['x\ark\addons\ark_chase_ai\server_preinit.sqf'];";
-    };
-};
-
+#include "CfgEventHandlers.hpp"
 #include "CfgVehicles.hpp"
