@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 /*
  * Author: Cyruz
- * Selects sound if the unit is unconscious
+ * Selects a sound when the unit wakes from unconscious
  *
  * Arguments:
  * 0: Unit <OBJECT>

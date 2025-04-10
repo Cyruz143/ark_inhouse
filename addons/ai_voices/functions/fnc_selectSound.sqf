@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 /*
  * Author: Cyruz, Diwako
- * NEED DESC
+ * Does a cached config lookup to find the relevant voice line to play based on the units identity
  *
  * Arguments:
  * 0: Unit <OBJECT>
