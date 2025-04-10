@@ -13,7 +13,7 @@
  * [] call ark_building_cleaner_doClean
  */
 
-params ["_objectect"];
+params ["_object"];
 
 if (_object isKindOf "Logic") exitWith {};
 
