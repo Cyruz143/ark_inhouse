@@ -17,8 +17,4 @@ class CfgPatches {
     };
 };
 
-class Extended_PostInit_EventHandlers {
-    class ADDON {
-        clientinit = "call compileScript ['x\ark\addons\ark_tags\client_postinit.sqf'];";
-    };
-};
+#include "CfgEventHandlers.hpp"
