@@ -7,8 +7,7 @@ class CfgVehicles {
     class HouseBase: NonStrategic {};
     class House: HouseBase {
         class DestructionEffects: DestructionEffects {
-            class Smoke1
-            {
+            class Smoke1 {
                 simulation = "particles";
                 type = "HouseDestructionSmoke3";
                 position = "destructionEffect1";
@@ -17,13 +16,11 @@ class CfgVehicles {
                 interval = 1;
                 lifeTime = 0.05;
             };
-            class Smoke2: Smoke1
-            {
+            class Smoke2: Smoke1 {
                 type = "HouseDestructionSmoke4";
                 lifeTime = 0.035;
             };
-            class Smoke3: Smoke1
-            {
+            class Smoke3: Smoke1 {
                 type = "HouseDestrSmokeLong";
                 lifeTime = 0.035;
             };
