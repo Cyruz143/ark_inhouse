@@ -18,11 +18,11 @@ class CfgPatches {
     };
 };
 
-class Extended_PreInit_EventHandlers {
-    class ADDON {
-        init = "call compileScript ['x\ark\addons\ark_deploy\global_preinit.sqf'];";
+#include "CfgEventHandlers.hpp"
+#include "CfgVehicles.hpp"
+
+class Hull3 {
+    class Events {
+       mission_safetytimer_ended = "x\ark\addons\ark_deploy\hull3_deploy_assign.sqf";
     };
 };
-
-#include "CfgVehicles.hpp"
-#include "Hull3.hpp"

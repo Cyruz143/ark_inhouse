@@ -3,7 +3,7 @@ class CfgVehicles {
     class ARK_Enable_Deploy: ARK_Module {
         scope = 2;
         displayName = "Inhouse - Enable Group Deploy";
-        function = "ark_deploy_module_init";
+        function = QUOTE(FUNC(init));
         class ModuleDescription {
             description = "Enables Group Deploy";
         };
@@ -30,22 +30,22 @@ class CfgVehicles {
                 displayName = "ARK";
                 condition = "true";
                 statement = "";
-                icon = "\x\ark\addons\main\resources\ark_star.paa";
+                icon = QPATHTOEF(main,resources\ark_star.paa);
                 exceptions[] = {"isNotSwimming", "isNotInside", "isNotSitting", "isNotOnLadder", "isNotRefueling"};
 
                 class Deploy_Group {
                     displayName = "Deploy Group (Post Safety)";
-                    condition = "([player] call ark_deploy_fnc_canPlayerPostDeploy) && ark_deploy_deployEnabled";
-                    statement = "[player] call ark_deploy_fnc_assignDeployClick;";
-                    icon = "\x\ark\addons\main\resources\deploy.paa";
+                    condition = QUOTE(([player] call FUNC(canPlayerPostDeploy)) && ark_deploy_deployEnabled);
+                    statement = QUOTE(call FUNC(assignDeployClick));
+                    icon = QPATHTOEF(main,resources\deploy.paa);
                     exceptions[] = {"isNotSwimming", "isNotInside", "isNotSitting", "isNotOnLadder", "isNotRefueling"};
                 };
 
                 class Pre_Deploy_Group {
                     displayName = "Deploy Group (Pre Safety)";
-                    condition = "([player] call ark_deploy_fnc_canPlayerPreDeploy) && ark_deploy_deployEnabled";
-                    statement = "[player] call ark_deploy_fnc_assignDeployClick;";
-                    icon = "\x\ark\addons\main\resources\deploy.paa";
+                    condition = QUOTE(([player] call FUNC(canPlayerPreDeploy)) && ark_deploy_deployEnabled);
+                    statement = QUOTE(call FUNC(assignDeployClick));
+                    icon = QPATHTOEF(main,resources\deploy.paa);
                     exceptions[] = {"isNotSwimming", "isNotInside", "isNotSitting", "isNotOnLadder", "isNotRefueling"};
                 };
 
@@ -53,14 +53,14 @@ class CfgVehicles {
                     displayName = "Host Menu";
                     condition = "((call ark_main_fnc_isHost) || { (isServer && hasInterface) })";
                     statement = "";
-                    icon = "\x\ark\addons\main\resources\ark_star.paa";
+                    icon = QPATHTOEF(main,resources\ark_star.paa);
                     exceptions[] = {"isNotSwimming", "isNotInside", "isNotSitting", "isNotOnLadder", "isNotRefueling"};
 
                     class Activate_Pre_Deploy {
                         displayName = "Activate (Pre Safety) Group Deploy";
-                        icon = "\x\ark\addons\main\resources\deploy_activate.paa";
+                        icon = QPATHTOEF(main,resources\deploy_activate.paa);
                         condition = "ark_deploy_deployEnabled && (!ark_deploy_preDeployActive) && ark_deploy_preDeployRequired";
-                        statement = "[] call ark_deploy_fnc_activatePreGroupDeploy;";
+                        statement = QUOTE(FUNC(activatePreGroupDeploy));
                         exceptions[] = {"isNotSwimming", "isNotInside", "isNotSitting", "isNotOnLadder", "isNotRefueling"};
                     };
                 };

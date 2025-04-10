@@ -1,2 +1,4 @@
+#include "script_component.hpp"
+
 if !(ark_deploy_deployEnabled) exitWith {};
-call ark_deploy_fnc_activatePostGroupDeploy;
+call FUNC(activatePostGroupDeploy);
