@@ -24,9 +24,8 @@ class CfgWeapons {
         modelOptics = "\A3\weapons_f\reticle\optics_night.p3d";
         picture = "\A3\Weapons_F\Data\UI\gear_nvg_CA.paa";
         scope = 1;
-        thermalMode[]={0,1,2,3,4,5};
-        visionMode[]=
-        {
+        thermalMode[] = {0, 1, 2, 3, 4, 5};
+        visionMode[]= {
             "Normal",
             "NVG",
             "TI"
