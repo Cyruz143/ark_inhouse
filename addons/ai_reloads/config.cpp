@@ -14,8 +14,4 @@ class CfgPatches {
     };
 };
 
-class Extended_PostInit_EventHandlers {
-    class ADDON {
-        serverInit = "call compileScript ['x\ark\addons\ark_ai_reloads\server_postinit.sqf'];";
-    };
-};
+#include "CfgEventHandlers.hpp"
