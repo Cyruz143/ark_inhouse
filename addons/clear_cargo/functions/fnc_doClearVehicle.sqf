@@ -7,7 +7,7 @@
  * 0: Vehicle <OBJECT>
  *
  * Return Value:
- * true
+ * None
  *
  * Example:
  * [] call ark_clear_cargo_fnc_doClearVehicle
