@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 /*
  * Author: Cyruz
- * Checks if spawning is enabled
+ * Allows the safe enabling and disabling of chase AI
  *
  * Arguments:
  * None

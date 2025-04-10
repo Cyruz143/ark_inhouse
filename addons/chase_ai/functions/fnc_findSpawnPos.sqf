@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 /*
  * Author: Cyruz
- * Finds a spawn position
+ * Finds a position not visible to players
  *
  * Arguments:
  * None

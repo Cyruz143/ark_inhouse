@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 /*
  * Author: Cyruz
- * Checks if a unit has a compatible flashlight
+ * Finds a compatible flashlight for the units weapon and caches it
  *
  * Arguments:
  * 0: Unit <OBJECT>

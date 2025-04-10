@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 /*
  * Author: Cyruz
- * Creates units for chase AI
+ * Finds the nearest buildingPos to the supplied unit
  *
  * Arguments:
  * 0: Unit <OBJECT>

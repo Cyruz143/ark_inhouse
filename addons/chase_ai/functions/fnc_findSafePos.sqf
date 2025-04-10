@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 /*
  * Author: Cyruz
- * Finds a safe position for spawning
+ * Finds an empty position near the target
  *
  * Arguments:
  * 0: Target <UNKNOWN>
@@ -10,7 +10,7 @@
  * Target Position
  *
  * Example:
- * [] call ark_chase_ai_fnc_createGroup
+ * [] call ark_chase_ai_fnc_findSafePos
  */
 
 params ["_target"];

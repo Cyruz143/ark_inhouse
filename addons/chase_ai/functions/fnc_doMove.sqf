@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 /*
  * Author: Cyruz
- * Sets move position for units
+ * Handles movement, despawning and teleporting of chase units
  *
  * Arguments:
  * 0: Unit <OBJECT>
