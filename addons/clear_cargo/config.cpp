@@ -17,10 +17,5 @@ class CfgPatches {
     };
 };
 
-class Extended_PreInit_EventHandlers {
-    class ADDON {
-        serverinit = "call compileScript ['x\ark\addons\ark_clear_cargo\server_preinit.sqf'];";
-    };
-};
-
+#include "CfgEventHandlers.hpp"
 #include "CfgVehicles.hpp"
