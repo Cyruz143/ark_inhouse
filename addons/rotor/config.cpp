@@ -18,12 +18,7 @@ class CfgPatches {
     };
 };
 
-class Extended_PreInit_EventHandlers {
-    class ADDON {
-        serverinit = "call compileScript ['x\ark\addons\ark_rotor\server_preinit.sqf'];";
-    };
-};
-
+#include "CfgEventHandlers.hpp"
 #include "CfgFactionClasses.hpp"
 #include "CfgVehicleClasses.hpp"
 #include "CfgVehicles.hpp"

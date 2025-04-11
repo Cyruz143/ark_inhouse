@@ -6,7 +6,7 @@ class CfgFactionClasses {
     class Rotor_Paths {
         displayName = "Rotor Path Bases";
         author = "Rotor";
-        icon = "x\ark\addons\ark_rotor\resources\insert.paa";
+        icon = QPATHTOF(resources\insert.paa);
         priority = 1;
         side = 3;
     };
