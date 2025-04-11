@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 /*
  * Author: Cyruz
- * NEED DESC.
+ * Fills the vehicle with infantry on a slow loop to avoid stuttering, assigns parachutes if required.
  *
  * Arguments:
  * 0: Cargo Classnames <ARRAY>

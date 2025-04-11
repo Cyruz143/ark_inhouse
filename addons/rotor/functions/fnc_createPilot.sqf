@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 /*
  * Author: Cyruz
- * NEED DESC.
+ * Creates pilot and disables skills that would make them deviate from the supplied course.
  *
  * Arguments:
  * 0: Classnames <ARRAY>

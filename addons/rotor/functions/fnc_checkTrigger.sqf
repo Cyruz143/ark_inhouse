@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 /*
  * Author: Cyruz
- * NEED DESC.
+ * Checks conditions are correct for Rotor to function, i.e. triggers supplied and template used.
  *
  * Arguments:
  * 0: Logic <MODULE>

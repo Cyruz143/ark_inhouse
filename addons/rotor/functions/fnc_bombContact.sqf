@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 /*
  * Author: Cyruz
- * NEED DESC.
+ * Gets impact pos of barrel and spawns explosion
  *
  * Arguments:
  * 0: Barrel <OBJECT>

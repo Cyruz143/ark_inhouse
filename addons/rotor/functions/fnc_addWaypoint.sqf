@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 /*
  * Author: Cyruz
- * NEED DESC.
+ * Adds WP to pilot and sets flags to ensure behavior
  *
  * Arguments:
  * 0: Pilot <OBJECT>

@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 /*
  * Author: Cyruz
- * NEED DESC.
+ * Releases the helo from it's landing pad and sends to final WP.
  *
  * Arguments:
  * 0: Vehicle <OBJECT>

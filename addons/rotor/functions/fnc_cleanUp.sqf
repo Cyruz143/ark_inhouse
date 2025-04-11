@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 /*
  * Author: Cyruz
- * NEED DESC.
+ * Delete crew and vehicle provided a player hasn't stolen said vehicle.
  *
  * Arguments:
  * 0: Vehicle <OBJECT>

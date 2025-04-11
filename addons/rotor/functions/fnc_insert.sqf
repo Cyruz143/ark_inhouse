@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 /*
  * Author: Cyruz
- * NEED DESC.
+ * Creates units, adds WPs, controls speed, lands at the given WP, extracts vehicle and handle deletion of helo.
  *
  * Arguments:
  * 0: Logic <MODULE>

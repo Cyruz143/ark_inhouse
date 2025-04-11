@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 /*
  * Author: Cyruz
- * NEED DESC.
+ * Findest nearest enemy unit and gives the group an attack order.
  *
  * Arguments:
  * 0: Group <GROUP>

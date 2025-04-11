@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 /*
  * Author: Cyruz
- * NEED DESC.
+ * Adds PFH to moveOut infantry until empty while landed/hovering.
  *
  * Arguments:
  * 0: Vehicle <OBJECT>

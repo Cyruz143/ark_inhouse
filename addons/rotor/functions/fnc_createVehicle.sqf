@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 /*
  * Author: Cyruz
- * NEED DESC.
+ * Creates helo and sets flyInHeight from module
  *
  * Arguments:
  * 0: Classname <STRING>

@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 /*
  * Author: Cyruz
- * NEED DESC.
+ * Adds PFH to move units out of a vehicle mid-air.
  *
  * Arguments:
  * 0: Vehicle <OBJECT>

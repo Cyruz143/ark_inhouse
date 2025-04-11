@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 /*
  * Author: Cyruz
- * NEED DESC.
+ * Module init and error handling
  *
  * Arguments:
  * 0: Logic <MODULE>

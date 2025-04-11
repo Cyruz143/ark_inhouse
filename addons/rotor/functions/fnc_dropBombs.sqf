@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 /*
  * Author: Cyruz
- * NEED DESC.
+ * Adds barrelbomb PFH, once all bombs dropped assigns a final waypoint.
  *
  * Arguments:
  * 0: Vehicle <OBJECT>

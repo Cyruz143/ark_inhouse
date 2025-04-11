@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 /*
  * Author: Cyruz
- * NEED DESC.
+ * Creates a barrel bomb and flings it from the back of the vehicle.
  *
  * Arguments:
  * 0: Vehicle <OBJECT>
