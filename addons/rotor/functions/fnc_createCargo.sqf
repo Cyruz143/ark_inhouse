@@ -48,4 +48,4 @@ _grp deleteGroupWhenEmpty true;
     };
 }, 1, [_vehicle, _adjSeats, _grp, _cargoClassnames, _skillArray, _parachute]] call CBA_fnc_addPerFrameHandler;
 
-_grp;
+_grp

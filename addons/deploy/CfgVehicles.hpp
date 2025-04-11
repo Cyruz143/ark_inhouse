@@ -3,7 +3,7 @@ class CfgVehicles {
     class ARK_Enable_Deploy: ARK_Module {
         scope = 2;
         displayName = "Inhouse - Enable Group Deploy";
-        function = QUOTE(call FUNC(init));
+        function = QUOTE(FUNC(init));
         class ModuleDescription {
             description = "Enables Group Deploy";
         };

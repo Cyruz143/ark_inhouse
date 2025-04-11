@@ -18,7 +18,7 @@ class CfgVehicles {
     class ARK_Module;
     class ARK_Rotor_Base : ARK_Module {
         scope = 1;
-        function = QUOTE(call FUNC(preinit));
+        function = QUOTE(FUNC(preInit));
         isTriggerActivated = 1;
     };
 
