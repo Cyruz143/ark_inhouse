@@ -17,3 +17,4 @@ class CfgPatches {
 #include "CfgCloudlets.hpp"
 #include "CfgLights.hpp"
 #include "CfgImpacts.hpp"
+#include "blastwaveEffects.hpp"
