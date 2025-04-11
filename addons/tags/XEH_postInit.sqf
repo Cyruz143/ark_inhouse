@@ -10,7 +10,7 @@ if (hasInterface) then {
         "Claim Vehicle",
         "\z\ace\addons\tagging\ui\icons\iconTaggingWhite.paa",
         {
-            private _groupID = groupID (group ace_player);
+            private _groupID = groupId (group ace_player);
             [QGVAR(stencilServer), [_target, _groupID]] call CBA_fnc_serverEvent;
             playSound3D ["z\ace\addons\tagging\sounds\spray.ogg", ace_player, false, (eyePos ace_player), 5, 1, 15];
         },
