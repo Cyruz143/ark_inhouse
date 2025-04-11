@@ -18,7 +18,7 @@ class CfgVehicles {
     class ARK_Module;
     class ARK_Rotor_Base : ARK_Module {
         scope = 1;
-        function = QUOTE(FUNC(preinit));
+        function = QUOTE(FUNC(preInit));
         isTriggerActivated = 1;
     };
 
@@ -69,7 +69,7 @@ class CfgVehicles {
                 displayName = "Routine Function";
                 description = "The function called by this module. Do not change this unless you know what it does";
                 typeName = "STRING";
-                defaultValue = QUOTE(FUNC(paradrop));
+                defaultValue = QUOTE(call FUNC(paradrop));
             };
         };
     };
@@ -121,7 +121,7 @@ class CfgVehicles {
                 displayName = "Routine Function";
                 description = "The function called by this module. Do not change this unless you know what it does";
                 typeName = "STRING";
-                defaultValue = QUOTE(FUNC(insert));
+                defaultValue = QUOTE(call FUNC(insert));
             };
         };
     };
@@ -174,7 +174,7 @@ class CfgVehicles {
                 displayName = "Routine Function";
                 description = "The function called by this module. Do not change this unless you know what it does";
                 typeName = "STRING";
-                defaultValue = QUOTE(FUNC(barrelbomb));
+                defaultValue = QUOTE(call FUNC(barrelbomb));
             };
         };
     };

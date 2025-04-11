@@ -1,9 +1,9 @@
 class ace_medical_treatment_actions {
     class BasicBandage {
-        treatmentTime = QUOTE(FUNC(getBandageTime));
+        treatmentTime = QUOTE(call FUNC(getBandageTime));
     };
     class PatDown: BasicBandage {
-        callbackSuccess = QUOTE(FUNC(putOutFire));
+        callbackSuccess = QUOTE(call FUNC(putOutFire));
     };
 
     class ApplyTourniquet: BasicBandage {

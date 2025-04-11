@@ -1,3 +1,4 @@
+PREP(activateLocation);
 PREP(activateLocationMarker);
 PREP(addInteractions);
 PREP(ammoCrate);

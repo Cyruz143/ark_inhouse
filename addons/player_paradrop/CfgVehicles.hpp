@@ -29,14 +29,14 @@ class CfgVehicles {
             class Start_Drop {
                 displayName = "Start Paradrop";
                 exceptions[] = {"isNotInside"};
-                condition = QUOTE(FUNC(canDrop));
-                statement = QUOTE(FUNC(startDrop));
+                condition = QUOTE(call FUNC(canDrop));
+                statement = QUOTE(call FUNC(startDrop));
                 icon = "\A3\ui_f\data\map\vehicleicons\iconParachute_ca.paa";
             };
             class Stop_Drop: Start_Drop {
                 displayName = "Stop Paradrop";
-                condition = QUOTE(FUNC(canStopDrop));
-                statement = QUOTE(FUNC(stopDrop));
+                condition = QUOTE(call FUNC(canStopDrop));
+                statement = QUOTE(call FUNC(stopDrop));
             };
         };
     };

@@ -138,10 +138,10 @@ class ARK_RU_CBRN_Pilot_F: ARK_RU_CBRN_Soldier_base_F {
 // Vanilla CBRN retextures
 class C_CBRN_Man_Oversuit_01_Yellow_F: C_CBRN_Man_Oversuit_01_Blue_F {
     uniformClass = "U_C_CBRN_Suit_01_Yellow_F";
-    hiddenSelectionsTextures[] = {"\x\ark\addons\ark_custom_units\data\CBRN_Suit_02_CO.paa"};
+    hiddenSelectionsTextures[] = {QPATHTOF(data\CBRN_Suit_02_CO.paa)};
 };
 
 class C_CBRN_Man_Oversuit_01_Black_F: C_CBRN_Man_Oversuit_01_Blue_F {
     uniformClass = "U_C_CBRN_Suit_01_Black_F";
-    hiddenSelectionsTextures[] = {"\x\ark\addons\ark_custom_units\data\CBRN_Suit_03_CO.paa"};
+    hiddenSelectionsTextures[] = {QPATHTOF(data\CBRN_Suit_03_CO.paa)};
 };

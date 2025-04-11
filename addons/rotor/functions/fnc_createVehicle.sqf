@@ -34,4 +34,4 @@ if (_vehicle isKindOf "Plane") then {
     _vehicle setVelocityModelSpace [0, 150, 0];
 };
 
-_vehicle;
+_vehicle

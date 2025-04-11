@@ -27,4 +27,4 @@ _pilot setBehaviour "CARELESS";
 _pilot allowFleeing 0;
 {_pilot disableAI _x} forEach ["AUTOTARGET", "AIMINGERROR", "SUPPRESSION"];
 
-_pilot;
+_pilot

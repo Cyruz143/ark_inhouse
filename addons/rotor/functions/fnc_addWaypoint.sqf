@@ -27,4 +27,4 @@ _wp setWaypointType "MOVE";
 _wp setWaypointBehaviour "CARELESS";
 _wp setWaypointCombatMode "BLUE";
 
-_wp;
+_wp
