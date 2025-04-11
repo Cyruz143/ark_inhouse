@@ -19,6 +19,7 @@ class CfgPatches {
             "ace_medical_treatment",
             "ace_medical_gui"
         };
+        skipWhenMissingDependencies = 1;
         VERSION_CONFIG;
     };
 };

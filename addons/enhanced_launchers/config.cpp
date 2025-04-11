@@ -15,6 +15,7 @@ class CfgPatches {
             "gm_weapons_ammo",
             "gm_weapons_launchers_rpg7"
         };
+        skipWhenMissingDependencies = 1;
         VERSION_CONFIG;
     };
 };

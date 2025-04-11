@@ -15,6 +15,7 @@ class CfgPatches {
             "admiral",
             "ace_common"
         };
+        skipWhenMissingDependencies = 1;
         VERSION_CONFIG;
     };
 };

@@ -15,6 +15,7 @@ class CfgPatches {
             "ace_trenches",
             "us_military_units"
         };
+        skipWhenMissingDependencies = 1;
         VERSION_CONFIG;
     };
 };

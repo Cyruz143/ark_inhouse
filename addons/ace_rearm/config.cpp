@@ -14,6 +14,7 @@ class CfgPatches {
             "ark_admin_tools",
             "ace_rearm"
         };
+        skipWhenMissingDependencies = 1;
         VERSION_CONFIG;
     };
 };

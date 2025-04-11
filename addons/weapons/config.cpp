@@ -16,6 +16,7 @@ class CfgPatches {
             "gm_weapons_machineguns_pk",
             "gm_weapons_machineguns_g8"
         };
+        skipWhenMissingDependencies = 1;
         VERSION_CONFIG;
     };
 };

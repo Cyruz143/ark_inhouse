@@ -15,6 +15,7 @@ class CfgPatches {
             "CUP_Creatures_People_LoadOrder",
             "Characters_f_lxWS"
         };
+        skipWhenMissingDependencies = 1;
         VERSION_CONFIG;
     };
 };

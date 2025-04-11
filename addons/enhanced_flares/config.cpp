@@ -14,6 +14,7 @@ class CfgPatches {
             "ace_common",
             "ace_grenades"
         };
+        skipWhenMissingDependencies = 1;
         VERSION_CONFIG;
     };
 };

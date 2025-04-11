@@ -3,7 +3,8 @@ class CfgPatches {
         units[] = {};
         weapons[] = {};
         requiredVersion = 1.0;
-        requiredAddons[] = {"CBA_MAIN", "Hull3"};
+        requiredAddons[] = {"cba_main", "Hull3"};
+        skipWhenMissingDependencies = 1;
         author = "ARK";
         authorUrl = "https://github.com/Cyruz143/ark_inhouse";
     };
