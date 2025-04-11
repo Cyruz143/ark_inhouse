@@ -15,7 +15,7 @@
 
 params ["_unit"];
 
-[["\x\ark\addons\ark_main\resources\click_enable.paa", 2.0], ["Click on map to teleport"]] call CBA_fnc_notify;
+[[QPATHTOEF(main,resources\click_enable.paa), 2.0], ["Click on map to teleport"]] call CBA_fnc_notify;
 openMap [true, true];
 
 _unit onMapSingleClick {

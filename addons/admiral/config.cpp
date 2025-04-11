@@ -34,7 +34,7 @@ class CfgFactionClasses {
     class Admiral_Camps {
         displayName = "Admiral Camp Bases";
         author = "Admiral";
-        icon = "x\ark\addons\ark_inhouse\resources\ark_star.paa";
+        icon = QPATHTOF(main,resources\ark_star.paa);
         priority = 1;
         side = 3;
     };
