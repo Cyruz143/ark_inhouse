@@ -1,218 +1,221 @@
+// Spark Effects from Metal, these only play on particles high settings.
 class ImpactMetal {
     class LightExp {
-        position[] = {0,0,0};
-        simulation = "light";
-        type = "Goko_bulletexplo2";
         intensity = 1;
         interval = 1;
         lifeTime = 1;
-    };
-    class Starter_SparksBurstLow {
-        simulation = "particles";
-        type = "gokoFX_Starter_SparksBurstLOW";
         position[] = {0,0,0};
+        simulation = "light";
+        type = QCLASS(bulletExplode);
+    };
+    class CLASS(startSparksBurstLow) {
         intensity = 1;
         interval = 0.1;
         lifeTime = 0.4;
-        randomDirectionPeriodVar = 1;
-        randomDirectionIntensityVar = 1;
-    };
-    class Starter_SparksBurstMed {
-        simulation = "particles";
-        type = "gokoFX_Starter_SparksBurstMed";
         position[] = {0,0,0};
+        qualityLevel = 2;
+        randomDirectionIntensityVar = 1;
+        randomDirectionPeriodVar = 1;
+        simulation = "particles";
+        type = QCLASS(sparksBurstLow);
+    };
+    class CLASS(startSparksBurstMed) {
         intensity = 1;
         interval = 0.1;
         lifeTime = 0.6;
-        randomDirectionPeriodVar = 1;
-        randomDirectionIntensityVar = 1;
-        quality = 1;
-    };
-    class SparksOmni {
-        simulation = "particles";
-        type = "gokoFX_Starter_SparksOmni";
         position[] = {0,0,0};
+        qualityLevel = 2;
+        randomDirectionIntensityVar = 1;
+        randomDirectionPeriodVar = 1;
+        simulation = "particles";
+        type = QCLASS(sparksBurstMed);
+    };
+    class CLASS(startSparksOmni) {
         intensity = 1;
         interval = 10;
-        randomDirectionPeriodVar = 0.5;
+        lifeTime = 1;
+        position[] = {0,0,0};
+        qualityLevel = 2;
         randomDirectionIntensityVar = 2;
-        qualityLevel = 2;
-        lifeTime = 1;
-    };
-    class SparksDrop2 {
+        randomDirectionPeriodVar = 0.5;
         simulation = "particles";
-        type = "gokoFX_Starter_SparksDrop2";
-        position[] = {0,0,0};
-        intensity = 1;
-        interval = 1;
-        lifeTime = 1;
-        qualityLevel = 2;
+        type = QCLASS(sparksOmni);
     };
-    class SparksDrop {
-        simulation = "particles";
-        type = "gokoFX_Starter_SparksDrop";
-        position[] = {0,0,0};
+    class CLASS(startSparksDrop) {
         intensity = 1;
         interval = 11;
         lifeTime = 1.5;
+        position[] = {0,0,0};
         qualityLevel = 2;
+        simulation = "particles";
+        type = QCLASS(sparksDrop);
+    };
+    class CLASS(startSparksDrop2) {
+        intensity = 1;
+        interval = 1;
+        lifeTime = 1;
+        position[] = {0,0,0};
+        qualityLevel = 2;
+        simulation = "particles";
+        type = QCLASS(sparksDrop2);
     };
 };
 
+// Increases the visual effect of hitting something slightly, follow the same particle settings as vanilla does.
 class ImpactConcrete {
     class ImpactDust {
+        intensity = 2;
+        interval = 1;
+        lifeTime = 3;
+        position[] = {0, 0, 0};
         simulation = "particles";
         type = "ImpactDustConcrete";
-        position[] = {0, 0, 0};
-        intensity = 2;
-        interval = 1;
-        lifeTime = 3;
     };
     class ImpactDust2 {
-        simulation = "particles";
-        type = "ImpactDustConcrete2";
-        position[] = {0, 0, 0};
         intensity = 2;
         interval = 1;
         lifeTime = 3;
+        position[] = {0, 0, 0};
+        simulation = "particles";
+        type = "ImpactDustConcrete2";
     };
 };
 
 class ImpactEffectsSmall {
     class ImpactDust1 {
-        simulation = "particles";
-        type = "ImpactDust2";
-        position[] = {0, 0, 0};
-        qualityLevel = 2;
         intensity = 2;
         interval = 1;
         lifeTime = 3;
+        position[] = {0, 0, 0};
+        qualityLevel = 2;
+        simulation = "particles";
+        type = "ImpactDust2";
     };
     class ImpactDust1Med {
+        intensity = 2;
+        interval = 1;
+        lifeTime = 3;
+        position[] = {0, 0, 0};
+        qualityLevel = 1;
         simulation = "particles";
         type = "ImpactDust2";
-        position[] = {0, 0, 0};
-        qualityLevel = 1;
-        intensity = 2;
-        interval = 1;
-        lifeTime = 3;
     };
     class ImpactDust1Low {
-        simulation = "particles";
-        type = "ImpactDust2Low";
+        intensity = 2;
+        interval = 1;
+        lifeTime = 3;
         position[] = {0, 0, 0};
         qualityLevel = 0;
-        intensity = 2;
-        interval = 1;
-        lifeTime = 3;
+        simulation = "particles";
+        type = "ImpactDust2Low";
     };
     class ImpactDustWater1 {
+        intensity = 2;
+        interval = 1;
+        lifeTime = 3;
+        position[] = {0, 0, 0};
         simulation = "particles";
         type = "ImpactDustWater2";
-        position[] = {0, 0, 0};
-        intensity = 2;
-        interval = 1;
-        lifeTime = 3;
     };
     class ImpactConcrete {
-        simulation = "particles";
-        type = "ImpactConcrete";
+        intensity = 2;
+        interval = 1;
+        lifeTime = 3;
         position[] = {0, 0, 0};
         qualityLevel = 2;
-        intensity = 2;
-        interval = 1;
-        lifeTime = 3;
-    };
-    class ImpactConcreteMed {
         simulation = "particles";
         type = "ImpactConcrete";
+    };
+    class ImpactConcreteMed {
+        intensity = 2;
+        interval = 1;
+        lifeTime = 3;
         position[] = {0, 0, 0};
         qualityLevel = 1;
-        intensity = 2;
-        interval = 1;
-        lifeTime = 3;
+        simulation = "particles";
+        type = "ImpactConcrete";
     };
     class ImpactEffectsSmall06 {
-        simulation = "particles";
-        type = "ImpactSandSmoke2";
-        position[] = {0, 0, 0};
         intensity = 2;
         interval = 1;
         lifeTime = 3;
+        position[] = {0, 0, 0};
+        simulation = "particles";
+        type = "ImpactSandSmoke2";
     };
 };
 
 class ImpactPlaster {
     class ImpactDust1 {
-        simulation = "particles";
-        type = "ImpactDustPlaster";
-        position[] = {0, 0, 0};
-        qualityLevel = 2;
         intensity = 2;
         interval = 1;
         lifeTime = 3;
+        position[] = {0, 0, 0};
+        qualityLevel = 2;
+        simulation = "particles";
+        type = "ImpactDustPlaster";
     };
     class ImpactDust1Med {
+        intensity = 2;
+        interval = 1;
+        lifeTime = 3;
+        position[] = {0, 0, 0};
+        qualityLevel = 1;
         simulation = "particles";
         type = "ImpactDustPlaster";
-        position[] = {0, 0, 0};
-        qualityLevel = 1;
-        intensity = 2;
-        interval = 1;
-        lifeTime = 3;
     };
     class ImpactDust1Low {
-        simulation = "particles";
-        type = "ImpactDustPlasterLow";
+        intensity = 2;
+        interval = 1;
+        lifeTime = 3;
         position[] = {0, 0, 0};
         qualityLevel = 0;
-        intensity = 2;
-        interval = 1;
-        lifeTime = 3;
+        simulation = "particles";
+        type = "ImpactDustPlasterLow";
     };
     class ImpactConcreteWall01 {
+        intensity = 2;
+        interval = 1;
+        lifeTime = 3;
+        position[] = {0, 0, 0};
+        qualityLevel = 2;
         simulation = "particles";
         type = "ImpactConcreteWall1";
-        position[] = {0, 0, 0};
-        qualityLevel = 2;
-        intensity = 2;
-        interval = 1;
-        lifeTime = 3;
     };
     class ImpactConcreteWall02 {
-        simulation = "particles";
-        type = "ImpactConcreteWall2";
-        position[] = {0, 0, 0};
-        qualityLevel = 2;
         intensity = 2;
         interval = 1;
         lifeTime = 3;
+        position[] = {0, 0, 0};
+        qualityLevel = 2;
+        simulation = "particles";
+        type = "ImpactConcreteWall2";
     };
     class ImpactConcreteWall02Med {
+        intensity = 2;
+        interval = 1;
+        lifeTime = 3;
+        position[] = {0, 0, 0};
+        qualityLevel = 1;
         simulation = "particles";
         type = "ImpactConcreteWall2";
-        position[] = {0, 0, 0};
-        qualityLevel = 1;
-        intensity = 2;
-        interval = 1;
-        lifeTime = 3;
     };
     class ImpactConcreteWall03 {
-        simulation = "particles";
-        type = "ImpactConcreteWall3";
+        intensity = 2;
+        interval = 1;
+        lifeTime = 3;
         position[] = {0, 0, 0};
         qualityLevel = 2;
-        intensity = 2;
-        interval = 1;
-        lifeTime = 3;
-    };
-    class ImpactConcreteWall03Med {
         simulation = "particles";
         type = "ImpactConcreteWall3";
-        position[] = {0, 0, 0};
-        qualityLevel = 1;
+    };
+    class ImpactConcreteWall03Med {
         intensity = 2;
         interval = 1;
         lifeTime = 3;
+        position[] = {0, 0, 0};
+        qualityLevel = 1;
+        simulation = "particles";
+        type = "ImpactConcreteWall3";
     };
 };
