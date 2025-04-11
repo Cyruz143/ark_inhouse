@@ -14,6 +14,7 @@ class CfgPatches {
             "admiral",
             "ace_parachute"
         };
+        skipWhenMissingDependencies = 1;
         VERSION_CONFIG;
     };
 };

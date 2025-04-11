@@ -14,6 +14,7 @@ class CfgPatches {
             "ark_admin_tools",
             "CUP_Creatures_People_LoadOrder"
         };
+        skipWhenMissingDependencies = 1;
         VERSION_CONFIG;
     };
 };

@@ -9,10 +9,8 @@ class CfgPatches {
         units[] = {};
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
-        requiredAddons[] = {
-            "ark_main",
-            "diwako_dui_radar"
-        };
+        requiredAddons[] = {"ark_main", "diwako_dui_radar"};
+        skipWhenMissingDependencies = 1;
         VERSION_CONFIG;
     };
 };

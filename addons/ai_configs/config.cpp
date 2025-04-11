@@ -9,10 +9,8 @@ class CfgPatches {
         units[] = {};
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
-        requiredAddons[] = {
-            "ark_main",
-            "CUP_Weapons_LoadOrder"
-        };
+        requiredAddons[] = {"ark_main", "CUP_Weapons_LoadOrder"};
+        skipWhenMissingDependencies = 1;
         VERSION_CONFIG;
     };
 };

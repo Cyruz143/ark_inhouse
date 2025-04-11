@@ -21,6 +21,7 @@ class CfgPatches {
             "acp_main",
             "Characters_f_lxWS"
         };
+        skipWhenMissingDependencies = 1;
         VERSION_CONFIG;
     };
 };
