@@ -3,7 +3,7 @@ class ACE_Medical_Injuries {
         class woundHandlers;
         class falling {
             class woundHandlers: woundHandlers {
-                ADDON = QUOTE({FUNC(handleFallDamage)});
+                ADDON = QFUNC(handleFallDamage);
             };
         };
     };
