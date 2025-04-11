@@ -3,7 +3,7 @@ class CfgVehicles {
     class ARK_Enable_Deploy: ARK_Module {
         scope = 2;
         displayName = "Inhouse - Enable Group Deploy";
-        function = QUOTE(FUNC(init));
+        function = QUOTE(call FUNC(init));
         class ModuleDescription {
             description = "Enables Group Deploy";
         };
@@ -51,7 +51,7 @@ class CfgVehicles {
 
                 class Host_Menu {
                     displayName = "Host Menu";
-                    condition = "((call ark_main_fnc_isHost) || { (isServer && hasInterface) })";
+                    condition = QUOTE((call EFUNC(main,isHost) || { (isServer && hasInterface) }));
                     statement = "";
                     icon = QPATHTOEF(main,resources\ark_star.paa);
                     exceptions[] = {"isNotSwimming", "isNotInside", "isNotSitting", "isNotOnLadder", "isNotRefueling"};
@@ -60,7 +60,7 @@ class CfgVehicles {
                         displayName = "Activate (Pre Safety) Group Deploy";
                         icon = QPATHTOEF(main,resources\deploy_activate.paa);
                         condition = "ark_deploy_deployEnabled && (!ark_deploy_preDeployActive) && ark_deploy_preDeployRequired";
-                        statement = QUOTE(FUNC(activatePreGroupDeploy));
+                        statement = QUOTE(call FUNC(activatePreGroupDeploy));
                         exceptions[] = {"isNotSwimming", "isNotInside", "isNotSitting", "isNotOnLadder", "isNotRefueling"};
                     };
                 };

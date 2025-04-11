@@ -3,7 +3,7 @@ class CfgVehicles {
     class ARK_ACE_Rearm: ARK_Module {
         scope = 2;
         displayName = "Inhouse - Allow rearm";
-        function = QUOTE(FUNC(enableRearm));
+        function = QUOTE(call FUNC(enableRearm));
         class ModuleDescription {
             description = "Allows the synced vehicles to rearm other vehicles";
         };

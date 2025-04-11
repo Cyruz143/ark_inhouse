@@ -13,7 +13,7 @@
  * [] call ark_town_sweep_fnc_addInteractions
  */
 
-private _condition = { EFUNC(main,isHost) && {[_player, _target, []] call ace_common_fnc_canInteractWith} };
+private _condition = { call EFUNC(main,isHost) && {[_player, _target, []] call ace_common_fnc_canInteractWith} };
 private _action = [
     "Town Sweep",
     "Town Sweep",
