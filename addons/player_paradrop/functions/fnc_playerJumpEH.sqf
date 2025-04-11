@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 /*
  * Author: Cyruz
- * Player jump eventhandler code
+ * Ejects unit, waits until supplied height and creates a chute and moves the unit in.
  *
  * Arguments:
  * None

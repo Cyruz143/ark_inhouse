@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 /*
  * Author: Cyruz
- * Checks if player can paradrop
+ * Checks if the pilot meets the criteria for starting a paradrop
  *
  * Arguments:
  * None
