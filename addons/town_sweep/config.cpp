@@ -1,8 +1,15 @@
+#include "script_component.hpp"
+
 class CfgPatches {
     class town_sweep {
+        name = COMPONENT_NAME;
+        author = "ARK";
+        authors[] = {"ARK"};
+        url = "http://www.ark-group.org";
+        authorUrl = "https://github.com/Cyruz143/ark_inhouse";
         units[] = {};
         weapons[] = {};
-        requiredVersion = 2.00;
+        requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {
             "ark_main",
             "ark_admin_tools",
@@ -10,15 +17,9 @@ class CfgPatches {
             "Admiral",
             "ark_rotor"
         };
-        author = "ARK";
-        authorUrl = "https://github.com/Cyruz143/ark_inhouse";
+        VERSION_CONFIG;
     };
 };
 
-class Extended_PreInit_EventHandlers {
-    class ARK_Inhouse_Town_Sweep {
-        init = "call compileScript ['x\ark\addons\town_sweep\ts_preinit.sqf'];";
-    };
-};
-
+#include "CfgEventHandlers.hpp"
 #include "CfgVehicles.hpp"
