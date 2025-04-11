@@ -18,11 +18,6 @@ class CfgPatches {
     };
 };
 
+#include "CfgEventHandlers.hpp"
 #include "CfgWorlds.hpp"
 #include "CfgVehicles.hpp"
-
-class Extended_PostInit_EventHandlers {
-    class ADDON {
-        clientInit = "call compileScript ['x\ark\addons\ark_terrain_fixes\client_postinit.sqf'];";
-    };
-};
