@@ -1,0 +1,17 @@
+PREP(addWaypoint);
+PREP(barrelBomb);
+PREP(bombContact);
+PREP(checkTrigger);
+PREP(cleanUp);
+PREP(createBomb);
+PREP(createCargo);
+PREP(createPilot);
+PREP(createVehicle);
+PREP(dropBombs);
+PREP(emptyCargo);
+PREP(insert);
+PREP(jumpController);
+PREP(paradrop);
+PREP(preInit);
+PREP(taskAttack);
+PREP(waitForCargo);

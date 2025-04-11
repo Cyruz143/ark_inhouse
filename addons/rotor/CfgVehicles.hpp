@@ -18,14 +18,14 @@ class CfgVehicles {
     class ARK_Module;
     class ARK_Rotor_Base : ARK_Module {
         scope = 1;
-        function = "ark_rotor_module_preinit";
+        function = QUOTE(FUNC(preinit));
         isTriggerActivated = 1;
     };
 
     class ARK_Rotor_Paradrop: ARK_Rotor_Base {
         scope = 2;
         displayName = "Rotor - Paradrop";
-        icon = "\x\ark\addons\ark_rotor\resources\paradrop.paa";
+        icon = QPATHTOF(resources\paradrop.paa);
         class ModuleDescription {
             description = "Paradrops EI on the first waypoint";
         };
@@ -69,7 +69,7 @@ class CfgVehicles {
                 displayName = "Routine Function";
                 description = "The function called by this module. Do not change this unless you know what it does";
                 typeName = "STRING";
-                defaultValue = "ark_rotor_fnc_paradrop";
+                defaultValue = QUOTE(FUNC(paradrop));
             };
         };
     };
@@ -77,7 +77,7 @@ class CfgVehicles {
     class ARK_Rotor_Insert: ARK_Rotor_Base {
         scope = 2;
         displayName = "Rotor - Infantry Insert";
-        icon = "\x\ark\addons\ark_rotor\resources\insert.paa";
+        icon = QPATHTOF(resources\insert.paa);
         class ModuleDescription {
             description = "Lands the helo at the first waypoint";
         };
@@ -121,7 +121,7 @@ class CfgVehicles {
                 displayName = "Routine Function";
                 description = "The function called by this module. Do not change this unless you know what it does";
                 typeName = "STRING";
-                defaultValue = "ark_rotor_fnc_insert";
+                defaultValue = QUOTE(FUNC(insert));
             };
         };
     };
@@ -129,7 +129,7 @@ class CfgVehicles {
     class ARK_Rotor_Barrelbomb: ARK_Rotor_Base {
         scope = 2;
         displayName = "Rotor - Barrel Bomb";
-        icon = "\x\ark\addons\ark_rotor\resources\barrel.paa";
+        icon = QPATHTOF(resources\barrel.paa);
         class ModuleDescription {
             description = "Drops barrel bombs between the first and second waypoint";
         };
@@ -174,7 +174,7 @@ class CfgVehicles {
                 displayName = "Routine Function";
                 description = "The function called by this module. Do not change this unless you know what it does";
                 typeName = "STRING";
-                defaultValue = "ark_rotor_fnc_barrelbomb";
+                defaultValue = QUOTE(FUNC(barrelbomb));
             };
         };
     };
