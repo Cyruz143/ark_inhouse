@@ -9,10 +9,8 @@ class CfgPatches {
         units[] = {};
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
-        requiredAddons[] = {
-            "ark_main",
-            "ace_tagging"
-        };
+        requiredAddons[] = {"ark_main", "ace_tagging"};
+        skipWhenMissingDependencies = 1;
         VERSION_CONFIG;
     };
 };

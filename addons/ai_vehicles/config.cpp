@@ -15,6 +15,7 @@ class CfgPatches {
             "ace_common",
             "CUP_Vehicles_LoadOrder"
         };
+        skipWhenMissingDependencies = 1;
         VERSION_CONFIG;
     };
 };

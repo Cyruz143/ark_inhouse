@@ -16,6 +16,7 @@ class CfgPatches {
             "ace_spectator",
             "Hull3"
         };
+        skipWhenMissingDependencies = 1;
         VERSION_CONFIG;
     };
 };

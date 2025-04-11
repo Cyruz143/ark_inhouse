@@ -17,6 +17,7 @@ class CfgPatches {
             "Admiral",
             "ark_rotor"
         };
+        skipWhenMissingDependencies = 1;
         VERSION_CONFIG;
     };
 };

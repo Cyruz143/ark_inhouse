@@ -15,6 +15,7 @@ class CfgPatches {
             "Hull3",
             "ace_common"
         };
+        skipWhenMissingDependencies = 1;
         VERSION_CONFIG;
     };
 };

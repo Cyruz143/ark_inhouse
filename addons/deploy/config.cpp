@@ -14,6 +14,7 @@ class CfgPatches {
             "ark_admin_tools",
             "Hull3"
         };
+        skipWhenMissingDependencies = 1;
         VERSION_CONFIG;
     };
 };

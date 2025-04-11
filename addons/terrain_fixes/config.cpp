@@ -14,6 +14,7 @@ class CfgPatches {
             "clafghan",
             "fallujah_hou"
         };
+        skipWhenMissingDependencies = 1;
         VERSION_CONFIG;
     };
 };
