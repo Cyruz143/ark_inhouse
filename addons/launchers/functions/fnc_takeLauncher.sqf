@@ -36,7 +36,7 @@ private _items = (getUnitLoadout _target) select 1;
 private _magazines = _items select [4, 2];
 _items deleteRange [4, 2];
 
-_target removeWeapon _launcher;
+_target removeWeaponGlobal _launcher;
 
 [_player, _launcher, true, _magazines] call ace_common_fnc_addWeapon;
 
