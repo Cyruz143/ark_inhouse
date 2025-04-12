@@ -3,7 +3,7 @@ class CfgVehicles {
     class ARK_Make_Sentry: ARK_Module {
         scope = 2;
         displayName = "Inhouse - Make Sentry";
-        function = QUOTE(FUNC(makeSentry));
+        function = QFUNC(makeSentry); // Function has to be called this way otherwise it will error.
         class ModuleDescription {
             description = "Set options to make an EI sentry";
         };

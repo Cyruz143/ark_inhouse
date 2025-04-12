@@ -6,7 +6,7 @@ class CfgVehicles {
         scope = 2;
         displayName = "Chase AI - Module";
         icon = QPATHTOF(resources\chase.paa);
-        function = QUOTE(FUNC(module));
+        function = QFUNC(module); // Function has to be called this way otherwise it will error.
         isTriggerActivated = 1;
         class ModuleDescription {
             description = "Spawns AI that hunt players";

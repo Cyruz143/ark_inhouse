@@ -3,7 +3,7 @@ class CfgVehicles {
     class ARK_Player_Paradrop: ARK_Module {
         scope = 2;
         displayName = "Inhouse - Player Paradrop";
-        function = QUOTE(FUNC(preInit));
+        function = QFUNC(preInit); // Function has to be called this way otherwise it will error.
         class ModuleDescription {
             description = "Module to enable paradrops from planes";
         };
