@@ -6,7 +6,7 @@ class Module_F : Logic {
 class ARK_Module: Module_F {
     scope = 1;
     displayName = "ARK Module";
-    icon = "\x\ark\addons\main\resources\ark_star.paa";
+    icon = QPATHTOF(resources\ark_star.paa);
     category = "ARK";
     function = "";
     functionPriority = 1;

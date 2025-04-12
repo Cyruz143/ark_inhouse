@@ -18,7 +18,7 @@ class CfgVehicles {
     class ARK_Module;
     class ARK_Rotor_Base : ARK_Module {
         scope = 1;
-        function = QUOTE(FUNC(preInit));
+        function = QFUNC(preInit); // Function has to be called this way otherwise it will error.
         isTriggerActivated = 1;
     };
 
@@ -42,9 +42,18 @@ class CfgVehicles {
                 typeName = "STRING";
                 defaultValue = "NORMAL";
                 class Values {
-                    class limited_speed {name = "Slow";  value = "LIMITED";};
-                    class normal_speed {name = "Normal"; value = "NORMAL";};
-                    class full_speed {name = "Fast"; value = "FULL";};
+                    class limited_speed {
+                        name = "Slow";
+                        value = "LIMITED";
+                    };
+                    class normal_speed {
+                        name = "Normal";
+                        value = "NORMAL";
+                    };
+                    class full_speed {
+                        name = "Fast";
+                        value = "FULL";
+                    };
                 };
             };
             class Crew_Percentage {
@@ -53,10 +62,22 @@ class CfgVehicles {
                 typeName = "NUMBER";
                 defaultValue = 50;
                 class Values {
-                    class twenty_five {name = "25%"; value = 25;};
-                    class fifty {name = "50%"; value = 50;};
-                    class seventy_five {name = "75%"; value = 75;};
-                    class one_hundred {name = "100%"; value = 100;};
+                    class twenty_five {
+                        name = "25%";
+                        value = 25;
+                    };
+                    class fifty {
+                        name = "50%";
+                        value = 50;
+                    };
+                    class seventy_five {
+                        name = "75%";
+                        value = 75;
+                    };
+                    class one_hundred {
+                        name = "100%";
+                        value = 100;
+                    };
                 };
             };
             class Vehicle_ClassName {
@@ -69,7 +90,7 @@ class CfgVehicles {
                 displayName = "Routine Function";
                 description = "The function called by this module. Do not change this unless you know what it does";
                 typeName = "STRING";
-                defaultValue = QUOTE(call FUNC(paradrop));
+                defaultValue = QFUNC(paradrop);
             };
         };
     };
@@ -94,9 +115,18 @@ class CfgVehicles {
                 typeName = "STRING";
                 defaultValue = "NORMAL";
                 class Values {
-                    class limited_speed {name = "Slow";  value = "LIMITED";};
-                    class normal_speed {name = "Normal"; value = "NORMAL";};
-                    class full_speed {name = "Fast"; value = "FULL";};
+                    class limited_speed {
+                        name = "Slow";
+                        value = "LIMITED";
+                    };
+                    class normal_speed {
+                        name = "Normal";
+                        value = "NORMAL";
+                    };
+                    class full_speed {
+                        name = "Fast";
+                        value = "FULL";
+                    };
                 };
             };
             class Crew_Percentage {
@@ -105,10 +135,22 @@ class CfgVehicles {
                 typeName = "NUMBER";
                 defaultValue = 50;
                 class Values {
-                    class twenty_five {name = "25%"; value = 25;};
-                    class fifty {name = "50%"; value = 50;};
-                    class seventy_five {name = "75%"; value = 75;};
-                    class one_hundred {name = "100%"; value = 100;};
+                    class twenty_five {
+                        name = "25%";
+                        value = 25;
+                    };
+                    class fifty {
+                        name = "50%";
+                        value = 50;
+                    };
+                    class seventy_five {
+                        name = "75%";
+                        value = 75;
+                    };
+                    class one_hundred {
+                        name = "100%";
+                        value = 100;
+                    };
                 };
             };
             class Vehicle_ClassName {
@@ -121,7 +163,7 @@ class CfgVehicles {
                 displayName = "Routine Function";
                 description = "The function called by this module. Do not change this unless you know what it does";
                 typeName = "STRING";
-                defaultValue = QUOTE(call FUNC(insert));
+                defaultValue = QFUNC(insert);
             };
         };
     };
@@ -146,9 +188,18 @@ class CfgVehicles {
                 typeName = "STRING";
                 defaultValue = "NORMAL";
                 class Values {
-                    class limited_speed {name = "Slow";  value = "LIMITED";};
-                    class normal_speed {name = "Normal"; value = "NORMAL";};
-                    class full_speed {name = "Fast"; value = "FULL";};
+                    class limited_speed {
+                        name = "Slow";
+                        value = "LIMITED";
+                    };
+                    class normal_speed {
+                        name = "Normal";
+                        value = "NORMAL";
+                    };
+                    class full_speed {
+                        name = "Fast";
+                        value = "FULL";
+                    };
                 };
             };
             class Bomb_Amount {
@@ -157,11 +208,26 @@ class CfgVehicles {
                 typeName = "NUMBER";
                 defaultValue = 3;
                 class Values {
-                    class one_barrel {name = "One";  value = 1;};
-                    class two_barrel {name = "Two";  value = 2;};
-                    class three_barrel {name = "Three";  value = 3;};
-                    class four_barrel {name = "Four";  value = 4;};
-                    class five_barrel {name = "Five";  value = 5;};
+                    class one_barrel {
+                        name = "One";
+                        value = 1;
+                    };
+                    class two_barrel {
+                        name = "Two";
+                        value = 2;
+                    };
+                    class three_barrel {
+                        name = "Three";
+                        value = 3;
+                    };
+                    class four_barrel {
+                        name = "Four";
+                        value = 4;
+                    };
+                    class five_barrel {
+                        name = "Five";
+                        value = 5;
+                    };
                 };
             };
             class Vehicle_ClassName {
@@ -174,7 +240,7 @@ class CfgVehicles {
                 displayName = "Routine Function";
                 description = "The function called by this module. Do not change this unless you know what it does";
                 typeName = "STRING";
-                defaultValue = QUOTE(call FUNC(barrelbomb));
+                defaultValue = QFUNC(barrelbomb);
             };
         };
     };
