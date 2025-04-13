@@ -123,10 +123,9 @@ adm_cqc_fnc_spawnGarrisonGroup = {
     params ["_zone","_numOfUnits","_possiblePositions","_building"];
 
     private _unitTemplate = GET_ZONE_UNIT_TEMPLATE(_zone);
-    private _group = createGroup ([_unitTemplate] call adm_common_fnc_getUnitTemplateSide);
+    private _group = createGroup [([_unitTemplate] call adm_common_fnc_getUnitTemplateSide), true];
     [_group, _numOfUnits, _unitTemplate, GET_ZONE_TEMPLATE(_zone), _possiblePositions, _building, _zone] call adm_cqc_fnc_spawnGarrisonGroupUnits;
     _group setVariable ["adm_zone_parent", _zone];
-    _group deleteGroupWhenEmpty true;
     _group enableDynamicSimulation adm_cqc_dynamicSimEnabled;
 
     _group;

@@ -22,8 +22,7 @@ if (count _selectedPos isEqualTo 3) exitWith {};
 
 private _spawnPos = _position getPos [3000, random 360];
 private _spawnZone = createTrigger ["EmptyDetector", _spawnPos, false];
-private _grp = createGroup civilian;
-_grp deleteGroupWhenEmpty true;
+private _grp = createGroup [civilian, true];
 
 private _jeff = _grp createUnit ["C_Jeff_VR", _spawnPos, [], 0, "NONE"];
 _grp addWaypoint [_lzPos, 0, 1];
