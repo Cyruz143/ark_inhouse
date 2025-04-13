@@ -35,7 +35,9 @@ private _selectedMission = selectRandom ts_spawn_availableMissions;
 switch (_selectedMission) do {
     case 1: { call FUNC(objDestroyVeh) };
     case 2: { call FUNC(objRecoverIntel) };
-    default { call FUNC(objDestroyAmmo) };
+    case 3: { call FUNC(objDestroyAmmo) };
+    case 4: { call FUNC(objDownloadIntel) };
+    default { ERROR_MSG("Town Sweep, activateLocation, _selectedMission was not found.") };
 };
 
 ts_spawn_availableMissions deleteAt (ts_spawn_availableMissions find _selectedMission);
