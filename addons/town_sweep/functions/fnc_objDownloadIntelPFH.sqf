@@ -43,7 +43,7 @@ _marker setMarkerSizeLocal [5, 5];
         };
     };
 
-    private _players = [] call EFUNC(common,players);
+    private _players = [true] call EFUNC(common,players);
     private _inArea = (_players findIf {_x inArea QGVAR(downloadIntelForPlayersMarker)}) != -1;
 
     if (!_inArea) exitWith {
