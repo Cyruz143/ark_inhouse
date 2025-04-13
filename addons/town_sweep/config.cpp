@@ -13,9 +13,10 @@ class CfgPatches {
         requiredAddons[] = {
             "ark_main",
             "ark_admin_tools",
-            "Hull3",
+            "ark_common",
+            "ark_rotor",
             "Admiral",
-            "ark_rotor"
+            "Hull3"
         };
         skipWhenMissingDependencies = 1;
         VERSION_CONFIG;
