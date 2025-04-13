@@ -44,8 +44,7 @@ if (_roadObj isNotEqualTo objNull) then {
     _vehicle setDir ((_roadInfo #6) getDir (_roadInfo #7));
 };
 
-private _group = createGroup _side;
-_group deleteGroupWhenEmpty true;
+private _group = createGroup [_side, true];
 
 private _driver = [[0,0,0], _group, _crewClasses, _skillArray] call adm_common_fnc_placeMan;
 _driver assignAsDriver _vehicle;

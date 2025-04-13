@@ -147,8 +147,7 @@ adm_camp_fnc_spawnInfGroup = {
     private _unitTemplate = GET_ZONE_UNIT_TEMPLATE(_zone);
     private _zoneTemplate = GET_ZONE_TEMPLATE(_zone);
     private _initialPos = [GET_ZONE_AREA(_zone), GET_ZONE_POSITION(_zone), "SoldierWB"] call adm_common_fnc_getRandomEmptyPositionInArea;
-    private _group = createGroup ([_unitTemplate] call adm_common_fnc_getUnitTemplateSide);
-    _group deleteGroupWhenEmpty true;
+    private _group = createGroup [([_unitTemplate] call adm_common_fnc_getUnitTemplateSide), true];
     private _groupSize = ["ZoneTemplates", _zoneTemplate, "infFireteamSize"] call adm_config_fnc_getNumber;
     for "_i" from 1 to _groupSize do {
         private _position = _initialPos findEmptyPosition [1, CAMP_SPAWN_CIRCLE_MAX_DIST, "SoldierWB"];
@@ -173,9 +172,8 @@ adm_camp_fnc_spawnVehicleGroup = {
     private _vehicle = [[_unitTemplate, GROUP_TYPE_ARRAY select _groupType] call adm_common_fnc_getUnitTemplateArray, GET_ZONE_AREA(_zone), GET_ZONE_POSITION(_zone)] call adm_common_fnc_placeVehicle;
     [format ["%1.spawned.vehicle", GET_ZONE_TYPE(_zone)], [_vehicle, GROUP_TYPE_ARRAY select _groupType, _zone]] call adm_event_fnc_emitEvent;
     ["zone.spawned.vehicle", [_vehicle, GROUP_TYPE_ARRAY select _groupType, _zone]] call adm_event_fnc_emitEvent;
-    private _group = createGroup ([_unitTemplate] call adm_common_fnc_getUnitTemplateSide);
+    private _group = createGroup [([_unitTemplate] call adm_common_fnc_getUnitTemplateSide), true];
     _group setVariable ["adm_group_type", _groupType, false];
-    _group deleteGroupWhenEmpty true;
     private _crew = [_vehicle, _group, _unitTemplate, _zoneTemplate, UNIT_TYPE_ARRAY select _unitType] call adm_camp_fnc_spawnCrew;
     [format ["%1.spawned.crew", GET_ZONE_TYPE(_zone)], [_crew, UNIT_TYPE_ARRAY select _unitType, GROUP_TYPE_ARRAY select _groupType, _zone]] call adm_event_fnc_emitEvent;
     ["zone.spawned.crew", [_crew, UNIT_TYPE_ARRAY select _unitType, GROUP_TYPE_ARRAY select _groupType, _zone]] call adm_event_fnc_emitEvent;

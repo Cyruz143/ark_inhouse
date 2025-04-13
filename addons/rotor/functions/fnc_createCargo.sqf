@@ -22,8 +22,7 @@ params ["_cargoClassnames", "_side", "_vehicle", "_parachute", "_logic"];
 private _skillArray = ["Camp"] call adm_common_fnc_getZoneTemplateSkillValues;
 private _emptySeats = count (fullCrew [_vehicle, "", true] - fullCrew [_vehicle, "driver"]);
 private _adjSeats = floor ((_logic getVariable ["Crew_Percentage", 50])/100 * _emptySeats);
-private _grp = createGroup _side;
-_grp deleteGroupWhenEmpty true;
+private _grp = createGroup [_side, true];
 
 [{
     params ["_args", "_id"];

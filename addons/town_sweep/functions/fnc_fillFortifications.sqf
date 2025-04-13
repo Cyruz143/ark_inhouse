@@ -26,8 +26,7 @@ if (count _buildingPositions < 6) then {
     };
 };
 
-private _grp = createGroup ts_enemy_side;
-_grp deleteGroupWhenEmpty true;
+private _grp = createGroup [ts_enemy_side, true];
 _grp enableDynamicSimulation true;
 
 private _skillArray = ["Cqc"] call adm_common_fnc_getZoneTemplateSkillValues;
