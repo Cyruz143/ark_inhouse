@@ -6,9 +6,8 @@ PREP_RECOMPILE_START;
 #include "XEH_PREP.hpp"
 PREP_RECOMPILE_END;
 
-ts_spawn_location_sizeChange = 100;
-
-if (isServer) then {
+if (call EFUNC(main,isTownSweep) && isServer) then {
+    ts_spawn_location_sizeChange = 100;
     ts_spawn_selectedLocationMarkerName = "ts_spawn_selectedLocation";
     ts_spawn_selectedLocation = [];
     ts_spawn_placedFortifications = [];
