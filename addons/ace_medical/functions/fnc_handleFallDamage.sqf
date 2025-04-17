@@ -15,7 +15,7 @@
  * [] call ark_ace_medical_fnc_handleFallDamage
  */
 
-params ["_unit", "_allDamages", "_typeOfDamage"];
+params ["_unit", "_allDamages", "_typeOfDamage", ["_ammo", ""]];
 
 private _copy = _allDamages call BIS_fnc_arrayShuffle;
 private _addDamage = 0;
@@ -31,4 +31,4 @@ for "_" from 2 to ((count _copy) - 1)  do {
     _x set [2, (_x select 2) + (_lethality / 2)];
 } forEach _copy;
 
-[_unit, _copy, _typeOfDamage]
+[_unit, _copy, _typeOfDamage, _ammo]

@@ -23,5 +23,4 @@ params ["_player", "_target"];
 secondaryWeapon _target != "" &&
 secondaryWeapon _player == "" &&
 isNull objectParent _target &&
-isNull objectParent _player &&
-side _target == side _player;
+isNull objectParent _player;
