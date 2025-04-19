@@ -25,5 +25,5 @@ _mkr setMarkerAlphaLocal 0;
 [{(allPlayers inAreaArray _this #0) isNotEqualTo []}, {
     params ["", "_pos", "_size"];
     [_pos, _size] call EFUNC(admin_tools,chaseAI);
-    [_pos, _size] call FUNC(enableChaseAI);
+    [_pos, _size] call FUNC(chaseAI);
 }, [_mkr,_pos,_size]] call CBA_fnc_waitUntilAndExecute;
