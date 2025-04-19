@@ -21,7 +21,7 @@ if (_shift) then {
     player setVariable [QGVAR(POI), _pos, false];
 
     if !(isNil QGVAR(drawID)) then {
-        removeMissionEventHandler ["Draw3D", ark_pm_eh_ID];
+        removeMissionEventHandler ["Draw3D", GVAR(drawID)];
     };
 
     GVAR(drawID) = addMissionEventHandler ["Draw3D", {
