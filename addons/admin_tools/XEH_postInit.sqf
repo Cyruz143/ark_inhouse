@@ -25,6 +25,13 @@ if (hasInterface) then {
             [["\A3\ui_f\data\igui\cfg\simpleTasks\types\wait_ca.paa", 2.0], ["No dancing allowed zone!"]] call CBA_fnc_notify;
         };
     }, "all"] call CBA_fnc_registerChatCommand;
+
+    ["roll", {
+        private _roll = ceil (random 20);
+        private _txt = format ["%1 rolled: %2", (name player), _roll];
+        [["a3\ui_f_curator\data\cfgmpgametypes\zgm_ca.paa", 2.0], [_txt], [_roll], true] call CBA_fnc_notify;
+        [QGVAR(rollMessage), [player, _txt]] call CBA_fnc_globalEvent;
+    }, "all"] call CBA_fnc_registerChatCommand;
 };
 
 // Server only function events
@@ -38,4 +45,9 @@ if (isServer) then {
 
     //[_endType, _isVictory] call BIS_fnc_endMission;
     _endType call BIS_fnc_endMissionServer;
+}] call CBA_fnc_addEventHandler;
+
+[QGVAR(rollMessage), {
+    params ["_unit", "_message"];
+    _unit globalChat _message;
 }] call CBA_fnc_addEventHandler;
