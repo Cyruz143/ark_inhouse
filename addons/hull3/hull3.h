@@ -1,5 +1,7 @@
 #include "hull3_macros.h"
 
+enableTargetDebug = 1;
+
 class Hull3 {
     isEnabled = 1;
 

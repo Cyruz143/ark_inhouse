@@ -27,10 +27,10 @@ if (isServer) then {
     [QGVAR(stopRain), ace_player] call CBA_fnc_serverEvent;
 }] call FUNC(addButton);
 
-[["End Mission (Win)", "Ends Mission with a Win!"], {
+[["Win Mission", "Ends Mission with a Win!"], {
     [QEGVAR(main,endMission), ["EveryoneWon"]] call CBA_fnc_serverEvent;
 }] call FUNC(addButton);
 
-[["End Mission (Lose)", "Ends Mission with a Loss!"], {
+[["Lose Mission", "Ends Mission with a Loss!"], {
     [QEGVAR(main,endMission), ["EveryoneLost"]] call CBA_fnc_serverEvent;
 }] call FUNC(addButton);
