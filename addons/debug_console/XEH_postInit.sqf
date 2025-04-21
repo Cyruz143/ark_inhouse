@@ -28,9 +28,9 @@ if (isServer) then {
 }] call FUNC(addButton);
 
 [["Win Mission", "Ends Mission with a Win!"], {
-    [QEGVAR(main,endMission), ["EveryoneWon"]] call CBA_fnc_serverEvent;
+    [QEGVAR(admin_tools,endMission), ["EveryoneWon"]] call CBA_fnc_serverEvent;
 }] call FUNC(addButton);
 
 [["Lose Mission", "Ends Mission with a Loss!"], {
-    [QEGVAR(main,endMission), ["EveryoneLost"]] call CBA_fnc_serverEvent;
+    [QEGVAR(admin_tools,endMission), ["EveryoneLost"]] call CBA_fnc_serverEvent;
 }] call FUNC(addButton);
