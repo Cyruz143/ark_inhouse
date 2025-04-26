@@ -7,9 +7,9 @@ if (!isServer) exitWith {};
         params ["_vehicle"];
             private _ret = [_vehicle] call acre_api_fnc_removeAllRacksFromVehicle;
             if (_ret) then {
-                INFO_1("ACRE Racks: Successfully removed rack from: %1", _vehicle);
+                INFO_1("ACRE Racks: Successfully removed rack from: %1",_vehicle);
             } else {
-                ERROR_1("ACRE Racks: Failed to remove rack from: %1", _vehicle);
+                ERROR_1("ACRE Racks: Failed to remove rack from: %1",_vehicle);
             };
     }] call CBA_fnc_addClassEventHandler;
 } forEach ["Air","Car","Tank"];
