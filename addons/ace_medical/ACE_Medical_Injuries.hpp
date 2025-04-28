@@ -7,4 +7,12 @@ class ACE_Medical_Injuries {
             };
         };
     };
+
+    // Remove pain from bruises to counteract insane weapon sway.
+    class wounds {
+        class Contusion {
+            bleeding = 0;
+            pain = 0;
+        };
+    };
 };
