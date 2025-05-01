@@ -34,7 +34,7 @@ _vehicle forceSpeed 0;
 
 [{
     params ["_vehicle", "_driver"];
-    if (alive _vehicle && { lifeState _vehicle != "INCAPACITATED" } && {isNull objectParent _vehicle}) then {
+    if (alive _vehicle && {alive _driver} && { lifeState _driver != "INCAPACITATED" } && {isNull objectParent _driver}) then {
         [_vehicle, _driver] call FUNC(moveInGunner);
     };
 }, [_vehicle,_driver], 8] call CBA_fnc_waitAndExecute;
