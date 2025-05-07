@@ -261,10 +261,23 @@ hull3_acre_fnc_adminAssign152 = {
 hull3_acre_fnc_adminAssignRadio = {
     params ["_radio"];
 
-    if (player canAddItemToUniform _radio) then {
+    private _canAddUniform = [player, _radio, 1, true, false, false] call CBA_fnc_canAddItem;
+    if (_canAddUniform) exitWith {
         player addItemToUniform _radio;
-        systemChat format ["[Hull3] Requested radio %1 has been added to uniform.", _radio];
-    } else {
-        systemChat format ["[Hull3] Requested radio %1 cannot be added to uniform. Make sure you have enough space!", _radio];
+        systemChat format ["[Hull3] Requested radio %1 has been added to UNIFORM.", _radio];
     };
+
+    private _canAddVest = [player, _radio, 1, false, true, false] call CBA_fnc_canAddItem;
+    if (_canAddVest) exitWith {
+        player addItemToVest _radio;
+        systemChat format ["[Hull3] Requested radio %1 has been added to VEST.", _radio];
+    };
+
+    private _canAddBackPack = [player, _radio, 1, false, false, true] call CBA_fnc_canAddItem;
+    if (_canAddBackPack) exitWith {
+        player addItemToBackpack _radio;
+        systemChat format ["[Hull3] Requested radio %1 has been added to BACKPACK.", _radio];
+    };
+
+    systemChat format ["[Hull3] Requested radio %1 cannot be added to uniform, vest or backpack! Make sure you have enough space!", _radio];
 };
