@@ -7,7 +7,7 @@ if (!hasInterface) exitWith {};
 
     if (!_state || { !alive _unit } || { !isNull objectParent _unit }) exitWith {};
 
-    _unit say3D [(selectRandom [MACRO_PLAYER_SCREAMS]), 200, 1, false];
+    [QEGVAR(common,say3D), [_unit, (selectRandom [MACRO_PLAYER_SCREAMS])]] call CBA_fnc_globalEvent;
 
     if (isPlayer _unit) then {
         [] call FUNC(unconsciousFX);
