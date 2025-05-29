@@ -13,8 +13,8 @@
  * [] call ark_asm_fnc_startMonitoring
  */
 
-["ark_asm_monitor", "onEachFrame", {
+[QGVAR(monitor), "onEachFrame", {
     GVAR(conditionEvaluationCount) = GVAR(conditionEvaluationCount) + 1;
 }] call BIS_fnc_addStackedEventHandler;
 
-ark_asm_fnc_monitor_handleId = [ark_asm_fnc_monitor, GVAR(monitorDelay)] call CBA_fnc_addPerFrameHandler;
+GVAR(handleId) = [FUNC(monitor), GVAR(monitorDelay)] call CBA_fnc_addPerFrameHandler;
