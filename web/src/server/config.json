@@ -1,0 +1,7 @@
+{
+    "port": 8083,
+    "users": {
+        "admin": "admin",
+        "server": "server"
+    }
+}

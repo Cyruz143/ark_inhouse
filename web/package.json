@@ -1,0 +1,25 @@
+{
+  "name": "ark-asm",
+  "version": "1.0.0",
+  "description": "Arma server monitoring tool",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack"
+  },
+  "author": "Kami",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "cookie": "^0.3.1",
+    "d3": "^3.5.17",
+    "express": "^4.15.2",
+    "express-basic-auth": "^1.0.1",
+    "jsonwebtoken": "^7.4.0",
+    "mithril": "^1.1.1",
+    "ws": "^2.2.2"
+  },
+  "devDependencies": {
+    "copy-webpack-plugin": "^4.0.1",
+    "webpack": "^2.3.2"
+  }
+}
