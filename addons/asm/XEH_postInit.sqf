@@ -8,5 +8,5 @@ GVAR(previousTickTime) = 0;
 GVAR(previousConditionEvaluationCount) = 0;
 GVAR(monitorDelay) = 5;
 QGVAR(extension) callExtension ["mission.init", []];
-call FNC(startMonitoring);
+call FUNC(startMonitoring);
 INFO("fnc_postInit, ARK_ASM enabled, stating monitoring.")

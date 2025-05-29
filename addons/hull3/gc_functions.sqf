@@ -63,8 +63,7 @@ hull3_gc_fnc_monitor = {
 };
 
 hull3_gc_fnc_adjustConfig = {
-    if !(missionNamespace getVariable ["ark_asm_enabled", false]) exitWith {};
-    private _currentCps = [] call ark_asm_fnc_getCurrentCps;
+    private _currentCps = call EFUNC(asm,getCurrentCps);
     if (_currentCps <= hull3_gc_panicCps) then {
         hull3_gc_currentCorpseLimit = hull3_gc_panicCorpseLimit;
         hull3_gc_currentWreckLimit = hull3_gc_panicWreckLimit;
