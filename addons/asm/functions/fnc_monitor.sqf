@@ -13,11 +13,11 @@
  * [] call ark_asm_fnc_monitor
  */
 
-private _playerCount = count (call EFUNC(common,players));
+private _playerCount = count ([false] call EFUNC(common,players));
 private _totalAiCount = count (allUnits select { alive _x && {!isPlayer _x} });
 private _activeAiCount = count (allUnits select { alive _x && {simulationEnabled _x} && {!isPlayer _x} });
 private _entityCount = count (entities [[], [], true, false]);
-private _snapsot = [
+private _snapshot = [
     "profileName", profileName,
     "isServer", isServer,
     "missionName", missionName,
@@ -32,6 +32,6 @@ private _snapsot = [
     "activeAiCount", _activeAiCount,
     "entityCount", _entityCount
 ];
-QGVAR(extension) callExtension ["mission.snapshot", _snapsot];
+QGVAR(extension) callExtension ["mission.snapshot", _snapshot];
 GVAR(previousConditionEvaluationCount) = GVAR(conditionEvaluationCount);
 GVAR(previousTickTime) = diag_tickTime;
