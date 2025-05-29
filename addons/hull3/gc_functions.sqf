@@ -63,6 +63,7 @@ hull3_gc_fnc_monitor = {
 };
 
 hull3_gc_fnc_adjustConfig = {
+    if !(EGVAR(asm,enabled)) exitWith {};
     private _currentCps = call EFUNC(asm,getCurrentCps);
     if (_currentCps <= hull3_gc_panicCps) then {
         hull3_gc_currentCorpseLimit = hull3_gc_panicCorpseLimit;
