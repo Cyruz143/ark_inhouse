@@ -16,22 +16,22 @@ const series = {
         },
         playerCount: {
             label: "Players",
-            maxValue: 400,
+            maxValue: 50,
             color: "#3EB2F2"
         },
         totalAiCount: {
             label: "Total AI",
-            maxValue: 1000,
+            maxValue: 500,
             color: "#8ECFFF"
         },
         activeAiCount: {
             label: "Active AI",
-            maxValue: 1000,
+            maxValue: 200,
             color: "#C9E3FF"
         },
         entityCount: {
             label: "Entities",
-            maxValue: 1000,
+            maxValue: 500,
             color: "#03CC20"
         }
     };
