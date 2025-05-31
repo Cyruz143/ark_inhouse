@@ -8,7 +8,7 @@ if (!hasInterface) exitWith {};
     if (!_state || { !alive _unit } || { !isNull objectParent _unit }) exitWith {};
 
     private _scream = selectRandom [MACRO_PLAYER_SCREAMS];
-    [QEGVAR(common,say3D), [_unit, _scream, 200]] call CBA_fnc_globalEvent;
+    [QEGVAR(common,say3D), [_unit, _scream, 200]] call CBA_fnc_localEvent;
 
     if (isPlayer _unit) then {
         [] call FUNC(unconsciousFX);
