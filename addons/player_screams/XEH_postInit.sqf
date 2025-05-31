@@ -5,7 +5,7 @@ if (!hasInterface) exitWith {};
 ["ace_unconscious", {
     params ["_unit", "_state"];
 
-    if (!_state || { !alive _unit } || { !isNull objectParent _unit }) exitWith {};
+    if (!_state || { !alive _unit }) exitWith {};
 
     private _scream = selectRandom [MACRO_PLAYER_SCREAMS];
     [QEGVAR(common,say3D), [_unit, _scream, 200]] call CBA_fnc_localEvent;
