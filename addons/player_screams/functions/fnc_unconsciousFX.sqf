@@ -33,6 +33,6 @@
     private _heartRate = ace_player getVariable ["ace_medical_heartRate", 80];
     if (_heartRate > 40) then {
         private _moan = selectRandom [MACRO_UNCONSCIOUS_NOISES];
-        [QEGVAR(common,say3D), [ace_player, _moan]] call CBA_fnc_globalEvent;
+        ["ark_common_say3D", [ace_player, _moan]] call CBA_fnc_globalEvent;
     };
 }, 30] call CBA_fnc_addPerFrameHandler;
