@@ -430,6 +430,7 @@ class Hull3 {
         enableEnvironment = 0;                          // Disables ambient animals but keeps sounds
         fadeEnvironment = 1;                            // Reduce sound of environmental sounds (rain/thunder/insects)
         nightLightLevel = 300;                          // getLighting value must be below this to be considered dark and keep night gear
+        AIThinkOnlyLocal = 1;                           // Stops clients getting remote updates for AI units
     };
 
     class Logistics {

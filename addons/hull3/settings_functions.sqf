@@ -31,6 +31,12 @@ hull3_settings_fnc_setNonStandardGeneralSettings = {
         5 fadeEnvironment 0.35;
         LOG("hull3.settings: Reduced environmental sounds.");
     };
+    if (["General", "AIThinkOnlyLocal"] call hull3_config_fnc_getBool) then {
+        if(hasInterface) then {
+          setMissionOptions createHashMapFromArray [["AIThinkOnlyLocal", true]];
+          LOG("hull3.settings: AIThinkOnlyLocal is enabled.");
+        };
+    };
 };
 
 hull3_settings_fnc_setModuleVariables = {
