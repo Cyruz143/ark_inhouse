@@ -38,7 +38,7 @@ private _landingPad = createVehicle ["Land_HelipadEmpty_F", (getWPPos _landWP), 
 [
     {((_this #0) distance2D (getWPPos (_this #1))) < 500},
     {
-        (_this #0) landAt [(_this #4), "GET OUT"];
+        (_this #0) landAt [(_this #4), "GET OUT", 15];
         (group (_this #2)) lockWP true;
     },
     [_vehicle,_landWP,_pilot,_logic,_landingPad],
