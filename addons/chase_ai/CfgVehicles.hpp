@@ -1,5 +1,3 @@
-class CBA_Extended_EventHandlers_base;
-
 class CfgVehicles {
     class ARK_Module;
     class ark_chase_ai_module: ARK_Module {
