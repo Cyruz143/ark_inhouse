@@ -1,3 +1,8 @@
+// ACE Advanced Missile Guidance
+force ace_missileguidance_chaffEffectivenessCoef = 1;
+force ace_missileguidance_flareAngleCoef = 1;
+force ace_missileguidance_flareEffectivenessCoef = 1;
+
 // ACE Advanced Vehicle Damage
 force force ace_vehicle_damage_enableCarDamage = false;
 force force ace_vehicle_damage_enabled = true;
@@ -34,6 +39,8 @@ force force ace_common_swayFactor = 0.75;
 // ACE Cook-off
 force force ace_cookoff_ammoCookoffDuration = 0.3;
 force force ace_cookoff_cookoffDuration = 1;
+force force ace_cookoff_cookoffEnableProjectiles = true;
+force force ace_cookoff_cookoffEnableSound = true;
 force force ace_cookoff_destroyVehicleAfterCookoff = true;
 force force ace_cookoff_enableAmmobox = true;
 force force ace_cookoff_enableAmmoCookoff = true;
@@ -162,6 +169,7 @@ force force ace_maptools_drawStraightLines = false;
 force force ace_medical_ai_enabledFor = 0;
 force force ace_medical_ai_requireItems = 0;
 force force ace_medical_AIDamageThreshold = 0.2;
+force force ace_medical_alternateArmorPenetration = true;
 force force ace_medical_bleedingCoefficient = 0.5;
 force force ace_medical_blood_bloodLifetime = 600;
 force force ace_medical_blood_enabledFor = 1;
