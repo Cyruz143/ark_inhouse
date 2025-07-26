@@ -53,6 +53,6 @@ class CfgAmmo {
     };
 
     class R_80mm_HE: RocketBase {
-        ALLOW_INF_COST
+        ALLOW_INF
     };
 };

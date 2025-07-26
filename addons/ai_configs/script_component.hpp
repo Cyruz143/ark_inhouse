@@ -6,9 +6,5 @@
 
 #define ALLOW_INF \
     allowAgainstInfantry = 1; \
-    aiAmmoUsageFlags = 960;
-
-#define ALLOW_INF_COST \
-    allowAgainstInfantry = 1; \
     aiAmmoUsageFlags = 960; \
-    cost = 100;
+    cost = 80;
