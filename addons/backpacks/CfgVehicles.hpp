@@ -15,7 +15,7 @@ class CfgVehicles {
         author = "ARK";
         displayName = "ARK: Bag of holding (medium)";
         model = "\A3\Weapons_F\empty.p3d";
-        maximumLoad=285;
+        maximumLoad = 285;
     };
 
     class ark_backpack_large: B_Carryall_oli {
