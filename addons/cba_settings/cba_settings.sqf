@@ -1,7 +1,7 @@
 // ACE Advanced Missile Guidance
-force ace_missileguidance_chaffEffectivenessCoef = 1;
-force ace_missileguidance_flareAngleCoef = 1;
-force ace_missileguidance_flareEffectivenessCoef = 1;
+force ace_missileguidance_chaffEffectivenessCoef = 0.75;
+force ace_missileguidance_flareAngleCoef = 0.75;
+force ace_missileguidance_flareEffectivenessCoef = 0.75;
 
 // ACE Advanced Vehicle Damage
 force force ace_vehicle_damage_enableCarDamage = false;
