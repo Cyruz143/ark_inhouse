@@ -5,7 +5,7 @@ if (!isServer) exitWith {};
 {
     [_x, "init", {
         params ["_vehicle"];
-            if !(isClass (configFile >> "CfgVehicles" >> (typeOf _vehicle) >> "AcreRacks" >> "Rack_1")) exitWith {
+            if !(isClass ((configOf _vehicle) >> "AcreRacks" >> "Rack_1")) exitWith {
                 INFO_1("ACRE Racks: Skipping %1 as it has no rack radios",_vehicle);
             };
 
