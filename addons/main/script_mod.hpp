@@ -3,7 +3,7 @@
 
 #include "script_version.hpp"
 
-#define VERSION MAJOR.MINOR.PATCH
+#define VERSION MAJOR.MINOR
 #define VERSION_AR MAJOR,MINOR,PATCH
 #define VERSION_CONFIG version = VERSION; versionStr = QUOTE(VERSION); versionAr[] = {VERSION_AR}
 

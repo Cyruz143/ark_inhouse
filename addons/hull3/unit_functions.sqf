@@ -79,10 +79,12 @@ hull3_unit_fnc_addFiredEHs = {
 hull3_unit_fnc_friendlyFireEH = {
     params ["_unit","_selectionName","_damage","_source","_projectile"];
 
+    /*
     if (_selectionName == "" && {_unit != _source} && {side _unit == side _source}) then {
         //DECLARE(_message) = LOGGING_FORMAT("hull.unit.friendlyFire","WARN",FMT_4("%1 dealt %2 damage with %3 to %4!",_source,_damage,_projectile,_unit));
         [_message] call hull3_common_fnc_logOnServer;
     };
+    */
 
     _damage;
 };
@@ -90,10 +92,12 @@ hull3_unit_fnc_friendlyFireEH = {
 hull3_unit_fnc_killedEH = {
     params ["_unit","_killer"];
 
+    /*
     if (_unit != _killer && {side _unit == side _killer}) then {
         //DECLARE(_message) = LOGGING_FORMAT("hull.unit.friendlyFire","WARN",FMT_2("%1 killed %2!",_killer,_unit));
         [_message] call hull3_common_fnc_logOnServer;
     };
+    */
 
     _unit removeEventHandler ["HandleDamage", _unit getVariable "hull3_eh_friendlyFire"];
     _unit removeEventHandler ["Killed", _unit getVariable "hull3_eh_killed"];
