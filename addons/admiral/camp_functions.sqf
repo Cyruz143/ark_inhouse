@@ -103,7 +103,7 @@ adm_camp_fnc_createPatrolWaypoints = {
     params ["_group","_unitType","_area","_areaPosition","_waypointBehaviours","_noOfWaypoints"];
 
     private _initialWaypointIndex = 0;
-    if (count waypoints _group > 0) then {
+    if (waypoints _group isNotEqualTo []) then {
         _initialWaypointIndex = (count waypoints _group) - 1;
     };
     for "_i" from 1 to _noOfWaypoints do {

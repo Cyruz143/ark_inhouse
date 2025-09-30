@@ -217,19 +217,19 @@ hull3_acre_fnc_getRadioChannelFromGroupId = {
     LOG_2("hull3.acre.radio.channel: Found channels are %1 for groupId %2.",_channels,_groupId);
 
     call {
-        if (count _channels > 0) exitWith { _channels select 0 select 1 };
+        if (_channels isNotEqualTo []) exitWith { _channels select 0 select 1 };
 
         private _groupIdArray = toArray _groupId;
-        if (count _groupIdArray == 0) exitWith { _defaultChannel };
+        if (_groupIdArray isEqualTo []) exitWith { _defaultChannel };
 
         // For SLs and FTs we user the first character of the _groupId to find the channel.
         private _firstCharChannels = _channelAssignments select { _x select 0 == toString [_groupIdArray select 0] };
         private _groupIdWithoutFirstChar = toString (_groupIdArray select [1, count _groupIdArray - 1]);
         LOG_4("hull3.acre.radio.channel: _firstCharChannels is %1, _groupIdWithoutFirstChar is %2, parsed number is %3 for groupId %4.",_firstCharChannels,_groupIdWithoutFirstChar,parseNumber _groupIdWithoutFirstChar,_groupId);
         // FTs have a number as a second character.
-        if (count _firstCharChannels > 0 && {count _groupIdArray >= 2} && {parseNumber _groupIdWithoutFirstChar >= 1}) exitWith { _firstCharChannels select 0 select 1 };
+        if (_firstCharChannels isNotEqualTo [] && {count _groupIdArray >= 2} && {parseNumber _groupIdWithoutFirstChar >= 1}) exitWith { _firstCharChannels select 0 select 1 };
         // SLs have "S" and "L" as second and third characters.
-        if (count _firstCharChannels > 0 && {count _groupIdArray == 3} && {_groupIdWithoutFirstChar == "SL"}) exitWith { _firstCharChannels select 0 select 1 };
+        if (_firstCharChannels isNotEqualTo [] && {count _groupIdArray == 3} && {_groupIdWithoutFirstChar == "SL"}) exitWith { _firstCharChannels select 0 select 1 };
 
         // We try to find matching channel assignments by using the first _n characters of the groupId plus the group number, up to 5 characters.
         private _channel = for "_i" from 2 to 5 do {

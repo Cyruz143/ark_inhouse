@@ -89,7 +89,7 @@ adm_common_fnc_spawnCrew = {
     _leader = call {
         if (!isNull (commander _vehicle)) exitWith { commander _vehicle };
         if (!isNull (gunner _vehicle)) exitWith { gunner _vehicle };
-        if (count _turretsToFill > 0) exitWith { _vehicle turretUnit (_turretsToFill select 0) };
+        if (_turretsToFill isNotEqualTo []) exitWith { _vehicle turretUnit (_turretsToFill select 0) };
         driver _vehicle;
     };
     _group selectLeader _leader;
