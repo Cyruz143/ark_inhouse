@@ -25,7 +25,7 @@ adm_hc_transferNonPlayableGroupToHc = {
 
     private _owner = owner (call adm_hc_fnc_getHcUnit);
     if (_owner == 0) exitWith {};
-    private _isPlayable = count (units _group select { _x in playableUnits }) > 0;
+    private _isPlayable = units _group select {_x in playableUnits} isNotEqualTo [];
     if (!_isPlayable && {local _group}) then {
         _group setGroupOwner _owner;
     };

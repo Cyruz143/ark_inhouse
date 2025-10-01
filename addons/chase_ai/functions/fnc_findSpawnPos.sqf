@@ -23,7 +23,7 @@ if (_units isEqualTo []) exitWith {};
 private _distance = ark_chase_ai_var_minDistance;
 private _validPositions = [];
 
-while {count _validPositions == 0 && _distance <= ark_chase_ai_var_maxDistance} do {
+while {_validPositions isEqualTo [] && _distance <= ark_chase_ai_var_maxDistance} do {
     {
         for "_direction" from 0 to 350 step 10 do {
             private _position = AGLToASL (_x getPos [_distance, _direction]);
