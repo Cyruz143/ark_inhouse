@@ -427,7 +427,7 @@ class Hull3 {
         enableSaving = 0;                               // Enables game saving
         enableSentences = 0;                            // Enables AI radio callouts being heard
         disableRemoteSensors = 1;                       // Disables RemoteSensors
-        enableEnvironment = 0;                          // Disables ambient animals but keeps sounds
+        enableEnvironment = 1;                          // Enables ambient animals but keeps sounds
         fadeEnvironment = 1;                            // Reduce sound of environmental sounds (rain/thunder/insects)
         nightLightLevel = 300;                          // getLighting value must be below this to be considered dark and keep night gear
         AIThinkOnlyLocal = 1;                           // Stops clients getting remote updates for AI units
