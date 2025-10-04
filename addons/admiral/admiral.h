@@ -9,7 +9,7 @@ class Admiral {
     allowCrewInImmobile = 1;
     cargoUnloadInCombat = 0;
     removeHandguns = 1;
-    useTracers = 0;
+    useTracers = 1;
     transferNonPlayableGroupsToHc = 1; // Non-playable groups are that do not have playable units in them
     groupSpawnDelay = 2; // Delay in seconds between spawning groups
 
