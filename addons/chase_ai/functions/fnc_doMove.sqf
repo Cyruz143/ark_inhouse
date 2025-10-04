@@ -52,14 +52,14 @@ params ["_unit"];
     private _lastPos = _unit getVariable ["ark_chase_ai_lastPos", nil];
     if (!isNil "_lastPos") then {
         if (_lastPos distance (getPosASL _unit) < 0.5) then {
-            _notMoving = true;
+            [_unit, 50] call FUNC(forgetTargets);
         };
     };
 
     if (ark_chase_ai_var_allowBS && { insideBuilding _target == 1 } ) then {
         _targetPos = [_target] call FUNC(nearestBuildingPos);
-        if (_targetPos isEqualTo "outside" || { _notMoving }) then {
-            _unit doSuppressiveFire _target;
+        if (_targetPos isEqualTo "outside") then {
+            [_unit, 50] call FUNC(forgetTargets);
             _targetPos = [_target] call FUNC(findSafePos);
         };
     };

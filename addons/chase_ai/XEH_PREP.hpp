@@ -5,6 +5,7 @@ PREP(doMove);
 PREP(enableSpawning);
 PREP(findSafePos);
 PREP(findSpawnPos);
+PREP(forgetTargets);
 PREP(init);
 PREP(module);
 PREP(nearEnemies);
