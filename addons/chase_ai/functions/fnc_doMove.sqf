@@ -47,8 +47,7 @@ params ["_unit"];
         _unit doMove _targetPos;
     };
 
-    // Try to handle stuck units who cant path to a buildingPos
-    private _notMoving = false;
+    // Try to handle stuck units who aren't moving
     private _lastPos = _unit getVariable ["ark_chase_ai_lastPos", nil];
     if (!isNil "_lastPos") then {
         if (_lastPos distance (getPosASL _unit) < 0.5) then {
@@ -56,6 +55,7 @@ params ["_unit"];
         };
     };
 
+    // If cannot find a near buildingPos for target then forget and move
     if (ark_chase_ai_var_allowBS && { insideBuilding _target == 1 } ) then {
         _targetPos = [_target] call FUNC(nearestBuildingPos);
         if (_targetPos isEqualTo "outside") then {

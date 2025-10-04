@@ -54,6 +54,10 @@ private _closeUnits = allUnits select {
     _unit setBehaviour "AWARE";
     _unit setSpeedMode "FULL";
     _unit allowFleeing 0;
+    private _targets = _unit targets [true, _dist];
+    if (_targets isNotEqualTo []) then {
+        {_unit forgetTarget _x} forEach _targets;
+    };
 
     private _targetPos = _pos findEmptyPosition [0, 10, "CAManBase"];
     if (_targetPos isEqualTo []) then {
