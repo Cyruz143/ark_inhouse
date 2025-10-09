@@ -31,7 +31,7 @@ if (!alive _driver || { !alive _vehicle } || { lifeState _driver == "INCAPACITAT
 
     private _group = group _driver;
     _group lockWP true;
-    private _wp = _group addWaypoint [getPos _driver, 0, currentWaypoint _group];
+    _group addWaypoint [getPos _driver, 0, currentWaypoint _group];
 
     {
         _driver disableAI _x;

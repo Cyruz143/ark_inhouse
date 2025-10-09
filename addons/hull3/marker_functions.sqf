@@ -95,7 +95,7 @@ hull3_marker_fnc_addGroupMarker = {
 
     (group _unit) setGroupId [_markerText];
     if (hull3_marker_isGroupEnabled) then {
-        _markerName = format ["hull3_marker_group_%1_%2", _markerText, group _unit];
+        private _markerName = format ["hull3_marker_group_%1_%2", _markerText, group _unit];
         [_markerName, getPosATL _unit, "ICON", _markerType, _markerColor, _markerText] call hull3_marker_fnc_createMarker;
         (group _unit) setVariable ["hull3_marker_group", _markerName, false];
     };
@@ -105,7 +105,7 @@ hull3_marker_fnc_addGroupMarker = {
 hull3_marker_fnc_addUnitMarker = {
     params ["_unit","_markerType","_markerText","_markerColor","_markerSize"];
 
-    _markerName = format ["hull3_marker_unit_%1_%2", _markerText, _unit];
+    private _markerName = format ["hull3_marker_unit_%1_%2", _markerText, _unit];
     if (hull3_marker_isGroupEnabled) then {
         [_markerName, getPosATL _unit, "ICON", _markerType, _markerColor, _markerText, _markerSize] call hull3_marker_fnc_createMarker;
         _unit setVariable ["hull3_marker_unit", _markerName, false];
@@ -195,7 +195,7 @@ hull3_marker_fnc_addFireTeamMarker = {
     params ["_unit"];
 
     if !(hull3_marker_isFireTeamEnabled) exitWith {};
-    _markerName = format ["hull3_marker_fireTeam_%1", _unit];
+    private _markerName = format ["hull3_marker_fireTeam_%1", _unit];
     [
         _markerName,
         getPosATL _unit,

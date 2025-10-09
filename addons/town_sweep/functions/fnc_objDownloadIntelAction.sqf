@@ -20,11 +20,9 @@ private _action = [
     "Activate Terminal",
     "",
     {
-        params ["_target"];
         [QGVAR(downloadIntelPFH), [_target]] call CBA_fnc_serverEvent;
     },
     {
-        params ["_target"];
         !(_target getVariable [QGVAR(downloadInProgress), false])
     }
 ] call ace_interact_menu_fnc_createAction;

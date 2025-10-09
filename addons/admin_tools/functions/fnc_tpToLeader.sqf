@@ -14,7 +14,6 @@
  */
 
 private _leader = leader group player;
-private _pos = getPosASL _leader;
 
 if (_leader != player) then {
     private _leaderVehicle = vehicle _leader;

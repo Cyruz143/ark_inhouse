@@ -24,7 +24,7 @@ if (isNil "_trigger") exitWith {
 private _flyHeight = _logic getVariable ["Fly_Height", 200];
 private _spawnPosition = [(triggerArea _trigger), (getPos _trigger), true] call adm_api_fnc_getRandomPositionInArea;
 _spawnPosition set [2, _flyHeight];
-_vehicle = createVehicle [_vehicleClassname, _spawnPosition, [], 0, "FLY"];
+private _vehicle = createVehicle [_vehicleClassname, _spawnPosition, [], 0, "FLY"];
 _vehicle setPos _spawnPosition;
 _vehicle flyInHeight [_flyHeight, true];
 

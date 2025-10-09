@@ -64,7 +64,7 @@ if (_enabled && {isNil {ark_admin_canUpdateMarkers} || {!ark_admin_canUpdateMark
                 if (!isNil {_marker}) then {
                     _marker setMarkerPosLocal getPosATL _unit;
                     _marker setMarkerDirLocal getDir _unit;
-                    if (!_simEnabled || { _uncon }) then {
+                    if (!_simEnabled || _uncon) then {
                         _marker setMarkerAlphaLocal 0.25;
                     } else {
                         _marker setMarkerAlphaLocal 1;
@@ -92,7 +92,7 @@ if (_enabled && {isNil {ark_admin_canUpdateMarkers} || {!ark_admin_canUpdateMark
 
             {
                 private "_markerName";
-                _side = _x;
+                private _side = _x;
                 (format ["ark_admin_sideCountMarker_%1", _side]) setMarkerTextLocal format ["%1: %2 (%3)", _side, count (allUnits select {side _x isEqualTo _side && {simulationEnabled _x} }), count (allUnits select {side _x isEqualTo _side})];
             } forEach ark_admin_sideCountMarkers;
         }, 3, [_sides]] call CBA_fnc_addPerFrameHandler;

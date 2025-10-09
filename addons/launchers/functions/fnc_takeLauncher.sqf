@@ -19,7 +19,6 @@
  */
 params ["_player", "_target", "_launcher"];
 
-private _playerName = [_player] call ace_common_fnc_getName;
 private _cfgWeapons = configFile >> "CfgWeapons" >> _launcher;
 private _displayName = getText (_cfgWeapons >> "displayName");
 

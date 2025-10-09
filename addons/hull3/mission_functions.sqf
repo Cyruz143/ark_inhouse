@@ -258,15 +258,15 @@ hull3_mission_fnc_endSafetyTimer = {
 };
 
 hull3_mission_fnc_addHostSafetyTimerStopAction = {
-    _isAceInteractAvailable = [configFile, "ARK", "Inhouse", "isEnabled"] call hull3_config_fnc_getCustomBool;
-    if (!_isAceInteractAvailable) then {
+    private _isAceInteractAvailable = [configFile, "ARK", "Inhouse", "isEnabled"] call hull3_config_fnc_getCustomBool;
+    if (_isAceInteractAvailable) then {
+        LOG("hull.mission.safetytimer: Safety timer abort action not added to player, using ACE Self Interaction instead.");
+    } else {
         if (serverCommandAvailable "#kick" || {!isMultiplayer}) then {
             private _actionId = player addAction ['<t color="#428CE0">Disable weapon safety</t>', ADDON_PATH(mission_host_safetytimer_stop.sqf), ["activated"], 3, false, false, "", "driver _target == _this && {!(hull3_mission_safetyTimer #0)} && {(hull3_mission_safetyTimer #1) < hull3_mission_safetyTimerEnd}"];
             hull3_mission_safetyTimerActionIds set [0, _actionId];
             LOG("hull.mission.safetytimer: Added safety timer abort action to player.");
         };
-    } else {
-        LOG("hull.mission.safetytimer: Safety timer abort action not added to player, using ACE Self Interaction instead.");
     };
 };
 
