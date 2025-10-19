@@ -14,8 +14,9 @@
  */
 
 private _playerCount = count ([false] call EFUNC(common,players));
-private _totalAiCount = count (allUnits select { alive _x && {!isPlayer _x} });
-private _activeAiCount = count (allUnits select { alive _x && {simulationEnabled _x} && {!isPlayer _x} });
+private _aiUnits = allUnits select {alive _x && {!isPlayer _x}};
+private _totalAiCount = count _aiUnits;
+private _activeAiCount = count (_aiUnits select {simulationEnabled _x});
 private _entityCount = count (entities [[], [], true, false]);
 private _snapshot = [
     "profileName", profileName,
