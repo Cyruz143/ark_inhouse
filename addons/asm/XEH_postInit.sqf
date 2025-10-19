@@ -1,6 +1,6 @@
 #include "script_component.hpp"
 
-if (!hasInterface && {!isServer}) exitWith {};
+if (hasInterface) exitWith {};
 
 GVAR(enabled) = true;
 
