@@ -8,8 +8,8 @@ class CfgVehicles {
         crew = "MNP_Aus_Soldier_F";
         hiddenSelections[]= {"camo1","camo2"};
         hiddenSelectionsTextures[]= {
-            QPATHTOF(resouces\aus\blackhawk\uh60m_aus_fuselage.paa),
-            QPATHTOF(resouces\aus\blackhawk\uh60m_aus_engine.paa)
+            QPATHTOF(resources\aus\blackhawk\uh60m_aus_fuselage.paa),
+            QPATHTOF(resources\aus\blackhawk\uh60m_aus_engine.paa)
         };
         typicalCargo[] = {"MNP_Aus_Soldier_F"};
     };
@@ -23,8 +23,8 @@ class CfgVehicles {
         crew = "MNP_NOR_Soldier_F";
         hiddenSelections[]= {"camo1","camo2"};
         hiddenSelectionsTextures[]= {
-            QPATHTOF(resouces\nor\uh1y\n_uh1y_ext_co.paa),
-            QPATHTOF(resouces\nor\uh1y\n_uh1y_int_co.paa)
+            QPATHTOF(resources\nor\uh1y\n_uh1y_ext_co.paa),
+            QPATHTOF(resources\nor\uh1y\n_uh1y_int_co.paa)
         };
         typicalCargo[] = {"MNP_NOR_Soldier_F"};
     };
@@ -38,8 +38,8 @@ class CfgVehicles {
         crew = "MNP_NOR_Soldier_F";
         hiddenSelections[]= {"camo1","camo2"};
         hiddenSelectionsTextures[]= {
-            QPATHTOF(resouces\nor\uh1y\n_uh1y_ext_co.paa),
-            QPATHTOF(resouces\nor\uh1y\n_uh1y_int_co.paa)
+            QPATHTOF(resources\nor\uh1y\n_uh1y_ext_co.paa),
+            QPATHTOF(resources\nor\uh1y\n_uh1y_int_co.paa)
         };
         typicalCargo[] = {"MNP_NOR_Soldier_F"};
     };
@@ -53,8 +53,8 @@ class CfgVehicles {
         crew = "MNP_Aus_Soldier_F";
         hiddenSelections[]= {"camo1","camo2"};
         hiddenSelectionsTextures[]= {
-            QPATHTOF(resouces\aus\lav\lav_aus_hull.paa),
-            QPATHTOF(resouces\aus\lav\lav_aus_turret.paa)
+            QPATHTOF(resources\aus\lav\lav_aus_hull.paa),
+            QPATHTOF(resources\aus\lav\lav_aus_turret.paa)
         };
         typicalCargo[] = {"MNP_Aus_Soldier_F","MNP_Aus_Soldier_F"};
     };
@@ -67,8 +67,8 @@ class CfgVehicles {
         crew = "MNP_Aus_Soldier_F";
         hiddenSelections[]= {"camo1","camo2"};
         hiddenSelectionsTextures[]= {
-            QPATHTOF(resouces\aus\lav\lav_aus_hull.paa),
-            QPATHTOF(resouces\aus\lav\lav_aus_turret.paa)
+            QPATHTOF(resources\aus\lav\lav_aus_hull.paa),
+            QPATHTOF(resources\aus\lav\lav_aus_turret.paa)
         };
         typicalCargo[] = {"MNP_Aus_Soldier_F","MNP_Aus_Soldier_F"};
     };
@@ -81,9 +81,9 @@ class CfgVehicles {
         crew = "MNP_Aus_Soldier_F";
         hiddenSelections[]= {"camo1","camo2","camo3"};
         hiddenSelectionsTextures[]= {
-            QPATHTOF(resouces\aus\lav\lav_aus_hull.paa),
-            QPATHTOF(resouces\aus\lav\lav_aus_turret.paa),
-            QPATHTOF(resouces\aus\lav\lav_aus_hq.paa)
+            QPATHTOF(resources\aus\lav\lav_aus_hull.paa),
+            QPATHTOF(resources\aus\lav\lav_aus_turret.paa),
+            QPATHTOF(resources\aus\lav\lav_aus_hq.paa)
         };
         typicalCargo[] = {"MNP_Aus_Soldier_F","MNP_Aus_Soldier_F"};
     };
@@ -97,7 +97,7 @@ class CfgVehicles {
         crew = "MNP_Aus_Soldier_F";
         hiddenSelections[]= {"camo1","camo2"};
         hiddenSelectionsTextures[]={
-            QPATHTOF(resouces\aus\land_rover\lr_aus_base.paa),
+            QPATHTOF(resources\aus\land_rover\lr_aus_base.paa),
             "cup\wheeledvehicles\cup_wheeledvehicles_lr\data\lr_acr_spec_co.paa"
         };
         typicalCargo[] = {"MNP_Aus_Soldier_F"};
@@ -115,9 +115,9 @@ class CfgVehicles {
             "gm_demo\gm_demo_mb_u1300l\gm_demo_nato_mb_u1300l\data\nato\gm_demo_nato_mb_u1300l_rim_01_nato_co.paa",
             "gm_demo\gm_demo_mb_u1300l\gm_demo_nato_mb_u1300l\data\nato\gm_demo_nato_mb_u1300l_rim_01_nato_co.paa",
             "gm_demo\gm_demo_mb_u1300l\gm_demo_nato_mb_u1300l\data\nato\gm_demo_nato_mb_u1300l_rim_01_nato_co.paa",
-            QPATHTOF(resouces\aus\unimog\ark_demo_aus_unimog_hull_co.paa),
+            QPATHTOF(resources\aus\unimog\ark_demo_aus_unimog_hull_co.paa),
             "gm_demo\gm_demo_mb_u1300l\gm_demo_nato_mb_u1300l\data\nato\gm_demo_nato_mb_u1300l_ext_02_nato_co.paa",
-            QPATHTOF(resouces\aus\unimog\ark_demo_aus_unimog_cargo_co.paa),
+            QPATHTOF(resources\aus\unimog\ark_demo_aus_unimog_cargo_co.paa),
             "gm_demo\gm_demo_mb_u1300l\gm_demo_nato_mb_u1300l\data\nato\gm_demo_nato_mb_u1300l_cargo_ext_04_nato_co.paa"
         };
         typicalCargo[] = {"MNP_Aus_Soldier_F"};
@@ -132,7 +132,7 @@ class CfgVehicles {
         crew = "MNP_Aus_Soldier_F";
         hiddenSelections[]= {"camo1","camo2"};
         hiddenSelectionsTextures[]= {
-            QPATHTOF(resouces\aus\land_rover\lr_aus_base.paa),
+            QPATHTOF(resources\aus\land_rover\lr_aus_base.paa),
             "cup\wheeledvehicles\cup_wheeledvehicles_lr\data\lr_acr_spec_co.paa"
         };
         typicalCargo[] = {"MNP_Aus_Soldier_F"};
@@ -147,9 +147,9 @@ class CfgVehicles {
         crew = "MNP_Aus_Soldier_F";
         hiddenSelections[]= {"camo1","camo2","camo3"};
         hiddenSelectionsTextures[]= {
-            QPATHTOF(resouces\aus\abrams\m1a1_aus_hull.paa),
-            QPATHTOF(resouces\aus\abrams\m1a1_aus_turret.paa),
-            QPATHTOF(resouces\aus\abrams\m1a1_aus_extra.paa)
+            QPATHTOF(resources\aus\abrams\m1a1_aus_hull.paa),
+            QPATHTOF(resources\aus\abrams\m1a1_aus_turret.paa),
+            QPATHTOF(resources\aus\abrams\m1a1_aus_extra.paa)
         };
         typicalCargo[] = {"MNP_Aus_Soldier_F","MNP_Aus_Soldier_F"};
     };
@@ -163,10 +163,10 @@ class CfgVehicles {
         crew = "MNP_Aus_Soldier_F";
         hiddenSelections[]= {"camo1","camo2","camo3","camo4"};
         hiddenSelectionsTextures[]= {
-            QPATHTOF(resouces\aus\abrams\m1a1_aus_hull.paa),
-            QPATHTOF(resouces\aus\abrams\m1a1_aus_turret.paa),
-            QPATHTOF(resouces\aus\abrams\m1a1_aus_extra.paa),
-            QPATHTOF(resouces\aus\abrams\m1a1_aus_tusk.paa)
+            QPATHTOF(resources\aus\abrams\m1a1_aus_hull.paa),
+            QPATHTOF(resources\aus\abrams\m1a1_aus_turret.paa),
+            QPATHTOF(resources\aus\abrams\m1a1_aus_extra.paa),
+            QPATHTOF(resources\aus\abrams\m1a1_aus_tusk.paa)
         };
         typicalCargo[] = {"MNP_Aus_Soldier_F","MNP_Aus_Soldier_F"};
     };
@@ -180,7 +180,7 @@ class CfgVehicles {
         crew = "MNP_Aus_Soldier_F";
         hiddenSelections[]= {"camo1"};
         hiddenSelectionsTextures[]= {
-            QPATHTOF(resouces\aus\m113\m113a3_aus_co.paa)
+            QPATHTOF(resources\aus\m113\m113a3_aus_co.paa)
         };
         typicalCargo[] = {"MNP_Aus_Soldier_F"};
     };
@@ -204,7 +204,7 @@ class CfgVehicles {
         crew = "MNP_Canada_Soldier_F";
         hiddenSelections[]= {"camo1"};
         hiddenSelectionsTextures[]= {
-            QPATHTOF(resouces\can\m113\m113a3_can_hull.paa)
+            QPATHTOF(resources\can\m113\m113a3_can_hull.paa)
         };
         typicalCargo[] = {"MNP_Canada_Soldier_F"};
     };
@@ -216,7 +216,7 @@ class CfgVehicles {
         crew = "MNP_NOR_Soldier_F";
         hiddenSelections[]= {"camo1"};
         hiddenSelectionsTextures[]= {
-            QPATHTOF(resouces\nor\m113\m113a3_01_green_co.paa)
+            QPATHTOF(resources\nor\m113\m113a3_01_green_co.paa)
         };
         typicalCargo[] = {"MNP_NOR_Soldier_F"};
     };
@@ -230,9 +230,9 @@ class CfgVehicles {
         crew = "MNP_Canada_Soldier_F";
         hiddenSelections[]= {"camo1","camo2","camo3"};
         hiddenSelectionsTextures[]= {
-            QPATHTOF(resouces\can\leo2\mbt_03_can_hull.paa),
-            QPATHTOF(resouces\can\leo2\mbt_03_can_turret.paa),
-            QPATHTOF(resouces\can\leo2\mbt_03_can_rcws.paa)
+            QPATHTOF(resources\can\leo2\mbt_03_can_hull.paa),
+            QPATHTOF(resources\can\leo2\mbt_03_can_turret.paa),
+            QPATHTOF(resources\can\leo2\mbt_03_can_rcws.paa)
         };
         typicalCargo[] = {"MNP_Canada_Soldier_F","MNP_Canada_Soldier_F"};
         class TextureSources {
@@ -240,9 +240,9 @@ class CfgVehicles {
                 displayName = "Leopard C2";
                 author = "ARK";
                 textures[] = {
-                    QPATHTOF(resouces\can\leo2\mbt_03_can_hull.paa),
-                    QPATHTOF(resouces\can\leo2\mbt_03_can_turret.paa),
-                    QPATHTOF(resouces\can\leo2\mbt_03_can_rcws.paa)
+                    QPATHTOF(resources\can\leo2\mbt_03_can_hull.paa),
+                    QPATHTOF(resources\can\leo2\mbt_03_can_turret.paa),
+                    QPATHTOF(resources\can\leo2\mbt_03_can_rcws.paa)
                 };
                 factions[] = {"MNP_CA_WD"};
             };
@@ -256,9 +256,9 @@ class CfgVehicles {
         crew = "MNP_NOR_Soldier_F";
         hiddenSelections[]= {"camo1","camo2","camo3"};
         hiddenSelectionsTextures[]= {
-            QPATHTOF(resouces\nor\leo2\n_leo2_w_ext1_co.paa),
-            QPATHTOF(resouces\nor\leo2\n_leo2_w_ext3_co.paa),
-            QPATHTOF(resouces\nor\leo2\n_leo2_w_rcws_co.paa)
+            QPATHTOF(resources\nor\leo2\n_leo2_w_ext1_co.paa),
+            QPATHTOF(resources\nor\leo2\n_leo2_w_ext3_co.paa),
+            QPATHTOF(resources\nor\leo2\n_leo2_w_rcws_co.paa)
         };
         typicalCargo[] = {"MNP_NOR_Soldier_F","MNP_NOR_Soldier_F"};
         class TextureSources {
@@ -266,9 +266,9 @@ class CfgVehicles {
                 displayName = "Leopard 2A7NO";
                 author = "ARK";
                 textures[] = {
-                    QPATHTOF(resouces\nor\leo2\n_leo2_w_ext1_co.paa),
-                    QPATHTOF(resouces\nor\leo2\n_leo2_w_ext3_co.paa),
-                    QPATHTOF(resouces\nor\leo2\n_leo2_w_rcws_co.paa)
+                    QPATHTOF(resources\nor\leo2\n_leo2_w_ext1_co.paa),
+                    QPATHTOF(resources\nor\leo2\n_leo2_w_ext3_co.paa),
+                    QPATHTOF(resources\nor\leo2\n_leo2_w_rcws_co.paa)
                 };
                 factions[] = {"MNP_NOR_WD"};
             };
@@ -284,8 +284,8 @@ class CfgVehicles {
         crew = "MNP_NOR_Soldier_F";
         hiddenSelections[]= {"camo1","camo2"};
         hiddenSelectionsTextures[]= {
-            QPATHTOF(resouces\nor\scan\n_scania_w_fuelbody_co.paa),
-            QPATHTOF(resouces\nor\scan\n_scania_w_fuel_co.paa)
+            QPATHTOF(resources\nor\scan\n_scania_w_fuelbody_co.paa),
+            QPATHTOF(resources\nor\scan\n_scania_w_fuel_co.paa)
         };
         typicalCargo[] = {"MNP_NOR_Soldier_F"};
     };
@@ -297,8 +297,8 @@ class CfgVehicles {
         crew = "MNP_NOR_Soldier_F";
         hiddenSelections[]= {"camo1","camo2"};
         hiddenSelectionsTextures[]= {
-            QPATHTOF(resouces\nor\scan\n_scania_grn_fuelbody_co.paa),
-            QPATHTOF(resouces\nor\scan\n_scania_w_fuel_co.paa)
+            QPATHTOF(resources\nor\scan\n_scania_grn_fuelbody_co.paa),
+            QPATHTOF(resources\nor\scan\n_scania_w_fuel_co.paa)
         };
         typicalCargo[] = {"MNP_NOR_Soldier_F"};
     };
@@ -312,8 +312,8 @@ class CfgVehicles {
         crew = "MNP_NOR_Soldier_F";
         hiddenSelections[]= {"camo1","camo2"};
         hiddenSelectionsTextures[]= {
-            QPATHTOF(resouces\nor\scan\n_scania_w_transbody_co.paa),
-            QPATHTOF(resouces\nor\scan\n_scania_w_covered_co.paa)
+            QPATHTOF(resources\nor\scan\n_scania_w_transbody_co.paa),
+            QPATHTOF(resources\nor\scan\n_scania_w_covered_co.paa)
         };
         typicalCargo[] = {"MNP_NOR_Soldier_F"};
     };
@@ -325,8 +325,8 @@ class CfgVehicles {
         crew = "MNP_NOR_Soldier_F";
         hiddenSelections[]= {"camo1","camo2"};
         hiddenSelectionsTextures[]= {
-            QPATHTOF(resouces\nor\scan\n_scania_grn_transbody_co.paa),
-            QPATHTOF(resouces\nor\scan\n_scania_w_covered_co.paa)
+            QPATHTOF(resources\nor\scan\n_scania_grn_transbody_co.paa),
+            QPATHTOF(resources\nor\scan\n_scania_w_covered_co.paa)
         };
         typicalCargo[] = {"MNP_NOR_Soldier_F"};
     };
@@ -340,8 +340,8 @@ class CfgVehicles {
         crew = "MNP_NOR_Soldier_F";
         hiddenSelections[]= {"camo1","camo2"};
         hiddenSelectionsTextures[]= {
-            QPATHTOF(resouces\nor\scan\n_scania_w_transbody_co.paa),
-            QPATHTOF(resouces\nor\scan\n_scania_w_covered_co.paa)
+            QPATHTOF(resources\nor\scan\n_scania_w_transbody_co.paa),
+            QPATHTOF(resources\nor\scan\n_scania_w_covered_co.paa)
         };
         typicalCargo[] = {"MNP_NOR_Soldier_F"};
     };
@@ -353,8 +353,8 @@ class CfgVehicles {
         crew = "MNP_NOR_Soldier_F";
         hiddenSelections[]= {"camo1","camo2"};
         hiddenSelectionsTextures[]= {
-            QPATHTOF(resouces\nor\scan\n_scania_grn_transbody_co.paa),
-            QPATHTOF(resouces\nor\scan\n_scania_w_covered_co.paa)
+            QPATHTOF(resources\nor\scan\n_scania_grn_transbody_co.paa),
+            QPATHTOF(resources\nor\scan\n_scania_w_covered_co.paa)
         };
         typicalCargo[] = {"MNP_NOR_Soldier_F"};
     };
@@ -401,10 +401,10 @@ class CfgVehicles {
         displayName = "Prowler HMG (SWAT)";
         crew = "B_GEN_SWAT_Crew_F";
         hiddenSelectionsTextures[] = {
-            QPATHTOF(resouces\gend\NATO_LSV_01_Gend_CO.paa),
-            QPATHTOF(resouces\gend\NATO_LSV_02_Gend_CO.paa),
-            QPATHTOF(resouces\gend\NATO_LSV_03_Gend_CO.paa),
-            QPATHTOF(resouces\gend\NATO_LSV_Adds_Gend_CO.paa)
+            QPATHTOF(resources\gend\NATO_LSV_01_Gend_CO.paa),
+            QPATHTOF(resources\gend\NATO_LSV_02_Gend_CO.paa),
+            QPATHTOF(resources\gend\NATO_LSV_03_Gend_CO.paa),
+            QPATHTOF(resources\gend\NATO_LSV_Adds_Gend_CO.paa)
         };
         textureList[] = {};
         class TransportMagazines{};
@@ -420,9 +420,9 @@ class CfgVehicles {
         displayName = "Hunter HMG (SWAT)";
         crew = "B_GEN_SWAT_Crew_F";
         hiddenSelectionsTextures[] = {
-            QPATHTOF(resouces\gend\mrap_01_base_co.paa),
-            QPATHTOF(resouces\gend\mrap_01_adds_co.paa),
-            QPATHTOF(resouces\gend\mrap_01_base_co.paa)
+            QPATHTOF(resources\gend\mrap_01_base_co.paa),
+            QPATHTOF(resources\gend\mrap_01_adds_co.paa),
+            QPATHTOF(resources\gend\mrap_01_base_co.paa)
         };
         textureList[] = {};
         class TransportMagazines{};
@@ -438,9 +438,9 @@ class CfgVehicles {
         displayName = "MSE-3 Marid (SWAT)";
         crew = "B_GEN_SWAT_Crew_F";
         hiddenSelectionsTextures[] = {
-            QPATHTOF(resouces\gend\GT_APC_ext_01_CO.paa),
-            QPATHTOF(resouces\gend\GT_APC_ext_02_CO.paa),
-            QPATHTOF(resouces\gend\GT_APC_ext_01_CO.paa)
+            QPATHTOF(resources\gend\GT_APC_ext_01_CO.paa),
+            QPATHTOF(resources\gend\GT_APC_ext_02_CO.paa),
+            QPATHTOF(resources\gend\GT_APC_ext_01_CO.paa)
         };
         textureList[] = {};
         class TransportMagazines{};
@@ -455,9 +455,9 @@ class CfgVehicles {
         displayName = "MCV-80 Warrior (Snow)";
         crew = "CUP_B_BAF_Soldier_Crew_MTP";
         hiddenSelectionsTextures[] = {
-            QPATHTOF(resouces\baf\warrior\warrior_gb_hull_win_co.paa),
-            QPATHTOF(resouces\baf\warrior\warrior_gb_hull_win_co.paa),
-            QPATHTOF(resouces\baf\warrior\warrior_gb_turret_win_co.paa)
+            QPATHTOF(resources\baf\warrior\warrior_gb_hull_win_co.paa),
+            QPATHTOF(resources\baf\warrior\warrior_gb_hull_win_co.paa),
+            QPATHTOF(resources\baf\warrior\warrior_gb_turret_win_co.paa)
         };
         textureList[] = {};
         class TransportMagazines{};
@@ -472,9 +472,9 @@ class CfgVehicles {
         displayName = "MCV-80 Warrior (SLAT - Snow)";
         crew = "CUP_B_BAF_Soldier_Crew_MTP";
         hiddenSelectionsTextures[] = {
-            QPATHTOF(resouces\baf\warrior\warrior_gb_hull_win_co.paa),
-            QPATHTOF(resouces\baf\warrior\warrior_gb_hull_win_co.paa),
-            QPATHTOF(resouces\baf\warrior\warrior_gb_turret_win_co.paa)
+            QPATHTOF(resources\baf\warrior\warrior_gb_hull_win_co.paa),
+            QPATHTOF(resources\baf\warrior\warrior_gb_hull_win_co.paa),
+            QPATHTOF(resources\baf\warrior\warrior_gb_turret_win_co.paa)
         };
         textureList[] = {};
         class TransportMagazines{};
@@ -489,12 +489,12 @@ class CfgVehicles {
         displayName = "FV342 Bulldog M240 [Snow]";
         crew = "CUP_B_BAF_Soldier_Crew_MTP";
         hiddenSelectionsTextures[] = {
-            QPATHTOF(resouces\baf\bulldog\bulldog_gb_hull_part1_win_co.paa),
-            QPATHTOF(resouces\baf\bulldog\bulldog_gb_hull_part2_win_co.paa),
-            QPATHTOF(resouces\baf\bulldog\bulldog_gb_hull_part3_win_co.paa),
-            QPATHTOF(resouces\baf\bulldog\bulldog_gb_ancills_win_co.paa),
-            QPATHTOF(resouces\baf\bulldog\bulldog_gb_turret_win_co.paa),
-            QPATHTOF(resouces\baf\bulldog\bulldog_gb_turret_win_co.paa)
+            QPATHTOF(resources\baf\bulldog\bulldog_gb_hull_part1_win_co.paa),
+            QPATHTOF(resources\baf\bulldog\bulldog_gb_hull_part2_win_co.paa),
+            QPATHTOF(resources\baf\bulldog\bulldog_gb_hull_part3_win_co.paa),
+            QPATHTOF(resources\baf\bulldog\bulldog_gb_ancills_win_co.paa),
+            QPATHTOF(resources\baf\bulldog\bulldog_gb_turret_win_co.paa),
+            QPATHTOF(resources\baf\bulldog\bulldog_gb_turret_win_co.paa)
         };
         textureList[] = {};
         class TransportMagazines{};
@@ -509,10 +509,10 @@ class CfgVehicles {
         displayName = "FV342 Bulldog M2 RWS [Snow]";
         crew = "CUP_B_BAF_Soldier_Crew_MTP";
         hiddenSelectionsTextures[] = {
-            QPATHTOF(resouces\baf\bulldog\bulldog_gb_hull_part1_win_co.paa),
-            QPATHTOF(resouces\baf\bulldog\bulldog_gb_hull_part2_win_co.paa),
-            QPATHTOF(resouces\baf\bulldog\bulldog_gb_hull_part3_win_co.paa),
-            QPATHTOF(resouces\baf\bulldog\bulldog_gb_ancills_win_co.paa)
+            QPATHTOF(resources\baf\bulldog\bulldog_gb_hull_part1_win_co.paa),
+            QPATHTOF(resources\baf\bulldog\bulldog_gb_hull_part2_win_co.paa),
+            QPATHTOF(resources\baf\bulldog\bulldog_gb_hull_part3_win_co.paa),
+            QPATHTOF(resources\baf\bulldog\bulldog_gb_ancills_win_co.paa)
         };
         textureList[] = {};
         class TransportMagazines{};
