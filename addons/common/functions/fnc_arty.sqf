@@ -1,4 +1,4 @@
-include "..\script_component.hpp"
+#include "..\script_component.hpp"
 /*
  * Author: Cyruz
  * Used to handle AI firing artillery at a given position
@@ -34,7 +34,7 @@ private _gunner = effectiveCommander _vehicle;
         private _targetPos = [_target, _radius] call CBA_fnc_randPos;
 
         if ((_targetPos inRangeOfArtillery [[_gunner], _mag]) isEqualTo false) exitWith {
-            ERROR_MSG_2 ("fnc_arty, Error target %1 is out of range of %2",_target, _gunner);
+            ERROR_MSG_2("fnc_arty, Error target %1 is out of range of %2",_target,_gunner);
         };
 
         _gunner doArtilleryFire [_targetPos, _mag, _roundCount];
