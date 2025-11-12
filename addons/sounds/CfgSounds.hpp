@@ -297,10 +297,6 @@ class CfgSounds {
         name = "ww2 usmc";
         sound[]={"\x\ark\addons\ark_sounds\sounds\ww2\ww2_usmc.ogg", 1, 1};
     };
-    class ww2_df : nkt1 {
-        name = "ww2 df";
-        sound[]={"\x\ark\addons\ark_sounds\sounds\ww2\ww2_df.ogg", 1, 1};
-    };
     class ww2_aus : nkt1 {
         name = "ww2 aus";
         sound[]={"\x\ark\addons\ark_sounds\sounds\ww2\ww2_aus.ogg", 1, 1};
