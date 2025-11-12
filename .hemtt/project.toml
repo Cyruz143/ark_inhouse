@@ -1,6 +1,7 @@
 name = "Ark Inhouse"
 prefix = "ark"
 author = "ARK"
+mainprefix = "x"
 
 [files]
 include = [
@@ -9,9 +10,6 @@ include = [
 
 [version]
 git_hash = 0
-
-[hemtt.config]
-preset = "Hemtt"
 
 [hemtt.release]
 folder = "ark_inhouse"
