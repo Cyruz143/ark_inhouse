@@ -41,7 +41,7 @@ params ["_unit"];
     };
 
     // if more than 50m just move to a near pos
-    private _targetPos = [_target] call FUNC(findSafePos);
+    private _targetPos = [_target, _unit] call FUNC(findSafePos);
     if (_distanceToTarget > 50) exitWith {
         _unit setDestination [_targetPos, "LEADER PLANNED", true];
         _unit doMove _targetPos;
@@ -60,7 +60,7 @@ params ["_unit"];
         _targetPos = [_target] call FUNC(nearestBuildingPos);
         if (_targetPos isEqualTo "outside") then {
             [_unit, 50] call FUNC(forgetTargets);
-            _targetPos = [_target] call FUNC(findSafePos);
+            _targetPos = [_target, _unit] call FUNC(findSafePos);
         };
     };
 
