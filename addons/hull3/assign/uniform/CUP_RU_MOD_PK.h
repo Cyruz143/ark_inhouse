@@ -3,14 +3,14 @@ class CUP_RU_MOD_PK {
         headGear = "CUP_H_RUS_6B47_v2_Desert";
         goggles = "";
         uniform = "CUP_U_O_RUS_Soldier_VKPO_VDV_Pink_gloves_pads";
-        vest = "CUP_Vest_RUS_6B45_Sh117_Desert_ARM";
+        vest = "CUP_Vest_RUS_6B45_Sh117_Desert";
         backpack = "ark_backpack_med";
         insignia = "";
     };
 
     class Leader : Rifleman {
         uniform = "CUP_U_O_RUS_Soldier_VKPO_VDV_Pink_rolled_up_gloves_pads";
-        vest = "CUP_Vest_RUS_6B45_Sh117_VOG_Desert_ARM";
+        vest = "CUP_Vest_RUS_6B45_Sh117_VOG_Desert";
     };
 
     class Officer : Leader {
@@ -24,11 +24,11 @@ class CUP_RU_MOD_PK {
     };
 
     class CO : Officer {
-        vest = "CUP_Vest_RUS_6B45_Sh117_VOG_Del_Nut_Desert_ARM";
+        vest = "CUP_Vest_RUS_6B45_Sh117_VOG_Del_Nut_Desert";
     };
 
     class XO : CO {
-        vest = "CUP_Vest_RUS_6B45_Sh117_VOG_Del_Desert_ARM";
+        vest = "CUP_Vest_RUS_6B45_Sh117_VOG_Del_Desert";
         backpack = "ark_backpack_large";
     };
 
@@ -42,23 +42,23 @@ class CUP_RU_MOD_PK {
     };
 
     class FTL : Leader {
-        vest = "CUP_Vest_RUS_6B45_Sh117_VOG_Full_Desert_ARM";
+        vest = "CUP_Vest_RUS_6B45_Sh117_VOG_Full_Desert";
     };
 
     class AR : Rifleman {
         headGear = "CUP_H_RUS_6B47_v2_GogglesUp_Desert";
-        vest = "CUP_Vest_RUS_6B45_Sh117_PKP_Del_Desert_ARM";
+        vest = "CUP_Vest_RUS_6B45_Sh117_PKP_Del_Desert";
     };
 
     class AAR : Rifleman {
-        vest = "CUP_Vest_RUS_6B45_Sh117_Del_Nut_Desert_ARM";
+        vest = "CUP_Vest_RUS_6B45_Sh117_Del_Nut_Desert";
         backpack = "ark_backpack_large";
     };
 
     class RAT : Rifleman {
         headGear = "CUP_H_RUS_6B47_v2_GogglesDown_Desert";
         uniform = "CUP_U_O_RUS_Soldier_VKPO_VDV_Pink_rolled_up_gloves_pads";
-        vest = "CUP_Vest_RUS_6B45_Sh117_Del_Nut_Desert_ARM";
+        vest = "CUP_Vest_RUS_6B45_Sh117_Del_Nut_Desert";
     };
 
     class MMGG : AR {
@@ -136,7 +136,7 @@ class CUP_RU_MOD_PK {
     class ENG : Rifleman {
         headGear = "CUP_H_RUS_6B47_v2_GogglesUp_Desert";
         uniform = "CUP_U_O_RUS_Soldier_VKPO_VDV_Pink_rolled_up_gloves_pads";
-        vest = "CUP_Vest_RUS_6B45_Sh117_Full_Desert_ARM";
+        vest = "CUP_Vest_RUS_6B45_Sh117_Full_Desert";
         backpack = "ark_backpack_large";
     };
 
@@ -148,7 +148,7 @@ class CUP_RU_MOD_PK {
     class SN : Rifleman {
         headGear = "CUP_H_RUS_6B47_v2_GogglesClosed_Desert";
         uniform = "CUP_U_O_RUS_Ratnik_Pink";
-        vest = "CUP_Vest_RUS_6B45_Sh117_Full_Desert_ARM";
+        vest = "CUP_Vest_RUS_6B45_Sh117_Full_Desert";
         backpack = "ark_backpack_small";
     };
 
