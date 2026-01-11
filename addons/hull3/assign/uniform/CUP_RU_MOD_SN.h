@@ -3,13 +3,13 @@ class CUP_RU_MOD_SN {
         headGear = "CUP_H_RUS_6B47_v2_Winter";
         goggles = "CUP_G_RUS_Balaclava_Ratnik_winter";
         uniform = "CUP_U_O_RUS_Ratnik_Winter";
-        vest = "CUP_Vest_RUS_6B45_Sh117_Green_ARM";
+        vest = "CUP_Vest_RUS_6B45_Sh117_Green";
         backpack = "ark_backpack_med";
         insignia = "";
     };
 
     class Leader : Rifleman {
-        vest = "CUP_Vest_RUS_6B45_Sh117_VOG_Green_ARM";
+        vest = "CUP_Vest_RUS_6B45_Sh117_VOG_Green";
     };
 
     class Officer : Leader {
@@ -45,7 +45,7 @@ class CUP_RU_MOD_SN {
     class AR : Rifleman {
         headGear = "CUP_H_RUS_6B47_v2_GogglesUp_Winter";
         goggles = "CUP_G_RUS_Balaclava_Ratnik_winter_v2";
-        vest = "CUP_Vest_RUS_6B45_Sh117_PKP_Green_ARM";
+        vest = "CUP_Vest_RUS_6B45_Sh117_PKP_Green";
     };
 
     class AAR : Rifleman {
