@@ -16,3 +16,4 @@ class CfgPatches {
 };
 
 #include "CfgAmmo.hpp"
+#include "CfgCloudlets.hpp"
