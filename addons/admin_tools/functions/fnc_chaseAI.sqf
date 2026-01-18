@@ -59,13 +59,8 @@ private _closeUnits = allUnits select {
         {_unit forgetTarget _x} forEach _targets;
     };
 
-    private _targetPos = _pos findEmptyPosition [0, 10, "CAManBase"];
-    if (_targetPos isEqualTo []) then {
-        _targetPos = _pos;
-    };
-
-    _unit setDestination [_targetPos, "LEADER PLANNED", true];
-    _unit doMove _targetPos;
+    _unit setDestination [_pos, "LEADER PLANNED", true];
+    _unit doMove _pos;
 } forEach _closeUnits;
 
 INFO_3("fnc_chaseAI, Chase AI executed with Args: %1, %2, %3",_pos,_dist,_tp);
