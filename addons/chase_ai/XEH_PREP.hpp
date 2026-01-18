@@ -3,7 +3,6 @@ PREP(createGroup);
 PREP(createUnit);
 PREP(doMove);
 PREP(enableSpawning);
-PREP(findSafePos);
 PREP(findSpawnPos);
 PREP(forgetTargets);
 PREP(init);
