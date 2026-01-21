@@ -6,7 +6,11 @@ class CfgPatches {
         author = "ARK";
         authors[] = {"ARK"};
         url = "http://www.ark-group.org";
-        units[] = {};
+        units[] = {
+            "ARK_Rotor_Barrelbomb",
+            "ARK_Rotor_Insert",
+            "ARK_Rotor_Paradrop"
+        };
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {

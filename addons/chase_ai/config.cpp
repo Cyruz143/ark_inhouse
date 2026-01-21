@@ -6,7 +6,7 @@ class CfgPatches {
         author = "ARK";
         authors[] = {"ARK"};
         url = "http://www.ark-group.org";
-        units[] = {};
+        units[] = {"ark_chase_ai_module"};
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {

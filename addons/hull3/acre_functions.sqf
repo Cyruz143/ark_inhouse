@@ -239,7 +239,7 @@ hull3_acre_fnc_getRadioChannelFromGroupId = {
             _nCharsChannels = _channelAssignments select { _x select 0 == _groupIdFirstNChars };
             _groupIdWithoutFirstNChars = toString (_groupIdArray select [_n, count _groupIdArray - 1]);
             LOG_6("hull3.acre.radio.channel: _n is %1, _groupIdFirstNChars is %2, _nCharsChannels is %3, _groupIdWithoutFirstNChars is %4, parsed number is %5 for groupId %6.",_n,_groupIdFirstNChars,_nCharsChannels,_groupIdWithoutFirstNChars,parseNumber _groupIdWithoutFirstNChars,_groupId);
-            if (count _nCharsChannels > 0 && {count _groupIdArray >= _n} && {parseNumber _groupIdWithoutFirstNChars >= 1}) exitWith { _nCharsChannels select 0 select 1 };
+            if (_nCharsChannels isNotEqualTo [] && {count _groupIdArray >= _n} && {parseNumber _groupIdWithoutFirstNChars >= 1}) exitWith { _nCharsChannels select 0 select 1 };
         };
 
         if (isNil {_channel}) then {

@@ -34,7 +34,10 @@ class CfgPatches {
             "ARK_MCV80_GB_WIN_SLAT",
             "ARK_MCV80_GB_WIN",
             "ARK_FV432_Bulldog_GB_WIN_RWS",
-            "ARK_FV432_Bulldog_GB_WIN"
+            "ARK_FV432_Bulldog_GB_WIN",
+            "ARK_SCA_TRAN_NOR_WD",
+            "ARK_SCA_COV_NOR_GN",
+            "ARK_M113_USA_OD"
         };
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;

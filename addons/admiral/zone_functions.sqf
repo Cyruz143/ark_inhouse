@@ -127,7 +127,7 @@ adm_zone_initZoneFromModule = {
     PUSH_ALL(_moduleConfigs,_defaultConfigs);
     _triggers = [];
     FILTER_PUSH_ALL(_triggers,synchronizedObjects _module,{count triggerArea _x > 0});
-    if (count _triggers == 0) then {
+    if (_triggers isEqualTo []) then {
         private _configs = +_moduleConfigs;
         _configs pushBack ["area", [_module] call adm_zone_getModuleArea];
         _configs pushBack ["position", getPosATL _module];

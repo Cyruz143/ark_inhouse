@@ -3,6 +3,7 @@
 texHeaders.bin
 *.biprivatekey
 keys/*
+*.hemttprivatekey
 
 # Releases
 releases/*
