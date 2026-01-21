@@ -6,7 +6,7 @@ class CfgPatches {
         author = "ARK";
         authors[] = {"ARK"};
         url = "http://www.ark-group.org";
-        units[] = {};
+        units[] = {"ARK_Player_Paradrop"};
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {"ark_main", "ark_admin_tools"};

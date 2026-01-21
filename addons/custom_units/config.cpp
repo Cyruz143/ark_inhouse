@@ -6,7 +6,23 @@ class CfgPatches {
         author = "ARK";
         authors[] = {"ARK"};
         url = "http://www.ark-group.org";
-        units[] = {};
+        units[] = {
+            "ARK_NVA_Pilot_F",
+            "ARK_NVA_Crew_F",
+            "ARK_NVA_Soldier_F_SKS",
+            "ARK_NVA_Soldier_F",
+            "ARK_NVA_Soldier_MG_F",
+            "ARK_NVA_Soldier_AR_F",
+            "ARK_NVA_Soldier_TL_F",
+            "ARK_NVA_Soldier_LAT_F",
+            "ARK_RU_CBRN_Pilot_F",
+            "ARK_RU_CBRN_Crew_F",
+            "ARK_RU_CBRN_Soldier_F",
+            "ARK_RU_CBRN_Soldier_MG_F",
+            "ARK_RU_CBRN_Soldier_AR_F",
+            "ARK_RU_CBRN_Soldier_TL_F",
+            "ARK_RU_CBRN_Soldier_LAT_F"
+        };
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {
