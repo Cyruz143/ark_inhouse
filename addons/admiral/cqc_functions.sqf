@@ -166,7 +166,7 @@ adm_cqc_fnc_spawnGarrison = {
         private ["_building", "_possiblePositions"];
         _building = _x;
         _possiblePositions = [_building, GET_CQC_MIN_HEIGHT(_zone)] call adm_cqc_fnc_getPossiblePositions;
-        if (count _possiblePositions > 0) then {
+        if (_possiblePositions isNotEqualTo []) then {
             private ["_numOfUnits", "_group"];
             _numOfUnits = [[_building] call adm_cqc_fnc_getBuildingCapacity, count _possiblePositions, _zone] call adm_cqc_fnc_getGarrisonGroupSize;
             _currentAmount = _currentAmount + _numOfUnits;
