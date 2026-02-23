@@ -15,7 +15,7 @@
 
 private _marker = createMarker [ts_spawn_selectedLocationMarkerName, [0, 0, 0]];
 _marker setMarkerSizeLocal [1, 1];
-_marker setMarkerAlphaLocal 0.5;
+_marker setMarkerAlphaLocal 1; // Formerly 0.5
 _marker setMarkerShapeLocal "ELLIPSE";
-_marker setMarkerBrushLocal "Solid";
+_marker setMarkerBrushLocal "Border"; // Formerly "Solid"
 _marker setMarkerColor "ColorRed";
