@@ -22,9 +22,10 @@ if (isNil "ts_trg_chaseAI") then {
     ts_trg_chaseAI setTriggerActivation ["ANYPLAYER", "PRESENT", false];
 
     private _module = "ark_chase_ai_module" createVehicleLocal [0,0,0];
+    _module setVariable ["Unit_Amount", 30];
     _module setVariable ["Max_Distance", 350];
     _module setVariable ["Min_Distance", 250];
-    _module setVariable ["Spawn_Time", 3];
+    _module setVariable ["Spawn_Time", 2];
     _module setVariable ["Allow_BuildingSearch", true];
 
     ts_trg_chaseAI synchronizeObjectsAdd [_module];
