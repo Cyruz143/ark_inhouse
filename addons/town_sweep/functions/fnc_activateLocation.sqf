@@ -14,7 +14,6 @@
  */
 
 if !(call FUNC(canLocationBeActivated)) exitWith {};
-call FUNC(activateLocationMarker);
 
 // Minimum 60 AI as this doesn't scale well at low numbers
 ts_spawn_aiCount = (ceil (ts_spawn_playerCount * ts_spawn_ai_multiplier)) max 60;
