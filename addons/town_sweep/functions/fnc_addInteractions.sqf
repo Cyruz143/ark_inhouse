@@ -39,7 +39,7 @@ private _activateZoneAction = [
     "Activate Zone",
     "Activate Zone",
     QPATHTOEF(main,resources\ai_enable.paa),
-    {[] call FUNC(activateLocation)}, // Former global execute
+    {[QGVAR(activateLocationEvent)] call CBA_fnc_serverEvent}, // Former global execute
     {true}
 ] call ace_interact_menu_fnc_createAction;
 
@@ -49,7 +49,7 @@ private _enableGroupDeployAction = [
     "Enable Group Deploy",
     "Enable Group Deploy",
     QPATHTOEF(main,resources\click_enable.paa),
-    {[] call FUNC(enableGroupDeploy)}, // Former global execute
+    {[QGVAR(enableGroupDeployEvent)] call CBA_fnc_serverEvent}, // Former global execute
     {true}
 ] call ace_interact_menu_fnc_createAction;
 
