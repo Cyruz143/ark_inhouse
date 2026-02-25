@@ -22,11 +22,11 @@ if ("itemMap" in assignedItems player) then {
         params ["", "_newPos"];
 
         ts_spawn_selectedLocationMarkerName setMarkerPosLocal _newPos;
-        ts_spawn_selectedLocationMarkerName setMarkerSize [1000, 1000];
+        ts_spawn_selectedLocationMarkerName setMarkerSize [700, 700];
 
         // Backwards compatibility: Location, Size, Activated
         ts_spawn_selectedLocation set [0, _newPos];
-        ts_spawn_selectedLocation set [1, 1000];
+        ts_spawn_selectedLocation set [1, 700];
         ts_spawn_selectedLocation set [2, false];
 
         publicVariable "ts_spawnSelectedLocation";
