@@ -26,6 +26,15 @@ if !(call EFUNC(main,isTownSweep)) exitWith {};
     ["task4", "SUCCEEDED"] call BIS_fnc_taskSetState;
 }] call CBA_fnc_addEventHandler;
 
+
+[QGVAR(activateLocationEvent), {
+    [] call FUNC(activateLocation);
+}] call CBA_fnc_addEventHandler;
+
+[QGVAR(enableGroupDeployEvent), {
+    [] call FUNC(enableGroupDeploy);
+}] call CBA_fnc_addEventHandler;
+
 if (hasInterface) then {
     call FUNC(addInteractions);
 };

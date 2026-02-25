@@ -1,5 +1,4 @@
 PREP(activateLocation);
-PREP(activateLocationMarker);
 PREP(addInteractions);
 PREP(ammoCrate);
 PREP(canLocationBeActivated);
@@ -15,7 +14,6 @@ PREP(enableGroupDeploy);
 PREP(enableRotor);
 PREP(fillFortifications);
 PREP(medicalCrate);
-PREP(moveLocationMarker);
 PREP(objDestroyAction);
 PREP(objDestroyAmmo);
 PREP(objDestroyCache);

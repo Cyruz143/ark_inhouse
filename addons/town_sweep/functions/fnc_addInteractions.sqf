@@ -13,88 +13,145 @@
  * [] call ark_town_sweep_fnc_addInteractions
  */
 
-private _condition = { call EFUNC(main,isHost) && {[_player, _target, []] call ace_common_fnc_canInteractWith} };
-private _action = [
+private _coreCondition = { call EFUNC(main,isHost) && {[_player, _target, []] call ace_common_fnc_canInteractWith} };
+
+private _townSweepCoreAction = [
     "Town Sweep",
     "Town Sweep",
     "\a3\ui_f\data\igui\cfg\simpletasks\types\attack_ca.paa",
     {},
-    _condition
+    _coreCondition
 ] call ace_interact_menu_fnc_createAction;
-[player, 1, ["ACE_SelfActions"], _action] call ace_interact_menu_fnc_addActionToObject;
 
-private _actions = [
-    ["Select Location", "\a3\ui_f\data\igui\cfg\simpletasks\types\interact_ca.paa", { call FUNC(selectLocation) }],
-    ["Activate Zone", QPATHTOEF(main,resources\ai_enable.paa), { [0, { [] call FUNC(activateLocation) }, []] call CBA_fnc_globalExecute; }],
-    ["Enable Group Deploy", QPATHTOEF(main,resources\click_enable.paa), { [0, { [] call FUNC(enableGroupDeploy) }, []] call CBA_fnc_globalExecute; }]
-];
+[player, 1, ["ACE_SelfActions"], _townSweepCoreAction] call ace_interact_menu_fnc_addActionToObject;
 
-{
-    _action = [
-        _x select 0,
-        _x select 0,
-        _x select 1,
-        _x select 2,
-        _condition
-        ] call ace_interact_menu_fnc_createAction;
-    [player, 1, ["ACE_SelfActions", "Town Sweep"], _action] call ace_interact_menu_fnc_addActionToObject;
-} forEach _actions;
+private _selectLocationAction = [
+    "Select Location",
+    "Select Location",
+    "\a3\ui_f\data\igui\cfg\simpletasks\types\interact_ca.paa",
+    {[] call FUNC(selectLocation)},
+    {true}
+] call ace_interact_menu_fnc_createAction;
 
-_action = [
+[player, 1, ["ACE_SelfActions", "Town Sweep"], _selectLocationAction] call ace_interact_menu_fnc_addActionToObject;
+
+private _activateZoneAction = [
+    "Activate Zone",
+    "Activate Zone",
+    QPATHTOEF(main,resources\ai_enable.paa),
+    {[QGVAR(activateLocationEvent)] call CBA_fnc_serverEvent}, // Former global execute
+    {true}
+] call ace_interact_menu_fnc_createAction;
+
+[player, 1, ["ACE_SelfActions", "Town Sweep"], _activateZoneAction] call ace_interact_menu_fnc_addActionToObject;
+
+private _enableGroupDeployAction = [
+    "Enable Group Deploy",
+    "Enable Group Deploy",
+    QPATHTOEF(main,resources\click_enable.paa),
+    {[QGVAR(enableGroupDeployEvent)] call CBA_fnc_serverEvent}, // Former global execute
+    {true}
+] call ace_interact_menu_fnc_createAction;
+
+[player, 1, ["ACE_SelfActions", "Town Sweep"], _enableGroupDeployAction] call ace_interact_menu_fnc_addActionToObject;
+
+// Difficulty Actions
+private _difficultyAction = [
     "Difficulty",
     "Difficulty",
     "\a3\ui_f\data\igui\cfg\simpletasks\types\use_ca.paa",
     {},
-    _condition
+    {true}
 ] call ace_interact_menu_fnc_createAction;
-[player, 1, ["ACE_SelfActions", "Town Sweep"], _action] call ace_interact_menu_fnc_addActionToObject;
 
-private _difficulties = [
-    ["Easy", 2],
-    ["Normal", 3],
-    ["Hard", 4]
-];
+[player, 1, ["ACE_SelfActions", "Town Sweep"], _difficultyAction] call ace_interact_menu_fnc_addActionToObject;
 
-{
-    _action = [
-        _x select 0,
-        format ["%1 (%2x)", _x select 0, _x select 1],
-        "",
-        {
-            [0, { ts_spawn_ai_multiplier = _this select 0 }, [_this select 2 select 0]] call CBA_fnc_globalExecute;
-        },
-        _condition,
-        {},
-        [_x select 1]
-    ] call ace_interact_menu_fnc_createAction;
-    [player, 1, ["ACE_SelfActions", "Town Sweep", "Difficulty"], _action] call ace_interact_menu_fnc_addActionToObject;
-} forEach _difficulties;
+private _difficultyActionEasy = [
+    "Easy",
+    "Easy",
+    "",
+    {
+        ts_spawn_ai_multiplier = 2;
+        publicVariable "ts_spawn_ai_multiplier";
+    },
+    {true}
+] call ace_interact_menu_fnc_createAction;
 
-_action = [
+[player, 1, ["ACE_SelfActions", "Town Sweep", "Difficulty"], _difficultyActionEasy] call ace_interact_menu_fnc_addActionToObject;
+
+private _difficultyActionMedium = [
+    "Medium",
+    "Medium",
+    "",
+    {
+        ts_spawn_ai_multiplier = 3;
+        publicVariable "ts_spawn_ai_multiplier";
+    },
+    {true}
+] call ace_interact_menu_fnc_createAction;
+
+[player, 1, ["ACE_SelfActions", "Town Sweep", "Difficulty"], _difficultyActionMedium] call ace_interact_menu_fnc_addActionToObject;
+
+private _difficultyActionHard = [
+    "Hard",
+    "Hard",
+    "",
+    {
+        ts_spawn_ai_multiplier = 4;
+        publicVariable "ts_spawn_ai_multiplier";
+    },
+    {true}
+] call ace_interact_menu_fnc_createAction;
+
+[player, 1, ["ACE_SelfActions", "Town Sweep", "Difficulty"], _difficultyActionHard] call ace_interact_menu_fnc_addActionToObject;
+
+// Town Sizes
+private _townSizeAction = [
     "Town Size",
     "Town Size",
     "\a3\ui_f\data\igui\cfg\simpletasks\types\search_ca.paa",
     {},
-    _condition
+    {true}
 ] call ace_interact_menu_fnc_createAction;
-[player, 1, ["ACE_SelfActions", "Town Sweep"], _action] call ace_interact_menu_fnc_addActionToObject;
 
-private _sizes = [
-    ["Increase", ts_spawn_location_sizeChange],
-    ["Increase", ts_spawn_location_sizeChange / 2],
-    ["Decrease", -ts_spawn_location_sizeChange],
-    ["Decrease", -ts_spawn_location_sizeChange / 2]
-];
+[player, 1, ["ACE_SelfActions", "Town Sweep"], _townSizeAction] call ace_interact_menu_fnc_addActionToObject;
 
-{
-    _action = [
-        _x select 0,
-        format ["%1 (%2m)", _x select 0, _x select 1],
-        "",
-        { [0, { call FUNC(changeLocationSize); }, [_this select 2 select 0]] call CBA_fnc_globalExecute; },
-        _condition,
-        {},
-        [_x select 1]
-    ] call ace_interact_menu_fnc_createAction;
-    [player, 1, ["ACE_SelfActions", "Town Sweep", "Town Size"], _action] call ace_interact_menu_fnc_addActionToObject;
-} forEach _sizes;
+private _townSizeIncreaseLarge = [
+    "IncreaseLarge",
+    "Increase (100m)",
+    "",
+    {[100] call FUNC(changeLocationSize)},
+    {true}
+] call ace_interact_menu_fnc_createAction;
+
+[player, 1, ["ACE_SelfActions", "Town Sweep", "Town Size"], _townSizeIncreaseLarge] call ace_interact_menu_fnc_addActionToObject;
+
+private _townSizeIncreaseSmall = [
+    "IncreaseSmall",
+    "Increase (50m)",
+    "",
+    {[50] call FUNC(changeLocationSize)},
+    {true}
+] call ace_interact_menu_fnc_createAction;
+
+[player, 1, ["ACE_SelfActions", "Town Sweep", "Town Size"], _townSizeIncreaseSmall] call ace_interact_menu_fnc_addActionToObject;
+
+private _townSizeDecreaseLarge = [
+    "DecreaseLarge",
+    "Decrease (100m)",
+    "",
+    {[-100] call FUNC(changeLocationSize)},
+    {true}
+] call ace_interact_menu_fnc_createAction;
+
+[player, 1, ["ACE_SelfActions", "Town Sweep", "Town Size"], _townSizeDecreaseLarge] call ace_interact_menu_fnc_addActionToObject;
+
+private _townSizeDecreaseSmall = [
+    "DecreaseSmall",
+    "Decrease (50m)",
+    "",
+    {[-50] call FUNC(changeLocationSize)},
+    {true}
+] call ace_interact_menu_fnc_createAction;
+
+[player, 1, ["ACE_SelfActions", "Town Sweep", "Town Size"], _townSizeDecreaseSmall] call ace_interact_menu_fnc_addActionToObject;
