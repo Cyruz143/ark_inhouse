@@ -17,6 +17,8 @@ params ["_sizeChange"];
 
 if !(call FUNC(canLocationBeActivated)) exitWith {};
 
-private _size = (ts_spawn_selectedLocation #1) + _sizeChange;
+private _size = (getMarkerSize "ts_spawn_selectedLocation" select 0) + _sizeChange;
+"ts_spawn_selectedLocation" setMarkerSize [_size, _size];
+
 ts_spawn_selectedLocation set [1, _size];
-ts_spawn_selectedLocationMarkerName setMarkerSize [_size, _size];
+publicVariable "ts_spawn_selectedLocation";

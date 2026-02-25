@@ -41,7 +41,7 @@ switch (_selectedMission) do {
 
 ts_spawn_availableMissions deleteAt (ts_spawn_availableMissions find _selectedMission);
 
-[{(allPlayers inAreaArray ts_spawn_selectedLocationMarkerName) isNotEqualTo []}, {
+[{(allPlayers inAreaArray "ts_spawn_selectedLocation") isNotEqualTo []}, {
     [{
         (selectRandom ["paradrop","insert"]) call FUNC(enableRotor);
     }, [], 240] call CBA_fnc_waitAndExecute;

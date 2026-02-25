@@ -15,14 +15,14 @@
 
 [[QPATHTOEF(main,resources\click.paa), 2.0], ["Click on map to select attack location"]] call CBA_fnc_notify;
 
-if ("itemMap" in assignedItems player) then {
+if (player getSlotItemName 608 != "") then {
     openMap [true, true];
 
     ts_mapSingleClickID = addMissionEventHandler ["MapSingleClick", {
         params ["", "_newPos"];
 
-        ts_spawn_selectedLocationMarkerName setMarkerPosLocal _newPos;
-        ts_spawn_selectedLocationMarkerName setMarkerSize [700, 700];
+        "ts_spawn_selectedLocation" setMarkerPosLocal _newPos;
+        "ts_spawn_selectedLocation" setMarkerSize [700, 700];
 
         // Backwards compatibility: Location, Size, Activated
         ts_spawn_selectedLocation set [0, _newPos];
