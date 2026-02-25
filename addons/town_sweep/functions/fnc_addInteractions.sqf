@@ -39,7 +39,7 @@ private _activateZoneAction = [
     "Activate Zone",
     "Activate Zone",
     QPATHTOEF(main,resources\ai_enable.paa),
-    {[] call FUNC(activateLocation}, // Former global execute
+    {[] call FUNC(activateLocation)}, // Former global execute
     {true}
 ] call ace_interact_menu_fnc_createAction;
 
@@ -124,8 +124,7 @@ private _townSizeIncreaseLarge = [
     {true}
 ] call ace_interact_menu_fnc_createAction;
 
-[player, 1, ["ACE_SelfActions", "Town Sweep", "Town Size"], private _townSizeIncreaseLarge = [
-] call ace_interact_menu_fnc_addActionToObject;
+[player, 1, ["ACE_SelfActions", "Town Sweep", "Town Size"], _townSizeIncreaseLarge] call ace_interact_menu_fnc_addActionToObject;
 
 private _townSizeIncreaseSmall = [
     "IncreaseSmall",
@@ -140,7 +139,7 @@ private _townSizeIncreaseSmall = [
 private _townSizeDecreaseLarge = [
     "DecreaseLarge",
     "Decrease (100m)",
-    ""
+    "",
     {[-100] call FUNC(changeLocationSize)},
     {true}
 ] call ace_interact_menu_fnc_createAction;
@@ -150,7 +149,7 @@ private _townSizeDecreaseLarge = [
 private _townSizeDecreaseSmall = [
     "DecreaseSmall",
     "Decrease (50m)",
-    ""
+    "",
     {[-50] call FUNC(changeLocationSize)},
     {true}
 ] call ace_interact_menu_fnc_createAction;
