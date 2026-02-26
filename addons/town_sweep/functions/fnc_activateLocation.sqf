@@ -26,7 +26,9 @@ ts_spawn_patrolTechGroupCount = 2 + (floor (ts_spawn_playerCount / 10));
 ts_spawn_patrolArmourGroupCount = 1 + (floor (ts_spawn_playerCount / 25));
 
 call FUNC(createLocationZones);
-ts_spawn_selectedLocation set [2, true];
+
+[QGVAR(updateSelectedLocation), [nil, nil, true]] call CBA_fnc_globalEvent;
+
 call FUNC(createFortifications);
 
 // Remove the picked mission so subsequent choices will be different

@@ -20,5 +20,4 @@ if !(call FUNC(canLocationBeActivated)) exitWith {};
 private _size = (getMarkerSize "ts_spawn_selectedLocation" select 0) + _sizeChange;
 "ts_spawn_selectedLocation" setMarkerSize [_size, _size];
 
-ts_spawn_selectedLocation set [1, _size];
-publicVariable "ts_spawn_selectedLocation";
+[QGVAR(updateSelectedLocations), [nil, _size]] call CBA_fnc_globalEvent;

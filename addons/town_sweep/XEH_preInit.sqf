@@ -9,6 +9,7 @@ PREP_RECOMPILE_END;
 if (call EFUNC(main,isTownSweep)) then {
     // Default values are provided here, publicVariabled on change. This is required for some reason. Activation is only altered on the server.
     ts_spawn_selectedLocation = [[0, 0, 0], [700, 700], false];
+
     if (isServer) then {
         ts_spawn_selectedLocationMarkerName = "ts_spawn_selectedLocation"; // Not utilised in this component because of locality issues.
         ts_spawn_placedFortifications = [];
