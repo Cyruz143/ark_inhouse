@@ -60,7 +60,7 @@ ts_objVeh setFuel 0;
 ts_objVeh call EFUNC(clear_cargo,doClearVehicle);
 
 [true, ["task1"], ["Locate and destroy the static armour in town", "Destroy Armour"], GVAR(selectedPosition), "ASSIGNED", -1, true, "target"] call BIS_fnc_taskCreate;
-[ts_objVeh, [GVAR(positionSize), GVAR(positionSize)]] call FUNC(createChaseZone);
+[ts_objVeh, GVAR(positionSize)] call FUNC(createChaseZone);
 ts_objVeh addEventHandler ["Killed", {call FUNC(vehicleDestroyed)}];
 
 ["ace_cookoff_cookoff", {

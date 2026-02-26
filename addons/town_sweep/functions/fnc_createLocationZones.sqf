@@ -13,7 +13,7 @@
  * [] call ark_town_sweep_fnc_createLocationZones
  */
 
-private _size = [GVAR(positionSize), GVAR(positionSize)];
+private _size = GVAR(positionSize);
 
 [
     ["type", "cqc"],
