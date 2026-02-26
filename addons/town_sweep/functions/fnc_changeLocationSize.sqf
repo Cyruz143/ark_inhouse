@@ -15,7 +15,7 @@
 
 params ["_sizeChange"];
 
-if !(GVAR(positionActive)) exitWith {};
+if (GVAR(positionActive)) exitWith {};
 
 private _size = (getMarkerSize "ts_spawn_selectedLocation" select 0) + _sizeChange;
 "ts_spawn_selectedLocation" setMarkerSize [_size, _size];

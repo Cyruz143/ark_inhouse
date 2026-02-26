@@ -13,7 +13,7 @@
  * [] call ark_town_sweep_fnc_activateLocation
  */
 
-if !(GVAR(positionActive)) exitWith {};
+if (GVAR(positionActive)) exitWith {};
 
 // Minimum 60 AI as this doesn't scale well at low numbers
 ts_spawn_aiCount = (ceil (ts_spawn_playerCount * ts_spawn_ai_multiplier)) max 60;
