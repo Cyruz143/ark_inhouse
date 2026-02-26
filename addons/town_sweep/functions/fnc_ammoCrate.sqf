@@ -30,6 +30,6 @@ player call ace_common_fnc_goKneeling;
         };
     },
     {hint "Aborted!"},
-    "Deploying ammo box",
+    "Deploying Ammo Box",
     {alive player}
 ] call ace_common_fnc_progressBar;

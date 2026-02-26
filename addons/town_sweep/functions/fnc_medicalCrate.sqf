@@ -25,6 +25,6 @@ player call ace_common_fnc_goKneeling;
         };
     },
     {hint "Aborted!"},
-    "Deploying medical box",
+    "Deploying Medical Box",
     {alive player}
 ] call ace_common_fnc_progressBar;
