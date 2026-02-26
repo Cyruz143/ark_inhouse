@@ -2,6 +2,10 @@
 
 if !(call EFUNC(main,isTownSweep)) exitWith {};
 
+GVAR(selectedPosition) = [0, 0, 0];
+GVAR(positionSize) = 700;
+GVAR(positionActive) = false;
+
 [QGVAR(objDestroyActionEvent), {
     if (!hasInterface) exitWith {};
     call FUNC(objDestroyAction);
@@ -32,24 +36,6 @@ if !(call EFUNC(main,isTownSweep)) exitWith {};
 
 [QGVAR(enableGroupDeployEvent), {
     [] call FUNC(enableGroupDeploy);
-}] call CBA_fnc_addEventHandler;
-
-// This is a nightmare, it works and do not touch.
-// Params are Array - Array - Bool but they are mismatched to know when to update.
-[QGVAR(updateSelectedLocation), {
-    params [["_position", ""], ["_size", ""], ["_active", 0]];
-
-    if (_position != "") then {
-        ts_spawn_selectedLocation set [0, _position];
-    };
-
-    if (_size != "") then {
-        ts_spawn_selectedLocation set [1, _size];
-    };
-
-    if (_active != 0) then {
-        ts_spawn_selectedLocation set [2, _active];
-    };
 }] call CBA_fnc_addEventHandler;
 
 if (hasInterface) then {

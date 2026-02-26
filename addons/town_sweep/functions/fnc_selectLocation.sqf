@@ -22,10 +22,13 @@ if (player getSlotItemName 608 != "") then {
         params ["", "_newPos"];
 
         "ts_spawn_selectedLocation" setMarkerPosLocal _newPos;
-        "ts_spawn_selectedLocation" setMarkerSize [700, 700];
+        "ts_spawn_selectedLocation" setMarkerSize [GVAR(positionSize), GVAR(positionSize)];
 
-        // Backwards compatibility: Location, Size, Activated
-        [QGVAR(updateSelectedLocation), [_newPos, 700, false]] call CBA_fnc_globalEvent;
+        GVAR(selectedPosition) = _newPos;
+        publicVariable QGVAR(selectedPosition);
+
+        GVAR(positionActive) = false;
+        publicVariable QGVAR(positionActive);
 
         ts_spawn_playerCount = count ([false] call EFUNC(common,players));
         publicVariable "ts_spawn_playerCount";

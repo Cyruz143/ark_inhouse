@@ -13,18 +13,16 @@
  * [] call ark_town_sweep_fnc_objDestroyVeh
  */
 
-ts_spawn_selectedLocation params ["_position","_size"];
-
 private _grp = createGroup [ts_enemy_side, true];
 _grp enableDynamicSimulation true;
 private _skillArray = ["Vehicles"] call adm_common_fnc_getZoneTemplateSkillValues;
 private _crewmanClassnames = [adm_camp_defaultUnitTemplate, "crewmen"] call adm_common_fnc_getUnitTemplateArray;
 private _armourArray = [adm_camp_defaultUnitTemplate, "armour"] call adm_common_fnc_getUnitTemplateArray;
 
-private _nearRoad = selectRandom (_position nearRoads 100);
+private _nearRoad = selectRandom (GVAR(selectedPosition) nearRoads 100);
 
 if (isNil "_nearRoad") then {
-    private _pos = [_position, 0, 100, 5, 0, 20, 0] call BIS_fnc_findSafePos;
+    private _pos = [GVAR(selectedPosition), 0, 100, 5, 0, 20, 0] call BIS_fnc_findSafePos;
     // BIS_fnc_findSafePos returns X and Y with success and  X Y Z on failure... fucking BI
     if (count _pos isEqualTo 3) exitWith {};
     ts_objVeh = createVehicle [(selectRandom _armourArray), _pos, [], 0, "NONE"];
@@ -61,8 +59,8 @@ ts_objVeh setUnloadInCombat [false, false];
 ts_objVeh setFuel 0;
 ts_objVeh call EFUNC(clear_cargo,doClearVehicle);
 
-[true, ["task1"], ["Locate and destroy the static armour in town", "Destroy Armour"], _position, "ASSIGNED", -1, true, "target"] call BIS_fnc_taskCreate;
-[ts_objVeh,_size] call FUNC(createChaseZone);
+[true, ["task1"], ["Locate and destroy the static armour in town", "Destroy Armour"], GVAR(selectedPosition), "ASSIGNED", -1, true, "target"] call BIS_fnc_taskCreate;
+[ts_objVeh, [GVAR(positionSize), GVAR(positionSize)]] call FUNC(createChaseZone);
 ts_objVeh addEventHandler ["Killed", {call FUNC(vehicleDestroyed)}];
 
 ["ace_cookoff_cookoff", {

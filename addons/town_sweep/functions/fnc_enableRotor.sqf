@@ -14,13 +14,12 @@
  */
 
 params ["_insertType"];
-ts_spawn_selectedLocation params ["_position"];
 
-private _lzPos = [_position, 0, 150, 10, 0, 0.2] call BIS_fnc_findSafePos;
+private _lzPos = [GVAR(selectedPosition), 0, 150, 10, 0, 0.2] call BIS_fnc_findSafePos;
 // BIS_fnc_findSafePos returns X and Y with success and  X Y Z on failure... fucking BI
 if (count _lzPos isEqualTo 3) exitWith {};
 
-private _spawnPos = _position getPos [3000, random 360];
+private _spawnPos = GVAR(selectedPosition) getPos [3000, random 360];
 private _spawnZone = createTrigger ["EmptyDetector", _spawnPos, false];
 private _grp = createGroup [civilian, true];
 
