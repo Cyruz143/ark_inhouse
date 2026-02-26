@@ -13,8 +13,6 @@
  * [] call ark_town_sweep_fnc_createFortifications
  */
 
-ts_spawn_selectedLocation params ["_position"];
-
 private _fortificationArr = [MACRO_OTHER_FORTIFICATIONS];
 
 if (ts_camouflage isEqualTo "woodland") then {
@@ -23,7 +21,7 @@ if (ts_camouflage isEqualTo "woodland") then {
 
 private _fortificationPosArr = [];
 for "_i" from 1 to 20 do {
-    private _selectedPos = [_position, 250, 400, 10, 0, 0.2] call BIS_fnc_findSafePos;
+    private _selectedPos = [GVAR(selectedPosition), 250, 400, 10, 0, 0.2] call BIS_fnc_findSafePos;
     if (count _selectedPos isEqualTo 2 && { !(isOnRoad _selectedPos) }) then {
         _fortificationPosArr pushBackUnique _selectedPos;
     };
@@ -41,7 +39,7 @@ for "_i" from 1 to _fortificationAmount do {
     _fortificationPosArr deleteAt (_fortificationPosArr find _selectedLocation);
 
     private _fortification = createVehicle [_selectedFortification, _selectedLocation, [], 0, "NONE"];
-    _fortification setVectorDir (getPos _fortification vectorFromTo _position);
+    _fortification setVectorDir (getPos _fortification vectorFromTo GVAR(selectedPosition));
     _fortification setVectorUp surfaceNormal position _fortification;
     _fortification call FUNC(fillFortifications);
     ts_spawn_placedFortifications pushBack _fortification;

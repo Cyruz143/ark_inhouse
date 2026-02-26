@@ -1,7 +1,6 @@
 PREP(activateLocation);
 PREP(addInteractions);
 PREP(ammoCrate);
-PREP(canLocationBeActivated);
 PREP(changeLocationSize);
 PREP(chaseAI);
 PREP(createChaseZone);

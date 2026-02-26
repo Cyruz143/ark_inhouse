@@ -13,7 +13,7 @@
  * [] call ark_town_sweep_fnc_activateLocation
  */
 
-if !(call FUNC(canLocationBeActivated)) exitWith {};
+if !(GVAR(positionActive)) exitWith {};
 
 // Minimum 60 AI as this doesn't scale well at low numbers
 ts_spawn_aiCount = (ceil (ts_spawn_playerCount * ts_spawn_ai_multiplier)) max 60;
@@ -26,8 +26,6 @@ ts_spawn_patrolTechGroupCount = 2 + (floor (ts_spawn_playerCount / 10));
 ts_spawn_patrolArmourGroupCount = 1 + (floor (ts_spawn_playerCount / 25));
 
 call FUNC(createLocationZones);
-
-[QGVAR(updateSelectedLocation), [nil, nil, true]] call CBA_fnc_globalEvent;
 
 call FUNC(createFortifications);
 

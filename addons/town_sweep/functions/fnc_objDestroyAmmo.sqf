@@ -13,9 +13,7 @@
  * [] call ark_town_sweep_fnc_objDestroyAmmo
  */
 
-ts_spawn_selectedLocation params ["_position", "_size"];
-
-private _buildingArr = nearestObjects [_position, ["House"], (_size / 2), true] select {count (_x buildingPos -1) > 1};
+private _buildingArr = nearestObjects [GVAR(selectedPosition), ["House"], (GVAR(positionSize) / 2), true] select {count (_x buildingPos -1) > 1};
 // Stop objective spawning in random bunkers etc
 _buildingArr = _buildingArr - ts_spawn_placedFortifications;
 
@@ -26,15 +24,15 @@ ts_spawn_var_ammoCrate call EFUNC(clear_cargo,doClearVehicle);
 [QGVAR(objDestroyActionEvent), []] call CBA_fnc_globalEvent;
 
 if (_buildingArr isEqualTo []) then {
-    ts_spawn_var_ammoCrate setPos _position;
+    ts_spawn_var_ammoCrate setPos GVAR(selectedPosition);
 } else {
     private _building = selectRandom _buildingArr;
     private _buildingPos = selectRandom (_building buildingPos -1);
     ts_spawn_var_ammoCrate setPos _buildingPos;
 };
 
-[true, ["task2"], ["Locate and destroy the ammo cache hidden in town", "Destroy Cache"], _position, "ASSIGNED", -1, true, "destroy"] call BIS_fnc_taskCreate;
-[ts_spawn_var_ammoCrate,_size] call FUNC(createChaseZone);
+[true, ["task2"], ["Locate and destroy the ammo cache hidden in town", "Destroy Cache"], GVAR(selectedPosition), "ASSIGNED", -1, true, "destroy"] call BIS_fnc_taskCreate;
+[ts_spawn_var_ammoCrate,GVAR(positionSize)] call FUNC(createChaseZone);
 
 [{
     params ["", "_id"];
