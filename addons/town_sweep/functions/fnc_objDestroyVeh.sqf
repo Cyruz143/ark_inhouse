@@ -41,7 +41,7 @@ if (isNil "_nearRoad") then {
     ts_objVeh setVectorUp surfaceNormal position ts_objVeh;
 };
 
-if (!(ts_objVeh inArea ts_spawn_selectedLocationMarkerName)) exitWith {
+if (!(ts_objVeh inArea "ts_spawn_selectedLocation")) exitWith {
     deleteVehicle ts_objVeh;
     ERROR_MSG("fnc_objDestroyVeh, Cannot find position for armour in selected town");
 };
