@@ -32,7 +32,7 @@ if (_buildingArr isEqualTo []) then {
 };
 
 [true, ["task2"], ["Locate and destroy the ammo cache hidden in town", "Destroy Cache"], GVAR(selectedPosition), "ASSIGNED", -1, true, "destroy"] call BIS_fnc_taskCreate;
-[ts_spawn_var_ammoCrate,GVAR(positionSize)] call FUNC(createChaseZone);
+[ts_spawn_var_ammoCrate, [GVAR(positionSize), GVAR(positionSize)]] call FUNC(createChaseZone);
 
 [{
     params ["", "_id"];

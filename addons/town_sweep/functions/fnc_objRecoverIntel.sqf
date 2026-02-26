@@ -31,7 +31,7 @@ _box addItemCargoGlobal ["ACE_Banana", 1];
     "intel"
 ] call BIS_fnc_taskCreate;
 
-[_helo, GVAR(positionSize)] call FUNC(createChaseZone);
+[_helo, [GVAR(positionSize), GVAR(positionSize)]] call FUNC(createChaseZone);
 
 [{itemCargo _this isEqualTo []}, {
         ["task3","SUCCEEDED"] call BIS_fnc_taskSetState;

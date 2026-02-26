@@ -29,6 +29,6 @@ private _terminal = [_helo, "RuggedTerminal_01_F"] call FUNC(createObjectiveObje
     "intel"
 ] call BIS_fnc_taskCreate;
 
-[_helo, GVAR(positionSize)] call FUNC(createChaseZone);
+[_helo, [GVAR(positionSize), GVAR(positionSize)]] call FUNC(createChaseZone);
 
 // Task completed via event

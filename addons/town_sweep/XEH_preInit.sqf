@@ -7,7 +7,6 @@ PREP_RECOMPILE_START;
 PREP_RECOMPILE_END;
 
 if (call EFUNC(main,isTownSweep) && (isServer)) then {
-    ts_spawn_selectedLocationMarkerName = "ts_spawn_selectedLocation"; // Not utilised in this component because of locality issues.
     ts_spawn_placedFortifications = [];
     ts_spawn_ai_multiplier = 2;
     ts_spawn_cqc_percent = 0.4;
