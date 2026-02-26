@@ -13,7 +13,7 @@
  * [] call ark_town_sweep_fnc_objDestroyAmmo
  */
 
-private _buildingArr = nearestObjects [GVAR(selectedPosition), ["House"], (GVAR(positionSize) / 2), true] select {count (_x buildingPos -1) > 1};
+private _buildingArr = nearestObjects [GVAR(selectedPosition), ["House"], 400, true] select {count (_x buildingPos -1) > 1};
 // Stop objective spawning in random bunkers etc
 _buildingArr = _buildingArr - ts_spawn_placedFortifications;
 
@@ -32,7 +32,7 @@ if (_buildingArr isEqualTo []) then {
 };
 
 [true, ["task2"], ["Locate and destroy the ammo cache hidden in town", "Destroy Cache"], GVAR(selectedPosition), "ASSIGNED", -1, true, "destroy"] call BIS_fnc_taskCreate;
-[ts_spawn_var_ammoCrate, [GVAR(positionSize), GVAR(positionSize)]] call FUNC(createChaseZone);
+[ts_spawn_var_ammoCrate, GVAR(positionSize)] call FUNC(createChaseZone);
 
 [{
     params ["", "_id"];
