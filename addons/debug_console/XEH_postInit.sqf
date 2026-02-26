@@ -34,3 +34,7 @@ if (isServer) then {
 [["Lose Mission", "Ends Mission with a Loss!"], {
     [QEGVAR(admin_tools,endMission), ["EveryoneLost"]] call CBA_fnc_serverEvent;
 }] call FUNC(addButton);
+
+[["Sync Town Sweep", "Sync Town Sweep Variables"], {
+    publicVariable "ts_spawn_selectedLocation";
+}] call FUNC(addButton);
