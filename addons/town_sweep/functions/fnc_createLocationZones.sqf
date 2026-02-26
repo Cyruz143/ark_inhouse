@@ -13,10 +13,12 @@
  * [] call ark_town_sweep_fnc_createLocationZones
  */
 
+private _size = [GVAR(positionSize), GVAR(positionSize)];
+
 [
     ["type", "cqc"],
     ["position", GVAR(selectedPosition)],
-    ["area", [GVAR(positionSize), GVAR(positionSize), 0, false]],
+    ["area", [_size, _size, 0, false]],
     ["pool", ts_spawn_cqcCount],
     ["unitTemplate", adm_cqc_defaultUnitTemplate],
     ["zoneTemplate", adm_cqc_defaultZoneTemplate],
@@ -26,7 +28,7 @@
 [
     ["type", "patrol"],
     ["position", GVAR(selectedPosition)],
-    ["area", [GVAR(positionSize), GVAR(positionSize), 0, false]],
+    ["area", [_size, _size, 0, false]],
     ["pool", [ts_spawn_patrolInfGroupCount, ts_spawn_patrolTechGroupCount, ts_spawn_patrolArmourGroupCount]],
     ["unitTemplate", adm_patrol_defaultUnitTemplate],
     ["zoneTemplate", adm_patrol_defaultZoneTemplate],
