@@ -31,12 +31,10 @@ player createDiaryRecord ["Diary", ["Administration","
 <br/>ts_spawn_ai_technicalsPerPlayers
 <br/><br/>An armour group is spawned per given number of players. (Default: 30)
 <br/>ts_spawn_ai_armourPerPlayers
-<br/><br/>Select random town. Will be inactive.
-<br/>[] call ts_spawn_fnc_selectRandomLocation
-<br/><br/>Activate currently selected town.
-<br/>[] call ts_spawn_fnc_activateLocation
-<br/><br/>Enable group deploy.
-<br/>[] call ts_fnc_enableGroupDeploy
+<br/><br/>Activate currently selected town. (Server Exec!)
+<br/>[] call ark_town_sweep_fnc_activateLocation
+<br/><br/>Enable group deploy. (Server Exec!)
+<br/>[] call ark_town_sweep_fnc_enableGroupDeploy
 <br/><br/>Array of spawned foritications.
 <br/>ark_town_sweep_placedFortifications
 <br/><br/>
