@@ -9,22 +9,22 @@ GVAR(availableMissions) = [1, 2, 3, 4];
 
 [QGVAR(objDestroyActionEvent), {
     if (!hasInterface) exitWith {};
-    call FUNC(objDestroyAction);
+    call FUNC(objectiveDestroyAction);
 }] call CBA_fnc_addEventHandler;
 
 [QGVAR(objDestroyCacheEvent), {
     if (isServer) then {
-        call FUNC(objDestroyCache);
+        call FUNC(objectiveDestroyCache);
     };
 }] call CBA_fnc_addEventHandler;
 
 [QGVAR(downloadIntelActionEvent), {
     if (!hasInterface) exitWith {};
-    _this call FUNC(objDownloadIntelAction);
+    _this call FUNC(objectiveDownloadIntelAction);
 }] call CBA_fnc_addEventHandler;
 
 [QGVAR(downloadIntelPFH), {
-    _this call FUNC(objDownloadIntelPFH);
+    _this call FUNC(objectiveDownloadIntelPFH);
 }] call CBA_fnc_addEventHandler;
 
 [QGVAR(activateLocationEvent), {

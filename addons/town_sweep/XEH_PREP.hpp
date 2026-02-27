@@ -21,7 +21,7 @@ PREP(objectiveDestroyCache);
 PREP(objectiveDestroyVehicle);
 PREP(objectiveDownloadIntel);
 PREP(objectiveDownloadIntelAction);
-PREP(objectiveDownloadIntelPFH)
+PREP(objectiveDownloadIntelPFH);
 PREP(objectiveRecoverIntel);
 PREP(onAdmiralInit);
 PREP(selectLocation);
