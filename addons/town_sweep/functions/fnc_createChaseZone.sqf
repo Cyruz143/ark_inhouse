@@ -18,8 +18,8 @@
 
 params ["_object", "_size"];
 
-private _position = getPosATL _obj;
-private _marker = createMarkerLocal [(str _obj), _pos];
+private _position = getPosATL _object;
+private _marker = createMarkerLocal [(str _object), _position];
 _marker setMarkerShapeLocal "ELLIPSE";
 _marker setMarkerSizeLocal [35, 35];
 _marker setMarkerAlphaLocal 0;
