@@ -3,7 +3,7 @@
  * Author: Cyruz
  * N/A
  *
- * Locality: Local
+ * Locality: Local (ace action, publicVariable'd)
  *
  * Arguments:
  * None
