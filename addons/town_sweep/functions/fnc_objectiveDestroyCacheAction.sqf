@@ -3,7 +3,7 @@
  * Author: Cyruz
  * N/A
  *
- * Locality: All players (called from event in objectiveDestroyAmmo)
+ * Locality: All players (called from event in objectiveDestroyCache)
  *
  * Arguments:
  * None
@@ -12,8 +12,10 @@
  * None
  *
  * Example:
- * [] call ark_town_sweep_fnc_objDestroyAction
+ * [] call ark_town_sweep_fnc_objectiveDestroyCacheAction
  */
+
+if (!hasInterface) exitWith {};
 
 private _action = [
     "destroyCache",

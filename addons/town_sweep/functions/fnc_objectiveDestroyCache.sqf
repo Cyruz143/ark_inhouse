@@ -3,7 +3,7 @@
  * Author: Cyruz
  * N/A
  *
- * Locality: Server (event from objectiveDestroyAction)
+ * Locality: Server (called from selectObjective)
  *
  * Arguments:
  * None
@@ -12,26 +12,41 @@
  * None
  *
  * Example:
- * [] call ark_town_sweep_fnc_objDestroyCache
+ * [] call ark_town_sweep_fnc_objectiveDestroyCache
  */
 
-if (!isServer) exitWith {};
+private _buildingArr = nearestObjects [GVAR(selectedPosition), ["House"], 400, true] select {count (_x buildingPos -1) > 1};
+// Stop objective spawning in random bunkers etc
+_buildingArr = _buildingArr - ts_spawn_placedFortifications;
 
-ts_spawn_var_bombTimer = 30;
-ts_spawn_var_bombFreq = 0.5;
+ts_spawn_var_ammoCrate = createVehicle ["CUP_BOX_GER_Wps_F", [0,0,0], [], 0, "CAN_COLLIDE"];
+ts_spawn_var_ammoCrate call EFUNC(clear_cargo,doClearVehicle);
+
+// Add the ACE action on the clients once it's created
+[QGVAR(objectiveDestroyCacheActionsEvent)] call CBA_fnc_globalEvent;
+
+if (_buildingArr isEqualTo []) then {
+    ts_spawn_var_ammoCrate setPos GVAR(selectedPosition);
+} else {
+    private _building = selectRandom _buildingArr;
+    private _buildingPos = selectRandom (_building buildingPos -1);
+    ts_spawn_var_ammoCrate setPos _buildingPos;
+};
+
+[ts_spawn_var_ammoCrate, GVAR(positionSize)] call FUNC(createChaseZone);
+
+["task2", "Destroy Cache", "Locate and destroy the ammo cache hidden in town", "destroy"] call FUNC(createTask);
 
 [{
     params ["", "_id"];
 
-    playSound3D ["a3\sounds_f\air\Heli_Light_01\warning.wss", ts_spawn_var_ammoCrate, true, (getPosASL ts_spawn_var_ammoCrate), 2.5, ts_spawn_var_bombFreq, 200];
-    ts_spawn_var_bombTimer = ts_spawn_var_bombTimer - 1;
-    ts_spawn_var_bombFreq = ts_spawn_var_bombFreq + 0.025;
-
-    if (ts_spawn_var_bombTimer isEqualTo 0) exitWith {
+    if !(ts_spawn_var_ammoCrate getVariable ["ark_ts_canDestroy", true]) exitWith {
         _id call CBA_fnc_removePerFrameHandler;
-        "Bo_GBU12_LGB" createVehicle (getPosATL ts_spawn_var_ammoCrate);
-        ts_spawn_var_bombTimer = nil;
-        ts_spawn_var_bombFreq = nil;
-        deleteVehicle ts_spawn_var_ammoCrate;
     };
+
+    playSound3D ["a3\sounds_f\sfx\beep_target.wss", ts_spawn_var_ammoCrate, true, (getPosASL ts_spawn_var_ammoCrate), 2, 1, 150];
 }, 1] call CBA_fnc_addPerFrameHandler;
+
+ts_spawn_var_ammoCrate addEventHandler ["Deleted", {
+    ["task2"] call FUNC(completeTask);
+}];

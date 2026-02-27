@@ -7,13 +7,12 @@ GVAR(positionSize) = 700;
 GVAR(positionActive) = false;
 GVAR(availableMissions) = [1, 2, 3, 4];
 
-[QGVAR(objDestroyActionEvent), {
-    if (!hasInterface) exitWith {};
-    call FUNC(objectiveDestroyAction);
+[QGVAR(objectiveDestroyCacheActionsEvent), {
+    call FUNC(objectiveDestroyCacheAction);
 }] call CBA_fnc_addEventHandler;
 
-[QGVAR(objDestroyCacheEvent), {
-    call FUNC(objectiveDestroyCache);
+[QGVAR(objectiveDestroyCachePFHEvent), {
+    call FUNC(objectiveDestroyCachePFH);
 }] call CBA_fnc_addEventHandler;
 
 [QGVAR(downloadIntelActionEvent), {
