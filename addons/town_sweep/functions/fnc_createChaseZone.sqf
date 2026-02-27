@@ -16,16 +16,16 @@
  * [] call ark_town_sweep_fnc_createChaseZone
  */
 
-params ["_obj","_size"];
+params ["_object", "_size"];
 
-private _pos = getPosATL _obj;
-private _mkr = createMarkerLocal [(str _obj), _pos];
-_mkr setMarkerShapeLocal "ELLIPSE";
-_mkr setMarkerSizeLocal [35, 35];
-_mkr setMarkerAlphaLocal 0;
+private _position = getPosATL _obj;
+private _marker = createMarkerLocal [(str _obj), _pos];
+_marker setMarkerShapeLocal "ELLIPSE";
+_marker setMarkerSizeLocal [35, 35];
+_marker setMarkerAlphaLocal 0;
 
 [{(allPlayers inAreaArray _this #0) isNotEqualTo []}, {
-    params ["", "_pos", "_size"];
-    [_pos, _size] call EFUNC(admin_tools,chaseAI);
-    [_pos, _size] call FUNC(chaseAI);
-}, [_mkr,_pos,_size]] call CBA_fnc_waitUntilAndExecute;
+    params ["", "_position", "_size"];
+    [_position, _size] call EFUNC(admin_tools,chaseAI);
+    [_position, _size] call FUNC(chaseAI);
+}, [_marker, _position, _size]] call CBA_fnc_waitUntilAndExecute;

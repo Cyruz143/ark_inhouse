@@ -9,7 +9,7 @@
  * 0: Task ID <STRING>
  * 1: Task Headline <STRING>
  * 2: Task Description <STRING>
- * 3: Task Type <STRING>
+ * 3: Task Icon <STRING>
  * 4: Position <POSITION / ARRAY> (Default: Objective Area)
  *
  * Return Value:
