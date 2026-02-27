@@ -3,6 +3,8 @@
  * Author: Cyruz
  * N/A
  *
+ * Locality: Player (ace action, publicVariable'd)
+ *
  * Arguments:
  * 0: Size Change <NUMBER>
  *

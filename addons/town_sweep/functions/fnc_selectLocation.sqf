@@ -3,6 +3,8 @@
  * Author: Cyruz
  * N/A
  *
+ * Locality: Local
+ *
  * Arguments:
  * None
  *

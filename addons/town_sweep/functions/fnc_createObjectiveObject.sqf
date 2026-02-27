@@ -3,6 +3,8 @@
  * Author: Cyruz
  * Creates an objective object at position
  *
+ * Locality: Server (called from download/recover intel)
+ *
  * Arguments:
  * 0: Helicopter Wreck <OBJECT>
  * 1: Classname of Object <CLASSNAME>

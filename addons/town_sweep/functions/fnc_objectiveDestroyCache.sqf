@@ -3,6 +3,8 @@
  * Author: Cyruz
  * N/A
  *
+ * Locality: Server (event from objectiveDestroyAction)
+ *
  * Arguments:
  * None
  *
@@ -12,6 +14,8 @@
  * Example:
  * [] call ark_town_sweep_fnc_objDestroyCache
  */
+
+if (!isServer) exitWith {};
 
 ts_spawn_var_bombTimer = 30;
 ts_spawn_var_bombFreq = 0.5;

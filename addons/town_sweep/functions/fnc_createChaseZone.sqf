@@ -3,6 +3,8 @@
  * Author: Cyruz
  * N/A
  *
+ * Locality: Server (called from all objectives)
+ *
  * Arguments:
  * 0: Object <OBJECT>
  * 1: Size <NUMBER>

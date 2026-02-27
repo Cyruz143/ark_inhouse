@@ -3,6 +3,8 @@
  * Author: Cyruz, MikeMF
  * Handles task completion and allows new objectives to be activated.
  *
+ * Locality: Server (called from objective completion conditions)
+ *
  * Arguments:
  * 0: Task ID <STRING>
  * 1: Task State <STRING> (Default: "SUCCEEDED")

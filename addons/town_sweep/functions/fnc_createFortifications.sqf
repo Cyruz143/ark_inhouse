@@ -3,6 +3,8 @@
  * Author: Cyruz
  * N/A
  *
+ * Locality: Server (called from activateLocation)
+ *
  * Arguments:
  * None
  *

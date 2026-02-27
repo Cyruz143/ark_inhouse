@@ -3,6 +3,8 @@
  * Author: Cyruz, MikeMF
  * Selects random objective and removes it from the available pool.
  *
+ * Locality: Server (called from activateLocation)
+ *
  * Arguments:
  * None
  *

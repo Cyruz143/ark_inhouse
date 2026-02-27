@@ -3,6 +3,8 @@
  * Author: Cyruz
  * N/A
  *
+ * Locality: Server (called from createFortifications)
+ *
  * Arguments:
  * 0: Building <OBJECT>
  *

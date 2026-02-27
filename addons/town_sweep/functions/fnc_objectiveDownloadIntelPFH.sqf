@@ -3,6 +3,8 @@
  * Author: Mike
  * Terminal download, will take 3 minutes from start to finish (not counting animation fanciness)
  *
+ * Locality: Server (called from event in downloadIntel)
+ *
  * Arguments:
  * 0: Object <OBJECT>
  *

@@ -3,6 +3,8 @@
  * Author: Cyruz
  * N/A
  *
+ * Locality: All players (called from event in objectiveDestroyAmmo)
+ *
  * Arguments:
  * None
  *

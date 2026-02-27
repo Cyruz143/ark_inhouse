@@ -3,6 +3,8 @@
  * Author: Cyruz
  * Creates a helicopter wreck for objectives.
  *
+ * Locality: Server (called from download/recover intel)
+ *
  * Arguments:
  * 0: Position <POSITION>
  *

@@ -3,6 +3,8 @@
  * Author: Cyruz, MikeMF
  * Handles task creation, taskID must be unique. Task Icons can be located at: https://community.bistudio.com/wiki/Arma_3:_Task_Framework#Task_Icons
  *
+ * Locality: Server (called from all missions)
+ *
  * Arguments:
  * 0: Task ID <STRING>
  * 1: Task Headline <STRING>

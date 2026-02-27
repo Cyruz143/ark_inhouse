@@ -3,6 +3,8 @@
  * Author: Cyruz
  * N/A
  *
+ * Locality: Server (called from createChaseZone)
+ *
  * Arguments:
  * 0: Pos <POSITION>
  * 1: Size <NUMBER>

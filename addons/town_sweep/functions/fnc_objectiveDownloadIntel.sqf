@@ -3,6 +3,8 @@
  * Author: Mike, Cyruz
  * N/A
  *
+ * Locality: Server (called from selectObjective)
+ *
  * Arguments:
  * None
  *
