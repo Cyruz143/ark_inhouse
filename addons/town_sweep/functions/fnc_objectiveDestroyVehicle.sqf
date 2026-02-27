@@ -12,7 +12,7 @@
  * None
  *
  * Example:
- * [] call ark_town_sweep_fnc_objDestroyVeh
+ * [] call ark_town_sweep_fnc_objectiveDestroyVehicle
  */
 
 private _grp = createGroup [ts_enemy_side, true];

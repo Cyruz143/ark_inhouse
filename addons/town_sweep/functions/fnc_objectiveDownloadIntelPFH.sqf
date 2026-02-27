@@ -12,7 +12,7 @@
  * None
  *
  * Example:
- * [] call ark_town_sweep_fnc_objDownloadIntelPFH
+ * [] call ark_town_sweep_fnc_objectiveDownloadIntelPFH
  */
 
 params ["_object"];

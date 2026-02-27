@@ -12,7 +12,7 @@
  * None
  *
  * Example:
- * [] call ark_town_sweep_fnc_objRecoverIntel
+ * [] call ark_town_sweep_fnc_objectiveRecoverIntel
  */
 
 private _helo = [GVAR(selectedPosition)] call FUNC(createHeliWreck);

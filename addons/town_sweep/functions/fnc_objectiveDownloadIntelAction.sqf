@@ -12,7 +12,7 @@
  * None
  *
  * Example:
- * [] call ark_town_sweep_fnc_objDownloadIntelAction
+ * [] call ark_town_sweep_fnc_objectiveDownloadIntelAction
  */
 
 if (!hasInterface) exitWith {};
