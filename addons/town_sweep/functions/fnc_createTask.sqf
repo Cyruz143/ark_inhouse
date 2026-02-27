@@ -25,7 +25,7 @@ params ["_taskID", "_taskHeadline", "_taskDescription", "_taskIcon", ["_position
     true,
     [_taskID],
     [_taskDescription, _taskHeadline],
-    GVAR(selectedPosition),
+    _position,
     "ASSIGNED",
     -1,
     true,
