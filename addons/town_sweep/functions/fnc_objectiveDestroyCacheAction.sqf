@@ -36,7 +36,7 @@ private _action = [
             "Placing charges..."
         ] call ace_common_fnc_progressBar;
     },
-    {_target getVariable ["ark_ts_canDestroy", true]}
+    {_target getVariable [QGVAR(canDestroy), true]}
 ] call ace_interact_menu_fnc_createAction;
 
 ["CUP_BOX_GER_Wps_F", 0, ["ACE_MainActions"], _action] call ace_interact_menu_fnc_addActionToClass;

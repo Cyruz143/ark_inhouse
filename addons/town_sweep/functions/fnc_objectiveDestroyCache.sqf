@@ -40,7 +40,7 @@ if (_buildings isEqualTo []) then {
 [{
     params ["", "_id"];
 
-    if !(GVAR(destroyCacheObject) getVariable ["ark_ts_canDestroy", true]) exitWith {
+    if !(GVAR(destroyCacheObject) getVariable [QGVAR(canDestroy), true]) exitWith {
         _id call CBA_fnc_removePerFrameHandler;
     };
 
