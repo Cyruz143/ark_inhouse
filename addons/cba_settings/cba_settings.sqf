@@ -450,7 +450,6 @@ force force diwako_dui_nametags_useSideIsFriendly = true;
 // DUI - Squad Radar - Radar
 force force diwako_dui_compass_hide_alone_group = false;
 force force diwako_dui_compass_hide_blip_alone_group = false;
-diwako_dui_compass_style = ["\z\diwako_dui\addons\radar\UI\compass_styles\bi\compass_limited.paa","\z\diwako_dui\addons\radar\UI\compass_styles\bi\compass.paa"];
 force force diwako_dui_compassRange = 50;
 force force diwako_dui_compassRefreshrate = 0;
 force force diwako_dui_dir_showMildot = false;
