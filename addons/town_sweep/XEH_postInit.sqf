@@ -7,6 +7,7 @@ GVAR(positionSize) = 700;
 GVAR(positionActive) = false;
 GVAR(availableMissions) = [1, 2, 3, 4];
 GVAR(playerCount) = 0;
+GVAR(placedFortifications) = [];
 
 [QGVAR(objectiveDestroyCacheActionsEvent), {
     call FUNC(objectiveDestroyCacheAction);
