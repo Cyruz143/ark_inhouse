@@ -27,14 +27,14 @@ GVAR(positionActive) = true;
 publicVariable QGVAR(positionActive);
 
 // Minimum 60 AI as this doesn't scale well at low numbers
-ts_spawn_aiCount = (ceil (ts_spawn_playerCount * ts_spawn_ai_multiplier)) max 60;
+ts_spawn_aiCount = (ceil (GVAR(playerCount) * ts_spawn_ai_multiplier)) max 60;
 ts_spawn_cqcCount = ceil (ts_spawn_aiCount * ts_spawn_cqc_percent);
 
 private _fireTeamSize = ["ZoneTemplates", adm_patrol_defaultZoneTemplate, "infFireteamSize"] call adm_config_fnc_getNumber;
 private _patrolAiCount = ceil (ts_spawn_aiCount * (1 - ts_spawn_cqc_percent));
 ts_spawn_patrolInfGroupCount = ceil (_patrolAiCount / _fireTeamSize);
-ts_spawn_patrolTechGroupCount = 2 + (floor (ts_spawn_playerCount / 10));
-ts_spawn_patrolArmourGroupCount = 1 + (floor (ts_spawn_playerCount / 25));
+ts_spawn_patrolTechGroupCount = 2 + (floor (GVAR(playerCount) / 10));
+ts_spawn_patrolArmourGroupCount = 1 + (floor (GVAR(playerCount) / 25));
 
 call FUNC(createLocationZones);
 call FUNC(createFortifications);

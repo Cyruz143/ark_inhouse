@@ -15,6 +15,7 @@
  * [] call ark_town_sweep_fnc_addInteractions
  */
 
+// Only the core action requires a condition as they are all child actions. Perf saving on interact menu being open.
 private _coreCondition = { call EFUNC(main,isHost) && {[_player, _target, []] call ace_common_fnc_canInteractWith} };
 
 private _townSweepCoreAction = [

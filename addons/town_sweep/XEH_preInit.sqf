@@ -10,7 +10,6 @@ if (call EFUNC(main,isTownSweep) && (isServer)) then {
     ts_spawn_placedFortifications = [];
     ts_spawn_ai_multiplier = 2;
     ts_spawn_cqc_percent = 0.4;
-    ts_spawn_playerCount = 0;
     ts_spawn_aiCount = 0;
     ts_spawn_cqcCount = 0;
     ts_spawn_patrolInfGroupCount = 0;

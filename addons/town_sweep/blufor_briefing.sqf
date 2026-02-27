@@ -23,9 +23,9 @@ player createDiaryRecord ["Diary", ["Execution","
 // Administration
 player createDiaryRecord ["Diary", ["Administration","
 <br/>For hosts (all variables and functions are server only):
-<br/><br/>Number of players. Can change the value before activating a town to affect the number of enemies. (Default: number of players at mission start)
-<br/>ts_spawn_playerCount
-<br/><br/>This value multiplied by ts_spawn_playerCount gives the rough number of enemies spawned. CQC and Patrol included. (Default: 2)
+<br/><br/>Number of players. Can change the value before activating a town to affect the number of enemies. (Default: 0, Updated on select location)
+<br/>ark_town_sweep_playerCount
+<br/><br/>This value multiplied by ark_town_sweep_playerCount gives the rough number of enemies spawned. CQC and Patrol included. (Default: 2)
 <br/>ts_spawn_ai_multiplier
 <br/><br/>A technical group is spawned per given number of players. (Default: 10)
 <br/>ts_spawn_ai_technicalsPerPlayers

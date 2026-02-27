@@ -32,8 +32,8 @@ if (player getSlotItemName 608 != "") then {
         GVAR(positionActive) = false;
         publicVariable QGVAR(positionActive);
 
-        ts_spawn_playerCount = count ([false] call EFUNC(common,players));
-        publicVariable "ts_spawn_playerCount";
+        GVAR(playerCount) = count ([false] call EFUNC(common,players));
+        publicVariable QGVAR(playerCount);
 
         removeMissionEventHandler ["MapSingleClick", ts_mapSingleClickID];
         openMap [false, false];
