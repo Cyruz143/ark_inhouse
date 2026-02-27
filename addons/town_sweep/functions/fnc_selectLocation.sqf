@@ -21,8 +21,8 @@ if (player getSlotItemName 608 != "") then {
     ts_mapSingleClickID = addMissionEventHandler ["MapSingleClick", {
         params ["", "_newPos"];
 
-        "ts_spawn_selectedLocation" setMarkerPosLocal _newPos;
-        "ts_spawn_selectedLocation" setMarkerSize [GVAR(positionSize), GVAR(positionSize)];
+        QGVAR(selectedLocationMarker) setMarkerPosLocal _newPos;
+        QGVAR(selectedLocationMarker) setMarkerSize [GVAR(positionSize), GVAR(positionSize)];
 
         GVAR(selectedPosition) = _newPos;
         publicVariable QGVAR(selectedPosition);

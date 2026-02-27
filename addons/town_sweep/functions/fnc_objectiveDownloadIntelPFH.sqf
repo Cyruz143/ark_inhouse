@@ -75,7 +75,9 @@ _marker setMarkerSizeLocal [5, 5];
         // Instantly lower the terminal sources to cut off the excess, then animate it closed properly.
         _object animateSource ["Terminal_source", 55, true];
         _object animateSource ["Terminal_source_sound", 55, true];
-        [QGVAR(downloadIntelCompletedEvent), []] call CBA_fnc_serverEvent;
+
+        ["task4"] call FUNC(completeTask);
+
         [{
             params ["_object"];
             _object animateSource ["Terminal_source", 0, 0.5];

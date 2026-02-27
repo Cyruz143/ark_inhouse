@@ -13,7 +13,16 @@
  * [] call ark_town_sweep_fnc_activateLocation
  */
 
-if (GVAR(positionActive)) exitWith {};
+if (GVAR(positionActive)) exitWith {
+    "Objective must be completed before a new one is started" call CBA_fnc_notify;
+};
+
+if (GVAR(availableMissions) == []) exitWith {
+    "No more objectives to activate." call CBA_fnc_notify;
+};
+
+GVAR(positionActive) = true;
+publicVariable QGVAR(positionActive);
 
 // Minimum 60 AI as this doesn't scale well at low numbers
 ts_spawn_aiCount = (ceil (ts_spawn_playerCount * ts_spawn_ai_multiplier)) max 60;
@@ -26,22 +35,10 @@ ts_spawn_patrolTechGroupCount = 2 + (floor (ts_spawn_playerCount / 10));
 ts_spawn_patrolArmourGroupCount = 1 + (floor (ts_spawn_playerCount / 25));
 
 call FUNC(createLocationZones);
-
 call FUNC(createFortifications);
+call FUNC(selectObjective);
 
-// Remove the picked mission so subsequent choices will be different
-private _selectedMission = selectRandom ts_spawn_availableMissions;
-switch (_selectedMission) do {
-    case 1: { call FUNC(objDestroyVeh) };
-    case 2: { call FUNC(objRecoverIntel) };
-    case 3: { call FUNC(objDestroyAmmo) };
-    case 4: { call FUNC(objDownloadIntel) };
-    default { ERROR_MSG("Town Sweep, activateLocation, _selectedMission was not found.") };
-};
-
-ts_spawn_availableMissions deleteAt (ts_spawn_availableMissions find _selectedMission);
-
-[{(allPlayers inAreaArray "ts_spawn_selectedLocation") isNotEqualTo []}, {
+[{(allPlayers inAreaArray QGVAR(selectedLocationMarker)) isNotEqualTo []}, {
     [{
         (selectRandom ["paradrop","insert"]) call FUNC(enableRotor);
     }, [], 240] call CBA_fnc_waitAndExecute;

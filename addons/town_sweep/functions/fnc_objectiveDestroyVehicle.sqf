@@ -39,7 +39,7 @@ if (isNil "_nearRoad") then {
     ts_objVeh setVectorUp surfaceNormal position ts_objVeh;
 };
 
-if (!(ts_objVeh inArea "ts_spawn_selectedLocation")) exitWith {
+if (!(ts_objVeh inArea QGVAR(selectedLocationMarker))) exitWith {
     deleteVehicle ts_objVeh;
     ERROR_MSG("fnc_objDestroyVeh, Cannot find position for armour in selected town");
 };
@@ -59,9 +59,10 @@ ts_objVeh setUnloadInCombat [false, false];
 ts_objVeh setFuel 0;
 ts_objVeh call EFUNC(clear_cargo,doClearVehicle);
 
-[true, ["task1"], ["Locate and destroy the static armour in town", "Destroy Armour"], GVAR(selectedPosition), "ASSIGNED", -1, true, "target"] call BIS_fnc_taskCreate;
 [ts_objVeh, GVAR(positionSize)] call FUNC(createChaseZone);
 ts_objVeh addEventHandler ["Killed", {call FUNC(vehicleDestroyed)}];
+
+["task1", "Destroy Armour", "Locate and destroy the static armour in town", "target"] call FUNC(createTask);
 
 ["ace_cookoff_cookoff", {
     params ["_vehicle"];

@@ -20,19 +20,10 @@ _box allowDamage false;
 _box call EFUNC(clear_cargo,doClearVehicle);
 _box addItemCargoGlobal ["ACE_Banana", 1];
 
-[
-    true,
-    ["task3"],
-    ["Locate and secure the intel from the crash site", "Recover Intel"],
-    GVAR(selectedPosition),
-    "ASSIGNED",
-    -1,
-    true,
-    "intel"
-] call BIS_fnc_taskCreate;
+["task3", "Recover Intel", "Locate and secure the intel from the crash site", "intel"] call FUNC(createTask);
 
 [_helo, GVAR(positionSize)] call FUNC(createChaseZone);
 
 [{itemCargo _this isEqualTo []}, {
-    ["task3", "SUCCEEDED"] call BIS_fnc_taskSetState;
+    ["task3"] call FUNC(completeTask);
 }, _box] call CBA_fnc_waitUntilAndExecute;

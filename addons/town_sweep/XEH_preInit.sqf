@@ -17,7 +17,6 @@ if (call EFUNC(main,isTownSweep) && (isServer)) then {
     ts_spawn_patrolTechGroupCount = 0;
     ts_spawn_patrolArmourGroupCount = 0;
     ts_spawn_unitTemplate = "Base";
-    ts_spawn_availableMissions = [1, 2, 3, 4];
 
     call FUNC(createLocationMarker);
 

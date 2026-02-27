@@ -31,8 +31,9 @@ if (_buildingArr isEqualTo []) then {
     ts_spawn_var_ammoCrate setPos _buildingPos;
 };
 
-[true, ["task2"], ["Locate and destroy the ammo cache hidden in town", "Destroy Cache"], GVAR(selectedPosition), "ASSIGNED", -1, true, "destroy"] call BIS_fnc_taskCreate;
 [ts_spawn_var_ammoCrate, GVAR(positionSize)] call FUNC(createChaseZone);
+
+["task2", "Destroy Cache", "Locate and destroy the ammo cache hidden in town", "destroy"] call FUNC(createTask);
 
 [{
     params ["", "_id"];
@@ -45,5 +46,5 @@ if (_buildingArr isEqualTo []) then {
 }, 1] call CBA_fnc_addPerFrameHandler;
 
 ts_spawn_var_ammoCrate addEventHandler ["Deleted", {
-    ["task2","SUCCEEDED"] call BIS_fnc_taskSetState;
+    ["task2"] call FUNC(completeTask);
 }];

@@ -13,7 +13,7 @@
  * [] call ark_town_sweep_fnc_ammoCrate
  */
 
-if (player inArea "ts_spawn_selectedLocation") exitWith {
+if (player inArea QGVAR(selectedLocationMarker)) exitWith {
         [["\A3\ui_f\data\map\mapcontrol\taskIconFailed_ca.paa", 2.0], ["You can only resupply outside of the active AO"]] call CBA_fnc_notify;
 };
 
