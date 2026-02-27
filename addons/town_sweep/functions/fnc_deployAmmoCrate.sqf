@@ -12,7 +12,7 @@
  * None
  *
  * Example:
- * [] call ark_town_sweep_fnc_ammoCrate
+ * [] call ark_town_sweep_fnc_deployAmmoCrate
  */
 
 if (player inArea QGVAR(selectedLocationMarker)) exitWith {
