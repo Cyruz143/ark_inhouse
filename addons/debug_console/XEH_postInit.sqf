@@ -8,6 +8,9 @@ if (isServer) then {
         0 setOvercast 0;
         forceWeatherChange;
     }] call CBA_fnc_addEventHandler;
+
+    [QGVAR(createCurator), FUNC(addCurator)] call CBA_fnc_addEventHandler;
+
 };
 
 [QGVAR(massHeal), {
@@ -35,6 +38,6 @@ if (isServer) then {
     [QEGVAR(admin_tools,endMission), ["EveryoneLost"]] call CBA_fnc_serverEvent;
 }] call FUNC(addButton);
 
-[["Sync Town Sweep", "Sync Town Sweep Variables"], {
-    publicVariable "ts_spawn_selectedLocation";
+[["Curator", "Assigns as Curator"], {
+    [QGVAR(createCurator), ace_player] call CBA_fnc_serverEvent;
 }] call FUNC(addButton);
