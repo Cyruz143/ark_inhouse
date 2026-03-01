@@ -23,6 +23,13 @@ if (GVAR(availableMissions) == []) exitWith {
     "No more objectives to activate." call CBA_fnc_notify;
 };
 
+// Prevent cleanup from running on first run.
+if (GVAR(missionNumber) > 0) then {
+    [GVAR(missionNumber)] call FUNC(cleanupPreviousZone);
+};
+
+GVAR(missionNumber) = GVAR(missionNumber) + 1;
+
 GVAR(positionActive) = true;
 publicVariable QGVAR(positionActive);
 
@@ -36,6 +43,7 @@ ts_spawn_patrolInfGroupCount = ceil (_patrolAiCount / _fireTeamSize);
 ts_spawn_patrolTechGroupCount = 2 + (floor (GVAR(playerCount) / 10));
 ts_spawn_patrolArmourGroupCount = 1 + (floor (GVAR(playerCount) / 25));
 
+call FUNC(createCleanupMarker);
 call FUNC(createLocationZones);
 call FUNC(createFortifications);
 call FUNC(selectObjective);
