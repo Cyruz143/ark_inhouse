@@ -27,8 +27,8 @@ private _action = [
             _target,
             {
                 params ["_target"];
-                _target setVariable ["ark_ts_canDestroy", false, true];
-                [QGVAR(objDestroyCacheEvent), []] call CBA_fnc_serverEvent;
+                _target setVariable [QGVAR(canDestroy), false, true];
+                [QGVAR(objectiveDestroyCachePFHEvent), []] call CBA_fnc_serverEvent;
                 [["\A3\ui_f\data\map\mapcontrol\taskIconDone_ca.paa", 2.0], ["Charges set for 30 seconds!"]] call CBA_fnc_notify;
             }, {
                 [["\A3\ui_f\data\map\mapcontrol\taskIconFailed_ca.paa", 2.0], ["Destruction aborted!"]] call CBA_fnc_notify;

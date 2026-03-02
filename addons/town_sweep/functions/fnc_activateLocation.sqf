@@ -19,7 +19,7 @@ if (GVAR(positionActive)) exitWith {
     "Objective must be completed before a new one is started" call CBA_fnc_notify;
 };
 
-if (GVAR(availableMissions) == []) exitWith {
+if (GVAR(availableMissions) isEqualTo []) exitWith {
     "No more objectives to activate." call CBA_fnc_notify;
 };
 
