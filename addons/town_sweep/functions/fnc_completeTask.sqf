@@ -23,3 +23,5 @@ params ["_taskID", ["_state", "SUCCEEDED"]];
 // Will allow activation of new locations.
 GVAR(positionActive) = false;
 publicVariable QGVAR(positionActive);
+
+[_taskID] call FUNC(cleanupPreviousZone);

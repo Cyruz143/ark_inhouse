@@ -31,3 +31,5 @@ params ["_taskID", "_taskHeadline", "_taskDescription", "_taskIcon", ["_position
     true,
     _taskIcon
 ] call BIS_fnc_taskCreate;
+
+[_taskID] call FUNC(createCleanupMarker);

@@ -13,7 +13,6 @@ if (isServer) then {
     GVAR(customAICount) = 0;
     GVAR(cqcCount) = 0;
     GVAR(cqcPercentage) = 0.4;
-    GVAR(missionNumber) = 0;
     GVAR(patrolArmourGroupCount) = 0;
     GVAR(patrolInfantryGroupCount) = 0;
     GVAR(patrolTechnicalGroupCount) = 0;
