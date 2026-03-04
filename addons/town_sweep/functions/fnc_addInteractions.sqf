@@ -58,56 +58,6 @@ private _enableGroupDeployAction = [
 
 [player, 1, ["ACE_SelfActions", "Town Sweep"], _enableGroupDeployAction] call ace_interact_menu_fnc_addActionToObject;
 
-// Difficulty Actions
-private _difficultyAction = [
-    "Difficulty",
-    "Difficulty",
-    "\a3\ui_f\data\igui\cfg\simpletasks\types\use_ca.paa",
-    {},
-    {true}
-] call ace_interact_menu_fnc_createAction;
-
-[player, 1, ["ACE_SelfActions", "Town Sweep"], _difficultyAction] call ace_interact_menu_fnc_addActionToObject;
-
-private _difficultyActionEasy = [
-    "Easy",
-    "Easy",
-    "",
-    {
-        ts_spawn_ai_multiplier = 2;
-        publicVariable "ts_spawn_ai_multiplier";
-    },
-    {true}
-] call ace_interact_menu_fnc_createAction;
-
-[player, 1, ["ACE_SelfActions", "Town Sweep", "Difficulty"], _difficultyActionEasy] call ace_interact_menu_fnc_addActionToObject;
-
-private _difficultyActionMedium = [
-    "Medium",
-    "Medium",
-    "",
-    {
-        ts_spawn_ai_multiplier = 3;
-        publicVariable "ts_spawn_ai_multiplier";
-    },
-    {true}
-] call ace_interact_menu_fnc_createAction;
-
-[player, 1, ["ACE_SelfActions", "Town Sweep", "Difficulty"], _difficultyActionMedium] call ace_interact_menu_fnc_addActionToObject;
-
-private _difficultyActionHard = [
-    "Hard",
-    "Hard",
-    "",
-    {
-        ts_spawn_ai_multiplier = 4;
-        publicVariable "ts_spawn_ai_multiplier";
-    },
-    {true}
-] call ace_interact_menu_fnc_createAction;
-
-[player, 1, ["ACE_SelfActions", "Town Sweep", "Difficulty"], _difficultyActionHard] call ace_interact_menu_fnc_addActionToObject;
-
 // Town Sizes
 private _townSizeAction = [
     "Town Size",

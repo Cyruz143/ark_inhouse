@@ -10,6 +10,7 @@ GVAR(selectedPosition) = [0, 0, 0];
 if (isServer) then {
     GVAR(aiCount) = 0;
     GVAR(availableMissions) = [1, 2, 3, 4];
+    GVAR(customAICount) = 0;
     GVAR(cqcCount) = 0;
     GVAR(cqcPercentage) = 0.4;
     GVAR(missionNumber) = 0;

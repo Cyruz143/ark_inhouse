@@ -27,6 +27,7 @@ PREP(objectiveDownloadIntelAction);
 PREP(objectiveDownloadIntelPFH);
 PREP(objectiveRecoverIntel);
 PREP(onAdmiralInit);
+PREP(scaleAICount);
 PREP(selectLocation);
 PREP(selectObjective);
 PREP(selectRandomFaction);

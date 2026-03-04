@@ -7,7 +7,6 @@ PREP_RECOMPILE_START;
 PREP_RECOMPILE_END;
 
 if (call EFUNC(main,isTownSweep) && (isServer)) then {
-    ts_spawn_ai_multiplier = 2;
     ts_spawn_unitTemplate = "Base";
 
     call FUNC(createLocationMarker);
