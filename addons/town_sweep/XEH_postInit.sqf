@@ -2,13 +2,22 @@
 
 if !(call EFUNC(main,isTownSweep)) exitWith {};
 
-GVAR(selectedPosition) = [0, 0, 0];
-GVAR(positionSize) = 700;
-GVAR(positionActive) = false;
-GVAR(availableMissions) = [1, 2, 3, 4];
 GVAR(playerCount) = 0;
-GVAR(placedFortifications) = [];
-GVAR(missionNumber) = 0;
+GVAR(positionActive) = false;
+GVAR(positionSize) = 700;
+GVAR(selectedPosition) = [0, 0, 0];
+
+if (isServer) then {
+    GVAR(aiCount) = 0;
+    GVAR(availableMissions) = [1, 2, 3, 4];
+    GVAR(cqcCount) = 0;
+    GVAR(cqcPercentage) = 0.4;
+    GVAR(missionNumber) = 0;
+    GVAR(patrolArmourGroupCount) = 0;
+    GVAR(patrolInfantryGroupCount) = 0;
+    GVAR(patrolTechnicalGroupCount) = 0;
+    GVAR(placedFortifications) = [];
+};
 
 [QGVAR(objectiveDestroyCacheActionsEvent), {
     call FUNC(objectiveDestroyCacheAction);
