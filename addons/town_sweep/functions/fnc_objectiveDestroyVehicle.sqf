@@ -62,11 +62,11 @@ GVAR(objectiveVehicle) setFuel 0;
 GVAR(objectiveVehicle) call EFUNC(clear_cargo,doClearVehicle);
 
 [GVAR(objectiveVehicle), GVAR(positionSize)] call FUNC(createChaseZone);
-GVAR(objectiveVehicle) addEventHandler ["Killed", {call FUNC(vehicleDestroyed)}];
+GVAR(objectiveVehicle) addEventHandler ["Killed", {call FUNC(objectiveDestroyVehicleCookoff)}];
 
 ["task1", "Destroy Armour", "Locate and destroy the static armour in town", "target"] call FUNC(createTask);
 
 ["ace_cookoff_cookoff", {
     params ["_vehicle"];
-    _vehicle call FUNC(vehicleDestroyed);
+    _vehicle call FUNC(objectiveDestroyVehicleCookoff);
 }] call CBA_fnc_addEventHandler;

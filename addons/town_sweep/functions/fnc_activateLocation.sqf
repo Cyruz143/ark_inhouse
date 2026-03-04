@@ -35,7 +35,7 @@ publicVariable QGVAR(positionActive);
 
 // Minimum 60 AI as this doesn't scale well at low numbers
 //ts_spawn_aiCount = (ceil (GVAR(playerCount) * ts_spawn_ai_multiplier)) max 60;
-GVAR(aiCount) = [60, 80] select {GVAR(playerCount) > 8}; // 60 base unless more than 8 players.
+GVAR(aiCount) = [60, 80] select (count GVAR(playerCount) > 8); // 60 base unless more than 8 players.
 GVAR(cqcCount) = ceil (GVAR(aiCount) * GVAR(cqcPercentage));
 
 private _fireTeamSize = ["ZoneTemplates", adm_patrol_defaultZoneTemplate, "infFireteamSize"] call adm_config_fnc_getNumber;
