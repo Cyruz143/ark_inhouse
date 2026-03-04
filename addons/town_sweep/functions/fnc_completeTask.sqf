@@ -24,4 +24,18 @@ params ["_taskID", ["_state", "SUCCEEDED"]];
 GVAR(positionActive) = false;
 publicVariable QGVAR(positionActive);
 
-[_taskID] call FUNC(cleanupPreviousZone);
+GVAR(cleanupMarkerName) = format [QGVAR(cleanupMarker_%1), _taskID];
+
+[{
+    params ["_args", "_handle"];
+    _args params ["_taskID"];
+
+    private _players = [] call EFUNC(common,players);
+    private _inArea = _players findIf {_x inArea GVAR(cleanupMarkerName)};
+
+    if (_inArea == -1) then {
+        [_taskID] call FUNC(cleanupPreviousZone);
+        _handle call CBA_fnc_removePerFrameHandler;
+    };
+
+}, 3, [_taskID]] call CBA_fnc_addPerFrameHandler;
