@@ -26,6 +26,12 @@ _box addItemCargoGlobal ["ACE_Banana", 1];
 
 [_helo, GVAR(positionSize)] call FUNC(createChaseZone);
 
-[{itemCargo _this isEqualTo []}, {
-    ["task3"] call FUNC(completeTask);
-}, _box] call CBA_fnc_waitUntilAndExecute;
+[{
+    params ["_args", "_handle"];
+    _args params ["_box"];
+
+    if (itemCargo _box isEqualTo []) then {
+        ["task3"] call FUNC(completeTask);
+        _handle call CBA_fnc_removePerFrameHandler;
+    };
+}, 3, [_box]] call CBA_fnc_addPerFrameHandler;

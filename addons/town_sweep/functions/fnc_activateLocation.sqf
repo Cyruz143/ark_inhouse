@@ -23,9 +23,11 @@ if (GVAR(availableMissions) isEqualTo []) exitWith {
     "No more objectives to activate." call CBA_fnc_notify;
 };
 
-// Prevent cleanup from running on first run.
+// Prevent cleanup from running on first run, delayed because next location is activated is often activated early.
 if (GVAR(missionNumber) > 0) then {
-    [GVAR(missionNumber)] call FUNC(cleanupPreviousZone);
+    [{
+        [GVAR(missionNumber)] call FUNC(cleanupPreviousZone);
+    }, [], 300] call CBA_fnc_waitAndExecute;
 };
 
 GVAR(missionNumber) = GVAR(missionNumber) + 1;
@@ -35,7 +37,7 @@ publicVariable QGVAR(positionActive);
 
 // Minimum 60 AI as this doesn't scale well at low numbers
 //ts_spawn_aiCount = (ceil (GVAR(playerCount) * ts_spawn_ai_multiplier)) max 60;
-GVAR(aiCount) = [60, 80] select (count GVAR(playerCount) > 8); // 60 base unless more than 8 players.
+GVAR(aiCount) = [60, 80] select (GVAR(playerCount) > 8); // 60 base unless more than 8 players.
 GVAR(cqcCount) = ceil (GVAR(aiCount) * GVAR(cqcPercentage));
 
 private _fireTeamSize = ["ZoneTemplates", adm_patrol_defaultZoneTemplate, "infFireteamSize"] call adm_config_fnc_getNumber;
@@ -50,8 +52,15 @@ call FUNC(createLocationZones);
 call FUNC(createFortifications);
 call FUNC(selectObjective);
 
-[{(allPlayers inAreaArray QGVAR(selectedLocationMarker)) isNotEqualTo []}, {
-    [{
+[{
+    params ["_args", "_handle"];
+
+    private _players = [] call EFUNC(common,players);
+    private _inArea = _players findIf {_x inArea QGVAR(selectedLocationMarker)};
+
+    if (_inArea != -1) then {
         (selectRandom ["paradrop","insert"]) call FUNC(enableRotor);
-    }, [], 240] call CBA_fnc_waitAndExecute;
-}] call CBA_fnc_waitUntilAndExecute;
+        _handle call CBA_fnc_removePerFrameHandler;
+    };
+
+}, 3] call CBA_fnc_addPerFrameHandler;
