@@ -26,11 +26,11 @@ if (GVAR(availableMissions) isEqualTo []) exitWith {
 // Prevent cleanup from running on first run, delayed because next location is activated is often activated early.
 if (GVAR(missionNumber) > 0) then {
     [{
-        [GVAR(missionNumber)] call FUNC(cleanupPreviousZone);
-    }, [], 300] call CBA_fnc_waitAndExecute;
+        [] call FUNC(cleanupPreviousZone);
+    }, [], 60] call CBA_fnc_waitAndExecute; // Replace back to 300
+} else {
+    GVAR(missionNumber) = GVAR(missionNumber) + 1;
 };
-
-GVAR(missionNumber) = GVAR(missionNumber) + 1;
 
 GVAR(positionActive) = true;
 publicVariable QGVAR(positionActive);

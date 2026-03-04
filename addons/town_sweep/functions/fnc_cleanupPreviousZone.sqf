@@ -6,7 +6,7 @@
  * Locality: Server (called from activateLocation)
  *
  * Arguments:
- * 0: Mission Number <NUMBER>
+ * None
  *
  * Return Value:
  * None
@@ -15,9 +15,7 @@
  * [] call ark_town_sweep_fnc_cleanupPreviousZone
  */
 
-params ["_missionNumber"];
-
-private _markerName = format ["Mission_Cleanup_Marker_%1", _missionNumber];
+private _markerName = format ["Mission_Cleanup_Marker_%1", GVAR(missionNumber)];
 private _thingsToClean = _markerName nearEntities [[], false, false, true]; // Grab everything
 private _playerFilter = [] call EFUNC(common,players);
 
@@ -31,3 +29,5 @@ _thingsToClean = _thingsToClean select {!(_x in _playerFilter)};
     params ["_thingsToClean"];
     deleteVehicle _thingsToClean;
 }, [_thingsToClean], 5] call CBA_fnc_waitAndExecute;
+
+GVAR(missionNumber) = GVAR(missionNumber) + 1;
