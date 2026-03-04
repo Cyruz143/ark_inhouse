@@ -30,5 +30,5 @@ if (_nearEnemies isEqualTo []) exitWith {
 _nearEnemies sort true;
 private _target = _nearEnemies #0;
 
-[_grp, getPos _target, 100] call CBA_fnc_taskPatrol;
+[_grp, _target, 250, true] call CBA_fnc_taskAttack;
 INFO_1("fnc_taskAttack, Units attacking player (%1)",_target);
