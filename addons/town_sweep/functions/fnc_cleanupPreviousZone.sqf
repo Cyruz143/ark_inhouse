@@ -16,10 +16,11 @@
  */
 
 params ["_taskID"];
+
 [{
     params ["_taskID"];
     private _markerName = format [QGVAR(cleanupMarker_%1), _taskID];
-    private _thingsToClean = _markerName nearEntities [[], false, false, true]; // Grab everything
+    private _thingsToClean = (getMarkerPos _markerName) nearEntities (GVAR(positionSize) * 2); // Grab everything
     private _playerFilter = [] call EFUNC(common,players);
 
     // Filter out VR, Logics and players.
