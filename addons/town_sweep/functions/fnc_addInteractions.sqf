@@ -33,7 +33,7 @@ private _selectLocationAction = [
     "Select Location",
     "\a3\ui_f\data\igui\cfg\simpletasks\types\interact_ca.paa",
     {[] call FUNC(selectLocation)},
-    {true}
+    {!(GVAR(positionActive))}
 ] call ace_interact_menu_fnc_createAction;
 
 [player, 1, ["ACE_SelfActions", "Town Sweep"], _selectLocationAction] call ace_interact_menu_fnc_addActionToObject;
