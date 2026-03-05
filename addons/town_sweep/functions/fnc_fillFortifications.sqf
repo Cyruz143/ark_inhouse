@@ -36,8 +36,9 @@ private _infantryClassnames = [adm_camp_defaultUnitTemplate, "infantry"] call ad
 
 {
     [{
-        private _unit = [_this, _group, _infantryClassnames, _skillArray] call adm_common_fnc_placeMan;
+        params ["_buildingPosition", "_group", "_infantryClassnames", "_skillArray"];
+        private _unit = [_buildingPosition, _group, _infantryClassnames, _skillArray] call adm_common_fnc_placeMan;
         [_unit, true] call EFUNC(ai_sentry,make_sentry);
         _unit setUnitPos "UP";
-    }, _x, _forEachIndex * 1] call CBA_fnc_waitAndExecute;
+    }, [_x, _group, _infantryClassnames, _skillArray], _forEachIndex * 1] call CBA_fnc_waitAndExecute;
 } forEach _scaledBuildingPositions;
