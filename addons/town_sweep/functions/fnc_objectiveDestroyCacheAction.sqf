@@ -3,6 +3,8 @@
  * Author: Cyruz
  * N/A
  *
+ * Locality: All players (called from event in objectiveDestroyCache)
+ *
  * Arguments:
  * None
  *
@@ -10,8 +12,10 @@
  * None
  *
  * Example:
- * [] call ark_town_sweep_fnc_objDestroyAction
+ * [] call ark_town_sweep_fnc_objectiveDestroyCacheAction
  */
+
+if (!hasInterface) exitWith {};
 
 private _action = [
     "destroyCache",
@@ -23,8 +27,8 @@ private _action = [
             _target,
             {
                 params ["_target"];
-                _target setVariable ["ark_ts_canDestroy", false, true];
-                [QGVAR(objDestroyCacheEvent), []] call CBA_fnc_serverEvent;
+                _target setVariable [QGVAR(canDestroy), false, true];
+                [QGVAR(objectiveDestroyCachePFHEvent), []] call CBA_fnc_serverEvent;
                 [["\A3\ui_f\data\map\mapcontrol\taskIconDone_ca.paa", 2.0], ["Charges set for 30 seconds!"]] call CBA_fnc_notify;
             }, {
                 [["\A3\ui_f\data\map\mapcontrol\taskIconFailed_ca.paa", 2.0], ["Destruction aborted!"]] call CBA_fnc_notify;
@@ -32,7 +36,7 @@ private _action = [
             "Placing charges..."
         ] call ace_common_fnc_progressBar;
     },
-    {_target getVariable ["ark_ts_canDestroy", true]}
+    {_target getVariable [QGVAR(canDestroy), true]}
 ] call ace_interact_menu_fnc_createAction;
 
 ["CUP_BOX_GER_Wps_F", 0, ["ACE_MainActions"], _action] call ace_interact_menu_fnc_addActionToClass;

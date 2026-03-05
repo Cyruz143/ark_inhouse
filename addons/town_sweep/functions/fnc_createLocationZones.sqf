@@ -3,6 +3,8 @@
  * Author: Cyruz
  * N/A
  *
+ * Locality: Server (called from activateLocation)
+ *
  * Arguments:
  * None
  *
@@ -19,7 +21,7 @@ private _size = GVAR(positionSize);
     ["type", "cqc"],
     ["position", GVAR(selectedPosition)],
     ["area", [_size, _size, 0, false]],
-    ["pool", ts_spawn_cqcCount],
+    ["pool", GVAR(cqcCount)],
     ["unitTemplate", adm_cqc_defaultUnitTemplate],
     ["zoneTemplate", adm_cqc_defaultZoneTemplate],
     ["enabled", GVAR(positionActive)]
@@ -29,7 +31,7 @@ private _size = GVAR(positionSize);
     ["type", "patrol"],
     ["position", GVAR(selectedPosition)],
     ["area", [_size, _size, 0, false]],
-    ["pool", [ts_spawn_patrolInfGroupCount, ts_spawn_patrolTechGroupCount, ts_spawn_patrolArmourGroupCount]],
+    ["pool", [GVAR(patrolInfantryGroupCount), GVAR(patrolTechnicalGroupCount), GVAR(patrolArmourGroupCount)]],
     ["unitTemplate", adm_patrol_defaultUnitTemplate],
     ["zoneTemplate", adm_patrol_defaultZoneTemplate],
     ["enabled", GVAR(positionActive)]

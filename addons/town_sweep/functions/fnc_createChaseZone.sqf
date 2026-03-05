@@ -3,6 +3,8 @@
  * Author: Cyruz
  * N/A
  *
+ * Locality: Server (called from all objectives)
+ *
  * Arguments:
  * 0: Object <OBJECT>
  * 1: Size <NUMBER>
@@ -14,16 +16,25 @@
  * [] call ark_town_sweep_fnc_createChaseZone
  */
 
-params ["_obj","_size"];
+params ["_object", "_size"];
 
-private _pos = getPosATL _obj;
-private _mkr = createMarkerLocal [(str _obj), _pos];
-_mkr setMarkerShapeLocal "ELLIPSE";
-_mkr setMarkerSizeLocal [35, 35];
-_mkr setMarkerAlphaLocal 0;
+private _position = getPosATL _object;
+private _marker = createMarkerLocal [(str _object), _position];
+_marker setMarkerShapeLocal "ELLIPSE";
+_marker setMarkerSizeLocal [35, 35];
+_marker setMarkerAlphaLocal 0;
 
-[{(allPlayers inAreaArray _this #0) isNotEqualTo []}, {
-    params ["", "_pos", "_size"];
-    [_pos, _size] call EFUNC(admin_tools,chaseAI);
-    [_pos, _size] call FUNC(chaseAI);
-}, [_mkr,_pos,_size]] call CBA_fnc_waitUntilAndExecute;
+// Loop until any player is close enough to activate
+[{
+    params ["_args", "_handle"];
+    _args params ["_marker", "_position", "_size"];
+
+    private _players = [] call EFUNC(common,players);
+    private _inArea = _players findIf {_x inArea _marker};
+
+    if (_inArea != -1) then {
+        [_position, _size] call EFUNC(admin_tools,chaseAI);
+        [_position, _size] call FUNC(chaseAI);
+        _handle call CBA_fnc_removePerFrameHandler;
+    };
+}, 2.5, [_marker, _position, _size]] call CBA_fnc_addPerFrameHandler;

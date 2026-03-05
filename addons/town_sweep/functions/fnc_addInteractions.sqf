@@ -3,6 +3,8 @@
  * Author: Cyruz
  * N/A
  *
+ * Locality: All players (called from postInit)
+ *
  * Arguments:
  * None
  *
@@ -13,6 +15,7 @@
  * [] call ark_town_sweep_fnc_addInteractions
  */
 
+// Only the core action requires a condition as they are all child actions. Perf saving on interact menu being open.
 private _coreCondition = { call EFUNC(main,isHost) && {[_player, _target, []] call ace_common_fnc_canInteractWith} };
 
 private _townSweepCoreAction = [
@@ -30,7 +33,7 @@ private _selectLocationAction = [
     "Select Location",
     "\a3\ui_f\data\igui\cfg\simpletasks\types\interact_ca.paa",
     {[] call FUNC(selectLocation)},
-    {true}
+    {!(GVAR(positionActive))}
 ] call ace_interact_menu_fnc_createAction;
 
 [player, 1, ["ACE_SelfActions", "Town Sweep"], _selectLocationAction] call ace_interact_menu_fnc_addActionToObject;
@@ -54,56 +57,6 @@ private _enableGroupDeployAction = [
 ] call ace_interact_menu_fnc_createAction;
 
 [player, 1, ["ACE_SelfActions", "Town Sweep"], _enableGroupDeployAction] call ace_interact_menu_fnc_addActionToObject;
-
-// Difficulty Actions
-private _difficultyAction = [
-    "Difficulty",
-    "Difficulty",
-    "\a3\ui_f\data\igui\cfg\simpletasks\types\use_ca.paa",
-    {},
-    {true}
-] call ace_interact_menu_fnc_createAction;
-
-[player, 1, ["ACE_SelfActions", "Town Sweep"], _difficultyAction] call ace_interact_menu_fnc_addActionToObject;
-
-private _difficultyActionEasy = [
-    "Easy",
-    "Easy",
-    "",
-    {
-        ts_spawn_ai_multiplier = 2;
-        publicVariable "ts_spawn_ai_multiplier";
-    },
-    {true}
-] call ace_interact_menu_fnc_createAction;
-
-[player, 1, ["ACE_SelfActions", "Town Sweep", "Difficulty"], _difficultyActionEasy] call ace_interact_menu_fnc_addActionToObject;
-
-private _difficultyActionMedium = [
-    "Medium",
-    "Medium",
-    "",
-    {
-        ts_spawn_ai_multiplier = 3;
-        publicVariable "ts_spawn_ai_multiplier";
-    },
-    {true}
-] call ace_interact_menu_fnc_createAction;
-
-[player, 1, ["ACE_SelfActions", "Town Sweep", "Difficulty"], _difficultyActionMedium] call ace_interact_menu_fnc_addActionToObject;
-
-private _difficultyActionHard = [
-    "Hard",
-    "Hard",
-    "",
-    {
-        ts_spawn_ai_multiplier = 4;
-        publicVariable "ts_spawn_ai_multiplier";
-    },
-    {true}
-] call ace_interact_menu_fnc_createAction;
-
-[player, 1, ["ACE_SelfActions", "Town Sweep", "Difficulty"], _difficultyActionHard] call ace_interact_menu_fnc_addActionToObject;
 
 // Town Sizes
 private _townSizeAction = [

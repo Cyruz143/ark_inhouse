@@ -2,32 +2,44 @@
 
 if !(call EFUNC(main,isTownSweep)) exitWith {};
 
-GVAR(selectedPosition) = [0, 0, 0];
-GVAR(positionSize) = 700;
+GVAR(playerCount) = 0;
 GVAR(positionActive) = false;
+GVAR(positionSize) = 700;
+GVAR(selectedPosition) = [0, 0, 0];
 
-[QGVAR(objDestroyActionEvent), {
+if (isServer) then {
+    GVAR(aiCount) = 0;
+    GVAR(availableMissions) = [1, 2, 3, 4];
+    GVAR(cleanupMarkerName) = "";
+    GVAR(customAICount) = 0;
+    GVAR(cqcCount) = 0;
+    GVAR(cqcPercentage) = 0.4;
+    GVAR(patrolArmourGroupCount) = 0;
+    GVAR(patrolInfantryGroupCount) = 0;
+    GVAR(patrolTechnicalGroupCount) = 0;
+    GVAR(placedFortifications) = [];
+};
+
+[QGVAR(notification), {
     if (!hasInterface) exitWith {};
-    call FUNC(objDestroyAction);
+    params ["_text"];
+    _text call CBA_fnc_notify;
 }] call CBA_fnc_addEventHandler;
 
-[QGVAR(objDestroyCacheEvent), {
-    if (isServer) then {
-        call FUNC(objDestroyCache);
-    };
+[QGVAR(objectiveDestroyCacheActionsEvent), {
+    call FUNC(objectiveDestroyCacheAction);
+}] call CBA_fnc_addEventHandler;
+
+[QGVAR(objectiveDestroyCachePFHEvent), {
+    call FUNC(objectiveDestroyCachePFH);
 }] call CBA_fnc_addEventHandler;
 
 [QGVAR(downloadIntelActionEvent), {
-    if (!hasInterface) exitWith {};
-    _this call FUNC(objDownloadIntelAction);
+    _this call FUNC(objectiveDownloadIntelAction);
 }] call CBA_fnc_addEventHandler;
 
 [QGVAR(downloadIntelPFH), {
-    _this call FUNC(objDownloadIntelPFH);
-}] call CBA_fnc_addEventHandler;
-
-[QGVAR(downloadIntelCompletedEvent), {
-    ["task4", "SUCCEEDED"] call BIS_fnc_taskSetState;
+    _this call FUNC(objectiveDownloadIntelPFH);
 }] call CBA_fnc_addEventHandler;
 
 [QGVAR(activateLocationEvent), {

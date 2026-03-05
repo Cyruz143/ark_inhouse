@@ -3,6 +3,8 @@
  * Author: Mike, Cyruz
  * N/A
  *
+ * Locality: Server (called from selectObjective)
+ *
  * Arguments:
  * None
  *
@@ -10,7 +12,7 @@
  * None
  *
  * Example:
- * [] call ark_town_sweep_fnc_objDownloadIntel
+ * [] call ark_town_sweep_fnc_objectiveDownloadIntel
  */
 
 private _helo = [GVAR(selectedPosition)] call FUNC(createHeliWreck);
@@ -18,17 +20,6 @@ private _terminal = [_helo, "RuggedTerminal_01_F"] call FUNC(createObjectiveObje
 
 [QGVAR(downloadIntelActionEvent), _terminal] call CBA_fnc_globalEvent;
 
-[
-    true,
-    ["task4"],
-    ["Locate and download the intel from the crash site, its motion sensored so stay close.", "Download Intel"],
-    GVAR(selectedPosition),
-    "ASSIGNED",
-    -1,
-    true,
-    "intel"
-] call BIS_fnc_taskCreate;
+["task4", "Download Intel", "Locate and download the intel from the crash site, its motion sensored so stay close.", "download"] call FUNC(createTask);
 
 [_helo, GVAR(positionSize)] call FUNC(createChaseZone);
-
-// Task completed via event

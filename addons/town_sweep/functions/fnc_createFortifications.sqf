@@ -3,6 +3,8 @@
  * Author: Cyruz
  * N/A
  *
+ * Locality: Server (called from activateLocation)
+ *
  * Arguments:
  * None
  *
@@ -42,5 +44,5 @@ for "_i" from 1 to _fortificationAmount do {
     _fortification setVectorDir (getPos _fortification vectorFromTo GVAR(selectedPosition));
     _fortification setVectorUp surfaceNormal position _fortification;
     _fortification call FUNC(fillFortifications);
-    ts_spawn_placedFortifications pushBack _fortification;
+    GVAR(placedFortifications) pushBack _fortification;
 };

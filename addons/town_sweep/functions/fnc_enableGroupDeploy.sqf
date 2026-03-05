@@ -3,6 +3,8 @@
  * Author: Cyruz
  * N/A
  *
+ * Locality: Server (event from ace action)
+ *
  * Arguments:
  * None
  *

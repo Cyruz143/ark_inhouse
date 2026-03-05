@@ -3,6 +3,8 @@
  * Author: Cyruz
  * Creates a helicopter wreck for objectives.
  *
+ * Locality: Server (called from download/recover intel)
+ *
  * Arguments:
  * 0: Position <POSITION>
  *
@@ -33,7 +35,7 @@ if (isNil "_nearRoad") then {
     _helo setVectorUp surfaceNormal position _helo;
 };
 
-if (!(_helo inArea "ts_spawn_selectedLocation")) exitWith {
+if (!(_helo inArea QGVAR(selectedLocationMarker))) exitWith {
     deleteVehicle _helo;
     ERROR_MSG("ts_spawn_fnc_objRecoverIntel, Cannot find position for helicopter in the selected area");
 };

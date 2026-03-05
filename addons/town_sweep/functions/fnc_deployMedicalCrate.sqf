@@ -3,6 +3,8 @@
  * Author: Cyruz
  * N/A
  *
+ * Locality: Player (ace action)
+ *
  * Arguments:
  * None
  *
@@ -10,7 +12,7 @@
  * None
  *
  * Example:
- * [] call ark_town_sweep_fnc_medicalCrate
+ * [] call ark_town_sweep_fnc_deployMedicalCrate
  */
 
 player call ace_common_fnc_goKneeling;

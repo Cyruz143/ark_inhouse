@@ -13,7 +13,7 @@ class CfgVehicles {
                     displayName = "Deploy Ammo Crate";
                     icon = "\a3\ui_f\data\igui\cfg\simpletasks\types\rearm_ca.paa";
                     condition = QUOTE((call EFUNC(main,isTownSweep)) && {player isEqualTo leader group player});
-                    statement = QUOTE(call FUNC(ammoCrate));
+                    statement = QUOTE(call FUNC(deployAmmoCrate));
                     exceptions[] = {"isNotInside", "isNotSitting", "isNotRefueling"};
                 };
 
@@ -21,7 +21,7 @@ class CfgVehicles {
                     displayName = "Deploy Medical Crate";
                     icon = "\a3\ui_f\data\igui\cfg\simpletasks\types\heal_ca.paa";
                     condition = QUOTE((call EFUNC(main,isTownSweep)) && {player getUnitTrait 'Medic'});
-                    statement = QUOTE(call FUNC(medicalCrate));
+                    statement = QUOTE(call FUNC(deployMedicalCrate));
                     exceptions[] = {"isNotInside", "isNotSitting", "isNotRefueling"};
                 };
             };

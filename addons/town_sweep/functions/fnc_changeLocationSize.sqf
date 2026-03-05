@@ -3,6 +3,8 @@
  * Author: Cyruz
  * N/A
  *
+ * Locality: Player (ace action, publicVariable'd)
+ *
  * Arguments:
  * 0: Size Change <NUMBER>
  *
@@ -17,8 +19,8 @@ params ["_sizeChange"];
 
 if (GVAR(positionActive)) exitWith {};
 
-private _size = (getMarkerSize "ts_spawn_selectedLocation" select 0) + _sizeChange;
-"ts_spawn_selectedLocation" setMarkerSize [_size, _size];
+private _size = (getMarkerSize QGVAR(selectedLocationMarker) select 0) + _sizeChange;
+QGVAR(selectedLocationMarker) setMarkerSize [_size, _size];
 
-GVAR(positionSize) = [_size, _size];
+GVAR(positionSize) = _size;
 publicVariable QGVAR(positionSize);

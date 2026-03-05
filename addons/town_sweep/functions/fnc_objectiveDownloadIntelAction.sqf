@@ -3,6 +3,8 @@
  * Author: Mike
  * N/A
  *
+ * Locality: All players (called from event in objectiveDownloadIntel)
+ *
  * Arguments:
  * None
  *
@@ -10,8 +12,10 @@
  * None
  *
  * Example:
- * [] call ark_town_sweep_fnc_objDownloadIntelAction
+ * [] call ark_town_sweep_fnc_objectiveDownloadIntelAction
  */
+
+if (!hasInterface) exitWith {};
 
 params ["_object"];
 

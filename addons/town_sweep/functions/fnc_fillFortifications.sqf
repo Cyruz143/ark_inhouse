@@ -3,6 +3,8 @@
  * Author: Cyruz
  * N/A
  *
+ * Locality: Server (called from createFortifications)
+ *
  * Arguments:
  * 0: Building <OBJECT>
  *
@@ -26,14 +28,17 @@ if (count _buildingPositions < 6) then {
     };
 };
 
-private _grp = createGroup [ts_enemy_side, true];
-_grp enableDynamicSimulation true;
+private _group = createGroup [ts_enemy_side, true];
+_group enableDynamicSimulation true;
 
 private _skillArray = ["Cqc"] call adm_common_fnc_getZoneTemplateSkillValues;
 private _infantryClassnames = [adm_camp_defaultUnitTemplate, "infantry"] call adm_common_fnc_getUnitTemplateArray;
 
 {
-    private _unit = [_x, _grp, _infantryClassnames, _skillArray] call adm_common_fnc_placeMan;
-    [_unit, true] call EFUNC(ai_sentry,make_sentry);
-    _unit setUnitPos "UP";
+    [{
+        params ["_buildingPosition", "_group", "_infantryClassnames", "_skillArray"];
+        private _unit = [_buildingPosition, _group, _infantryClassnames, _skillArray] call adm_common_fnc_placeMan;
+        [_unit, true] call EFUNC(ai_sentry,make_sentry);
+        _unit setUnitPos "UP";
+    }, [_x, _group, _infantryClassnames, _skillArray], _forEachIndex * 1] call CBA_fnc_waitAndExecute;
 } forEach _scaledBuildingPositions;

@@ -3,6 +3,8 @@
  * Author: Mike
  * Terminal download, will take 3 minutes from start to finish (not counting animation fanciness)
  *
+ * Locality: Server (called from event in downloadIntel)
+ *
  * Arguments:
  * 0: Object <OBJECT>
  *
@@ -10,7 +12,7 @@
  * None
  *
  * Example:
- * [] call ark_town_sweep_fnc_objDownloadIntelPFH
+ * [] call ark_town_sweep_fnc_objectiveDownloadIntelPFH
  */
 
 params ["_object"];
@@ -75,7 +77,9 @@ _marker setMarkerSizeLocal [5, 5];
         // Instantly lower the terminal sources to cut off the excess, then animate it closed properly.
         _object animateSource ["Terminal_source", 55, true];
         _object animateSource ["Terminal_source_sound", 55, true];
-        [QGVAR(downloadIntelCompletedEvent), []] call CBA_fnc_serverEvent;
+
+        ["task4"] call FUNC(completeTask);
+
         [{
             params ["_object"];
             _object animateSource ["Terminal_source", 0, 0.5];

@@ -1,7 +1,9 @@
 #include "..\script_component.hpp"
 /*
  * Author: Cyruz
- * N/A
+ * Whole function is delayed by 240s and it was moved from the loop that calls it.
+ *
+ * Locality: Server (called from activateLocation)
  *
  * Arguments:
  * None
@@ -15,27 +17,31 @@
 
 params ["_insertType"];
 
-private _lzPos = [GVAR(selectedPosition), 0, 150, 10, 0, 0.2] call BIS_fnc_findSafePos;
-// BIS_fnc_findSafePos returns X and Y with success and  X Y Z on failure... fucking BI
-if (count _lzPos isEqualTo 3) exitWith {};
+[{
+    params ["_insertType"];
 
-private _spawnPos = GVAR(selectedPosition) getPos [3000, random 360];
-private _spawnZone = createTrigger ["EmptyDetector", _spawnPos, false];
-private _grp = createGroup [civilian, true];
+    private _lzPos = [GVAR(selectedPosition), 0, 150, 10, 0, 0.2] call BIS_fnc_findSafePos;
+    // BIS_fnc_findSafePos returns X and Y with success and  X Y Z on failure... fucking BI
+    if (count _lzPos isEqualTo 3) exitWith {};
 
-private _jeff = _grp createUnit ["C_Jeff_VR", _spawnPos, [], 0, "NONE"];
-_grp addWaypoint [_lzPos, 0, 1];
-_grp addWaypoint [[worldSize, worldSize, 0], 100, 2];
+    private _spawnPos = GVAR(selectedPosition) getPos [3000, random 360];
+    private _spawnZone = createTrigger ["EmptyDetector", _spawnPos, false];
+    private _grp = createGroup [civilian, true];
 
-private "_module";
-if (_insertType isEqualTo "paradrop") then {
-    _module = "ARK_Rotor_Paradrop" createVehicleLocal _spawnPos;
-    _module setVariable ["Routine_Function", "ark_rotor_fnc_paradrop"];
-} else {
-    _module = "ARK_Rotor_Insert" createVehicleLocal _spawnPos;
-    _module setVariable ["Routine_Function", "ark_rotor_fnc_insert"];
-    _module setVariable ["Fly_Height", 75];
-};
+    private _jeff = _grp createUnit ["C_Jeff_VR", _spawnPos, [], 0, "NONE"];
+    _grp addWaypoint [_lzPos, 0, 1];
+    _grp addWaypoint [[worldSize, worldSize, 0], 100, 2];
 
-_module setVariable ["Crew_Percentage", 100];
-_spawnZone synchronizeObjectsAdd [_module,_jeff];
+    private "_module";
+    if (_insertType isEqualTo "paradrop") then {
+        _module = "ARK_Rotor_Paradrop" createVehicleLocal _spawnPos;
+        _module setVariable ["Routine_Function", "ark_rotor_fnc_paradrop"];
+    } else {
+        _module = "ARK_Rotor_Insert" createVehicleLocal _spawnPos;
+        _module setVariable ["Routine_Function", "ark_rotor_fnc_insert"];
+        _module setVariable ["Fly_Height", 75];
+    };
+
+    _module setVariable ["Crew_Percentage", 100];
+    _spawnZone synchronizeObjectsAdd [_module,_jeff];
+}, [_insertType], 240] call CBA_fnc_waitAndExecute;

@@ -3,6 +3,8 @@
  * Author: Cyruz
  * N/A
  *
+ * Locality: Local (ace action, publicVariable'd)
+ *
  * Arguments:
  * None
  *
@@ -21,8 +23,8 @@ if (player getSlotItemName 608 != "") then {
     ts_mapSingleClickID = addMissionEventHandler ["MapSingleClick", {
         params ["", "_newPos"];
 
-        "ts_spawn_selectedLocation" setMarkerPosLocal _newPos;
-        "ts_spawn_selectedLocation" setMarkerSize [GVAR(positionSize), GVAR(positionSize)];
+        QGVAR(selectedLocationMarker) setMarkerPosLocal _newPos;
+        QGVAR(selectedLocationMarker) setMarkerSize [GVAR(positionSize), GVAR(positionSize)];
 
         GVAR(selectedPosition) = _newPos;
         publicVariable QGVAR(selectedPosition);
@@ -30,8 +32,8 @@ if (player getSlotItemName 608 != "") then {
         GVAR(positionActive) = false;
         publicVariable QGVAR(positionActive);
 
-        ts_spawn_playerCount = count ([false] call EFUNC(common,players));
-        publicVariable "ts_spawn_playerCount";
+        GVAR(playerCount) = count ([false] call EFUNC(common,players));
+        publicVariable QGVAR(playerCount);
 
         removeMissionEventHandler ["MapSingleClick", ts_mapSingleClickID];
         openMap [false, false];

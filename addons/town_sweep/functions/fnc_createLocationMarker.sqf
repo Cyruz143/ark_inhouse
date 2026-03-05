@@ -3,6 +3,8 @@
  * Author: Cyruz
  * N/A
  *
+ * Locality: Server (called from preInit)
+ *
  * Arguments:
  * None
  *
@@ -13,7 +15,7 @@
  * [] call ark_town_sweep_fnc_createLocationMarker
  */
 
-private _marker = createMarker ["ts_spawn_selectedLocation", [0, 0, 0]];
+private _marker = createMarker [QGVAR(selectedLocationMarker), [0, 0, 0]];
 _marker setMarkerSizeLocal [1, 1];
 _marker setMarkerAlphaLocal 1; // Formerly 0.5
 _marker setMarkerShapeLocal "ELLIPSE";

@@ -3,6 +3,8 @@
  * Author: Cyruz
  * N/A
  *
+ * Locality: Server (event from ace action)
+ *
  * Arguments:
  * None
  *
@@ -13,36 +15,31 @@
  * [] call ark_town_sweep_fnc_activateLocation
  */
 
-if (GVAR(positionActive)) exitWith {};
-
-// Minimum 60 AI as this doesn't scale well at low numbers
-ts_spawn_aiCount = (ceil (ts_spawn_playerCount * ts_spawn_ai_multiplier)) max 60;
-ts_spawn_cqcCount = ceil (ts_spawn_aiCount * ts_spawn_cqc_percent);
-
-private _fireTeamSize = ["ZoneTemplates", adm_patrol_defaultZoneTemplate, "infFireteamSize"] call adm_config_fnc_getNumber;
-private _patrolAiCount = ceil (ts_spawn_aiCount * (1 - ts_spawn_cqc_percent));
-ts_spawn_patrolInfGroupCount = ceil (_patrolAiCount / _fireTeamSize);
-ts_spawn_patrolTechGroupCount = 2 + (floor (ts_spawn_playerCount / 10));
-ts_spawn_patrolArmourGroupCount = 1 + (floor (ts_spawn_playerCount / 25));
-
-call FUNC(createLocationZones);
-
-call FUNC(createFortifications);
-
-// Remove the picked mission so subsequent choices will be different
-private _selectedMission = selectRandom ts_spawn_availableMissions;
-switch (_selectedMission) do {
-    case 1: { call FUNC(objDestroyVeh) };
-    case 2: { call FUNC(objRecoverIntel) };
-    case 3: { call FUNC(objDestroyAmmo) };
-    case 4: { call FUNC(objDownloadIntel) };
-    default { ERROR_MSG("Town Sweep, activateLocation, _selectedMission was not found.") };
+if (GVAR(positionActive)) exitWith {
+    [QGVAR(notification), ["Objective must be completed before a new one is started"]] call CBA_fnc_globalEvent;
 };
 
-ts_spawn_availableMissions deleteAt (ts_spawn_availableMissions find _selectedMission);
+if (GVAR(availableMissions) isEqualTo []) exitWith {
+    [QGVAR(notification), ["No more objectives to activate."]] call CBA_fnc_globalEvent;
+};
 
-[{(allPlayers inAreaArray "ts_spawn_selectedLocation") isNotEqualTo []}, {
-    [{
+GVAR(positionActive) = true;
+publicVariable QGVAR(positionActive);
+
+call FUNC(scaleAICount);
+call FUNC(createLocationZones);
+call FUNC(createFortifications);
+call FUNC(selectObjective);
+
+[{
+    params ["_args", "_handle"];
+
+    private _players = [] call EFUNC(common,players);
+    private _inArea = _players findIf {_x inArea QGVAR(selectedLocationMarker)};
+
+    if (_inArea != -1) then {
         (selectRandom ["paradrop","insert"]) call FUNC(enableRotor);
-    }, [], 240] call CBA_fnc_waitAndExecute;
-}] call CBA_fnc_waitUntilAndExecute;
+        _handle call CBA_fnc_removePerFrameHandler;
+    };
+
+}, 3] call CBA_fnc_addPerFrameHandler;
