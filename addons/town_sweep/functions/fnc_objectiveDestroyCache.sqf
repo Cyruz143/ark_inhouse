@@ -21,6 +21,7 @@ _buildings = _buildings - GVAR(placedFortifications);
 
 GVAR(destroyCacheObject) = createVehicle ["CUP_BOX_GER_Wps_F", [0,0,0], [], 0, "CAN_COLLIDE"];
 GVAR(destroyCacheObject) call EFUNC(clear_cargo,doClearVehicle);
+GVAR(destroyCacheObject) allowDamage false;
 
 // Add the ACE action on the clients once it's created
 [QGVAR(objectiveDestroyCacheActionsEvent)] call CBA_fnc_globalEvent;
