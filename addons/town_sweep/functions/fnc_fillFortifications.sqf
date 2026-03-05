@@ -35,7 +35,9 @@ private _skillArray = ["Cqc"] call adm_common_fnc_getZoneTemplateSkillValues;
 private _infantryClassnames = [adm_camp_defaultUnitTemplate, "infantry"] call adm_common_fnc_getUnitTemplateArray;
 
 {
-    private _unit = [_x, _group, _infantryClassnames, _skillArray] call adm_common_fnc_placeMan;
-    [_unit, true] call EFUNC(ai_sentry,make_sentry);
-    _unit setUnitPos "UP";
+    [{
+        private _unit = [_this, _group, _infantryClassnames, _skillArray] call adm_common_fnc_placeMan;
+        [_unit, true] call EFUNC(ai_sentry,make_sentry);
+        _unit setUnitPos "UP";
+    }, _x, _forEachIndex * 1] call CBA_fnc_waitAndExecute;
 } forEach _scaledBuildingPositions;
