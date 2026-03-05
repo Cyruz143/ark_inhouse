@@ -22,5 +22,5 @@ if (GVAR(positionActive)) exitWith {};
 private _size = (getMarkerSize QGVAR(selectedLocationMarker) select 0) + _sizeChange;
 QGVAR(selectedLocationMarker) setMarkerSize [_size, _size];
 
-GVAR(positionSize) = [_size, _size];
+GVAR(positionSize) = _size;
 publicVariable QGVAR(positionSize);
