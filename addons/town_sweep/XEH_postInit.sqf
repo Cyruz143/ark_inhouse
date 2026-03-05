@@ -20,6 +20,12 @@ if (isServer) then {
     GVAR(placedFortifications) = [];
 };
 
+[QGVAR(notification), {
+    if (!hasInterface) exitWith {};
+    params ["_text"];
+    _text call CBA_fnc_notify;
+}] call CBA_fnc_addEventHandler;
+
 [QGVAR(objectiveDestroyCacheActionsEvent), {
     call FUNC(objectiveDestroyCacheAction);
 }] call CBA_fnc_addEventHandler;
