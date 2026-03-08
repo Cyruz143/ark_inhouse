@@ -70,3 +70,9 @@ GVAR(objectiveVehicle) addEventHandler ["Killed", {call FUNC(objectiveDestroyVeh
     params ["_vehicle"];
     _vehicle call FUNC(objectiveDestroyVehicleCookoff);
 }] call CBA_fnc_addEventHandler;
+
+// Should handle most common case of vehicle not cooking off or being destroyed, but being disabled.
+["ace_cookoff_engineFire", {
+    params ["_vehicle"];
+    _vehicle call FUNC(objectiveDestroyVehicleCookoff);
+}] call CBA_fnc_addEventHandler;
