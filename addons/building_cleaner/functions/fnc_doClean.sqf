@@ -10,7 +10,7 @@
  * None
  *
  * Example:
- * [] call ark_building_cleaner_doClean
+ * [] call ark_building_cleaner_fnc_doClean
  */
 
 params ["_object"];
