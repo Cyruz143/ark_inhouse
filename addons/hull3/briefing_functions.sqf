@@ -13,6 +13,7 @@ hull3_briefing_fnc_addNotes = {
     [] call compile preprocessFile ADDON_PATH(briefing\hull3.sqf);
     LOG("hull3.briefing: Added Hull to briefing notes.");
     [] call hull_briefing_fnc_addAcreAdmin;
+    [] call hull_briefing_fnc_addGearReset;
     [] call hull3_briefing_fnc_addOrbat;
     [] call hull3_briefing_fnc_addSideNotes;
 };
@@ -57,5 +58,21 @@ hull_briefing_fnc_addAcreAdmin = {
         <br/><br/>
         <execute expression='[] spawn hull3_acre_fnc_adminAssign152;'>Add AN/PRC-152</execute>
         <br/><br/>
+    "]];
+};
+
+hull_briefing_fnc_addGearReset = {
+    player createDiaryRecord ["Diary", ["Hull3 Gear", "
+    <br/>
+    If you JIP and your gear is fucked and you are speaking the wrong language, select your role below and it should reset your gear. Use after advised by admins only!
+    <br/><br/>
+    Role: <execute expression='[player,'FTL'] call hull3_unit_fnc_resetInit;'>FTL</execute>
+    <br/><br/>
+    Role: <execute expression='[player,'AR'] call hull3_unit_fnc_resetInit;'>AR</execute>
+    <br/><br/>
+    Role: <execute expression='[player,'AAR'] call hull3_unit_fnc_resetInit;'>AAR</execute>
+    <br/><br/>
+    Role: <execute expression='[player,'AT'] call hull3_unit_fnc_resetInit;'>AT</execute>
+    <br/><br/>
     "]];
 };
