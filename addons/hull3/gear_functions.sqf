@@ -332,18 +332,12 @@ hull3_gear_fnc_tryRemoveNightGear = {
     if (_light < _threshold) exitWith {};
     LOG_3("hull3.gear.assign.night: Light level %1 above threshold %2. Removing night gear from unit %3.",_light,_threshold,_unit);
 
-    private _chemClasses = [
-        "ACE_Chemlight_HiOrange",
-        "ACE_Chemlight_HiRed",
-        "ACE_Chemlight_HiYellow",
-        "ACE_Chemlight_HiWhite",
-        "ACE_Chemlight_Orange",
-        "ACE_Chemlight_White",
-        "ACE_Chemlight_IR"
-    ];
-
     {
-        if (_x in _chemClasses) then {
+        private _lowerCase = toLower _x;
+        if ("chemlight" in _lowerCase) then {
+            _unit removeMagazineGlobal _x;
+        };
+        if ("flare" in _lowerCase) then {
             _unit removeMagazineGlobal _x;
         };
     } forEach magazines _unit;
