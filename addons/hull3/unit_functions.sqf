@@ -124,3 +124,16 @@ hull3_unit_fnc_setFireTeamColors = {
         };
     } forEach units group player;
 };
+
+hull3_unit_fnc_resetInit = {
+    params ["_unit","_class"];
+
+    private _faction = (allPlayers #0) getVariable ["hull3_faction", objNull] #0;
+
+    if (_faction == objNull) exitWith {
+        ERROR_MSG("fnc_resetInit, Faction was null -- GET CYRUZ!");
+    };
+
+    _unit setVariable ["hull3_faction", _faction];
+    [_unit, ["faction", _faction], ["gear", _class]] call hull3_unit_fnc_init;
+};
