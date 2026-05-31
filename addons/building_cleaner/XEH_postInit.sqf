@@ -1,6 +1,6 @@
 #include "script_component.hpp"
 
-if (hasInterface) exitWith {};
+if (!isServer) exitWith {};
 
 addMissionEventHandler ["BuildingChanged", {
     _this call FUNC(canClean);
