@@ -5,7 +5,7 @@ force ace_missileguidance_flareEffectivenessCoef = 0.75;
 
 // ACE Advanced Vehicle Damage
 force force ace_vehicle_damage_enableCarDamage = false;
-force force ace_vehicle_damage_enabled = true;
+force force ace_vehicle_damage_enabled = false;
 
 // ACE AI
 force ace_ai_assignNVG = true;
@@ -38,14 +38,14 @@ force force ace_common_swayFactor = 0.75;
 
 // ACE Cook-off
 force force ace_cookoff_ammoCookoffDuration = 0.3;
-force force ace_cookoff_cookoffDuration = 1;
+force force ace_cookoff_cookoffDuration = 0.5;
 force force ace_cookoff_cookoffEnableProjectiles = true;
 force force ace_cookoff_cookoffEnableSound = true;
 force force ace_cookoff_destroyVehicleAfterCookoff = true;
 force force ace_cookoff_enableAmmobox = false;
 force force ace_cookoff_enableAmmoCookoff = true;
 force force ace_cookoff_enableFire = true;
-force force ace_cookoff_probabilityCoef = 1;
+force force ace_cookoff_probabilityCoef = 0.5;
 force force ace_cookoff_removeAmmoDuringCookoff = true;
 
 // ACE Crew Served Weapons
