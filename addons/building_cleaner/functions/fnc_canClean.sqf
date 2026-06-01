@@ -25,7 +25,6 @@ private _bbr = 0 boundingBoxReal _buildingOld params ["_p1", "_p2", "_p3"];
 // Math wizardry
 private _xAxis = ((_p2 #0) - (_p1 #0)) / 2;
 private _yAxis = ((_p2 #1) - (_p1 #1)) / 2;
-private _zAxis = ((_p2 #2) - (_p1 #2)) + 10;
 
 private _nearObjs = _buildingPos nearObjects _p3;
 // Remove old building / new building from nearObjects
@@ -34,7 +33,7 @@ private _nearObjs = _buildingPos nearObjects _p3;
 } forEach [_buildingOld,_buildingNew];
 
 if (_nearObjs isNotEqualTo []) then {
-    private _finalObjects = _nearObjs inAreaArray [_buildingPos, _xAxis, _yAxis, _buildingDir, true, _zAxis];
+    private _finalObjects = _nearObjs inAreaArray [_buildingPos, _xAxis + 1, _yAxis + 1, _buildingDir, true];
     {
         _x call FUNC(doClean);
     } forEach _finalObjects;
