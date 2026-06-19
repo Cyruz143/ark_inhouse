@@ -171,6 +171,10 @@ adm_common_fnc_useTracers = {
     };
 
     private _wep = primaryWeapon _unit;
+    if (_wep isEqualTo "") exitWith {
+        WARNING_1("fnc_useTracers, Unit had no primary weapon: %1",_unit);
+    };
+
     private _currentMag = (primaryWeaponMagazine _unit) #0;
     private _newMag = adm_compatTracers get _wep;
 
