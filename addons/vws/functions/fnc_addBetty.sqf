@@ -24,14 +24,20 @@ GVAR(bitchingBetty) = [{
     private _fuelHealth = _vehicle getVariable [QGVAR(fuelHealth), 0];
     private _fuelDamage = _vehicle getHitPointDamage "hitFuel";
 
-    // Reset fuel warnings when more fuel added
+    // Reset fuel warnings params when more fuel added
     if (fuel _vehicle > 0.2) then {
         _args set [1, true];
         _args set [2, true];
     };
 
+    // Reset fuel damage var when repaired
     if (_fuelDamage == 0 && _fuelHealth != 0) then {
         _vehicle setVariable [QGVAR(fuelHealth), 0];
+    };
+
+    // Engine dies at 0.9 damage and above
+    if (_vehicle getHitPointDamage "hitEngine" >= 0.9) exitWith {
+        ["ark_vws_playSound", ["ark_vws_engine_failure"]] call CBA_fnc_localEvent;
     };
 
     if (_fuelDamage > _fuelHealth) exitWith {
