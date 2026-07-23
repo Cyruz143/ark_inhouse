@@ -66,13 +66,13 @@ hull_briefing_fnc_addGearReset = {
     <br/>
     If you JIP and your gear is fucked and you are speaking the wrong language, select your role below and it should reset your gear. Use after advised by admins only!
     <br/><br/>
-    Role: <execute expression='[player,'FTL'] call hull3_unit_fnc_resetInit;'>FTL</execute>
+    Role: <execute expression='[player,""FTL""] call hull3_unit_fnc_resetInit;'>FTL</execute>
     <br/><br/>
-    Role: <execute expression='[player,'AR'] call hull3_unit_fnc_resetInit;'>AR</execute>
+    Role: <execute expression='[player,""AR""] call hull3_unit_fnc_resetInit;'>AR</execute>
     <br/><br/>
-    Role: <execute expression='[player,'AAR'] call hull3_unit_fnc_resetInit;'>AAR</execute>
+    Role: <execute expression='[player,""AAR""] call hull3_unit_fnc_resetInit;'>AAR</execute>
     <br/><br/>
-    Role: <execute expression='[player,'AT'] call hull3_unit_fnc_resetInit;'>AT</execute>
+    Role: <execute expression='[player,""AT""] call hull3_unit_fnc_resetInit;'>AT</execute>
     <br/><br/>
     "]];
 };
