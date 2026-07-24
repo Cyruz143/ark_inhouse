@@ -130,7 +130,7 @@ hull3_unit_fnc_resetInit = {
 
     private _faction = (allPlayers #0) getVariable ["hull3_faction", objNull] #0;
 
-    if (_faction == objNull) exitWith {
+    if (isNull _faction) exitWith {
         ERROR_MSG("fnc_resetInit, Faction was null -- GET CYRUZ!");
     };
 
