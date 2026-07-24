@@ -72,7 +72,7 @@ hull_briefing_fnc_addGearReset = {
     <br/><br/>
     Role: <execute expression='[player,""AAR""] call hull3_unit_fnc_resetInit;'>AAR</execute>
     <br/><br/>
-    Role: <execute expression='[player,""AT""] call hull3_unit_fnc_resetInit;'>AT</execute>
+    Role: <execute expression='[player,""RAT""] call hull3_unit_fnc_resetInit;'>AT</execute>
     <br/><br/>
     "]];
 };

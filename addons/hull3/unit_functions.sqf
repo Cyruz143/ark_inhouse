@@ -128,10 +128,10 @@ hull3_unit_fnc_setFireTeamColors = {
 hull3_unit_fnc_resetInit = {
     params ["_unit","_class"];
 
-    private _faction = (allPlayers #0) getVariable ["hull3_faction", objNull] #0;
+    private _faction = (allPlayers #0) getVariable ["hull3_faction", "MISSING"] #0;
 
-    if (isNull _faction) exitWith {
-        ERROR_MSG("fnc_resetInit, Faction was null -- GET CYRUZ!");
+    if (_faction == "MISSING") exitWith {
+        ERROR_MSG("fnc_resetInit, Faction was not set -- GET CYRUZ!");
     };
 
     _unit setVariable ["hull3_faction", _faction];
