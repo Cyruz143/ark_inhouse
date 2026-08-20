@@ -19,9 +19,8 @@ plank_deploy_fnc_expandFortCounts = {
 plank_deploy_fnc_getNonZeroFortIndexes = {
     params ["_unit"];
 
-    private ["_fortIndexes", "_fortCounts"];
-    _fortIndexes = [];
-    _fortCounts = _unit getVariable ["plank_deploy_fortCounts", [1]];
+    private _fortIndexes = [];
+    private _fortCounts = _unit getVariable ["plank_deploy_fortCounts", [1]];
     {
         if (_x > 0) then { PUSH(_fortIndexes,_forEachIndex); };
     } forEach _fortCounts;
@@ -39,9 +38,8 @@ plank_deploy_fnc_setFortDirection = {
 plank_deploy_fnc_setFortPosition = {
     params ["_unit","_fort"];
 
-    private ["_heightMode", "_newPostion"];
-    _heightMode = _unit getVariable ["plank_deploy_heightMode", RELATIVE_TO_UNIT];
-    _newPostion = _unit modelToWorld [player getVariable ["plank_deploy_fortHorizontalOffset", 0], [_unit] call plank_deploy_fnc_getFortDistance, 0];
+    private _heightMode = _unit getVariable ["plank_deploy_heightMode", RELATIVE_TO_UNIT];
+    private _newPostion = _unit modelToWorld [player getVariable ["plank_deploy_fortHorizontalOffset", 0], [_unit] call plank_deploy_fnc_getFortDistance, 0];
     call {
         if (_heightMode == RELATIVE_TO_TERRAIN) exitWith {
             _newPostion set [2, 0];
@@ -120,10 +118,9 @@ plank_deploy_fnc_updateFortPlacement = {
     params ["_unit"];
 
     waitUntil {
-        private ["_fort", "_fortIndex", "_lockMode"];
-        _fort = _unit getVariable "plank_deploy_fort";
-        _fortIndex = _unit getVariable "plank_deploy_fortIndex";
-        _lockMode = _unit getVariable ["plank_deploy_lockMode", LOCK_MODE_UNLOCKED];
+        private _fort = _unit getVariable "plank_deploy_fort";
+        private _fortIndex = _unit getVariable "plank_deploy_fortIndex";
+        private _lockMode = _unit getVariable ["plank_deploy_lockMode", LOCK_MODE_UNLOCKED];
         if (!isNil {_fort} && {!isNil {_fortIndex}} && {_lockMode == LOCK_MODE_UNLOCKED}) then {
             [_unit, _fort, _fortIndex] call plank_deploy_fnc_setFortDirection;
             [_unit, _fort] call plank_deploy_fnc_setFortPosition;
@@ -164,9 +161,8 @@ plank_deploy_fnc_cancelFortPlacement = {
 plank_deploy_fnc_confirmFortPlacement = {
     params ["_unit"];
 
-    private ["_fort", "_fortIndex"];
-    _fort = _unit getVariable ["plank_deploy_fort", DEFAULT_FORT_INDEX];
-    _fortIndex = _unit getVariable "plank_deploy_fortIndex";
+    private _fort = _unit getVariable ["plank_deploy_fort", DEFAULT_FORT_INDEX];
+    private _fortIndex = _unit getVariable "plank_deploy_fortIndex";
     _unit setVariable ["plank_deploy_placementState", STATE_PLACEMENT_DONE, false];
     [_unit, _fort] call plank_export_fnc_addFort;
     [_unit, _fort] call compile GET_FORT_CODE(_fortIndex);
@@ -245,9 +241,8 @@ plank_deploy_fnc_decreaseFortCount = {
 plank_deploy_fnc_isFortsCountEmpty = {
     params ["_unit"];
 
-    private ["_isFortsCountEmpty", "_fortCounts"];
-    _isFortsCountEmpty = true;
-    _fortCounts = _unit getVariable ["plank_deploy_fortCounts", [1]];
+    private _isFortsCountEmpty = true;
+    private _fortCounts = _unit getVariable ["plank_deploy_fortCounts", [1]];
     for "_i" from 1 to (count _fortCounts) - 1 do {
         if (_fortCounts select _i > 0) exitWith { _isFortsCountEmpty = false; };
     };
@@ -287,11 +282,10 @@ plank_deploy_fnc_initFortCounts = {
 plank_deploy_fnc_getDistanceFromBoundingBox = {
     params ["_className"];
 
-    private ["_object", "_boundingBox", "_maxWidth", "_maxLength"];
-    _object = _className createVehicleLocal [-100, -100, 100];
-    _boundingBox = boundingBox _object;
-    _maxWidth = abs ((_boundingBox select 1 select 0) - (_boundingBox select 0 select 0));
-    _maxLength = abs ((_boundingBox select 1 select 1) - (_boundingBox select 0 select 1));
+    private _object = _className createVehicleLocal [-100, -100, 100];
+    private _boundingBox = boundingBox _object;
+    private _maxWidth = abs ((_boundingBox select 1 select 0) - (_boundingBox select 0 select 0));
+    private _maxLength = abs ((_boundingBox select 1 select 1) - (_boundingBox select 0 select 1));
     deleteVehicle _object;
 
     _maxWidth max _maxLength;

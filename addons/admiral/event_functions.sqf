@@ -18,9 +18,8 @@
 FNC_ADD_EVENT_HANDLER = {
     params ["_eventName","_code"];
 
-    private ["_eventIndex", "_handlerId"];
-    _eventIndex = [_eventName] call FNC_FIND_EVENT;
-    _handlerId = -1;
+    private _eventIndex = [_eventName] call FNC_FIND_EVENT;
+    private _handlerId = -1;
     if (_eventIndex != -1) then {
         private _handlerArray = EVENTS_ARRAY select _eventIndex select 2;
         _handlerId = count _handlerArray;
@@ -33,9 +32,8 @@ FNC_ADD_EVENT_HANDLER = {
 FNC_REMOVE_EVENT_HANDLER = {
     params ["_eventName","_handlerId"];
 
-    private ["_eventIndex", "_handlerArray"];
-    _eventIndex = [_eventName] call FNC_FIND_EVENT;
-    _handlerArray = EVENTS_ARRAY select _eventIndex select 2;
+    private _eventIndex = [_eventName] call FNC_FIND_EVENT;
+    private _handlerArray = EVENTS_ARRAY select _eventIndex select 2;
     if (_eventIndex != -1 && {_handlerId >= 0} && {count _handlerArray >= _handlerId + 1}) then {
         _handlerArray set [_handlerId, {}];
     };

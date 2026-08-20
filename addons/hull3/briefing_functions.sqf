@@ -19,8 +19,7 @@ hull3_briefing_fnc_addNotes = {
 };
 
 hull3_briefing_fnc_addOrbat = {
-    private "_orbat";
-    _orbat = "";
+    private _orbat = "";
     {
         if (side player == side leader _x) then {
             private _units = units _x;
@@ -38,7 +37,7 @@ hull3_briefing_fnc_addOrbat = {
 };
 
 hull3_briefing_fnc_addSideNotes = {
-    private "_briefingFile";
+    private _briefingFile = "";
     call {
         if (side player == west) exitWith {_briefingFile = ["Briefing", "blufor"] call hull3_config_fnc_getText};
         if (side player == east) exitWith {_briefingFile = ["Briefing", "opfor"] call hull3_config_fnc_getText};

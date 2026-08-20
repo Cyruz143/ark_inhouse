@@ -63,7 +63,6 @@ hull3_marker_fnc_addGroupAndUnitMarkers = {
 hull3_marker_fnc_addGroupAndUnitMarker = {
     params ["_unit", "_gearClass", "_markerText", "_markerColor"];
 
-    private "_markerName";
     call {
         if (toLower _gearClass in ["ftl", "matg", "hatg", "mmgg"]) exitWith {
             [_unit, "b_inf", _markerText, _markerColor] call hull3_marker_fnc_addGroupMarker;
@@ -265,15 +264,20 @@ hull3_marker_fnc_addCustomSideMarker = {
 hull3_marker_fnc_addCustomMarker = {
     params ["_object"];
 
-    private ["_delay", "_shape", "_type", "_color", "_size", "_text", "_markerIndex", "_markerName"];
-    if (count _this < 7) then {_text = ["Marker", "DefaultCustomMarker", "text"] call hull3_config_fnc_getText}      else {_text  = _this select 6};
-    if (count _this < 6) then {_size = ["Marker", "DefaultCustomMarker", "size"] call hull3_config_fnc_getArray}     else {_size  = _this select 5};
-    if (count _this < 5) then {_color = ["Marker", "DefaultCustomMarker", "color"] call hull3_config_fnc_getText}    else {_color = _this select 4};
-    if (count _this < 4) then {_type = ["Marker", "DefaultCustomMarker", "type"] call hull3_config_fnc_getText}      else {_type  = _this select 3};
-    if (count _this < 3) then {_shape = ["Marker", "DefaultCustomMarker", "shape"] call hull3_config_fnc_getText}    else {_shape = _this select 2};
-    if (count _this < 2) then {_delay = hull3_marker_defaultDelay}                                                   else {_delay = _this select 1};
-    _markerIndex = count hull3_marker_custom;
-    _markerName = format ["hull3_marker_custom_%1", _markerIndex];
+    private _delay = 0;
+    private _shape = "";
+    private _type = "";
+    private _color = "";
+    private _size = 0;
+    private _text = "";
+    if (count _this < 7) then {_text = ["Marker", "DefaultCustomMarker", "text"] call hull3_config_fnc_getText} else {_text  = _this select 6};
+    if (count _this < 6) then {_size = ["Marker", "DefaultCustomMarker", "size"] call hull3_config_fnc_getArray} else {_size  = _this select 5};
+    if (count _this < 5) then {_color = ["Marker", "DefaultCustomMarker", "color"] call hull3_config_fnc_getText} else {_color = _this select 4};
+    if (count _this < 4) then {_type = ["Marker", "DefaultCustomMarker", "type"] call hull3_config_fnc_getText} else {_type  = _this select 3};
+    if (count _this < 3) then {_shape = ["Marker", "DefaultCustomMarker", "shape"] call hull3_config_fnc_getText } else {_shape = _this select 2};
+    if (count _this < 2) then {_delay = hull3_marker_defaultDelay} else {_delay = _this select 1};
+    private _markerIndex = count hull3_marker_custom;
+    private _markerName = format ["hull3_marker_custom_%1", _markerIndex];
     [_markerName, getPosATL _object, _shape, _type, _color, _text, _size] call hull3_marker_fnc_createMarker;
     PUSH(hull3_marker_custom,AS_ARRAY_5(_markerName,true,time,_object,_delay));
 

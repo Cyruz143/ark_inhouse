@@ -35,9 +35,8 @@ hull3_mission_fnc_clientInit = {
 hull3_mission_fnc_evaluateParams = {
     if (!isNil {paramsArray}) then {
         {
-            private ["_name", "_code"];
-            _name = configName ((missionConfigFile >> "Params") select _forEachIndex);
-            _code = getText (missionConfigFile >> "Params" >> _name >> "code");
+            private _name = configName ((missionConfigFile >> "Params") select _forEachIndex);
+            private _code = getText (missionConfigFile >> "Params" >> _name >> "code");
             call compile format [_code, _x];
         } forEach paramsArray;
         LOG_1("hull3.mission.params: ParamsArray %1 have been evaluated.",paramsArray);

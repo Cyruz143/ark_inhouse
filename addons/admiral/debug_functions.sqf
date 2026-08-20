@@ -4,10 +4,9 @@
 adm_debug_fnc_createMovingGroupMarkers = {
     params ["_group"];
 
-    private ["_debugMarkers", "_marker"];
     _groupType = _group getVariable ["adm_group_type", GROUP_TYPE_INF];
-    _debugMarkers = [];
-    _marker = [format ["adm_group_%1", _group], getPosATL leader _group, "ICON", GROUP_TYPE_DEBUG_MARKERS select _groupType, [side _group] call adm_debug_fnc_getSideColor, GROUP_TYPE_DEBUG_MARKER_SIZES select _groupType] call adm_common_fnc_createLocalMarker;
+    private _debugMarkers = [];
+    private _marker = [format ["adm_group_%1", _group], getPosATL leader _group, "ICON", GROUP_TYPE_DEBUG_MARKERS select _groupType, [side _group] call adm_debug_fnc_getSideColor, GROUP_TYPE_DEBUG_MARKER_SIZES select _groupType] call adm_common_fnc_createLocalMarker;
     PUSH(_debugMarkers,_marker);
     _marker = [format ["adm_group_WP_%1", _group], getWPPos [_group, currentWaypoint _group], "ICON", "waypoint", [side _group] call adm_debug_fnc_getSideColor, WAYPOINT_DEBUG_MARKER_SIZE] call adm_common_fnc_createLocalMarker;
     PUSH(_debugMarkers,_marker);
@@ -189,8 +188,7 @@ adm_debug_fnc_deleteAllZoneMarkers = {
 adm_debug_fnc_createZoneMarker = {
    params ["_zone","_color"];
 
-    private ["_shape", "_debugMarker"];
-    _shape = "RECTANGLE";
+    private _shape = "RECTANGLE";
     if (!(GET_ZONE_AREA(_zone) select 3)) then {
         _shape = "ELLIPSE";
     };
@@ -198,7 +196,7 @@ adm_debug_fnc_createZoneMarker = {
         _color = [[GET_ZONE_UNIT_TEMPLATE(_zone)] call adm_common_fnc_getUnitTemplateSide] call adm_debug_fnc_getSideColor;
     };
 
-    _debugMarker = [format ["adm_zone_%1", GET_ZONE_ID(_zone)], GET_ZONE_POSITION(_zone), _shape, "DOT", _color] call adm_common_fnc_createLocalMarker;
+    private _debugMarker = [format ["adm_zone_%1", GET_ZONE_ID(_zone)], GET_ZONE_POSITION(_zone), _shape, "DOT", _color] call adm_common_fnc_createLocalMarker;
     _debugMarker setMarkerSizeLocal [GET_ZONE_AREA(_zone) select 0, GET_ZONE_AREA(_zone) select 1];
     _debugMarker setMarkerDirLocal (GET_ZONE_AREA(_zone) select 2);
     _debugMarker setMarkerBrushLocal "Border";
@@ -211,13 +209,12 @@ adm_debug_fnc_createZoneMarker = {
 adm_debug_fnc_createTriggerMarker = {
    params ["_trigger","_color"];
 
-    private ["_shape", "_debugMarker"];
-    _shape = "RECTANGLE";
+    private _shape = "RECTANGLE";
     if (!((triggerArea _trigger) select 3)) then {
         _shape = "ELLIPSE";
     };
 
-    _debugMarker = [format ["adm_trigger_debugMarker_%1", _trigger], getPosATL _trigger, _shape, "DOT", _color] call adm_common_fnc_createLocalMarker;
+    private _debugMarker = [format ["adm_trigger_debugMarker_%1", _trigger], getPosATL _trigger, _shape, "DOT", _color] call adm_common_fnc_createLocalMarker;
     _debugMarker setMarkerSizeLocal [(triggerArea _trigger) select 0, (triggerArea _trigger) select 1];
     _debugMarker setMarkerDirLocal ((triggerArea _trigger) select 2);
     _debugMarker setMarkerBrushLocal "Border";
@@ -240,18 +237,16 @@ adm_debug_fnc_createAllCampPathMarkers = {
 adm_debug_fnc_createCampPathMarkers = {
     params ["_path"];
 
-    private ["_pathPositions", "_lineMarkers", "_endTriggerMarker"];
-    _pathPositions = GET_PATH_POSITIONS(_path);
-    _lineMarkers = [];
+    private _pathPositions = GET_PATH_POSITIONS(_path);
+    private _lineMarkers = [];
     for "_i" from 0 to count _pathPositions - 2 do {
-        private ["_fromPos", "_toPos", "_lineMarker"];
-        _fromPos = _pathPositions select _i;
-        _toPos = _pathPositions select (_i + 1);
-        _lineMarker = [format ["adm_logic_lineMarker_%1%2", _fromPos, _i], _fromPos, _toPos, "ColorOrange", 3] call adm_debug_fnc_createLineMarker;
+        private _fromPos = _pathPositions select _i;
+        private _toPos = _pathPositions select (_i + 1);
+        private _lineMarker = [format ["adm_logic_lineMarker_%1%2", _fromPos, _i], _fromPos, _toPos, "ColorOrange", 3] call adm_debug_fnc_createLineMarker;
         PUSH(_lineMarkers,_lineMarker);
         LOG_3("admiral.debug: Created line marker between %1 and %2 path positions for camp path %3.",_fromPos,_toPos,_path);
     };
-    _endTriggerMarker = [GET_PATH_END_TRIGGER(_path), "ColorOrange"] call adm_debug_fnc_createTriggerMarker;
+    private _endTriggerMarker = [GET_PATH_END_TRIGGER(_path), "ColorOrange"] call adm_debug_fnc_createTriggerMarker;
     SET_PATH_DEBUG_MARKERS(_path,AS_ARRAY_2([_lineMarkers,_endTriggerMarker]));
     LOG_1("admiral.debug: Created end trigger marker for camp path %1.",_path);
 };
@@ -301,7 +296,7 @@ adm_debug_fnc_createDebugCounterMarker = {
 adm_debug_fnc_createDebugFactionCounterMarkers = {
    params ["_side","_xPos"];
 
-    private ["_marker"];
+    private _marker = "";
     private _debugMarkers = [];
     private _currentXPos = _xPos;
     {

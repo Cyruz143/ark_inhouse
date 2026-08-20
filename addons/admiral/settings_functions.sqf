@@ -37,9 +37,8 @@ adm_settings_fnc_setEnemy = {
 adm_settings_fnc_setFriend = {
     params ["_side","_friendlySide"];
 
-    private ["_sideEnemies", "_enemySideIndex"];
-    _sideEnemies = adm_sideRelations select _side;
-    _enemySideIndex = _sideEnemies find _friendlySide;
+    private _sideEnemies = adm_sideRelations select _side;
+    private _enemySideIndex = _sideEnemies find _friendlySide;
     if (_enemySideIndex >= 0) then {
         adm_sideRelations set [_side, _sideEnemies - [_friendlySide]];
     };

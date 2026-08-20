@@ -188,7 +188,8 @@ hull3_acre_fnc_setRadioChannels = {
             private _longRangeChannelAssignments = ["ACRE", "LongRange", "channels"] call hull3_config_fnc_getBothArray;
             LOG_2("hull3.acre.radio.assigned: Unit %1 has %2 radios assigned, attempting to set channels now.",_unit,call acre_api_fnc_getCurrentRadioList);
 
-            private ["_channelAssignments", "_defaultChannel"];
+            private _channelAssignments = "";
+            private _defaultChannel = "";
             {
                 if (([_x] call acre_api_fnc_getBaseRadio) in _shortRangeRadios) then {
                     _channelAssignments = _shortRangeChannelAssignments;
@@ -233,11 +234,10 @@ hull3_acre_fnc_getRadioChannelFromGroupId = {
 
         // We try to find matching channel assignments by using the first _n characters of the groupId plus the group number, up to 5 characters.
         private _channel = for "_i" from 2 to 5 do {
-            private ["_n", "_groupIdFirstNChars", "_nCharsChannels", "_groupIdWithoutFirstNChars"];
-            _n = _i;
-            _groupIdFirstNChars = toString (_groupIdArray select [0, _n]);
-            _nCharsChannels = _channelAssignments select { _x select 0 == _groupIdFirstNChars };
-            _groupIdWithoutFirstNChars = toString (_groupIdArray select [_n, count _groupIdArray - 1]);
+            private _n = _i;
+            private _groupIdFirstNChars = toString (_groupIdArray select [0, _n]);
+            private _nCharsChannels = _channelAssignments select { _x select 0 == _groupIdFirstNChars };
+            private _groupIdWithoutFirstNChars = toString (_groupIdArray select [_n, count _groupIdArray - 1]);
             LOG_6("hull3.acre.radio.channel: _n is %1, _groupIdFirstNChars is %2, _nCharsChannels is %3, _groupIdWithoutFirstNChars is %4, parsed number is %5 for groupId %6.",_n,_groupIdFirstNChars,_nCharsChannels,_groupIdWithoutFirstNChars,parseNumber _groupIdWithoutFirstNChars,_groupId);
             if (_nCharsChannels isNotEqualTo [] && {count _groupIdArray >= _n} && {parseNumber _groupIdWithoutFirstNChars >= 1}) exitWith { _nCharsChannels select 0 select 1 };
         };

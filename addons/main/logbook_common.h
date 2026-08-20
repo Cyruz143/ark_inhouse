@@ -21,8 +21,7 @@
 
 #define LB_LOG(CTX,STRLVL,LVL,MESSG) \
     call { \
-        private "_message"; \
-        _message = LOGGING_FORMAT(CTX,STRLVL,MESSG); \
+        private _message = LOGGING_FORMAT(CTX,STRLVL,MESSG); \
         LB_RPT_LOGGER(_message); \
         LB_CHAT_LOGGER(_message); \
         CUSTOM_LOGGER(_message); \

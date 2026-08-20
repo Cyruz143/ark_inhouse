@@ -121,11 +121,10 @@ adm_zone_initZoneFromModule = {
     if (!_activated) exitWith {
         LOG_1("admiral.module.init: NOT initializing zone from module %1, it was deactivated.",_module);
     };
-    private ["_moduleConfigs", "_defaultConfigs", "_triggers"];
-    _moduleConfigs = [_module] call _configFunc;
-    _defaultConfigs = [_module] call adm_zone_getModuleDefaultConfigs;
+    private _moduleConfigs = [_module] call _configFunc;
+    private _defaultConfigs = [_module] call adm_zone_getModuleDefaultConfigs;
     PUSH_ALL(_moduleConfigs,_defaultConfigs);
-    _triggers = [];
+    private _triggers = [];
     FILTER_PUSH_ALL(_triggers,synchronizedObjects _module,{count triggerArea _x > 0});
     if (_triggers isEqualTo []) then {
         private _configs = +_moduleConfigs;
@@ -194,9 +193,8 @@ adm_zone_getModuleDefaultConfigs = {
 
     private _configs = [];
     {
-        private ["_moduleVariableName", "_value"];
-        _moduleVariableName = _x select 0;
-        _value = _module getVariable _moduleVariableName;
+        private _moduleVariableName = _x select 0;
+        private _value = _module getVariable _moduleVariableName;
         if (!isNil {_value} && {_value != ""}) then {
             _configs pushBack [_x select 1, _value];
         };
