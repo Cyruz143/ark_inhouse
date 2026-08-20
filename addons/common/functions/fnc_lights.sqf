@@ -4,7 +4,7 @@
  * Used to disable terrain lights
  *
  * Arguments:
- * 0: Disabled <BOOL> (Optional)
+ * 0: Disable Lights <BOOL> (Optional)
  *
  * Return Value:
  * None
@@ -17,14 +17,10 @@ params [["_disabled", true]];
 
 if (isDedicated) exitWith {};
 
-private _nObjs = nearestObjects [(getArray(configFile >> "CfgWorlds" >> worldName >> "centerPosition")), [], worldSize/2];
+private _nObjs = nearestObjects [(getArray(configFile >> "CfgWorlds" >> worldName >> "centerPosition")), [], worldSize / 2];
 
-if (_disabled) then {
-    {
-        _x switchLight "OFF";
-    } forEach _nObjs;
-} else {
-    {
-        _x switchLight "ON";
-    } forEach _nObjs;
-};
+private _state = ["ON", "OFF"] select _disabled;
+
+{
+    _x switchLight _state;
+} forEach _nObjs;
