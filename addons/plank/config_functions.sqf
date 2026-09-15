@@ -16,12 +16,11 @@ plank_config_fnc_getConfig = {
 };
 
 plank_config_fnc_getBothArray = {
-    private ["_config", "_values"];
-    _config = PLANK_MISSION_CONFIG_FILE;
+    private _config = PLANK_MISSION_CONFIG_FILE;
     {
         _config = _config >> _x;
     } forEach _this;
-    _values = getArray _config;
+    private _values = getArray _config;
 
     _config = PLANK_CONFIG_FILE;
     {
@@ -51,9 +50,8 @@ plank_config_fnc_getBool = {
 plank_common_fnc_getEventFileResult = {
     params ["_fileName","_arguments"];
 
-    private ["_file", "_result"];
-    _file = ["Events", _fileName] call plank_config_fnc_getText;
-    _result = [];
+    private _file = ["Events", _fileName] call plank_config_fnc_getText;
+    private _result = [];
     if (_file != "") then {
         _result = _arguments call compile preprocessFileLineNumbers _file;
     };
@@ -120,9 +118,8 @@ plank_config_fnc_getEntryWithName = {
 plank_config_fnc_getEntry = {
     params ["_entries","_name"];
 
-    private ["_entryWithName", "_entry"];
-    _entryWithName = [_entries, _name] call plank_config_fnc_getEntryWithName;
-    _entry = [];
+    private _entryWithName = [_entries, _name] call plank_config_fnc_getEntryWithName;
+    private _entry = [];
     if (count _entryWithName > 1) then {
         for "_i" from 1 to (count _entryWithName) - 1 do {
             PUSH(_entry,_entryWithName select _i);

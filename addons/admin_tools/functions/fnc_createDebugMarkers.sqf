@@ -30,7 +30,8 @@ if (_enabled && {isNil {ark_admin_canUpdateMarkers} || {!ark_admin_canUpdateMark
         _markerName setMarkerColorLocal (_sideColors select _i);
         _markerName setMarkerTextLocal format ["%1: %2", _side, {side _x isEqualTo _side} count allUnits];
         _markerName setMarkerSizeLocal [1,1];
-        ark_admin_sideCountMarkers set [count ark_admin_sideCountMarkers, _side];
+        private _index = count ark_admin_sideCountMarkers;
+        ark_admin_sideCountMarkers set [_index, _side];
     };
 
     [{
@@ -91,7 +92,6 @@ if (_enabled && {isNil {ark_admin_canUpdateMarkers} || {!ark_admin_canUpdateMark
             } forEach allUnits;
 
             {
-                private "_markerName";
                 private _side = _x;
                 (format ["ark_admin_sideCountMarker_%1", _side]) setMarkerTextLocal format ["%1: %2 (%3)", _side, count (allUnits select {side _x isEqualTo _side && {simulationEnabled _x} }), count (allUnits select {side _x isEqualTo _side})];
             } forEach ark_admin_sideCountMarkers;

@@ -16,12 +16,11 @@ hull3_config_fnc_getConfig = {
 };
 
 hull3_config_fnc_getBothArray = {
-    private ["_config", "_values"];
-    _config = HULL3_MISSION_CONFIG_FILE;
+    private _config = HULL3_MISSION_CONFIG_FILE;
     {
         _config = _config >> _x;
     } forEach _this;
-    _values = getArray _config;
+    private _values = getArray _config;
 
     _config = HULL3_CONFIG_FILE;
     {
@@ -51,9 +50,8 @@ hull3_config_fnc_getBool = {
 hull3_common_fnc_getEventFileResult = {
     params ["_fileName","_arguments"];
 
-    private ["_file", "_result"];
-    _file = ["Events", _fileName] call hull3_config_fnc_getText;
-    _result = [];
+    private _file = ["Events", _fileName] call hull3_config_fnc_getText;
+    private _result = [];
     if (_file != "") then {
         _result = _arguments call compileScript [_file];
     };

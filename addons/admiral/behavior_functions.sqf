@@ -22,9 +22,8 @@ adm_behavior_fnc_stateInit = {
 adm_behavior_fnc_stateMoving = {
     params ["_group"];
 
-    private ["_nextState", "_enemy"];
-    _nextState = STATE_MOVING;
-    _enemy = (leader _group) findNearestEnemy (leader _group);
+    private _nextState = STATE_MOVING;
+    private _enemy = (leader _group) findNearestEnemy (leader _group);
     if (!isNull _enemy && {!((vehicle _enemy) isKindOf "Air")}) then {
         _nextState = STATE_ENEMYFOUND;
         _group setVariable ["adm_behavior_enemyPos", getPosATL _enemy, false];
@@ -110,9 +109,8 @@ adm_behavior_fnc_updateWaypointsAndMoving = {
 adm_behavior_fnc_getEnemyNumbers = {
     params ["_side","_enemyPos"];
 
-    private ["_enemyNumbers", "_enemyUnits"];
-    _enemyNumbers = [1, 0, 0];
-    _enemyUnits = [_side] call adm_behavior_getEnemyUnits;
+    private _enemyNumbers = [1, 0, 0];
+    private _enemyUnits = [_side] call adm_behavior_getEnemyUnits;
     {
         if (_x distance _enemyPos <= BEHAVIOR_ENEMY_CHECK_RADIUS && {alive _x}) then {
             _enemyNumbers set [0, (_enemyNumbers select 0) + 1];

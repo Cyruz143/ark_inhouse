@@ -18,7 +18,8 @@
 params ["_position"];
 
 private _nearRoad = selectRandom (_position nearRoads 100);
-private ["_helo"];
+
+private _helo = "";
 
 if (isNil "_nearRoad") then {
     private _heloPos = [_position, 0, 100, 3, 0, 20, 0] call BIS_fnc_findSafePos;

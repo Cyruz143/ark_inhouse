@@ -96,7 +96,7 @@ re_fnc_moveLocationMarker = {
 re_fnc_getUniformPath = {
     params ["_side"];
 
-    private "_finalPath";
+    private _finalPath = "";
     private _rawPath = getText (configFile >> "CfgWeapons" >> (uniform (units _side #0)) >> "picture");
     if (_rawPath find ".paa" != -1) then {
         _finalPath = _rawPath;

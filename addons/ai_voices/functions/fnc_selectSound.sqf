@@ -17,8 +17,8 @@
 params ["_unit","_sndType"];
 
 private _lastLine = _unit getVariable [QGVAR(lastLine), nil];
+private _voiceLine = "";
 
-private "_voiceLine";
 if (isNil "_lastLine") then {
     switch (_sndType) do {
         case ("suppressed"): {

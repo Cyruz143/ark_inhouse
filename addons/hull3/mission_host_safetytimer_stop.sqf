@@ -1,5 +1,4 @@
-private "_action";
-_action = _this select 3 select 0;
+private _action = _this select 3 select 0;
 call {
     if (!isMultiplayer) then {
         _action = "confirm";

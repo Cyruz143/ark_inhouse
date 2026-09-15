@@ -32,7 +32,7 @@ params ["_insertType"];
     _grp addWaypoint [_lzPos, 0, 1];
     _grp addWaypoint [[worldSize, worldSize, 0], 100, 2];
 
-    private "_module";
+    private _module = "";
     if (_insertType isEqualTo "paradrop") then {
         _module = "ARK_Rotor_Paradrop" createVehicleLocal _spawnPos;
         _module setVariable ["Routine_Function", "ark_rotor_fnc_paradrop"];

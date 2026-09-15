@@ -19,10 +19,9 @@ adm_patrol_fnc_placeMan = {
 adm_patrol_fnc_createWaypoints = {
     params ["_group","_unitType","_zone","_noOfWaypoints"];
 
-    private ["_waypointBehaviours", "_defaultWp"];
-    _waypointBehaviours = ["ZoneTemplates", GET_ZONE_TEMPLATE(_zone), "waypointBehaviours"] call adm_config_fnc_getArray;
+    private _waypointBehaviours = ["ZoneTemplates", GET_ZONE_TEMPLATE(_zone), "waypointBehaviours"] call adm_config_fnc_getArray;
     [_group, _unitType, GET_ZONE_AREA(_zone), GET_ZONE_POSITION(_zone), _waypointBehaviours, _noOfWaypoints] call adm_camp_fnc_createPatrolWaypoints;
-    _defaultWp = (waypoints _group) select 0;
+    private _defaultWp = (waypoints _group) select 0;
     _defaultWp setWaypointPosition [getPosATL (leader _group), 0];
     _defaultWp setWaypointType 'MOVE';
     _defaultWp setWaypointBehaviour (selectRandom _waypointBehaviours);

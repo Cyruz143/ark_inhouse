@@ -8,8 +8,7 @@
 
 plank_ui_fnc_createSettingsDialog = {
     if (!dialog) then {
-        private "_isDialogCreated";
-        _isDialogCreated = createDialog "PlankSettingsDialog";
+        private _isDialogCreated = createDialog "PlankSettingsDialog";
         if (_isDialogCreated) then {
             [] call plank_ui_fnc_initDialog;
         };
@@ -337,9 +336,8 @@ plank_ui_fnc_onMouseZChanged = {
     params ["_display","_deltaY"];
 
     if (plank_ui_isRotationButtonHeld) then {
-        private ["_fortIndex", "_baseDirection"];
-        _fortIndex = player getVariable "plank_deploy_fortIndex";
-        _baseDirection = GET_FORT_DIRECTION(_fortIndex);
+        private _fortIndex = player getVariable "plank_deploy_fortIndex";
+        private _baseDirection = GET_FORT_DIRECTION(_fortIndex);
         [
             _deltaY * 2,
             _baseDirection - GET_FORT_DIRECTION_RANGE(_fortIndex) / 2,

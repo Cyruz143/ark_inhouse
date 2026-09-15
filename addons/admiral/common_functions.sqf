@@ -3,7 +3,7 @@
 adm_common_fnc_placeMan = {
     params ["_position","_group","_unitClassNames","_skillArray",["_posSpecial","NONE"]];
 
-    private "_className";
+    private _className = "";
     private _classNameData = selectRandom _unitClassNames;
     private _classNameArguments = [];
     if (typeName _classNameData == "ARRAY") then {
@@ -31,7 +31,7 @@ adm_common_fnc_placeMan = {
 adm_common_fnc_placeVehicle = {
     params ["_vehicleClassNames","_area","_position"];
 
-    private ["_className"];
+    private _className = "";
     private _classNameData = selectRandom _vehicleClassNames;
     private _classNameArguments = [];
     if (typeName _classNameData == "ARRAY") then {
@@ -64,8 +64,7 @@ adm_common_fnc_placeVehicle = {
 adm_common_fnc_spawnCrew = {
     params ["_vehicle","_group","_crewClassNames","_skillArray","_canSpawnFfvCrew"];
 
-    private ["_driver", "_allTurrets", "_leader"];
-    _driver = [getPosATL _vehicle, _group, _crewClassNames, _skillArray] call adm_common_fnc_placeMan;
+    private _driver = [getPosATL _vehicle, _group, _crewClassNames, _skillArray] call adm_common_fnc_placeMan;
     _driver assignAsDriver _vehicle;
     _driver moveInDriver _vehicle;
     private _turretsToFill = [];
@@ -86,7 +85,7 @@ adm_common_fnc_spawnCrew = {
         _crewman assignAsTurret [_vehicle, _x];
         _crewman moveInTurret [_vehicle, _x];
     } forEach _turretsToFill;
-    _leader = call {
+    private _leader = call {
         if (!isNull (commander _vehicle)) exitWith { commander _vehicle };
         if (!isNull (gunner _vehicle)) exitWith { gunner _vehicle };
         if (_turretsToFill isNotEqualTo []) exitWith { _vehicle turretUnit (_turretsToFill select 0) };
@@ -345,9 +344,8 @@ adm_common_fnc_getRandomEmptyPositionInArea = {
     params ["_area","_areaPosition","_unitType","_canBeWater"];
 
     if (isNil "_canBeWater") then {_canBeWater = false;};
-    private ["_randomPosition", "_emptyPosition"];
-    _randomPosition = [_area, _areaPosition, _canBeWater] call adm_common_fnc_getRandomPositionInArea;
-    _emptyPosition = _randomPosition findEmptyPosition [0, CAMP_SPAWN_CIRCLE_MAX_DIST, _unitType];
+    private _randomPosition = [_area, _areaPosition, _canBeWater] call adm_common_fnc_getRandomPositionInArea;
+    private _emptyPosition = _randomPosition findEmptyPosition [0, CAMP_SPAWN_CIRCLE_MAX_DIST, _unitType];
     while {count _emptyPosition == 0} do {
         _randomPosition = [_area, _areaPosition, _canBeWater] call adm_common_fnc_getRandomPositionInArea;
         _emptyPosition = _randomPosition findEmptyPosition [0, CAMP_SPAWN_CIRCLE_MAX_DIST, _unitType];
@@ -359,17 +357,17 @@ adm_common_fnc_getRandomEmptyPositionInArea = {
 adm_common_fnc_getRandomPositionInArea = {
     params ["_area","_areaPosition","_canBeWater"];
 
-    private ["_randomPosition", "_shapeFunc"];
     _area params ["_width","_height","_angle","_isRectangle"];
     _angle = 180 - _angle;
 
+    private _shapeFunc = "";
     if (_isRectangle) then {
         _shapeFunc = adm_common_fnc_getRandomPositionInRectangle;
     } else {
         _shapeFunc = adm_common_fnc_getRandomPositionInEllipse;
     };
 
-    _randomPosition = [_width, _height, _angle, _areaPosition] call _shapeFunc;
+    private _randomPosition = [_width, _height, _angle, _areaPosition] call _shapeFunc;
     while {!_canBeWater && {surfaceIsWater _randomPosition}} do {
         _randomPosition = [_width, _height, _angle, _areaPosition] call _shapeFunc;
     };
@@ -380,9 +378,8 @@ adm_common_fnc_getRandomPositionInArea = {
 adm_common_fnc_getRandomPositionInRectangle = {
     params ["_width","_height","_angle","_position"];
 
-    private ["_px", "_py"];
-    _px = _width - 2 * random _width;
-    _py = _height - 2 * random _height;
+    private _px = _width - 2 * random _width;
+    private _py = _height - 2 * random _height;
 
     [
         (_position select 0) + _px * cos _angle - _py * sin _angle,
@@ -393,10 +390,9 @@ adm_common_fnc_getRandomPositionInRectangle = {
 adm_common_fnc_getRandomPositionInEllipse = {
     params ["_width","_height","_angle","_position"];
 
-    private ["_ellipseAngle", "_px", "_py"];
-    _ellipseAngle = deg random (2 * pi);
-    _px = random (_width) * cos _ellipseAngle;
-    _py = random (_height) * sin _ellipseAngle;
+    private _ellipseAngle = deg random (2 * pi);
+    private _px = random (_width) * cos _ellipseAngle;
+    private _py = random (_height) * sin _ellipseAngle;
 
     [
         (_position select 0) + _px * cos _angle - _py * sin _angle,
@@ -417,9 +413,8 @@ adm_common_fnc_isPlayerNearTrigger = {
 adm_common_fnc_isPlayersInRange = {
     params ["_position","_distance"];
 
-    private ["_players", "_inRange"];
-    _players = [] call adm_common_fnc_getPlayerUnits;
-    _inRange = false;
+    private _players = [] call adm_common_fnc_getPlayerUnits;
+    private _inRange = false;
     {
         _inRange = _position distance _x <= _distance;
         if (_inRange) exitWith {};
@@ -434,7 +429,7 @@ adm_common_fnc_isPositionInArea = {
     _area params ["_width","_height","_angle","_isRectangle"];
     _angle = 180 - _angle;
 
-    private "_shapeFunc";
+    private _shapeFunc = "";
     if (_isRectangle) then {
         _shapeFunc = adm_common_fnc_isPositionInRectangle;
     } else {
@@ -483,9 +478,9 @@ adm_common_fnc_insertionSort = {
 
     private _sortArray = +_array;
     for "_i" from 1 to (count _sortArray) - 1 do {
-        private ["_x", "_j", "_y"];
-        _x = _sortArray select _i;
-        _j = _i;
+        private ["_y"];
+        private _x = _sortArray select _i;
+        private _j = _i;
         // such hack, very ugly, many thinking, wow!
         while {_j > 0 && {_y = _sortArray select (_j - 1); true} && {!([_x, _y] call _compareFunc)}} do {
             _sortArray set [_j, _y];
@@ -530,9 +525,8 @@ adm_common_fnc_isFriendlySide = {
     if (_side == sideEnemy || {_otherSide == sideEnemy}) then {
         _isFriendly = false;
     } else {
-        private ["_sideIndex", "_otherSideIndex"];
-        _sideIndex = SIDE_ARRAY find _side;
-        _otherSideIndex = SIDE_ARRAY find _otherSide;
+        private _sideIndex = SIDE_ARRAY find _side;
+        private _otherSideIndex = SIDE_ARRAY find _otherSide;
         _isFriendly = _sideIndex >= 0 && {_otherSideIndex >= 0} && {!(_otherSideIndex in (adm_sideRelations select _sideIndex))};
     };
 
