@@ -28,7 +28,7 @@ if (_enabled && {isNil {ark_admin_canUpdateMarkers} || {!ark_admin_canUpdateMark
         _markerName setMarkerShapeLocal "ICON";
         _markerName setMarkerTypeLocal "mil_dot";
         _markerName setMarkerColorLocal (_sideColors select _i);
-        _markerName setMarkerTextLocal format ["%1: %2", _side, allUnits countSide _side];
+        _markerName setMarkerTextLocal format ["%1: %2", _side, _side countSide allUnits];
         _markerName setMarkerSizeLocal [1,1];
         private _index = count ark_admin_sideCountMarkers;
         ark_admin_sideCountMarkers set [_index, _side];
