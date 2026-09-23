@@ -133,4 +133,5 @@ hull3_unit_fnc_resetInit = {
 
     _unit setVariable ["hull3_faction", _faction];
     [_unit, ["faction", _faction], ["gear", _class]] call hull3_unit_fnc_init;
+    [_unit] call hull3_acre_fnc_setSpokenLanguages;
 };
